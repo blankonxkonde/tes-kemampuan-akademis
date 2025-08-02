@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Operasi Bentuk Akar</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .property {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 4px solid #0056b3;
+            background-color: #f9f9f9;
+        }
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .formula {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Operasi Hitung Bentuk Akar</h1>
+
+        <h2>Definisi Bentuk Akar</h2>
+        <p>
+            Bentuk akar adalah operasi kebalikan (invers) dari operasi pemangkatan. Bentuk akar ditulis dengan simbol \(\sqrt[n]{a}\), di mana \(a\) adalah <strong>radikan</strong> (bilangan yang diakar) dan \(n\) adalah <strong>indeks</strong> akar. Jika indeks \(n=2\), biasanya tidak ditulis (misalnya \(\sqrt{9}\)).
+        </p>
+        <div class="formula">
+            \[ \sqrt[n]{a} = b \quad \iff \quad b^n = a \]
+        </div>
+        <p>Contoh: \(\sqrt{49} = 7\) karena \(7^2 = 49\).</p>
+        <p>Contoh: \(\sqrt[3]{27} = 3\) karena \(3^3 = 27\).</p>
+        <p><strong>Akar dari nol:</strong> Akar dari nol adalah nol. Untuk setiap indeks \(n > 0\), berlaku \(\sqrt[n]{0} = 0\), karena \(0^n = 0\).</p>
+
+        <h2>Hubungan Akar dan Pangkat Pecahan</h2>
+        <p>Bentuk akar dapat diubah menjadi bentuk pangkat pecahan, yang memudahkan perhitungan saat melibatkan sifat-sifat eksponen.</p>
+        <div class="formula">
+            \[ \sqrt[n]{a^m} = a^{m/n} \]
+        </div>
+         <div class="example">
+            <strong>Contoh:</strong>
+            <p>\(\sqrt[3]{8^2} = 8^{2/3} = (2^3)^{2/3} = 2^{3 \cdot 2/3} = 2^2 = 4\)</p>
+            <p>\(\sqrt{5} = 5^{1/2}\)</p>
+        </div>
+
+        <h2>Menyederhanakan Bentuk Akar</h2>
+        <p>Bentuk akar dapat disederhanakan dengan mengeluarkan faktor dari radikan yang merupakan bilangan pangkat sempurna sesuai indeksnya.</p>
+        <div class="property">
+            <h3>Sifat Perkalian untuk Penyederhanaan</h3>
+             <div class="formula">
+                \[ \sqrt[n]{a \cdot b} = \sqrt[n]{a} \cdot \sqrt[n]{b} \]
+            </div>
+            <div class="example">
+                <strong>Contoh 1:</strong>
+                <p>\(\sqrt{72} = \sqrt{36 \cdot 2} = \sqrt{36} \cdot \sqrt{2} = 6\sqrt{2}\)</p>
+                <p><strong>Penjelasan:</strong> Kita mencari faktor dari 72 yang merupakan kuadrat sempurna terbesar, yaitu 36.</p>
+            </div>
+            <div class="example">
+                <strong>Contoh 2:</strong>
+                <p>\(\sqrt[3]{128} = \sqrt[3]{64 \cdot 2} = \sqrt[3]{64} \cdot \sqrt[3]{2} = 4\sqrt[3]{2}\)</p>
+                <p><strong>Penjelasan:</strong> Kita mencari faktor dari 128 yang merupakan pangkat tiga sempurna, yaitu 64.</p>
+            </div>
+        </div>
+
+        <h2>Operasi Aljabar pada Bentuk Akar</h2>
+
+        <div class="property">
+            <h3>1. Penjumlahan dan Pengurangan</h3>
+            <p>
+                Penjumlahan dan pengurangan hanya dapat dilakukan pada bentuk akar yang sejenis (memiliki indeks dan radikan yang sama).
+            </p>
+            <div class="formula">
+                \[ c\sqrt[n]{a} \pm d\sqrt[n]{a} = (c \pm d)\sqrt[n]{a} \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(5\sqrt{3} + 2\sqrt{3} - \sqrt{3} = (5+2-1)\sqrt{3} = 6\sqrt{3}\)</p>
+                <p><strong>Contoh (dengan penyederhanaan):</strong></p>
+                <p>\(\sqrt{50} + \sqrt{18} = \sqrt{25 \cdot 2} + \sqrt{9 \cdot 2} = 5\sqrt{2} + 3\sqrt{2} = (5+3)\sqrt{2} = 8\sqrt{2}\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>2. Perkalian dan Pembagian</h3>
+            <p>
+                Perkalian dan pembagian dapat dilakukan jika indeks akarnya sama.
+            </p>
+            <div class="formula">
+                \[ \sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b} \quad \text{dan} \quad \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}} \]
+            </div>
+            <div class="example">
+                <strong>Contoh Perkalian:</strong>
+                <p>\( \sqrt{6} \cdot \sqrt{8} = \sqrt{48} = \sqrt{16 \cdot 3} = 4\sqrt{3} \)</p>
+                <strong>Contoh Pembagian:</strong>
+                <p>\( \frac{\sqrt{75}}{\sqrt{3}} = \sqrt{\frac{75}{3}} = \sqrt{25} = 5 \)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>3. Operasi Campuran dengan Bilangan Bulat</h3>
+            <p>
+                Operasi antara bilangan bulat dan bentuk akar memiliki aturan khusus.
+            </p>
+            <p><strong>Penjumlahan dan Pengurangan:</strong> Bilangan bulat dan bentuk akar tidak dapat digabungkan menjadi satu suku jika bentuk akarnya tidak bisa disederhanakan menjadi bilangan bulat. Keduanya tetap ditulis sebagai penjumlahan atau pengurangan.</p>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\( 5 + \sqrt{3} \) adalah bentuk paling sederhana. Tidak bisa menjadi \( \sqrt{8} \) atau lainnya.</p>
+                <p>\( 10 - 2\sqrt{7} \) juga merupakan bentuk akhir yang tidak bisa disederhanakan lebih lanjut.</p>
+            </div>
+            <p style="margin-top: 15px;"><strong>Perkalian:</strong> Bilangan bulat dikalikan dengan koefisien dari bentuk akar. Jika tidak ada koefisien tertulis, artinya koefisiennya adalah 1.</p>
+             <div class="formula">
+                \[ a \times (c\sqrt[n]{b}) = (a \times c)\sqrt[n]{b} \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\( 3 \times 2\sqrt{5} = (3 \times 2)\sqrt{5} = 6\sqrt{5} \)</p>
+                <p>\( 4 \times \sqrt{2} = 4 \times 1\sqrt{2} = 4\sqrt{2} \)</p>
+            </div>
+        </div>
+
+        <h2>Merasionalkan Penyebut</h2>
+        <p>Merasionalkan penyebut adalah proses menghilangkan bentuk akar dari bagian penyebut (denominator) pada suatu pecahan.</p>
+
+        <div class="property">
+            <h3>1. Penyebut Bentuk \(\sqrt{b}\)</h3>
+            <p>Kalikan pembilang dan penyebut dengan \(\sqrt{b}\).</p>
+            <div class="formula">
+                \[ \frac{a}{\sqrt{b}} = \frac{a}{\sqrt{b}} \cdot \frac{\sqrt{b}}{\sqrt{b}} = \frac{a\sqrt{b}}{b} \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(\frac{5}{\sqrt{2}} = \frac{5}{\sqrt{2}} \cdot \frac{\sqrt{2}}{\sqrt{2}} = \frac{5\sqrt{2}}{2}\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>2. Penyebut Bentuk \(a \pm \sqrt{b}\) atau \(\sqrt{a} \pm \sqrt{b}\)</h3>
+            <p>Kalikan pembilang dan penyebut dengan bentuk sekawannya. Sekawan dari \( (a+\sqrt{b}) \) adalah \( (a-\sqrt{b}) \), dan sebaliknya.</p>
+             <div class="formula">
+                \[ (x+y)(x-y) = x^2 - y^2 \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(\frac{10}{3 - \sqrt{7}} = \frac{10}{3 - \sqrt{7}} \cdot \frac{3 + \sqrt{7}}{3 + \sqrt{7}} = \frac{10(3 + \sqrt{7})}{3^2 - (\sqrt{7})^2} = \frac{10(3 + \sqrt{7})}{9 - 7} = \frac{10(3 + \sqrt{7})}{2} = 5(3 + \sqrt{7})\)</p>
+            </div>
+        </div>
+
+        <h2>Ringkasan Sifat-sifat Bentuk Akar</h2>
+        <table border="1" style="width:100%; border-collapse: collapse; margin-top: 20px;">
+            <tr style="background-color:#0056b3; color: white; text-align:center;">
+                <th style="padding: 10px;">Sifat</th>
+                <th style="padding: 10px;">Rumus</th>
+                <th style="padding: 10px;">Contoh</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Bentuk Pangkat</td>
+                <td style="padding: 10px;">\( \sqrt[n]{a^m} = a^{m/n} \)</td>
+                <td style="padding: 10px;">\( \sqrt[4]{16^3} = 16^{3/4} = (2^4)^{3/4} = 2^3 = 8 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Akar dari Nol</td>
+                <td style="padding: 10px;">\( \sqrt[n]{0} = 0 \quad (n>0) \)</td>
+                <td style="padding: 10px;">\( \sqrt[5]{0} = 0 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Akar dari Satu</td>
+                <td style="padding: 10px;">\( \sqrt[n]{1} = 1 \quad (n>0) \)</td>
+                <td style="padding: 10px;">\( \sqrt[7]{1} = 1 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Perkalian Akar</td>
+                <td style="padding: 10px;">\( \sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b} \)</td>
+                <td style="padding: 10px;">\( \sqrt{3} \cdot \sqrt{12} = \sqrt{36} = 6 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pembagian Akar</td>
+                <td style="padding: 10px;">\( \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}} \)</td>
+                <td style="padding: 10px;">\( \frac{\sqrt{98}}{\sqrt{2}} = \sqrt{49} = 7 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Penjumlahan Sejenis</td>
+                <td style="padding: 10px;">\( c\sqrt[n]{a} + d\sqrt[n]{a} = (c+d)\sqrt[n]{a} \)</td>
+                <td style="padding: 10px;">\( 4\sqrt{5} + 7\sqrt{5} = 11\sqrt{5} \)</td>
+            </tr>
+             <tr>
+                <td style="padding: 10px;">Pengurangan Sejenis</td>
+                <td style="padding: 10px;">\( c\sqrt[n]{a} - d\sqrt[n]{a} = (c-d)\sqrt[n]{a} \)</td>
+                <td style="padding: 10px;">\( 9\sqrt[3]{2} - 5\sqrt[3]{2} = 4\sqrt[3]{2} \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Operasi Campuran (Jumlah/Kurang)</td>
+                <td style="padding: 10px;">\( a \pm c\sqrt[n]{b} \) (tidak dapat digabung)</td>
+                <td style="padding: 10px;">\( 5 + 2\sqrt{3} \) tetap \( 5 + 2\sqrt{3} \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Operasi Campuran (Kali)</td>
+                <td style="padding: 10px;">\( a \times (c\sqrt[n]{b}) = (ac)\sqrt[n]{b} \)</td>
+                <td style="padding: 10px;">\( 3 \times 2\sqrt{5} = 6\sqrt{5} \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Rasionalisasi \(\frac{a}{\sqrt{b}}\)</td>
+                <td style="padding: 10px;">\( \frac{a}{\sqrt{b}} = \frac{a\sqrt{b}}{b} \)</td>
+                <td style="padding: 10px;">\( \frac{6}{\sqrt{3}} = \frac{6\sqrt{3}}{3} = 2\sqrt{3} \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Rasionalisasi \( \frac{c}{a + \sqrt{b}} \)</td>
+                <td style="padding: 10px;">Kalikan dengan sekawan \( a - \sqrt{b} \)</td>
+                <td style="padding: 10px;">\( \frac{2}{1+\sqrt{3}} = \frac{2(1-\sqrt{3})}{1-3} = -(1-\sqrt{3}) = \sqrt{3}-1 \)</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html> 

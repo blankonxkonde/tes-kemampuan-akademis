@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Soal Latihan Matematika</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        h1 { text-align: center; color: #2c3e50; }
+        h2 { margin-top: 30px; border-bottom: 2px solid #3498db; padding-bottom: 8px; color: #2980b9;}
+        ol { list-style-type: decimal; padding-left: 30px; }
+        li { margin-bottom: 15px; background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        code { 
+            font-family: 'Courier New', Courier, monospace; 
+            background-color: #e9ecef; 
+            padding: 3px 7px; 
+            border-radius: 4px; 
+            font-size: 1.05em;
+            color: #c7254e;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background-color: #eef1f5; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 8px; }
+        .header-note { text-align: center; font-style: italic; color: #555; margin-bottom: 30px; }
+        .toggle-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .toggle-button:hover {
+            background-color: #2980b9;
+        }
+        .pembahasan {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #3498db;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        .pembahasan p { margin-bottom: 5px; }
+        .pembahasan code { background-color: #dfe4ea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kumpulan Soal Latihan Matematika</h1>
+        <p class="header-note">Klik tombol "Lihat Pembahasan" di bawah setiap soal untuk melihat langkah-langkah penyelesaiannya.</p>
+
+        <h2>Tingkat 1: Sangat Mudah</h2>
+        <ol>
+            <li>
+                <code>8 &times; (5 + 10) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p1')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p1">
+                    <p><strong>Prinsip:</strong> Sifat Distributif atau Kerjakan dalam kurung dahulu.</p>
+                    <p><strong>Langkah 1:</strong> Selesaikan operasi dalam kurung: <code>5 + 10 = 15</code>.</p>
+                    <p><strong>Langkah 2:</strong> Kalikan hasilnya dengan 8: <code>8 &times; 15</code>.</p>
+                    <p><strong>Langkah 3:</strong> <code>8 &times; 10 = 80</code> dan <code>8 &times; 5 = 40</code>.</p>
+                    <p><strong>Langkah 4:</strong> <code>80 + 40 = 120</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>120</code></p>
+                </div>
+            </li>
+            <li>
+                <code>10&sup2; - 7&sup2; = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p2')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p2">
+                    <p><strong>Prinsip:</strong> Selisih Dua Kuadrat (a&sup2; - b&sup2; = (a-b)(a+b)).</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi a = 10 dan b = 7.</p>
+                    <p><strong>Langkah 2:</strong> Hitung (a-b): <code>10 - 7 = 3</code>.</p>
+                    <p><strong>Langkah 3:</strong> Hitung (a+b): <code>10 + 7 = 17</code>.</p>
+                    <p><strong>Langkah 4:</strong> Kalikan hasilnya: <code>3 &times; 17 = 51</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>51</code></p>
+                </div>
+            </li>
+            <li>
+                <code>(12 &times; 9) - (12 &times; 4) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p3')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p3">
+                    <p><strong>Prinsip:</strong> Sifat Distributif (a &times; b - a &times; c = a &times; (b-c)).</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi faktor yang sama: 12.</p>
+                    <p><strong>Langkah 2:</strong> Keluarkan faktor yang sama: <code>12 &times; (9 - 4)</code>.</p>
+                    <p><strong>Langkah 3:</strong> Selesaikan operasi dalam kurung: <code>9 - 4 = 5</code>.</p>
+                    <p><strong>Langkah 4:</strong> Kalikan hasilnya: <code>12 &times; 5 = 60</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>60</code></p>
+                </div>
+            </li>
+            <li>
+                <code>20 &times; 20 - 19 &times; 21 = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p4')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p4">
+                    <p><strong>Prinsip:</strong> Pola x&sup2; - (x-1)(x+1) = 1.</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi x = 20.</p>
+                    <p><strong>Langkah 2:</strong> Ekspresi adalah <code>20&sup2; - (20-1)(20+1)</code>.</p>
+                    <p><strong>Langkah 3:</strong> Kita tahu bahwa <code>(x-1)(x+1) = x&sup2; - 1&sup2; = x&sup2; - 1</code>.</p>
+                    <p><strong>Langkah 4:</strong> Maka, <code>x&sup2; - (x&sup2; - 1) = x&sup2; - x&sup2; + 1 = 1</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>1</code></p>
+                </div>
+            </li>
+        </ol>
+
+        <h2>Tingkat 2: Mudah</h2>
+        <ol start="5">
+            <li>
+                <code>3.5 &times; (6 + 2.5) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p5')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p5">
+                    <p><strong>Prinsip:</strong> Kerjakan dalam kurung dahulu ATAU Sifat Distributif.</p>
+                    <p><strong>Metode 1: Kerjakan dalam kurung dahulu (seperti yang sudah ada)</strong></p>
+                    <p><strong>Langkah 1:</strong> Selesaikan operasi dalam kurung: <code>6 + 2.5 = 8.5</code>.</p>
+                    <p><strong>Langkah 2:</strong> Kalikan hasilnya dengan 3.5: <code>3.5 &times; 8.5</code>.</p>
+                    <p><strong>Langkah 3:</strong> <code>3.5 &times; 8 = 28</code>.</p>
+                    <p><strong>Langkah 4:</strong> <code>3.5 &times; 0.5 = 1.75</code> (setengah dari 3.5).</p>
+                    <p><strong>Langkah 5:</strong> <code>28 + 1.75 = 29.75</code>.</p>
+                    <p><strong>Metode 2: Menggunakan Sifat Distributif (a &times; (b + c) = ab + ac)</strong></p>
+                    <p>Soal: <code>3.5 &times; (6 + 2.5)</code></p>
+                    <p><strong>Langkah 1:</strong> Distribusikan 3.5 ke setiap angka dalam kurung:</p>
+                    <p><code>(3.5 &times; 6) + (3.5 &times; 2.5)</code></p>
+                    <p><strong>Langkah 2:</strong> Hitung perkalian pertama: <code>3.5 &times; 6</code></p>
+                    <p>&nbsp;&nbsp;&nbsp;<code>3 &times; 6 = 18</code></p>
+                    <p>&nbsp;&nbsp;&nbsp;<code>0.5 &times; 6 = 3</code></p>
+                    <p>&nbsp;&nbsp;&nbsp;Jadi, <code>3.5 &times; 6 = 21</code></p>
+                    <p><strong>Langkah 3:</strong> Hitung perkalian kedua: <code>3.5 &times; 2.5</code></p>
+                    <p>&nbsp;&nbsp;&nbsp;<code>3.5 &times; 2 = 7</code></p>
+                    <p>&nbsp;&nbsp;&nbsp;<code>3.5 &times; 0.5 = 1.75</code></p>
+                    <p>&nbsp;&nbsp;&nbsp;Jadi, <code>3.5 &times; 2.5 = 8.75</code></p>
+                    <p><strong>Langkah 4:</strong> Jumlahkan hasilnya:</p>
+                    <p><code>21 + 8.75 = 29.75</code></p>
+                    <p><strong>Jawaban (kedua metode):</strong> <code>29.75</code></p>
+                </div>
+            </li>
+            <li>
+                <code>30&sup2; - 28&sup2; = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p6')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p6">
+                    <p><strong>Prinsip:</strong> Selisih Dua Kuadrat (a&sup2; - b&sup2; = (a-b)(a+b)).</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi a = 30 dan b = 28.</p>
+                    <p><strong>Langkah 2:</strong> Hitung (a-b): <code>30 - 28 = 2</code>.</p>
+                    <p><strong>Langkah 3:</strong> Hitung (a+b): <code>30 + 28 = 58</code>.</p>
+                    <p><strong>Langkah 4:</strong> Kalikan hasilnya: <code>2 &times; 58 = 116</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>116</code></p>
+                </div>
+            </li>
+            <li>
+                <code>(4.5)&sup2; - (4.5 &times; 2.5) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p7')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p7">
+                    <p><strong>Prinsip yang Digunakan: Sifat Distributif</strong></p>
+                    <p>Sifat distributif membantu menyederhanakan perhitungan dengan mengeluarkan faktor yang sama. Rumus dasarnya adalah <code>a&times;b - a&times;c = a&times;(b-c)</code>.</p>
+                    
+                    <p><strong>Langkah 1: Menjabarkan Soal</strong></p>
+                    <p>Soalnya adalah <code>(4.5)&sup2; - (4.5 &times; 2.5)</code>.</p>
+                    <p>Bagian <code>(4.5)&sup2;</code> adalah cara lain untuk menulis <code>4.5 &times; 4.5</code>.</p>
+                    <p>Maka, soal bisa kita tulis ulang secara lengkap menjadi: <code>(4.5 &times; 4.5) - (4.5 &times; 2.5)</code>.</p>
+                    
+                    <p><strong>Langkah 2: Menemukan Faktor Persekutuan (Angka yang Sama)</strong></p>
+                    <p>Perhatikan bahwa kita memiliki dua suku yang dipisahkan oleh tanda kurang (-):</p>
+                    <p style="padding-left: 20px;">Suku Pertama: <code>4.5 &times; 4.5</code></p>
+                    <p style="padding-left: 20px;">Suku Kedua: <code>4.5 &times; 2.5</code></p>
+                    <p>Angka <code>4.5</code> muncul di kedua suku tersebut. Ini adalah faktor persekutuan yang akan kita gunakan.</p>
+                    
+                    <p><strong>Langkah 3: Menerapkan Sifat Distributif</strong></p>
+                    <p>Kita akan "mengeluarkan" faktor persekutuan (<code>4.5</code>) dari persamaan. Sisa dari setiap suku kita masukkan ke dalam kurung.</p>
+                    <p><code>4.5 &times; (4.5 - 2.5)</code></p>
+                    <p>Langkah ini mengikuti rumus <code>a &times; (b - c)</code>, di mana:</p>
+                    <p style="padding-left: 20px;">- <code>a = 4.5</code> (faktor persekutuan)</p>
+                    <p style="padding-left: 20px;">- <code>b = 4.5</code> (dari suku pertama)</p>
+                    <p style="padding-left: 20px;">- <code>c = 2.5</code> (dari suku kedua)</p>
+                    
+                    <p><strong>Langkah 4: Selesaikan Operasi Dalam Kurung</strong></p>
+                    <p>Sekarang, kita hitung terlebih dahulu operasi pengurangan yang ada di dalam kurung.</p>
+                    <p><code>4.5 - 2.5 = 2</code></p>
+                    
+                    <p><strong>Langkah 5: Kalikan Hasilnya</strong></p>
+                    <p>Persamaan kita sekarang menjadi jauh lebih sederhana:</p>
+                    <p><code>4.5 &times; 2</code></p>
+                    <p>Hasil akhirnya adalah <code>9</code>.</p>
+                    
+                    <p><strong>Jawaban:</strong> <code>9</code></p>
+                </div>
+            </li>
+            <li>
+                <code>102 &times; 98 = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p8')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p8">
+                    <p><strong>Prinsip:</strong> Selisih Dua Kuadrat dalam bentuk (a+b)(a-b) = a&sup2; - b&sup2;.</p>
+                    <p><strong>Langkah 1:</strong> Ubah angka menjadi bentuk (a+b) dan (a-b). Misal a = 100.</p>
+                    <p><strong>Langkah 2:</strong> <code>102 = 100 + 2</code> dan <code>98 = 100 - 2</code>.</p>
+                    <p><strong>Langkah 3:</strong> Jadi, soalnya menjadi <code>(100+2)(100-2)</code>.</p>
+                    <p><strong>Langkah 4:</strong> Gunakan rumus: <code>100&sup2; - 2&sup2;</code>.</p>
+                    <p><strong>Langkah 5:</strong> <code>10000 - 4 = 9996</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>9996</code></p>
+                </div>
+            </li>
+        </ol>
+
+        <h2>Tingkat 3: Sedang</h2>
+        <ol start="9">
+            <li>
+                <code>(15.5 &times; 4) + (15.5 &times; 6) - (5.5 &times; 10) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p9')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p9">
+                    <p><strong>Prinsip:</strong> Sifat Distributif.</p>
+                    <p><strong>Langkah 1:</strong> Gunakan sifat distributif pada dua suku pertama: <code>15.5 &times; (4 + 6) - (5.5 &times; 10)</code>.</p>
+                    <p><strong>Langkah 2:</strong> Hitung dalam kurung: <code>15.5 &times; 10 - (5.5 &times; 10)</code>.</p>
+                    <p><strong>Langkah 3:</strong> Hitung perkalian: <code>155 - 55</code>.</p>
+                    <p><strong>Langkah 4:</strong> Hitung pengurangan: <code>155 - 55 = 100</code>.</p>
+                    <p><strong>Alternatif:</strong> Bisa juga faktorkan 10 di akhir: <code>10 &times; (15.5 - 5.5) = 10 &times; 10 = 100</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>100</code></p>
+                </div>
+            </li>
+            <li>
+                <code>(205)&sup2; - (195)&sup2; = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p10')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p10">
+                    <p><strong>Prinsip:</strong> Selisih Dua Kuadrat (a&sup2; - b&sup2; = (a-b)(a+b)).</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi a = 205 dan b = 195.</p>
+                    <p><strong>Langkah 2:</strong> Hitung (a-b): <code>205 - 195 = 10</code>.</p>
+                    <p><strong>Langkah 3:</strong> Hitung (a+b): <code>205 + 195 = 400</code>.</p>
+                    <p><strong>Langkah 4:</strong> Kalikan hasilnya: <code>10 &times; 400 = 4000</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>4000</code></p>
+                </div>
+            </li>
+            <li>
+                <code>876 &times; 876 - 876 &times; 875 = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p11')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p11">
+                    <p><strong>Prinsip:</strong> Sifat Distributif (a &times; b - a &times; c = a &times; (b-c)).</p>
+                    <p>Soal: <code>876 &times; 876 - 876 &times; 875</code></p>
+                    <p><strong>Langkah 1: Identifikasi Suku-suku</strong></p>
+                    <p>Suku pertama: <code>876 &times; 876</code></p>
+                    <p>Suku kedua: <code>876 &times; 875</code></p>
+                    <p><strong>Langkah 2: Temukan Faktor yang Sama</strong></p>
+                    <p>Angka <code>876</code> adalah faktor yang sama (nilai 'a' dalam rumus).</p>
+                    <p><strong>Langkah 3: Terapkan Sifat Distributif</strong></p>
+                    <p>Dengan a = 876, b = 876, dan c = 875, maka:</p>
+                    <p><code>876 &times; (876 - 875)</code></p>
+                    <p><strong>Langkah 4: Selesaikan Operasi dalam Kurung</strong></p>
+                    <p><code>876 - 875 = 1</code></p>
+                    <p><strong>Langkah 5: Kalikan Hasilnya</strong></p>
+                    <p><code>876 &times; 1 = 876</code></p>
+                    <p><strong>Jawaban:</strong> <code>876</code></p>
+                </div>
+            </li>
+            <li>
+                <code>501 &times; 501 - 500 &times; 502 = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p12')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p12">
+                    <p><strong>Prinsip:</strong> Pola x&sup2; - (x-1)(x+1) = 1.</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi x = 501.</p>
+                    <p><strong>Langkah 2:</strong> Ekspresi adalah <code>501&sup2; - (501-1)(501+1)</code>.</p>
+                    <p><strong>Langkah 3:</strong> Kita tahu bahwa <code>(x-1)(x+1) = x&sup2; - 1&sup2; = x&sup2; - 1</code>.</p>
+                    <p><strong>Langkah 4:</strong> Maka, <code>x&sup2; - (x&sup2; - 1) = x&sup2; - x&sup2; + 1 = 1</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>1</code></p>
+                </div>
+            </li>
+        </ol>
+
+        <h2>Tingkat 4: Sulit</h2>
+        <ol start="13">
+            <li>
+                <code>(7.256)&sup2; - (7.256 &times; 6.256) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p13')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p13">
+                    <p><strong>Prinsip:</strong> Sifat Distributif (a&sup2; - ab = a(a-b)).</p>
+                    <p>Soal: <code>(7.256)&sup2; - (7.256 &times; 6.256)</code></p>
+                    <p><strong>Langkah 1: Tulis Ulang Suku Pertama</strong></p>
+                    <p><code>(7.256)&sup2;</code> sama dengan <code>7.256 &times; 7.256</code>.</p>
+                    <p>Maka soal menjadi: <code>(7.256 &times; 7.256) - (7.256 &times; 6.256)</code></p>
+                    <p><strong>Langkah 2: Temukan Faktor yang Sama</strong></p>
+                    <p>Angka <code>7.256</code> adalah faktor yang sama (nilai 'a' dalam rumus a(a-b)).</p>
+                    <p><strong>Langkah 3: Terapkan Sifat Distributif</strong></p>
+                    <p>Dengan a = 7.256 (faktor pertama) dan b = 6.256 (faktor kedua di suku kedua):</p>
+                    <p><code>7.256 &times; (7.256 - 6.256)</code></p>
+                    <p><strong>Langkah 4: Selesaikan Operasi dalam Kurung</strong></p>
+                    <p><code>7.256 - 6.256 = 1</code></p>
+                    <p><strong>Langkah 5: Kalikan Hasilnya</strong></p>
+                    <p><code>7.256 &times; 1 = 7.256</code></p>
+                    <p><strong>Jawaban:</strong> <code>7.256</code></p>
+                </div>
+            </li>
+            <li>
+                <code>(123 + 77)&sup2; - (123 - 77)&sup2; = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p14')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p14">
+                    <p><strong>Prinsip:</strong> Identitas (a+b)&sup2; - (a-b)&sup2; = 4ab.</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi a = 123 dan b = 77.</p>
+                    <p><strong>Langkah 2:</strong> Gunakan rumus: <code>4 &times; a &times; b</code>.</p>
+                    <p><strong>Langkah 3:</strong> <code>4 &times; 123 &times; 77</code>.</p>
+                    <p><strong>Langkah 4:</strong> <code>4 &times; 123 = 492</code>.</p>
+                    <p><strong>Langkah 5:</strong> <code>492 &times; 77 = 37884</code>. (Bisa dihitung: 492 * 70 = 34440; 492 * 7 = 3444; 34440 + 3444 = 37884)</p>
+                    <p><strong>Alternatif:</strong> Hitung dalam kurung dulu: <code>(200)&sup2; - (46)&sup2;</code>. Lalu gunakan selisih dua kuadrat: <code>(200-46)(200+46) = 154 &times; 246 = 37884</code>. Ini lebih panjang.</p>
+                    <p><strong>Jawaban:</strong> <code>37884</code></p>
+                </div>
+            </li>
+            <li>
+                <code>(2024 &times; 2024) - (2020 &times; 2028) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p15')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p15">
+                    <p><strong>Prinsip:</strong> Pola x&sup2; - (x-k)(x+k) = k&sup2;.</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi x = 2024.</p>
+                    <p><strong>Langkah 2:</strong> Angka 2020 adalah <code>2024 - 4</code>, dan 2028 adalah <code>2024 + 4</code>. Jadi k = 4.</p>
+                    <p><strong>Langkah 3:</strong> Ekspresi adalah <code>x&sup2; - (x-k)(x+k)</code>.</p>
+                    <p><strong>Langkah 4:</strong> Kita tahu bahwa <code>(x-k)(x+k) = x&sup2; - k&sup2;</code>.</p>
+                    <p><strong>Langkah 5:</strong> Maka, <code>x&sup2; - (x&sup2; - k&sup2;) = x&sup2; - x&sup2; + k&sup2; = k&sup2;</code>.</p>
+                    <p><strong>Langkah 6:</strong> Hasilnya adalah <code>4&sup2; = 16</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>16</code></p>
+                </div>
+            </li>
+            <li>
+                Hitunglah: <code>(25 &times; 37) + (25 &times; 13) + (15 &times; 40) + (15 &times; 10)</code>
+                <button class="toggle-button" onclick="togglePembahasan('p16')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p16">
+                    <p><strong>Prinsip:</strong> Sifat Distributif (bertingkat).</p>
+                    <p><strong>Langkah 1:</strong> Kelompokkan dua suku pertama dan dua suku terakhir, faktorkan angka yang sama.</p>
+                    <p><code>25 &times; (37 + 13) + 15 &times; (40 + 10)</code></p>
+                    <p><strong>Langkah 2:</strong> Hitung operasi dalam kurung.</p>
+                    <p><code>25 &times; 50 + 15 &times; 50</code></p>
+                    <p><strong>Langkah 3:</strong> Sekarang, 50 adalah faktor yang sama. Faktorkan lagi.</p>
+                    <p><code>50 &times; (25 + 15)</code></p>
+                    <p><strong>Langkah 4:</strong> Hitung operasi dalam kurung.</p>
+                    <p><code>50 &times; 40</code></p>
+                    <p><strong>Langkah 5:</strong> Kalikan hasilnya.</p>
+                    <p><code>50 &times; 40 = 2000</code></p>
+                    <p><strong>Jawaban:</strong> <code>2000</code></p>
+                </div>
+            </li>
+        </ol>
+
+        <h2>Tingkat 5: Sangat Sulit</h2>
+        <ol start="17">
+            <li>
+                <code>(6543)&sup2; - (6541 &times; 6545) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p17')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p17">
+                    <p><strong>Prinsip:</strong> Pola x&sup2; - (x-k)(x+k) = k&sup2;.</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi x = 6543.</p>
+                    <p><strong>Langkah 2:</strong> Angka 6541 adalah <code>6543 - 2</code>, dan 6545 adalah <code>6543 + 2</code>. Jadi k = 2.</p>
+                    <p><strong>Langkah 3:</strong> Ekspresi adalah <code>x&sup2; - (x-k)(x+k)</code>.</p>
+                    <p><strong>Langkah 4:</strong> Kita tahu bahwa <code>(x-k)(x+k) = x&sup2; - k&sup2;</code>.</p>
+                    <p><strong>Langkah 5:</strong> Maka, <code>x&sup2; - (x&sup2; - k&sup2;) = x&sup2; - x&sup2; + k&sup2; = k&sup2;</code>.</p>
+                    <p><strong>Langkah 6:</strong> Hasilnya adalah <code>2&sup2; = 4</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>4</code></p>
+                </div>
+            </li>
+            <li>
+                Jika p = 1000 dan q = 2, hitunglah nilai dari: <code>(p+q)&sup2; - (p-q)&sup2;</code>
+                <button class="toggle-button" onclick="togglePembahasan('p18')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p18">
+                    <p><strong>Prinsip:</strong> Identitas (a+b)&sup2; - (a-b)&sup2; = 4ab.</p>
+                    <p><strong>Langkah 1:</strong> Identifikasi a = p dan b = q.</p>
+                    <p><strong>Langkah 2:</strong> Substitusi nilai p dan q ke dalam rumus: <code>4 &times; p &times; q</code>.</p>
+                    <p><strong>Langkah 3:</strong> <code>4 &times; 1000 &times; 2</code>.</p>
+                    <p><strong>Langkah 4:</strong> <code>4 &times; 2000 = 8000</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>8000</code></p>
+                </div>
+            </li>
+            <li>
+                <code>((8.75)&sup2; - (1.25)&sup2;) / ((5.5)&sup2; - (4.5)&sup2;) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p19')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p19">
+                    <p><strong>Prinsip:</strong> Selisih Dua Kuadrat (a&sup2; - b&sup2; = (a-b)(a+b)) untuk pembilang dan penyebut.</p>
+                    <p><strong>Pembilang:</strong> <code>(8.75)&sup2; - (1.25)&sup2;</code></p>
+                    <p><strong>Langkah 1:</strong> a = 8.75, b = 1.25.</p>
+                    <p><strong>Langkah 2:</strong> (a-b) = <code>8.75 - 1.25 = 7.5</code>.</p>
+                    <p><strong>Langkah 3:</strong> (a+b) = <code>8.75 + 1.25 = 10</code>.</p>
+                    <p><strong>Langkah 4:</strong> Hasil pembilang = <code>7.5 &times; 10 = 75</code>.</p>
+                    <p><strong>Penyebut:</strong> <code>(5.5)&sup2; - (4.5)&sup2;</code></p>
+                    <p><strong>Langkah 5:</strong> a = 5.5, b = 4.5.</p>
+                    <p><strong>Langkah 6:</strong> (a-b) = <code>5.5 - 4.5 = 1</code>.</p>
+                    <p><strong>Langkah 7:</strong> (a+b) = <code>5.5 + 4.5 = 10</code>.</p>
+                    <p><strong>Langkah 8:</strong> Hasil penyebut = <code>1 &times; 10 = 10</code>.</p>
+                    <p><strong>Hasil Akhir:</strong></p>
+                    <p><strong>Langkah 9:</strong> <code>Pembilang / Penyebut = 75 / 10 = 7.5</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>7.5</code></p>
+                </div>
+            </li>
+            <li>
+                Nilai dari <code>(2023 &times; 2023 + 2023 &times; 2027 + 2025 &times; 2023 + 2025 &times; 2027) / (2024 &times; 4050) = ...</code>
+                <button class="toggle-button" onclick="togglePembahasan('p20')">Lihat Pembahasan</button>
+                <div class="pembahasan" id="p20">
+                    <p><strong>Prinsip:</strong> Faktorisasi Bertingkat pada pembilang.</p>
+                    <p><strong>Pembilang:</strong> <code>(2023 &times; 2023 + 2023 &times; 2027) + (2025 &times; 2023 + 2025 &times; 2027)</code></p>
+                    <p><strong>Langkah 1:</strong> Faktorkan 2023 dari dua suku pertama dan 2025 dari dua suku terakhir.</p>
+                    <p><code>2023 &times; (2023 + 2027) + 2025 &times; (2023 + 2027)</code></p>
+                    <p><strong>Langkah 2:</strong> Hitung operasi dalam kurung.</p>
+                    <p><code>(2023 + 2027) = 4050</code></p>
+                    <p><strong>Langkah 3:</strong> Pembilang menjadi <code>2023 &times; 4050 + 2025 &times; 4050</code>.</p>
+                    <p><strong>Langkah 4:</strong> Faktorkan 4050.</p>
+                    <p><code>4050 &times; (2023 + 2025)</code></p>
+                    <p><strong>Langkah 5:</strong> Hitung operasi dalam kurung.</p>
+                    <p><code>(2023 + 2025) = 4048</code></p>
+                    <p><strong>Langkah 6:</strong> Jadi, pembilang adalah <code>4050 &times; 4048</code>.</p>
+                    <p><strong>Penyebut:</strong> <code>2024 &times; 4050</code></p>
+                    <p><strong>Hasil Akhir:</strong></p>
+                    <p><strong>Langkah 7:</strong> <code>(4050 &times; 4048) / (2024 &times; 4050)</code></p>
+                    <p><strong>Langkah 8:</strong> Angka 4050 bisa dicoret dari pembilang dan penyebut.</p>
+                    <p><code>4048 / 2024</code></p>
+                    <p><strong>Langkah 9:</strong> <code>4048 / 2024 = 2</code>.</p>
+                    <p><strong>Jawaban:</strong> <code>2</code></p>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        function togglePembahasan(id) {
+            var element = document.getElementById(id);
+            var button = element.previousElementSibling;
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+                button.textContent = "Sembunyikan Pembahasan";
+            } else {
+                element.style.display = "none";
+                button.textContent = "Lihat Pembahasan";
+            }
+        }
+    </script>
+</body>
+</html>

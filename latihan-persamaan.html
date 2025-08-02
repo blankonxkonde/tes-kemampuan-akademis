@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Persamaan Matematika</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .problem {
+            background: #fdfdfd;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .problem-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .options {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .options li {
+            margin-bottom: 8px;
+        }
+        .solution {
+            background: #e9ecef;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin-top: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Latihan Soal Persamaan Matematika</h1>
+
+        <!-- Tingkat 1: Sangat Mudah -->
+        <div class="section">
+            <h2>Tingkat 1: Sangat Mudah</h2>
+            <p>Soal-soal di tingkat ini berfokus pada substitusi langsung atau penyelesaian persamaan linear sederhana.</p>
+
+            <div class="problem">
+                <div class="problem-title">Soal 1</div>
+                <p>Jika \(x + 5 = 12\), maka nilai dari \(2x - 1\) adalah...</p>
+                <ul class="options">
+                    <li>A. 10</li>
+                    <li>B. 13</li>
+                    <li>C. 15</li>
+                    <li>D. 23</li>
+                </ul>
+                <button onclick="toggleSolution('sol1')">Tampilkan Solusi</button>
+                <div id="sol1" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Cari nilai \(x\) dari persamaan \(x + 5 = 12\).</li>
+                        \[\begin{align*} x + 5 &= 12 \\ x &= 12 - 5 \\ x &= 7 \end{align*}\]
+                        <li>Substitusikan nilai \(x=7\) ke dalam ekspresi \(2x - 1\).</li>
+                        \[\begin{align*} 2x - 1 &= 2(7) - 1 \\ &= 14 - 1 \\ &= 13 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 13</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 2</div>
+                <p>Jika \(a = 3\) dan \(b = 4\), maka nilai dari \(\sqrt{a^2 + b^2}\) adalah...</p>
+                <ul class="options">
+                    <li>A. 5</li>
+                    <li>B. 7</li>
+                    <li>C. 25</li>
+                    <li>D. 49</li>
+                </ul>
+                <button onclick="toggleSolution('sol2')">Tampilkan Solusi</button>
+                <div id="sol2" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Substitusikan nilai \(a=3\) dan \(b=4\) ke dalam ekspresi \(\sqrt{a^2 + b^2}\).</li>
+                        \[\begin{align*} \sqrt{a^2+b^2} &= \sqrt{3^2+4^2} \\ &= \sqrt{9+16} \\ &= \sqrt{25} \\ &= 5 \end{align*}\]
+                    </ol>
+                    <p>Ini adalah penerapan teorema Pythagoras. Jawabannya adalah <strong>A. 5</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 3</div>
+                <p>Dalam persamaan \(3y = 15\), nilai dari \(y+2\) adalah...</p>
+                <ul class="options">
+                     <li>A. 5</li>
+                    <li>B. 7</li>
+                    <li>C. 17</li>
+                    <li>D. 20</li>
+                </ul>
+                <button onclick="toggleSolution('sol3')">Tampilkan Solusi</button>
+                <div id="sol3" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Selesaikan persamaan \(3y = 15\) untuk menemukan \(y\).</li>
+                        \[\begin{align*} 3y &= 15 \\ y &= \frac{15}{3} \\ y &= 5 \end{align*}\]
+                        <li>Hitung nilai dari \(y+2\).</li>
+                        \[\begin{align*} y+2 &= 5+2 \\ &= 7 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 7</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 4</div>
+                <p>Jika \(p - q = 5\) dan \(p = 8\), maka nilai \(q\) adalah...</p>
+                <ul class="options">
+                    <li>A. 3</li>
+                    <li>B. -3</li>
+                    <li>C. 13</li>
+                    <li>D. -13</li>
+                </ul>
+                <button onclick="toggleSolution('sol4')">Tampilkan Solusi</button>
+                <div id="sol4" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Substitusikan nilai \(p=8\) ke dalam persamaan \(p - q = 5\).</li>
+                        \[\begin{align*} 8-q &= 5 \\ -q &= 5-8 \\ -q &= -3 \\ q &= 3 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>A. 3</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tingkat 2: Mudah -->
+        <div class="section">
+            <h2>Tingkat 2: Mudah</h2>
+            <p>Soal-soal di tingkat ini memerlukan manipulasi aljabar dasar atau pengenalan pola sederhana.</p>
+            
+            <div class="problem">
+                <div class="problem-title">Soal 5</div>
+                <p>Jika \(xy = 8\) dan \(x^2 + y^2 = 13\), maka nilai dari \((x + y)^2\) adalah...</p>
+                <ul class="options">
+                    <li>A. 21</li>
+                    <li>B. 29</li>
+                    <li>C. 42</li>
+                    <li>D. 104</li>
+                </ul>
+                <button onclick="toggleSolution('sol5')">Tampilkan Solusi</button>
+                <div id="sol5" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Gunakan identitas aljabar untuk \((x+y)^2\).</li>
+                        \[(x+y)^2 = x^2 + 2xy + y^2\]
+                        <li>Kelompokkan suku yang nilainya sudah diketahui.</li>
+                        \[(x+y)^2 = (x^2 + y^2) + 2(xy)\]
+                        <li>Substitusikan nilai yang diberikan: \(x^2 + y^2 = 13\) dan \(xy = 8\).</li>
+                        \[\begin{align*} (x+y)^2 &= (13) + 2(8) \\ &= 13 + 16 \\ &= 29 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 29</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 6</div>
+                <p>Jika \(a - b = 3\) dan \(a + b = 7\), maka nilai dari \(a \cdot b\) adalah...</p>
+                <ul class="options">
+                    <li>A. 4</li>
+                    <li>B. 10</li>
+                    <li>C. 21</li>
+                    <li>D. 40</li>
+                </ul>
+                <button onclick="toggleSolution('sol6')">Tampilkan Solusi</button>
+                <div id="sol6" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian (Metode 1: Eliminasi):</div>
+                    <ol>
+                        <li>Selesaikan sistem persamaan untuk menemukan \(a\) dan \(b\).</li>
+                        \[ \begin{cases} a + b = 7 \\ a - b = 3 \end{cases} \]
+                        <li>Jumlahkan kedua persamaan untuk mengeliminasi \(b\).</li>
+                        \[\begin{align*} (a+b)+(a-b) &= 7+3 \\ 2a &= 10 \\ a &= 5 \end{align*}\]
+                        <li>Substitusikan \(a=5\) ke persamaan pertama.</li>
+                        \[\begin{align*} 5+b &= 7 \\ b &= 2 \end{align*}\]
+                        <li>Hitung \(a \cdot b\).</li>
+                        \[5 \cdot 2 = 10\]
+                    </ol>
+                     <div class="solution-title">Langkah Penyelesaian (Metode 2: Identitas Aljabar):</div>
+                     <ol>
+                         <li>Gunakan identitas \((a+b)^2 - (a-b)^2 = 4ab\).</li>
+                         <li>Substitusikan nilai yang diketahui.</li>
+                         \[(7)^2 - (3)^2 = 4ab\]
+                         \[49 - 9 = 4ab\]
+                         \[40 = 4ab\]
+                         \[ab = 10\]
+                     </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 10</strong>.</p>
+                </div>
+            </div>
+
+             <div class="problem">
+                <div class="problem-title">Soal 7</div>
+                <p>Jika \(\frac{1}{x} + \frac{1}{y} = 5\) dan \(x+y=10\), maka nilai dari \(xy\) adalah...</p>
+                <ul class="options">
+                    <li>A. 0.5</li>
+                    <li>B. 1</li>
+                    <li>C. 2</li>
+                    <li>D. 50</li>
+                </ul>
+                <button onclick="toggleSolution('sol7')">Tampilkan Solusi</button>
+                <div id="sol7" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Sederhanakan persamaan pertama dengan menyamakan penyebut.</li>
+                        \[\frac{1}{x} + \frac{1}{y} = \frac{y+x}{xy}\]
+                        <li>Kita tahu bahwa \(\frac{y+x}{xy} = 5\).</li>
+                        <li>Substitusikan nilai \(x+y=10\) ke dalam persamaan yang telah disederhanakan.</li>
+                        \[\frac{10}{xy} = 5\]
+                        <li>Selesaikan untuk \(xy\).</li>
+                        \[\begin{align*} 10 &= 5 \cdot xy \\ \frac{10}{5} &= xy \\ 2 &= xy \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>C. 2</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 8</div>
+                <p>Jika \(x^2 - y^2 = 24\) dan \(x + y = 6\), maka nilai dari \(x - y\) adalah...</p>
+                <ul class="options">
+                    <li>A. 3</li>
+                    <li>B. 4</li>
+                    <li>C. 12</li>
+                    <li>D. 18</li>
+                </ul>
+                <button onclick="toggleSolution('sol8')">Tampilkan Solusi</button>
+                <div id="sol8" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Gunakan identitas selisih dua kuadrat: \(x^2 - y^2 = (x-y)(x+y)\).</li>
+                        <li>Substitusikan nilai yang diketahui ke dalam identitas.</li>
+                        \[24 = (x-y)(6)\]
+                        <li>Selesaikan untuk \((x-y)\).</li>
+                        \[\begin{align*} \frac{24}{6} &= x-y \\ 4 &= x-y \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 4</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tingkat 3: Sedang -->
+        <div class="section">
+            <h2>Tingkat 3: Sedang</h2>
+            <p>Soal-soal ini memerlukan manipulasi yang lebih kompleks atau pengenalan identitas aljabar yang kurang umum.</p>
+
+            <div class="problem">
+                <div class="problem-title">Soal 9</div>
+                <p>Jika \(x + \frac{1}{x} = 3\), maka nilai dari \(x^2 + \frac{1}{x^2}\) adalah...</p>
+                <ul class="options">
+                    <li>A. 5</li>
+                    <li>B. 7</li>
+                    <li>C. 9</li>
+                    <li>D. 11</li>
+                </ul>
+                <button onclick="toggleSolution('sol9')">Tampilkan Solusi</button>
+                <div id="sol9" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Mulai dengan mengkuadratkan persamaan yang diberikan.</li>
+                        \[\left(x + \frac{1}{x}\right)^2 = 3^2\]
+                        <li>Jabarkan sisi kiri.</li>
+                        \[\begin{align*} x^2 + 2(x)\left(\frac{1}{x}\right) + \left(\frac{1}{x}\right)^2 &= 9 \\ x^2 + 2 + \frac{1}{x^2} &= 9 \end{align*}\]
+                        <li>Isolasi ekspresi yang dicari.</li>
+                        \[\begin{align*} x^2 + \frac{1}{x^2} &= 9 - 2 \\ x^2 + \frac{1}{x^2} &= 7 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 7</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 10</div>
+                <p>Jika \(a\) dan \(b\) adalah akar-akar dari persamaan kuadrat \(x^2 - 5x + 7 = 0\), maka nilai dari \(a^2 + b^2\) adalah...</p>
+                <ul class="options">
+                    <li>A. 11</li>
+                    <li>B. 19</li>
+                    <li>C. 25</li>
+                    <li>D. 39</li>
+                </ul>
+                <button onclick="toggleSolution('sol10')">Tampilkan Solusi</button>
+                <div id="sol10" class="solution">
+                    <div class="solution-title">Analisis Faktorisasi Sederhana</div>
+                    <p>
+                        Langkah pertama yang sering dicoba adalah faktorisasi sederhana. Kita mencari dua bilangan yang jika dikalikan menghasilkan koefisien konstanta (\(c=7\)) dan jika dijumlahkan menghasilkan koefisien \(x\) (\(b=-5\)).
+                    </p>
+                    <ul>
+                        <li>Faktor dari 7 adalah (1, 7) dan (-1, -7).</li>
+                        <li>Pemeriksaan jumlah:
+                            <ul>
+                                <li>\(1 + 7 = 8\) (Tidak cocok)</li>
+                                <li>\(-1 + (-7) = -8\) (Tidak cocok)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        Karena tidak ada pasangan faktor bilangan bulat yang berjumlah -5, persamaan ini tidak dapat diselesaikan dengan faktorisasi sederhana. Ini mengindikasikan bahwa akarnya bukanlah bilangan bulat, yang mendorong kita untuk menggunakan metode lain.
+                    </p>
+
+                    <div class="solution-title" style="margin-top: 20px;">Langkah Penyelesaian (Metode 1: Teorema Vieta - Cerdas & Cepat):</div>
+                    <ol>
+                        <li>Gunakan Teorema Vieta untuk menemukan jumlah dan hasil kali akar. Untuk \(Ax^2+Bx+C=0\):</li>
+                        <li>Jumlah akar: \(a+b = -\frac{B}{A} = -\frac{-5}{1} = 5\).</li>
+                        <li>Hasil kali akar: \(ab = \frac{C}{A} = \frac{7}{1} = 7\).</li>
+                        <li>Gunakan identitas \(a^2+b^2 = (a+b)^2 - 2ab\).</li>
+                        <li>Substitusikan nilai yang didapat.</li>
+                        \[\begin{align*} a^2+b^2 &= (5)^2 - 2(7) \\ &= 25 - 14 \\ &= 11 \end{align*}\]
+                    </ol>
+                    <div class="solution-title" style="margin-top: 20px;">Langkah Penyelesaian (Metode 2: Mencari Akar Langsung):</div>
+                    <p>Metode ini secara teknis adalah bentuk faktorisasi paling fundamental, namun tidak praktis karena melibatkan bilangan kompleks.</p>
+                    <ol>
+                        <li>Periksa diskriminan (\(D=b^2-4ac\)) untuk menentukan sifat akar.</li>
+                        \[\begin{align*} D &= b^2-4ac \\ &= (-5)^2 - 4(1)(7) \\ &= 25 - 28 \\ &= -3 \end{align*}\]
+                        <li>Karena \(D < 0\), akar-akarnya adalah bilangan kompleks. Kita cari menggunakan rumus ABC.</li>
+                        \[x = \frac{-(-5) \pm \sqrt{-3}}{2(1)} = \frac{5 \pm i\sqrt{3}}{2}\]
+                        <li>Jadi, kedua akarnya adalah \(a = \frac{5 + i\sqrt{3}}{2}\) dan \(b = \frac{5 - i\sqrt{3}}{2}\).</li>
+                        <li>Sekarang, hitung kuadrat dari masing-masing akar.</li>
+                        \begin{align*}
+                        a^2 &= \left(\frac{5 + i\sqrt{3}}{2}\right)^2 = \frac{25 + 10i\sqrt{3} + (i\sqrt{3})^2}{4} \\
+                        &= \frac{25 + 10i\sqrt{3} - 3}{4} = \frac{22 + 10i\sqrt{3}}{4} = \frac{11 + 5i\sqrt{3}}{2}
+                        \end{align*}
+                        \begin{align*}
+                        b^2 &= \left(\frac{5 - i\sqrt{3}}{2}\right)^2 = \frac{25 - 10i\sqrt{3} + (i\sqrt{3})^2}{4} \\
+                        &= \frac{25 - 10i\sqrt{3} - 3}{4} = \frac{22 - 10i\sqrt{3}}{4} = \frac{11 - 5i\sqrt{3}}{2}
+                        \end{align*}
+                        <li>Jumlahkan hasilnya. Suku imajiner akan saling menghilangkan.</li>
+                        \[a^2 + b^2 = \left(\frac{11 + 5i\sqrt{3}}{2}\right) + \left(\frac{11 - 5i\sqrt{3}}{2}\right) = \frac{22}{2} = 11\]
+                    </ol>
+                    <p>Meskipun hasilnya sama, metode Teorema Vieta jauh lebih unggul dalam kecepatan dan kesederhanaan. Ini menunjukkan pentingnya mengenali pola daripada melakukan perhitungan langsung.</p>
+                    <p>Jadi, jawabannya adalah <strong>A. 11</strong>.</p>
+                </div>
+            </div>
+            
+            <div class="problem">
+                <div class="problem-title">Soal 11</div>
+                <p>Jika \(x = \sqrt{7} + \sqrt{6}\) dan \(y = \sqrt{7} - \sqrt{6}\), maka nilai dari \(x^2 + y^2\) adalah...</p>
+                <ul class="options">
+                    <li>A. 1</li>
+                    <li>B. 13</li>
+                    <li>C. 26</li>
+                    <li>D. \(2\sqrt{42}\)</li>
+                </ul>
+                <button onclick="toggleSolution('sol11')">Tampilkan Solusi</button>
+                <div id="sol11" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian (Metode Cerdas):</div>
+                     <ol>
+                        <li>Cari nilai \(x+y\) dan \(xy\).</li>
+                        <li>
+                            <p>Penjumlahan \(x+y\):</p>
+                            \[\begin{align*} x+y &= (\sqrt{7} + \sqrt{6}) + (\sqrt{7} - \sqrt{6}) \\ &= 2\sqrt{7} \end{align*}\]
+                        </li>
+                        <li>
+                            <p>Perkalian \(xy\):</p>
+                            \[\begin{align*} xy &= (\sqrt{7} + \sqrt{6})(\sqrt{7} - \sqrt{6}) \\ &= (\sqrt{7})^2 - (\sqrt{6})^2 \\ &= 7 - 6 \\ &= 1 \end{align*}\]
+                        </li>
+                        <li>Gunakan identitas \(x^2+y^2 = (x+y)^2 - 2xy\).</li>
+                        \[\begin{align*} x^2+y^2 &= (2\sqrt{7})^2 - 2(1) \\ &= 4 \cdot 7 - 2 \\ &= 28-2 \\ &= 26 \end{align*}\]
+                    </ol>
+                     <div class="solution-title">Langkah Penyelesaian (Metode Langsung):</div>
+                     <ol>
+                        <li>Hitung \(x^2\) dan \(y^2\) secara langsung.</li>
+                        <li>
+                            <p>Menghitung \(x^2\):</p>
+                            \[\begin{align*} x^2 &= (\sqrt{7} + \sqrt{6})^2 \\ &= (\sqrt{7})^2 + 2\sqrt{7}\sqrt{6} + (\sqrt{6})^2 \\ &= 7 + 2\sqrt{42} + 6 \\ &= 13 + 2\sqrt{42} \end{align*}\]
+                        </li>
+                        <li>
+                            <p>Menghitung \(y^2\):</p>
+                            \[\begin{align*} y^2 &= (\sqrt{7} - \sqrt{6})^2 \\ &= (\sqrt{7})^2 - 2\sqrt{7}\sqrt{6} + (\sqrt{6})^2 \\ &= 7 - 2\sqrt{42} + 6 \\ &= 13 - 2\sqrt{42} \end{align*}\]
+                        </li>
+                         <li>Jumlahkan hasilnya.</li>
+                         \[\begin{align*} x^2+y^2 &= (13 + 2\sqrt{42}) + (13 - 2\sqrt{42}) \\ &= 26 \end{align*}\]
+                     </ol>
+                    <p>Jadi, jawabannya adalah <strong>C. 26</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 12</div>
+                <p>Jika \(x+y=1\) dan \(x^2+y^2=2\), maka nilai dari \(x^3+y^3\) adalah...</p>
+                <ul class="options">
+                    <li>A. 2</li>
+                    <li>B. 2.5</li>
+                    <li>C. 3</li>
+                    <li>D. 3.5</li>
+                </ul>
+                <button onclick="toggleSolution('sol12')">Tampilkan Solusi</button>
+                <div id="sol12" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Gunakan identitas \(x^3+y^3 = (x+y)(x^2 - xy + y^2)\).</li>
+                        <li>Kita sudah tahu \(x+y=1\) dan \(x^2+y^2=2\), tapi kita perlu nilai \(xy\).</li>
+                        <li>Cari \(xy\) dari identitas \((x+y)^2 = x^2+y^2+2xy\).</li>
+                        \[\begin{align*} 1^2 &= 2 + 2xy \\ 1 - 2 &= 2xy \\ -1 &= 2xy \\ -0.5 &= xy \end{align*}\]
+                        <li>Substitusikan semua nilai yang diketahui ke identitas \(x^3+y^3\).</li>
+                        \[\begin{align*} x^3+y^3 &= (1)( (x^2+y^2) - xy) \\ &= (1)(2 - (-0.5)) \\ &= 2.5 \end{align*}\]
+                    </ol>
+
+                    <div class="solution-title" style="margin-top: 20px; color: #dc3545;">Catatan: Analisis Formula Alternatif</div>
+                    <p>
+                        Sangat wajar untuk bertanya apakah ada formula lain yang bisa digunakan, misalnya \(x^3+y^3 = (x+y)(x^2+y^2)\). Mari kita uji validitas formula ini.
+                    </p>
+                    <p><b>Mengapa \(x^3+y^3 \ne (x+y)(x^2+y^2)\)?</b></p>
+                    <p>
+                        Jika kita jabarkan sisi kanan:
+                    </p>
+                    \[
+                    \begin{align*}
+                    (x+y)(x^2+y^2) &= x(x^2+y^2) + y(x^2+y^2) \\
+                    &= (x^3 + xy^2) + (x^2y + y^3) \\
+                    &= x^3 + y^3 + xy(x+y)
+                    \end{align*}
+                    \]
+                    <p>
+                        Hasil penjabarannya adalah \(x^3 + y^3 + xy(x+y)\), yang jelas <strong>tidak sama</strong> dengan \(x^3+y^3\) karena adanya suku tambahan \(xy(x+y)\).
+                    </p>
+                    <p><b>Kesimpulan</b></p>
+                    <p>
+                        Menggunakan formula yang tidak tepat akan menghasilkan jawaban yang salah. Oleh karena itu, penting untuk selalu mengandalkan identitas aljabar yang sudah terbukti benar, seperti:
+                        \[x^3+y^3 = (x+y)(x^2 - xy + y^2)\]
+                        Meskipun dari penjabaran di atas kita bisa mendapatkan formula alternatif yang valid (\(x^3 + y^3 = (x+y)(x^2+y^2) - xy(x+y)\)), formula tersebut pada dasarnya sama dan tetap memerlukan nilai \(xy\), sehingga tidak lebih sederhana dari identitas aslinya.
+                    </p>
+
+                    <p>Jadi, jawabannya adalah <strong>B. 2.5</strong>.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tingkat 4: Sulit -->
+        <div class="section">
+            <h2>Tingkat 4: Sulit</h2>
+            <p>Soal-soal ini menuntut substitusi cerdas, pemahaman mendalam tentang sifat polinomial, atau penerapan teorema lanjutan.</p>
+            
+            <div class="problem">
+                <div class="problem-title">Soal 13</div>
+                <p>Jika \(x^2 - x - 1 = 0\), maka nilai dari \(x^3 - 2x + 1\) adalah...</p>
+                <ul class="options">
+                    <li>A. 0</li>
+                    <li>B. 1</li>
+                    <li>C. 2</li>
+                    <li>D. \(1 + \sqrt{5}\)</li>
+                </ul>
+                <button onclick="toggleSolution('sol13')">Tampilkan Solusi</button>
+                <div id="sol13" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian (Metode Substitusi Berulang)</div>
+                    <ol>
+                        <li>Dari persamaan soal \(x^2 - x - 1 = 0\), kita bisa menyusun ulang menjadi:
+                        \[x^2 = x+1 \quad \textbf{(Persamaan 1)}\]</li>
+                        <li>Untuk mencari \(x^3\), kita kalikan kedua sisi <strong>Persamaan 1</strong> dengan \(x\):
+                        \[\begin{align*}
+                        x \cdot x^2 &= x(x+1) \\
+                        x^3 &= x^2+x \quad \textbf{(Persamaan 2)}
+                        \end{align*}\]</li>
+                        <li><strong>Persamaan 2</strong> masih mengandung suku \(x^2\). Kita bisa substitusikan lagi <strong>Persamaan 1</strong> ke dalamnya untuk menyederhanakan:
+                         \[\begin{align*}
+                         x^3 &= (x+1) + x \\
+                         &= 2x+1 \quad \textbf{(Persamaan 3)}
+                         \end{align*}\]</li>
+                        <li>Sekarang kita punya bentuk sederhana untuk \(x^3\). Substitusikan <strong>Persamaan 3</strong> ke dalam ekspresi yang ditanyakan:
+                        \[\begin{align*}
+                        x^3 - 2x + 1 &= (2x+1) - 2x + 1
+                        \end{align*}\]</li>
+                        <li>Sederhanakan untuk mendapatkan hasil akhir:
+                        \[\begin{align*}
+                        2x - 2x + 1 + 1 = 2
+                        \end{align*}\]</li>
+                    </ol>
+
+                    <div class="solution-title" style="margin-top: 20px;">Catatan Tambahan</div>
+                     <p>
+                        Sangat sah secara matematis untuk mensubstitusikan <strong>Persamaan 1</strong> berulang kali. Persamaan awal menetapkan sebuah "aturan" yang menyatakan bahwa ekspresi \(x^2\) setara dengan \(x+1\) dalam konteks soal ini. Dengan menggunakan aturan ini berulang kali, kita dapat menyederhanakan polinomial pangkat tinggi.
+                    </p>
+                    <p>
+                        Metode alternatif adalah dengan <strong>pembagian polinomial</strong>. Nilai dari \(x^3 - 2x + 1\) adalah sisa dari pembagiannya oleh \(x^2 - x - 1\), yang juga menghasilkan 2.
+                    </p>
+
+                    <p>Jadi, jawabannya adalah <strong>C. 2</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 14</div>
+                <p>Jika \(a, b, c\) adalah bilangan riil sehingga \(a+b+c=0\) dan \(a^2+b^2+c^2=1\), maka nilai dari \(a^4+b^4+c^4\) adalah...</p>
+                <ul class="options">
+                    <li>A. 0.25</li>
+                    <li>B. 0.5</li>
+                    <li>C. 1</li>
+                    <li>D. 2</li>
+                </ul>
+                <button onclick="toggleSolution('sol14')">Tampilkan Solusi</button>
+                <div id="sol14" class="solution">
+                    <div class="solution-title">Strategi: Membangun Informasi Bertahap</div>
+                    <p>Soal ini diselesaikan dengan tidak langsung mencari \(a^4+b^4+c^4\). Sebaliknya, kita menggunakan informasi yang diberikan untuk secara bertahap menghitung nilai dari ekspresi simetris lainnya yang akan kita butuhkan nanti.</p>
+                    
+                    <div class="solution-title" style="margin-top:15px;">Langkah 1: Mencari nilai dari \(ab+bc+ca\)</div>
+                    <ol>
+                        <li>Kita mulai dengan identitas kuadrat dari penjumlahan tiga variabel:</li>
+                        \[(a+b+c)^2 = a^2+b^2+c^2+2(ab+bc+ca)\]
+                        <li>Substitusikan nilai yang diketahui (\(a+b+c=0\) dan \(a^2+b^2+c^2=1\)) untuk mendapatkan hasil pertama kita.</li>
+                        \[\begin{align*} 0^2 &= 1 + 2(ab+bc+ca) \\ -1 &= 2(ab+bc+ca) \\ ab+bc+ca &= -0.5 \quad \textbf{(Hasil 1)} \end{align*}\]
+                    </ol>
+
+                    <div class="solution-title" style="margin-top:15px;">Langkah 2: Mencari nilai dari \(a^2b^2+b^2c^2+c^2a^2\)</div>
+                    <ol>
+                        <li>Selanjutnya, kita kuadratkan <strong>Hasil 1</strong>. Identitasnya adalah:</li>
+                        \[(ab+bc+ca)^2 = a^2b^2+b^2c^2+c^2a^2 + 2abc(a+b+c)\]
+                        <li>Substitusikan nilai dari <strong>Hasil 1</strong> (\(-0.5\)) dan nilai \(a+b+c=0\) dari soal.</li>
+                         \[\begin{align*} (-0.5)^2 &= a^2b^2+b^2c^2+c^2a^2 + 2abc(0) \\ 0.25 &= a^2b^2+b^2c^2+c^2a^2 \end{align*}\]
+                        <li>Kita simpan ini sebagai hasil kedua kita:
+                        \[a^2b^2+b^2c^2+c^2a^2 = 0.25 \quad \textbf{(Hasil 2)}\]</li>
+                    </ol>
+
+                    <div class="solution-title" style="margin-top:15px;">Langkah 3: Menghitung hasil akhir \(a^4+b^4+c^4\)</div>
+                    <ol>
+                        <li>Terakhir, kuadratkan persamaan \(a^2+b^2+c^2=1\).</li>
+                        \[(a^2+b^2+c^2)^2 = 1^2\]
+                        \[a^4+b^4+c^4+2(a^2b^2+b^2c^2+c^2a^2) = 1\]
+                        <li>Substitusikan nilai dari <strong>Hasil 2</strong> (yaitu 0.25) ke dalam persamaan ini.</li>
+                        \[\begin{align*} a^4+b^4+c^4+2(0.25) &= 1 \\ a^4+b^4+c^4+0.5 &= 1 \\ a^4+b^4+c^4 &= 1 - 0.5 \\ a^4+b^4+c^4 &= 0.5 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 0.5</strong>.</p>
+                </div>
+            </div>
+            
+            <div class="problem">
+                <div class="problem-title">Soal 15</div>
+                <p>Jika \(x + \frac{1}{x} = \sqrt{3}\), maka nilai dari \(x^5 + \frac{1}{x^5}\) adalah...</p>
+                 <ul class="options">
+                    <li>A. 0</li>
+                    <li>B. 1</li>
+                    <li>C. \(3\sqrt{3}\)</li>
+                    <li>D. \(2\sqrt{3}\)</li>
+                </ul>
+                <button onclick="toggleSolution('sol15')">Tampilkan Solusi</button>
+                <div id="sol15" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Gunakan identitas faktorisasi jumlah dua kubik:</li>
+                        \[x^3 + \frac{1}{x^3} = \left(x + \frac{1}{x}\right) \left(x^2 - x \cdot \frac{1}{x} + \frac{1}{x^2}\right)\]
+                        \[x^3 + \frac{1}{x^3} = \left(x + \frac{1}{x}\right) \left(x^2 - 1 + \frac{1}{x^2}\right)\]
+                        <li>Kita perlu mencari nilai \(x^2 + \frac{1}{x^2}\). Kita bisa dapatkan dengan mengkuadratkan persamaan awal.</li>
+                        \[\left(x + \frac{1}{x}\right)^2 = (\sqrt{3})^2\]
+                        \[\begin{align*} x^2 + 2 + \frac{1}{x^2} &= 3 \\ x^2 + \frac{1}{x^2} &= 1 \end{align*}\]
+                        <li>Substitusikan semua nilai yang diketahui ke dalam identitas dari langkah 1.</li>
+                        \[\begin{align*} x^3 + \frac{1}{x^3} &= (\sqrt{3}) ( (1) - 1 ) \\ &= \sqrt{3} \cdot 0 \\ &= 0 \end{align*}\]
+                    </ol>
+                    <p>Trik: Jika \(x+1/x=\sqrt{3}\), maka \(x^6 = -1\), yang mengimplikasikan \(x^3 + 1/x^3=0\). Jawabannya adalah <strong>A. 0</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 16</div>
+                <p>Diberikan \(x^2+y^2=1\) dan \(a^2+b^2=1\), nilai maksimum dari \(ax+by\) adalah...</p>
+                 <ul class="options">
+                    <li>A. 0.5</li>
+                    <li>B. 1</li>
+                    <li>C. 2</li>
+                    <li>D. Tergantung nilai variabel</li>
+                </ul>
+                <button onclick="toggleSolution('sol16')">Tampilkan Solusi</button>
+                <div id="sol16" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian (Metode Ketaksamaan Cauchy-Schwarz):</div>
+                    <ol>
+                        <li>Ketaksamaan Cauchy-Schwarz untuk dua dimensi menyatakan:</li>
+                        \[(ax+by)^2 \le (a^2+b^2)(x^2+y^2)\]
+                        <li>Substitusikan nilai yang diketahui dari soal.</li>
+                        \[(ax+by)^2 \le (1)(1) = 1\]
+                        <li>Ambil akar kuadrat dari kedua sisi.</li>
+                        \[-1 \le ax+by \le 1\]
+                        <li>Dari ketaksamaan ini, nilai maksimum yang mungkin untuk \(ax+by\) adalah 1.</li>
+                    </ol>
+                     <div class="solution-title">Langkah Penyelesaian (Metode Trigonometri):</div>
+                     <ol>
+                        <li>Karena \(x^2+y^2=1\) dan \(a^2+b^2=1\), kita bisa merepresentasikannya pada lingkaran satuan.</li>
+                        <li>Misalkan \(x=\cos\theta\), \(y=\sin\theta\) dan \(a=\cos\phi\), \(b=\sin\phi\).</li>
+                        <li>Substitusikan ke dalam ekspresi yang ditanyakan.</li>
+                        \[ax+by = \cos\phi\cos\theta + \sin\phi\sin\theta\]
+                        <li>Gunakan formula penjumlahan sudut untuk cosinus: \(\cos(A-B) = \cos A \cos B + \sin A \sin B\).</li>
+                        \[ax+by = \cos(\theta - \phi)\]
+                        <li>Nilai maksimum dari fungsi cosinus adalah 1.</li>
+                     </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 1</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tingkat 5: Sangat Sulit -->
+        <div class="section">
+            <h2>Tingkat 5: Sangat Sulit</h2>
+            <p>Soal-soal ini seringkali tampak sederhana namun menyembunyikan trik yang dalam atau memerlukan pemikiran non-konvensional.</p>
+
+            <div class="problem">
+                <div class="problem-title">Soal 17</div>
+                <p>Diberikan sistem persamaan: \(x+y+z=3\), \(x^2+y^2+z^2=3\), dan \(x^3+y^3+z^3=3\). Cari nilai dari \(xyz\)...</p>
+                <ul class="options">
+                    <li>A. 0</li>
+                    <li>B. 1</li>
+                    <li>C. 2</li>
+                    <li>D. 3</li>
+                </ul>
+                <button onclick="toggleSolution('sol17')">Tampilkan Solusi</button>
+                <div id="sol17" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Gunakan Identitas Newton (Newton's Sums). Misalkan \(p_k=x^k+y^k+z^k\) dan \(e_1=x+y+z\), \(e_2=xy+yz+zx\), \(e_3=xyz\).</li>
+                        <li>Identitas yang relevan adalah:</li>
+                        \[p_1 = e_1\]
+                        \[p_2 = e_1 p_1 - 2e_2\]
+                        \[p_3 = e_1 p_2 - e_2 p_1 + 3e_3\]
+                        <li>Substitusikan nilai yang diketahui: \(p_1=3, p_2=3, p_3=3\).</li>
+                        <li>Dari identitas pertama: \(3 = e_1\). Ini sesuai dengan soal.</li>
+                        <li>Dari identitas kedua: \(p_2 = e_1 p_1 - 2e_2 \Rightarrow 3 = (3)(3) - 2e_2 \Rightarrow 3 = 9 - 2e_2 \Rightarrow 2e_2 = 6 \Rightarrow e_2 = 3\).</li>
+                        <li>Dari identitas ketiga: \(p_3 = e_1 p_2 - e_2 p_1 + 3e_3 \Rightarrow 3 = (3)(3) - (3)(3) + 3e_3 \Rightarrow 3 = 9 - 9 + 3e_3 \Rightarrow 3 = 3e_3 \Rightarrow e_3 = 1\).</li>
+                        <li>Karena \(e_3 = xyz\), maka \(xyz=1\).</li>
+                    </ol>
+                    <p>Fakta menarik: Satu-satunya solusi riil untuk sistem ini adalah permutasi dari \((1,1,1)\), yang dengan jelas memberikan \(xyz=1\). Jawabannya adalah <strong>B. 1</strong>.</p>
+                </div>
+            </div>
+            
+            <div class="problem">
+                <div class="problem-title">Soal 18</div>
+                <p>Cari semua bilangan bulat positif \(n\) yang memenuhi persamaan \(n^2 + n + 1 = m^2\) di mana \(m\) juga bilangan bulat.</p>
+                <ul class="options">
+                    <li>A. Hanya n=1</li>
+                    <li>B. Semua bilangan ganjil</li>
+                    <li>C. Semua bilangan genap</li>
+                    <li>D. Tidak ada n yang memenuhi</li>
+                </ul>
+                <button onclick="toggleSolution('sol18')">Tampilkan Solusi</button>
+                <div id="sol18" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Perhatikan bahwa \(n^2 < n^2+n+1\) untuk \(n>0\).</li>
+                        <li>Perhatikan juga \((n+1)^2 = n^2+2n+1\).</li>
+                        <li>Bandingkan \(n^2+n+1\) dengan kuadrat sempurna di sekitarnya.</li>
+                        \[n^2 < n^2+n+1 < n^2+2n+1 = (n+1)^2\]
+                        <li>Ini menunjukkan bahwa untuk setiap bilangan bulat positif \(n\), ekspresi \(n^2+n+1\) terletak di antara dua bilangan kuadrat sempurna yang berurutan, yaitu \(n^2\) dan \((n+1)^2\).</li>
+                        <li>Karena tidak ada bilangan kuadrat sempurna di antara dua kuadrat sempurna berurutan, maka \(n^2+n+1\) tidak pernah bisa menjadi kuadrat sempurna.</li>
+                        <li>Dengan kata lain, tidak ada solusi bilangan bulat \(m\) untuk persamaan \(n^2+n+1=m^2\) ketika \(n\) adalah bilangan bulat positif.</li>
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>D. Tidak ada n yang memenuhi</strong>.</p>
+                </div>
+            </div>
+
+            <div class="problem">
+                <div class="problem-title">Soal 19</div>
+                <p>Jika \(x^2 + \frac{1}{x^2} = 7\), maka nilai positif dari \(x^5 + \frac{1}{x^5}\) adalah...</p>
+                 <ul class="options">
+                    <li>A. 58</li>
+                    <li>B. 123</li>
+                    <li>C. 140</li>
+                    <li>D. 178</li>
+                </ul>
+                <button onclick="toggleSolution('sol19')">Tampilkan Solusi</button>
+                <div id="sol19" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Kita perlu mencari \(x+1/x\), \(x^2+1/x^2\), dan \(x^3+1/x^3\). Kita bisa membangunnya secara bertahap.</li>
+                        <li>Cari \(x+1/x\). \((x+1/x)^2 = x^2+2+1/x^2 = (x^2+1/x^2)+2 = 7+2=9\). Maka \(x+1/x = \pm 3\). Kita asumsikan \(x+1/x=3\) untuk mendapatkan nilai positif.</li>
+                        <li>Cari \(x^3+1/x^3\). \((x+1/x)^3 = x^3+3x+3/x+1/x^3 = (x^3+1/x^3)+3(x+1/x)\).</li>
+                        \[\begin{align*} 3^3 &= (x^3+1/x^3) + 3(3) \\ 27 &= (x^3+1/x^3)+9 \\ 18 &= x^3+1/x^3 \end{align*}\]
+                        <li>Gunakan identitas: \((x^2+1/x^2)(x^3+1/x^3) = x^5 + 1/x + x + 1/x^5 = (x^5+1/x^5)+(x+1/x)\).</li>
+                        <li>Substitusikan semua nilai yang telah kita temukan.</li>
+                        \[\begin{align*} (7)(18) &= (x^5+1/x^5) + (3) \\ 126 &= (x^5+1/x^5) + 3 \\ 123 &= x^5+1/x^5 \end{align*}\]
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>B. 123</strong>.</p>
+                </div>
+            </div>
+            
+            <div class="problem">
+                <div class="problem-title">Soal 20</div>
+                <p>Jika \(x\), \(y\), dan \(z\) adalah bilangan riil positif yang memenuhi \(xy+yz+zx=1\), cari nilai minimum dari \(x^2+y^2+z^2\).</p>
+                 <ul class="options">
+                    <li>A. 1/3</li>
+                    <li>B. 1/2</li>
+                    <li>C. 1</li>
+                    <li>D. \(\sqrt{3}\)</li>
+                </ul>
+                <button onclick="toggleSolution('sol20')">Tampilkan Solusi</button>
+                <div id="sol20" class="solution">
+                    <div class="solution-title">Langkah Penyelesaian:</div>
+                    <ol>
+                        <li>Gunakan ketaksamaan yang terkenal: \(x^2+y^2+z^2 \ge xy+yz+zx\).</li>
+                        <li>Ketaksamaan ini dapat dibuktikan dengan menjumlahkan tiga ketaksamaan berikut:</li>
+                        \[x^2+y^2 \ge 2xy\]
+                        \[y^2+z^2 \ge 2yz\]
+                        \[z^2+x^2 \ge 2zx\]
+                        <li>Menjumlahkan ketiganya memberikan \(2(x^2+y^2+z^2) \ge 2(xy+yz+zx)\), yang menyederhanakan menjadi \(x^2+y^2+z^2 \ge xy+yz+zx\).</li>
+                        <li>Dari soal, kita tahu bahwa \(xy+yz+zx=1\).</li>
+                        <li>Maka, \(x^2+y^2+z^2 \ge 1\).</li>
+                        <li>Nilai minimum ini tercapai ketika kesetaraan berlaku, yaitu ketika \(x=y=z\).</li>
+                        <li>Jika \(x=y=z\), maka dari \(xy+yz+zx=1\) kita dapatkan \(x^2+x^2+x^2=1 \Rightarrow 3x^2=1 \Rightarrow x^2=1/3\).</li>
+                        <li>Jadi, nilai minimum dari \(x^2+y^2+z^2\) adalah \(x^2+x^2+x^2=3x^2=3(1/3)=1\).</li>
+                    </ol>
+                    <p>Jadi, jawabannya adalah <strong>C. 1</strong>.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolution(id) {
+            var solution = document.getElementById(id);
+            if (solution.style.display === "none" || solution.style.display === "") {
+                solution.style.display = "block";
+            } else {
+                solution.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html> 

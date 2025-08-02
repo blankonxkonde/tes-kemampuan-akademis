@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Operasi Hitung Eksponen</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .property {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 4px solid #0056b3;
+            background-color: #f9f9f9;
+        }
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .formula {
+            font-size: 1.2em;
+            text-align: center;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Operasi Hitung Eksponen (Pangkat)</h1>
+
+        <h2>Definisi Eksponen</h2>
+        <p>
+            Eksponen adalah operasi matematika, yang ditulis sebagai \(a^n\), melibatkan dua bilangan: basis \(a\) dan eksponen (atau pangkat) \(n\). Jika \(n\) adalah bilangan bulat positif, eksponen menunjukkan berapa kali basis dikalikan dengan dirinya sendiri.
+        </p>
+        <div class="formula">
+            \[ a^n = \underbrace{a \times a \times \dots \times a}_{n \text{ kali}} \]
+        </div>
+        <p>Contoh: \(3^4 = 3 \times 3 \times 3 \times 3 = 81\).</p>
+
+        <h2>Sifat-Sifat Operasi Eksponen</h2>
+        <p>Berikut adalah sifat-sifat utama yang berlaku dalam operasi eksponen:</p>
+
+        <div class="property">
+            <h3>1. Perkalian Eksponen dengan Basis yang Sama</h3>
+            <p>
+                Ketika mengalikan dua ekspresi eksponen dengan basis yang sama, kita cukup menjumlahkan pangkatnya.
+            </p>
+            <div class="formula">
+                \[ a^m \cdot a^n = a^{m+n} \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(2^3 \cdot 2^4 = 2^{3+4} = 2^7 = 128\)</p>
+                <p><strong>Penjelasan:</strong></p>
+                <p>\((2 \times 2 \times 2) \times (2 \times 2 \times 2 \times 2) = 8 \times 16 = 128\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>2. Pembagian Eksponen dengan Basis yang Sama</h3>
+            <p>
+                Ketika membagi dua ekspresi eksponen dengan basis yang sama, kita cukup mengurangkan pangkatnya.
+            </p>
+            <div class="formula">
+                \[ \frac{a^m}{a^n} = a^{m-n} \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(\frac{5^6}{5^4} = 5^{6-4} = 5^2 = 25\)</p>
+                 <p><strong>Penjelasan:</strong></p>
+                <p>\(\frac{5 \times 5 \times 5 \times 5 \times 5 \times 5}{5 \times 5 \times 5 \times 5} = \frac{15625}{625} = 25\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>3. Pangkat dari Eksponen (Pangkat Berpangkat)</h3>
+            <p>
+                Ketika sebuah ekspresi eksponen dipangkatkan lagi, kita mengalikan kedua pangkatnya.
+            </p>
+            <div class="formula">
+                \[ (a^m)^n = a^{m \cdot n} \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\((3^2)^3 = 3^{2 \cdot 3} = 3^6 = 729\)</p>
+                <p><strong>Penjelasan:</strong></p>
+                <p>\((3^2)^3 = (9)^3 = 9 \times 9 \times 9 = 729\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>4. Pangkat dari Perkalian</h3>
+            <p>
+                Pangkat dari suatu perkalian dua bilangan adalah sama dengan perkalian dari masing-masing bilangan yang dipangkatkan.
+            </p>
+            <div class="formula">
+                \[ (a \cdot b)^n = a^n \cdot b^n \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\((2 \cdot 3)^3 = 2^3 \cdot 3^3 = 8 \cdot 27 = 216\)</p>
+                <p><strong>Penjelasan:</strong></p>
+                <p>\((2 \cdot 3)^3 = 6^3 = 6 \times 6 \times 6 = 216\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>5. Pangkat dari Pembagian</h3>
+            <p>
+                Pangkat dari suatu pembagian dua bilangan adalah sama dengan pembagian dari masing-masing bilangan yang dipangkatkan.
+            </p>
+            <div class="formula">
+                \[ \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} \quad (\text{dimana } b \neq 0) \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(\left(\frac{4}{2}\right)^3 = \frac{4^3}{2^3} = \frac{64}{8} = 8\)</p>
+                <p><strong>Penjelasan:</strong></p>
+                <p>\(\left(\frac{4}{2}\right)^3 = 2^3 = 8\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>6. Pangkat Nol</h3>
+            <p>
+                Setiap bilangan (kecuali 0) yang dipangkatkan dengan 0 hasilnya adalah 1.
+            </p>
+            <div class="formula">
+                \[ a^0 = 1 \quad (\text{dimana } a \neq 0) \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(7^0 = 1\)</p>
+                <p><strong>Penjelasan:</strong> Menggunakan sifat pembagian: \(a^0 = a^{n-n} = \frac{a^n}{a^n} = 1\)</p>
+                <p><strong>Catatan khusus untuk \(0^0\):</strong> Nilai dari \(0^0\) umumnya dianggap sebagai <strong>bentuk tak tentu</strong>, terutama dalam kalkulus. Namun, dalam beberapa konteks lain (seperti kombinatorika atau teorema binomial), nilainya sering didefinisikan sebagai 1 untuk menyederhanakan rumus.</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>7. Pangkat Negatif</h3>
+            <p>
+                Eksponen negatif menunjukkan kebalikan (reciprocal) dari basis yang dipangkatkan positif.
+            </p>
+            <div class="formula">
+                \[ a^{-n} = \frac{1}{a^n} \quad (\text{dimana } a \neq 0) \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(3^{-2} = \frac{1}{3^2} = \frac{1}{9}\)</p>
+                 <p><strong>Penjelasan:</strong> Menggunakan sifat pembagian: \(3^{-2} = 3^{0-2} = \frac{3^0}{3^2} = \frac{1}{9}\)</p>
+            </div>
+        </div>
+
+        <div class="property">
+            <h3>8. Pangkat Pecahan (Rasional)</h3>
+            <p>
+                Eksponen dalam bentuk pecahan \(m/n\) berhubungan dengan operasi akar. Pembilang \(m\) menjadi pangkat, dan penyebut \(n\) menjadi akar.
+            </p>
+            <div class="formula">
+                \[ a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m \]
+            </div>
+            <div class="example">
+                <strong>Contoh:</strong>
+                <p>\(8^{2/3} = \sqrt[3]{8^2} = \sqrt[3]{64} = 4\)</p>
+                <p>Atau bisa juga dihitung sebagai:</p>
+                <p>\(8^{2/3} = (\sqrt[3]{8})^2 = 2^2 = 4\)</p>
+            </div>
+        </div>
+        
+        <h2>Ringkasan Sifat-sifat Eksponen</h2>
+        <table border="1" style="width:100%; border-collapse: collapse; margin-top: 20px;">
+            <tr style="background-color:#0056b3; color: white; text-align:center;">
+                <th style="padding: 10px;">Sifat</th>
+                <th style="padding: 10px;">Rumus</th>
+                <th style="padding: 10px;">Contoh</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Perkalian</td>
+                <td style="padding: 10px;">\( a^m \cdot a^n = a^{m+n} \)</td>
+                <td style="padding: 10px;">\( 2^2 \cdot 2^3 = 2^5 = 32 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pembagian</td>
+                <td style="padding: 10px;">\( \frac{a^m}{a^n} = a^{m-n} \)</td>
+                <td style="padding: 10px;">\( \frac{3^5}{3^3} = 3^2 = 9 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat Berpangkat</td>
+                <td style="padding: 10px;">\( (a^m)^n = a^{m \cdot n} \)</td>
+                <td style="padding: 10px;">\( (5^2)^3 = 5^6 = 15625 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat dari Perkalian</td>
+                <td style="padding: 10px;">\( (a \cdot b)^n = a^n \cdot b^n \)</td>
+                <td style="padding: 10px;">\( (2 \cdot 3)^2 = 2^2 \cdot 3^2 = 4 \cdot 9 = 36 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat dari Pembagian</td>
+                <td style="padding: 10px;">\( (\frac{a}{b})^n = \frac{a^n}{b^n} \)</td>
+                <td style="padding: 10px;">\( (\frac{4}{2})^3 = \frac{4^3}{2^3} = \frac{64}{8} = 8 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat Nol</td>
+                <td style="padding: 10px;">\( a^0 = 1 \quad (\text{untuk } a \neq 0) \)</td>
+                <td style="padding: 10px;">\( 100^0 = 1 \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat Nol (Khusus)</td>
+                <td style="padding: 10px;">\( 0^0 \)</td>
+                <td style="padding: 10px;">Bentuk tak tentu</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat Negatif</td>
+                <td style="padding: 10px;">\( a^{-n} = \frac{1}{a^n} \)</td>
+                <td style="padding: 10px;">\( 4^{-2} = \frac{1}{4^2} = \frac{1}{16} \)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Pangkat Pecahan</td>
+                <td style="padding: 10px;">\( a^{m/n} = \sqrt[n]{a^m} \)</td>
+                <td style="padding: 10px;">\( 27^{1/3} = \sqrt[3]{27} = 3 \)</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+</html> 

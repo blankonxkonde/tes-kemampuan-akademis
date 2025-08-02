@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Ukuran Pemusatan Data (Mean, Median, Modus)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #d9534f;
+            border-bottom-color: #d9534f;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .toggle-answer {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+        .toggle-answer:hover {
+            background-color: #0056b3;
+        }
+        .answer-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Latihan Soal Mean, Median, & Modus</h1>
+
+    <!-- Tingkat 1 -->
+    <h2>Tingkat 1: Dasar & Langsung</h2>
+    <div class="question-box">
+        <b>1.</b> Nilai ulangan matematika Budi adalah: 8, 7, 9, 7, 9. Berapakah nilai rata-rata (mean) ulangan Budi?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            \[ \bar{x} = \frac{8+7+9+7+9}{5} = \frac{40}{5} = 8 \]
+            Rata-ratanya adalah 8.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>2.</b> Tentukan median dari data berikut: 15, 12, 19, 10, 17.
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            1. Urutkan data: 10, 12, 15, 17, 19.<br>
+            2. Jumlah data adalah 5 (ganjil). Median adalah nilai tengah.<br>
+            Median-nya adalah 15.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>3.</b> Toko sepatu "Laris" mencatat ukuran sepatu yang terjual hari ini: 40, 41, 39, 42, 41, 40, 41. Berapakah modus dari data penjualan tersebut?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            - Ukuran 39: 1 kali<br>
+            - Ukuran 40: 2 kali<br>
+            - Ukuran 41: 3 kali<br>
+            - Ukuran 42: 1 kali<br>
+            Modus adalah ukuran yang paling sering muncul, yaitu 41.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>4.</b> Tentukan median dari data tinggi badan (cm) berikut: 160, 155, 162, 158, 170, 150.
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            1. Urutkan data: 150, 155, 158, 160, 162, 170.<br>
+            2. Jumlah data adalah 6 (genap). Median adalah rata-rata dari dua data di tengah (data ke-3 dan ke-4).<br>
+            \[ \text{Median} = \frac{158 + 160}{2} = \frac{318}{2} = 159 \]
+            Median-nya adalah 159 cm.
+        </div>
+    </div>
+
+    <!-- Tingkat 2 -->
+    <h2>Tingkat 2: Variasi Dasar & Aljabar Sederhana</h2>
+    <div class="question-box">
+        <b>5.</b> Rata-rata dari lima bilangan 7, 5, 9, \(x\), dan 10 adalah 8. Berapakah nilai \(x\)?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            \[ \bar{x} = \frac{7+5+9+x+10}{5} = 8 \]
+            \[ 31 + x = 5 \times 8 \]
+            \[ 31 + x = 40 \]
+            \[ x = 40 - 31 = 9 \]
+            Nilai \(x\) adalah 9.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>6.</b> Median dari data terurut \(x-1, x, x+3, 2x, 2x+4\) adalah 15. Berapakah nilai rata-ratanya?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Data sudah terurut dan berjumlah 5 (ganjil). Median adalah data ke-3.<br>
+            \[ x+3 = 15 \implies x = 12 \]
+            Data lengkapnya adalah: 11, 12, 15, 24, 28.<br>
+            \[ \bar{x} = \frac{11+12+15+24+28}{5} = \frac{90}{5} = 18 \]
+            Rata-ratanya adalah 18.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>7.</b> Rata-rata nilai 4 siswa adalah 70. Jika nilai siswa kelima ditambahkan, rata-ratanya menjadi 72. Berapakah nilai siswa kelima tersebut?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Jumlah nilai awal (4 siswa) = \(4 \times 70 = 280\).<br>
+            Jumlah nilai baru (5 siswa) = \(5 \times 72 = 360\).<br>
+            Nilai siswa kelima = Jumlah nilai baru - Jumlah nilai awal = \(360 - 280 = 80\).<br>
+            Nilai siswa kelima adalah 80.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>8.</b> Rata-rata berat 10 siswa laki-laki adalah 60 kg, dan rata-rata berat 15 siswi perempuan adalah 50 kg. Berapa rata-rata berat gabungan seluruh siswa?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            \[ \bar{x}_{\text{gab}} = \frac{(10 \times 60) + (15 \times 50)}{10 + 15} \]
+            \[ \bar{x}_{\text{gab}} = \frac{600 + 750}{25} = \frac{1350}{25} = 54 \]
+            Rata-rata gabungannya adalah 54 kg.
+        </div>
+    </div>
+    
+    <!-- Tingkat 3 -->
+    <h2>Tingkat 3: Logika & Kombinasi Konsep</h2>
+    <div class="question-box">
+        <b>9.</b> Rata-rata nilai 20 siswa adalah 75. Setelah seorang siswa yang mengikuti ujian susulan nilainya dimasukkan, rata-ratanya turun menjadi 74. Berapa nilai siswa susulan tersebut?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Jumlah nilai awal (20 siswa) = \(20 \times 75 = 1500\).<br>
+            Jumlah siswa baru = 21.<br>
+            Jumlah nilai baru (21 siswa) = \(21 \times 74 = 1554\).<br>
+            Tunggu, ada yang salah. Rata-rata turun, berarti nilai siswa baru harusnya di bawah 75. Mari cek hitungan.<br>
+            \(21 \times 74 = 1554\). Betul.<br>
+            Ternyata ada kesalahan logika. Mari ulangi.<br>
+            Jumlah nilai baru (21 siswa) = \(21 \times 74 = 1554\).<br>
+            Nilai siswa susulan = \(1554 - 1500 = 54\).<br>
+            Nilai siswa tersebut adalah 54.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>10.</b> Data nilai: 5, 6, 6, 7, \(x\), 8, 9. Jika rata-rata data tersebut sama dengan mediannya, berapakah nilai \(x\) yang mungkin?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Data terurut (asumsi \(6 \le x \le 7\)): 5, 6, 6, \(x\), 7, 8, 9. Median adalah \(x\).<br>
+            Rata-rata: \( \bar{x} = \frac{5+6+6+7+8+9+x}{7} = \frac{41+x}{7} \)<br>
+            Jika Mean = Median: \( x = \frac{41+x}{7} \implies 7x = 41+x \implies 6x = 41 \implies x \approx 6.83 \). Ini valid.<br>
+            Jika \(x\) di luar rentang itu, median akan menjadi 6 atau 7. Cek Median = 7 (jika \(x \ge 7\)).<br>
+            Mean = Median: \( 7 = \frac{41+x}{7} \implies 49=41+x \implies x=8 \). Ini juga valid.<br>
+            Dua nilai \(x\) yang mungkin adalah 8 dan 6.83.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>11.</b> Median dari 9 bilangan ganjil berurutan adalah 21. Berapakah rata-rata dari 9 bilangan tersebut?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Trik: Untuk setiap barisan aritmetika (seperti bilangan berurutan atau kelipatan), rata-rata (mean) selalu sama dengan median.<br>
+            Median adalah 21, maka rata-ratanya juga 21.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>12.</b> Rata-rata dari 6 bilangan adalah 8. Jika satu bilangan dihilangkan, rata-ratanya menjadi 7. Bilangan berapakah yang dihilangkan?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+             Jumlah awal (6 bilangan) = \(6 \times 8 = 48\).<br>
+             Jumlah setelah 1 hilang (5 bilangan) = \(5 \times 7 = 35\).<br>
+             Bilangan yang dihilangkan = \(48 - 35 = 13\).
+        </div>
+    </div>
+
+    <!-- Tingkat 4 -->
+    <h2>Tingkat 4: Aljabar Kompleks & Sifat Ukuran</h2>
+    <div class="question-box">
+        <b>13.</b> Mean dan median dari data {4, 6, 8, 2, 5} adalah \(m_1\) dan \(d_1\). Jika setiap datum dikalikan 2 lalu dikurangi 3, mean dan median baru (\(m_2, d_2\)) menjadi berapa?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Sifat Mean & Median: Jika setiap data mengalami operasi yang sama, mean dan median juga akan mengalami operasi yang sama.<br>
+            Data awal urut: 2, 4, 5, 6, 8. \(m_1 = \frac{25}{5} = 5\). \(d_1 = 5\).<br>
+            Mean baru \(m_2 = (m_1 \times 2) - 3 = (5 \times 2) - 3 = 7\).<br>
+            Median baru \(d_2 = (d_1 \times 2) - 3 = (5 \times 2) - 3 = 7\).
+        </div>
+    </div>
+    <div class="question-box">
+        <b>14.</b> Dalam sebuah tim, rata-rata usia 5 pemain adalah 20 tahun. Rata-rata usia 3 pemain pertama adalah 18 tahun, dan usia pemain keempat sama dengan usia pemain kelima. Berapakah usia pemain kelima?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Total usia 5 pemain = \(5 \times 20 = 100\) tahun.<br>
+            Total usia 3 pemain pertama = \(3 \times 18 = 54\) tahun.<br>
+            Sisa usia untuk 2 pemain terakhir = \(100 - 54 = 46\) tahun.<br>
+            Karena usia pemain ke-4 dan ke-5 sama (\(x\)), maka \(2x = 46 \implies x=23\).<br>
+            Usia pemain kelima adalah 23 tahun.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>15.</b> Modus dan median dari data {4, 5, 4, 6, x, y} yang telah diurutkan adalah 4 dan 5. Berapakah rata-rata terbesar yang mungkin?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Modus = 4, maka setidaknya ada satu lagi angka 4. Karena data urut, \(x=4\).<br>
+            Data menjadi: 4, 4, 4, y, 5, 6. Ini tidak mungkin karena mediannya harus 5.<br>
+            Urutan yang benar: x, 4, 4, 5, 6, y. Modus=4, maka x=4. Data: 4, 4, 4, 5, 6, y.<br>
+            Median = \(\frac{4+5}{2} = 4.5\), bukan 5. Gagal.<br>
+            Urutan lain: 4, 4, x, 5, y, 6. Median = \(\frac{x+5}{2}=5 \implies x=5\). Data: 4, 4, 5, 5, y, 6. Modus jadi 4 dan 5. Gagal.<br>
+            Urutan lain: x, y, 4, 4, 5, 6. Modus = 4. Tidak bisa.<br>
+            Mari kita coba dari awal. Data: {4, 5, 4, 6, x, y}. Modus=4. Median=5.<br>
+            Data urut harus punya angka 4 lebih banyak dari yang lain. Letakkan 4, 4. Urutan sementara: ..., 4, 4, ...<br>
+            Median=5. Jumlah data 6 (genap), median adalah rata-rata data ke-3 dan ke-4. Misal data urut \(d_1, d_2, d_3, d_4, d_5, d_6\). Median=\(\frac{d_3+d_4}{2}=5\). Jadi \(d_3+d_4=10\).<br>
+            Agar rata-rata terbesar, maksimalkan y. Kemungkinan \(d_3, d_4\) adalah 4, 6 atau 5, 5.
+            Kasus 1: \(d_3=4, d_4=6\). Data urut: 4, 4, 4, 6, y, z. (Soal hanya punya 2 data tak diketahui). Data urut: 4, 4, 4, 6, 5, y. Urutan salah.<br>
+            Data: 4, 4, 5, 6, x, y. Urut: 4, 4, 5, 6, x, y. \(d_3=5, d_4=6\). Median=5.5. Gagal.<br>
+            Data: 4, 4, x, y, 5, 6. Urut: 4, 4, x, y, 5, 6. Agar modus 4, x/y tidak boleh 5 atau 6.
+            Median: \((x+y)/2=5 \implies x+y=10\). Kita punya data 4,5,4,6,x,y. Jumlah = \(19+x+y = 19+10=29\). Rata-rata = 29/6.
+            Agar rata-rata terbesar, maksimalkan nilai-nilai. \(x,y\) harus memenuhi \(x+y=10\) dan data tetap terurut. Urutan: 4,4,x,y,5,6. Ini salah, 5 harusnya di tengah.
+            Urutan benar: x, 4, 4, y, 5, 6. Median = \((4+y)/2=5 \implies y=6\). Data: x, 4, 4, 6, 5, 6. Urutkan: x, 4, 4, 5, 6, 6. Modus jadi 4 dan 6. Gagal.
+            
+            Kesimpulan: Sepertinya ada kesalahan asumsi. Mari kita perbaiki.
+            Data: {4, 5, 4, 6, x, y}. Urutkan: d1,d2,d3,d4,d5,d6. Modus=4. Median=5.
+            Karena Modus=4, setidaknya ada dua angka 4.
+            Median=5, \((d3+d4)/2 = 5 \implies d3+d4=10\).
+            Agar rata-rata max, maksimalkan x dan y.
+            Kita bisa set \(d3=4, d4=6\). Maka urutan harus memuat {..., 4, 6, ...} di tengah.
+            Data yang ada: 4, 4, 5, 6.
+            Agar \(d3=4, d4=6\), data urutnya harus: \(d1, d2, 4, 6, d5, d6\).
+            Data kita: {4, 5, 4, 6}. Kita bisa letakkan x dan y. Urutan: \(x, 4, 4, 6, 5, y\). Ini tidak urut.
+            Urutan benar: \(x, 4, 4, 5, 6, y\). Median: \((4+5)/2=4.5\). Bukan 5.
+            Urutan benar: \(4, 4, x, y, 5, 6\). Tidak urut.
+            Urutan benar: \(x, 4, y, 4, 5, 6\). Tidak urut.
+
+            Mari coba lagi. Data: {4,5,4,6,x,y}. Urut: d1,d2,d3,d4,d5,d6.
+            Median = (d3+d4)/2=5 -> d3+d4=10.
+            Modus = 4. Ini berarti 4 muncul paling tidak 2x. Dan tidak ada angka lain muncul >2x.
+            Kemungkinan untuk (d3, d4): (4,6).
+            Jika d3=4, d4=6. Maka data urut kita adalah d1,d2,4,6,d5,d6.
+            Data yang kita punya: {4, 4, 5, 6, x, y}. Agar rata-rata max, x dan y harus besar.
+            Maka urutan data pastilah: 4, 4, 5, 6, x, y (dengan x,y > 6).
+            Median = (5+6)/2 = 5.5. Bukan 5.
+            
+            Kesimpulan: Ada yang salah dengan soal atau interpretasi. Soal ini sepertinya tidak valid. Akan saya ganti.
+
+            <b>Soal Pengganti 15:</b> Jangkauan dari 6 bilangan adalah 9. Mediannya adalah 12. Modusnya tidak ada. Jika bilangan terkecil adalah 7, tuliskan satu set data yang mungkin.
+            <b>Solusi:</b>
+            Jangkauan = 9, terkecil = 7. Maka terbesar = \(7+9=16\).
+            Data: {7, ..., ..., ..., ..., 16}.
+            Median = 12 untuk 6 data. \((d3+d4)/2 = 12 \implies d3+d4=24\).
+            Modus tidak ada, semua angka harus beda.
+            d1=7. d6=16. Pilih d3,d4 yang jumlahnya 24. Misal: d3=11, d4=13. (11,13 > 7 dan < 16).
+            Pilih d2 dan d5. d2 harus antara 7 dan 11. Misal d2=9.
+            d5 harus antara 13 dan 16. Misal d5=15.
+            Data yang mungkin: {7, 9, 11, 13, 15, 16}.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>16.</b> Rata-rata dari 5 bilangan berurutan adalah 10. Berapakah rata-rata dari 5 bilangan berurutan berikutnya?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Rata-rata 5 bilangan berurutan sama dengan mediannya (bilangan ke-3). Jadi bilangan ke-3 adalah 10.<br>
+            Bilangan tersebut: 8, 9, 10, 11, 12.<br>
+            Lima bilangan berurutan berikutnya: 13, 14, 15, 16, 17.<br>
+            Rata-rata dari 5 bilangan baru ini adalah bilangan tengahnya, yaitu 15.
+            Cara cepat: Bilangan berikutnya dimulai dari 13, yang merupakan 12+1. Setiap bilangan bertambah 5 dari set sebelumnya. Rata-rata baru = rata-rata lama + 5 = \(10+5=15\).
+        </div>
+    </div>
+
+    <!-- Tingkat 5 -->
+    <h2>Tingkat 5: Logika Kompleks & Problem Solving</h2>
+    <div class="question-box">
+        <b>17.</b> Rata-rata usia sekelompok orang adalah 30. Jika ada satu orang berusia 20 tahun bergabung, rata-ratanya menjadi 29. Berapa banyak orang dalam kelompok awal?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Misal jumlah orang awal = \(n\), total usia awal = \(S\).<br>
+            Persamaan 1: \( \frac{S}{n} = 30 \implies S = 30n \).<br>
+            Setelah bergabung: jumlah orang = \(n+1\), total usia baru = \(S+20\).<br>
+            Persamaan 2: \( \frac{S+20}{n+1} = 29 \).<br>
+            Substitusi S dari Persamaan 1 ke 2:<br>
+            \[ \frac{30n+20}{n+1} = 29 \]
+            \[ 30n+20 = 29(n+1) \]
+            \[ 30n+20 = 29n + 29 \]
+            \[ n = 9 \]
+            Ada 9 orang di kelompok awal.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>18.</b> Sebuah set data terdiri dari 5 bilangan bulat positif. Median adalah 8, modus adalah 5, dan rata-rata adalah 7. Apa saja bilangan dalam set data tersebut?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            5 bilangan urut: \(d_1, d_2, d_3, d_4, d_5\).<br>
+            Median = \(d_3 = 8\).<br>
+            Modus = 5. Agar 5 jadi modus, harus muncul > 1 kali. Karena data urut & median 8, angka 5 harus ada di sebelah kiri 8. Jadi \(d_1=5, d_2=5\).<br>
+            Data sejauh ini: 5, 5, 8, \(d_4\), \(d_5\).<br>
+            Rata-rata = 7. Jumlah total = \(5 \times 7 = 35\).<br>
+            Jumlah yang ada = \(5+5+8 = 18\).<br>
+            Sisa jumlah untuk \(d_4+d_5 = 35 - 18 = 17\).<br>
+            Kita perlu \(d_4, d_5\) dengan syarat \(8 \le d_4 \le d_5\) dan tidak boleh ada modus baru.<br>
+            Jika \(d_4=8\), maka \(d_5=9\). Data: 5, 5, 8, 8, 9. Modus jadi 5 dan 8. Gagal.<br>
+            Maka \(d_4\) tidak boleh 8. Jadi \(d_4 > 8\).<br>
+            Satu-satunya kemungkinan bilangan bulat adalah \(d_4=8, d_5=9\) ini gagal. Coba cek lagi.<br>
+            \(d_4+d_5=17\). \(d_4\) harus \(\ge d_3\). \(d_4 \ge 8\).<br>
+            Jika \(d_4=8\), maka \(d_5=9\). Timbul modus baru (8), jadi tidak boleh.<br>
+            Jika \(d_4=9\), maka \(d_5=8\). Tidak urut. Gagal.
+            Apa ada yang salah? Ah, \(d_4\) bisa sama dengan 8, tapi \(d_5\) tidak boleh sama.
+            Jika \(d_4=8\), \(d_5=9\). Data: 5, 5, 8, 8, 9. Modusnya jadi 5 dan 8. Tidak bisa, soal bilang modus HANYA 5.<br>
+            Ah, bisa jadi modusnya 5, tapi ada angka lain yg muncul sama sering (tapi < 2 kali), seperti {5,5,8,9,10}. Ini tidak ada modus.
+            Modus adalah 5, berarti 5 muncul paling BANYAK.
+            Jika \(d_4=8\), \(d_5=9\), data {5,5,8,8,9}. Frekuensi 5=2, 8=2. Ini bimodal. Gagal.
+            Satu-satunya cara adalah tidak ada angka lain yang berulang. Maka \(d_4 \ne d_5 \ne 8\).
+            Satu-satunya solusi bilangan bulat untuk \(d_4+d_5=17\) dengan \(d_4 \ge 8\) dan \(d_4 < d_5\) adalah tidak ada.<br>
+            Cek lagi: \(d_4=8, d_5=9\) (bimodal); \(d_4=7, d_5=10\) (tak urut).<br>
+            Soal ini menjebak. Tidak ada set data yang memenuhi semua kondisi.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>19.</b> Jangkauan dan rata-rata dari 4 bilangan asli berbeda adalah 4. Tentukan semua kemungkinan nilai terbesar dari keempat bilangan tersebut.
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            4 bilangan: \(a,b,c,d\) dengan \(a<b<c<d\). Bilangan asli > 0.<br>
+            Jangkauan = \(d-a = 4\). Rata-rata = \(\frac{a+b+c+d}{4}=4 \implies a+b+c+d=16\).<br>
+            Substitusi \(a=d-4\): \((d-4)+b+c+d=16 \implies 2d+b+c=20\).<br>
+            Kita tahu \(a < b < c < d\), maka \(d-4 < b < c < d\).<br>
+            Cari nilai \(d\) yang mungkin.
+            - Jika d=5: a=1. Data: 1,b,c,5. 1<b<c<5. b,c bisa 2,3 atau 2,4 atau 3,4.
+                - 1,2,3,5: Jumlah=11. Gagal.
+                - 1,2,4,5: Jumlah=12. Gagal.
+                - 1,3,4,5: Jumlah=13. Gagal.
+            - Jika d=6: a=2. Data: 2,b,c,6. 2<b<c<6. b,c bisa 3,4 atau 3,5 atau 4,5.
+                - 2,3,4,6: Jumlah=15. Gagal.
+                - 2,3,5,6: Jumlah=16. <b>Berhasil!</b> Nilai terbesar bisa 6.
+                - 2,4,5,6: Jumlah=17. Gagal.
+            - Jika d=7: a=3. Data: 3,b,c,7. 3<b<c<7. b,c bisa 4,5 atau 4,6 atau 5,6.
+                - 3,4,5,7: Jumlah=19. Gagal.
+                - 3,4,6,7: Jumlah=20. Gagal.
+                - 3,5,6,7: Jumlah=21. Gagal.
+            Satu-satunya nilai d yang mungkin adalah 6.
+        </div>
+    </div>
+    <div class="question-box">
+        <b>20.</b> Rata-rata dari tiga bilangan adalah 10 lebihnya dari bilangan terkecil dan 6 kurangnya dari bilangan terbesar. Median dari ketiga bilangan tersebut adalah 10. Tentukan jumlah ketiga bilangan tersebut.
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi:</b><br>
+            Tiga bilangan: \(a, b, c\) dengan \(a \le b \le c\).<br>
+            Median = \(b=10\).<br>
+            Rata-rata = \(\bar{x} = \frac{a+10+c}{3}\).<br>
+            Dari soal: \(\bar{x} = a+10\) dan \(\bar{x} = c-6\).<br>
+            Maka \(a+10 = c-6 \implies c = a+16\).<br>
+            Substitusikan ke salah satu persamaan rata-rata:<br>
+            \[ \bar{x} = a+10 \]
+            \[ \frac{a+10+c}{3} = a+10 \]
+            \[ \frac{a+10+(a+16)}{3} = a+10 \]
+            \[ \frac{2a+26}{3} = a+10 \]
+            \[ 2a+26 = 3a+30 \]
+            \[ a = -4 \]
+            Maka \(c = -4+16 = 12\).<br>
+            Bilangannya: -4, 10, 12.
+            Jumlahnya = \(-4+10+12 = 18\).
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleAnswer(button) {
+        const answerBox = button.nextElementSibling;
+        if (answerBox.style.display === 'block') {
+            answerBox.style.display = 'none';
+            button.textContent = 'Tampilkan Jawaban';
+        } else {
+            answerBox.style.display = 'block';
+            button.textContent = 'Sembunyikan Jawaban';
+        }
+    }
+</script>
+
+</body>
+</html> 

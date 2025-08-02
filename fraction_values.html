@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilai Pecahan, Desimal, Persentase, dan Pecahan Campuran</title>
+    <!-- Load MathJax first and ensure it's properly configured -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true
+            },
+            options: {
+                renderActions: {
+                    addMenu: [0, '', '']
+                }
+            },
+            startup: {
+                ready: function() {
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        /* Ensure MathJax elements display properly in table cells */
+        td .MathJax {
+            display: inline !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Konversi Nilai Pecahan</h1>
+        <p>Tabel berikut menampilkan konversi dari bentuk pecahan ke bentuk desimal, persentase, dan pecahan campuran (jika berlaku).</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Pecahan</th>
+                    <th>Nilai Desimal (dibulatkan 4 angka)</th>
+                    <th>Nilai Persentase</th>
+                    <th>Persen dlm Btk. Pecahan Campuran (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Pecahan dengan penyebut 1 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 1</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{1}$</td>
+                    <td>1.0000</td>
+                    <td>100%</td>
+                    <td>$100\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 2 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 2</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{2}$</td>
+                    <td>0.5000</td>
+                    <td>50%</td>
+                    <td>$50\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 3 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 3</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{3}$</td>
+                    <td>0.3333</td>
+                    <td>33.33%</td>
+                    <td>$33\frac{1}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{2}{3}$</td>
+                    <td>0.6667</td>
+                    <td>66.67%</td>
+                    <td>$66\frac{2}{3}\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 4 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 4</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{4}$</td>
+                    <td>0.2500</td>
+                    <td>25%</td>
+                    <td>$25\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{2}{4}$</td>
+                    <td>0.5000</td>
+                    <td>50%</td>
+                    <td>$50\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{3}{4}$</td>
+                    <td>0.7500</td>
+                    <td>75%</td>
+                    <td>$75\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 5 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 5</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{5}$</td>
+                    <td>0.2000</td>
+                    <td>20%</td>
+                    <td>$20\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{2}{5}$</td>
+                    <td>0.4000</td>
+                    <td>40%</td>
+                    <td>$40\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{3}{5}$</td>
+                    <td>0.6000</td>
+                    <td>60%</td>
+                    <td>$60\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{4}{5}$</td>
+                    <td>0.8000</td>
+                    <td>80%</td>
+                    <td>$80\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 6 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 6</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{6}$</td>
+                    <td>0.1667</td>
+                    <td>16.67%</td>
+                    <td>$16\frac{2}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{2}{6}$</td>
+                    <td>0.3333</td>
+                    <td>33.33%</td>
+                    <td>$33\frac{1}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{3}{6}$</td>
+                    <td>0.5000</td>
+                    <td>50%</td>
+                    <td>$50\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{4}{6}$</td>
+                    <td>0.6667</td>
+                    <td>66.67%</td>
+                    <td>$66\frac{2}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{5}{6}$</td>
+                    <td>0.8333</td>
+                    <td>83.33%</td>
+                    <td>$83\frac{1}{3}\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 7 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 7</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{7}$</td>
+                    <td>0.1429</td>
+                    <td>14.29%</td>
+                    <td>$14\frac{2}{7}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{2}{7}$</td>
+                    <td>0.2857</td>
+                    <td>28.57%</td>
+                    <td>$28\frac{4}{7}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{3}{7}$</td>
+                    <td>0.4286</td>
+                    <td>42.86%</td>
+                    <td>$42\frac{6}{7}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{4}{7}$</td>
+                    <td>0.5714</td>
+                    <td>57.14%</td>
+                    <td>$57\frac{1}{7}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{5}{7}$</td>
+                    <td>0.7143</td>
+                    <td>71.43%</td>
+                    <td>$71\frac{3}{7}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{6}{7}$</td>
+                    <td>0.8571</td>
+                    <td>85.71%</td>
+                    <td>$85\frac{5}{7}\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 8 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 8</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{8}$</td>
+                    <td>0.1250</td>
+                    <td>12.5%</td>
+                    <td>$12\frac{1}{2}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{3}{8}$</td>
+                    <td>0.3750</td>
+                    <td>37.5%</td>
+                    <td>$37\frac{1}{2}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{5}{8}$</td>
+                    <td>0.6250</td>
+                    <td>62.5%</td>
+                    <td>$62\frac{1}{2}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{7}{8}$</td>
+                    <td>0.8750</td>
+                    <td>87.5%</td>
+                    <td>$87\frac{1}{2}\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 9 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 9</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{9}$</td>
+                    <td>0.1111</td>
+                    <td>11.11%</td>
+                    <td>$11\frac{1}{9}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{2}{9}$</td>
+                    <td>0.2222</td>
+                    <td>22.22%</td>
+                    <td>$22\frac{2}{9}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{4}{9}$</td>
+                    <td>0.4444</td>
+                    <td>44.44%</td>
+                    <td>$44\frac{4}{9}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{5}{9}$</td>
+                    <td>0.5556</td>
+                    <td>55.56%</td>
+                    <td>$55\frac{5}{9}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{7}{9}$</td>
+                    <td>0.7778</td>
+                    <td>77.78%</td>
+                    <td>$77\frac{7}{9}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{8}{9}$</td>
+                    <td>0.8889</td>
+                    <td>88.89%</td>
+                    <td>$88\frac{8}{9}\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 10 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 10</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{10}$</td>
+                    <td>0.1000</td>
+                    <td>10%</td>
+                    <td>$10\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{3}{10}$</td>
+                    <td>0.3000</td>
+                    <td>30%</td>
+                    <td>$30\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{7}{10}$</td>
+                    <td>0.7000</td>
+                    <td>70%</td>
+                    <td>$70\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{9}{10}$</td>
+                    <td>0.9000</td>
+                    <td>90%</td>
+                    <td>$90\%$</td>
+                </tr>
+
+                <!-- Pecahan dengan penyebut 12 -->
+                <tr style="background-color: #e6f2ff;">
+                    <td colspan="4" style="text-align: left; font-weight: bold;">Pecahan dengan Penyebut 12</td>
+                </tr>
+                <tr>
+                    <td>$\frac{1}{12}$</td>
+                    <td>0.0833</td>
+                    <td>8.33%</td>
+                    <td>$8\frac{1}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{5}{12}$</td>
+                    <td>0.4167</td>
+                    <td>41.67%</td>
+                    <td>$41\frac{2}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{7}{12}$</td>
+                    <td>0.5833</td>
+                    <td>58.33%</td>
+                    <td>$58\frac{1}{3}\%$</td>
+                </tr>
+                <tr>
+                    <td>$\frac{11}{12}$</td>
+                    <td>0.9167</td>
+                    <td>91.67%</td>
+                    <td>$91\frac{2}{3}\%$</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="note">
+            <p><strong>Catatan:</strong></p>
+            <ul>
+                <li>Nilai desimal dibulatkan hingga 4 angka di belakang koma untuk kemudahan pembacaan. Beberapa pecahan menghasilkan desimal berulang (contoh: $\frac{1}{3} = 0.333...$).</li>
+                <li>Nilai persentase dihitung dari nilai desimal (nilai desimal $\times$ 100%). Untuk kemudahan, persentase juga dapat dibulatkan.</li>
+                <li>Kolom "Persen dlm Btk. Pecahan Campuran (%)" menunjukkan nilai persentase yang diubah ke dalam bentuk bilangan bulat diikuti pecahan (jika ada). Contoh: $\frac{100}{3}\% = 33$ sisa $1$, menjadi $33\frac{1}{3}\%$. Jika persentase adalah bilangan bulat (misal 50%), maka hanya bilangan bulat tersebut yang ditampilkan.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Force MathJax to reprocess the page after it's fully loaded -->
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof MathJax !== 'undefined') {
+                MathJax.typeset();
+            }
+        });
+    </script>
+</body>
+</html> 

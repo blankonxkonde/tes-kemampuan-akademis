@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbandingan Senilai dan Berbalik Nilai</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .definition, .formula, .example {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-left: 4px solid #0056b3;
+            border-radius: 4px;
+        }
+        .formula code {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .example p {
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perbandingan Senilai dan Berbalik Nilai</h1>
+
+        <p>Dalam matematika, perbandingan digunakan untuk membandingkan dua nilai atau lebih. Ada dua jenis perbandingan utama yang sering kita temui, yaitu perbandingan senilai (proporsi langsung) dan perbandingan berbalik nilai (proporsi terbalik).</p>
+
+        <h2>Perbandingan Senilai (Proporsi Langsung)</h2>
+        <div class="definition">
+            <p><strong>Definisi:</strong> Perbandingan senilai adalah jenis perbandingan dua variabel di mana jika satu variabel bertambah, maka variabel lainnya juga bertambah dengan rasio yang sama, dan sebaliknya. Jika satu variabel berkurang, variabel lainnya juga berkurang dengan rasio yang sama.</p>
+        </div>
+
+        <div class="formula">
+            <p><strong>Rumus Umum:</strong></p>
+            <p>Jika variabel A dan B berbanding senilai, maka berlaku:</p>
+            <p>\[ \frac{A_1}{B_1} = \frac{A_2}{B_2} \]</p>
+            <p>atau</p>
+            <p>\[ A_1 \times B_2 = A_2 \times B_1 \]</p>
+            <p>Di mana A₁ dan B₁ adalah nilai awal, sedangkan A₂ dan B₂ adalah nilai setelah perubahan.</p>
+        </div>
+
+        <div class="example">
+            <h3>Contoh Soal Perbandingan Senilai:</h3>
+            <p><strong>Soal 1:</strong> Harga 3 kg apel adalah Rp 45.000. Berapakah harga 5 kg apel?</p>
+            <p><strong>Pembahasan:</strong></p>
+            <p>Misalkan jumlah apel adalah variabel A dan harga apel adalah variabel B.</p>
+            <ul>
+                <li>A₁ = 3 kg</li>
+                <li>B₁ = Rp 45.000</li>
+                <li>A₂ = 5 kg</li>
+                <li>B₂ = ? (yang dicari)</li>
+            </ul>
+            <p>Menggunakan rumus: \( \frac{A_1}{B_1} = \frac{A_2}{B_2} \)</p>
+            <p>\( \frac{3}{45000} = \frac{5}{B_2} \)</p>
+            <p>\( 3 \times B_2 = 5 \times 45000 \)</p>
+            <p>\( 3 \times B_2 = 225000 \)</p>
+            <p>\( B_2 = \frac{225000}{3} \)</p>
+            <p>\( B_2 = \text{Rp } 75.000 \)</p>
+            <p>Jadi, harga 5 kg apel adalah Rp 75.000.</p>
+
+            <p><strong>Soal 2:</strong> Sebuah mobil dapat menempuh jarak 120 km dengan menghabiskan 10 liter bensin. Berapa liter bensin yang dibutuhkan mobil tersebut untuk menempuh jarak 300 km?</p>
+            <p><strong>Pembahasan:</strong></p>
+            <p>Misalkan jarak tempuh adalah variabel A dan jumlah bensin adalah variabel B.</p>
+            <ul>
+                <li>A₁ = 120 km</li>
+                <li>B₁ = 10 liter</li>
+                <li>A₂ = 300 km</li>
+                <li>B₂ = ? (yang dicari)</li>
+            </ul>
+            <p>Menggunakan rumus: \( \frac{A_1}{B_1} = \frac{A_2}{B_2} \)</p>
+            <p>\( \frac{120}{10} = \frac{300}{B_2} \)</p>
+            <p>\( 120 \times B_2 = 300 \times 10 \)</p>
+            <p>\( 120 \times B_2 = 3000 \)</p>
+            <p>\( B_2 = \frac{3000}{120} \)</p>
+            <p>\( B_2 = 25 \text{ liter} \)</p>
+            <p>Jadi, bensin yang dibutuhkan adalah 25 liter.</p>
+        </div>
+
+        <h2>Perbandingan Berbalik Nilai (Proporsi Terbalik)</h2>
+        <div class="definition">
+            <p><strong>Definisi:</strong> Perbandingan berbalik nilai adalah jenis perbandingan dua variabel di mana jika satu variabel bertambah, maka variabel lainnya akan berkurang dengan rasio yang tetap, dan sebaliknya. Jika satu variabel berkurang, maka variabel lainnya akan bertambah.</p>
+            <p>Intinya, hasil kali kedua variabel selalu konstan.</p>
+        </div>
+
+        <div class="formula">
+            <p><strong>Rumus Umum:</strong></p>
+            <p>Jika variabel A dan B berbanding berbalik nilai, maka berlaku:</p>
+            <p>\[ \frac{A_1}{A_2} = \frac{B_2}{B_1} \]</p>
+            <p>atau</p>
+            <p>\[ A_1 \times B_1 = A_2 \times B_2 \]</p>
+            <p>Di mana A₁ dan B₁ adalah nilai awal, sedangkan A₂ dan B₂ adalah nilai setelah perubahan.</p>
+        </div>
+
+        <div class="example">
+            <h3>Contoh Soal Perbandingan Berbalik Nilai:</h3>
+            <p><strong>Soal 1:</strong> Suatu pekerjaan dapat diselesaikan oleh 10 orang dalam waktu 6 hari. Jika pekerjaan tersebut ingin diselesaikan dalam waktu 4 hari, berapa banyak pekerja tambahan yang dibutuhkan?</p>
+            <p><strong>Pembahasan:</strong></p>
+            <p>Misalkan jumlah pekerja adalah variabel A dan waktu penyelesaian adalah variabel B.</p>
+            <ul>
+                <li>A₁ = 10 orang</li>
+                <li>B₁ = 6 hari</li>
+                <li>A₂ = ? (jumlah pekerja baru)</li>
+                <li>B₂ = 4 hari</li>
+            </ul>
+            <p>Menggunakan rumus: \( A_1 \times B_1 = A_2 \times B_2 \)</p>
+            <p>\( 10 \times 6 = A_2 \times 4 \)</p>
+            <p>\( 60 = 4A_2 \)</p>
+            <p>\( A_2 = \frac{60}{4} \)</p>
+            <p>\( A_2 = 15 \text{ orang} \)</p>
+            <p>Jumlah pekerja yang dibutuhkan adalah 15 orang. Karena awalnya sudah ada 10 orang, maka pekerja tambahan yang dibutuhkan adalah \(15 - 10 = \) <span class="highlight">5 orang</span>.</p>
+
+            <p><strong>Soal 2:</strong> Sebuah mobil melaju dengan kecepatan rata-rata 60 km/jam dan memerlukan waktu 4 jam untuk sampai ke tujuan. Jika kecepatan rata-rata mobil tersebut menjadi 80 km/jam, berapa waktu yang dibutuhkan untuk sampai ke tujuan yang sama?</p>
+            <p><strong>Pembahasan:</strong></p>
+            <p>Misalkan kecepatan adalah variabel A dan waktu tempuh adalah variabel B.</p>
+            <ul>
+                <li>A₁ = 60 km/jam</li>
+                <li>B₁ = 4 jam</li>
+                <li>A₂ = 80 km/jam</li>
+                <li>B₂ = ? (waktu tempuh baru)</li>
+            </ul>
+            <p>Menggunakan rumus: \( A_1 \times B_1 = A_2 \times B_2 \)</p>
+            <p>\( 60 \times 4 = 80 \times B_2 \)</p>
+            <p>\( 240 = 80B_2 \)</p>
+            <p>\( B_2 = \frac{240}{80} \)</p>
+            <p>\( B_2 = 3 \text{ jam} \)</p>
+            <p>Jadi, waktu yang dibutuhkan adalah 3 jam.</p>
+        </div>
+
+        <h2>Trik Cepat Menyelesaikan Soal Perbandingan</h2>
+        <div class="definition">
+            <p><strong>Trik Cepat Perbandingan Senilai:</strong></p>
+            <ul>
+                <li><strong>Rumus Praktis:</strong> B₂ = (A₂ × B₁) ÷ A₁</li>
+                <li><strong>Trik Silang:</strong> Langsung gunakan A₁ × B₂ = A₂ × B₁</li>
+                <li><strong>Perkalian Rasio:</strong> Jika A bertambah n kali, maka B juga bertambah n kali</li>
+            </ul>
+            <p><strong>Trik Cepat Perbandingan Berbalik Nilai:</strong></p>
+            <ul>
+                <li><strong>Rumus Praktis:</strong> B₂ = (A₁ × B₁) ÷ A₂</li>
+                <li><strong>Hasil Kali Konstan:</strong> Langsung gunakan A₁ × B₁ = A₂ × B₂</li>
+                <li><strong>Rasio Terbalik:</strong> Jika A bertambah n kali, maka B berkurang menjadi 1/n kali</li>
+            </ul>
+        </div>
+
+        <h2>Cara Menghindari Kesalahan dalam Memasukkan Nilai</h2>
+        <div class="definition">
+            <ol>
+                <li><strong>Identifikasi jenis perbandingan</strong> dengan benar (senilai atau berbalik nilai)</li>
+                <li><strong>Buat tabel kecil</strong> untuk mengorganisir data:
+                    <ul>
+                        <li>Kolom 1: Variabel A (kondisi awal dan akhir)</li>
+                        <li>Kolom 2: Variabel B (kondisi awal dan akhir)</li>
+                    </ul>
+                </li>
+                <li><strong>Tetapkan posisi yang konsisten</strong>:
+                    <ul>
+                        <li>A₁ selalu nilai awal variabel pertama</li>
+                        <li>A₂ selalu nilai akhir variabel pertama</li>
+                        <li>B₁ selalu nilai awal variabel kedua</li>
+                        <li>B₂ selalu nilai yang dicari</li>
+                    </ul>
+                </li>
+                <li><strong>Periksa satuan</strong> - pastikan semua nilai menggunakan satuan yang sama</li>
+                <li><strong>Verifikasi hasil</strong> dengan substitusi balik ke rumus awal</li>
+            </ol>
+        </div>
+
+        <h2>Perbandingan 3 Variabel (Perbandingan Gabungan)</h2>
+        <div class="definition">
+            <p><strong>Definisi:</strong> Perbandingan gabungan adalah perbandingan yang melibatkan 3 variabel atau lebih, di mana satu variabel menjadi hasil dari dua variabel lainnya.</p>
+            <p>Ada tiga jenis perbandingan gabungan:</p>
+            <ul>
+                <li><strong>Gabungan Senilai Murni:</strong> Hasil berbanding senilai dengan kedua faktor</li>
+                <li><strong>Gabungan Berbalik Nilai Murni:</strong> Hasil berbanding berbalik nilai dengan kedua faktor</li>
+                <li><strong>Gabungan Campuran:</strong> Hasil berbanding senilai dengan satu faktor, berbalik nilai dengan faktor lainnya</li>
+            </ul>
+        </div>
+
+        <div class="formula">
+            <p><strong>Rumus Praktis Perbandingan 3 Variabel:</strong></p>
+            
+            <p><strong>1. Gabungan Senilai Murni:</strong></p>
+            <p>Jika C berbanding senilai dengan A dan B, maka:</p>
+            <p>\[ \frac{C_1}{A_1 \times B_1} = \frac{C_2}{A_2 \times B_2} \]</p>
+            <p><strong>Rumus Praktis:</strong> \( C_2 = \frac{C_1 \times A_2 \times B_2}{A_1 \times B_1} \)</p>
+            
+            <p><strong>2. Gabungan Berbalik Nilai Murni:</strong></p>
+            <p>Jika C berbanding berbalik nilai dengan A dan B, maka:</p>
+            <p>\[ (A_1 \times B_1) \times C_1 = (A_2 \times B_2) \times C_2 \]</p>
+            <p><strong>Rumus Praktis:</strong> \( C_2 = \frac{A_1 \times B_1 \times C_1}{A_2 \times B_2} \)</p>
+            
+            <p><strong>3. Gabungan Campuran (A senilai, B berbalik nilai):</strong></p>
+            <p>Jika C berbanding senilai dengan A dan berbalik nilai dengan B, maka:</p>
+            <p>\[ \frac{C_1 \times B_1}{A_1} = \frac{C_2 \times B_2}{A_2} \]</p>
+            <p><strong>Rumus Praktis:</strong> \( C_2 = \frac{C_1 \times A_2 \times B_1}{A_1 \times B_2} \)</p>
+        </div>
+
+        <div class="example">
+            <h3>Contoh Soal Perbandingan 3 Variabel:</h3>
+            
+            <p><strong>Contoh Gabungan Senilai Murni:</strong></p>
+            <p><strong>Soal:</strong> 5 mesin dapat memproduksi 1200 barang dalam 8 jam. Berapa barang yang diproduksi 3 mesin dalam 10 jam?</p>
+            <p><strong>Analisis:</strong> Produksi berbanding senilai dengan mesin dan jam</p>
+            <p><strong>Penyelesaian:</strong> \( \text{Produksi}_2 = \frac{1200 \times 3 \times 10}{5 \times 8} = \frac{36000}{40} = 900 \text{ barang} \)</p>
+            
+            <p><strong>Contoh Gabungan Berbalik Nilai Murni:</strong></p>
+            <p><strong>Soal:</strong> 4 truk kapasitas 5 ton membutuhkan 6 trip. Berapa trip untuk 6 truk kapasitas 8 ton?</p>
+            <p><strong>Analisis:</strong> Trip berbanding berbalik nilai dengan jumlah truk dan kapasitas</p>
+            <p><strong>Penyelesaian:</strong> \( \text{Trip}_2 = \frac{4 \times 5 \times 6}{6 \times 8} = \frac{120}{48} = 2.5 \text{ trip} \)</p>
+            
+            <p><strong>Contoh Gabungan Campuran:</strong></p>
+            <p><strong>Soal:</strong> 1 ayam menghabiskan 1 karung dalam 6 hari. Berapa hari untuk 2 ayam menghabiskan 8 karung?</p>
+            <p><strong>Analisis:</strong> Waktu berbanding senilai dengan karung, berbalik nilai dengan ayam</p>
+            <p><strong>Penyelesaian:</strong> \( \text{Waktu}_2 = \frac{6 \times 8 \times 1}{1 \times 2} = \frac{48}{2} = 24 \text{ hari} \)</p>
+        </div>
+
+        <h2>Cara Menentukan Jenis Perbandingan 3 Variabel</h2>
+        <div class="definition">
+            <ol>
+                <li><strong>Identifikasi variabel yang ditanyakan</strong> (sebut sebagai C)</li>
+                <li><strong>Analisis hubungan C dengan variabel A</strong> (anggap B konstan):
+                    <ul>
+                        <li>Jika A naik → C naik = Senilai</li>
+                        <li>Jika A naik → C turun = Berbalik nilai</li>
+                    </ul>
+                </li>
+                <li><strong>Analisis hubungan C dengan variabel B</strong> (anggap A konstan):
+                    <ul>
+                        <li>Jika B naik → C naik = Senilai</li>
+                        <li>Jika B naik → C turun = Berbalik nilai</li>
+                    </ul>
+                </li>
+                <li><strong>Tentukan jenis berdasarkan kombinasi</strong>:
+                    <ul>
+                        <li>Senilai + Senilai = Gabungan Senilai Murni</li>
+                        <li>Berbalik + Berbalik = Gabungan Berbalik Nilai Murni</li>
+                        <li>Senilai + Berbalik = Gabungan Campuran</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h2>Ringkasan Perbedaan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fitur</th>
+                    <th>Perbandingan Senilai (2 Variabel)</th>
+                    <th>Perbandingan Berbalik Nilai (2 Variabel)</th>
+                    <th>Perbandingan Gabungan (3 Variabel)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Hubungan Variabel</strong></td>
+                    <td>Jika satu naik, yang lain naik. Jika satu turun, yang lain turun.</td>
+                    <td>Jika satu naik, yang lain turun. Jika satu turun, yang lain naik.</td>
+                    <td>Kombinasi senilai dan/atau berbalik nilai dengan dua faktor sekaligus</td>
+                </tr>
+                <tr>
+                    <td><strong>Rasio/Konstanta</strong></td>
+                    <td>\( \frac{A}{B} = \text{konstan} \)</td>
+                    <td>\( A \times B = \text{konstan} \)</td>
+                    <td>\( \frac{C}{A \times B} \), \( (A \times B) \times C \), atau \( \frac{C \times B}{A} = \text{konstan} \)</td>
+                </tr>
+                <tr>
+                    <td><strong>Rumus Utama</strong></td>
+                    <td>\( \frac{A_1}{A_2} = \frac{B_1}{B_2} \)</td>
+                    <td>\( A_1 \times B_1 = A_2 \times B_2 \)</td>
+                    <td>Lihat rumus praktis di atas berdasarkan jenis gabungan</td>
+                </tr>
+                <tr>
+                    <td><strong>Rumus Praktis</strong></td>
+                    <td>\( B_2 = \frac{A_2 \times B_1}{A_1} \)</td>
+                    <td>\( B_2 = \frac{A_1 \times B_1}{A_2} \)</td>
+                    <td><strong>Senilai Murni:</strong> \( C_2 = \frac{C_1 \times A_2 \times B_2}{A_1 \times B_1} \)<br>
+                        <strong>Berbalik Murni:</strong> \( C_2 = \frac{A_1 \times B_1 \times C_1}{A_2 \times B_2} \)<br>
+                        <strong>Campuran:</strong> \( C_2 = \frac{C_1 \times A_2 \times B_1}{A_1 \times B_2} \)</td>
+                </tr>
+                <tr>
+                    <td><strong>Contoh Umum</strong></td>
+                    <td>Jumlah barang & harga total, Jarak & bensin, Waktu kerja & upah</td>
+                    <td>Jumlah pekerja & waktu penyelesaian, Kecepatan & waktu tempuh</td>
+                    <td><strong>Senilai:</strong> Mesin & jam → produksi<br>
+                        <strong>Berbalik:</strong> Truk & kapasitas → trip<br>
+                        <strong>Campuran:</strong> Ayam & karung → waktu</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html> 

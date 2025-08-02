@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Operasi Hitung Bilangan Pecahan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .example {
+            background-color: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .math-block {
+            font-family: 'Cambria', 'Times New Roman', serif;
+            font-size: 1.1em; /* Adjusted for LaTeX rendering */
+            text-align: center;
+            margin: 20px 0;
+            overflow-x: auto; /* Handle wide equations */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Materi Belajar: Operasi Hitung Bilangan Pecahan (dengan LaTeX)</h1>
+
+        <div class="section" id="pengertian">
+            <h2>1. Apa itu Bilangan Pecahan?</h2>
+            <p>
+                Bilangan pecahan adalah bilangan yang dapat dinyatakan dalam bentuk \(\frac{a}{b}\), di mana \(a\) adalah <strong>pembilang</strong> dan \(b\) adalah <strong>penyebut</strong>. Syaratnya, \(b\) tidak boleh sama dengan nol (\(b \neq 0\)). Pecahan merepresentasikan bagian dari suatu keseluruhan.
+            </p>
+            <div class="example">
+                <strong>Contoh:</strong> Sebuah kue dipotong menjadi 4 bagian sama besar. Jika Anda mengambil 1 potong, maka Anda memiliki \(\frac{1}{4}\) bagian dari kue tersebut.
+            </div>
+        </div>
+
+        <div class="section" id="jenis-pecahan">
+            <h2>2. Jenis-jenis Bilangan Pecahan</h2>
+            <h3>a. Pecahan Biasa (Proper Fraction)</h3>
+            <p>Pecahan yang pembilangnya lebih kecil dari penyebutnya (\(a < b\)). Contoh: \(\frac{1}{2}\), \(\frac{3}{4}\), \(\frac{5}{8}\).</p>
+            <h3>b. Pecahan Tidak Biasa (Improper Fraction)</h3>
+            <p>Pecahan yang pembilangnya lebih besar atau sama dengan penyebutnya (\(a \ge b\)). Contoh: \(\frac{5}{3}\), \(\frac{7}{4}\), \(\frac{2}{2}\).</p>
+            <h3>c. Pecahan Campuran (Mixed Number)</h3>
+            <p>Terdiri dari bilangan bulat dan pecahan biasa. Pecahan ini merupakan bentuk lain dari pecahan tidak biasa. Contoh: \(1\frac{1}{2}\) (sama dengan \(\frac{3}{2}\)), \(2\frac{3}{4}\) (sama dengan \(\frac{11}{4}\)).</p>
+            <h3>d. Pecahan Desimal dan Persen</h3>
+            <p>Bentuk lain dari penulisan pecahan. Contoh: \(\frac{1}{2} = 0.5 = 50\%\).</p>
+        </div>
+
+        <div class="section" id="operasi-hitung">
+            <h2>3. Operasi Hitung Dasar</h2>
+            
+            <h3>a. Penjumlahan dan Pengurangan</h3>
+            <p>
+                Penyebut harus disamakan terlebih dahulu dengan mencari Kelipatan Persekutuan Terkecil (KPK) dari penyebutnya.
+            </p>
+            <div class="example">
+                <strong>Contoh Penjumlahan:</strong>
+                <div class="math-block">
+                \[
+                \begin{align*}
+                \frac{1}{2} + \frac{1}{3} &= \frac{1 \times 3}{2 \times 3} + \frac{1 \times 2}{3 \times 2} \\
+                &= \frac{3}{6} + \frac{2}{6} \\
+                &= \frac{3+2}{6} = \frac{5}{6}
+                \end{align*}
+                \]
+                </div>
+                 <strong>Contoh Pengurangan:</strong>
+                <div class="math-block">
+                \[
+                \begin{align*}
+                \frac{3}{4} - \frac{1}{3} &= \frac{3 \times 3}{4 \times 3} - \frac{1 \times 4}{3 \times 4} \\
+                &= \frac{9}{12} - \frac{4}{12} \\
+                &= \frac{9-4}{12} = \frac{5}{12}
+                \end{align*}
+                \]
+                </div>
+            </div>
+
+            <h3>b. Perkalian</h3>
+            <p>
+                Langsung kalikan pembilang dengan pembilang, dan penyebut dengan penyebut.
+            </p>
+            <div class="example">
+                <strong>Contoh Perkalian:</strong>
+                <div class="math-block">
+                \[
+                 \frac{2}{3} \times \frac{4}{5} = \frac{2 \times 4}{3 \times 5} = \frac{8}{15}
+                \]
+                </div>
+            </div>
+
+            <h3>c. Pembagian</h3>
+            <p>
+                Ubah pembagian menjadi perkalian dengan kebalikan dari pecahan kedua.
+            </p>
+            <div class="example">
+                <strong>Contoh Pembagian:</strong>
+                <div class="math-block">
+                \[
+                \begin{align*}
+                \frac{1}{2} \div \frac{3}{4} &= \frac{1}{2} \times \frac{4}{3} \\
+                &= \frac{1 \times 4}{2 \times 3} = \frac{4}{6} \\
+                &= \frac{2}{3} \quad (\text{disederhanakan})
+                \end{align*}
+                \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="sifat-operasi">
+            <h2>4. Sifat-sifat Operasi Hitung Pecahan</h2>
+            <p>Seperti bilangan bulat, operasi hitung pecahan juga memiliki sifat-sifat berikut:</p>
+            <ul>
+                <li><strong>Sifat Komutatif (Pertukaran)</strong>: Berlaku untuk penjumlahan dan perkalian.
+                <div class="math-block">\[ \frac{a}{b} + \frac{c}{d} = \frac{c}{d} + \frac{a}{b} \quad \text{dan} \quad \frac{a}{b} \times \frac{c}{d} = \frac{c}{d} \times \frac{a}{b} \]</div>
+                </li>
+                <li><strong>Sifat Asosiatif (Pengelompokan)</strong>: Berlaku untuk penjumlahan dan perkalian.
+                <div class="math-block">\[ \left(\frac{a}{b} + \frac{c}{d}\right) + \frac{e}{f} = \frac{a}{b} + \left(\frac{c}{d} + \frac{e}{f}\right) \]</div>
+                 <div class="math-block">\[ \left(\frac{a}{b} \times \frac{c}{d}\right) \times \frac{e}{f} = \frac{a}{b} \times \left(\frac{c}{d} \times \frac{e}{f}\right) \]</div>
+                </li>
+                 <li><strong>Sifat Distributif (Penyebaran)</strong>: Perkalian terhadap penjumlahan atau pengurangan.
+                <div class="math-block">\[ \frac{a}{b} \times \left(\frac{c}{d} + \frac{e}{f}\right) = \left(\frac{a}{b} \times \frac{c}{d}\right) + \left(\frac{a}{b} \times \frac{e}{f}\right) \]</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section" id="operasi-lanjutan">
+            <h2>5. Operasi Lanjutan dan Kasus Khusus</h2>
+
+            <h3>a. Operasi pada Pecahan Campuran</h3>
+            <p>Cara termudah adalah mengubah pecahan campuran menjadi pecahan tidak biasa terlebih dahulu.</p>
+            <div class="example">
+                <strong>Contoh:</strong> Ubah \(A\frac{b}{c}\) menjadi \(\frac{(A \times c) + b}{c}\).
+                <div class="math-block">
+                \[
+                \begin{align*}
+                1\frac{1}{2} + 2\frac{1}{4} &= \frac{3}{2} + \frac{9}{4} \\
+                &= \frac{6}{4} + \frac{9}{4} \\
+                &= \frac{15}{4} = 3\frac{3}{4}
+                \end{align*}
+                \]
+                </div>
+            </div>
+
+            <h3>b. Pembagian yang Melibatkan Bilangan Bulat</h3>
+            <p>Ingat bahwa bilangan bulat \(n\) dapat ditulis sebagai pecahan \(\frac{n}{1}\). Cara terbaik menyelesaikannya adalah dengan menuliskannya sebagai pecahan bertumpuk.</p>
+            <div class="example">
+                <strong>Bilangan Bulat dibagi Pecahan:</strong>
+                 <div class="math-block">
+                \[ \frac{5}{\frac{2}{3}} = \frac{\frac{5}{1}}{\frac{2}{3}} = \frac{5}{1} \times \frac{3}{2} = \frac{15}{2} \]
+                </div>
+                <strong>Pecahan dibagi Bilangan Bulat:</strong>
+                 <div class="math-block">
+                \[ \frac{\frac{2}{3}}{5} = \frac{\frac{2}{3}}{\frac{5}{1}} = \frac{2}{3} \times \frac{1}{5} = \frac{2}{15} \]
+                </div>
+            </div>
+
+            <h3>c. Pecahan Bertumpuk (Kompleks)</h3>
+            <p>Pecahan bertumpuk adalah cara lain untuk menuliskan pembagian pecahan. Selesaikan dengan mengubahnya menjadi operasi pembagian biasa.</p>
+             <div class="example">
+                <strong>Contoh:</strong>
+                 <div class="math-block">
+                \[ \frac{\frac{3}{4}}{\frac{5}{8}} = \frac{3}{4} \div \frac{5}{8} = \frac{3}{4} \times \frac{8}{5} = \frac{24}{20} = \frac{6}{5} \]
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html> 

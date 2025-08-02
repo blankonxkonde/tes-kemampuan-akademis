@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Ukuran Pemusatan Data: Mean, Median, Modus</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .formula-box {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            overflow-x: auto;
+        }
+        .example-box {
+            background-color: #fef8e7;
+            border-left: 5px solid #f0ad4e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        .summary-img {
+            max-width: 150px;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Materi Lengkap Ukuran Pemusatan Data</h1>
+
+        <div class="section" id="pengenalan">
+            <h2>1. Apa itu Ukuran Pemusatan Data?</h2>
+            <p>
+                <b>Ukuran Pemusatan Data</b> adalah metode statistik untuk menemukan nilai tunggal yang paling mewakili atau menggambarkan "pusat" dari sekumpulan data. Ada tiga ukuran utama yang umum digunakan: <b>Mean</b>, <b>Median</b>, dan <b>Modus</b>.
+            </p>
+        </div>
+
+        <div class="section" id="rata-rata-mean">
+            <h2>2. Rata-Rata (Mean)</h2>
+            <p>
+                <b>Mean</b> adalah jumlah dari semua nilai data dibagi dengan banyaknya data. Ini adalah ukuran yang paling umum digunakan.
+            </p>
+            <div class="formula-box">
+                <b>Rumus Data Tunggal:</b>
+                \[ \bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n} = \frac{\sum_{i=1}^{n} x_i}{n} \]
+                <b>Keterangan:</b><br>
+                <ul>
+                    <li>\(\bar{x}\) = Rata-rata (mean)</li>
+                    <li>\(\sum x_i\) = Jumlah dari semua nilai data</li>
+                    <li>\(n\) = Banyaknya data</li>
+                </ul>
+            </div>
+
+            <div class="sub-section">
+                <h3>2.1 Studi Kasus: Rata-Rata Gabungan</h3>
+                <p>
+                    Rata-rata gabungan digunakan ketika kita ingin mencari rata-rata dari beberapa kelompok data yang sudah memiliki rata-rata masing-masing.
+                </p>
+                <div class="formula-box">
+                    <b>Rumus:</b>
+                     \[ \bar{x}_{\text{gab}} = \frac{n_1 \cdot \bar{x}_1 + n_2 \cdot \bar{x}_2 + \dots + n_k \cdot \bar{x}_k}{n_1 + n_2 + \dots + n_k} = \frac{\sum (n_i \cdot \bar{x}_i)}{\sum n_i} \]
+                    <b>Keterangan:</b><br>
+                    <ul>
+                        <li>\(\bar{x}_{\text{gab}}\) = Rata-rata gabungan</li>
+                        <li>\(\bar{x}_1, \bar{x}_2, \dots\) = Rata-rata kelompok 1, kelompok 2, dst.</li>
+                        <li>\(n_1, n_2, \dots\) = Jumlah anggota kelompok 1, kelompok 2, dst.</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <h4>Contoh Soal (dari Anda):</h4>
+                    <p>
+                        Nilai rata-rata siswa putra adalah 78 dan nilai rata-rata siswa putri adalah 70. Jika nilai rata-rata siswa dalam kelas adalah 73, maka berapakah perbandingan banyaknya siswa putra dengan siswa putri?
+                    </p>
+                    <b>Penyelesaian:</b>
+                    <p>
+                        <b>Diketahui:</b><br>
+                        <ul>
+                            <li>Rata-rata putra (\(\bar{x}_{\text{pa}}\)) = 78</li>
+                            <li>Rata-rata putri (\(\bar{x}_{\text{pi}}\)) = 70</li>
+                            <li>Rata-rata gabungan (\(\bar{x}_{\text{gab}}\)) = 73</li>
+                        </ul>
+                        <b>Ditanya:</b> Perbandingan jumlah siswa putra (\(n_{\text{pa}}\)) dan putri (\(n_{\text{pi}}\)) atau \(n_{\text{pa}} : n_{\text{pi}}\).
+                    </p>
+                    <p><b>Langkah-langkah Penyelesaian:</b></p>
+                    <p>Kita akan menggunakan rumus rata-rata gabungan dan menyelesaikannya secara aljabar. [Sesuai dengan preferensi Anda untuk menampilkan setiap langkah perhitungan secara vertikal][[memory:3802271914038177006]], perhitungannya adalah sebagai berikut:</p>
+                    <div class="formula-box">
+                        \begin{align*}
+                        \bar{x}_{\text{gab}} &= \frac{(\bar{x}_{\text{pa}} \cdot n_{\text{pa}}) + (\bar{x}_{\text{pi}} \cdot n_{\text{pi}})}{n_{\text{pa}} + n_{\text{pi}}} \\
+                        73 &= \frac{(78 \cdot n_{\text{pa}}) + (70 \cdot n_{\text{pi}})}{n_{\text{pa}} + n_{\text{pi}}} \\
+                        73(n_{\text{pa}} + n_{\text{pi}}) &= 78 n_{\text{pa}} + 70 n_{\text{pi}} \\
+                        73 n_{\text{pa}} + 73 n_{\text{pi}} &= 78 n_{\text{pa}} + 70 n_{\text{pi}} \\
+                        73 n_{\text{pi}} - 70 n_{\text{pi}} &= 78 n_{\text{pa}} - 73 n_{\text{pa}} \\
+                        3 n_{\text{pi}} &= 5 n_{\text{pa}}
+                        \end{align*}
+                    </div>
+                    <p>Untuk mendapatkan perbandingan \(n_{\text{pa}} : n_{\text{pi}}\), kita ubah bentuk persamaan terakhir:</p>
+                    \[ \frac{n_{\text{pa}}}{n_{\text{pi}}} = \frac{3}{5} \]
+                    <p>
+                        Jadi, perbandingan banyaknya siswa putra dengan siswa putri (\(n_{\text{pa}} : n_{\text{pi}}\)) adalah <span class="highlight">3 : 5</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="median">
+            <h2>3. Median (Nilai Tengah)</h2>
+            <p>
+                <b>Median</b> adalah nilai tengah dari kumpulan data yang telah <strong>diurutkan</strong> dari yang terkecil hingga terbesar. Median sangat berguna karena tidak terpengaruh oleh nilai ekstrem (pencilan atau <i>outlier</i>).
+            </p>
+            <div class="formula-box">
+                <b>Langkah-langkah Menemukan Median:</b>
+                <ol>
+                    <li><b>Urutkan data</b> dari nilai terkecil ke terbesar.</li>
+                    <li>Tentukan letak median berdasarkan jumlah data (\(n\)).</li>
+                </ol>
+                <hr>
+                <p><b>Jika jumlah data ganjil:</b> Median adalah nilai yang berada tepat di tengah.</p>
+                <p>Letak data: \( \text{Median} = \text{Data ke-} \left( \frac{n+1}{2} \right) \)</p>
+                <hr>
+                <p><b>Jika jumlah data genap:</b> Median adalah rata-rata dari dua nilai yang berada di tengah.</p>
+                <p>Letak data: \( \text{Median} = \frac{\text{Data ke-}\left(\frac{n}{2}\right) + \text{Data ke-}\left(\frac{n}{2}+1\right)}{2} \)</p>
+            </div>
+            <div class="example-box">
+                <h3>Contoh Soal:</h3>
+                <p><b>A. Data Ganjil:</b> Tentukan median dari data: 7, 9, 6, 8, 10.</p>
+                <p>
+                    <b>Urutkan data:</b> 6, 7, <span class="highlight">8</span>, 9, 10.<br>
+                    Jumlah data (\(n\)) = 5 (ganjil).<br>
+                    Letak median adalah data ke-\(\left(\frac{5+1}{2}\right)\) = data ke-3.<br>
+                    <b>Median = 8.</b>
+                </p>
+                <hr>
+                <p><b>B. Data Genap:</b> Tentukan median dari data: 7, 9, 6, 8, 10, 5.</p>
+                <p>
+                    <b>Urutkan data:</b> 5, 6, <span class="highlight">7, 8</span>, 9, 10.<br>
+                    Jumlah data (\(n\)) = 6 (genap).<br>
+                    Median adalah rata-rata dari data ke-\(\left(\frac{6}{2}\right)\) (data ke-3) dan data ke-\(\left(\frac{6}{2}+1\right)\) (data ke-4).<br>
+                    \[ \text{Median} = \frac{7+8}{2} = 7.5 \]
+                    <b>Median = 7.5.</b>
+                </p>
+            </div>
+        </div>
+
+        <div class="section" id="modus">
+            <h2>4. Modus (Nilai Paling Sering Muncul)</h2>
+            <p>
+                <b>Modus</b> adalah nilai yang memiliki frekuensi kemunculan tertinggi dalam suatu kumpulan data. Sebuah data bisa memiliki lebih dari satu modus atau tidak sama sekali.
+            </p>
+            <div class="example-box">
+                <h3>Contoh Soal:</h3>
+                <p><b>A. Data:</b> 2, 4, 5, <span class="highlight">5</span>, 6, 7, <span class="highlight">5</span></p>
+                <p>Nilai 5 muncul sebanyak 3 kali, lebih sering dari nilai lainnya. <b>Modus = 5</b>.</p>
+                <hr>
+                <p><b>B. Data:</b> 2, 4, <span class="highlight">5, 5</span>, 6, <span class="highlight">6</span>, 7</p>
+                <p>Nilai 5 dan 6 sama-sama muncul 2 kali. Data ini memiliki dua modus (bimodal). <b>Modus = 5 dan 6</b>.</p>
+                <hr>
+                <p><b>C. Data:</b> 2, 3, 4, 5, 6, 7</p>
+                <p>Semua nilai hanya muncul satu kali. <b>Tidak ada modus</b>.</p>
+            </div>
+        </div>
+
+        <div class="section" id="ringkasan">
+            <h2>5. Ringkasan & Kapan Menggunakannya</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ukuran</th>
+                        <th>Kapan Digunakan</th>
+                        <th>Contoh Data & Visualisasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Mean</b></td>
+                        <td>Ketika data terdistribusi normal dan tidak ada nilai ekstrem (pencilan).</td>
+                        <td>
+                            <b>Data:</b> Nilai ujian {7, 8, 8, 9, 10}
+                            <br>Mean = 8.4
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/300px-Standard_deviation_diagram.svg.png" alt="Distribusi Normal" class="summary-img">
+                            <small>Distribusi Simetris (Normal)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Median</b></td>
+                        <td>Ketika data memiliki pencilan (<i>outlier</i>) atau distribusinya miring (<i>skewed</i>).</td>
+                        <td>
+                            <b>Data:</b> Gaji per bulan (dalam juta) {4, 5, 5, 6, 20}
+                            <br>Pencilan '20' membuat Mean (8) kurang representatif. Median (5) lebih baik.
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Negative_and_positive_skew_diagrams_%28English%29.svg/300px-Negative_and_positive_skew_diagrams_%28English%29.svg.png" alt="Distribusi Miring" class="summary-img">
+                            <small>Distribusi Miring ke Kanan (Positive Skew)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Modus</b></td>
+                        <td>Untuk mengetahui nilai yang paling populer/umum, terutama pada data kualitatif.</td>
+                        <td>
+                            <b>Data:</b> Ukuran baju terjual {S, M, M, L, L, L, XL}
+                            <br>Modus = 'L'
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Simple_bar_chart.svg/300px-Simple_bar_chart.svg.png" alt="Grafik Bar" class="summary-img">
+                            <small>Grafik Bar untuk Data Kategorikal</small>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html> 

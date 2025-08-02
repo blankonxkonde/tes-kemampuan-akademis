@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjelasan Porogapit</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .calculation {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .step {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        table.porogapit {
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        table.porogapit td, table.porogapit th {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: right;
+            min-width: 30px;
+        }
+        table.porogapit th {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+        table.porogapit td.divisor {
+            border-top: none;
+            border-left: none;
+            border-bottom: none;
+            padding-right: 5px;
+        }
+        table.porogapit td.dividend {
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+        }
+        table.porogapit td.result {
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .no-border {
+            border: none !important;
+        }
+        .highlight-quotient {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .highlight-active-number {
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Penjelasan Perhitungan Porogapit</h1>
+
+        <!-- Perhitungan 1: 1449 / 7 -->
+        <div class="calculation">
+            <h2>1. Pembagian 1449 dengan 7 (1449 ÷ 7)</h2>
+            <p>Langkah-langkah pembagian 1449 dengan 7:</p>
+            <table class="porogapit">
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="result"><span class="highlight-quotient">2</span></td>
+                    <td class="result"><span class="highlight-quotient">0</span></td>
+                    <td class="result"><span class="highlight-quotient">7</span></td>
+                    <td class="no-border"></td>
+                </tr>
+                <tr>
+                    <td class="divisor"><span class="highlight-active-number">7</span></td>
+                    <td class="dividend"><span class="highlight-active-number">1</span></td>
+                    <td class="dividend"><span class="highlight-active-number">4</span></td>
+                    <td class="dividend">4</td>
+                    <td class="dividend">9</td>
+                    <td class="no-border">Hasil</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">1</span></td>
+                    <td class="underline"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">2</span> × <span class="highlight-active-number">7</span> = <span class="highlight-active-number">14</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">14</span> - <span class="highlight-active-number">14</span> = <span class="highlight-active-number">0</span>, turunkan <span class="highlight-active-number">4</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">0</span> × <span class="highlight-active-number">7</span> = <span class="highlight-active-number">0</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"><span class="highlight-active-number">9</span></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span> - <span class="highlight-active-number">0</span> = <span class="highlight-active-number">4</span>, turunkan <span class="highlight-active-number">9</span> menjadi <span class="highlight-active-number">49</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">4</span></td>
+                    <td class="underline"><span class="highlight-active-number">9</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">7</span> × <span class="highlight-active-number">7</span> = <span class="highlight-active-number">49</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">49</span> - <span class="highlight-active-number">49</span> = <span class="highlight-active-number">0</span></td>
+                </tr>
+            </table>
+            <div class="step">
+                <strong>Langkah 1:</strong> Bagi <span class="highlight-active-number">14</span> dengan <span class="highlight-active-number">7</span>. Hasilnya adalah <span class="highlight-quotient">2</span>. Tulis <span class="highlight-quotient">2</span> di atas. (<span class="highlight-quotient">2</span> × <span class="highlight-active-number">7</span> = <span class="highlight-active-number">14</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 2:</strong> Kurangkan <span class="highlight-active-number">14</span> dari <span class="highlight-active-number">14</span>. Hasilnya adalah <span class="highlight-active-number">0</span>. Turunkan angka berikutnya dari dividen, yaitu <span class="highlight-active-number">4</span>. Sekarang kita punya <span class="highlight-active-number">04</span> atau <span class="highlight-active-number">4</span>.
+            </div>
+            <div class="step" style="background-color: #e6ffe6; padding: 10px; border-radius: 4px; margin-top:5px; margin-bottom:5px; border: 1px solid #c3e6cb;">
+                <strong>Klarifikasi Penting (untuk Langkah 3 berikutnya):</strong>
+                <p>Angka yang sekarang akan kita proses untuk pembagian (guna menentukan digit hasil berikutnya) adalah <span class="highlight-active-number"><strong>4</strong></span> (yang baru saja diturunkan dari 14<u><span class="highlight-active-number">4</span></u>9).</p>
+                <p>Kita bertanya: "Berapa kali <span class="highlight-active-number">7</span> bisa membagi <span class="highlight-active-number">4</span>?"</p>
+                <p>Karena <span class="highlight-active-number"><strong>4</strong></span> lebih kecil dari <span class="highlight-active-number">7</span>, maka <span class="highlight-active-number">7</span> masuk ke dalam <span class="highlight-active-number">4</span> sebanyak <span class="highlight-quotient"><strong>0</strong></span> kali. Oleh karena itu, <span class="highlight-quotient">0</span> akan menjadi digit berikutnya di hasil (pada posisi puluhan).</p>
+                <p style="font-size:0.9em; color:#555;"><em>Ini adalah momen kunci: '<span class="highlight-quotient">0</span>' ditulis karena angka yang aktif diproses ('<span class="highlight-active-number">4</span>' yang diturunkan) lebih kecil dari pembagi.</em></p>
+            </div>
+            <div class="step" style="background-color: #f0f0f0; padding: 10px; border-radius: 4px; margin-top:5px; margin-bottom:5px; border: 1px solid #ddd;">
+                <strong>Aturan Penting Porogapit: Menurunkan Satu Digit Sekaligus</strong>
+                <p>Anda mungkin bertanya mengapa kita tidak langsung menurunkan '<span class="highlight-active-number">4</span>' dan '<span class="highlight-active-number">9</span>' sekaligus untuk membentuk '<span class="highlight-active-number">49</span>' setelah langkah pertama (<span class="highlight-active-number">14</span> ÷ <span class="highlight-active-number">7</span>). Aturan dasar porogapit adalah kita <strong>menurunkan dan memproses satu digit dari dividen pada satu waktu</strong>.</p>
+                <p>Ini penting untuk menentukan digit hasil (quotient) untuk setiap nilai tempat secara benar:</p>
+                <ul>
+                    <li>Setelah menentukan digit ratusan (yaitu '<span class="highlight-quotient">2</span>'), kita perlu menentukan digit puluhan.</li>
+                    <li>Dengan menurunkan hanya '<span class="highlight-active-number">4</span>', kita membentuk angka '<span class="highlight-active-number">4</span>' (atau '<span class="highlight-active-number">04</span>') yang akan menentukan digit puluhan pada hasil.</li>
+                    <li>Jika kita langsung menurunkan '<span class="highlight-active-number">49</span>', kita akan melewatkan penentuan digit untuk posisi puluhan secara eksplisit, yang bisa menyebabkan kesalahan dalam memahami nilai tempat dari hasil akhir.</li>
+                </ul>
+                <p style="font-size:0.9em; color:#555;"><em>Singkatnya: Turunkan satu digit untuk menentukan satu digit hasil pada nilai tempat yang sesuai.</em></p>
+            </div>
+            <div class="step">
+                <strong>Langkah 3:</strong> Bagi <span class="highlight-active-number">4</span> dengan <span class="highlight-active-number">7</span>. Karena <span class="highlight-active-number">4</span> lebih kecil dari <span class="highlight-active-number">7</span>, hasilnya adalah <span class="highlight-quotient">0</span>. Tulis <span class="highlight-quotient">0</span> di atas. (<span class="highlight-quotient">0</span> × <span class="highlight-active-number">7</span> = <span class="highlight-active-number">0</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 4:</strong> Kurangkan <span class="highlight-active-number">0</span> dari <span class="highlight-active-number">4</span>. Hasilnya adalah <span class="highlight-active-number">4</span>. Turunkan angka berikutnya dari dividen, yaitu <span class="highlight-active-number">9</span>. Sekarang kita punya <span class="highlight-active-number">49</span>.
+            </div>
+            <div class="step">
+                <strong>Langkah 5:</strong> Bagi <span class="highlight-active-number">49</span> dengan <span class="highlight-active-number">7</span>. Hasilnya adalah <span class="highlight-quotient">7</span>. Tulis <span class="highlight-quotient">7</span> di atas. (<span class="highlight-quotient">7</span> × <span class="highlight-active-number">7</span> = <span class="highlight-active-number">49</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 6:</strong> Kurangkan <span class="highlight-active-number">49</span> dari <span class="highlight-active-number">49</span>. Hasilnya adalah <span class="highlight-active-number">0</span>.
+            </div>
+            <p>Jadi, <strong><span class="highlight-active-number">1449</span> ÷ <span class="highlight-active-number">7</span> = <span class="highlight-quotient">207</span></strong> dengan sisa <span class="highlight-active-number">0</span>.</p>
+        </div>
+
+        <!-- Perhitungan 4: 718 / 6 -->
+        <div class="calculation">
+            <h2>2. Pembagian 718 dengan 6 (718 ÷ 6)</h2>
+            <p>Langkah-langkah pembagian 718 dengan 6:</p>
+            <table class="porogapit">
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="result"><span class="highlight-quotient">1</span></td>
+                    <td class="result"><span class="highlight-quotient">1</span></td>
+                    <td class="result"><span class="highlight-quotient">9</span></td>
+                    <td class="result">.</td>
+                    <td class="result"><span class="highlight-quotient">6</span></td>
+                    <td class="result"><span class="highlight-quotient">6</span></td>
+                    <td class="no-border">...</td>
+                </tr>
+                <tr>
+                    <td class="divisor"><span class="highlight-active-number">6</span></td>
+                    <td class="dividend"><span class="highlight-active-number">7</span></td>
+                    <td class="dividend"><span class="highlight-active-number">1</span></td>
+                    <td class="dividend"><span class="highlight-active-number">8</span></td>
+                    <td class="dividend">.</td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">6</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">1</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">6</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">7</span> - <span class="highlight-active-number">6</span> = <span class="highlight-active-number">1</span>, turunkan <span class="highlight-active-number">1</span> menjadi <span class="highlight-active-number">11</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">6</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">1</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">6</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">5</span></td>
+                    <td class="no-border"><span class="highlight-active-number">8</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">11</span> - <span class="highlight-active-number">6</span> = <span class="highlight-active-number">5</span>, turunkan <span class="highlight-active-number">8</span> menjadi <span class="highlight-active-number">58</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">5</span></td>
+                    <td class="underline"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">9</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">54</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">58</span> - <span class="highlight-active-number">54</span> = <span class="highlight-active-number">4</span>. Tambah koma dan <span class="highlight-active-number">0</span>, menjadi <span class="highlight-active-number">40</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">3</span></td>
+                    <td class="underline"><span class="highlight-active-number">6</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">6</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">36</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">40</span> - <span class="highlight-active-number">36</span> = <span class="highlight-active-number">4</span>. Tambah <span class="highlight-active-number">0</span>, menjadi <span class="highlight-active-number">40</span> (pola berulang)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">3</span></td>
+                    <td class="underline"><span class="highlight-active-number">6</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">6</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">36</span>)</td>
+                </tr>
+                 <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"><span class="highlight-active-number">40</span> - <span class="highlight-active-number">36</span> = <span class="highlight-active-number">4</span> (sisa)</td>
+                </tr>
+            </table>
+            <div class="step">
+                <strong>Langkah 1:</strong> Bagi <span class="highlight-active-number">7</span> dengan <span class="highlight-active-number">6</span>. Hasilnya adalah <span class="highlight-quotient">1</span>. Tulis <span class="highlight-quotient">1</span> di atas. (<span class="highlight-quotient">1</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">6</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 2:</strong> Kurangkan <span class="highlight-active-number">6</span> dari <span class="highlight-active-number">7</span>. Hasilnya adalah <span class="highlight-active-number">1</span>. Turunkan angka berikutnya (<span class="highlight-active-number">1</span>), menjadi <span class="highlight-active-number">11</span>.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 3:</strong> Bagi <span class="highlight-active-number">11</span> dengan <span class="highlight-active-number">6</span>. Hasilnya adalah <span class="highlight-quotient">1</span>. Tulis <span class="highlight-quotient">1</span> di atas. (<span class="highlight-quotient">1</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">6</span>)</td>
+            </div>
+            <div class="step" style="background-color: #e6f2ff; padding: 10px; border-radius: 4px; margin-top:5px; margin-bottom:5px; border: 1px solid #b8daff;">
+                <strong>Klarifikasi Penting (setelah Langkah 3 dan sebelum memproses sisa):</strong>
+                <p>Setelah Langkah 3, kita melakukan <code><span class="highlight-active-number">11</span> - <span class="highlight-active-number">6</span> = <span class="highlight-active-number">5</span></code>. Sisa sementara adalah <span class="highlight-active-number"><strong>5</strong></span>.</p>
+                <p>Meskipun <span class="highlight-active-number"><strong>5</strong></span> lebih kecil dari <span class="highlight-active-number">6</span> (pembagi), kita <em>tidak</em> langsung menulis '0' di hasil pada tahap ini.</p>
+                <p>Mengapa? Karena aturan porogapit mengharuskan kita untuk <strong>selalu menurunkan digit berikutnya dari dividen (yaitu '<span class="highlight-active-number">8</span>' dari 71<u><span class="highlight-active-number">8</span></u>) terlebih dahulu</strong>, jika masih ada.</p>
+                <p style="font-size:0.9em; color:#555;"><em>Ini adalah momen kunci: sisa '<span class="highlight-active-number">5</span>' belum final untuk menentukan digit hasil; ia menunggu digit berikutnya dari dividen.</em></p>
+            </div>
+            <div class="step">
+                <strong>Langkah 4:</strong> Kurangkan <span class="highlight-active-number">6</span> dari <span class="highlight-active-number">11</span>. Hasilnya adalah <span class="highlight-active-number">5</span>. Turunkan angka berikutnya (<span class="highlight-active-number">8</span>), menjadi <span class="highlight-active-number"><strong>58</strong></span>.</td>
+            </div>
+            <div class="step" style="background-color: #e6f2ff; padding: 10px; border-radius: 4px; margin-top:5px; margin-bottom:5px; border: 1px solid #b8daff;">
+                <strong>Lanjutan Klarifikasi (untuk Langkah 5 berikutnya):</strong>
+                <p>Setelah menurunkan '<span class="highlight-active-number">8</span>', angka yang sekarang akan kita proses untuk pembagian (guna menentukan digit hasil berikutnya) adalah <span class="highlight-active-number"><strong>58</strong></span>.</p>
+                <p>Kita bertanya: "Berapa kali <span class="highlight-active-number">6</span> bisa membagi <span class="highlight-active-number">58</span>?" Jawabannya adalah <span class="highlight-quotient">9</span> kali (<code><span class="highlight-quotient">9</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">54</span></code>).</p>
+                <p>Karena '<span class="highlight-active-number">58</span>' (angka yang aktif diproses) <em>tidak</em> lebih kecil dari '<span class="highlight-active-number">6</span>', kita menulis hasil pembagian aktual yaitu <span class="highlight-quotient">9</span>.</p>
+            </div>
+            <div class="step">
+                <strong>Langkah 5:</strong> Kurangkan <span class="highlight-active-number">54</span> dari <span class="highlight-active-number">58</span>. Hasilnya adalah <span class="highlight-active-number">4</span>. Tidak ada angka lagi untuk diturunkan. Tambahkan koma (.) pada hasil dan tambahkan <span class="highlight-active-number">0</span> pada sisa (<span class="highlight-active-number">4</span>), menjadi <span class="highlight-active-number">40</span>.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 6:</strong> Bagi <span class="highlight-active-number">40</span> dengan <span class="highlight-active-number">6</span>. Hasilnya adalah <span class="highlight-quotient">6</span>. Tulis <span class="highlight-quotient">6</span> di atas setelah koma. (<span class="highlight-quotient">6</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">36</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 7:</strong> Kurangkan <span class="highlight-active-number">36</span> dari <span class="highlight-active-number">40</span>. Hasilnya adalah <span class="highlight-active-number">4</span>. Tambahkan <span class="highlight-active-number">0</span> lagi pada sisa (<span class="highlight-active-number">4</span>), menjadi <span class="highlight-active-number">40</span>.
+            </div>
+            <div class="step">
+                <strong>Langkah 8:</strong> Bagi <span class="highlight-active-number">40</span> dengan <span class="highlight-active-number">6</span>. Hasilnya adalah <span class="highlight-quotient">6</span>. Tulis <span class="highlight-quotient">6</span> di atas. (<span class="highlight-quotient">6</span> × <span class="highlight-active-number">6</span> = <span class="highlight-active-number">36</span>). Sisa <span class="highlight-active-number">4</span>. Pola ini akan berulang.</td>
+            </div>
+            <p>Jadi, <strong><span class="highlight-active-number">718</span> ÷ <span class="highlight-active-number">6</span> = <span class="highlight-quotient">119</span></strong> dengan sisa <strong><span class="highlight-active-number">4</span></strong>, atau <strong><span class="highlight-quotient">119.666...</span></strong> (<span class="highlight-quotient">119.<span>6</span></span> dengan garis di atas 6 untuk menandakan perulangan).</p>
+        </div>
+
+        <!-- Perhitungan 2: 1 / 11 -->
+        <div class="calculation">
+            <h2>3. Pembagian 1 dengan 11 (1 ÷ 11)</h2>
+            <p>Langkah-langkah pembagian 1 dengan 11 (akan menghasilkan desimal berulang):</p>
+            <table class="porogapit">
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="result"><span class="highlight-quotient">0</span></td>
+                    <td class="result">.</td>
+                    <td class="result"><span class="highlight-quotient">0</span></td>
+                    <td class="result"><span class="highlight-quotient">9</span></td>
+                    <td class="result"><span class="highlight-quotient">0</span></td>
+                    <td class="result"><span class="highlight-quotient">9</span></td>
+                    <td class="no-border">...</td>
+                </tr>
+                <tr>
+                    <td class="divisor"><span class="highlight-active-number">11</span></td>
+                    <td class="dividend"><span class="highlight-active-number">1</span></td>
+                    <td class="dividend">.</td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">0</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">0</span> (karena 1 < 11, tambahkan koma dan 0)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span> - <span class="highlight-active-number">0</span> = <span class="highlight-active-number">1</span>, turunkan <span class="highlight-active-number">0</span> (dari desimal) menjadi <span class="highlight-active-number">10</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">0</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">0</span> (karena 10 < 11, tambahkan 0 lagi)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">10</span> - <span class="highlight-active-number">0</span> = <span class="highlight-active-number">10</span>, turunkan <span class="highlight-active-number">0</span> (dari desimal) menjadi <span class="highlight-active-number">100</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">9</span></td>
+                    <td class="underline"><span class="highlight-active-number">9</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">9</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">99</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">100</span> - <span class="highlight-active-number">99</span> = <span class="highlight-active-number">1</span>, turunkan <span class="highlight-active-number">0</span> (dari desimal) menjadi <span class="highlight-active-number">10</span> (pola berulang)</td>
+                </tr>
+                 <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">0</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">0</span> (karena 10 < 11)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">100</span></td>
+                    <td class="no-border"><span class="highlight-active-number">10</span> - <span class="highlight-active-number">0</span> = <span class="highlight-active-number">10</span>, turunkan <span class="highlight-active-number">0</span> lagi menjadi <span class="highlight-active-number">100</span></td>
+                </tr>
+                 <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">99</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">9</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">99</span> (pola berulang)</td>
+                </tr>
+            </table>
+            <div class="step">
+                <strong>Langkah 1:</strong> 1 dibagi 11 tidak bisa (1 < 11), jadi tulis <span class="highlight-quotient">0</span> dan tambahkan koma (.). Tambahkan 0 di belakang 1 menjadi 10.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 2:</strong> 10 dibagi 11 tidak bisa (10 < 11), jadi tulis <span class="highlight-quotient">0</span> setelah koma. Tambahkan 0 lagi di belakang 10 menjadi 100.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 3:</strong> Bagi 100 dengan 11. Hasilnya adalah <span class="highlight-quotient">9</span>. Tulis 9 di atas. (<span class="highlight-quotient">9</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">99</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 4:</strong> Kurangkan 99 dari 100. Hasilnya adalah 1. Tambahkan 0 lagi menjadi 10.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 5:</strong> 10 dibagi 11 tidak bisa, tulis <span class="highlight-quotient">0</span> di atas. Tambahkan 0 lagi menjadi 100.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 6:</strong> Bagi 100 dengan 11. Hasilnya adalah <span class="highlight-quotient">9</span>. Tulis 9 di atas. (<span class="highlight-quotient">9</span> × <span class="highlight-active-number">11</span> = <span class="highlight-active-number">99</span>)</td>
+            </div>
+            <div class="step">
+                Proses ini akan terus berulang (100 - 99 = 1, dst.), menghasilkan angka 09 yang berulang.</td>
+            </div>
+            <p>Jadi, <strong><span class="highlight-quotient">0.090909...</span></strong> atau <span class="highlight-quotient">0.<span>09</span></span> (dengan garis di atas 09 untuk menandakan perulangan).</p>
+        </div>
+
+        <!-- Perhitungan 3: 51 / 4 -->
+        <div class="calculation">
+            <h2>4. Pembagian 51 dengan 4 (51 ÷ 4)</h2>
+            <p>Langkah-langkah pembagian 51 dengan 4:</p>
+            <table class="porogapit">
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="result"><span class="highlight-quotient">1</span></td>
+                    <td class="result"><span class="highlight-quotient">2</span></td>
+                    <td class="result">.</td>
+                    <td class="result"><span class="highlight-quotient">7</span></td>
+                    <td class="result"><span class="highlight-quotient">5</span></td>
+                </tr>
+                <tr>
+                    <td class="divisor"><span class="highlight-active-number">4</span></td>
+                    <td class="dividend"><span class="highlight-active-number">5</span></td>
+                    <td class="dividend"><span class="highlight-active-number">1</span></td>
+                    <td class="dividend">.</td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">1</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">4</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">5</span> - <span class="highlight-active-number">4</span> = <span class="highlight-active-number">1</span>, turunkan <span class="highlight-active-number">1</span> menjadi <span class="highlight-active-number">11</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">8</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">2</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">8</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">3</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">11</span> - <span class="highlight-active-number">8</span> = <span class="highlight-active-number">3</span>. Tambahkan koma dan <span class="highlight-active-number">0</span>, menjadi <span class="highlight-active-number">30</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">2</span></td>
+                    <td class="underline"><span class="highlight-active-number">8</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">7</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">28</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">2</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">30</span> - <span class="highlight-active-number">28</span> = <span class="highlight-active-number">2</span>, tambahkan <span class="highlight-active-number">0</span> menjadi <span class="highlight-active-number">20</span></td>
+                </tr>
+                 <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">2</span></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">5</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">20</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">20</span> - <span class="highlight-active-number">20</span> = <span class="highlight-active-number">0</span></td>
+                </tr>
+            </table>
+            <div class="step">
+                <strong>Langkah 1:</strong> Bagi <span class="highlight-active-number">5</span> dengan <span class="highlight-active-number">4</span>. Hasilnya adalah <span class="highlight-quotient">1</span>. Tulis <span class="highlight-quotient">1</span> di atas. (<span class="highlight-quotient">1</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">4</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 2:</strong> Kurangkan <span class="highlight-active-number">4</span> dari <span class="highlight-active-number">5</span>. Hasilnya adalah <span class="highlight-active-number">1</span>. Turunkan angka berikutnya dari dividen, yaitu <span class="highlight-active-number">1</span>. Sekarang kita punya <span class="highlight-active-number">11</span>.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 3:</strong> Bagi <span class="highlight-active-number">11</span> dengan <span class="highlight-active-number">4</span>. Hasilnya adalah <span class="highlight-quotient">2</span>. Tulis <span class="highlight-quotient">2</span> di atas. (<span class="highlight-quotient">2</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">8</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 4:</strong> Kurangkan <span class="highlight-active-number">8</span> dari <span class="highlight-active-number">11</span>. Hasilnya adalah <span class="highlight-active-number">3</span>. Karena tidak ada angka lagi untuk diturunkan dan kita ingin hasil desimal, tambahkan koma (.) pada hasil dan tambahkan <span class="highlight-active-number">0</span> pada sisa (<span class="highlight-active-number">3</span>), menjadi <span class="highlight-active-number">30</span>.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 5:</strong> Bagi <span class="highlight-active-number">30</span> dengan <span class="highlight-active-number">4</span>. Hasilnya adalah <span class="highlight-quotient">7</span>. Tulis <span class="highlight-quotient">7</span> di atas setelah koma. (<span class="highlight-quotient">7</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">28</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 6:</strong> Kurangkan <span class="highlight-active-number">28</span> dari <span class="highlight-active-number">30</span>. Hasilnya adalah <span class="highlight-active-number">2</span>. Tambahkan <span class="highlight-active-number">0</span> lagi pada sisa (<span class="highlight-active-number">2</span>), menjadi <span class="highlight-active-number">20</span>.</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 7:</strong> Bagi <span class="highlight-active-number">20</span> dengan <span class="highlight-active-number">4</span>. Hasilnya adalah <span class="highlight-quotient">5</span>. Tulis <span class="highlight-quotient">5</span> di atas. (<span class="highlight-quotient">5</span> × <span class="highlight-active-number">4</span> = <span class="highlight-active-number">20</span>)</td>
+            </div>
+            <div class="step">
+                <strong>Langkah 8:</strong> Kurangkan <span class="highlight-active-number">20</span> dari <span class="highlight-active-number">20</span>. Hasilnya adalah <span class="highlight-active-number">0</span>.</td>
+            </div>
+            <p>Jadi, <strong><span class="highlight-active-number">51</span> ÷ <span class="highlight-active-number">4</span> = <span class="highlight-quotient">12.75</span></strong>.</p>
+        </div>
+
+        <!-- Perhitungan 5: 81 / 65 -->
+        <div class="calculation">
+            <h2>5. Pembagian 81 dengan 65 (81 ÷ 65)</h2>
+            <p>Langkah-langkah pembagian 81 dengan 65:</p>
+            <table class="porogapit">
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="result"><span class="highlight-quotient">1</span></td>
+                    <td class="result">.</td>
+                    <td class="result"><span class="highlight-quotient">2</span></td>
+                    <td class="result"><span class="highlight-quotient">4</span></td>
+                    <td class="result"><span class="highlight-quotient">6</span></td>
+                    <td class="no-border">...</td>
+                </tr>
+                <tr>
+                    <td class="divisor"><span class="highlight-active-number">65</span></td>
+                    <td class="dividend"><span class="highlight-active-number">8</span></td>
+                    <td class="dividend"><span class="highlight-active-number">1</span></td>
+                    <td class="dividend">.</td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="dividend"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">6</span></td>
+                    <td class="underline"><span class="highlight-active-number">5</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">1</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">65</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"><span class="highlight-active-number">6</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">81</span> - <span class="highlight-active-number">65</span> = <span class="highlight-active-number">16</span>. Tambah koma dan <span class="highlight-active-number">0</span>, menjadi <span class="highlight-active-number">160</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">1</span></td>
+                    <td class="underline"><span class="highlight-active-number">3</span></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border">(<span class="highlight-quotient">2</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">130</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">3</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">160</span> - <span class="highlight-active-number">130</span> = <span class="highlight-active-number">30</span>. Tambah <span class="highlight-active-number">0</span>, menjadi <span class="highlight-active-number">300</span></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">2</span></td>
+                    <td class="underline"><span class="highlight-active-number">6</span></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">4</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">260</span>)</td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">4</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">300</span> - <span class="highlight-active-number">260</span> = <span class="highlight-active-number">40</span>. Tambah <span class="highlight-active-number">0</span>, menjadi <span class="highlight-active-number">400</span></td>
+                </tr>
+                 <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="underline"><span class="highlight-active-number">3</span></td>
+                    <td class="underline"><span class="highlight-active-number">9</span></td>
+                    <td class="underline"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border">(<span class="highlight-quotient">6</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">390</span>)</td>
+                </tr>
+                 <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"></td>
+                    <td class="no-border"><span class="highlight-active-number">1</span></td>
+                    <td class="no-border"><span class="highlight-active-number">0</span></td>
+                    <td class="no-border"><span class="highlight-active-number">400</span> - <span class="highlight-active-number">390</span> = <span class="highlight-active-number">10</span> (sisa)</td>
+                </tr>
+            </table>
+            <div class="step">
+                <strong>Langkah 1:</strong> Bagi <span class="highlight-active-number">81</span> dengan <span class="highlight-active-number">65</span>. Hasilnya adalah <span class="highlight-quotient">1</span>. Tulis <span class="highlight-quotient">1</span> di atas. (<span class="highlight-quotient">1</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">65</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 2:</strong> Kurangkan <span class="highlight-active-number">65</span> dari <span class="highlight-active-number">81</span>. Hasilnya adalah <span class="highlight-active-number">16</span>. Karena <span class="highlight-active-number">16</span> lebih kecil dari <span class="highlight-active-number">65</span> dan tidak ada angka lagi untuk diturunkan, tambahkan koma (.) pada hasil dan tambahkan <span class="highlight-active-number">0</span> pada sisa (<span class="highlight-active-number">16</span>), menjadi <span class="highlight-active-number">160</span>.
+            </div>
+            <div class="step">
+                <strong>Langkah 3:</strong> Bagi <span class="highlight-active-number">160</span> dengan <span class="highlight-active-number">65</span>. Hasilnya adalah <span class="highlight-quotient">2</span>. Tulis <span class="highlight-quotient">2</span> di atas setelah koma. (<span class="highlight-quotient">2</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">130</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 4:</strong> Kurangkan <span class="highlight-active-number">130</span> dari <span class="highlight-active-number">160</span>. Hasilnya adalah <span class="highlight-active-number">30</span>. Tambahkan <span class="highlight-active-number">0</span> lagi pada sisa (<span class="highlight-active-number">30</span>), menjadi <span class="highlight-active-number">300</span>.
+            </div>
+            <div class="step">
+                <strong>Langkah 5:</strong> Bagi <span class="highlight-active-number">300</span> dengan <span class="highlight-active-number">65</span>. Hasilnya adalah <span class="highlight-quotient">4</span>. Tulis <span class="highlight-quotient">4</span> di atas. (<span class="highlight-quotient">4</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">260</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 6:</strong> Kurangkan <span class="highlight-active-number">260</span> dari <span class="highlight-active-number">300</span>. Hasilnya adalah <span class="highlight-active-number">40</span>. Tambahkan <span class="highlight-active-number">0</span> lagi pada sisa (<span class="highlight-active-number">40</span>), menjadi <span class="highlight-active-number">400</span>.
+            </div>
+            <div class="step">
+                <strong>Langkah 7:</strong> Bagi <span class="highlight-active-number">400</span> dengan <span class="highlight-active-number">65</span>. Hasilnya adalah <span class="highlight-quotient">6</span>. Tulis <span class="highlight-quotient">6</span> di atas. (<span class="highlight-quotient">6</span> × <span class="highlight-active-number">65</span> = <span class="highlight-active-number">390</span>)
+            </div>
+            <div class="step">
+                <strong>Langkah 8:</strong> Kurangkan <span class="highlight-active-number">390</span> dari <span class="highlight-active-number">400</span>. Hasilnya adalah <span class="highlight-active-number">10</span>. Pembagian bisa dilanjutkan jika presisi lebih lanjut diperlukan.
+            </div>
+            <p>Jadi, <strong><span class="highlight-active-number">81</span> ÷ <span class="highlight-active-number">65</span> ≈ <span class="highlight-quotient">1.246...</span></strong> (dibulatkan atau dilanjutkan sesuai kebutuhan).</p>
+        </div>
+
+    </div>
+</body>
+</html> 

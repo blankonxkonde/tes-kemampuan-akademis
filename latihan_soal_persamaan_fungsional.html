@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Persamaan Fungsional</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 40px;
+            text-align: left;
+            border-color: #bdc3c7;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .soal {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .soal p:first-child {
+            font-weight: bold;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Latihan Soal Cerita Persamaan Fungsional</h1>
+
+        <!-- Tingkat 1 -->
+        <h2>Tingkat 1: Sangat Mudah</h2>
+        <div class="soal" id="soal1">
+            <p>1. Biaya Jasa Fotokopi</p>
+            <p>Sebuah tempat fotokopi menerapkan aturan bahwa biaya untuk menggandakan <code>x+y</code> lembar dokumen sama dengan total biaya menggandakan <code>x</code> lembar dan <code>y</code> lembar secara terpisah. Jika biaya untuk 1 lembar adalah Rp 200, berapa biaya untuk memfotokopi 50 lembar?</p>
+        </div>
+        <div class="soal" id="soal2">
+            <p>2. Poin Game</p>
+            <p>Dalam sebuah game, poin yang didapat setelah bermain selama <code>t</code> menit, <code>P(t)</code>, bersifat aditif. Artinya, <code>P(t1 + t2) = P(t1) + P(t2)</code>. Jika setiap menit bermain memberikan 150 poin, berapa poin yang didapat setelah bermain selama 20 menit?</p>
+        </div>
+        <div class="soal" id="soal3">
+            <p>3. Pertumbuhan Bakteri</p>
+            <p>Jumlah bakteri, <code>N(t)</code>, dalam sebuah kultur pada jam ke-<code>t</code> mengikuti aturan pertumbuhan eksponensial. Jumlah bakteri saat Anda menggabungkan dua kultur yang telah tumbuh selama <code>t1</code> dan <code>t2</code> jam adalah perkalian dari jumlah bakteri di masing-masing kultur, atau <code>N(t1+t2) = N(t1) * N(t2)</code>. Jika pada jam pertama ada 3 bakteri, <code>N(1)=3</code>, berapa jumlah bakteri pada jam ke-4?</p>
+        </div>
+        <div class="soal" id="soal4">
+            <p>4. Reputasi Produk</p>
+            <p>Reputasi sebuah merek, <code>R(n)</code>, setelah merilis <code>n</code> produk bersifat multiplikatif. Artinya, reputasi setelah merilis produk ke-<code>x</code> dan ke-<code>y</code> secara berurutan adalah <code>R(x*y) = R(x) * R(y)</code>. Jika reputasi setelah merilis produk pertama adalah 10, <code>R(1)=10</code>, berapa reputasi setelah merilis 100 produk?</p>
+        </div>
+
+        <!-- Tingkat 2 -->
+        <h2>Tingkat 2: Mudah</h2>
+        <div class="soal" id="soal5">
+            <p>5. Tarif Taksi Online</p>
+            <p>Sebuah taksi online memiliki fungsi tarif <code>T(d)</code> untuk jarak <code>d</code> km. Tarif ini terdiri dari biaya dasar tetap dan biaya per kilometer. Diketahui biaya untuk 2 km adalah Rp 10.000 dan biaya untuk 5 km adalah Rp 19.000. Berapa tarif untuk perjalanan sejauh 12 km?</p>
+        </div>
+        <div class="soal" id="soal6">
+            <p>6. Algoritma Penggabungan Data</p>
+            <p>Sebuah algoritma komputer memiliki fungsi biaya <code>C(n)</code> untuk memproses <code>n</code> data. Untuk memproses gabungan dua set data berukuran <code>x</code> dan <code>y</code>, biayanya adalah <code>C(x+y) = C(x) + C(y) + 3</code> (3 adalah biaya penggabungan). Jika <code>C(1) = 2</code>, berapa biaya untuk memproses 5 data?</p>
+        </div>
+        <div class="soal" id="soal7">
+            <p>7. Energi Partikel</p>
+            <p>Dalam sebuah eksperimen fisika, energi <code>E(v)</code> dari sebuah partikel bergantung pada "kode kecepatan" <code>v</code>. Jika dua partikel dengan kode <code>v1</code> dan <code>v2</code> digabungkan, energi totalnya adalah jumlah energi masing-masing: <code>E(v1 * v2) = E(v1) + E(v2)</code>. Jika partikel dengan kode kecepatan 2 memiliki energi 5 Joule, <code>E(2)=5</code>, berapa energi partikel dengan kode kecepatan 64?</p>
+        </div>
+        <div class="soal" id="soal8">
+            <p>8. Penurunan Nilai Mesin</p>
+            <p>Nilai sebuah mesin, <code>V(t)</code>, setelah <code>t</code> tahun mengalami penyusutan. Nilainya pada tahun ke-<code>t+1</code> adalah 90% dari nilainya pada tahun ke-<code>t</code>. Jika harga beli mesin (saat <code>t=0</code>) adalah Rp 100.000.000, berapa nilai mesin setelah 3 tahun?</p>
+        </div>
+
+        <!-- Tingkat 3 -->
+        <h2>Tingkat 3: Menengah</h2>
+        <div class="soal" id="soal9">
+            <p>9. Sistem Enkripsi Simetris</p>
+            <p>Sebuah sistem enkripsi, <code>E(m)</code>, memiliki sifat involusi, yaitu mengenkripsi pesan yang sudah terenkripsi akan mengembalikan pesan asli: <code>E(E(m)) = m</code>. Jika seorang mata-mata mengirim pesan terenkripsi "13579" dan Anda tahu bahwa pesan tersebut adalah hasil enkripsi dari "KUNCI_RAHASIA", apa hasil dari <code>E(13579)</code>?</p>
+        </div>
+        <div class="soal" id="soal10">
+            <p>10. Fungsi Produksi Aneh</p>
+            <p>Sebuah pabrik memiliki fungsi keuntungan <code>P(n)</code> dari memproduksi <code>n</code> unit. Fungsi ini memenuhi <code>P(n) + P(-n) = 2n^2 + 10</code>. Bagian <code>P(-n)</code> diartikan sebagai "biaya peluang" jika produksi dibatalkan. Tentukan bagian genap (simetris) dari fungsi keuntungan ini.</p>
+        </div>
+        <div class="soal" id="soal11">
+            <p>11. Gerak Harmonik Robot</p>
+            <p>Sebuah robot bergerak di atas garis lurus. Posisinya, <code>X(t)</code>, pada waktu <code>t</code> memenuhi hukum gerak <code>X(t+u) + X(t-u) = 2X(t) + 2X(u)</code>. Jika posisi robot pada detik pertama adalah 5 cm dari titik awal, <code>X(1)=5</code>, dan <code>X(0)=0</code>, di manakah posisi robot pada detik ke-4?</p>
+        </div>
+        <div class="soal" id="soal12">
+            <p>12. Kualitas Sinyal</p>
+            <p>Kualitas sinyal radio, <code>Q(d)</code>, pada jarak <code>d</code> kilometer dari pemancar (untuk <code>d >= 1</code>) memenuhi hubungan <code>Q(d+1) = d * Q(d)</code>. Jika kualitas pada jarak 1 km adalah 100, berapakah kualitas sinyal pada jarak 5 km?</p>
+        </div>
+
+        <!-- Tingkat 4 -->
+        <h2>Tingkat 4: Sulit</h2>
+        <div class="soal" id="soal13">
+            <p>13. Investasi dengan Aturan Unik</p>
+            <p>Sebuah program investasi memiliki fungsi pertumbuhan modal <code>f(x)</code>, di mana <code>x</code> adalah modal awal. Aturannya adalah <code>f(x + f(y)) = f(x) + y</code> untuk semua modal <code>x</code> dan <code>y</code>. Jika berinvestasi nol rupiah tidak menghasilkan apa-apa (<code>f(0)=0</code>), dan <code>f(x)</code> tidak selalu bernilai nol, tentukan hasil investasi jika modal awalnya 500 (yaitu, tentukan nilai <code>f(500)</code>).</p>
+        </div>
+        <div class="soal" id="soal14">
+            <p>14. Sistem Karma</p>
+            <p>Sebuah sistem "karma", <code>K(n)</code>, untuk sebuah perbuatan dengan nilai moral <code>n</code> memenuhi dua hukum: karma dari gabungan dua perbuatan adalah jumlah karma masing-masing (<code>K(m+n) = K(m)+K(n)</code>), dan karma dari perbuatan yang "dikuadratkan" adalah kuadrat dari karma perbuatan itu (<code>K(n^2) = (K(n))^2</code>). Jika menolong satu orang (<code>n=1</code>) memiliki karma 1, berapakah karma dari menolong 10 orang?</p>
+        </div>
+        <div class="soal" id="soal15">
+            <p>15. Fungsi Utilitas</p>
+            <p>Seorang ekonom memodelkan "utilitas" atau kepuasan <code>U(w)</code> dari kekayaan <code>w</code>. Ia menemukan bahwa fungsi tersebut memenuhi <code>U(x) - U(y) = U(x/y)</code> untuk <code>x, y > 0</code>. Jika utilitas dari kekayaan sebesar 10 adalah 3 (<code>U(10)=3</code>), berapa utilitas dari kekayaan sebesar 1000?</p>
+        </div>
+        <div class="soal" id="soal16">
+            <p>16. Dinamika Populasi Terbatas</p>
+            <p>Populasi seekor spesies, <code>P(t)</code>, pada tahun ke-<code>t</code> di sebuah pulau terpencil selalu meningkat (monoton naik). Populasinya mengikuti aturan aneh <code>P(t+1) = P(t) + 1/P(t)</code>. Jika pada tahun pertama <code>P(1)=1</code>, apakah populasi pada tahun ke-5 (<code>P(5)</code>) akan lebih besar atau lebih kecil dari 3?</p>
+        </div>
+
+        <!-- Tingkat 5 -->
+        <h2>Tingkat 5: Sangat Sulit (Olimpiade)</h2>
+        <div class="soal" id="soal17">
+            <p>17. Stabilitas Sistem Ekonomi</p>
+            <p>Stabilitas sebuah sistem ekonomi, <code>S(p)</code>, yang bergantung pada parameter kebijakan <code>p</code>, memenuhi hubungan <code>S(x) * S(y) = S(x-y)</code>. Diketahui bahwa fungsi stabilitas ini tidak pernah bernilai nol. Apa saja nilai yang mungkin untuk <code>S(p)</code> untuk sembarang parameter <code>p</code>?</p>
+        </div>
+        <div class="soal" id="soal18">
+            <p>18. Profit Rata-rata</p>
+            <p>Sebuah perusahaan menemukan bahwa profit yang didapat dari *rata-rata* dua strategi investasi, <code>(x+y)/2</code>, adalah sama dengan *rata-rata* dari profit masing-masing strategi: <code>P((x+y)/2) = (P(x)+P(y))/2</code>. Jika investasi strategi 100 juta (<code>x=100</code>) menghasilkan profit 10 juta (<code>P(100)=10</code>) dan investasi strategi 500 juta (<code>y=500</code>) menghasilkan profit 50 juta (<code>P(500)=50</code>), berapa profit dari investasi strategi 300 juta?</p>
+        </div>
+        <div class="soal" id="soal19">
+            <p>19. Reaktivitas Zat Kimia</p>
+            <p>Tingkat reaktivitas <code>R(c)</code> sebuah zat pada konsentrasi <code>c > 0</code> berubah sesuai aturan <code>R(c+1) = R(c) / (1 + R(c))</code>. Jika pada konsentrasi 1, reaktivitasnya adalah 1 (<code>R(1)=1</code>), tentukan rumus umum untuk <code>R(n)</code> di mana <code>n</code> adalah bilangan bulat positif.</p>
+        </div>
+        <div class="soal" id="soal20">
+            <p>20. Fenomena Fisika Kuantum</p>
+            <p>Dalam sebuah teori, energi interaksi <code>E(p)</code> yang bergantung pada momentum <code>p</code> memenuhi persamaan aneh: <code>E(x^2 - y^2) = (x - y) * (E(x) + E(y))</code>. Jika diketahui energi interaksi untuk momentum 1 adalah 5 (<code>E(1)=5</code>), berapa energi interaksi untuk momentum 4 (<code>E(4)</code>)?</p>
+        </div>
+
+    </div>
+
+</body>
+</html> 

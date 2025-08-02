@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Persamaan Matematika</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3, h4, h5 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .example {
+            background: #e9ecef;
+            padding: 15px;
+            border-left: 4px solid #0056b3;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Materi Belajar: Persamaan Matematika</h1>
+
+        <div class="section">
+            <h2>Apa itu Persamaan?</h2>
+            <p>
+                Dalam matematika, <strong>persamaan</strong> adalah pernyataan bahwa dua ekspresi matematika adalah sama. Persamaan biasanya mengandung satu atau lebih variabel, yang merupakan simbol yang mewakili angka yang tidak diketahui. Tujuan kita biasanya adalah menemukan nilai-nilai dari variabel tersebut yang membuat persamaan menjadi benar.
+            </p>
+            <p>
+                Contoh sederhana dari sebuah persamaan adalah: \(x + 3 = 5\). Di sini, \(x\) adalah variabel.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Jenis-jenis Persamaan dan Penyelesaiannya</h2>
+            
+            <h3>1. Persamaan Linear</h3>
+            <p>Persamaan linear adalah persamaan di mana variabelnya hanya memiliki pangkat satu. Persamaan ini dapat melibatkan satu atau lebih variabel, yang membentuk sebuah sistem jika ada lebih dari satu persamaan.</p>
+
+            <h4>1.1. Persamaan Linear Satu Variabel</h4>
+            <p>Ini adalah bentuk paling dasar dari persamaan linear, hanya melibatkan satu variabel.</p>
+            <div class="example">
+                <p>Bentuk Umum: \[ax + b = c\]</p>
+                <p><strong>Contoh:</strong> \[2x - 4 = 6\]</p>
+            </div>
+            <h5>Cara Menyelesaikan</h5>
+            <p>Tujuannya adalah untuk mengisolasi variabel \(x\) di satu sisi persamaan.</p>
+            <div class="example">
+                <p>Menyelesaikan \(2x - 4 = 6\):</p>
+                \[
+                \begin{align*}
+                2x - 4 &= 6 \\
+                2x &= 6 + 4 \\
+                2x &= 10 \\
+                x &= \frac{10}{2} \\
+                x &= 5
+                \end{align*}
+                \]
+                <p>Jadi, solusinya adalah <strong>\(x = 5\)</strong>.</p>
+            </div>
+
+            <h4>1.2. Sistem Persamaan Linear Dua Variabel (SPLDV)</h4>
+            <p>Ini adalah sistem yang terdiri dari dua persamaan linear dengan dua variabel yang sama (misalnya, \(x\) dan \(y\)). Solusinya adalah pasangan nilai \((x, y)\) yang memenuhi kedua persamaan.</p>
+            <div class="example">
+                <p>Bentuk Umum:</p>
+                \[ \begin{cases} a_1x + b_1y = c_1 \\ a_2x + b_2y = c_2 \end{cases} \]
+                <p><strong>Contoh:</strong></p>
+                \[ \begin{cases} 2x + y = 8 \\ x - y = 1 \end{cases} \]
+            </div>
+            <h5>Cara Menyelesaikan (Metode Eliminasi)</h5>
+            <p>Salah satu cara termudah adalah dengan menjumlahkan atau mengurangkan persamaan untuk menghilangkan salah satu variabel.</p>
+
+            <div class="example" style="border-left-color: #c0392b; background: #fef5f3;">
+                <h5 style="color: #c0392b; margin-top:0;">Panduan Eliminasi: Menambah vs. Mengurangi</h5>
+                <p>Tujuan eliminasi adalah membuat salah satu variabel menjadi nol. Pilihan antara menambah atau mengurangi bergantung pada <strong>tanda koefisien</strong> dari variabel yang ingin dihilangkan.</p>
+                <ul>
+                    <li>
+                        <strong>Gunakan PENGURANGAN (-)</strong> jika tanda koefisien variabel target <strong>SAMA</strong> (keduanya positif atau keduanya negatif).
+                        <div class="example" style="padding: 10px; margin-top: 5px;">
+                            <p style="font-size: 0.9em;">Contoh: Menghilangkan \(x\) yang sama-sama positif.</p>
+                            \[
+                            \begin{array}{r c c c l}
+                               \mathbf{2x} & + & 3y & = & 7 \\
+                               \mathbf{2x} & + & y  & = & 5 \\
+                               \hline
+                               \text{Kurangkan:} \quad 0 & + & 2y & = & 2
+                            \end{array}
+                            \]
+                            <p style="margin-top:5px; font-style: italic; font-size: 0.9em;">Logikanya: \(2x - 2x = 0\).</p>
+                        </div>
+                    </li>
+                    <li style="margin-top: 15px;">
+                        <strong>Gunakan PENJUMLAHAN (+)</strong> jika tanda koefisien variabel target <strong>BERLAWANAN</strong> (satu positif, satu negatif).
+                         <div class="example" style="padding: 10px; margin-top: 5px;">
+                            <p style="font-size: 0.9em;">Contoh: Menghilangkan \(y\) yang tandanya berlawanan.</p>
+                            \[
+                            \begin{array}{r c r c l}
+                               2x & + & \mathbf{y} & = & 8 \\
+                               x & - & \mathbf{y} & = & 1 \\
+                               \hline
+                               \text{Jumlahkan:} \quad 3x &   &   & = & 9
+                            \end{array}
+                            \]
+                            <p style="margin-top:5px; font-style: italic; font-size: 0.9em;">Logikanya: \(y + (-y) = 0\).</p>
+                        </div>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Peran Perkalian & Pembagian:</strong> Operasi ini adalah langkah <em>persiapan</em>. Anda menggunakannya SEBELUM eliminasi untuk menyamakan angka koefisien dari variabel yang Anda targetkan.</p>
+            </div>
+
+            <div class="example">
+                <p>Menyelesaikan sistem di atas:</p>
+                <ol>
+                    <li>
+                        <strong>Eliminasi variabel \(y\)</strong> dengan menjumlahkan kedua persamaan.
+                        \[
+                        \begin{array}{r c r c l}
+                           2x & + & y & = & 8 \\
+                           x & - & y & = & 1 \\
+                           \hline
+                           3x &   &   & = & 9
+                        \end{array}
+                        \]
+                        Dari sini kita dapatkan \(x = 3\).
+                    </li>
+                    <li>Substitusikan nilai \(x=3\) ke salah satu persamaan awal (misal, persamaan pertama): \(2(3) + y = 8 \Rightarrow 6 + y = 8 \Rightarrow y = 2\).</li>
+                </ol>
+                <p>Jadi, solusinya adalah <strong>\(x = 3, y = 2\)</strong>.</p>
+            </div>
+
+            <h4>1.3. Sistem Persamaan Linear Tiga Variabel (SPLTV)</h4>
+            <p>Ini adalah kumpulan dari tiga persamaan linear yang masing-masing memiliki tiga variabel yang sama (misalnya, \(x\), \(y\), dan \(z\)). Tujuannya adalah menemukan satu set nilai \((x, y, z)\) yang memenuhi ketiga persamaan.</p>
+            <div class="example">
+                <p>Bentuk Umum:</p>
+                \[ \begin{cases} a_1x + b_1y + c_1z = d_1 \\ a_2x + b_2y + c_2z = d_2 \\ a_3x + b_3y + c_3z = d_3 \end{cases} \]
+                <p><strong>Contoh yang akan kita selesaikan dengan berbagai metode:</strong></p>
+                \[ \begin{cases} x + y + 2z = 9 \quad &(1) \\ 2x + 4y - 3z = 1 \quad &(2) \\ 3x + 6y - 5z = 0 \quad &(3) \end{cases} \]
+            </div>
+            
+            <h5>Metode 1: Campuran (Eliminasi lalu Substitusi) - Paling Efisien</h5>
+            <p>Ini adalah metode yang paling umum dan seringkali paling cepat. Tujuannya adalah menggunakan eliminasi untuk menyederhanakan sistem dari 3 variabel menjadi 2 variabel, lalu menyelesaikannya dengan substitusi.</p>
+            <div class="example">
+                <ol>
+                    <li>
+                        <strong>Eliminasi \(x\) dari Persamaan (1) dan (2).</strong><br>
+                        Kita kalikan Persamaan (1) dengan 2 agar koefisien \(x\) sama dengan Persamaan (2).
+                        \[
+                        \begin{array}{l r c r c r c l}
+                          \text{Pers. (1)} \times 2: & 2x & + & 2y & + & 4z & = & 18 \\
+                          \text{Pers. (2)}: & 2x & + & 4y & - & 3z & = & 1 \\
+                          \hline
+                          \text{Kurangkan:} &    &   & -2y& + & 7z & = & 17 \quad \dots(4)
+                        \end{array}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Eliminasi \(x\) dari Persamaan (1) dan (3).</strong><br>
+                        Kita kalikan Persamaan (1) dengan 3 agar koefisien \(x\) sama dengan Persamaan (3).
+                        \[
+                        \begin{array}{l r c r c r c l}
+                          \text{Pers. (1)} \times 3: & 3x & + & 3y & + & 6z & = & 27 \\
+                          \text{Pers. (3)}: & 3x & + & 6y & - & 5z & = & 0 \\
+                          \hline
+                          \text{Kurangkan:} &    &   & -3y& + & 11z & = & 27 \quad \dots(5)
+                        \end{array}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Selesaikan sistem 2 variabel dari (4) dan (5).</strong><br>
+                        Kita eliminasi \(y\) dari Pers. (4) dan (5) untuk menemukan \(z\).
+                         \[
+                        \begin{array}{l r c r c l}
+                          \text{Pers. (4)} \times 3: & -6y & + & 21z & = & 51 \\
+                          \text{Pers. (5)} \times 2: & -6y & + & 22z & = & 54 \\
+                          \hline
+                          \text{Kurangkan (bawah-atas):} & & & z & = & 3
+                        \end{array}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Substitusi balik untuk mencari \(y\).</strong> Masukkan \(z=3\) ke Persamaan (4).
+                        \[
+                        \begin{align*}
+                        -2y + 7(3) &= 17 \\
+                        -2y + 21 &= 17 \\
+                        -2y &= 17 - 21 \\
+                        -2y &= -4 \\
+                        y &= 2
+                        \end{align*}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Substitusi balik lagi untuk mencari \(x\).</strong> Masukkan \(y=2\) dan \(z=3\) ke Persamaan (1).
+                        \[
+                        \begin{align*}
+                        x + 2 + 2(3) &= 9 \\
+                        x + 2 + 6 &= 9 \\
+                        x + 8 &= 9 \\
+                        x &= 9 - 8 \\
+                        x &= 1
+                        \end{align*}
+                        \]
+                    </li>
+                </ol>
+                <p>Jadi, solusinya adalah <strong>\(x = 1, y = 2, z = 3\)</strong>.</p>
+            </div>
+
+            <h5>Metode 2: Substitusi Murni</h5>
+            <p>Metode ini menggunakan substitusi secara berturut-turut. Meskipun bisa jadi panjang, metode ini sangat logis dan sistematis.</p>
+            <div class="example">
+                <ol>
+                    <li>
+                        <strong>Langkah 1: Nyatakan satu variabel dalam bentuk dua variabel lainnya.</strong><br>
+                        Dari Persamaan (1), kita isolasi \(x\):
+                        \[ x = 9 - y - 2z \quad \dots(A) \]
+                    </li>
+                    <li>
+                        <strong>Langkah 2: Substitusikan ekspresi \(x\) ke dua persamaan lainnya (2 dan 3).</strong><br>
+                        Substitusi ke Pers. (2):
+                        \[
+                        \begin{align*}
+                        2(9 - y - 2z) + 4y - 3z &= 1 \\
+                        18 - 2y - 4z + 4y - 3z &= 1 \\
+                        2y - 7z &= 1 - 18 \\
+                        2y - 7z &= -17 \quad \dots(4)
+                        \end{align*}
+                        \]
+                        Substitusi ke Pers. (3):
+                        \[
+                        \begin{align*}
+                        3(9 - y - 2z) + 6y - 5z &= 0 \\
+                        27 - 3y - 6z + 6y - 5z &= 0 \\
+                        3y - 11z &= -27 \quad \dots(5)
+                        \end{align*}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Langkah 3: Selesaikan sistem 2 variabel yang baru (4 dan 5).</strong><br>
+                        Kita gunakan substitusi lagi. Dari Pers. (4), isolasi \(y\):
+                        \[
+                        \begin{align*}
+                        2y &= 7z - 17 \\
+                        y &= \frac{7z - 17}{2} \quad \dots(B)
+                        \end{align*}
+                        \]
+                        Substitusikan ekspresi \(y\) ini ke Pers. (5):
+                        \[ 3\left(\frac{7z - 17}{2}\right) - 11z = -27 \]
+                        Kalikan semua suku dengan 2 untuk menghilangkan pecahan:
+                        \[
+                        \begin{align*}
+                        3(7z - 17) - 22z &= -54 \\
+                        21z - 51 - 22z &= -54 \\
+                        -z &= -54 + 51 \\
+                        -z &= -3 \\
+                        z &= 3
+                        \end{align*}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Langkah 4: Substitusi balik untuk menemukan \(y\) dan \(x\).</strong><br>
+                        Masukkan \(z=3\) ke ekspresi (B):
+                        \[
+                        \begin{align*}
+                        y &= \frac{7(3) - 17}{2} \\
+                        y &= \frac{21 - 17}{2} \\
+                        y &= \frac{4}{2} \\
+                        y &= 2
+                        \end{align*}
+                        \]
+                        Masukkan \(y=2\) dan \(z=3\) ke ekspresi (A):
+                        \[
+                        \begin{align*}
+                        x &= 9 - 2 - 2(3) \\
+                        x &= 9 - 2 - 6 \\
+                        x &= 1
+                        \end{align*}
+                        \]
+                    </li>
+                </ol>
+                <p>Solusi yang didapat tetap sama: <strong>\(x = 1, y = 2, z = 3\)</strong>.</p>
+            </div>
+
+            <h5>Metode 3: Eliminasi Murni (Metode Gauss)</h5>
+            <p>Metode ini memungkinkan untuk menemukan setiap variabel secara terpisah hanya dengan eliminasi, tanpa substitusi balik. Caranya adalah dengan membuat 3 sistem dua-variabel yang berbeda dari sistem utama.</p>
+            <div class="example">
+                <ol>
+                    <li>
+                        <strong>Eliminasi \(y\) dari Persamaan (1) dan (2).</strong><br>
+                        \[
+                        \begin{align*}
+                        \text{Dari (1): } & y = 3 - x \\
+                        \text{Substitusi ke (3): } & (3-x) + z = 6 \Rightarrow z - x = 3 \quad \dots(A)
+                        \end{align*}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Sekarang kita punya sistem 2 variabel baru.</strong><br>
+                        Persamaan (2) asli: \(x + z = 5\).<br>
+                        Persamaan (A) baru: \(-x + z = 3\).<br>
+                        Kita bisa eliminasi \(x\) dengan menjumlahkan keduanya:
+                        \[
+                        \begin{align*}
+                        (x + z) + (-x + z) &= 5 + 3 \\
+                        2z &= 8 \\
+                        z &= 4
+                        \end{align*}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Cari nilai \(x\) dan \(y\) dengan substitusi balik.</strong><br>
+                        Masukkan \(z=4\) ke Persamaan (2):
+                        \[ x + 4 = 5 \Rightarrow x = 1 \]
+                        Masukkan \(x=1\) ke Persamaan (1):
+                        \[ 1 + y = 3 \Rightarrow y = 2 \]
+                    </li>
+                </ol>
+                <p>Jadi, solusinya adalah <strong>\(x = 1, y = 2, z = 4\)</strong>.</p>
+            </div>
+
+            <h4>1.4. Kasus Khusus SPLTV: Setiap Persamaan dengan Dua Variabel</h4>
+            <p>
+                Ini adalah jenis sistem tiga variabel yang seringkali lebih mudah diselesaikan. Meskipun ada tiga variabel secara total (misalnya \(x, y, z\)), setiap persamaan hanya mengandung dua dari tiga variabel tersebut.
+            </p>
+            <div class="example">
+                <p><strong>Contoh:</strong></p>
+                \[ \begin{cases} x + y = 3 \quad &(1) \\ x + z = 5 \quad &(2) \\ y + z = 6 \quad &(3) \end{cases} \]
+            </div>
+            <h5>Cara Menyelesaikan (Metode Substitusi Cerdas)</h5>
+            <p>Strategi terbaik untuk sistem seperti ini biasanya adalah substitusi, dengan cara menyatakan dua variabel dalam bentuk variabel ketiga.</p>
+            <div class="example">
+                <ol>
+                    <li>
+                        <strong>Nyatakan \(y\) dan \(z\) dalam bentuk \(x\).</strong><br>
+                        Dari Persamaan (1): \(y = 3 - x\).<br>
+                        Dari Persamaan (2): \(z = 5 - x\).
+                    </li>
+                    <li>
+                        <strong>Substitusikan kedua ekspresi baru ke dalam Persamaan (3).</strong><br>
+                        Persamaan (3) adalah \(y + z = 6\). Sekarang kita substitusi:
+                        \[
+                        \begin{align*}
+                        (3 - x) + (5 - x) &= 6 \\
+                        8 - 2x &= 6 \\
+                        -2x &= 6 - 8 \\
+                        -2x &= -2 \\
+                        x &= 1
+                        \end{align*}
+                        \]
+                    </li>
+                    <li>
+                        <strong>Cari nilai \(y\) dan \(z\).</strong><br>
+                        Sekarang setelah kita punya \(x=1\), kita substitusikan kembali ke ekspresi dari langkah pertama:<br>
+                        <p>\(y = 3 - x \Rightarrow y = 3 - 1 \Rightarrow y = 2\)</p>
+                        <p>\(z = 5 - x \Rightarrow z = 5 - 1 \Rightarrow z = 4\)</p>
+                    </li>
+                </ol>
+                <p>Jadi, solusinya adalah <strong>\(x = 1, y = 2, z = 4\)</strong>.</p>
+            </div>
+
+            <h3>2. Persamaan Kuadrat</h3>
+            <p>Persamaan kuadrat adalah persamaan polinomial orde kedua. Variabelnya memiliki pangkat tertinggi 2. Bentuk umumnya adalah:</p>
+            <div class="example">
+                \[ax^2 + bx + c = 0\]
+                <p>Di mana \(a\), \(b\), dan \(c\) adalah koefisien, dengan \(a \neq 0\).</p>
+                <p><strong>Contoh:</strong> \[x^2 - 5x + 6 = 0\]</p>
+            </div>
+            <h4>Cara Menyelesaikan</h4>
+            <p>Ada beberapa metode untuk menyelesaikannya:</p>
+            <ul>
+                <li><strong>Faktorisasi:</strong> Mengubah persamaan menjadi bentuk \((px + q)(rx + s) = 0\).</li>
+                <li><strong>Rumus Kuadrat (Rumus ABC):</strong> Menggunakan rumus \(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\).</li>
+                <li><strong>Melengkapkan Kuadrat Sempurna:</strong> Mengubah persamaan menjadi bentuk \((x + p)^2 = q\).</li>
+            </ul>
+             <div class="example">
+                <p>Menyelesaikan \(x^2 - 5x + 6 = 0\) dengan faktorisasi:</p>
+                \[
+                \begin{align*}
+                x^2 - 5x + 6 &= 0 \\
+                (x - 2)(x - 3) &= 0
+                \end{align*}
+                \]
+                <p>Dari sini, kita mendapatkan dua kemungkinan:</p>
+                <p>\(x-2=0 \Rightarrow x=2\)</p>
+                <p>\(x-3=0 \Rightarrow x=3\)</p>
+                <p>Jadi, solusinya adalah <strong>\(x = 2\)</strong> dan <strong>\(x = 3\)</strong>.</p>
+            </div>
+
+            <h4>Teorema Vieta: Hubungan Antara Akar dan Koefisien</h4>
+            <p>
+                Teorema Vieta adalah alat yang sangat ampuh yang memungkinkan kita untuk mengetahui hubungan antara akar-akar (solusi) dari persamaan kuadrat tanpa harus mencari nilai akar-akarnya secara eksplisit.
+            </p>
+            <div class="example">
+                <p>Untuk persamaan kuadrat umum \(ax^2 + bx + c = 0\) dengan akar-akar \(x_1\) dan \(x_2\), Teorema Vieta menyatakan:</p>
+                <ul>
+                    <li><strong>Jumlah Akar:</strong> \[x_1 + x_2 = -\frac{b}{a}\]</li>
+                    <li><strong>Hasil Kali Akar:</strong> \[x_1 \cdot x_2 = \frac{c}{a}\]</li>
+                </ul>
+            </div>
+            <h5>Contoh Penggunaan</h5>
+            <p>
+                Misalkan kita memiliki persamaan \(x^2 - 5x + 7 = 0\) dan kita ingin mengetahui nilai dari \(x_1^2 + x_2^2\), di mana \(x_1\) dan \(x_2\) adalah akar-akarnya.
+            </p>
+            <div class="example">
+                <ol>
+                    <li><strong>Identifikasi koefisien:</strong><br>
+                        \(a=1\), \(b=-5\), \(c=7\).
+                    </li>
+                    <li><strong>Gunakan Teorema Vieta:</strong><br>
+                        Jumlah akar: \(x_1 + x_2 = - \frac{-5}{1} = 5\).<br>
+                        Hasil kali akar: \(x_1 \cdot x_2 = \frac{7}{1} = 7\).
+                    </li>
+                    <li>
+                        <strong>Gunakan identitas aljabar:</strong><br>
+                        Kita tahu bahwa \(x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1 x_2\).
+                        \[
+                        \begin{align*}
+                        x_1^2 + x_2^2 &= (5)^2 - 2(7) \\
+                        &= 25 - 14 \\
+                        &= 11
+                        \end{align*}
+                        \]
+                    </li>
+                </ol>
+                <p>
+                    Tanpa perlu mencari akar-akarnya (yang sebenarnya imajiner dalam kasus ini), kita bisa menemukan nilai dari ekspresi yang ditanyakan.
+                </p>
+            </div>
+
+            <h4>Kapan Faktorisasi Tidak Bisa Digunakan? Peran Diskriminan</h4>
+            <p>
+                Metode faktorisasi sangat cepat, tetapi hanya berfungsi jika akar-akar (solusi) dari persamaan kuadrat adalah <strong>bilangan rasional</strong> (seperti 2, -5, atau 3/4). Metode ini akan gagal jika akar-akarnya irasional atau kompleks.
+            </p>
+            <p>
+                Cara untuk mengetahuinya tanpa coba-coba adalah dengan menggunakan <strong>Diskriminan (\(D = b^2 - 4ac\))</strong>:
+            </p>
+            <ul>
+                <li>Jika <strong>\(D\) adalah bilangan kuadrat sempurna</strong> (0, 1, 4, 9, ...), maka akar-akarnya rasional dan persamaan <strong>BISA difaktorkan</strong>.</li>
+                <li>Jika <strong>\(D > 0\) tetapi bukan kuadrat sempurna</strong> (misal 2, 5, 8), maka akar-akarnya irasional. Faktorisasi <strong>TIDAK AKAN berhasil</strong>. Gunakan Rumus ABC.</li>
+                <li>Jika <strong>\(D < 0\)</strong>, maka akar-akarnya kompleks/imajiner. Faktorisasi (dalam bilangan riil) <strong>TIDAK BISA</strong>.</li>
+            </ul>
+            <div class="example">
+                <p><strong>Contoh:</strong> Cek apakah \(x^2 + 3x - 5 = 0\) bisa difaktorkan.</p>
+                <ol>
+                    <li><strong>Identifikasi koefisien:</strong> \(a=1, b=3, c=-5\).</li>
+                    <li>
+                        <strong>Hitung Diskriminan:</strong>
+                        \[ D = (3)^2 - 4(1)(-5) = 9 + 20 = 29 \]
+                    </li>
+                    <li><strong>Kesimpulan:</strong> Karena \(D=29\) bukan bilangan kuadrat sempurna, persamaan ini tidak bisa diselesaikan dengan faktorisasi. Solusinya harus dicari dengan Rumus ABC, yang akan menghasilkan akar-akar irasional.</li>
+                </ol>
+            </div>
+
+            <h4>Kasus Khusus: Selisih Dua Kuadrat (b=0)</h4>
+            <p>
+                Ini adalah bentuk khusus dari persamaan kuadrat di mana koefisien \(b=0\), sehingga bentuknya menjadi \(ax^2 - c = 0\). Persamaan ini paling mudah diselesaikan dengan mengisolasi \(x^2\) dan mengakarkannya, atau dengan faktorisasi selisih dua kuadrat.
+            </p>
+            <div class="example">
+                <p><strong>Contoh:</strong> Selesaikan \(x^2 - 100 = 0\)</p>
+                <h5>Metode 1: Isolasi dan Akar Kuadrat (Paling Cepat)</h5>
+                \[
+                \begin{align*}
+                x^2 - 100 &= 0 \\
+                x^2 &= 100 \\
+                x &= \pm\sqrt{100} \\
+                x &= \pm10
+                \end{align*}
+                \]
+                <p>Solusinya adalah \(x = 10\) dan \(x = -10\).</p>
+                <h5 style="margin-top: 15px;">Metode 2: Faktorisasi Selisih Dua Kuadrat</h5>
+                <p>Gunakan identitas \(a^2 - b^2 = (a-b)(a+b)\).</p>
+                \[
+                \begin{align*}
+                x^2 - 100 &= 0 \\
+                x^2 - 10^2 &= 0 \\
+                (x - 10)(x + 10) &= 0
+                \end{align*}
+                \]
+                <p>Dari sini, kita mendapatkan dua solusi:</p>
+                <p>\(x-10=0 \Rightarrow x=10\)</p>
+                <p>\(x+10=0 \Rightarrow x=-10\)</p>
+            </div>
+
+            <div class="example" style="border-left-color: #f0ad4e; background: #fcf8e3;">
+                <h5 style="color: #c09853; margin-top:0;">Konsep Penting: Kapan Simbol '±' (Plus-Minus) Muncul?</h5>
+                <p>
+                    Anda mungkin bertanya, mengapa saat menyelesaikan \(x^2=100\) kita mendapatkan \(x = \pm 10\)? Ini bukan "pindah ruas" biasa.
+                </p>
+                <p>
+                    <strong>Alasannya:</strong> Operasi pangkat dua menghilangkan informasi tanda asli dari sebuah angka. Baik \(10^2\) maupun \((-10)^2\) sama-sama menghasilkan 100.
+                </p>
+                <p>
+                    Ketika kita melakukan operasi kebalikannya (akar kuadrat) untuk menyelesaikan persamaan, kita harus memulihkan kedua kemungkinan yang valid tersebut.
+                </p>
+                <ul>
+                    <li>Gunakan <strong>'±'</strong> setiap kali Anda menyelesaikan persamaan dengan mengambil akar kuadrat dari kedua sisi untuk mencari nilai variabel yang dikuadratkan. Contoh: \(y^2 = 49 \Rightarrow y = \pm 7\).</li>
+                    <li><strong>JANGAN</strong> gunakan '±' jika Anda hanya diminta menghitung nilai akar kuadrat. Contoh: Nilai dari \(\sqrt{49}\) adalah 7 (ini disebut akar kuadrat utama/prinsipal).</li>
+                </ul>
+                <hr style="border-top: 1px solid #e1cdae; margin: 15px 0;">
+                <p>
+                    <strong>Lalu, mengapa tidak ditulis \( \pm x = \pm 10 \)?</strong>
+                </p>
+                <p>
+                   Anda benar bahwa operasi harus diterapkan secara seimbang, tetapi '±' bukanlah operasi matematika, melainkan <strong>notasi singkat</strong> untuk menyatakan "ada dua solusi". Menulis \( \pm x = \pm 10 \) sebenarnya tidak salah secara logika, tetapi redundan dan tidak standar.
+                </p>
+                <p>Jika kita pecah, \( \pm x = \pm 10 \) akan menciptakan empat kemungkinan:</p>
+                <ol style="padding-left: 30px; margin-top: 10px;">
+                    <li>\(+x = +10 \quad \Rightarrow \quad x = 10\)</li>
+                    <li>\(+x = -10 \quad \Rightarrow \quad x = -10\)</li>
+                    <li>\(-x = +10 \quad \Rightarrow \quad x = -10\) (setelah dikali -1)</li>
+                    <li>\(-x = -10 \quad \Rightarrow \quad x = 10\) (setelah dikali -1)</li>
+                </ol>
+                <p style="margin-top: 10px;">
+                    Seperti yang Anda lihat, empat kombinasi ini tetap menghasilkan hanya <strong>dua solusi unik</strong> yang sama: \(x=10\) dan \(x=-10\). Oleh karena itu, untuk menjaga notasi tetap bersih dan sesuai standar, kita cukup menulis \(x = \pm 10\), yang sudah mencakup semua solusi yang valid.
+                </p>
+            </div>
+
+             <div class="example">
+                <p>Menyelesaikan \(x^2 - 5x + 6 = 0\) dengan faktorisasi:</p>
+                \[
+                \begin{align*}
+                x^2 - 5x + 6 &= 0 \\
+                (x - 2)(x - 3) &= 0
+                \end{align*}
+                \]
+                <p>Dari sini, kita mendapatkan dua kemungkinan:</p>
+                <p>\(x-2=0 \Rightarrow x=2\)</p>
+                <p>\(x-3=0 \Rightarrow x=3\)</p>
+                <p>Jadi, solusinya adalah <strong>\(x = 2\)</strong> dan <strong>\(x = 3\)</strong>.</p>
+            </div>
+
+             <h3>3. Persamaan Polinomial</h3>
+            <p>Persamaan polinomial adalah persamaan yang melibatkan polinomial. Persamaan linear dan kuadrat adalah kasus khusus dari persamaan polinomial.</p>
+            <div class="example">
+                \[a_n x^n + a_{n-1} x^{n-1} + \dots + a_2 x^2 + a_1 x + a_0 = 0\]
+                <p><strong>Contoh:</strong> \[x^3 - 2x^2 + x - 12 = 0\]</p>
+            </div>
+            <h4>Cara Menyelesaikan</h4>
+            <p>Menyelesaikan persamaan polinomial berderajat tinggi (lebih dari 2) bisa menjadi kompleks. Namun, untuk beberapa kasus, kita bisa menemukan solusinya dengan <strong>Teorema Akar Rasional</strong> dan <strong>faktorisasi</strong>.</p>
+            <div class="example">
+                <p>Menyelesaikan \(x^3 - 2x^2 + x - 12 = 0\):</p>
+                <ol>
+                    <li>
+                        <strong>Gunakan Teorema Akar Rasional.</strong><br>
+                        Akar rasional yang mungkin dari persamaan ini adalah pembagi dari konstanta terakhir (\(-12\)).<br>
+                        Pembagi dari 12 adalah \(\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12\).<br>
+                        Kita coba substitusikan nilai-nilai ini ke dalam persamaan:
+                        \[ \text{Untuk } x=3: \quad (3)^3 - 2(3)^2 + (3) - 12 = 27 - 18 + 3 - 12 = 0 \]
+                        Karena hasilnya 0, maka <strong>\(x=3\)</strong> adalah salah satu solusi (akar) dari persamaan tersebut.
+                    </li>
+                    <li>
+                        <strong>Lakukan faktorisasi.</strong><br>
+                        Karena \(x=3\) adalah akar, maka \((x-3)\) adalah salah satu faktor dari polinomial. Kita bisa menggunakan pembagian polinomial untuk menemukan faktor lainnya.
+                        \[ (x^3 - 2x^2 + x - 12) \div (x-3) = x^2 + x + 4 \]
+                        Sehingga, persamaan dapat ditulis ulang menjadi:
+                        \[ (x-3)(x^2 + x + 4) = 0 \]
+                    </li>
+                    <li>
+                        <strong>Analisis faktor kuadrat.</strong><br>
+                        Sekarang kita perlu menyelesaikan \(x^2 + x + 4 = 0\). Kita periksa diskriminannya (\(D = b^2 - 4ac\)):
+                        \[ D = (1)^2 - 4(1)(4) = 1 - 16 = -15 \]
+                        Karena diskriminannya negatif (\(D < 0\)), faktor kuadrat ini tidak memiliki solusi riil.
+                    </li>
+                </ol>
+                <p><strong>Kesimpulan:</strong> Satu-satunya solusi riil untuk persamaan \(x^3 - 2x^2 + x - 12 = 0\) adalah <strong>\(x=3\)</strong>.</p>
+            </div>
+
+        </div>
+        
+        <div class="section">
+            <p>Semoga materi ini bermanfaat untuk belajar! Anda bisa mencoba membuat contoh persamaan Anda sendiri dan menyelesaikannya.</p>
+        </div>
+
+    </div>
+</body>
+</html> 

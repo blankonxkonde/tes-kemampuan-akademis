@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Kecepatan Tambahan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c5282; /* Dark Blue */
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        .question-block {
+            margin-bottom: 25px;
+            border-left: 4px solid #2c5282;
+            padding-left: 15px;
+            background-color: #f7fafc;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        .question-title {
+            font-weight: bold;
+            color: #2d3748; /* Dark Gray */
+        }
+        .difficulty-level {
+            font-size: 1.5em;
+            color: #c53030; /* Dark Red */
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .answer {
+            background-color: #e2e8f0; /* Light Gray */
+            border: 1px solid #cbd5e0;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+        .toggle-answer {
+            background-color: #3182ce; /* Blue */
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .toggle-answer:hover {
+            background-color: #2b6cb0; /* Darker Blue */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Latihan Soal Kecepatan (Set Tambahan)</h1>
+        <p>Kumpulan soal tambahan untuk mempertajam pemahaman konsep kecepatan, jarak, dan waktu. Soal dibagi menjadi 5 tingkat kesulitan yang berfokus pada variasi logika yang berbeda.</p>
+
+        <!-- Tingkat Kesulitan 1: Fondasi dan Konversi Dasar -->
+        <h2 class="difficulty-level">Tingkat Kesulitan 1: Fondasi dan Konversi Dasar</h2>
+
+        <div class="question-block">
+            <p class="question-title">Soal 1</p>
+            <p>Sebuah pesawat terbang dengan kecepatan 800 km/jam. Berapa jarak yang ditempuhnya setelah terbang selama 4 jam 30 menit?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Konversi waktu ke format desimal jam, lalu gunakan rumus dasar \(s = v \times t\).</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Waktu (t) = 4 jam 30 menit = 4.5 jam.<br>
+                2. Hitung jarak (s):
+                \[
+                \begin{align*}
+                s &= v \times t \\
+                  &= 800 \text{ km/jam} \times 4.5 \text{ jam} \\
+                  &= 3600 \text{ km}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 2</p>
+            <p>Cahaya merambat dengan kecepatan sekitar 300.000 km/detik. Jika jarak rata-rata Matahari ke Bumi adalah 150.000.000 km, berapa menit waktu yang dibutuhkan cahaya Matahari untuk sampai ke Bumi?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Hitung waktu dalam detik menggunakan \(t = s/v\), lalu konversikan ke menit.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Hitung waktu dalam detik:
+                \[
+                \begin{align*}
+                t &= \frac{s}{v} \\
+                  &= \frac{150.000.000 \text{ km}}{300.000 \text{ km/detik}} \\
+                  &= 500 \text{ detik}
+                \end{align*}
+                \]
+                2. Konversi ke menit:
+                \[ 500 \text{ detik} \div 60 \frac{\text{detik}}{\text{menit}} \approx 8.33 \text{ menit} \]
+                (atau 8 menit 20 detik).</p>
+            </div>
+        </div>
+        
+        <div class="question-block">
+            <p class="question-title">Soal 3</p>
+            <p>Sebuah mobil listrik menempuh jarak 450 km dengan sekali pengisian daya. Jika perjalanan tersebut memakan waktu 5 jam tanpa henti, berapakah kecepatan rata-ratanya dalam m/s?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Hitung kecepatan dalam km/jam terlebih dahulu, lalu konversikan ke m/s. Rumus konversi: 1 km/jam = 5/18 m/s.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Hitung kecepatan dalam km/jam:
+                \[
+                \begin{align*}
+                v &= \frac{s}{t} \\
+                  &= \frac{450 \text{ km}}{5 \text{ jam}} \\
+                  &= 90 \text{ km/jam}
+                \end{align*}
+                \]
+                2. Konversi ke m/s:
+                \[
+                \begin{align*}
+                v &= 90 \text{ km/jam} \\
+                  &= 90 \times \frac{1000 \text{ m}}{3600 \text{ s}} \\
+                  &= 90 \times \frac{5}{18} \text{ m/s} \\
+                  &= 25 \text{ m/s}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 4</p>
+            <p>Budi berjalan kaki dengan kecepatan 1.5 m/s. Ia ingin pergi ke sebuah taman yang berjarak 1.8 km dari rumahnya. Berapa menit waktu yang Budi butuhkan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Samakan satuan jarak (km ke m), hitung waktu dalam detik, lalu konversikan ke menit.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Jarak (s) = 1.8 km = 1800 meter.<br>
+                2. Hitung waktu dalam detik:
+                \[
+                \begin{align*}
+                t &= \frac{s}{v} \\
+                  &= \frac{1800 \text{ m}}{1.5 \text{ m/s}} \\
+                  &= 1200 \text{ detik}
+                \end{align*}
+                \]
+                3. Konversi ke menit: \( 1200 \text{ detik} \div 60 = 20 \text{ menit} \).</p>
+            </div>
+        </div>
+
+        <!-- Tingkat Kesulitan 2: Skenario Dua Langkah dan Waktu -->
+        <h2 class="difficulty-level">Tingkat Kesulitan 2: Skenario Dua Langkah dan Waktu</h2>
+
+        <div class="question-block">
+            <p class="question-title">Soal 5</p>
+            <p>Kereta cepat "Shinkansen" dapat melaju hingga 320 km/jam. Jika sebuah perjalanan dijadwalkan berangkat pukul 10:00 dan menempuh jarak 480 km, pukul berapa kereta tersebut akan tiba di tujuan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Hitung durasi perjalanan terlebih dahulu, lalu tambahkan durasi tersebut ke waktu keberangkatan.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Hitung waktu tempuh (t):
+                \[ t = \frac{480 \text{ km}}{320 \text{ km/jam}} = 1.5 \text{ jam} \]
+                2. Konversi durasi: \( 1.5 \text{ jam} = 1 \text{ jam} 30 \text{ menit} \).<br>
+                3. Hitung waktu tiba:
+                \[ 10:00 + 1 \text{ jam } 30 \text{ menit} = 11:30 \]</p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 6</p>
+            <p>Jarak antara kota A dan B adalah 180 km. Jika ditempuh dengan motor, butuh waktu 4 jam. Jika ditempuh dengan mobil, butuh waktu 3 jam. Berapa selisih kecepatan rata-rata motor dan mobil?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Hitung kecepatan masing-masing kendaraan, lalu cari selisihnya.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Kecepatan motor: \( v_{\text{motor}} = \frac{180 \text{ km}}{4 \text{ jam}} = 45 \text{ km/jam} \).<br>
+                2. Kecepatan mobil: \( v_{\text{mobil}} = \frac{180 \text{ km}}{3 \text{ jam}} = 60 \text{ km/jam} \).<br>
+                3. Selisih kecepatan:
+                \[ \Delta v = 60 \text{ km/jam} - 45 \text{ km/jam} = 15 \text{ km/jam} \]
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 7</p>
+            <p>Sebuah truk berangkat pukul 08:00 menuju kota tujuan yang berjarak 300 km. Truk tersebut berhenti untuk istirahat selama total 1 jam di perjalanan. Jika truk melaju dengan kecepatan konstan 60 km/jam, pukul berapa truk akan tiba?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Hitung waktu mengemudi, tambahkan waktu istirahat untuk mendapatkan waktu total perjalanan, lalu tambahkan ke waktu berangkat.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Waktu mengemudi:
+                \[ t_{\text{mengemudi}} = \frac{300 \text{ km}}{60 \text{ km/jam}} = 5 \text{ jam} \]
+                2. Waktu total perjalanan:
+                \[ t_{\text{total}} = 5 \text{ jam} + 1 \text{ jam} = 6 \text{ jam} \]
+                3. Waktu tiba:
+                \[ 08:00 + 6 \text{ jam} = 14:00 \]</p>
+            </div>
+        </div>
+        
+        <div class="question-block">
+            <p class="question-title">Soal 8</p>
+            <p>Kereta A dan Kereta B sama-sama berangkat menuju kota C. Kecepatan Kereta A 80 km/jam dan Kereta B 100 km/jam. Setelah 2 jam, seberapa jauh Kereta B berada di depan Kereta A?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Hitung jarak yang ditempuh masing-masing kereta, lalu cari selisihnya. Atau, hitung selisih kecepatan lalu kalikan dengan waktu.</p>
+                <p><strong>Cara 1 (Hitung Jarak Masing-masing):</strong></p>
+                \[
+                \begin{align*}
+                s_A &= 80 \text{ km/jam} \times 2 \text{ jam} = 160 \text{ km} \\
+                s_B &= 100 \text{ km/jam} \times 2 \text{ jam} = 200 \text{ km} \\
+                \Delta s &= s_B - s_A = 200 - 160 = 40 \text{ km}
+                \end{align*}
+                \]
+                <p><strong>Cara 2 (Gunakan Selisih Kecepatan):</strong></p>
+                \[
+                \begin{align*}
+                \Delta v &= 100 \text{ km/jam} - 80 \text{ km/jam} = 20 \text{ km/jam} \\
+                \Delta s &= \Delta v \times t = 20 \text{ km/jam} \times 2 \text{ jam} = 40 \text{ km}
+                \end{align*}
+                \]
+            </div>
+        </div>
+
+        <!-- Tingkat Kesulitan 3: Variasi Berpapasan, Menyusul, dan Rata-rata -->
+        <h2 class="difficulty-level">Tingkat Kesulitan 3: Variasi Skenario Klasik</h2>
+
+        <div class="question-block">
+            <p class="question-title">Soal 9</p>
+            <p>Dua mobil, X dan Y, terpisah jarak 450 km. Mereka berangkat pada saat yang sama, saling mendekat. Kecepatan mobil X adalah 70 km/jam dan mobil Y 80 km/jam. Di kilometer ke berapa dari posisi awal mobil X mereka akan berpapasan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Pertama, cari waktu berpapasan. Kemudian, gunakan waktu tersebut untuk menghitung jarak yang telah ditempuh oleh mobil X.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Hitung waktu berpapasan (t):
+                \[
+                \begin{align*}
+                t &= \frac{s_{\text{total}}}{v_X + v_Y} \\
+                  &= \frac{450 \text{ km}}{70 \text{ km/jam} + 80 \text{ km/jam}} \\
+                  &= \frac{450 \text{ km}}{150 \text{ km/jam}} = 3 \text{ jam}
+                \end{align*}
+                \]
+                2. Hitung jarak dari posisi awal X:
+                \[
+                \begin{align*}
+                s_X &= v_X \times t \\
+                    &= 70 \text{ km/jam} \times 3 \text{ jam} \\
+                    &= 210 \text{ km}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 10</p>
+            <p>Rina berangkat ke sekolah dengan kecepatan 12 km/jam. 10 menit kemudian, ayahnya menyusul dengan motor berkecepatan 36 km/jam. Berapa jarak dari rumah saat ayah berhasil menyusul Rina?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Cari selisih jarak awal, lalu waktu menyusul. Gunakan waktu menyusul dan kecepatan ayah untuk mencari jarak.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Waktu Rina berangkat lebih dulu: \( t_{\text{dulu}} = 10 \text{ menit} = \frac{1}{6} \text{ jam} \).<br>
+                2. Hitung selisih jarak awal (\(\Delta s\)):
+                \[ \Delta s = v_{\text{Rina}} \times t_{\text{dulu}} = 12 \text{ km/jam} \times \frac{1}{6} \text{ jam} = 2 \text{ km} \]
+                3. Hitung waktu menyusul (\(t_{\text{susul}}\)):
+                \[
+                \begin{align*}
+                t_{\text{susul}} &= \frac{\Delta s}{v_{\text{Ayah}} - v_{\text{Rina}}} \\
+                               &= \frac{2 \text{ km}}{36 \text{ km/jam} - 12 \text{ km/jam}} \\
+                               &= \frac{2 \text{ km}}{24 \text{ km/jam}} = \frac{1}{12} \text{ jam}
+                \end{align*}
+                \]
+                4. Hitung jarak dari rumah saat disusul:
+                \[ s = v_{\text{Ayah}} \times t_{\text{susul}} = 36 \text{ km/jam} \times \frac{1}{12} \text{ jam} = 3 \text{ km} \]
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 11</p>
+            <p>Seorang turis melakukan perjalanan 300 km. 120 km pertama ditempuh dengan bus dalam 2 jam. Sisa perjalanan ditempuh dengan kereta dalam 3 jam. Berapakah kecepatan rata-rata seluruh perjalanan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Kecepatan rata-rata dihitung dari Jarak Total dibagi Waktu Total. Semua data yang dibutuhkan sudah ada.</p>
+                <p><strong>Jawaban:</strong><br>
+                \[
+                \begin{align*}
+                v_{\text{rata-rata}} &= \frac{s_{\text{total}}}{t_{\text{total}}} \\
+                                   &= \frac{300 \text{ km}}{2 \text{ jam} + 3 \text{ jam}} \\
+                                   &= \frac{300 \text{ km}}{5 \text{ jam}} \\
+                                   &= 60 \text{ km/jam}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-block">
+            <p class="question-title">Soal 12</p>
+            <p>Bus A berangkat dari Jakarta ke Bandung pukul 07:00 dengan kecepatan 50 km/jam. Bus B berangkat dari Bandung ke Jakarta pukul 07:30 dengan kecepatan 60 km/jam. Jarak Jakarta-Bandung 165 km. Pukul berapa mereka akan berpapasan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Saat bus B berangkat, bus A sudah bergerak. Hitung sisa jarak antara mereka pada pukul 07:30, lalu gunakan rumus waktu berpapasan.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Jarak tempuh Bus A pada 07:30:
+                \[ s_A = 50 \text{ km/jam} \times 0.5 \text{ jam} = 25 \text{ km} \]
+                2. Sisa jarak antara keduanya pada 07:30:
+                \[ s_{\text{sisa}} = 165 \text{ km} - 25 \text{ km} = 140 \text{ km} \]
+                3. Waktu papasan setelah 07:30:
+                \[ t = \frac{s_{\text{sisa}}}{v_A + v_B} = \frac{140}{50 + 60} = \frac{140}{110} \approx 1.27 \text{ jam} \]
+                4. Konversi waktu: \( 1.27 \text{ jam} \approx 1 \text{ jam} + (0.27 \times 60) \text{ menit} \approx 1 \text{ jam } 16 \text{ menit} \).<br>
+                5. Waktu papasan: \( 07:30 + 1 \text{ jam } 16 \text{ menit} = 08:46 \).</p>
+            </div>
+        </div>
+
+        <!-- Tingkat Kesulitan 4: Logika Terbalik dan Skenario Majemuk -->
+        <h2 class="difficulty-level">Tingkat Kesulitan 4: Logika Terbalik dan Skenario Majemuk</h2>
+
+        <div class="question-block">
+            <p class="question-title">Soal 13</p>
+            <p>Sepertiga dari suatu perjalanan ditempuh dengan kecepatan 30 km/jam, dan sisa perjalanannya ditempuh dengan kecepatan 60 km/jam. Berapa kecepatan rata-rata seluruh perjalanan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Asumsikan jarak total dengan angka yang mudah dibagi 3 (misal, 180 km). Hitung waktu untuk setiap segmen, lalu hitung kecepatan rata-rata.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Misalkan total jarak (s) adalah 180 km.<br>
+                2. Waktu tempuh sepertiga jarak pertama (\(s_1 = 60\) km):
+                \[ t_1 = \frac{60 \text{ km}}{30 \text{ km/jam}} = 2 \text{ jam} \]
+                3. Waktu tempuh sisa jarak (\(s_2 = 120\) km):
+                \[ t_2 = \frac{120 \text{ km}}{60 \text{ km/jam}} = 2 \text{ jam} \]
+                4. Hitung kecepatan rata-rata:
+                \[
+                \begin{align*}
+                v_{\text{rata-rata}} &= \frac{s_{\text{total}}}{t_{\text{total}}} = \frac{s_1 + s_2}{t_1 + t_2} \\
+                                   &= \frac{180 \text{ km}}{2 \text{ jam} + 2 \text{ jam}} \\
+                                   &= \frac{180 \text{ km}}{4 \text{ jam}} = 45 \text{ km/jam}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 14</p>
+            <p>Dengan kecepatan normal, saya tiba di kantor dalam 30 menit. Hari ini saya terlambat berangkat 5 menit. Jika saya ingin tiba tepat waktu, saya harus meningkatkan kecepatan rata-rata saya sebesar 10 km/jam. Berapa jarak rumah ke kantor?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Ini adalah soal aljabar. Misal v adalah kecepatan normal dan s adalah jarak. Ada dua skenario waktu dan kecepatan yang bisa dihubungkan oleh jarak yang sama.</p>
+                <p><strong>Jawaban:</strong><br>
+                Misal \(v\) = kecepatan normal (km/jam), \(s\) = jarak (km).<br>
+                Waktu normal: \(t_1 = 30 \text{ min} = 0.5 \text{ jam}\).<br>
+                Waktu hari ini: \(t_2 = 25 \text{ min} = \frac{25}{60} = \frac{5}{12} \text{ jam}\).<br>
+                Kecepatan hari ini: \(v_2 = v + 10\).<br>
+                Jarak selalu sama: \(s = v_1 \times t_1 = v_2 \times t_2\).
+                \[
+                \begin{align*}
+                v \times 0.5 &= (v + 10) \times \frac{5}{12} \\
+                \frac{1}{2}v &= \frac{5}{12}v + \frac{50}{12} \\
+                (\frac{1}{2} - \frac{5}{12})v &= \frac{50}{12} \\
+                (\frac{6}{12} - \frac{5}{12})v &= \frac{50}{12} \\
+                \frac{1}{12}v &= \frac{50}{12} \\
+                v &= 50 \text{ km/jam}
+                \end{align*}
+                \]
+                Hitung jarak: \( s = 50 \text{ km/jam} \times 0.5 \text{ jam} = 25 \text{ km} \).
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 15</p>
+            <p>Dua pelari, A dan B, berlari di lintasan melingkar 600 meter searah. Kecepatan A 6 m/s dan B 4 m/s. Mereka mulai dari titik yang sama. Kapan mereka akan bertemu di titik start untuk pertama kalinya secara bersamaan?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Soal ini bukan tentang menyusul, tapi tentang kapan keduanya sama-sama menyelesaikan putaran penuh. Ini adalah masalah Kelipatan Persekutuan Terkecil (KPK) dari waktu putaran masing-masing.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Waktu satu putaran A:
+                \[ t_A = \frac{600 \text{ m}}{6 \text{ m/s}} = 100 \text{ detik} \]
+                2. Waktu satu putaran B:
+                \[ t_B = \frac{600 \text{ m}}{4 \text{ m/s}} = 150 \text{ detik} \]
+                3. Waktu bertemu di start = KPK(100, 150).<br>
+                Faktor prima 100 = \(2^2 \times 5^2\).<br>
+                Faktor prima 150 = \(2 \times 3 \times 5^2\).<br>
+                KPK = \(2^2 \times 3 \times 5^2 = 4 \times 3 \times 25 = 300\).<br>
+                Mereka akan bertemu di titik start setelah 300 detik (atau 5 menit).</p>
+            </div>
+        </div>
+        
+        <div class="question-block">
+            <p class="question-title">Soal 16</p>
+            <p>Sebuah kereta api sepanjang 200 meter melaju dengan kecepatan 72 km/jam. Kereta tersebut akan melewati sebuah terowongan. Jika waktu yang dibutuhkan mulai dari lokomotif masuk hingga gerbong terakhir keluar terowongan adalah 45 detik, berapa panjang terowongan tersebut?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Jarak total yang ditempuh oleh lokomotif adalah panjang terowongan + panjang kereta. Ubah semua satuan agar konsisten.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Konversi kecepatan ke m/s:
+                \[ v = 72 \text{ km/jam} = 72 \times \frac{5}{18} = 20 \text{ m/s} \]
+                2. Hitung jarak total yang ditempuh lokomotif:
+                \[ s_{\text{total}} = v \times t = 20 \text{ m/s} \times 45 \text{ s} = 900 \text{ m} \]
+                3. Jarak total adalah jumlah panjang kereta dan terowongan:
+                \[
+                \begin{align*}
+                s_{\text{total}} &= s_{\text{terowongan}} + s_{\text{kereta}} \\
+                900 \text{ m} &= s_{\text{terowongan}} + 200 \text{ m} \\
+                s_{\text{terowongan}} &= 900 \text{ m} - 200 \text{ m} \\
+                s_{\text{terowongan}} &= 700 \text{ m}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+
+        <!-- Tingkat Kesulitan 5: Master Logika dan Aljabar -->
+        <h2 class="difficulty-level">Tingkat Kesulitan 5: Master Logika dan Aljabar</h2>
+        
+        <div class="question-block">
+            <p class="question-title">Soal 17</p>
+            <p>Sebuah perahu menempuh jarak 60 km melawan arus dalam 5 jam. Saat kembali (mengikuti arus), perahu tersebut hanya butuh 3 jam. Berapakah kecepatan perahu di air tenang dan kecepatan arus sungai?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Ini adalah sistem persamaan linear dua variabel. Misal \(v_p\) = kecepatan perahu, \(v_a\) = kecepatan arus.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Kecepatan efektif melawan arus (\(v_p - v_a\)):
+                \[ v_p - v_a = \frac{60 \text{ km}}{5 \text{ jam}} = 12 \text{ km/jam} \quad \text{(Pers. 1)} \]
+                2. Kecepatan efektif mengikuti arus (\(v_p + v_a\)):
+                \[ v_p + v_a = \frac{60 \text{ km}}{3 \text{ jam}} = 20 \text{ km/jam} \quad \text{(Pers. 2)} \]
+                3. Eliminasi dengan menambahkan kedua persamaan:
+                \[
+                \begin{align*}
+                (v_p - v_a) + (v_p + v_a) &= 12 + 20 \\
+                2v_p &= 32 \\
+                v_p &= 16 \text{ km/jam}
+                \end{align*}
+                \]
+                4. Substitusi \(v_p\) ke Persamaan 2:
+                \[
+                \begin{align*}
+                16 + v_a &= 20 \\
+                v_a &= 20 - 16 \\
+                v_a &= 4 \text{ km/jam}
+                \end{align*}
+                \]
+                Jadi, kecepatan perahu 16 km/jam dan kecepatan arus 4 km/jam.
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 18</p>
+            <p>Pria A dan B berjalan dari P ke Q dan kembali lagi. Jarak P-Q adalah 21 km. Kecepatan A adalah 4 km/jam dan B adalah 3 km/jam. Mereka berangkat bersamaan dari P. Kapan mereka akan berpapasan untuk kedua kalinya?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Papasan pertama terjadi saat A (lebih cepat) sudah sampai Q, berbalik, dan bertemu B yang masih berjalan menuju Q. Papasan kedua terjadi saat keduanya sudah sama-sama berbalik dan bertemu lagi.</p>
+                <p><strong>Jawaban:</strong><br>
+                Ini adalah kasus bertemu di lintasan bolak-balik. Waktu bertemu dapat dihitung dengan rumus \( t = \frac{2nk}{v_A+v_B} \) untuk pertemuan ke-n. Namun, mari kita gunakan logika dasar.
+                <br><br>
+                <b>Pertemuan Pertama:</b><br>
+                Saat mereka bertemu pertama kali, jumlah jarak yang mereka tempuh bersama-sama adalah 2 kali jarak P-Q.
+                \[
+                \begin{align*}
+                t_1 &= \frac{2 \times s_{\text{PQ}}}{v_A + v_B} \\
+                    &= \frac{2 \times 21 \text{ km}}{4 \text{ km/jam} + 3 \text{ km/jam}} \\
+                    &= \frac{42}{7} = 6 \text{ jam}
+                \end{align*}
+                \]
+                Setelah 6 jam, A menempuh 24 km (sudah balik 3 km dari Q), dan B menempuh 18 km (masih 3 km menuju Q). Mereka bertemu di titik 18 km dari P.
+                <br><br>
+                <b>Pertemuan Kedua:</b><br>
+                Saat mereka bertemu kedua kalinya, jumlah jarak yang mereka tempuh bersama-sama adalah 4 kali jarak P-Q.
+                \[
+                \begin{align*}
+                t_2 &= \frac{4 \times s_{\text{PQ}}}{v_A + v_B} \\
+                    &= \frac{4 \times 21 \text{ km}}{7 \text{ km/jam}} \\
+                    &= \frac{84}{7} = 12 \text{ jam}
+                \end{align*}
+                \]
+                Mereka berpapasan untuk kedua kalinya setelah 12 jam.
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-block">
+            <p class="question-title">Soal 19</p>
+            <p>Sebuah mobil seharusnya menempuh jarak 200 km dengan kecepatan konstan. Jika kecepatan rata-ratanya ditambah 10 km/jam, perjalanan akan 1 jam lebih cepat. Berapa kecepatan normal mobil tersebut?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Buat persamaan waktu berdasarkan dua skenario. Misalkan \(t\) adalah waktu normal dan \(v\) adalah kecepatan normal. Jarak \(s=200\).</p>
+                <p><strong>Jawaban:</strong><br>
+                Dari soal, kita punya dua hubungan:
+                \[ t = \frac{200}{v} \quad \text{(Pers. 1)} \]
+                \[ t - 1 = \frac{200}{v + 10} \quad \text{(Pers. 2)} \]
+                Substitusi Persamaan 1 ke Persamaan 2:
+                \[
+                \begin{align*}
+                \frac{200}{v} - 1 &= \frac{200}{v + 10} \\
+                \frac{200 - v}{v} &= \frac{200}{v + 10} \\
+                (200 - v)(v + 10) &= 200v \\
+                200v + 2000 - v^2 - 10v &= 200v \\
+                -v^2 + 190v + 2000 &= 200v \\
+                -v^2 - 10v + 2000 &= 0 \\
+                v^2 + 10v - 2000 &= 0
+                \end{align*}
+                \]
+                Faktorkan persamaan kuadrat: \( (v + 50)(v - 40) = 0 \).<br>
+                Karena kecepatan tidak mungkin negatif, maka \( v = 40 \text{ km/jam} \).
+                </p>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <p class="question-title">Soal 20</p>
+            <p>Kereta A (panjang 150m) dan Kereta B (panjang 100m) bergerak di rel paralel yang sama dari arah berlawanan. Kecepatan A adalah 20 m/s dan B adalah 30 m/s. Berapa lama waktu yang dibutuhkan kedua kereta untuk saling melewati sepenuhnya (dari saat lokomotif bertemu hingga gerbong terakhir berpisah)?</p>
+            <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">
+                <p><strong>Logika:</strong> Ini adalah soal berpapasan untuk benda yang memiliki panjang. Jarak total yang harus "ditutup" oleh kecepatan gabungan mereka adalah jumlah dari panjang kedua kereta.</p>
+                <p><strong>Jawaban:</strong><br>
+                1. Jarak total relatif yang harus ditempuh:
+                \[ s_{\text{total}} = s_A + s_B = 150 \text{ m} + 100 \text{ m} = 250 \text{ m} \]
+                2. Kecepatan gabungan karena berlawanan arah:
+                \[ v_{\text{gabungan}} = v_A + v_B = 20 \text{ m/s} + 30 \text{ m/s} = 50 \text{ m/s} \]
+                3. Hitung waktu untuk saling melewati:
+                \[
+                \begin{align*}
+                t &= \frac{s_{\text{total}}}{v_{\text{gabungan}}} \\
+                  &= \frac{250 \text{ m}}{50 \text{ m/s}} \\
+                  &= 5 \text{ detik}
+                \end{align*}
+                \]
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(button) {
+            var answerDiv = button.nextElementSibling;
+            if (answerDiv.style.display === 'none' || answerDiv.style.display === '') {
+                answerDiv.style.display = 'block';
+                button.textContent = 'Sembunyikan Jawaban';
+            } else {
+                answerDiv.style.display = 'none';
+                button.textContent = 'Tampilkan Jawaban';
+            }
+        }
+    </script>
+
+</body>
+</html> 

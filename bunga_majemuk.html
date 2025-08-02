@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Komprehensif: Bunga dan Konsep Terkait</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .latex-block {
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            overflow-x: auto;
+            font-size: 1.1em;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Materi Komprehensif: Bunga dan Konsep Terkait</h1>
+        <p>
+            Dalam dunia keuangan, "bunga" adalah biaya yang timbul dari meminjam uang atau imbal hasil dari menginvestasikan uang. Konsep ini adalah dasar dari hampir semua instrumen keuangan. Mari kita pelajari jenis-jenis utamanya.
+        </p>
+
+        <h2>Daftar Simbol yang Digunakan</h2>
+        <p>Sebelum masuk ke dalam rumus, mari kita kenali beberapa simbol yang akan sering digunakan. Simbol-simbol ini umumnya merupakan singkatan dari istilah keuangan dalam bahasa Inggris, sehingga memahaminya akan mempermudah ingatan.</p>
+        <ul>
+            <li>\(A\) atau \(FV\) = <strong>Amount / Future Value (Nilai Masa Depan)</strong>: Simbol 'A' berasal dari kata <em>Amount</em> (Jumlah), sedangkan 'FV' adalah singkatan dari <em>Future Value</em>. Keduanya merujuk pada jumlah total uang di akhir periode.</li>
+            <li>\(P\) atau \(PV\) = <strong>Principal / Present Value (Nilai Sekarang)</strong>: Simbol 'P' berasal dari kata <em>Principal</em> (Pokok/Modal), sedangkan 'PV' adalah singkatan dari <em>Present Value</em>. Keduanya merujuk pada modal awal atau jumlah uang di awal periode.</li>
+            <li>\(r\) = <strong>Rate (Suku Bunga)</strong>: Simbol 'r' berasal dari kata <em>Rate</em>, yaitu tingkat suku bunga per periode. Umumnya ditulis dalam bentuk desimal (misal: 10% menjadi 0.10).</li>
+            <li>\(t\) = <strong>Time (Waktu)</strong>: Simbol 't' berasal dari kata <em>Time</em>, yang merujuk pada jumlah total periode waktu (misalnya, tahun, bulan).</li>
+            <li>\(n\) = <strong>Number of Compounding Periods (Frekuensi Pemajemukan)</strong>: Simbol 'n' berasal dari kata <em>Number</em>, yang menunjukkan berapa kali bunga dihitung dalam satu periode acuan (biasanya satu tahun).</li>
+            <li>\(PMT\) = <strong>Payment (Pembayaran Periodik)</strong>: Simbol 'PMT' adalah singkatan dari <em>Payment</em>. Ini merujuk pada jumlah setoran atau cicilan tetap yang dibayarkan secara rutin dalam skema anuitas.</li>
+        </ul>
+
+        <hr>
+
+        <h2>1. Bunga Tunggal (Simple Interest)</h2>
+        <p>
+            Bunga tunggal adalah jenis bunga yang paling dasar. Perhitungannya selalu didasarkan pada <strong>modal awal (pokok)</strong>, tidak peduli berapa lama uang itu dipinjam atau diinvestasikan. Bunga yang dihasilkan tidak akan menghasilkan bunga lagi di periode berikutnya.
+        </p>
+        <h3>Rumus Bunga Tunggal</h3>
+        <div class="latex-block">
+            \[ A = P(1 + rt) \]
+        </div>
+        <ul>
+            <li>\(A\) = Jumlah akhir</li>
+            <li>\(P\) = Modal awal (prinsipal)</li>
+            <li>\(r\) = Suku bunga per periode (desimal)</li>
+            <li>\(t\) = Jumlah periode waktu</li>
+        </ul>
+        <h3>Contoh Soal</h3>
+        <p>Menggunakan soal yang sama: Modal awal Rp1.000.000, suku bunga 10% per tahun, selama 2 tahun.</p>
+        <div class="latex-block">
+            \[
+            \begin{aligned}
+                A & = 1.000.000 \times (1 + 0.10 \times 2) \\
+                  & = 1.000.000 \times (1 + 0.20) \\
+                  & = 1.000.000 \times 1.20 \\
+                  & = 1.200.000
+            \end{aligned}
+            \]
+        </div>
+        <p>Dengan bunga tunggal, nilai investasi setelah 2 tahun adalah <strong>Rp1.200.000</strong>.</p>
+        
+        <hr>
+
+        <h2>2. Bunga Majemuk (Compound Interest)</h2>
+        <p>
+            Bunga majemuk, sering disebut "bunga berbunga", dihitung atas modal awal <strong>dan juga atas akumulasi bunga</strong> dari periode sebelumnya. Ini menyebabkan pertumbuhan eksponensial dan merupakan konsep yang sangat kuat dalam investasi jangka panjang.
+        </p>
+        <h3>Rumus Bunga Majemuk</h3>
+        <div class="latex-block">
+            \[ A = P(1 + r)^t \]
+        </div>
+        <ul>
+            <li>Variabelnya sama dengan bunga tunggal, namun perhatikan posisi \(t\) sebagai pangkat.</li>
+        </ul>
+        <h3>Contoh Soal</h3>
+        <p>Soal: Modal awal Rp1.000.000, suku bunga 10% per tahun, selama 2 tahun.</p>
+        <div class="latex-block">
+            \[
+            \begin{aligned}
+                A & = P(1 + r)^t \\
+                  & = 1.000.000 \times (1 + 0.10)^2 \\
+                  & = 1.000.000 \times (1.10)^2 \\
+                  & = 1.000.000 \times 1.21 \\
+                  & = 1.210.000
+            \end{aligned}
+            \]
+        </div>
+        <p>Dengan bunga majemuk, nilai investasi setelah 2 tahun adalah <strong>Rp1.210.000</strong>.</p>
+        <h3>Perbandingan Hasil</h3>
+        <p>Dari contoh di atas, jelas terlihat bahwa bunga majemuk memberikan hasil yang lebih tinggi (Rp1.210.000) dibandingkan bunga tunggal (Rp1.200.000) dalam periode waktu yang sama.</p>
+
+        <hr>
+
+        <h2>3. Suku Bunga Nominal vs. Efektif</h2>
+        <p>
+            Terkadang, bunga dimajemukkan lebih dari satu kali dalam setahun (misalnya, per semester, per kuartal, atau per bulan).
+        </p>
+        <ul>
+            <li><strong>Suku Bunga Nominal:</strong> Suku bunga yang dinyatakan per tahun (misalnya, 12% per tahun).</li>
+            <li><strong>Suku Bunga Efektif (EAR):</strong> Suku bunga aktual yang diterima setelah memperhitungkan efek pemajemukan dalam satu tahun. Nilainya akan lebih tinggi dari suku bunga nominal jika pemajemukan terjadi lebih dari sekali setahun.</li>
+        </ul>
+        <h3>Rumus Suku Bunga Efektif (EAR)</h3>
+        <div class="latex-block">
+            \[ EAR = \left(1 + \frac{r_{nom}}{n}\right)^n - 1 \]
+        </div>
+        <ul>
+            <li>\(r_{nom}\) = Suku bunga nominal tahunan (desimal)</li>
+            <li>\(n\) = Jumlah periode pemajemukan dalam satu tahun</li>
+        </ul>
+        <h3>Contoh</h3>
+        <p>Sebuah bank menawarkan bunga 12% per tahun yang dimajemukkan setiap bulan. Berapa suku bunga efektifnya?</p>
+        <div class="latex-block">
+            \[
+            \begin{aligned}
+                EAR & = \left(1 + \frac{0.12}{12}\right)^{12} - 1 \\
+                    & = (1 + 0.01)^{12} - 1 \\
+                    & = (1.01)^{12} - 1 \\
+                    & = 1.126825 - 1 \\
+                    & = 0.126825 \quad \text{atau} \quad 12.68\%
+            \end{aligned}
+            \]
+        </div>
+        <p>Jadi, meskipun bunga nominalnya 12%, secara efektif Anda mendapatkan bunga sebesar <strong>12.68%</strong> dalam setahun.</p>
+
+        <hr>
+
+        <h2>4. Anuitas (Annuity)</h2>
+        <p>
+            Anuitas adalah serangkaian pembayaran atau penerimaan uang dalam jumlah tetap yang dilakukan selama periode waktu tertentu. Contohnya adalah cicilan kredit motor, pembayaran KPR, atau menabung secara rutin.
+        </p>
+        <h3>Rumus Nilai Masa Depan Anuitas Biasa (Future Value)</h3>
+        <p>Ini digunakan untuk menghitung total nilai di masa depan dari serangkaian setoran rutin.</p>
+        <div class="latex-block">
+            \[ FV = PMT \times \frac{((1 + r)^t - 1)}{r} \]
+        </div>
+        <ul>
+            <li>\(FV\) = Nilai masa depan (Future Value)</li>
+            <li>\(PMT\) = Jumlah pembayaran/setoran per periode</li>
+            <li>\(r\) = Suku bunga per periode</li>
+            <li>\(t\) = Jumlah periode pembayaran</li>
+        </ul>
+        <h3>Contoh</h3>
+        <p>Anda menabung Rp500.000 setiap akhir bulan selama 12 bulan dengan bunga 0.5% per bulan. Berapa total uang Anda di akhir tahun?</p>
+        <div class="latex-block">
+            \[
+            \begin{aligned}
+                FV & = 500.000 \times \frac{((1 + 0.005)^{12} - 1)}{0.005} \\
+                   & = 500.000 \times \frac{((1.005)^{12} - 1)}{0.005} \\
+                   & = 500.000 \times \frac{(1.061677 - 1)}{0.005} \\
+                   & = 500.000 \times \frac{0.061677}{0.005} \\
+                   & = 500.000 \times 12.3355 \\
+                   & = 6.167.750
+            \end{aligned}
+            \]
+        </div>
+        <p>Total uang Anda setelah 1 tahun adalah <strong>Rp6.167.750</strong>. Padahal total yang Anda setorkan hanya Rp6.000.000 (500rb x 12). Sisanya adalah bunga.</p>
+    </div>
+</body>
+</html> 

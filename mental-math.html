@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Mental Math - Matematika Cepat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .topic-title {
+            font-size: 1.5rem;
+            color: #4a5568;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .topic-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .tips {
+            background: #f7fafc;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .tips h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .tips ul {
+            color: #4a5568;
+            padding-left: 20px;
+        }
+
+        .tips li {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .topic-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Mental Math</h1>
+            <p class="subtitle">Teknik Matematika Cepat untuk Meningkatkan Kemampuan Berhitung</p>
+        </header>
+
+        <div class="tips">
+            <h3>💡 Tips Belajar Mental Math:</h3>
+            <ul>
+                <li>Latih secara konsisten setiap hari minimal 15-30 menit</li>
+                <li>Mulai dari teknik yang mudah, kemudian tingkatkan ke yang lebih sulit</li>
+                <li>Praktikkan dengan soal-soal beragam untuk memperkuat pemahaman</li>
+                <li>Gunakan teknik visualisasi untuk membantu mengingat rumus</li>
+                <li>Jangan terburu-buru, fokus pada akurasi terlebih dahulu</li>
+            </ul>
+        </div>
+
+        <div class="topics-grid">
+            <div class="topic-card">
+                <h2 class="topic-title">🔢 Penjumlahan dan Pengurangan Cepat</h2>
+                <p class="topic-description">
+                    Pelajari teknik-teknik untuk melakukan penjumlahan dan pengurangan dengan cepat. 
+                    Termasuk strategi pengelompokan, kompensasi, dan teknik mental lainnya yang 
+                    akan mempercepat kalkulasi Anda.
+                </p>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/jmIM5txH0oM" 
+                        title="Penjumlahan dan Pengurangan Cepat"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h2 class="topic-title">➗ Pembagian Cepat</h2>
+                <p class="topic-description">
+                    Kuasai teknik pembagian mental yang efisien. Pelajari cara membagi bilangan 
+                    besar dengan cepat menggunakan berbagai strategi seperti pembagian bertahap, 
+                    estimasi, dan teknik khusus untuk angka tertentu.
+                </p>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/V_xDzLCC71s" 
+                        title="Teknik Pembagian Cepat"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h2 class="topic-title">🟨 Kuadrat 2 Digit</h2>
+                <p class="topic-description">
+                    Teknik khusus untuk menghitung kuadrat bilangan 2 digit dengan cepat. 
+                    Pelajari rumus dan pola yang memungkinkan Anda menghitung 25², 37², 84² 
+                    dan bilangan 2 digit lainnya dalam hitungan detik.
+                </p>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/HKa6urTAdTg" 
+                        title="Kuadrat 2 Digit Cepat"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h2 class="topic-title">🟦 Kuadrat 3 Digit</h2>
+                <p class="topic-description">
+                    Tingkatkan kemampuan dengan menghitung kuadrat bilangan 3 digit. 
+                    Teknik advanced yang akan membantu Anda menghitung 123², 256², 789² 
+                    dan bilangan 3 digit lainnya dengan metode yang sistematis.
+                </p>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/R1SGJmm-ISE" 
+                        title="Kuadrat 3 Digit Cepat"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h2 class="topic-title">√ Akar Kuadrat</h2>
+                <p class="topic-description">
+                    Metode untuk menghitung akar kuadrat secara mental. Pelajari teknik estimasi 
+                    dan perhitungan akar kuadrat yang akurat tanpa menggunakan kalkulator. 
+                    Sangat berguna untuk soal-soal matematika dan kehidupan sehari-hari.
+                </p>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/XncQCN7vpgo" 
+                        title="Menghitung Akar Kuadrat Cepat"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips" style="margin-top: 40px;">
+            <h3>🎯 Manfaat Menguasai Mental Math:</h3>
+            <ul>
+                <li><strong>Meningkatkan kepercayaan diri</strong> dalam menghadapi soal matematika</li>
+                <li><strong>Menghemat waktu</strong> dalam ujian dan kompetisi matematika</li>
+                <li><strong>Melatih otak</strong> untuk berpikir lebih cepat dan logis</li>
+                <li><strong>Praktis dalam kehidupan sehari-hari</strong> seperti berbelanja atau menghitung tip</li>
+                <li><strong>Fondasi yang kuat</strong> untuk matematika tingkat lanjut</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
