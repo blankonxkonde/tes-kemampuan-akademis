@@ -177,6 +177,82 @@
             <p>\( B_2 = \frac{240}{80} \)</p>
             <p>\( B_2 = 3 \text{ jam} \)</p>
             <p>Jadi, waktu yang dibutuhkan adalah 3 jam.</p>
+
+            <p><strong>Soal 3:</strong> Sebuah proyek pembangunan jembatan direncanakan selesai dalam 40 hari oleh 21 pekerja. Setelah berjalan selama 8 hari, pekerjaan terpaksa dihentikan selama 4 hari. Agar proyek selesai tepat waktu, berapa banyak pekerja tambahan yang dibutuhkan?</p>
+            <p><strong>Pembahasan:</strong></p>
+            <p>Ini adalah contoh kasus di mana pekerjaan sudah berjalan sebagian, lalu menghadapi hambatan. Kunci untuk menyelesaikannya adalah dengan fokus pada <strong>sisa beban pekerjaan</strong>.</p>
+            <p><strong>Analogi untuk Memahami Logika:</strong></p>
+            <p>Untuk memahami mengapa kita fokus pada "sisa pekerjaan", mari kita gunakan analogi yang lebih detail:</p>
+            <ul>
+                <li>Bayangkan Anda (sebagai 1 pekerja) memiliki target memindahkan <strong>40 tumpuk batu bata</strong> dan memperkirakan pekerjaan itu akan selesai dalam <strong>40 hari</strong>.</li>
+                <li>Setelah <strong>8 hari</strong>, Anda berhasil memindahkan <strong>8 tumpuk</strong>. Pada titik ini:
+                    <ul>
+                        <li><strong>Sisa Pekerjaan:</strong> \(40 - 8 = 32\) tumpuk batu.</li>
+                        <li><strong>Sisa Waktu Sesuai Rencana:</strong> \(40 - 8 = 32\) hari.</li>
+                    </ul>
+                </li>
+                <li>Kondisi normalnya adalah: Anda (1 pekerja) butuh <strong>32 hari</strong> untuk menyelesaikan sisa <strong>32 tumpuk</strong> batu.</li>
+                <li><strong>Kemudian Muncul Masalah:</strong> Anda terpaksa berhenti bekerja (istirahat) selama <strong>4 hari</strong>.
+                    <ul>
+                        <li><strong>Sisa Pekerjaan:</strong> Tetap <strong>32 tumpuk</strong> (batu bata tidak berkurang).</li>
+                        <li><strong>Sisa Waktu yang Tersedia:</strong> Sisa waktu rencana (32 hari) dikurangi waktu istirahat (4 hari) menjadi hanya <strong>28 hari</strong>.</li>
+                    </ul>
+                </li>
+                <li>Pertanyaan kuncinya sekarang menjadi: "Bagaimana cara memindahkan 32 tumpuk batu hanya dalam 28 hari?" Jelas Anda butuh bantuan.</li>
+            </ul>
+            <p>Logika yang sama persis kita terapkan untuk menghitung ulang kebutuhan pekerja pada soal jembatan.</p>
+
+            <div class="definition" style="background-color: #fff8e1; border-left-color: #ffc107;">
+                <h4 style="margin-top:0; color: #ff6f00;">Kenapa Membandingkan Sisa dengan Sisa?</h4>
+                <p>Kunci utamanya adalah karena <strong>konteks masalah telah berubah</strong>. Pekerjaan yang sudah selesai (selama 8 hari) sudah menjadi masa lalu dan tidak relevan lagi untuk perencanaan ke depan.</p>
+                <p>Kita tidak bisa membandingkan sisa pekerjaan dengan rencana awal (40 hari) karena itu akan mengabaikan kemajuan yang sudah dicapai. Perbandingan yang adil dan logis adalah antara dua skenario untuk menyelesaikan <strong>beban pekerjaan yang sama</strong>, yaitu sisa 672 unit:</p>
+                <ul>
+                    <li><strong>Skenario Sisa (Menurut Rencana):</strong> Sisa pekerjaan akan selesai dalam 32 hari oleh 21 pekerja.</li>
+                    <li><strong>Skenario Sisa (Kenyataan Baru):</strong> Sisa pekerjaan yang sama harus selesai dalam 28 hari oleh X pekerja.</li>
+                </ul>
+                <p>Dengan membandingkan "sisa vs sisa", kita memastikan bahwa kita sedang menyelesaikan masalah yang sebenarnya, yaitu: "Bagaimana menyelesaikan <strong>apa yang tersisa</strong> dengan <strong>waktu yang tersisa</strong>?"</p>
+            </div>
+
+            <ol>
+                <li><strong>Hitung Total Beban Pekerjaan (Unit Pekerjaan):</strong><br/>
+                    Beban pekerjaan total adalah estimasi awal jika tidak ada masalah.<br/>
+                    Total Beban = \( 40 \text{ hari} \times 21 \text{ pekerja} = 840 \text{ unit pekerjaan} \)
+                </li>
+                <li><strong>Hitung Pekerjaan yang Sudah Selesai:</strong><br/>
+                    Pekerjaan berjalan normal selama 8 hari.<br/>
+                    Pekerjaan Selesai = \( 8 \text{ hari} \times 21 \text{ pekerja} = 168 \text{ unit pekerjaan} \)
+                </li>
+                <li><strong>Hitung Sisa Beban Pekerjaan:</strong><br/>
+                    Ini adalah pekerjaan yang harus diselesaikan, tidak peduli apa pun yang terjadi.<br/>
+                    Sisa Beban = \( 840 - 168 = 672 \text{ unit pekerjaan} \)
+                </li>
+                <li><strong>Hitung Sisa Waktu:</strong>
+                    <ul>
+                        <li>Sisa waktu sesuai rencana awal: \( 40 - 8 = 32 \text{ hari} \).</li>
+                        <li>Pekerjaan dihentikan 4 hari, maka sisa waktu nyata menjadi: \( 32 - 4 = 28 \text{ hari} \).</li>
+                    </ul>
+                </li>
+                <li><strong>Buat Perbandingan Berbalik Nilai untuk Sisa Pekerjaan:</strong><br/>
+                    Sekarang masalahnya menjadi: "Bagaimana menyelesaikan sisa 672 unit pekerjaan hanya dalam 28 hari?"<br/>
+                    Kita gunakan rumus praktis perbandingan berbalik nilai untuk mencari jumlah pekerja yang dibutuhkan (B₂).<br/>
+                    <strong>Rumus:</strong> \( B_2 = \frac{A_1 \times B_1}{A_2} \)
+                    <ul>
+                        <li>A₁ (Waktu Sisa Rencana) = 32 hari</li>
+                        <li>B₁ (Pekerja Awal) = 21 pekerja</li>
+                        <li>A₂ (Waktu Sisa Nyata) = 28 hari</li>
+                        <li>B₂ (Pekerja Baru) = ? (yang dicari)</li>
+                    </ul>
+                    Dengan memasukkan nilai ke rumus:
+                    <p>\( B_2 = \frac{32 \times 21}{28} \)</p>
+                    <p>\( B_2 = \frac{672}{28} \)</p>
+                    <p>\( B_2 = 24 \text{ pekerja} \)</p>
+                </li>
+                <li><strong>Hitung Pekerja Tambahan:</strong><br/>
+                    Jumlah pekerja yang dibutuhkan adalah 24 orang. Karena sudah ada 21 pekerja, maka tambahan yang diperlukan adalah:<br/>
+                    \( 24 - 21 = \) <span class="highlight">3 orang pekerja tambahan</span>.
+                </li>
+            </ol>
+            <p>Jadi, dibutuhkan 3 orang pekerja tambahan untuk menyelesaikan proyek tepat waktu.</p>
         </div>
 
         <h2>Trik Cepat Menyelesaikan Soal Perbandingan</h2>

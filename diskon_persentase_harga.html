@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diskon dan Persentase Harga</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .container {
+            max-width: 820px;
+            margin: auto;
+            background: #fff;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.08);
+        }
+        h1 { color: #0056b3; text-align: center; border-bottom: 2px solid #0056b3; padding-bottom: 10px; }
+        h2, h3 { color: #0056b3; }
+        .block { margin: 14px 0; padding: 12px; background: #eef4ff; border-left: 4px solid #0056b3; border-radius: 4px; }
+        .latex-block { padding: 14px; margin: 16px 0; background: #ecf0f1; border-left: 5px solid #3498db; overflow-x: auto; font-size: 1.05em; }
+        .note { background: #fff8e1; border-left: 4px solid #ffb300; }
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+        th, td { border: 1px solid #dee2e6; padding: 8px 10px; text-align: left; }
+        th { background: #0056b3; color: #fff; }
+        .small { font-size: 0.92em; color: #6c757d; }
+        .example-title { margin: 0; font-weight: bold; }
+        hr { border: 0; height: 1px; background: #e0e0e0; margin: 28px 0; }
+        code { background: #f1f3f5; padding: 1px 4px; border-radius: 4px; }
+    </style>
+    <script>
+        // Ensure MathJax typesets after load (follow pattern used in other pages)
+        window.addEventListener('load', function() {
+            if (typeof MathJax !== 'undefined') { MathJax.typeset(); }
+        });
+    </script>
+    </head>
+<body>
+    <div class="container">
+        <h1>Diskon dan Persentase Harga</h1>
+        <p>
+            Materi ini membahas cara menghitung harga setelah diskon, diskon beruntun (bertingkat), serta hubungan dengan
+            persentase keuntungan/mark-up. Fokus utama: menerjemahkan kalimat soal menjadi bentuk matematis sederhana dan konsisten.
+        </p>
+
+        <h2>Istilah dan Simbol</h2>
+        <div class="block">
+            <ul>
+                <li>\( P \) = Harga awal (sebelum diskon) / harga pokok / modal</li>
+                <li>\( d \) = Besar diskon (dalam desimal). Contoh: 20% = 0,20</li>
+                <li>\( H_{akhir} \) = Harga setelah diskon</li>
+                <li>\( u \) = Persentase keuntungan (mark-up) terhadap modal, dalam desimal</li>
+                <li>\( H_{jual} \) = Harga jual (setelah ditambah keuntungan)</li>
+            </ul>
+        </div>
+
+        <h2>Rumus Inti</h2>
+        <div class="block">
+            <p class="example-title">Diskon tunggal</p>
+            <div class="latex-block">\[ H_{akhir} = P \times (1 - d) \]</div>
+            <p class="example-title">Diskon beruntun (bertingkat: \(d_1, d_2, \dots, d_n\))</p>
+            <div class="latex-block">\[ H_{akhir} = P \times (1 - d_1)(1 - d_2)\cdots(1 - d_n) \]</div>
+            <p class="example-title">Keuntungan (mark-up) terhadap modal</p>
+            <div class="latex-block">\[ H_{jual} = P \times (1 + u) \]</div>
+            <p class="small">Catatan: Mark-up (terhadap modal) berbeda dari margin (terhadap harga jual). Materi ini menggunakan mark-up.</p>
+        </div>
+
+        <h2>Total Persentase Diskon (Diskon Ekuivalen)</h2>
+        <div class="block">
+            <div class="latex-block">
+                \[ \text{Total Diskon} = 1 - [(1 - d_1) \times (1 - d_2) \times \cdots \times (1 - d_n)] \]
+            </div>
+            <p class="small">Gunakan desimal untuk diskon: 20% = 0,20.</p>
+        </div>
+
+        <h2>Contoh Soal Dasar</h2>
+        <div class="block">
+            <p class="example-title">Contoh 1 — Diskon tunggal</p>
+            <p>Sebuah jaket berharga Rp 250.000 diberi diskon 20%. Berapa harga setelah diskon?</p>
+            <div class="latex-block">
+                \[
+                \begin{aligned}
+                    P &= 250.000,\; d = 20\% = 0{,}20 \\
+                    H_{akhir} &= P(1-d) \\
+                               &= 250.000\,(1-0{,}20) \\
+                               &= 250.000\,\times 0{,}80 \\
+                               &= 200.000
+                \end{aligned}
+                \]
+            </div>
+            <p><strong>Jawaban:</strong> Rp 200.000</p>
+        </div>
+
+        <div class="block">
+            <p class="example-title">Contoh 2 — Diskon beruntun (bukan penjumlahan persentase)</p>
+            <p>Sebuah laptop berharga Rp 2.000.000 mendapat diskon 20% lalu 30%. Berapa harga akhirnya?</p>
+            <div class="latex-block">
+                \[
+                \begin{aligned}
+                    P &= 2.000.000,\; d_1 = 0{,}20,\; d_2 = 0{,}30 \\
+                    H_{akhir} &= P(1-d_1)(1-d_2) \\
+                              &= 2.000.000\,\times (1-0{,}20)\,\times (1-0{,}30) \\
+                              &= 2.000.000\,\times 0{,}80\,\times 0{,}70 \\
+                              &= 2.000.000\,\times 0{,}56 \\
+                              &= 1.120.000
+                \end{aligned}
+                \]
+            </div>
+            <p><strong>Jawaban:</strong> Rp 1.120.000</p>
+            <div class="note block">
+                <p><strong>Kesalahan umum:</strong></p>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        \text{Salah: }&\; 1 - (0{,}20 + 0{,}30) = 0{,}50 \\
+                        \text{Benar: }&\; (1-0{,}20)(1-0{,}30) \\
+                                     &= 0{,}80 \times 0{,}70 \\
+                                     &= 0{,}56
+                    \end{aligned}
+                    \]
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <p class="example-title">Contoh 3 — Menentukan harga jual dengan keuntungan</p>
+            <p>Sebuah toko membeli sepatu dengan harga modal Rp 80.000 dan ingin mendapat keuntungan 25% dari modal. Berapa harga jualnya?</p>
+            <div class="latex-block">
+                \[
+                \begin{aligned}
+                    P &= 80.000,\; u = 25\% = 0{,}25 \\
+                    H_{jual} &= P(1+u) \\
+                            &= 80.000\times 1{,}25 \\
+                            &= 100.000
+                \end{aligned}
+                \]
+            </div>
+            <p><strong>Jawaban:</strong> Rp 100.000</p>
+        </div>
+
+        <h2>Ringkasan Cepat</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kebutuhan</th>
+                    <th>Model</th>
+                    <th>Rumus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Harga setelah 1 diskon</td>
+                    <td>Diskon tunggal</td>
+                    <td>\[ H_{akhir} = P(1-d) \]</td>
+                </tr>
+                <tr>
+                    <td>Harga setelah beberapa diskon</td>
+                    <td>Diskon beruntun</td>
+                    <td>\[ H_{akhir} = P\times (1-d_1)\times (1-d_2)\times \cdots \times (1-d_n) \]</td>
+                </tr>
+                <tr>
+                    <td>Harga jual dengan keuntungan</td>
+                    <td>Mark-up terhadap modal</td>
+                    <td>\[ H_{jual} = P(1+u) \]</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Mark-up vs Margin (Singkat)</h2>
+        <div class="block note">
+            <p><strong>Mark-up</strong> dihitung dari <em>modal</em> \(P\), sedangkan <strong>Margin</strong> dihitung dari <em>harga jual</em> \(H_{jual}\).</p>
+            <div class="latex-block">
+                \[
+                \begin{aligned}
+                    &\text{Mark-up } u: && H_{jual} = P(1+u) \\
+                    &\text{Margin } m: && m = \frac{H_{jual}-P}{H_{jual}}
+                \end{aligned}
+                \]
+            </div>
+            <p><strong>Konversi:</strong></p>
+            <div class="latex-block">
+                \[
+                m = \frac{u}{1+u} \quad \text{dan} \quad u = \frac{m}{1-m}
+                \]
+            </div>
+            <p class="small"><strong>Contoh:</strong></p>
+            <div class="latex-block">
+                \[
+                \begin{aligned}
+                    u&=0{,}25 \;\Rightarrow\; m=\frac{0{,}25}{1{,}25}=0{,}20=20\% \\
+                    m&=0{,}20 \;\Rightarrow\; u=\frac{0{,}20}{0{,}80}=0{,}25=25\%
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <h2>Latihan</h2>
+        <ol>
+            <li>
+                Sebuah buku berharga Rp 90.000 didiskon 15%. Berapa harga setelah diskon?
+            </li>
+            <li>
+                Sebuah tas diberi diskon bertingkat 10% lalu 20%. Jika harga awal Rp 500.000, berapa harga akhirnya?
+            </li>
+            <li>
+                Harga sebuah produk setelah didiskon 30% adalah Rp 210.000. Berapa harga awalnya?
+            </li>
+            <li>
+                Toko memberi mark-up 25% atas modal Rp 64.000. Berapa harga jual? Berapa marginnya (dalam %)?
+            </li>
+            <li>
+                Sebuah jaket dikenai diskon 20% kemudian dikenai pajak 10% dari harga <em>setelah diskon</em>. Jika harga awal Rp 300.000, berapa harga akhirnya?
+            </li>
+            <li>
+                Dua toko menawarkan: (A) diskon 30% lalu 10%; (B) diskon tunggal 38%. Mana yang lebih murah untuk harga awal Rp 1.000.000?
+            </li>
+            <li>
+                Setelah dua kali diskon berturut-turut masing-masing \(x\%\) dan \(y\%\), faktor pengali total setara adalah \((1-x)(1-y)\). Jika hasil akhirnya sama dengan diskon tunggal 25%, dan salah satu diskon adalah 20%, berapakah diskon lainnya?
+            </li>
+        </ol>
+
+        <h3>Kunci Jawaban Singkat</h3>
+        <ol>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        H_{akhir}&=90.000(1-0{,}15) \\
+                                 &=90.000\times 0{,}85 \\
+                                 &=76.500
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        H_{akhir}&=500.000(1-0{,}10)(1-0{,}20) \\
+                                 &=500.000\times 0{,}90 \times 0{,}80 \\
+                                 &=360.000
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        210.000&=P(1-0{,}30) \\
+                        P&=\frac{210.000}{0{,}70}=300.000
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        H_{jual}&=64.000(1+0{,}25)=80.000 \\
+                        m&=\frac{80.000-64.000}{80.000}=0{,}20=20\%
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        H&=300.000(1-0{,}20)(1+0{,}10) \\
+                         &=300.000\times 0{,}80 \times 1{,}10 \\
+                         &=264.000
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        H_A&=1.000.000\times 0{,}70\times 0{,}90=630.000 \\
+                        H_B&=1.000.000\times 0{,}62=620.000 \\
+                        \text{Lebih murah: }&B
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+            <li>
+                <div class="latex-block">
+                    \[
+                    \begin{aligned}
+                        (1-0{,}20)(1-y)&=0{,}75 \\
+                        0{,}80(1-y)&=0{,}75 \\
+                        1-y&=\tfrac{15}{16} \\
+                        y&=\tfrac{1}{16}=6{,}25\%
+                    \end{aligned}
+                    \]
+                </div>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
+

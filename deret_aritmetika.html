@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Deret Aritmetika</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 { color: #0056b3; }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .section { margin: 26px 0; }
+        .formula {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        .note {
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        th, td { border: 1px solid #ddd; padding: 10px; }
+        th { background: #0056b3; color: #fff; text-align: left; }
+        .math-block { font-size: 1.06em; overflow-x: auto; }
+    </style>
+    <!-- Preferensi: semua perhitungan ditulis dengan LaTeX block dan align -->
+    <script>
+      window.MathJax = {
+        tex: { tags: 'ams' }
+      };
+    </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Deret Aritmetika</h1>
+
+    <div class="section">
+      <h2>1) Pengantar: Barisan vs Deret</h2>
+      <p>
+        <strong>Barisan aritmetika</strong> adalah urutan bilangan di mana selisih antara dua suku berurutan selalu tetap (disebut <em>beda</em>, dilambangkan <strong>d</strong>). 
+        <strong>Deret aritmetika</strong> adalah <em>penjumlahan</em> dari suku-suku barisan aritmetika.
+      </p>
+      <div class="note">
+        Contoh barisan aritmetika: 3, 7, 11, 15, ... dengan beda <em>d</em> = 4. Deretnya adalah 3 + 7 + 11 + 15 + ...
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2) Suku ke-<em>n</em> Barisan Aritmetika</h2>
+      <p>Jika suku pertama adalah <strong>a</strong> dan beda adalah <strong>d</strong>, maka rumus suku ke-<em>n</em>:</p>
+      <div class="formula math-block">
+        \[ U_n = a + (n-1)\,d \]
+      </div>
+      <div class="example">
+        <strong>Contoh:</strong> Diketahui barisan dengan <em>a</em> = 3 dan <em>d</em> = 5. Tentukan \(U_7\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        U_7 &= a + (7-1)d\\
+            &= 3 + 6\cdot 5\\
+            &= 3 + 30\\
+            &= 33
+        \end{aligned}
+        \]
+        </div>
+      </div>
+
+      <div class="example">
+        <strong>Contoh (menentukan a dan d dari dua suku):</strong> Diketahui \(U_5 = 17\) dan \(U_{12} = 45\). Tentukan <em>a</em> dan <em>d</em>.
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        U_5 &= a + 4d = 17\\
+        U_{12} &= a + 11d = 45\\[4pt]
+        \text{Kurangkan baris pertama dari kedua:}\quad (a+11d) - (a+4d) &= 45 - 17\\
+        7d &= 28 \;\Rightarrow\; d = 4\\[4pt]
+        a &= 17 - 4d = 17 - 16 = 1
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3) Jumlah <em>n</em> Suku Pertama (Deret Aritmetika)</h2>
+      <p>Jumlah <em>n</em> suku pertama, \(S_n\), dapat dihitung dengan dua bentuk rumus berikut:</p>
+      <div class="formula math-block">
+        \[
+        \begin{aligned}
+        S_n &= \tfrac{n}{2}\big(2a + (n-1)d\big) \\[4pt]
+            &= \tfrac{n}{2}(a + U_n)
+        \end{aligned}
+        \]
+      </div>
+      <div class="example">
+        <strong>Contoh:</strong> Diketahui <em>a</em> = 2 dan <em>d</em> = 3. Hitung \(S_{10}\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_{10} &= \tfrac{10}{2}\big(2\cdot 2 + (10-1)\cdot 3\big)\\
+               &= 5\big(4 + 27\big)\\
+               &= 5\cdot 31\\
+               &= 155
+        \end{aligned}
+        \]
+        </div>
+      </div>
+
+      <div class="example">
+        <strong>Contoh:</strong> Diketahui \(a=5\) dan suku ke-20 adalah \(U_{20}=62\). Hitung \(S_{20}\) menggunakan bentuk \(\tfrac{n}{2}(a+U_n)\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_{20} &= \tfrac{20}{2}(a + U_{20})\\
+               &= 10(5 + 62)\\
+               &= 10\cdot 67\\
+               &= 670
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4) Menentukan Banyak Suku (<em>n</em>)</h2>
+      <div class="example">
+        <strong>Contoh (dari suku ke-<em>n</em>):</strong> Pada barisan dengan \(a=4\) dan \(d=3\), tentukan <em>n</em> jika \(U_n = 64\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        U_n &= a + (n-1)d = 64\\
+        4 + 3(n-1) &= 64\\
+        3(n-1) &= 60\\
+        n-1 &= 20\\
+        n &= 21
+        \end{aligned}
+        \]
+        </div>
+      </div>
+
+      <div class="example">
+        <strong>Contoh (dari jumlah \(S_n\)):</strong> Diketahui deret dengan \(a=1\), \(d=1\). Tentukan <em>n</em> jika \(S_n = 45\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_n &= \tfrac{n}{2}\big(2a + (n-1)d\big) = 45\\
+            &= \tfrac{n}{2}\big(2 + (n-1)\cdot 1\big) = 45\\
+        n(1 + \tfrac{n-1}{2}) &= 45\\
+        n\,\tfrac{n+1}{2} &= 45\\
+        n(n+1) &= 90\\
+        n^2 + n - 90 &= 0\\
+        (n-9)(n+10) &= 0 \;\Rightarrow\; n=9\; (n>0)
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5) Jumlah Suku ke-<em>m</em> sampai ke-<em>n</em></h2>
+      <p>Jumlah dari suku ke-<em>m</em> hingga suku ke-<em>n</em> (\(m\le n\)) dapat dihitung dengan:</p>
+      <div class="formula math-block">
+        \[ S_{m\to n} = S_n - S_{m-1} \]
+      </div>
+      <div class="example">
+        <strong>Contoh:</strong> Untuk barisan dengan \(a=2\) dan \(d=2\), hitung jumlah suku ke-5 sampai ke-10.
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_{5\to 10} &= S_{10} - S_{4}\\
+        S_{10} &= \tfrac{10}{2}\big(2\cdot 2 + 9\cdot 2\big) = 5(4+18) = 110\\
+        S_{4}  &= \tfrac{4}{2}\big(4 + 3\cdot 2\big) = 2(10) = 20\\
+        S_{5\to 10} &= 110 - 20 = 90
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>6) Ringkasan Rumus</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Konsep</th>
+            <th>Rumus</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suku ke-<em>n</em></td>
+            <td>\( U_n = a + (n-1)d \)</td>
+            <td>Barisan aritmetika</td>
+          </tr>
+          <tr>
+            <td>Jumlah <em>n</em> suku pertama</td>
+            <td>\( S_n = \tfrac{n}{2}\big(2a + (n-1)d\big) \)</td>
+            <td>Deret aritmetika (bentuk 1)</td>
+          </tr>
+          <tr>
+            <td>Jumlah <em>n</em> suku pertama</td>
+            <td>\( S_n = \tfrac{n}{2}(a + U_n) \)</td>
+            <td>Deret aritmetika (bentuk 2)</td>
+          </tr>
+          <tr>
+            <td>Jumlah suku ke-<em>m</em> s.d. ke-<em>n</em></td>
+            <td>\( S_{m\to n} = S_n - S_{m-1} \)</td>
+            <td>Selisih jumlah parsial</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>7) Latihan Singkat</h2>
+      <div class="example">
+        <ol>
+          <li>Barisan aritmetika memiliki \(a=7\) dan \(d=4\). Hitung \(U_{15}\) dan \(S_{15}\).</li>
+          <li>Diketahui \(U_8 = 41\) dan \(U_{13} = 66\). Tentukan \(a\) dan \(d\), lalu hitung \(S_{13}\).</li>
+          <li>Pada deret aritmetika, \(S_n = 300\) dengan \(a=10\) dan \(d=5\). Tentukan nilai \(n\).</li>
+        </ol>
+        <p><em>Petunjuk:</em> Gunakan rumus pada tabel ringkasan dan susun langkah dalam bentuk <code>align</code> agar rapi.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
+

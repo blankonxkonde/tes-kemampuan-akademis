@@ -6,6 +6,13 @@
     <title>Latihan Soal Perbandingan</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        extensions: ["cancel.js"]
+      }
+    });
+    </script>
     <style>
         body {
             font-family: sans-serif;
@@ -86,10 +93,18 @@
                     <p><strong>Jenis:</strong> Perbandingan Senilai</p>
                     <p><strong>Jawaban:</strong> Rp 14.000</p>
                     <p class="explanation">
-                        \( \frac{3 \text{ pensil}}{Rp 6000} = \frac{7 \text{ pensil}}{x} \) <br>
-                        \( 3x = 7 \times 6000 \) <br>
-                        \( 3x = 42000 \) <br>
-                        \( x = \frac{42000}{3} = 14000 \)
+                        <strong>Cara 1: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
+                        \begin{align}
+                        \frac{3 \text{ pensil}}{\text{Rp } 6.000} &= \frac{7 \text{ pensil}}{x} \\
+                        3x &= 7 \times 6.000 \\
+                        3x &= 42.000 \\
+                        x &= \frac{42.000}{3} \\
+                        x &= \frac{\cancel{42.000}^{14.000}}{\cancel{3}^1} \quad \text{(membagi pembilang dan penyebut dengan 3)} \\
+                        x &= \text{Rp } 14.000
+                        \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Rumus Praktis</strong><br><br>
+                        Harga per pensil = \( \frac{\text{Rp } 6.000}{3 \text{ pensil}} = \text{Rp } 2.000 \text{ per pensil} \)<br>
+                        Harga 7 pensil = \( 7 \text{ pensil} \times \text{Rp } 2.000 = \text{Rp } 14.000 \)
                     </p>
                 </div>
             </details>
@@ -102,9 +117,24 @@
                     <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
                     <p><strong>Jawaban:</strong> 8 hari</p>
                     <p class="explanation">
-                        \( 4 \text{ pekerja} \times 12 \text{ hari} = 6 \text{ pekerja} \times x \text{ hari} \) <br>
-                        \( 48 = 6x \) <br>
-                        \( x = \frac{48}{6} = 8 \)
+                        <strong>Cara 1: Menggunakan Perbandingan Berbalik Nilai</strong><br><br>
+                        \begin{align}
+                        4 \text{ pekerja} \times 12 \text{ hari} &= 6 \text{ pekerja} \times x \text{ hari} \\
+                        48 &= 6x \\
+                        \frac{48}{6} &= x \\
+                        \frac{\cancel{48}^8}{\cancel{6}^1} &= x \quad \text{(membagi pembilang dan penyebut dengan 6)} \\
+                        x &= 8 \text{ hari}
+                        \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Rumus Praktis Perbandingan Berbalik Nilai</strong><br><br>
+                        Pada perbandingan berbalik nilai, jika jumlah pekerja bertambah, maka waktu yang dibutuhkan berkurang.<br><br>
+                        \begin{align}
+                        B_2 &= \frac{A_1}{A_2} \times B_1 \\
+                        x &= \frac{4 \text{ pekerja}}{6 \text{ pekerja}} \times 12 \text{ hari} \\
+                        x &= \frac{\cancel{4}^2}{\cancel{6}^3} \times 12 \text{ hari} \quad \text{(menyederhanakan } \frac{4}{6} \text{ menjadi } \frac{2}{3} \text{)} \\
+                        x &= \frac{2}{3} \times 12 \text{ hari} \\
+                        x &= \frac{24}{3} \text{ hari} \\
+                        x &= 8 \text{ hari}
+                        \end{align}
                     </p>
                 </div>
             </details>
@@ -117,10 +147,18 @@
                     <p><strong>Jenis:</strong> Perbandingan Senilai</p>
                     <p><strong>Jawaban:</strong> 12 liter</p>
                     <p class="explanation">
-                        \( \frac{5 \text{ liter}}{50 \text{ km}} = \frac{x \text{ liter}}{120 \text{ km}} \) <br>
-                        \( 50x = 5 \times 120 \) <br>
-                        \( 50x = 600 \) <br>
-                        \( x = \frac{600}{50} = 12 \)
+                        <strong>Cara 1: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
+                        \begin{align}
+                        \frac{5 \text{ liter}}{50 \text{ km}} &= \frac{x \text{ liter}}{120 \text{ km}} \\
+                        50x &= 5 \times 120 \\
+                        50x &= 600 \\
+                        x &= \frac{600}{50} \\
+                        x &= \frac{\cancel{600}^{12}}{\cancel{50}^1} \quad \text{(membagi pembilang dan penyebut dengan 50)} \\
+                        x &= 12 \text{ liter}
+                        \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Rumus Praktis</strong><br><br>
+                        Konsumsi bensin per km = \( \frac{5 \text{ liter}}{50 \text{ km}} = 0,1 \text{ liter/km} \)<br>
+                        Bensin untuk 120 km = \( 120 \text{ km} \times 0,1 \text{ liter/km} = 12 \text{ liter} \)
                     </p>
                 </div>
             </details>
@@ -133,10 +171,36 @@
                     <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
                     <p><strong>Jawaban:</strong> \(13 \frac{1}{3}\) hari atau sekitar 13 hari 8 jam.</p>
                     <p class="explanation">
-                        Jumlah ayam sisa = 20 - 5 = 15 ekor.<br>
-                        \( 20 \text{ ayam} \times 10 \text{ hari} = 15 \text{ ayam} \times x \text{ hari} \) <br>
-                        \( 200 = 15x \) <br>
-                        \( x = \frac{200}{15} = \frac{40}{3} = 13 \frac{1}{3} \)
+                        <strong>Cara 1: Menggunakan Konsep Unit Makanan</strong><br><br>
+                        1.  <strong>Hitung jumlah ayam yang tersisa:</strong><br>
+                            \begin{align}
+                            \text{Jumlah ayam sisa} &= 20 - 5 \\
+                            &= 15 \text{ ekor}
+                            \end{align}<br><br>
+                        2.  <strong>Hitung total unit makanan:</strong><br>
+                            \begin{align}
+                            \text{Total unit makanan} &= 20 \text{ ayam} \times 10 \text{ hari} \\
+                            &= 200 \text{ unit makanan}
+                            \end{align}<br><br>
+                        3.  <strong>Hitung berapa hari makanan akan habis dengan jumlah ayam yang tersisa:</strong><br>
+                            \begin{align}
+                            15 \text{ ayam} \times x \text{ hari} &= 200 \text{ unit makanan} \\
+                            15x &= 200 \\
+                            x &= \frac{200}{15} \\
+                            x &= \frac{\cancel{200}^{40}}{\cancel{15}^3} \quad \text{(menyederhanakan dengan membagi pembilang dan penyebut dengan 5)} \\
+                            x &= \frac{40}{3} \\
+                            x &= 13\frac{1}{3} \text{ hari}
+                            \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Rumus Perbandingan Berbalik Nilai</strong><br><br>
+                        Pada perbandingan berbalik nilai untuk persediaan makanan, jika jumlah ayam berkurang, maka waktu bertambah.<br><br>
+                        \begin{align}
+                        B_2 &= \frac{A_1}{A_2} \times B_1 \\
+                        x &= \frac{20 \text{ ayam}}{15 \text{ ayam}} \times 10 \text{ hari} \\
+                        x &= \frac{\cancel{20}^4}{\cancel{15}^3} \times 10 \text{ hari} \quad \text{(menyederhanakan } \frac{20}{15} \text{ menjadi } \frac{4}{3} \text{)} \\
+                        x &= \frac{4}{3} \times 10 \text{ hari} \\
+                        x &= \frac{40}{3} \text{ hari} \\
+                        x &= 13\frac{1}{3} \text{ hari}
+                        \end{align}
                     </p>
                 </div>
             </details>
@@ -152,9 +216,26 @@
                     <p><strong>Jenis:</strong> Perbandingan Senilai</p>
                     <p><strong>Jawaban:</strong> 37,5 meter</p>
                     <p class="explanation">
-                        Kain per kemeja = \( \frac{10 \text{ m}}{4 \text{ kemeja}} = 2.5 \text{ m/kemeja} \).<br>
-                        Kain untuk 15 kemeja = \( 15 \times 2.5 = 37.5 \text{ m} \).<br>
-                        Atau: \( \frac{10}{4} = \frac{x}{15} \Rightarrow 4x = 150 \Rightarrow x = 37.5 \)
+                        <strong>Cara 1: Menggunakan Konsep Kain per Kemeja</strong><br><br>
+                        1.  <strong>Hitung kebutuhan kain per kemeja:</strong><br>
+                            \begin{align}
+                            \text{Kain per kemeja} &= \frac{10 \text{ m}}{4 \text{ kemeja}} \\
+                            &= 2,5 \text{ m/kemeja}
+                            \end{align}<br><br>
+                        2.  <strong>Hitung total kebutuhan kain untuk 15 kemeja:</strong><br>
+                            \begin{align}
+                            \text{Kain untuk 15 kemeja} &= 15 \text{ kemeja} \times 2,5 \text{ m/kemeja} \\
+                            &= 37,5 \text{ meter}
+                            \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
+                        \begin{align}
+                        \frac{10 \text{ meter}}{4 \text{ kemeja}} &= \frac{x \text{ meter}}{15 \text{ kemeja}} \\
+                        4x &= 10 \times 15 \\
+                        4x &= 150 \\
+                        x &= \frac{150}{4} \\
+                        x &= \frac{150}{4} \\
+                        x &= 37,5 \text{ meter}
+                        \end{align}
                     </p>
                 </div>
             </details>
@@ -167,9 +248,36 @@
                     <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
                     <p><strong>Jawaban:</strong> 90 km/jam</p>
                     <p class="explanation">
-                        Jarak = Kecepatan \( \times \) Waktu = \( 60 \times 3 = 180 \text{ km} \).<br>
-                        Kecepatan baru = \( \frac{\text{Jarak}}{\text{Waktu baru}} = \frac{180}{2} = 90 \text{ km/jam} \).<br>
-                        Atau: \( 60 \times 3 = x \times 2 \Rightarrow 180 = 2x \Rightarrow x = 90 \)
+                        <strong>Cara 1: Menggunakan Konsep Jarak, Kecepatan, dan Waktu</strong><br><br>
+                        1.  <strong>Hitung jarak total yang ditempuh:</strong><br>
+                            \begin{align}
+                            \text{Jarak} &= \text{Kecepatan} \times \text{Waktu} \\
+                            &= 60 \text{ km/jam} \times 3 \text{ jam} \\
+                            &= 180 \text{ km}
+                            \end{align}<br><br>
+                        2.  <strong>Hitung kecepatan baru dengan waktu yang diinginkan:</strong><br>
+                            \begin{align}
+                            \text{Kecepatan baru} &= \frac{\text{Jarak}}{\text{Waktu baru}} \\
+                            &= \frac{180 \text{ km}}{2 \text{ jam}} \\
+                            &= 90 \text{ km/jam}
+                            \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Perbandingan Berbalik Nilai</strong><br><br>
+                        Pada perbandingan berbalik nilai untuk kecepatan dan waktu, jika waktu berkurang, maka kecepatan bertambah.<br><br>
+                        \begin{align}
+                        B_2 &= \frac{A_1}{A_2} \times B_1 \\
+                        \text{Kecepatan}_2 &= \frac{\text{Waktu}_1}{\text{Waktu}_2} \times \text{Kecepatan}_1 \\
+                        \text{Kecepatan}_2 &= \frac{3 \text{ jam}}{2 \text{ jam}} \times 60 \text{ km/jam} \\
+                        \text{Kecepatan}_2 &= \frac{3}{2} \times 60 \text{ km/jam} \\
+                        \text{Kecepatan}_2 &= \frac{180}{2} \text{ km/jam} \\
+                        \text{Kecepatan}_2 &= 90 \text{ km/jam}
+                        \end{align}<br><br>
+                        <strong>Cara 3: Menggunakan Persamaan Langsung</strong><br><br>
+                        \begin{align}
+                        60 \text{ km/jam} \times 3 \text{ jam} &= x \text{ km/jam} \times 2 \text{ jam} \\
+                        180 \text{ km} &= 2x \text{ km} \\
+                        \frac{180}{2} &= x \\
+                        90 \text{ km/jam} &= x
+                        \end{align}
                     </p>
                 </div>
             </details>
@@ -182,28 +290,72 @@
                     <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (dengan sisa pekerjaan)</p>
                     <p><strong>Jawaban:</strong> Tambahan 15 hari dari target awal (total menjadi 75 hari).</p>
                     <p class="explanation">
-                        <strong>Langkah-langkah Penyelesaian:</strong><br><br>
+                        <strong>Cara 1: Menggunakan Konsep Unit Pekerjaan</strong><br><br>
                         1.  <strong>Hitung total unit pekerjaan awal:</strong><br>
-                            Sama seperti soal lainnya, kita gunakan konsep "unit pekerjaan" (atau <strong>pekerja-hari</strong>) untuk mengukur total beban kerja. Ini adalah hasil kali jumlah pekerja dengan waktu yang dijadwalkan.<br>
-                            Total unit kerja = \( 8 \text{ pekerja} \times 60 \text{ hari} = 480 \) unit pekerjaan.<br><br>
+                            \begin{align}
+                            \text{Total unit kerja} &= 8 \text{ pekerja} \times 60 \text{ hari} \\
+                            &= 480 \text{ unit pekerjaan}
+                            \end{align}<br><br>
                         2.  <strong>Hitung pekerjaan yang sudah selesai:</strong><br>
-                            Selama 15 hari pertama, 8 pekerja telah menyelesaikan sebagian dari proyek.<br>
-                            Pekerjaan selesai = \( 8 \text{ pekerja} \times 15 \text{ hari} = 120 \) unit pekerjaan.<br><br>
+                            \begin{align}
+                            \text{Pekerjaan selesai} &= 8 \text{ pekerja} \times 15 \text{ hari} \\
+                            &= 120 \text{ unit pekerjaan}
+                            \end{align}<br><br>
                         3.  <strong>Hitung sisa pekerjaan yang harus diselesaikan:</strong><br>
-                            Sisa pekerjaan = (Total unit kerja) - (Pekerjaan selesai)<br>
-                            Sisa pekerjaan = \( 480 - 120 = 360 \) unit pekerjaan.<br><br>
+                            \begin{align}
+                            \text{Sisa pekerjaan} &= \text{Total unit kerja} - \text{Pekerjaan selesai} \\
+                            &= 480 - 120 \\
+                            &= 360 \text{ unit pekerjaan}
+                            \end{align}<br><br>
                         4.  <strong>Hitung sisa tenaga kerja:</strong><br>
-                            Setelah 2 pekerja mengundurkan diri, jumlah pekerja yang tersisa adalah:<br>
-                            Jumlah pekerja sisa = \( 8 - 2 = 6 \) pekerja.<br><br>
+                            \begin{align}
+                            \text{Jumlah pekerja sisa} &= 8 - 2 \\
+                            &= 6 \text{ pekerja}
+                            \end{align}<br><br>
                         5.  <strong>Hitung sisa waktu yang dibutuhkan oleh 6 pekerja:</strong><br>
-                            Untuk mencari sisa waktu, kita bagi sisa unit pekerjaan dengan jumlah pekerja yang tersisa. Logikanya adalah membagi total beban kerja "pekerja-hari" dengan "pekerja" untuk mendapatkan sisa "hari".<br>
-                            Waktu sisa = \( \frac{\text{Sisa Pekerjaan}}{\text{Jumlah Pekerja Sisa}} = \frac{360 \text{ unit}}{6 \text{ pekerja}} = 60 \) hari.<br><br>
+                            \begin{align}
+                            \text{Waktu sisa} &= \frac{\text{Sisa Pekerjaan}}{\text{Jumlah Pekerja Sisa}} \\
+                            &= \frac{360 \text{ unit}}{6 \text{ pekerja}} \\
+                            &= \frac{\cancel{360}^{60}}{\cancel{6}^1} \quad \text{(membagi pembilang dan penyebut dengan 6)} \\
+                            &= 60 \text{ hari}
+                            \end{align}<br><br>
                         6.  <strong>Hitung total waktu pengerjaan dan hari tambahan:</strong><br>
-                            Total waktu pengerjaan proyek menjadi:<br>
-                            Total waktu = (Waktu sudah berjalan) + (Waktu sisa)<br>
-                            Total waktu = \( 15 \text{ hari} + 60 \text{ hari} = 75 \text{ hari} \).<br>
+                            \begin{align}
+                            \text{Total waktu} &= \text{Waktu sudah berjalan} + \text{Waktu sisa} \\
+                            &= 15 \text{ hari} + 60 \text{ hari} \\
+                            &= 75 \text{ hari}
+                            \end{align}<br>
                             Target awal adalah 60 hari, jadi tambahan waktu yang diperlukan adalah:<br>
-                            Tambahan waktu = \( 75 - 60 = 15 \) hari.
+                            \begin{align}
+                            \text{Tambahan waktu} &= 75 - 60 \\
+                            &= 15 \text{ hari}
+                            \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Rumus Perbandingan Berbalik Nilai untuk Sisa Pekerjaan</strong><br><br>
+                        1.  <strong>Hitung pekerjaan yang sudah selesai (dalam persentase):</strong><br>
+                            \begin{align}
+                            \text{Pekerjaan selesai} &= \frac{15 \text{ hari}}{60 \text{ hari}} \times 100\% \\
+                            &= 25\%
+                            \end{align}<br><br>
+                        2.  <strong>Hitung sisa pekerjaan:</strong><br>
+                            \begin{align}
+                            \text{Sisa pekerjaan} &= 100\% - 25\% \\
+                            &= 75\%
+                            \end{align}<br><br>
+                        3.  <strong>Gunakan rumus perbandingan berbalik nilai untuk sisa pekerjaan:</strong><br>
+                            \begin{align}
+                            \frac{\text{Sisa waktu}}{\text{Waktu awal}} &= \frac{\text{Pekerja awal}}{\text{Pekerja sisa}} \times \frac{\text{Sisa pekerjaan}}{100\%} \\
+                            \frac{\text{Sisa waktu}}{60 \text{ hari}} &= \frac{8 \text{ pekerja}}{6 \text{ pekerja}} \times \frac{75\%}{100\%} \\
+                            \frac{\text{Sisa waktu}}{60} &= \frac{8}{6} \times \frac{75}{100} \\
+                            \frac{\text{Sisa waktu}}{60} &= \frac{\cancel{8}^4}{\cancel{6}^3} \times \frac{\cancel{75}^3}{\cancel{100}^4} \quad \text{(menyederhanakan)} \\
+                            \frac{\text{Sisa waktu}}{60} &= \frac{4}{3} \times \frac{3}{4} \\
+                            \frac{\text{Sisa waktu}}{60} &= 1 \\
+                            \text{Sisa waktu} &= 60 \text{ hari}
+                            \end{align}<br><br>
+                        4.  <strong>Hitung total waktu dan tambahan waktu:</strong><br>
+                            \begin{align}
+                            \text{Total waktu} &= 15 + 60 = 75 \text{ hari} \\
+                            \text{Tambahan waktu} &= 75 - 60 = 15 \text{ hari}
+                            \end{align}
                     </p>
                 </div>
             </details>
@@ -216,9 +368,29 @@
                     <p><strong>Jenis:</strong> Perbandingan Senilai (Skala)</p>
                     <p><strong>Jawaban:</strong> 9 km</p>
                     <p class="explanation">
-                        Jarak sebenarnya = Jarak pada peta \( \times \) Skala.<br>
-                        Jarak sebenarnya = \( 4.5 \text{ cm} \times 200.000 = 900.000 \text{ cm} \).<br>
-                        Mengubah ke km: \( 900.000 \text{ cm} = 9.000 \text{ m} = 9 \text{ km} \).
+                        <strong>Cara 1: Menggunakan Konsep Skala Peta</strong><br><br>
+                        1.  <strong>Hitung jarak sebenarnya dalam cm:</strong><br>
+                            \begin{align}
+                            \text{Jarak sebenarnya} &= \text{Jarak pada peta} \times \text{Skala} \\
+                            &= 4,5 \text{ cm} \times 200.000 \\
+                            &= 900.000 \text{ cm}
+                            \end{align}<br><br>
+                        2.  <strong>Konversi ke kilometer:</strong><br>
+                            \begin{align}
+                            \text{Jarak dalam km} &= \frac{900.000 \text{ cm}}{100.000 \text{ cm/km}} \\
+                            &= \frac{900.000}{100.000} \text{ km} \\
+                            &= \frac{\cancel{900.000}^9}{\cancel{100.000}^1} \text{ km} \quad \text{(membagi pembilang dan penyebut dengan 100.000)} \\
+                            &= 9 \text{ km}
+                            \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Perbandingan Senilai</strong><br><br>
+                        Skala 1 : 200.000 artinya 1 cm pada peta mewakili 200.000 cm pada kenyataan.<br><br>
+                        \begin{align}
+                        \frac{1 \text{ cm (peta)}}{200.000 \text{ cm (nyata)}} &= \frac{4,5 \text{ cm (peta)}}{x \text{ cm (nyata)}} \\
+                        x &= 4,5 \times 200.000 \\
+                        x &= 900.000 \text{ cm} \\
+                        &= 9.000 \text{ m} \\
+                        &= 9 \text{ km}
+                        \end{align}
                     </p>
                 </div>
             </details>
@@ -234,15 +406,32 @@
                     <p><strong>Jenis:</strong> Perbandingan Gabungan</p>
                     <p><strong>Jawaban:</strong> 900 barang</p>
                     <p class="explanation">
-                        <strong>Langkah Pengerjaan:</strong><br>
-                        Laju produksi = \( \frac{1200 \text{ barang}}{(5 \text{ mesin} \times 8 \text{ jam})} = \frac{1200 \text{ barang}}{40 \text{ mesin-jam}} = 30 \text{ barang per mesin-jam} \).<br>
-                        Produksi 3 mesin dalam 10 jam = \( (3 \text{ mesin} \times 10 \text{ jam}) \times 30 \text{ barang per mesin-jam} = 30 \text{ mesin-jam} \times 30 \text{ barang per mesin-jam} = 900 \text{ barang} \).<br>
-                        Atau dengan rumus perbandingan gabungan (senilai):<br>
-                        \( \frac{P_1}{M_1 \times T_1} = \frac{P_2}{M_2 \times T_2} \)<br>
-                        \( \frac{1200}{5 \times 8} = \frac{P_2}{3 \times 10} \)<br>
-                        \( \frac{1200}{40} = \frac{P_2}{30} \)<br>
-                        \( 30 = \frac{P_2}{30} \)<br>
-                        \( P_2 = 30 \times 30 = 900 \) barang.<br><br>
+                        <strong>Cara 1: Menggunakan Konsep Laju Produksi</strong><br><br>
+                        1.  <strong>Hitung laju produksi per mesin per jam:</strong><br>
+                            \begin{align}
+                            \text{Laju produksi} &= \frac{\text{Jumlah barang}}{\text{Jumlah mesin} \times \text{Jumlah jam}} \\
+                            &= \frac{1200 \text{ barang}}{5 \text{ mesin} \times 8 \text{ jam}} \\
+                            &= \frac{1200 \text{ barang}}{40 \text{ mesin-jam}} \\
+                            &= 30 \text{ barang per mesin-jam}
+                            \end{align}<br><br>
+                        2.  <strong>Hitung produksi dengan kondisi baru:</strong><br>
+                            \begin{align}
+                            \text{Produksi baru} &= \text{Laju produksi} \times \text{Jumlah mesin baru} \times \text{Jumlah jam baru} \\
+                            &= 30 \text{ barang per mesin-jam} \times 3 \text{ mesin} \times 10 \text{ jam} \\
+                            &= 30 \times 30 \text{ barang} \\
+                            &= 900 \text{ barang}
+                            \end{align}<br><br>
+                        <strong>Cara 2: Menggunakan Rumus Perbandingan Gabungan Senilai</strong><br><br>
+                        Untuk perbandingan gabungan senilai, kita gunakan rumus:<br>
+                        \begin{align}
+                        \frac{P_1}{M_1 \times T_1} &= \frac{P_2}{M_2 \times T_2} \\
+                        \frac{1200}{5 \times 8} &= \frac{P_2}{3 \times 10} \\
+                        \frac{1200}{40} &= \frac{P_2}{30} \\
+                        \frac{\cancel{1200}^{30}}{\cancel{40}^1} &= \frac{P_2}{30} \quad \text{(membagi pembilang dan penyebut dengan 40)} \\
+                        30 &= \frac{P_2}{30} \\
+                        P_2 &= 30 \times 30 \\
+                        P_2 &= 900 \text{ barang}
+                        \end{align}<br><br>
                         <strong>Cara Menentukan Jenis Perbandingan untuk Soal Ini:</strong><br>
                         Untuk menentukan jenis perbandingan, kita analisis hubungan antara variabel yang ditanyakan (Jumlah Barang Diproduksi - P) dengan variabel lainnya (Jumlah Mesin - M dan Jumlah Jam Kerja - T) satu per satu, sambil menganggap variabel ketiga konstan:<br><br>
                         1.  <strong>Hubungan antara Jumlah Barang (P) dan Jumlah Mesin (M)</strong> (anggap jam kerja T konstan):<br>

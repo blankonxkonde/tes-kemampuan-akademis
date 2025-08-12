@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Deret Geometri</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 { color: #0056b3; }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .section { margin: 26px 0; }
+        .formula {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        .note {
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        th, td { border: 1px solid #ddd; padding: 10px; }
+        th { background: #0056b3; color: #fff; text-align: left; }
+        .math-block { font-size: 1.06em; overflow-x: auto; }
+    </style>
+    <!-- Preferensi: semua perhitungan ditulis dengan LaTeX block dan align -->
+    <script>
+      window.MathJax = {
+        tex: { tags: 'ams' }
+      };
+    </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Deret Geometri</h1>
+
+    <div class="section">
+      <h2>1) Pengantar: Barisan vs Deret Geometri</h2>
+      <p>
+        <strong>Barisan geometri</strong> adalah urutan bilangan di mana perbandingan antara dua suku berurutan selalu tetap (disebut <em>rasio</em>, dilambangkan <strong>r</strong>). 
+        <strong>Deret geometri</strong> adalah <em>penjumlahan</em> dari suku-suku barisan geometri.
+      </p>
+      <div class="note">
+        Contoh barisan geometri: 3, 6, 12, 24, ... dengan rasio <em>r</em> = 2. Deretnya adalah 3 + 6 + 12 + 24 + ...
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2) Suku ke-<em>n</em> Barisan Geometri</h2>
+      <p>Jika suku pertama adalah <strong>a</strong> dan rasio adalah <strong>r</strong>, maka rumus suku ke-<em>n</em>:</p>
+      <div class="formula math-block">
+        \[ U_n = a\,r^{\,n-1} \]
+      </div>
+      <div class="example">
+        <strong>Contoh:</strong> Diketahui <em>a</em> = 3 dan <em>r</em> = 2. Tentukan \(U_6\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        U_6 &= a\,r^{6-1}\\
+            &= 3\cdot 2^{5}\\
+            &= 3\cdot 32\\
+            &= 96
+        \end{aligned}
+        \]
+        </div>
+      </div>
+
+      <div class="example">
+        <strong>Contoh (menentukan a dan r dari dua suku):</strong> Diketahui \(U_4 = 81\) dan \(U_7 = 2187\). Tentukan <em>a</em> dan <em>r</em>.
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        U_4 &= a\,r^{3} = 81\\
+        U_7 &= a\,r^{6} = 2187\\[4pt]
+        \text{Bagi persamaan kedua dengan pertama:}\quad \frac{a r^{6}}{a r^{3}} &= \frac{2187}{81}\\
+        r^{3} &= 27 \;\Rightarrow\; r = 3\\[4pt]
+        a &= \frac{81}{r^{3}} = \frac{81}{27} = 3
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3) Jumlah <em>n</em> Suku Pertama (Deret Geometri)</h2>
+      <p>Jumlah <em>n</em> suku pertama, \(S_n\), untuk \(r \neq 1\):</p>
+      <div class="formula math-block">
+        \[
+        S_n = \frac{a(1 - r^{n})}{1 - r} \;=\; \frac{a(r^{n} - 1)}{r - 1},\quad r\neq 1
+        \]
+      </div>
+      <p>Untuk kasus khusus \(r=1\): \(S_n = n a\).</p>
+
+      <div class="example">
+        <strong>Contoh:</strong> Diketahui <em>a</em> = 3 dan <em>r</em> = 2. Hitung \(S_6\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_6 &= \frac{3(1 - 2^{6})}{1 - 2}\\
+            &= \frac{3(1 - 64)}{-1}\\
+            &= \frac{3(-63)}{-1}\\
+            &= 189
+        \end{aligned}
+        \]
+        </div>
+      </div>
+
+      <div class="example">
+        <strong>Contoh (r &lt; 1):</strong> Diketahui <em>a</em> = 81 dan <em>r</em> = \(\tfrac{1}{3}\). Hitung \(S_5\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_5 &= \frac{81\big(1 - (\tfrac{1}{3})^{5}\big)}{1 - \tfrac{1}{3}}\\
+            &= \frac{81\big(1 - \tfrac{1}{243}\big)}{\tfrac{2}{3}}\\
+            &= 81 \cdot \frac{242}{243} \cdot \frac{3}{2}\\
+            &= 121.5
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4) Menentukan Banyak Suku (<em>n</em>)</h2>
+      <div class="example">
+        <strong>Contoh (dari suku ke-<em>n</em>):</strong> Pada barisan dengan \(a=3\) dan \(r=3\), tentukan <em>n</em> jika \(U_n = 729\).
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        U_n &= a r^{n-1} = 729\\
+        3\cdot 3^{n-1} &= 729 = 3^{6}\\
+        3^{n} &= 3^{6} \;\Rightarrow\; n = 6
+        \end{aligned}
+        \]
+        </div>
+      </div>
+
+      <div class="example">
+        <strong>Contoh (dari jumlah \(S_n\)):</strong> Diketahui deret geometri dengan \(a=2\), \(r=3\), dan \(S_n = 242\). Tentukan <em>n</em>.
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_n &= \frac{2(1 - 3^{n})}{1 - 3} = 242\\
+            &= (1 - 3^{n})(-1) = 242\\
+        1 - 3^{n} &= -242\\
+        3^{n} &= 243 = 3^{5}\\
+        n &= 5
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5) Deret Geometri Tak Hingga</h2>
+      <p>
+        Deret geometri tak hingga <strong>konvergen</strong> jika dan hanya jika \(|r| &lt; 1\). Dalam hal ini, jumlahnya:
+      </p>
+      <div class="formula math-block">
+        \[ S_{\infty} = \frac{a}{1 - r},\quad |r|<1 \]
+      </div>
+      <div class="example">
+        <strong>Contoh:</strong> \(a=81\), \(r=\tfrac{1}{3}\). Maka \(S_{\infty} = \tfrac{81}{1-1/3} = \tfrac{81}{2/3} = 121.5\).
+      </div>
+      <div class="note">
+        Jika \(|r| \ge 1\), deret tak hingga <em>divergen</em> (jumlahnya tidak terhingga/tidak terdefinisi).
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>6) Jumlah Suku ke-<em>m</em> sampai ke-<em>n</em></h2>
+      <p>Untuk \(m\le n\):</p>
+      <div class="formula math-block">
+        \[ S_{m\to n} = a\,r^{m-1}\,\frac{1 - r^{\,(n-m+1)}}{1 - r},\quad r\neq 1 \]
+      </div>
+      <div class="example">
+        <strong>Contoh:</strong> Untuk barisan dengan \(a=2\) dan \(r=2\), hitung jumlah suku ke-3 sampai ke-7.
+        <div class="math-block">
+        \[
+        \begin{aligned}
+        S_{3\to 7} &= 2\cdot 2^{2}\,\frac{1 - 2^{(7-3+1)}}{1 - 2}\\
+                    &= 8\,\frac{1 - 2^{5}}{-1}\\
+                    &= 8\,\frac{1 - 32}{-1}\\
+                    &= 8\cdot 31 = 248
+        \end{aligned}
+        \]
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>7) Ringkasan Rumus</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Konsep</th>
+            <th>Rumus</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suku ke-<em>n</em></td>
+            <td>\( U_n = a\,r^{n-1} \)</td>
+            <td>Barisan geometri</td>
+          </tr>
+          <tr>
+            <td>Jumlah <em>n</em> suku pertama</td>
+            <td>\( S_n = \tfrac{a(1-r^{n})}{1-r} \) (atau \( \tfrac{a(r^{n}-1)}{r-1} \))</td>
+            <td>Deret geometri, \(r\neq 1\)</td>
+          </tr>
+          <tr>
+            <td>Kasus \(r=1\)</td>
+            <td>\( S_n = n a \)</td>
+            <td>Semua suku sama</td>
+          </tr>
+          <tr>
+            <td>Deret tak hingga</td>
+            <td>\( S_{\infty} = \tfrac{a}{1-r} \), \(|r|<1\)</td>
+            <td>Konvergen bila \(|r|<1\)</td>
+          </tr>
+          <tr>
+            <td>Jumlah suku ke-<em>m</em> s.d. ke-<em>n</em></td>
+            <td>\( S_{m\to n} = a\,r^{m-1}\,\tfrac{1 - r^{\,(n-m+1)}}{1 - r} \)</td>
+            <td>Selisih jumlah parsial</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>8) Latihan Singkat</h2>
+      <div class="example">
+        <ol>
+          <li>Barisan geometri memiliki \(a=5\) dan \(r=3\). Hitung \(U_{8}\) dan \(S_{8}\).</li>
+          <li>Diketahui \(U_5 = 48\) dan \(U_9 = 768\). Tentukan \(a\) dan \(r\), lalu hitung \(S_{9}\).</li>
+          <li>Deret geometri dengan \(a=4\) dan \(r=\tfrac{1}{2}\). Hitung \(S_{\infty}\) dan cari \(n\) terkecil sehingga \(S_n\) berselisih kurang dari 0.01 dari \(S_{\infty}\).</li>
+        </ol>
+        <p><em>Petunjuk:</em> Susun langkah dengan <code>align</code>. Untuk nomor 3, gunakan sisa deret: \(R_n = \tfrac{a\,r^{n}}{1-r}\).</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
+
