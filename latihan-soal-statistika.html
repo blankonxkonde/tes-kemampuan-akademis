@@ -403,6 +403,167 @@
         </div>
     </div>
 
+    <div class="question-box">
+        <b>21.</b> Rata-rata nilai Kelas Akselerasi dan Kelas Reguler di sebuah sekolah negeri masing-masing adalah 98,80 dan 73,60. Rata-rata nilai gabungan kedua kelas adalah 77,20. Maka perbandingan jumlah siswa Kelas Akselerasi dan Kelas Reguler adalah ...
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi (Cara 1: Rata-rata Gabungan):</b><br>
+            \[
+            \begin{aligned}
+            \bar{x}_{\text{gab}} &= \frac{n_A \cdot 98.80 + n_R \cdot 73.60}{n_A + n_R} = 77.20 \\
+            77.20(n_A + n_R) &= 98.80\,n_A + 73.60\,n_R \\
+            77.20\,n_R - 73.60\,n_R &= 98.80\,n_A - 77.20\,n_A \\
+            3.60\,n_R &= 21.60\,n_A \\
+            \frac{n_A}{n_R} &= \frac{3.60}{21.60} = \frac{1}{6}
+            \end{aligned}
+            \]
+            Jadi, perbandingan jumlah siswa adalah \(n_A : n_R = 1 : 6\).<br><br>
+            <b>Solusi (Cara 2: Aligasi):</b><br>
+            Metode aligasi (atau selisih silang) adalah cara tercepat untuk menemukan rasio. Jarak setiap rata-rata kelompok ke rata-rata gabungan berbanding terbalik dengan jumlah siswanya.<br>
+            Pertama, susun ketiga rata-rata secara vertikal. Untuk mempermudah perhitungan, selalu letakkan nilai terbesar di atas dan terkecil di bawah.
+            \[
+            \begin{aligned}
+            \bar{x}_{A} &= 98.80 \\
+            \bar{x}_{\text{gab}} &= 77.20 \\
+            \bar{x}_{R} &= 73.60
+            \end{aligned}
+            \]
+            Lalu, hitung selisih silangnya:
+            \[
+            \begin{aligned}
+            n_A : n_R &= |\bar{x}_{\text{gab}} - \bar{x}_R| : |\bar{x}_A - \bar{x}_{\text{gab}}| \\
+            &= (77.20 - 73.60) : (98.80 - 77.20) \\
+            &= 3.60 : 21.60 \\
+            &= 1 : 6
+            \end{aligned}
+            \]
+            Intuisi: karena rata-rata gabungan (77,20) lebih dekat ke rata-rata Reguler (73,60), maka jumlah siswa Reguler pasti lebih banyak.
+        </div>
+    </div>
+
+    <div class="question-box">
+        <b>22.</b> Di sebuah sekolah, rata-rata nilai Kelas Akselerasi adalah 96 dan Kelas Reguler adalah 72. Jika perbandingan jumlah siswa Kelas Akselerasi dan Reguler adalah 1 : 4, berapakah rata-rata nilai gabungan kedua kelas tersebut?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi (Cara 1: Rata-rata Gabungan):</b><br>
+            Ini adalah cara paling langsung, yaitu mencari rata-rata tertimbang (weighted average).
+            \[
+            \begin{aligned}
+            \bar{x}_{\text{gab}} &= \frac{(n_A \cdot \bar{x}_A) + (n_R \cdot \bar{x}_R)}{n_A+n_R} \\
+            &= \frac{(1 \cdot 96) + (4 \cdot 72)}{1+4} \\
+            &= \frac{96 + 288}{5} \\
+            &= \frac{384}{5} = 76.8
+            \end{aligned}
+            \]
+            Jadi, rata-rata gabungannya adalah 76,8.<br><br>
+            <b>Solusi (Cara 2: Aligasi):</b><br>
+            Kita bisa menggunakan rumus aligasi yang sama dengan soal No. 23. Misalkan \(\bar{x}_{\text{gab}}\) adalah nilai rata-rata gabungan yang dicari.<br>
+            Pertama, susun rata-rata yang diketahui:
+            \[
+            \begin{aligned}
+            \bar{x}_{A} &= 96 \\
+            \bar{x}_{\text{gab}} &= ? \\
+            \bar{x}_{R} &= 72
+            \end{aligned}
+            \]
+            Lalu, masukkan ke dalam rumus:
+            \[
+            \begin{aligned}
+            \frac{n_A}{n_R} &= \frac{|\bar{x}_{\text{gab}} - \bar{x}_R|}{|\bar{x}_A - \bar{x}_{\text{gab}}|} \\
+            \frac{1}{4} &= \frac{\bar{x}_{\text{gab}} - 72}{96 - \bar{x}_{\text{gab}}} \\
+            1 \cdot (96 - \bar{x}_{\text{gab}}) &= 4 \cdot (\bar{x}_{\text{gab}} - 72) \\
+            96 - \bar{x}_{\text{gab}} &= 4\bar{x}_{\text{gab}} - 288 \\
+            96 + 288 &= 4\bar{x}_{\text{gab}} + \bar{x}_{\text{gab}} \\
+            384 &= 5\bar{x}_{\text{gab}} \\
+            \bar{x}_{\text{gab}} &= \frac{384}{5} = 76.8
+            \end{aligned}
+            \]
+            Hasilnya sama, yaitu 76,8. Ini menunjukkan bahwa baik mencari rata-rata gabungan maupun salah satu rata-rata kelompok, prinsip aligasi tetap bisa digunakan.
+        </div>
+    </div>
+
+    <div class="question-box">
+        <b>23.</b> Nilai rata-rata gabungan dari Kelas Akselerasi dan Kelas Reguler adalah 76,8. Rata-rata nilai Kelas Reguler adalah 72. Jika perbandingan jumlah siswa Kelas Akselerasi dan Reguler adalah 1 : 4, berapakah rata-rata nilai Kelas Akselerasi?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi (Cara 1: Rata-rata Gabungan):</b><br>
+            \[
+            \begin{aligned}
+            76.8 &= \frac{1\cdot \bar{x}_A + 4\cdot 72}{1+4} \\
+            5 \cdot 76.8 &= \bar{x}_A + 288 \\
+            384 &= \bar{x}_A + 288 \\
+            \bar{x}_A &= 384 - 288 = 96
+            \end{aligned}
+            \]
+            Rata-rata Kelas Akselerasi adalah 96.<br><br>
+            <b>Solusi (Cara 2: Aligasi):</b><br>
+            Prinsip aligasi menyatakan \(\frac{n_A}{n_R} = \frac{|\bar{x}_{\text{gab}} - \bar{x}_R|}{|\bar{x}_A - \bar{x}_{\text{gab}}|}\).<br>
+            Pertama, susun rata-rata yang diketahui:
+            \[
+            \begin{aligned}
+            \bar{x}_{A} &= ? \\
+            \bar{x}_{\text{gab}} &= 76.8 \\
+            \bar{x}_{R} &= 72
+            \end{aligned}
+            \]
+            Lalu, masukkan ke dalam rumus:
+            \[
+            \begin{aligned}
+            \frac{1}{4} &= \frac{76.8 - 72}{\bar{x}_A - 76.8} \\
+            \frac{1}{4} &= \frac{4.8}{\bar{x}_A - 76.8} \\
+            \bar{x}_A - 76.8 &= 4 \times 4.8 \\
+            \bar{x}_A - 76.8 &= 19.2 \\
+            \bar{x}_A &= 96
+            \end{aligned}
+            \]
+        </div>
+    </div>
+
+    <div class="question-box">
+        <b>24.</b> Rata-rata nilai Kelas Akselerasi dan Kelas Reguler masing-masing adalah 96 dan 72. Jika rata-rata gabungan kedua kelas adalah 76,8 dan total siswa dari kedua kelas adalah 100 orang, berapakah jumlah siswa di masing-masing kelas?
+        <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+        <div class="answer-box">
+            <b>Solusi (Cara 1: Rata-rata Gabungan):</b><br>
+            Misalkan \(n_A\) adalah jumlah siswa Akselerasi, maka siswa Reguler adalah \(100 - n_A\).
+            \[
+            \begin{aligned}
+            76.8 &= \frac{n_A \cdot 96 + (100 - n_A) \cdot 72}{100} \\
+            7680 &= 96\,n_A + 7200 - 72\,n_A \\
+            7680 - 7200 &= (96 - 72)\,n_A \\
+            480 &= 24\,n_A \\
+            n_A &= \frac{480}{24} = 20
+            \end{aligned}
+            \]
+            Jumlah siswa Kelas Akselerasi adalah 20 orang, dan Kelas Reguler adalah \(100 - 20 = 80\) orang.<br><br>
+            <b>Solusi (Cara 2: Aligasi):</b><br>
+            Metode aligasi digunakan untuk menemukan rasio jumlah siswa terlebih dahulu.<br>
+            Pertama, susun ketiga rata-rata:
+            \[
+            \begin{aligned}
+            \bar{x}_{A} &= 96 \\
+            \bar{x}_{\text{gab}} &= 76.8 \\
+            \bar{x}_{R} &= 72
+            \end{aligned}
+            \]
+            Lalu, hitung selisih silangnya untuk mendapatkan rasio:
+            \[
+            \begin{aligned}
+            n_A : n_R &= (\bar{x}_{\text{gab}} - \bar{x}_R) : (\bar{x}_A - \bar{x}_{\text{gab}}) \\
+            &= (76.8 - 72) : (96 - 76.8) \\
+            &= 4.8 : 19.2 = 1 : 4
+            \end{aligned}
+            \]
+            Rasio jumlah siswa adalah \(n_A:n_R = 1:4\). Jumlah bagian rasio adalah \(1+4=5\).
+            Dengan total 100 siswa, kita dapat menghitung jumlah siswa di tiap kelas:
+            \[
+            \begin{aligned}
+            n_A &= \frac{1}{5} \times 100 = 20 \text{ orang} \\
+            n_R &= \frac{4}{5} \times 100 = 80 \text{ orang}
+            \end{aligned}
+            \]
+        </div>
+    </div>
+
 </div>
 
 <script>
