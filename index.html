@@ -3,11 +3,20 @@
 <h1>Daftar File</h1>
 
 <ul>
-  {% for file in site.static_files %}
+  {%- for page in site.pages | sort: 'path' -%}
+    {%- if page.path contains 'tes-kemampuan-akademis/' -%}
+      {%- unless page.name == 'index.html' -%}
+        <li>
+          <a href="{{ page.url | relative_url }}">{{ page.path | remove_first: 'tes-kemampuan-akademis/' | remove_first: '/tes-kemampuan-akademis/' }}</a>
+        </li>
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {% for file in site.static_files | sort: 'path' %}
     {% if file.path contains '/tes-kemampuan-akademis/' %}
       {% unless file.name == 'index.html' %}
         <li>
-          <a href="{{ file.name }}">{{ file.name }}</a>
+          <a href="{{ file.path | relative_url }}">{{ file.path | remove_first: '/tes-kemampuan-akademis/' }}</a>
         </li>
       {% endunless %}
     {% endif %}
