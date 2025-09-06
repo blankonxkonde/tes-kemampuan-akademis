@@ -1,22 +1,141 @@
----
-title: Daftar File
----
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar File - Tes Kemampuan Akademis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 8px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+        .loading {
+            color: #666;
+            font-style: italic;
+        }
+        .file-type {
+            font-size: 0.8em;
+            color: #666;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daftar File</h1>
+    <ul id="file-list">
+        <li class="loading">Memuat daftar file...</li>
+    </ul>
 
-<h1>Daftar File</h1>
+    <script>
+        // Daftar file yang ada di folder ini (update manual atau gunakan build script)
+        const files = [
+            'akar.html',
+            'bunga_majemuk.html', 
+            'cpns-tiu.html',
+            'deret_aritmetika.html',
+            'deret_geometri.html',
+            'diskon_persentase_harga.html',
+            'eksponen.html',
+            'fraction_values.html',
+            'identitas_aljabar.html',
+            'kecepatan.html',
+            'latihan_soal_persamaan_fungsional.html',
+            'latihan-aritmetika.md',
+            'latihan-kecepatan-tambahan.html',
+            'latihan-kecepatan.html',
+            'latihan-perbandingan-variasi.html',
+            'latihan-perbandingan.html',
+            'latihan-persamaan.html',
+            'latihan-soal-statistika.html',
+            'materi_pecahan.html',
+            'materi-rata-rata.html',
+            'materi-satuan-berat-dan-kelompok.html',
+            'mental-math.html',
+            'pecahan_istimewa.html',
+            'perbandingan.html',
+            'persamaan_fungsional.html',
+            'persamaan.html',
+            'porogapit.html',
+            'soal_latihan_akar.html',
+            'soal_latihan_bunga.html',
+            'soal-harus-belajar-lagi.md',
+            'soal-matematika.html',
+            'urutan_operasi_hitung.html',
+            // File di subfolder silogisme
+            'silogisme/latihan-silogisme-1.html',
+            'silogisme/latihan-silogisme.md',
+            'silogisme/materi-silogisme-2.md',
+            'silogisme/materi-silogisme-alfaiz.md',
+            'silogisme/materi-silogisme-partikular.html',
+            'silogisme/materi-silogisme.html'
+        ];
 
-<ul>
-  {% for p in site.pages %}
-    {% if p.path contains 'tes-kemampuan-akademis/' and p.name != 'index.html' %}
-      <li>
-        <a href="{{ p.url | relative_url }}">{{ p.name }}</a>
-      </li>
-    {% endif %}
-  {% endfor %}
-  {% for f in site.static_files %}
-    {% if f.path contains '/tes-kemampuan-akademis/' and f.name != 'index.html' %}
-      <li>
-        <a href="{{ f.path | relative_url }}">{{ f.name }}</a>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+        function getFileType(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            switch(ext) {
+                case 'html': return 'HTML';
+                case 'md': return 'Markdown';
+                default: return ext.toUpperCase();
+            }
+        }
+
+        function formatFileName(filename) {
+            return filename
+                .replace(/[-_]/g, ' ')
+                .replace(/\b\w/g, l => l.toUpperCase());
+        }
+
+        function renderFileList() {
+            const list = document.getElementById('file-list');
+            list.innerHTML = '';
+
+            files.forEach(file => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                const span = document.createElement('span');
+                
+                a.href = file;
+                a.textContent = formatFileName(file.split('/').pop());
+                
+                span.className = 'file-type';
+                span.textContent = `(${getFileType(file)})`;
+                
+                li.appendChild(a);
+                li.appendChild(span);
+                list.appendChild(li);
+            });
+        }
+
+        // Render daftar file
+        renderFileList();
+    </script>
+</body>
+</html>
