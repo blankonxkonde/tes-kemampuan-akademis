@@ -1,0 +1,10 @@
+---
+---
+<h1>Daftar File</h1>
+<ul>
+  {% for file in site.static_files %}
+    {% if file.path contains '/tes-kemampuan-akademis/' %}
+      <li><a href="{{ site.baseurl }}{{ file.path }}">{{ file.name }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
