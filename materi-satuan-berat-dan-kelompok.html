@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Satuan Berat dan Satuan Kelompok (Lusin, Kodi, Gros, Rim)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .note {
+            background-color: #fef8e7;
+            border-left: 5px solid #f0ad4e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .formula-box {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 1.06em;
+            overflow-x: auto;
+        }
+        .example-box {
+            background-color: #f0f7ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .toggle-answer {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .toggle-answer:hover {
+            background-color: #0056b3;
+        }
+        .answer-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #007bff;
+        }
+        .math-block {
+            text-align: center;
+            font-size: 1.08em;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .small {
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Materi Satuan Berat dan Satuan Kelompok</h1>
+
+        <div class="section" id="pengenalan">
+            <h2>1. Pengantar</h2>
+            <p>
+                Dalam kegiatan sehari-hari dan soal-soal matematika, kita sering menjumpai <b>satuan kelompok</b> (untuk menghitung benda dalam bundel)
+                dan <b>satuan berat</b> (untuk massa). Halaman ini merangkum definisi, relasi konversi, contoh perhitungan, serta latihan soal.
+                Perhitungan ditulis dalam bentuk LaTeX blok agar langkah-langkahnya terlihat jelas.
+            </p>
+            <div class="note">
+                <b>Catatan tentang "pon":</b> Dalam konteks sekolah di Indonesia, sering digunakan <b>1 pon = 5 ons = 500 gram</b>.
+                Di sistem imperial, <i>pound</i> (lb) secara ilmiah bernilai <b>1 lb ≈ 0{,}453592 kg</b>.
+            </div>
+        </div>
+
+        <div class="section" id="satuan-kelompok">
+            <h2>2. Satuan Kelompok (Menghitung Banyaknya Benda)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Satuan</th>
+                        <th>Arti</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>1 lusin</b></td>
+                        <td>12 buah</td>
+                        <td>Sering untuk telur, alat tulis, dsb.</td>
+                    </tr>
+                    <tr>
+                        <td><b>1 kodi</b></td>
+                        <td>20 buah</td>
+                        <td>Sering untuk pakaian, pensil, dsb.</td>
+                    </tr>
+                    <tr>
+                        <td><b>1 gros/gross</b></td>
+                        <td>12 lusin = 144 buah</td>
+                        <td>Bundel besar</td>
+                    </tr>
+                    <tr>
+                        <td><b>1 rim</b></td>
+                        <td>500 lembar</td>
+                        <td>Khusus kertas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <b>Contoh:</b>
+                <div class="math-block">
+                \[
+                \begin{aligned}
+                3\,\text{kodi} &= 3 \times 20 = 60\,\text{buah} \\
+                5\,\text{lusin} &= 5 \times 12 = 60\,\text{buah} \\
+                \text{Total} &= 60 + 60 = 120\,\text{buah}
+                \end{aligned}
+                \]
+                </div>
+                <div class="math-block">
+                \[
+                2\,\text{gross} = 2 \times 144 = 288\,\text{buah}
+                \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="satuan-berat">
+            <h2>3. Satuan Berat (Massa)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Satuan</th>
+                        <th>Relasi</th>
+                        <th>Ke kilogram</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>ons</b></td>
+                        <td>1 ons = 100 gram</td>
+                        <td>0,1 kg</td>
+                    </tr>
+                    <tr>
+                        <td><b>pon</b> (sekolah)</td>
+                        <td>1 pon = 5 ons = 500 gram</td>
+                        <td>0,5 kg</td>
+                    </tr>
+                    <tr>
+                        <td><b>pound (lb)</b> (imperial)</td>
+                        <td>1 lb ≈ 0,453592 kg</td>
+                        <td>≈ 0,453592 kg</td>
+                    </tr>
+                    <tr>
+                        <td><b>kilogram (kg)</b></td>
+                        <td>1 kg = 10 ons = 1000 gram</td>
+                        <td>1 kg</td>
+                    </tr>
+                    <tr>
+                        <td><b>kuintal</b></td>
+                        <td>1 kuintal = 100 kg</td>
+                        <td>100 kg</td>
+                    </tr>
+                    <tr>
+                        <td><b>ton</b></td>
+                        <td>1 ton = 1000 kg</td>
+                        <td>1000 kg</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <b>Contoh Konversi:</b>
+                <div class="math-block">
+                \[
+                \begin{aligned}
+                2{,}5\,\text{kg} &= 2{,}5 \times 10\,\text{ons} = 25\,\text{ons} \\
+                3\,\text{pon} &= 3 \times 5\,\text{ons} = 15\,\text{ons} = 1{,}5\,\text{kg} \\
+                8\,\text{lb} &\approx 8 \times 0{,}453592\,\text{kg} = 3{,}628736\,\text{kg} \approx 3{,}63\,\text{kg}
+                \end{aligned}
+                \]
+                </div>
+                <div class="math-block">
+                \[
+                3\,\text{kg} = 3 \times \frac{1000\,\text{g}}{1\,\text{kg}} = 3000\,\text{g}
+                \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="metode-faktor">
+            <h2>4. Metode Faktor (Mencoret Satuan)</h2>
+            <p>
+                Konversi satuan bisa dipermudah dengan menulis faktor konversi sebagai pecahan sehingga satuan bisa <i>dicoret</i>.
+            </p>
+            <div class="formula-box">
+                \[
+                \begin{aligned}
+                4\,\text{kodi} \;\text{pensil} &= 4 \times \frac{20\,\text{buah}}{1\,\text{kodi}} = 80\,\text{buah} \\
+                1{,}2\,\text{kg} &= 1{,}2 \times \frac{10\,\text{ons}}{1\,\text{kg}} = 12\,\text{ons}
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <div class="section" id="latihan">
+            <h2>5. Latihan Soal</h2>
+
+            <div class="question-box">
+                <b>1.</b> Sebuah toko memiliki stok 2 gros bolpoin. Berapa buah bolpoin seluruhnya?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 2\,\text{gross} = 2 \times 144 = 288\,\text{buah} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>2.</b> Toko A menjual 3 kodi dan 4 lusin pensil. Berapa total pensil yang terjual?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 3\,\text{kodi} = 60,\; 4\,\text{lusin} = 48 \Rightarrow \text{Total} = 108\,\text{buah} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>3.</b> Seikat kertas berisi 1 rim. Jika digunakan 135 lembar, berapa lembar yang tersisa?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 1\,\text{rim} = 500\,\text{lembar} \Rightarrow 500 - 135 = 365\,\text{lembar} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>4.</b> Ubah 3{,}6 kg menjadi ons.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 3{,}6\,\text{kg} = 3{,}6 \times 10 = 36\,\text{ons} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>5.</b> Seorang pedagang menyebut berat barang 4 pon (konvensi sekolah). Berapa kg?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 4\,\text{pon} = 4 \times 5\,\text{ons} = 20\,\text{ons} = 2\,\text{kg} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>6.</b> 5 lb kira-kira berapa kilogram? (pakai 1 lb ≈ 0{,}454 kg)
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 5\,\text{lb} \approx 5 \times 0{,}454 = 2{,}27\,\text{kg} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>7.</b> Ibu membeli 2 lusin telur, lalu 8 butirnya pecah. Berapa butir telur yang masih utuh?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 2\,\text{lusin} = 24\,\text{butir} \Rightarrow 24 - 8 = 16\,\text{butir} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>8.</b> Ubah 0{,}75 kuintal menjadi kilogram.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 0{,}75\,\text{kuintal} = 0{,}75 \times 100 = 75\,\text{kg} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>9.</b> 1{,}2 ton berapa kilogram? Berapa kuintal?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 1{,}2\,\text{ton} = 1{,}2 \times 1000 = 1200\,\text{kg} = 12\,\text{kuintal} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>10.</b> Campuran 1 kodi dan 6 lusin buku tulis dibagikan sama rata kepada 12 siswa. Tiap siswa mendapat berapa buku?
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ 1\,\text{kodi} = 20,\; 6\,\text{lusin} = 72 \Rightarrow 92\,\text{buku} \Rightarrow 92/12 \approx 7{,}67\,\text{buku} \]
+                    Jadi tiap siswa mendapat 7 buku dan ada 8 buku tersisa.
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="ringkasan">
+            <h2>6. Ringkasan</h2>
+            <ul>
+                <li><b>Lusin</b> = 12, <b>Kodi</b> = 20, <b>Gros</b> = 144, <b>Rim</b> = 500 (lembar).</li>
+                <li><b>1 ons</b> = 100 g, <b>1 pon</b> (sekolah) = 5 ons = 500 g, <b>1 kg</b> = 10 ons = 1000 g.</li>
+                <li><b>1 kuintal</b> = 100 kg, <b>1 ton</b> = 1000 kg.</li>
+                <li>Gunakan <i>metode faktor</i> untuk konversi cepat dengan mencoret satuan.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(btn) {
+            var box = btn.nextElementSibling;
+            if (!box) return;
+            var isShown = box.style.display === 'block';
+            box.style.display = isShown ? 'none' : 'block';
+            btn.textContent = isShown ? 'Tampilkan Jawaban' : 'Sembunyikan Jawaban';
+        }
+    </script>
+
+</body>
+</html>
+
+

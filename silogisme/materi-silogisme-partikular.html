@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Materi Silogisme: Kesimpulan Partikular</title>
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --danger: #ef4444;
+      --info: #60a5fa;
+    }
+    html, body { background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .container { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 28px; margin: 12px 0 6px; }
+    .subtitle { color: var(--muted); margin: 0 0 18px; }
+    .note { background: #0f172a; border: 1px solid #1f2937; border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; color: #cbd5e1; }
+    .example-box { background: var(--card); border: 1px solid #1f2937; border-radius: 12px; padding: 16px; margin: 14px 0; }
+    h2 { font-size: 22px; border-bottom: 1px solid #374151; padding-bottom: 8px; margin-top: 24px; }
+    .premises { margin: 8px 0 10px; }
+    .math { overflow-x: auto; padding: 4px 0; }
+    code.term { background: #0f172a; color: #93c5fd; padding: 0 6px; border-radius: 6px; }
+    a { color: #93c5fd; text-decoration: none; }
+    p { line-height: 1.6; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta name="description" content="Materi Silogisme: Menarik Kesimpulan Partikular dari Dua Premis Universal (AAA-3).">
+</head>
+<body>
+  <div class="container">
+    <h1>Materi Silogisme: Kesimpulan Partikular dari Premis Universal</h1>
+    <p class="subtitle">Memahami mengapa `Semua P adalah Q` dan `Semua P adalah R` menghasilkan `Sebagian Q adalah R`.</p>
+
+    <div class="note">
+      Salah satu bentuk silogisme yang sering menjebak adalah ketika kedua premis bersifat universal (menggunakan kata "semua") dengan subjek yang sama. Banyak yang keliru menarik kesimpulan universal, padahal kesimpulan yang valid bersifat partikular ("sebagian").
+    </div>
+
+    <h2>Struktur Logis (Bentuk AAA-3)</h2>
+    <p>Mari kita lihat strukturnya secara formal. Kita memiliki dua premis:</p>
+    <div class="premises">
+      Premis 1: Semua P adalah Q.<br/>
+      Premis 2: Semua P adalah R.
+    </div>
+    <p>Dalam notasi logika predikat, ini ditulis sebagai:</p>
+    <div class="math">\[
+      \begin{aligned}
+      &\forall x\,(P(x) \to Q(x)) \\
+      &\forall x\,(P(x) \to R(x))
+      \end{aligned}
+    \]</div>
+    <p>Dengan asumsi eksistensial dalam logika Aristoteles (bahwa ada setidaknya satu P), kita tahu ada setidaknya satu individu yang merupakan P, Q, dan R sekaligus. Oleh karena itu, kesimpulan yang bisa ditarik adalah:</p>
+    <div class="math">\[ \therefore \exists x\,(Q(x) \land R(x)) \]</div>
+    <p>Ini berarti: <strong>"Sebagian Q adalah R"</strong> atau <strong>"Sebagian R adalah Q"</strong>. Kita tidak bisa menyimpulkan bahwa <code class="term">Semua Q adalah R</code> atau <code class="term">Semua R adalah Q</code>.</p>
+
+    <h2>Contoh 1: Birokrat dan Seniman</h2>
+    <div class="example-box">
+      <div class="premises">
+        <strong>Premis 1:</strong> Tidak ada seniman yang merupakan birokrat.<br/>
+        <strong>Premis 2:</strong> Semua birokrat adalah pegawai negeri.
+      </div>
+      <p><strong>Analisis:</strong></p>
+      <ol>
+        <li>Premis 1 dapat kita ubah bentuknya menjadi kalimat universal afirmatif: <code class="term">Semua birokrat bukan seniman</code>.</li>
+        <li>Sekarang kita memiliki struktur yang jelas:
+            <ul>
+                <li>P = Birokrat</li>
+                <li>Q = Bukan Seniman</li>
+                <li>R = Pegawai Negeri</li>
+            </ul>
+        </li>
+        <li>Dengan menerapkan aturan, kita mendapatkan kesimpulan: "Sebagian yang bukan seniman adalah pegawai negeri".</li>
+        <li>Kalimat ini secara logis ekuivalen dengan <strong>"Sebagian pegawai negeri bukan seniman"</strong>, yang merupakan opsi A pada soal latihan.</li>
+      </ol>
+    </div>
+
+    <h2>Contoh 2: Paus, Mamalia, dan Hewan Laut</h2>
+    <div class="example-box">
+      <div class="premises">
+        <strong>Premis Mayor:</strong> Semua paus adalah mamalia.<br/>
+        <strong>Premis Minor:</strong> Semua paus adalah hewan laut.
+      </div>
+      <p><strong>Analisis:</strong></p>
+      <ul>
+          <li>P = Paus</li>
+          <li>Q = Mamalia</li>
+          <li>R = Hewan Laut</li>
+      </ul>
+      <p>Kesimpulan yang valid dari premis ini adalah <strong>"Sebagian mamalia adalah hewan laut"</strong> atau <strong>"Sebagian hewan laut adalah mamalia"</strong>. Kita tahu ini benar karena paus adalah contohnya.</p>
+      <p>Di sinilah letak jebakannya. Jika kita mencoba menarik kesimpulan universal, kita akan mendapatkan pernyataan yang salah:</p>
+      <ul>
+        <li><span style="color:var(--danger)">SALAH:</span> Semua mamalia adalah hewan laut. (Kucing dan anjing adalah mamalia, tapi bukan hewan laut).</li>
+        <li><span style="color:var(--danger)">SALAH:</span> Semua hewan laut adalah mamalia. (Ikan dan cumi-cumi adalah hewan laut, tapi bukan mamalia).</li>
+      </ul>
+      <p>Contoh ini secara jelas menunjukkan mengapa kesimpulan dari dua premis universal dengan subjek yang sama harus bersifat partikular.</p>
+    </div>
+
+    <a href="latihan-silogisme-1.html" style="margin-top: 24px; display: inline-block;">&larr; Kembali ke Latihan Silogisme 1</a>
+  </div>
+</body>
+</html>

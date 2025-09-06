@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urutan Pengerjaan Operasi Hitung (PEMDAS/BODMAS)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .note, .rule, .example, .exercise, .answer-key {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #0056b3;
+        }
+        .rule ul {
+            margin: 0 0 0 18px;
+        }
+        .formula {
+            font-size: 1.05em;
+            text-align: left;
+            margin: 10px 0;
+        }
+        details {
+            background: #f9fbff;
+            border: 1px solid #e1ecff;
+            border-radius: 6px;
+            padding: 10px 14px;
+        }
+        details > summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .footer {
+            margin-top: 24px;
+            font-size: 0.92em;
+            color: #666;
+        }
+    </style>
+    <!-- Catatan: Perhitungan disajikan dengan LaTeX dan langkah sejajar (aligned) agar mudah dibaca. -->
+</head>
+<body>
+    <div class="container">
+        <h1>Urutan Pengerjaan Operasi Hitung</h1>
+
+        <div class="note">
+            <b>Tujuan:</b> Memahami aturan urutan operasi hitung (sering diingat sebagai <b>PEMDAS</b>/<b>BODMAS</b>) agar tidak keliru saat menyelesaikan ekspresi matematika yang mengandung lebih dari satu operasi.
+        </div>
+
+        <h2>Aturan Dasar</h2>
+        <div class="rule">
+            <ul>
+                <li><b>Tanda Kurung</b>: kerjakan yang di dalam kurung terlebih dahulu. Urutan kurung bertingkat: ( ), [ ], { }. Mulai dari yang paling dalam.</li>
+                <li><b>Pangkat dan Akar</b>: kerjakan semua pemangkatan dan akar setelah kurung.</li>
+                <li><b>Perkalian dan Pembagian</b>: kerjakan dari <b>kiri ke kanan</b> (keduanya setara tingkatnya).</li>
+                <li><b>Penjumlahan dan Pengurangan</b>: kerjakan dari <b>kiri ke kanan</b> (keduanya setara tingkatnya).</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <b>Catatan penting:</b> Tulislah tanda kali secara eksplisit untuk menghindari ambiguitas. Misalnya tulis <code>36 ÷ 3 × (2 + 4)</code>, bukan <code>36 ÷ 3(2 + 4)</code> yang bisa menimbulkan salah tafsir.
+        </div>
+
+        <h2>Contoh Terbimbing</h2>
+
+        <div class="example">
+            <h3>Contoh 1: Perkalian/Pembagian sebelum Tambah/Kurang</h3>
+            <div class="formula">
+                \[
+                \begin{aligned}
+                3 + 4 \times 5 - 6 \div 2 &= 3 + 20 - 3 \\
+                &= 23 - 3 \\
+                &= 20
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Contoh 2: Kurung Bertingkat</h3>
+            <div class="formula">
+                \[
+                \begin{aligned}
+                (8 - 3) \times [2 + 3(4 - 1)] &= 5 \times [2 + 3\cdot 3] \\
+                &= 5 \times [2 + 9] \\
+                &= 5 \times 11 \\
+                &= 55
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Contoh 3: Melibatkan Pangkat dan Akar</h3>
+            <div class="formula">
+                \[
+                \begin{aligned}
+                2^3 + 4(6 - 2^2) + \sqrt{81} &= 8 + 4(6 - 4) + 9 \\
+                &= 8 + 4\cdot 2 + 9 \\
+                &= 8 + 8 + 9 \\
+                &= 25
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Contoh 4: Menangani Penulisan yang Berpotensi Ambigu</h3>
+            <p><b>Bentuk dianjurkan:</b> tulis kali eksplisit dan terapkan aturan kiri-ke-kanan pada kali/bagi.</p>
+            <div class="formula">
+                \[
+                \begin{aligned}
+                36 \div 3 \times (2 + 4) &= 36 \div 3 \times 6 \\
+                &= 12 \times 6 \\
+                &= 72
+                \end{aligned}
+                \]
+            </div>
+            <p><b>Jika maksud soal</b> adalah <code>36 ÷ [3(2+4)]</code>, tulislah kurungnya jelas. Hasilnya berbeda:</p>
+            <div class="formula">
+                \[
+                \begin{aligned}
+                36 \div [3(2+4)] &= \frac{36}{3\cdot 6} \\
+                &= \frac{36}{18} \\
+                &= 2
+                \end{aligned}
+                \]
+            </div>
+        </div>
+
+        <div class="note">
+            <b>Catatan: Kiri-ke-kanan vs strategi mental</b><br>
+            Aturan kiri-ke-kanan bersifat <i>wajib</i> untuk evaluasi ekspresi tanpa kurung agar hasilnya tunggal. Untuk perhitungan mental, Anda boleh menyusun ulang <i>jika</i> menulis ulang ekspresi secara setara aljabar.
+            <ul>
+                <li>
+                    <b>Kali–Bagi (setara tingkatnya):</b> ubah bagi menjadi kali kebalikan, lalu gunakan komutatif–asosiatif perkalian.
+                    <div class="formula">
+                        \[\begin{aligned}
+                        48 \div 6 \times 5 &= (48 \times \tfrac{1}{6}) \times 5 \\
+                        &= 48 \times 5 \times \tfrac{1}{6} \\
+                        &= 240 \times \tfrac{1}{6} = 40
+                        \end{aligned}\]
+                    </div>
+                </li>
+                <li>
+                    <b>Tambah–Kurang (setara tingkatnya):</b> ubah pengurangan menjadi penjumlahan bilangan lawan, lalu gunakan komutatif–asosiatif penjumlahan.
+                    <div class="formula">
+                        \[\begin{aligned}
+                        100 - 20 + 5 &= 100 + (-20) + 5 \\
+                        &= 100 + 5 - 20 = 85
+                        \end{aligned}\]
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <h3>Yang Tidak Boleh: Mengubah Pengelompokan Tanpa Identitas Setara</h3>
+            <div class="formula">
+                \[\begin{aligned}
+                24 - 12 \div 3 \times 2 &= 24 - 4 \times 2 = 24 - 8 = 16 \quad (\text{kiri-ke-kanan yang benar}) \\
+                24 - 12 \div (3 \times 2) &= 24 - 2 = 22 \quad (\text{salah, pengelompokan diubah})
+                \end{aligned}\]
+            </div>
+        </div>
+
+        <h2>Latihan Cepat</h2>
+        <div class="exercise">
+            <ol>
+                <li>\( 7 + 3 \times 4 \)</li>
+                <li>\( (7 + 3) \times 4 \)</li>
+                <li>\( 18 \div 3 \times 2 \)</li>
+                <li>\( 18 \div (3 \times 2) \)</li>
+                <li>\( 2^4 - 3^2 + 5 \)</li>
+                <li>\( 5\,[3 + 2(7 - 5)] \)</li>
+                <li>\( \sqrt{64} + 2^3 \times 3 \)</li>
+                <li>\( 24 - 12 \div 3 \times 2 \)</li>
+            </ol>
+        </div>
+
+        <details class="answer-key">
+            <summary>Kunci Jawaban (dengan langkah sejajar)</summary>
+            <div class="grid-2">
+                <div>
+                    <div class="formula">
+                        <b>1.</b>
+                        \[\begin{aligned}
+                        7 + 3\times 4 &= 7 + 12 \\
+                        &= 19
+                        \end{aligned}\]
+                    </div>
+                    <div class="formula">
+                        <b>2.</b>
+                        \[\begin{aligned}
+                        (7+3)\times 4 &= 10\times 4 \\
+                        &= 40
+                        \end{aligned}\]
+                    </div>
+                    <div class="formula">
+                        <b>3.</b>
+                        \[\begin{aligned}
+                        18 \div 3 \times 2 &= 6 \times 2 \\
+                        &= 12
+                        \end{aligned}\]
+                    </div>
+                    <div class="formula">
+                        <b>4.</b>
+                        \[\begin{aligned}
+                        18 \div (3\times 2) &= 18 \div 6 \\
+                        &= 3
+                        \end{aligned}\]
+                    </div>
+                </div>
+                <div>
+                    <div class="formula">
+                        <b>5.</b>
+                        \[\begin{aligned}
+                        2^4 - 3^2 + 5 &= 16 - 9 + 5 \\
+                        &= 7 + 5 \\
+                        &= 12
+                        \end{aligned}\]
+                    </div>
+                    <div class="formula">
+                        <b>6.</b>
+                        \[\begin{aligned}
+                        5\,[3 + 2(7 - 5)] &= 5\,[3 + 2\cdot 2] \\
+                        &= 5\,[3 + 4] \\
+                        &= 5\cdot 7 \\
+                        &= 35
+                        \end{aligned}\]
+                    </div>
+                    <div class="formula">
+                        <b>7.</b>
+                        \[\begin{aligned}
+                        \sqrt{64} + 2^3 \times 3 &= 8 + 8 \times 3 \\
+                        &= 8 + 24 \\
+                        &= 32
+                        \end{aligned}\]
+                    </div>
+                    <div class="formula">
+                        <b>8.</b>
+                        \[\begin{aligned}
+                        24 - 12 \div 3 \times 2 &= 24 - 4 \times 2 \\
+                        &= 24 - 8 \\
+                        &= 16
+                        \end{aligned}\]
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <div class="footer">
+            Disusun dengan notasi LaTeX dan langkah perhitungan sejajar agar mudah dipindai dan diverifikasi.
+        </div>
+    </div>
+</body>
+</html>
+
+

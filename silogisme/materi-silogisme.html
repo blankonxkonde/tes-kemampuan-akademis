@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Silogisme Klasik: Premis, Konklusi, dan Validitas</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 980px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3, h4 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .formula-box {
+            background-color: #e7f3fe;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 1.06em;
+            overflow-x: auto;
+        }
+        .example-box {
+            background-color: #fef8e7;
+            border-left: 5px solid #f0ad4e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .note {
+            background-color: #f0f7ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .math-block {
+            text-align: center;
+            font-size: 1.08em;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        .question-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .toggle-answer {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .toggle-answer:hover {
+            background-color: #0056b3;
+        }
+        .answer-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #007bff;
+        }
+        .highlight { color: #d9534f; font-weight: bold; }
+        .valid { color: #2c7a7b; font-weight: bold; }
+        .invalid { color: #d9534f; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Materi Silogisme Klasik (Kategori)</h1>
+
+        <div class="section" id="pengantar">
+            <h2>1. Pengantar</h2>
+            <p>
+                <b>Silogisme</b> adalah argumen deduktif yang terdiri dari dua premis (mayor dan minor) dan satu kesimpulan.
+                Silogisme <i>kategori</i> memakai tiga istilah: <b>S</b> (subjek kesimpulan), <b>P</b> (predikat kesimpulan), dan <b>M</b> (term tengah).
+                Format umum (Figur 1) adalah:
+            </p>
+            <div class="formula-box">
+                
+                \[
+                \begin{aligned}
+                \text{Premis mayor} &:&\ \forall x\,(M(x) \to P(x))\\
+                \text{Premis minor} &:&\ \forall x\,(S(x) \to M(x))\\
+                \hline\\[-6pt]
+                \text{Kesimpulan} &:&\ \forall x\,(S(x) \to P(x))
+                \end{aligned}
+                \]
+            </div>
+            <div class="note">
+                Pada halaman ini, penurunan dan perhitungan ditulis dalam blok LaTeX yang ter-align agar langkah-langkahnya jelas dan rapi.
+            </div>
+        </div>
+
+        <div class="section" id="proposisi-AEIO">
+            <h2>2. Proposisi Kategorik (A, E, I, O)</h2>
+            <p>Empat bentuk kalimat kategori:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Bentuk Kalimat</th>
+                        <th>Notasi Himpunan</th>
+                        <th>Notasi Logika</th>
+                        <th>Distribusi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>A</b></td>
+                        <td>Semua A adalah B</td>
+                        <td>\(A \subseteq B\)</td>
+                        <td>\(\forall x\,(A(x)\to B(x))\)</td>
+                        <td>S terdistribusi, P tidak</td>
+                    </tr>
+                    <tr>
+                        <td><b>E</b></td>
+                        <td>Tidak ada A yang B</td>
+                        <td>\(A \cap B = \varnothing\)</td>
+                        <td>\(\forall x\,(A(x)\to \neg B(x))\)</td>
+                        <td>S dan P terdistribusi</td>
+                    </tr>
+                    <tr>
+                        <td><b>I</b></td>
+                        <td>Sebagian A adalah B</td>
+                        <td>\(A \cap B \neq \varnothing\)</td>
+                        <td>\(\exists x\,(A(x)\wedge B(x))\)</td>
+                        <td>Tidak ada yang terdistribusi</td>
+                    </tr>
+                    <tr>
+                        <td><b>O</b></td>
+                        <td>Sebagian A bukan B</td>
+                        <td>\(\exists x\in A:\ x\notin B\)</td>
+                        <td>\(\exists x\,(A(x)\wedge \neg B(x))\)</td>
+                        <td>P terdistribusi, S tidak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" id="figur">
+            <h2>3. Struktur Silogisme: Term dan Figur</h2>
+            <p>
+                <b>Term:</b> S (subjek kesimpulan), P (predikat kesimpulan), M (term tengah). <b>Figur</b> menunjukkan posisi M pada premis.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Figur</th>
+                        <th>Premis Mayor</th>
+                        <th>Premis Minor</th>
+                        <th>Bentuk Umum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>M – P</td>
+                        <td>S – M</td>
+                        <td>S – P</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>P – M</td>
+                        <td>S – M</td>
+                        <td>S – P</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>M – P</td>
+                        <td>M – S</td>
+                        <td>S – P</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>P – M</td>
+                        <td>M – S</td>
+                        <td>S – P</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" id="aturan-validitas">
+            <h2>4. Aturan Validitas Umum</h2>
+            <ul>
+                <li><b>R1. Term tengah (M) harus terdistribusi setidaknya sekali</b> di salah satu premis.</li>
+                <li><b>R2. Jika suatu term terdistribusi di kesimpulan</b>, maka ia harus terdistribusi di premis tempat ia muncul.</li>
+                <li><b>R3. Tidak boleh ada dua premis negatif</b> (E atau O) sekaligus.</li>
+                <li><b>R4. Jika ada satu premis negatif</b>, maka kesimpulan harus negatif.</li>
+                <li><b>R5. Tidak boleh dua premis partikular</b> (I atau O) sekaligus.</li>
+                <li><b>R6. Dari dua premis afirmatif</b> (A atau I), kesimpulan tidak boleh negatif.</li>
+            </ul>
+            <div class="note">
+                <b>Catatan Eksistensi:</b> Menarik kesimpulan partikular dari dua premis universal memerlukan asumsi eksistensi.
+                Dalam banyak ujian, bentuk-bentuk klasik yang <i>memerlukan</i> asumsi eksistensi biasanya ditandai khusus.
+            </div>
+        </div>
+
+        <div class="section" id="mood-valid">
+            <h2>5. Mood dan Figur yang Valid (Ringkas)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mood–Figur</th>
+                        <th>Polanya</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Barbara (AAA–1)</b></td><td>A–A → A</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Celarent (EAE–1)</b></td><td>E–A → E</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Darii (AII–1)</b></td><td>A–I → I</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Ferio (EIO–1)</b></td><td>E–I → O</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Cesare (EAE–2)</b></td><td>E–A → E</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Camestres (AEE–2)</b></td><td>A–E → E</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Festino (EIO–2)</b></td><td>E–I → O</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Baroco (AOO–2)</b></td><td>A–O → O</td><td>Valid klasik</td></tr>
+                    <tr><td><b>Darapti (AAI–3)</b></td><td>A–A → I</td><td>Perlu asumsi eksistensi</td></tr>
+                    <tr><td><b>Disamis (IAI–3)</b></td><td>I–A → I</td><td>Valid</td></tr>
+                    <tr><td><b>Datisi (AII–3)</b></td><td>A–I → I</td><td>Valid</td></tr>
+                    <tr><td><b>Ferison (EIO–3)</b></td><td>E–I → O</td><td>Valid</td></tr>
+                    <tr><td><b>Bramantip (AAI–4)</b></td><td>A–A → I</td><td>Perlu asumsi eksistensi</td></tr>
+                    <tr><td><b>Camenes (AEE–4)</b></td><td>A–E → E</td><td>Valid</td></tr>
+                    <tr><td><b>Dimaris (IAI–4)</b></td><td>I–A → I</td><td>Valid</td></tr>
+                    <tr><td><b>Fresison (EIO–4)</b></td><td>E–I → O</td><td>Valid</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" id="contoh">
+            <h2>6. Contoh dan Pembahasan</h2>
+
+            <div class="example-box">
+                <h3>Contoh 1 — Valid (Barbara, AAA–1)</h3>
+                <p>
+                    Premis mayor: Semua <b>mamalia</b> berdarah panas. (\(\forall x\,(M(x)\to P(x))\))<br>
+                    Premis minor: Semua <b>kucing</b> adalah mamalia. (\(\forall x\,(S(x)\to M(x))\))<br>
+                    \(\Rightarrow\) Kesimpulan: Semua <b>kucing</b> berdarah panas. (\(\forall x\,(S(x)\to P(x))\))
+                </p>
+                <div class="math-block">
+                    \[
+                    \begin{align*}
+                    &\text{Cek distribusi: A mendistribusi S, tidak mendistribusi P.}\\
+                    &\text{R1: M terdistribusi? Ya, pada premis mayor (sebagai S dari A).}\\
+                    &\text{R2: P terdistribusi di kesimpulan? Tidak (A). Tidak perlu di premis.}\\
+                    &\therefore\ \text{Valid.}
+                    \end{align*}
+                    \]
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Contoh 2 — <span class="invalid">Tidak Valid</span> (Fallacy: <i>Undistributed Middle</i>)</h3>
+                <p>
+                    Premis mayor: Semua dosen adalah lulusan S2. (A)<br>
+                    Premis minor: Budi adalah lulusan S2. (I dari individu) <br>
+                    \(\Rightarrow\) Kesimpulan: Budi adalah dosen. (I) — <span class="invalid">salah</span>
+                </p>
+                <div class="math-block">
+                    \[
+                    \begin{align*}
+                    &\text{Term tengah = "lulusan S2" tidak pernah terdistribusi. Melanggar R1.}\\
+                    &\text{Bentuknya mirip konversi terbalik dari A (tidak ekuivalen).}\\
+                    &\therefore\ \text{Kesimpulan tidak mengikuti (invalid).}
+                    \end{align*}
+                    \]
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>Contoh 3 — Valid (Ferio, EIO–1)</h3>
+                <p>
+                    Premis mayor: Tidak ada <b>ikan</b> yang <b>mamalia</b>. (E: \(\forall x\,(M(x)\to \neg P(x))\))<br>
+                    Premis minor: Sebagian <b>hewan peliharaan</b> adalah <b>ikan</b>. (I: \(\exists x\,(S(x)\wedge M(x))\))<br>
+                    \(\Rightarrow\) Kesimpulan: Sebagian <b>hewan peliharaan</b> bukan <b>mamalia</b>. (O: \(\exists x\,(S(x)\wedge \neg P(x))\))
+                </p>
+                <div class="math-block">
+                    \[
+                    \begin{align*}
+                    &\text{R1: M terdistribusi pada E (ya). R3: tidak dua premis negatif (hanya satu).}\\
+                    &\text{R4: ada premis negatif }\Rightarrow\ \text{kesimpulan negatif (O) — terpenuhi.}\\
+                    &\therefore\ \text{Valid.}
+                    \end{align*}
+                    \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="latihan">
+            <h2>7. Latihan Soal (Dengan Pembahasan Tersembunyi)</h2>
+
+            <div class="question-box">
+                <b>1.</b> Semua ilmuwan adalah pembelajar. Semua fisikawan adalah ilmuwan. \(\Rightarrow\) Semua fisikawan adalah pembelajar.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ \text{Barbara (AAA–1), valid.} \]
+                    \[
+                    \begin{aligned}
+                    &\forall x\,(M\to P),\ \forall x\,(S\to M)\\
+                    &\Rightarrow\ \forall x\,(S\to P)
+                    \end{aligned}
+                    \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>2.</b> Tidak ada atlet yang malas. Beberapa siswa adalah atlet. \(\Rightarrow\) Beberapa siswa tidak malas.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ \text{Ferio (EIO–1), valid.} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>3.</b> Semua programmer suka logika. Beberapa pecinta catur suka logika. \(\Rightarrow\) Beberapa pecinta catur adalah programmer.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ \text{Tidak valid: }\textit{undistributed middle}. \]
+                    \[ \text{Dari A dan I tidak mengikuti I semacam ini tanpa distribusi M.} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>4.</b> Semua dokter adalah sarjana. Tidak ada seniman yang dokter. \(\Rightarrow\) Tidak ada seniman yang sarjana.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ \text{Camestres (AEE–2), valid.} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>5.</b> Beberapa pegawai adalah penulis. Semua penulis adalah pembaca. \(\Rightarrow\) Beberapa pegawai adalah pembaca.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ \text{Darii (AII–1) setelah konversi I pada premis minor (IAI–1), valid.} \]
+                </div>
+            </div>
+
+            <div class="question-box">
+                <b>6.</b> Tidak ada burung yang mamalia. Semua elang adalah burung. \(\Rightarrow\) Tidak ada elang yang mamalia.
+                <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+                <div class="answer-box">
+                    \[ \text{Celarent (EAE–1), valid.} \]
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="ringkasan">
+            <h2>8. Ringkasan</h2>
+            <ul>
+                <li><b>AEIO</b>: A (\(\forall\) A→B), E (\(\forall\) A→¬B), I (\(\exists\) A∧B), O (\(\exists\) A∧¬B).</li>
+                <li><b>Distribusi</b>: A mendistribusi S; E mendistribusi S dan P; I tidak mendistribusi; O mendistribusi P.</li>
+                <li><b>Aturan</b>: M harus terdistribusi; tidak dua premis negatif/partikular; jika premis negatif, kesimpulan negatif.</li>
+                <li><b>Mood valid populer</b>: Barbara, Celarent, Darii, Ferio, Cesare, Camestres, Festino, Baroco, dst.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(btn) {
+            var box = btn.nextElementSibling;
+            if (!box) return;
+            var isShown = box.style.display === 'block';
+            box.style.display = isShown ? 'none' : 'block';
+            btn.textContent = isShown ? 'Tampilkan Jawaban' : 'Sembunyikan Jawaban';
+        }
+    </script>
+
+</body>
+</html>
+
+

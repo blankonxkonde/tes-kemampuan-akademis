@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latihan Silogisme 1</title>
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --danger: #ef4444;
+      --info: #60a5fa;
+    }
+    html, body { background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .container { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 28px; margin: 12px 0 6px; }
+    .subtitle { color: var(--muted); margin: 0 0 18px; }
+    .note { background: #0f172a; border: 1px solid #1f2937; border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; color: #cbd5e1; }
+    .question { background: var(--card); border: 1px solid #1f2937; border-radius: 12px; padding: 16px; margin: 14px 0; }
+    .qhead { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+    .qlevel { color: var(--info); font-weight: 600; }
+    .qid { color: var(--muted); }
+    .premises { margin: 8px 0 10px; }
+    .options { margin: 10px 0 8px 18px; }
+    .options li { margin: 3px 0; }
+    .answer { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #374151; }
+    .answer strong { color: var(--accent); }
+    .invalid { color: var(--danger); }
+    .math { overflow-x: auto; padding: 4px 0; }
+    code.term { background: #0f172a; color: #93c5fd; padding: 0 6px; border-radius: 6px; }
+    a { color: #93c5fd; text-decoration: none; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta name="description" content="Latihan Silogisme: 20 soal dengan jawaban dan pembahasan formal menggunakan rumus dan logika (MathJax).">
+</head>
+<body>
+  <div class="container">
+    <h1>Latihan Silogisme 1</h1>
+    <p class="subtitle">20 soal berdasarkan <code class="term">latihan-silogisme.md</code> dengan jawaban dan pembahasan formal.</p>
+
+    <div class="note">
+      Pembahasan menggunakan notasi logika predikat dan himpunan dengan LaTeX. Untuk kejelasan, simbol yang dipakai antara lain: \(\forall\) (untuk semua), \(\exists\) (ada/sekitar), \(\to\) (implikasi), \(\land\) (dan), \(\lor\) (atau), \(\neg\) (tidak), serta panah himpunan \(A \subseteq B\) (semua A adalah B). Rumus ditulis terpusat menggunakan environment <code class="term">aligned</code> agar mudah dibaca.
+    </div>
+
+    <div class="question" id="q1">
+      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 1</span></div>
+      <div class="premises">
+        Premis 1: Semua mamalia adalah hewan berdarah panas.<br/>
+        Premis 2: Semua kucing adalah mamalia.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Semua kucing adalah hewan berdarah panas.</li>
+        <li>B. Beberapa kucing adalah hewan berdarah panas.</li>
+        <li>C. Semua hewan berdarah panas adalah kucing.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(M(x)\to H(x)) \\
+          &\forall x\,(C(x)\to M(x)) \\
+          &\therefore \forall x\,(C(x)\to H(x))\quad\text{(Barbara AAA-1)}
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q2">
+      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 2</span></div>
+      <div class="premises">
+        Premis 1: Semua buah-buahan mengandung vitamin.<br/>
+        Premis 2: Apel adalah buah-buahan.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Apel mengandung vitamin.</li>
+        <li>B. Semua yang mengandung vitamin adalah apel.</li>
+        <li>C. Beberapa buah tidak mengandung vitamin.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(F(x)\to V(x)),\ \ F(a) \\
+          &\therefore V(a)\quad\text{(UI + Modus Ponens)}
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q3">
+      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 3</span></div>
+      <div class="premises">
+        Premis 1: Semua planet di tata surya mengorbit matahari.<br/>
+        Premis 2: Mars adalah planet di tata surya.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Mars mengorbit matahari.</li>
+        <li>B. Semua benda langit yang mengorbit matahari adalah Mars.</li>
+        <li>C. Matahari adalah sebuah planet.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(P(x)\to O(x)),\ \ P(m) \\
+          &\therefore O(m)\quad\text{(UI + Modus Ponens)}
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q4">
+      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 4</span></div>
+      <div class="premises">
+        Premis 1: Semua koki bisa memasak.<br/>
+        Premis 2: Anton adalah seorang koki.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Anton bisa memasak.</li>
+        <li>B. Semua orang yang bisa memasak adalah Anton.</li>
+        <li>C. Anton tidak bisa memasak.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(K(x)\to M(x)),\ \ K(a) \\
+          &\therefore M(a)\quad\text{(UI + Modus Ponens)}
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q5">
+      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 5</span></div>
+      <div class="premises">
+        Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.<br/>
+        Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian murid kelas 12 pergi ke kantin.</li>
+        <li>B. Semua murid kelas 12 pergi ke kantin.</li>
+        <li>C. Murid yang tidak ke kantin bukan murid kelas 12.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> D</p>
+        <p>Formalisasi: \(\forall x\,(S_{12}(x)\to G(x))\) dan \(\exists x\,(G(x)\land K(x))\). Tidak dapat diturunkan \(\exists x\,(S_{12}(x)\land K(x))\) karena pemakai seragam \(G\) bisa saja bukan murid kelas 12.</p>
+        <div class="math">\[
+          \begin{aligned}
+          &S_{12} \subseteq G,\quad \exists x\, (G(x)\land K(x)) \\
+          &\not\Rightarrow \exists x\, (S_{12}(x)\land K(x))\quad\text{(middle term tidak terikat)}
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q6">
+      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 6</span></div>
+      <div class="premises">
+        Premis 1: Beberapa dosen adalah peneliti.<br/>
+        Premis 2: Semua peneliti harus rajin membaca.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian dosen harus rajin membaca.</li>
+        <li>B. Semua dosen harus rajin membaca.</li>
+        <li>C. Semua yang rajin membaca adalah dosen.</li>
+        <li>D. Dosen tidak perlu membaca.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\exists x\,(D(x)\land R(x)),\ \ \forall x\,(R(x)\to J(x)) \\
+          &\therefore \exists x\,(D(x)\land J(x))
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q7">
+      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 7</span></div>
+      <div class="premises">
+        Premis 1: Semua bunga mawar berwarna merah.<br/>
+        Premis 2: Sebagian bunga di taman adalah bunga mawar.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian bunga di taman berwarna merah.</li>
+        <li>B. Semua bunga di taman berwarna merah.</li>
+        <li>C. Semua yang berwarna merah adalah bunga dari taman.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(R(x)\to Merah(x)),\ \ \exists x\,(T(x)\land R(x)) \\
+          &\therefore \exists x\,(T(x)\land Merah(x))
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q8">
+      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 8</span></div>
+      <div class="premises">
+        Premis 1: Ikan bernapas dengan insang.<br/>
+        Premis 2: Beberapa hewan peliharaan adalah ikan.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Beberapa hewan peliharaan bernapas dengan insang.</li>
+        <li>B. Semua hewan peliharaan bernapas dengan insang.</li>
+        <li>C. Semua hewan yang bernapas dengan insang adalah hewan peliharaan.</li>
+        <li>D. Hewan peliharaan tidak bernapas dengan insang.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(I(x)\to Ins(x)),\ \ \exists x\,(H(x)\land I(x)) \\
+          &\therefore \exists x\,(H(x)\land Ins(x))
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q9">
+      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 9</span></div>
+      <div class="premises">
+        Premis 1: Semua unggas adalah hewan bertelur.<br/>
+        Premis 2: Buaya bukan unggas.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Buaya tidak bertelur.</li>
+        <li>B. Semua hewan yang bertelur adalah unggas.</li>
+        <li>C. Sebagian hewan yang bukan unggas bertelur.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> D</p>
+        <p>\(\forall x\,(U(x)\to E(x)),\ \ \neg U(b)\). Tidak dapat disimpulkan \(E(b)\) maupun \(\neg E(b)\) hanya dari dua premis tersebut.</p>
+      </div>
+    </div>
+
+    <div class="question" id="q10">
+      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 10</span></div>
+      <div class="premises">
+        Premis 1: Tidak ada seniman yang merupakan birokrat.<br/>
+        Premis 2: Semua birokrat adalah pegawai negeri.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian pegawai negeri bukan seniman.</li>
+        <li>B. Tidak ada seniman yang merupakan pegawai negeri.</li>
+        <li>C. Semua pegawai negeri adalah seniman.</li>
+        <li>D. Sebagian seniman adalah pegawai negeri.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(B(x)\to \neg S(x)) \quad\text{(dari P1)} \\
+          &\forall x\,(B(x)\to P(x)) \quad\text{(P2)} \\
+          &\text{Dengan asumsi eksistensial (ada birokrat): } \exists x\,B(x) \\
+          &\therefore \exists x\,(P(x) \land \neg S(x)) \quad\text{(Fesapo, EAE-4)}
+          \end{aligned}
+        \]</div>
+        <p>Penjelasan: Premis 1 bisa diubah menjadi 'Semua birokrat bukan seniman'. Premis 2 adalah 'Semua birokrat adalah pegawai negeri'. Dari sini, kesimpulan yang bisa ditarik adalah 'Sebagian pegawai negeri bukan seniman' (atau ekuivalennya, 'Sebagian yang bukan seniman adalah pegawai negeri').</p>
+      </div>
+    </div>
+
+    <div class="question" id="q11">
+      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 11</span></div>
+      <div class="premises">
+        Premis 1: Sebagian besar karyawan di perusahaan X mendapat bonus.<br/>
+        Premis 2: Rina adalah karyawan di perusahaan X.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Rina mungkin mendapat bonus.</li>
+        <li>B. Rina pasti mendapat bonus.</li>
+        <li>C. Rina tidak mendapat bonus.</li>
+        <li>D. Semua karyawan di perusahaan X bernama Rina.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <p>"Sebagian besar" memberi indikasi probabilitas tinggi, bukan kepastian. Maka kesimpulan yang tepat adalah kemungkinan (bukan pasti).</p>
+      </div>
+    </div>
+
+    <div class="question" id="q12">
+      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 12</span></div>
+      <div class="premises">
+        Premis 1: Semua peserta ujian membawa pensil.<br/>
+        Premis 2: Sebagian peserta ujian tidak memakai jam tangan.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian peserta ujian yang membawa pensil tidak memakai jam tangan.</li>
+        <li>B. Semua peserta ujian yang tidak memakai jam tangan membawa pensil.</li>
+        <li>C. Peserta ujian yang membawa pensil pasti tidak memakai jam tangan.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A dan B</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(U(x)\to P(x)),\ \ \exists x\,(U(x)\land \neg W(x)) \\
+          &\Rightarrow \exists x\,(U(x)\land P(x)\land \neg W(x))\ (\text{A}) \\
+          &\Rightarrow \forall x\,((U(x)\land \neg W(x))\to P(x))\ (\text{B})
+          \end{aligned}
+        \]</div>
+        <p>(C) keliru (membalik arah implikasi).</p>
+      </div>
+    </div>
+
+    <div class="question" id="q13">
+      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 13</span></div>
+      <div class="premises">
+        Premis 1: Sebagian atlet profesional memiliki cedera lutut.<br/>
+        Premis 2: Semua yang memiliki cedera lutut harus menjalani fisioterapi.<br/>
+        Premis 3: Fisioterapi membutuhkan biaya yang mahal.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian atlet profesional membutuhkan perawatan yang mahal.</li>
+        <li>B. Semua atlet profesional memiliki cedera lutut.</li>
+        <li>C. Fisioterapi hanya untuk atlet profesional.</li>
+        <li>D. Semua perawatan mahal adalah untuk cedera lutut.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\exists x\,(A(x)\land C(x)),\ \ \forall x\,(C(x)\to F(x)),\ \ \forall x\,(F(x)\to M(x)) \\
+          &\therefore \exists x\,(A(x)\land M(x))
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q14">
+      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 14</span></div>
+      <div class="premises">
+        Premis 1: Jika hari ini hujan, maka jalanan menjadi basah.<br/>
+        Premis 2: Jika jalanan basah, maka lalu lintas menjadi macet.<br/>
+        Premis 3: Hari ini tidak hujan.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Lalu lintas tidak macet.</li>
+        <li>B. Jalanan tidak basah.</li>
+        <li>C. Jalanan basah tapi lalu lintas tidak macet.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> D</p>
+        <p>\(\neg H\) tidak mengimplikasikan \(\neg B\) maupun \(\neg M\) (bisa ada sebab lain jalanan basah/macet).</p>
+      </div>
+    </div>
+
+    <div class="question" id="q15">
+      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 15</span></div>
+      <div class="premises">
+        Premis 1: Semua alat elektronik yang canggih harganya mahal.<br/>
+        Premis 2: Sebagian ponsel pintar adalah alat elektronik yang canggih.<br/>
+        Premis 3: Beberapa alat elektronik yang harganya mahal tidak awet.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian ponsel pintar harganya mahal.</li>
+        <li>B. Semua ponsel pintar tidak awet.</li>
+        <li>C. Semua alat elektronik yang mahal adalah ponsel pintar.</li>
+        <li>D. Tidak ada kesimpulan valid mengenai keawetan ponsel pintar.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(C(x)\to M(x)),\ \ \exists x\,(S(x)\land C(x)) \\
+          &\therefore \exists x\,(S(x)\land M(x))
+          \end{aligned}
+        \]</div>
+        <p>Keterangan: Tidak ada informasi pasti tentang keawetan ponsel pintar (jadi (B) dan generalisasi ke (C) salah).</p>
+      </div>
+    </div>
+
+    <div class="question" id="q16">
+      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 16</span></div>
+      <div class="premises">
+        Premis 1: Tidak ada sayuran yang rasanya manis seperti buah.<br/>
+        Premis 2: Wortel adalah sayuran.<br/>
+        Premis 3: Sebagian makanan manis disukai anak-anak.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Wortel tidak terasa manis seperti buah.</li>
+        <li>B. Anak-anak tidak suka wortel.</li>
+        <li>C. Semua makanan yang disukai anak-anak adalah buah.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(Sayur(x)\to \neg ManisBuah(x)),\ \ Sayur(w) \\
+          &\therefore \neg ManisBuah(w)
+          \end{aligned}
+        \]</div>
+      </div>
+    </div>
+
+    <div class="question" id="q17">
+      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 17</span></div>
+      <div class="premises">
+        Premis 1: Semua mahasiswa yang lulus cumlaude pasti memiliki IPK di atas 3,5.<br/>
+        Premis 2: Beberapa mahasiswa yang aktif berorganisasi tidak lulus cumlaude.<br/>
+        Premis 3: Setiap mahasiswa yang memiliki IPK di atas 3,5 mendapat beasiswa.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian mahasiswa yang aktif berorganisasi tidak memiliki IPK di atas 3,5.</li>
+        <li>B. Semua mahasiswa yang mendapat beasiswa lulus cumlaude.</li>
+        <li>C. Sebagian mahasiswa yang mendapat beasiswa tidak aktif berorganisasi.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> D</p>
+        <p>(A) memerlukan kontrapositif yang tidak berlaku, (B) membalik implikasi, (C) tidak terkait langsung.</p>
+      </div>
+    </div>
+
+    <div class="question" id="q18">
+      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 18</span></div>
+      <div class="premises">
+        Premis 1: Jika lampu merah menyala dan tidak ada polisi, beberapa pengendara akan menerobos.<br/>
+        Premis 2: Saat ini lampu merah menyala, tetapi ada polisi di persimpangan.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Beberapa pengendara tidak akan menerobos.</li>
+        <li>B. Semua pengendara akan berhenti.</li>
+        <li>C. Polisi akan menerobos lampu merah.</li>
+        <li>D. Tidak ada kesimpulan yang valid.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> D</p>
+        <p>Kondisi cukup pada premis 1 tidak terpenuhi (ada polisi), sehingga tidak ada implikasi yang dapat dipakai untuk menyimpulkan perilaku pengendara.</p>
+      </div>
+    </div>
+
+    <div class="question" id="q19">
+      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 19</span></div>
+      <div class="premises">
+        Premis 1: Hanya jika bahan baku berkualitas dan proses produksi higienis, maka produk makanan dianggap aman.<br/>
+        Premis 2: Produk makanan merek Z dianggap tidak aman.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Bahan baku produk Z tidak berkualitas, atau proses produksinya tidak higienis, atau keduanya.</li>
+        <li>B. Bahan baku produk Z pasti tidak berkualitas.</li>
+        <li>C. Proses produksi produk Z pasti tidak higienis.</li>
+        <li>D. Bahan baku produk Z tidak berkualitas dan proses produksinya tidak higienis.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban (umum pada soal ujian):</strong> A</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\text{P1: } Safe \to (Q \land H) \\
+          &\text{P2: } \neg Safe(Z) \\
+          &\text{Kontrapositif P1: } \neg(Q \land H) \to \neg Safe \\
+          &\text{Menyimpulkan } \neg(Q \land H) \text{ dari } \neg Safe \text{ adalah galat logika.} \\
+          &\text{Namun, jika P1 dianggap } Safe \leftrightarrow (Q \land H), \\
+          &\text{maka dari } \neg Safe(Z) \text{ bisa disimpulkan } \neg(Q(Z) \land H(Z)), \\
+          &\text{yaitu } \neg Q(Z) \lor \neg H(Z).
+          \end{aligned}
+        \]</div>
+        <p class="invalid">Catatan: Secara logika formal, premis yang ada tidak cukup untuk menarik kesimpulan A. Namun, dalam konteks tes, "hanya jika" sering ditafsirkan sebagai "jika dan hanya jika", yang memvalidasi jawaban A.</p>
+      </div>
+    </div>
+
+    <div class="question" id="q20">
+      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 20</span></div>
+      <div class="premises">
+        Premis 1: Semua pahlawan adalah orang yang berjasa.<br/>
+        Premis 2: Beberapa orang yang berjasa tidak dikenal oleh masyarakat.<br/>
+        Premis 3: Tidak ada orang yang tidak dikenal masyarakat yang mendapat penghargaan resmi.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Sebagian pahlawan tidak mendapat penghargaan resmi.</li>
+        <li>B. Tidak ada pahlawan yang dikenal oleh masyarakat.</li>
+        <li>C. Semua orang yang berjasa adalah pahlawan.</li>
+        <li>D. Semua pahlawan mendapat penghargaan resmi.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> Tidak ada opsi yang pasti benar (tidak ada kesimpulan yang valid di antara A–D).</p>
+        <div class="math">\[
+          \begin{aligned}
+          &H \subseteq J,\ \ \exists x\,(J(x)\land U(x)),\ \ \forall x\,(U(x)\to \neg A(x)) \\
+          &\text{Tidak dapat disimpulkan } \exists x\,(H(x)\land \neg A(x)) \text{ karena } \exists x\,(J\land U) \text{ bisa bukan } H.
+          \end{aligned}
+        \]</div>
+        <p>(A) memerlukan asumsi bahwa sebagian dari yang berjasa dan tak dikenal adalah pahlawan; premis tidak menjaminnya.</p>
+      </div>
+    </div>
+
+    <div class="question" id="q21">
+      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 21</span></div>
+      <div class="premises">
+        Premis 1: Polisi harus lulus uji ketahanan fisik.<br/>
+        Premis 2: Sebagian polisi sedang menderita cedera otot.<br/>
+        Kesimpulan: ...
+      </div>
+      <ol class="options">
+        <li>A. Polisi yang lulus uji ketahanan fisik adalah polisi yang cedera otot.</li>
+        <li>B. Hanya sebagian saja polisi yang lulus uji ketahanan fisik.</li>
+        <li>C. Ada polisi yang lulus uji ketahanan fisik tetapi cedera otot.</li>
+        <li>D. Tidak ada polisi yang cedera otot yang dapat lulus uji ketahanan fisik.</li>
+        <li>E. Semua polisi yang sedang cedera otot tidak ikut uji ketahanan fisik.</li>
+      </ol>
+      <div class="answer">
+        <p><strong>Jawaban:</strong> C</p>
+        <div class="math">\[
+          \begin{aligned}
+          &\forall x\,(P(x)\to L(x)) \\
+          &\exists x\,(P(x)\land C(x)) \\
+          &\therefore \exists x\,(P(x)\land L(x)\land C(x))
+          \end{aligned}
+        \]</div>
+        <p>Penjelasan: Premis 1 menyatakan bahwa semua polisi lulus uji. Premis 2 menyatakan ada polisi yang cedera. Dengan menggabungkan keduanya, kita dapat menyimpulkan bahwa ada polisi yang cedera tersebut, dan mereka juga harus lulus uji. Maka, kesimpulan yang paling tepat adalah "Ada polisi yang lulus uji ketahanan fisik tetapi cedera otot".</p>
+        <p class="invalid">Catatan: Opsi B secara langsung bertentangan dengan Premis 1 yang bersifat universal ("Polisi *harus* lulus..."). Namun, perlu dicatat bahwa di platform Ayocpns, jawaban untuk soal ini adalah B. Kesalahan umum pada soal seperti ini adalah mengimpor asumsi dunia nyata (misalnya, cedera menghalangi kelulusan) yang bertentangan dengan premis yang diberikan.</p>
+      </div>
+    </div>
+
+    <p class="note">Ingin versi interaktif (klik untuk buka/tutup pembahasan, kuis otomatis, atau ringkasan skor)? Beri tahu saya; kita bisa menambahkannya bertahap.</p>
+  </div>
+</body>
+</html>
+
+
