@@ -1,0 +1,1 @@
+1. Semua tanaman adalah makhluk hidup. Semua makhluk hidup memerlukan air. Tidak semua tanaman berdaun hijau dapat berbuah. Mangga adalah tanaman berdaun hijau. Kesimpulannya

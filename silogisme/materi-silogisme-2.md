@@ -4,17 +4,21 @@ https://youtu.be/NqtwlDF0J1s?si=HHCyWKUitT2pGbgk
 
 
 =========
-
+Contoh Umum:
     p = hari ini hujan
     q = saya membawa payung
+
 (~q) saya tidak membawa payung, (~p) hari ini tidak hujan (benar)
-(~p) hari ini tidak hujan, (~q) saya tidak membawa payung (salah/tidak dapat disimpulkan)
+(~p) hari ini tidak hujan, (~q) saya tidak membawa payung (salah/tidak dapat disimpulkan) --> ini merupakan contoh menyangkal anteseden (sebab), contoh lain kondisi serupa tetapi tidak sama ada di bagian MENYANGKAL ANTESEDEN
 
 (q) saya membawa payung, (p) hari ini hujan (salah/tidak dapat disimpulkan)
 (p) hari ini hujan, (q) saya membawa payung (benar)
 
 ~p v q hari ini tidak hujan atau saya membawa payung (ekuivalen)
 ~q v p saya tidak membawa payung atau hari ini hujan (tidak ekuivalen)
+
+~p ʌ q hari ini tidak hujan dan saya membawa payung (bukan kesimpulan dan bukan negasi)
+p ʌ ~q hari ini hujan dan saya tidak membawa payung (negasi/ingkaran terhadap peraturan)
 
 Semua tas yang sudah melewati proses penjahitan DAN finishing dilakukan pengecekan kualitas. Tas yang
 diproduksi hari ini belum dicek kualitasnya.
@@ -123,7 +127,7 @@ Sebagian polisi adalah koruptor?
 TDDS?
 
 ===
-Hanya
+HANYA
 
 Kalimat "Hanya A yang adalah B" secara logika berarti "Jika B, maka A"
 
@@ -136,7 +140,7 @@ Arah Logika: Mendapat Nilai A → Mahasiswa Rajin
 
 Penting untuk diperhatikan, hubungan ini tidak berlaku sebaliknya. Pernyataan di atas tidak berarti "Jika seorang mahasiswa rajin, maka dia pasti mendapat nilai A". Mungkin saja ada mahasiswa rajin yang karena suatu hal tidak mendapat nilai A.
 
-Hanya Jika
+HANYA JIKA
 
 Kalimat "A jika dan hanya jika B" berarti dua hal sekaligus:
 1. Jika A, maka B.
@@ -149,3 +153,127 @@ Arah 2: "Jika sebuah bilangan habis dibagi dua, maka bilangan tersebut pasti gen
 Arah Logika: Bilangan Genap ↔ Habis Dibagi Dua
 
 Kedua kondisi tersebut saling mengunci dan tidak dapat dipisahkan. Anda tidak akan menemukan bilangan genap yang tidak habis dibagi dua, atau sebaliknya.
+
+MENYANGKAL ANTESEDEN
+
+Menyangkal anteseden adalah kesesatan berpikir dimana menyangkan sebab. Contohnya
+P1: Jika hujan (p), maka jalanan akan basah (q)
+~q->~p benar; tetapi 
+~p->~q salah, ini namanya menyangkal sebab/anteseden.
+
+Lebih lanjut ada keadaan lain:
+
+
+Sebagaimana sudah disinggung sebelumnya, pada contoh umum, tidak semua ~p~q salah, tetapi ada beberapa kondisi yang membenarkan ini. Contoh adalah jika syarat satu-satunya untuk terjadi q terjadi p maka ketika p tidak terjadi maka q pasti tidak akan terjadi. Contohnya:
+
+soal dari Tiktok @siskamrd_
+P1: Jika disiplin belajar, maka lulus SKD
+P2: Jika lulus SKD, maka lanjut ke SKB
+P3: Jika lanjut ke SKB, maka peluang jadi CPNS terbuka
+
+Fakta: Budi tidak lulus SKD
+Pilihan jawaban:
+a. Budi tetap bisa lanjut ke SKB
+b. Budi tetap punya peluang diangkat CPNS
+c. Budi tidak bisa lanjut ke SKB
+d. Budi lulus SKD meski tidak disiplin belajar
+e. Tidak dapat disimpulkan
+
+Jika hanya dilihat pada P2 saja, maka akan dapat dituliskan p->q, kemudian fakta ~p maka kesimpulan TDDS. Tetapi harus melihat rantai sebab akibat
+
+Satu-satunya jalan menuju q adalah p, maka ketika ~p tidak terjadi maka q sudah pasti tidak terjadi (bukan lagi melawan anteseden). Sehingga jawaban yang tepat adalah c. Budi tidak bisa lanjut ke SKB.
+
+Jadi memang terkadang juga harus melihat apakah soal tersebut mengandung syarat pasti atau umum. Untuk soal tersebut bisa dimaknai juga sebagai HANYA JIKA, menjadi "Hanya jika lulus SKD, maka ia bisa lanjut ke SKB"
+
+===========
+BELUM TENTU DAN MUNGKIN
+
+Jika terdapat 2 opsi jawaban yang menyodorkan ada mungkin dan belum tentu. Maka cara ini bisa diterapkan.
+Contoh soal
+
+dari Tiktok @siskamrd_
+P1: Semua guru adalah pendidik
+P2: Sebagian pendidik adalah dosen
+P3: Semua dosen adalah ASN
+Fakta: Tono adalah guru
+
+Pilihan jawaban:
+a. Tono pasti ASN
+b. Tono mungkin ASN
+c. Tono belum tentu ASN
+d. Tono pasti dosen
+e. Tidak dapat disimpulkan
+
+mungkin ASN-> menyatakan ada kemungkinan Tono ASN (butuh dukungan positif dari premis/ada jalan terbuka yang jelas)
+belum tentu ASN-> artinya tidak bisa dipastikan ASN, lebih netral dan posisinya tidak ada jaminan iya atau tidak
+Sehingga jawabn yang benar adalah c. Tono belum tentu ASN
+
+=========
+
+PELUANG (APA NAMA MATERINYA BELUM PASTI)
+
+soal dari Tiktok @siskamrd_
+P1: Jika seseorang lulus SKD, maka ia berhak ikut SKB
+P2: Jika ikut SKB, maka peluang CPNS terbuka
+P3: Jika peluang CPNS terbuka, maka ada kesempatan menjadi ASN
+Fakta: Amir ikut SKB tetapi ia tidak menjadi ASN
+
+Pilihan jawaban:
+a. Amir tidak lulus SKD
+b. Amir tetap berpeluang jadi ASN
+c. Amir peluangnya tertutup sejak awal
+d. Amir tidak memenuhi syarat menjadi ASN
+e. Informasi tidak cukup
+
+Jawaban dari author adalah b. Amir tetap berpeluang jadi ASN. Karena 'tidak menjadi ASN' tidak membatalkan bahwa ia tetap *sempat punya* peluang 
+
+==============
+NEGASI DARI KESIMPULAN
+
+P1: Jika hujan (p), maka jalanan basah (q)
+P2: Jika jalanan basah (r), maka saya membawa payung (s)
+
+**Negasi dari kesimpulannya adalah**
+
+Pilihan jawaban:
+a. Jika hujan maka saya membawa payung (masih bentuk premis)
+b. Hujan atau saya tidak membawa payung (kesimpulan harus menggunakan dan untuk kasus ini karena dan menunjukkan bahwa kejadian harus terjadi saat bersamaan)
+c. Tidak hujan atau saya membawa payung (bukan kesimpulan dan bukan negasi/tidak melanggar aturan premis, konjungsi harus dan)
+d. Hujan dan saya tidak membawa payung
+e. Tidak hujan dan saya membawa payung (bukan kesimpulan dan bukan negasi/tidak melanggar aturan premis, sah-sah saja membawa payung)
+
+Kesimpulan: Jika hujan, maka saya akan membawa payung (kesimpulanya berupa aturan (implikasi), bukan fakta (konjungsi))
+Negasi: Hujan dan saya tidak membawa payung (beda halnya jika kesimpulan berupa "hujan, dan saya akan membawa payung", jika demikian kesimpulannya menjadi "tidak hujan atau saya tidak bawa payung" baca **NEGASI DARI IMPLIKASI ATAUKAH DARI FAKTA**)
+
+Tujuan kita adalah menemukan satu skenario yang membuktikan pernyataan ini adalah sebuah kebohongan atau aturan yang dilanggar. Jawaban yang benar d. Hujan dan saya tidak membawa payung. Kesimpulan dari premis yang diberikan adalah Jika hujan (p), maka saya membawa payung (s), maka pelanggaran (nagasi/ingkaran) dari ketentuan tersebut adalah Hujan dan saya tidak membawa payung (pʌ~s) (alias ini ngeyel woi, padahal sudah ditentukan aturan hujan dan bawa payung, tetapi malah ttp gabawa)
+
+Untuk menjawab kenapa bukan "Tidak hujan dan saya membawa payung" yang benar:
+Analogi Sederhana
+Bayangkan seorang ibu berkata kepada anaknya:
+"Jika kamu ranking 1, maka ibu akan belikan sepeda."
+Kapan janji ibu ini terbukti bohong (negasinya terjadi)?
+
+Janji ini hanya terbukti bohong jika:
+"Kamu ranking 1, DAN ibu tidak membelikan sepeda."
+
+Sekarang, mari kita lihat skenario yang mirip dengan pertanyaan Anda:
+"Kamu tidak ranking 1, DAN ibu tetap membelikan sepeda."
+
+Apakah dalam skenario ini janji ibu terbukti bohong? Tidak. Janji ibu hanya berlaku jika anaknya ranking 1. Jika tidak ranking 1, ibu bebas mau membelikan sepeda atau tidak karena kebaikan hatinya. Tindakan ibu ini tidak melanggar janji awalnya.
+
+NEGASI DARI ATURAN (IMPLIKASI) ATAUKAH FAKTA (KONJUNGSI)
+
+Contoh kesimpulan berupa aturan (implikasi)
+P1: Jika hujan (p), maka jalanan basah (q)
+P2: Jika jalanan basah (r), maka saya membawa payung (s)
+
+Kesimpulan: Jika hujan, saya akan membawa payung
+Negasi: Hujan, dan saya tidak bawa payung
+
+Contoh kesimpulan berupa fakta (konjungsi)
+P1: Hari ini hujan (p)
+P2: Saya membawa payung (q)
+
+Kesimpulan: Hujan dan saya membawa payung
+Negasi: Tidak hujan dan saya tidak membawa payung
+
