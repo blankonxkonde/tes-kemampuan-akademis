@@ -55,58 +55,41 @@
     </ul>
 
     <script>
-        // Daftar file yang ada di folder ini (update manual atau gunakan build script)
-        const files = [
-            'akar.html',
-            'bunga_majemuk.html',
-            'cpns-tiu.html',
-            'deret_aritmetika.html',
-            'deret_geometri.html',
-            'diskon_persentase_harga.html',
-            'eksponen.html',
-            'fraction_values.html',
-            'identitas_aljabar.html',
-            'kecepatan.html',
-            'latihan-aritmetika.md',
-            'latihan-kecepatan-tambahan.html',
-            'latihan-kecepatan.html',
-            'latihan-pecahan-dan-desimal.md',
-            'latihan-perbandingan-3.html',
-            'latihan-perbandingan-variasi.html',
-            'latihan-perbandingan.html',
-            'latihan-persamaan.html',
-            'latihan_soal_persamaan_fungsional.html',
-            'latihan-soal-statistika.html',
-            'materi_pecahan.html',
-            'materi-rata-rata.html',
-            'materi-satuan-berat-dan-kelompok.html',
-            'mental-math.html',
-            'pecahan_istimewa.html',
-            'perbandingan.html',
-            'persamaan.html',
-            'persamaan_fungsional.html',
-            'pola-bilangan.md',
-            'porogapit.html',
-            'soal-harus-belajar-lagi.md',
-            'soal_latihan_akar.html',
-            'soal_latihan_bunga.html',
-            'soal-matematika.html',
-            'urutan_operasi_hitung.html',
-            // File di subfolder pola-bilangan
-            'pola-bilangan/latihan-pola-bilangan-1.md',
-            // File di subfolder silogisme
-            'silogisme/latihan-silogisme-1.html',
-            'silogisme/latihan-silogisme-2.md',
-            'silogisme/latihan-silogisme-dan-atau.md',
-            'silogisme/latihan-silogisme-kemungkinan-dan-atau.md',
-            'silogisme/latihan-silogisme-negasi-kesimpulan-2.md',
-            'silogisme/latihan-silogisme-negasi-kesimpulan.md',
-            'silogisme/latihan-silogisme.md',
-            'silogisme/materi-silogisme-2.md',
-            'silogisme/materi-silogisme-alfaiz.md',
-            'silogisme/materi-silogisme-partikular.html',
-            'silogisme/materi-silogisme.html'
-        ];
+        // --- KONFIGURASI GITHUB ---
+        // Ganti dengan username GitHub Anda
+        const GITHUB_USER = 'blankonxkonde'; 
+        // Ganti dengan nama repository GitHub Anda
+        const GITHUB_REPO = 'tes-kemampuan-akademis'; 
+        // Path ke folder ini di dalam repo. Kosongkan jika ada di root.
+        const FOLDER_PATH = ''; 
+        // -------------------------
+
+        async function getRepoFiles() {
+            const fileList = [];
+            const ignoredFiles = ['index.html'];
+
+            async function fetchDir(path) {
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`);
+                if (!response.ok) {
+                    throw new Error(`Gagal mengambil data dari GitHub API: ${response.statusText}`);
+                }
+                const data = await response.json();
+
+                for (const item of data) {
+                    if (item.type === 'dir') {
+                        await fetchDir(item.path);
+                    } else if (item.type === 'file' && !ignoredFiles.includes(item.name)) {
+                        const relativePath = item.path.startsWith(FOLDER_PATH) 
+                            ? (FOLDER_PATH ? item.path.substring(FOLDER_PATH.length + 1) : item.path)
+                            : item.path;
+                        if (relativePath) fileList.push(relativePath);
+                    }
+                }
+            }
+
+            await fetchDir(FOLDER_PATH);
+            return fileList;
+        }
 
         function getFileType(filename) {
             const ext = filename.split('.').pop().toLowerCase();
@@ -118,14 +101,25 @@
         }
 
         function formatFileName(filename) {
-            return filename
+            // Mengambil bagian nama file saja, tanpa path folder
+            const baseName = filename.split('/').pop();
+            return baseName
+                .replace('.html', '')
+                .replace('.md', '')
                 .replace(/[-_]/g, ' ')
                 .replace(/\b\w/g, l => l.toUpperCase());
         }
 
-        function renderFileList() {
+        function renderFileList(files) {
             const list = document.getElementById('file-list');
             list.innerHTML = '';
+
+            if (!files || files.length === 0) {
+                 list.innerHTML = '<li>Tidak ada file untuk ditampilkan. Pastikan konfigurasi GitHub (username/repo) sudah benar dan repository tidak private.</li>';
+                 return;
+            }
+
+            files.sort();
 
             files.forEach(file => {
                 const li = document.createElement('li');
@@ -133,7 +127,7 @@
                 const span = document.createElement('span');
                 
                 a.href = file;
-                a.textContent = formatFileName(file.split('/').pop());
+                a.textContent = formatFileName(file);
                 
                 span.className = 'file-type';
                 span.textContent = `(${getFileType(file)})`;
@@ -144,8 +138,16 @@
             });
         }
 
-        // Render daftar file
-        renderFileList();
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const files = await getRepoFiles();
+                renderFileList(files);
+            } catch (error) {
+                console.error('Gagal memuat daftar file:', error);
+                const list = document.getElementById('file-list');
+                list.innerHTML = `<li>Gagal memuat daftar file. Cek konsol (F12) untuk detail error.</li>`;
+            }
+        });
     </script>
 </body>
 </html>

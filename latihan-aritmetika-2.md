@@ -1,0 +1,1 @@
+1. Jika sebuah angka dikurangi sebesar 10% hasilnya adalah 9/20, berapakah angka awalnya?
