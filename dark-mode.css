@@ -73,3 +73,29 @@ body.dark-mode #darkModeToggler {
     color: #fff;
     border-color: #555;
 }
+
+/* Additional styles for specific content containers */
+body.dark-mode .container {
+    background: #242424;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .formula {
+    background-color: #1c2a38;
+    border-left-color: #007bff;
+}
+
+body.dark-mode .example {
+    background-color: #2c2c2c;
+    border-color: #444;
+}
+
+body.dark-mode .note {
+    background: #4d493e;
+    border-color: #9b8e5a;
+}
+
+body.dark-mode th {
+    background: #0056b3; /* This is already dark-mode friendly, but we can ensure consistency */
+    color: #fff;
+}
