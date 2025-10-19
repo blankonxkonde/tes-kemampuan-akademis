@@ -46,6 +46,34 @@
             color: #666;
             margin-left: 10px;
         }
+
+        /* Tree view styles */
+        #file-list ul {
+            padding-left: 20px;
+        }
+
+        #file-list .nested {
+            display: none;
+        }
+
+        #file-list .active {
+            display: block;
+        }
+
+        #file-list .folder > .folder-name {
+            cursor: pointer;
+            font-weight: bold;
+            user-select: none; /* Prevent text selection on click */
+        }
+
+        #file-list .folder > .folder-name::before {
+            content: '📁 '; /* Closed Folder icon */
+            display: inline-block;
+        }
+
+        #file-list .folder.expanded > .folder-name::before {
+            content: '📂 '; /* Open folder icon */
+        }
     </style>
 </head>
 <body>
@@ -65,30 +93,56 @@
         // -------------------------
 
         async function getRepoFiles() {
-            const fileList = [];
-            const ignoredFiles = ['index.html'];
+            try {
+                // 1. Dapatkan info repo untuk menemukan default branch
+                const repoInfoResponse = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}`);
+                if (!repoInfoResponse.ok) throw new Error(`Gagal mengambil info repo: ${repoInfoResponse.statusText}`);
+                const repoInfo = await repoInfoResponse.json();
+                const defaultBranch = repoInfo.default_branch;
 
-            async function fetchDir(path) {
-                const response = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${path}`);
-                if (!response.ok) {
-                    throw new Error(`Gagal mengambil data dari GitHub API: ${response.statusText}`);
-                }
-                const data = await response.json();
+                // 2. Dapatkan SHA pohon file dari commit terakhir di default branch
+                const branchInfoResponse = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/branches/${defaultBranch}`);
+                if (!branchInfoResponse.ok) throw new Error(`Gagal mengambil info branch: ${branchInfoResponse.statusText}`);
+                const branchInfo = await branchInfoResponse.json();
+                const treeSha = branchInfo.commit.commit.tree.sha;
 
-                for (const item of data) {
-                    if (item.type === 'dir') {
-                        await fetchDir(item.path);
-                    } else if (item.type === 'file' && !ignoredFiles.includes(item.name)) {
-                        const relativePath = item.path.startsWith(FOLDER_PATH) 
-                            ? (FOLDER_PATH ? item.path.substring(FOLDER_PATH.length + 1) : item.path)
-                            : item.path;
-                        if (relativePath) fileList.push(relativePath);
-                    }
-                }
+                // 3. Ambil seluruh pohon file secara rekursif
+                const treeResponse = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/git/trees/${treeSha}?recursive=1`);
+                if (!treeResponse.ok) throw new Error(`Gagal mengambil pohon file: ${treeResponse.statusText}`);
+                const treeData = await treeResponse.json();
+
+                // 4. Filter dan kembalikan hanya path file yang relevan
+                const ignoredFiles = ['index.html'];
+                return treeData.tree
+                    .filter(item => 
+                        item.type === 'blob' && 
+                        !ignoredFiles.includes(item.path.split('/').pop()) &&
+                        (FOLDER_PATH ? item.path.startsWith(FOLDER_PATH + '/') : true)
+                    )
+                    .map(item => FOLDER_PATH ? item.path.substring(FOLDER_PATH.length + 1) : item.path);
+            } catch (error) {
+                console.error("Kesalahan saat mengambil file dari GitHub:", error);
+                throw error; // Re-throw untuk ditangani oleh pemanggil
             }
-
-            await fetchDir(FOLDER_PATH);
-            return fileList;
+        }
+        
+        function buildFileTree(paths) {
+            const tree = {};
+            paths.forEach(path => {
+                const parts = path.split('/');
+                let currentLevel = tree;
+                parts.forEach((part, index) => {
+                    if (index === parts.length - 1) { // Ini adalah file
+                        currentLevel[part] = { __type: 'file', __path: path };
+                    } else { // Ini adalah direktori
+                        if (!currentLevel[part]) {
+                            currentLevel[part] = { __type: 'folder', __children: {} };
+                        }
+                        currentLevel = currentLevel[part].__children;
+                    }
+                });
+            });
+            return tree;
         }
 
         function getFileType(filename) {
@@ -110,38 +164,66 @@
                 .replace(/\b\w/g, l => l.toUpperCase());
         }
 
-        function renderFileList(files) {
+        function renderFileList(tree) {
             const list = document.getElementById('file-list');
             list.innerHTML = '';
 
-            if (!files || files.length === 0) {
+            if (Object.keys(tree).length === 0) {
                  list.innerHTML = '<li>Tidak ada file untuk ditampilkan. Pastikan konfigurasi GitHub (username/repo) sudah benar dan repository tidak private.</li>';
                  return;
             }
 
-            files.sort();
+            function renderLevel(subtree, container) {
+                const sortedKeys = Object.keys(subtree).sort((a, b) => {
+                    const itemA = subtree[a];
+                    const itemB = subtree[b];
+                    if (itemA.__type === 'folder' && itemB.__type !== 'folder') return -1;
+                    if (itemA.__type !== 'folder' && itemB.__type === 'folder') return 1;
+                    return a.localeCompare(b);
+                });
 
-            files.forEach(file => {
+                for (const key of sortedKeys) {
+                    const item = subtree[key];
                 const li = document.createElement('li');
+
+                    if (item.__type === 'folder') {
+                        li.classList.add('folder');
+                        li.innerHTML = `<span class="folder-name">${key}</span>`;
+                        const sublist = document.createElement('ul');
+                        sublist.classList.add('nested');
+                        li.appendChild(sublist);
+
+                        li.querySelector('.folder-name').addEventListener('click', (e) => {
+                            e.currentTarget.parentElement.classList.toggle('expanded');
+                            sublist.classList.toggle('active');
+                        });
+                        
+                        renderLevel(item.__children, sublist);
+                    } else {
+                        li.classList.add('file');
                 const a = document.createElement('a');
                 const span = document.createElement('span');
                 
-                a.href = file;
-                a.textContent = formatFileName(file);
+                        a.href = item.__path;
+                        a.textContent = formatFileName(item.__path);
                 
                 span.className = 'file-type';
-                span.textContent = `(${getFileType(file)})`;
+                        span.textContent = `(${getFileType(item.__path)})`;
                 
                 li.appendChild(a);
                 li.appendChild(span);
-                list.appendChild(li);
-            });
+                    }
+                    container.appendChild(li);
+                }
+            }
+            renderLevel(tree, list);
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const files = await getRepoFiles();
-                renderFileList(files);
+                const fileTree = buildFileTree(files);
+                renderFileList(fileTree);
             } catch (error) {
                 console.error('Gagal memuat daftar file:', error);
                 const list = document.getElementById('file-list');
