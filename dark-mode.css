@@ -99,3 +99,105 @@ body.dark-mode th {
     background: #0056b3; /* This is already dark-mode friendly, but we can ensure consistency */
     color: #fff;
 }
+
+/* --- Comprehensive styles from automated detection --- */
+
+/* Generic content blocks */
+body.dark-mode .toc,
+body.dark-mode .definition, 
+body.dark-mode .tips,
+body.dark-mode .block,
+body.dark-mode .property,
+body.dark-mode .identity,
+body.dark-mode .soal,
+body.dark-mode .problem,
+body.dark-mode .contoh, 
+body.dark-mode .latihan,
+body.dark-mode .rule,
+body.dark-mode .exercise,
+body.dark-mode .concept-note,
+body.dark-mode .latex-block {
+    background-color: #2c3e50;
+    border-color: #5dade2;
+    border-left-color: #5dade2;
+}
+
+/* Question, Answer, and Solution blocks */
+body.dark-mode .question-block,
+body.dark-mode .answer-block,
+body.dark-mode .question,
+body.dark-mode .answer,
+body.dark-mode .solution,
+body.dark-mode .kunci-jawaban,
+body.dark-mode .pembahasan,
+body.dark-mode .question-box,
+body.dark-mode .answer-box,
+body.dark-mode .trick {
+    background-color: #2c2c2c;
+    border-color: #444;
+}
+
+/* Box models from various pages */
+body.dark-mode .formula-box,
+body.dark-mode .example-box {
+    background-color: #2a3a4a;
+    border-color: #4f6f8f;
+}
+
+/* Interactive elements */
+body.dark-mode .toggle-answer,
+body.dark-mode .toggle-button,
+body.dark-mode button {
+    background-color: #4a4a4a;
+    color: #f1f1f1;
+    border-color: #666;
+}
+
+body.dark-mode .toggle-answer:hover,
+body.dark-mode .toggle-button:hover,
+body.dark-mode button:hover {
+    background-color: #5a5a5a;
+}
+
+body.dark-mode details {
+    background: #2c2c2c;
+    border-color: #444;
+}
+
+/* Table styles */
+body.dark-mode tr:nth-child(even),
+body.dark-mode table tbody tr:nth-of-type(even) {
+    background-color: #2c2c2c;
+}
+
+body.dark-mode tr:hover,
+body.dark-mode table tbody tr:hover {
+    background-color: #3e3e3e;
+}
+
+body.dark-mode .comparison-table th {
+    background-color: #0056b3;
+}
+
+/* Miscellaneous */
+body.dark-mode hr {
+    border-color: #555;
+    border-top-color: #555;
+}
+
+body.dark-mode code,
+body.dark-mode code.term {
+    background-color: #2c2c2c;
+    color: #d4d4d4;
+    border: 1px solid #444;
+}
+
+body.dark-mode .visualization {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-mode .topic-card {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+}
