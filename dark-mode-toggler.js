@@ -112,7 +112,7 @@
         toggler.id = 'darkModeToggler';
         toggler.setAttribute('aria-label', 'Toggle dark mode');
         toggler.setAttribute('title', 'Toggle dark mode');
-        document.body.appendChild(toggler);
+        document.body.insertBefore(toggler, document.body.firstChild);
 
         // 2. Main toggle function
         function setDarkMode(isDark) {
