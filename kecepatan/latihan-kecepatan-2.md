@@ -17,3 +17,7 @@
 9. Sebuah sepeda motor menempuh perjalanan 120 km. Untuk 60 km pertama, motor melaju dengan kecepatan maksimumnya. Kemudian, untuk 60 km sisanya, motor melaju dengan kecepatan 1/3 dari kecepatan maksimumnya. Jika total waktu tempuh adalah 4 jam, berapakah kecepatan maksimum motor tersebut?
 
 10. Sebuah bus antarkota menempuh jarak 100 km dalam waktu 2,5 jam. Perjalanan tersebut terdiri dari 20 km pertama melewati lalu lintas kota, 60 km di jalan tol, dan 20 km terakhir di kota tujuan. Jika kecepatan di jalan tol adalah kecepatan maksimumnya, dan kecepatan di dalam kota hanya 1/4 dari kecepatan maksimumnya, berapakah kecepatan maksimum bus tersebut?
+
+11. Sebuah truk dan sebuah bus berangkat pada waktu yang sama dari kota A ke kota B yang berjarak 240 km. Kecepatan bus 25% lebih cepat daripada truk. Bus berhenti selama 40 menit di tengah perjalanan untuk istirahat, namun keduanya tiba di kota B pada waktu yang sama. Berapakah kecepatan truk?
+
+12. 
