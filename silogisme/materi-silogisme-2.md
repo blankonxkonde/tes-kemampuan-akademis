@@ -261,7 +261,7 @@ Sekarang, mari kita lihat skenario yang mirip dengan pertanyaan Anda:
 
 Apakah dalam skenario ini janji ibu terbukti bohong? Tidak. Janji ibu hanya berlaku jika anaknya ranking 1. Jika tidak ranking 1, ibu bebas mau membelikan sepeda atau tidak karena kebaikan hatinya. Tindakan ibu ini tidak melanggar janji awalnya.
 
-NEGASI DARI ATURAN (IMPLIKASI) ATAUKAH FAKTA (KONJUNGSI)
+**NEGASI DARI ATURAN (IMPLIKASI) ATAUKAH FAKTA (KONJUNGSI)**
 
 Contoh kesimpulan berupa aturan (implikasi)
 P1: Jika hujan (p), maka jalanan basah (q)
@@ -277,3 +277,43 @@ P2: Saya membawa payung (q)
 Kesimpulan: Hujan dan saya membawa payung
 Negasi: Tidak hujan dan saya tidak membawa payung
 
+**DAN-ATAU**
+*DAN*
+Dalam silogisme, konjungsi "DAN" digunakan untuk menghubungkan dua atau lebih syarat yang bersifat akumulatif dan wajib. Ini berarti, untuk suatu kondisi atau kesimpulan dapat terpenuhi, SEMUA syarat yang dihubungkan oleh kata "DAN" harus benar atau terpenuhi tanpa terkecuali.
+
+Contoh Silogisme dengan "DAN"
+Premis 1: Untuk lulus seleksi beasiswa, seorang mahasiswa harus memiliki IPK di atas 3,75 DAN aktif dalam organisasi kemahasiswaan.
+Premis 2: Anisa memiliki IPK 3,80, tetapi ia tidak aktif dalam organisasi kemahasiswaan manapun.
+
+Karena logika "DAN" menuntut semua syarat terpenuhi, dan Anisa hanya memenuhi satu dari dua syarat, maka syarat utama tidak terpenuhi.
+
+Kesimpulan: Anisa tidak akan lulus seleksi beasiswa
+
+*ATAU*
+Disjungsi "ATAU" digunakan untuk menghubungkan dua atau lebih syarat yang bersifat alternatif atau pilihan. Ini berarti, untuk suatu kondisi atau kesimpulan dapat terpenuhi, CUKUP SALAH SATU dari syarat yang dihubungkan oleh kata "ATAU" yang benar atau terpenuhi.
+
+Contoh Silogisme dengan "ATAU"
+Premis 1: Sebuah laptop dinyatakan lolos kontrol kualitas jika lolos uji performa ATAU lolos uji ketahanan baterai.
+Premis 2: Laptop Model X tidak lolos uji performa, tetapi berhasil lolos uji ketahanan baterai.
+
+Karena logika "ATAU" hanya membutuhkan minimal satu syarat terpenuhi, dan Laptop Model X telah memenuhi salah satunya (uji baterai), maka syarat utama sudah terpenuhi. Jika kedua syarat terpenuhi tidak menjadi masalah.
+
+Kesimpulan: Laptop Model X dinyatakan lolos kontrol kualitas
+
+Contoh lebih lanjut tentang *ATAU*:
+
+Premis Mayor: Saya akan membeli mobil baru atau saya akan merenovasi rumah.
+Premis Minor: Saya tidak membeli mobil baru.
+Kesimpulan: ...
+
+Jika diuraikan berdasarkan segala kemungkinan dari Premis 1, maka:
+
+Kemungkinan Benar:
+Saya tidak akan membeli mobil baru atau saya akan merenovasi rumah (ini yang sesuai dengan premis 2)
+Saya akan membeli mobil baru atau saya tidak akan merenovasi rumah
+Saya akan membeli mobil baru dan saya akan merenovasi rumah
+
+Pasti Salah:
+Saya tidak akan membeli mobil baru dan saya tidak akan merenovasi rumah
+
+**SEMUA-SEBAGIAN-SEMENTARA (PLURAL-SINGULAR)**

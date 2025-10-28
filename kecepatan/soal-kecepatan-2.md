@@ -20,4 +20,6 @@
 
 11. Sebuah truk dan sebuah bus berangkat pada waktu yang sama dari kota A ke kota B yang berjarak 240 km. Kecepatan bus 25% lebih cepat daripada truk. Bus berhenti selama 40 menit di tengah perjalanan untuk istirahat, namun keduanya tiba di kota B pada waktu yang sama. Berapakah kecepatan truk?
 
-12. 
+12. Ali dan Budi berangkat dari kota P ke kota Q yang berjarak 390 km. Ali mengendarai mobil dengan kecepatan konstan. Budi, yang juga mengendarai mobil, berangkat 1 jam setelah Ali dengan kecepatan 20 km/jam lebih cepat dari Ali. Jika Budi tiba di kota Q 30 menit lebih awal dari Ali, berapakah kecepatan mobil Ali dan Budi?
+
+13. Ali dan Budi berangkat dari kota P ke kota Q yang berjarak 360 km. Ali mengendarai mobil dengan kecepatan konstan. Budi, yang juga mengendarai mobil, berangkat 1 jam setelah Ali dengan kecepatan 20 km/jam lebih cepat dari Ali. Jika Budi tiba di kota Q 30 menit lebih awal dari Ali, berapakah kecepatan mobil Ali dan Budi?

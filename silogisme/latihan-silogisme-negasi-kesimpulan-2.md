@@ -113,6 +113,16 @@ Premis Minor: Saya tidak membeli mobil baru.
 Kesimpulan: ...
 Jawaban: Saya akan merenovasi rumah.
 
+Jika diuraikan berdasarkan segala kemungkinan dari Premis 1, maka:
+
+Kemungkinan Benar:
+Saya tidak akan membeli mobil baru atau saya akan merenovasi rumah (ini yang sesuai dengan premis 2)
+Saya akan membeli mobil baru atau saya tidak akan merenovasi rumah
+Saya akan membeli mobil baru dan saya akan merenovasi rumah
+
+Pasti Salah:
+Saya tidak akan membeli mobil baru dan saya tidak akan merenovasi rumah
+
 Soal 9:
 Premis Mayor: Proyek ini akan berhasil jika dan hanya jika tim A atau tim B tidak membuat kesalahan.
 Premis Minor: Proyek ini tidak berhasil.
