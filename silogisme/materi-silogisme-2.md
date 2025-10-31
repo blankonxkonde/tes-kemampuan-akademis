@@ -317,3 +317,23 @@ Pasti Salah:
 Saya tidak akan membeli mobil baru dan saya tidak akan merenovasi rumah
 
 **SEMUA-SEBAGIAN-SEMENTARA (PLURAL-SINGULAR)**
+
+Variasi 1
+Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
+Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.
+Kesimpulan: ...
+
+Variasi 2
+Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
+Premis 2: Sebagian murid kelas 12 pergi ke kantin.
+Kesimpulan: ...
+
+Variasi 3
+Premis 1: Semua yang memakai seragam putih abu-abu adalah murid kelas 12.
+Premis 2: Sebagian murid kelas 12 pergi ke kantin.
+Kesimpulan: ...
+
+Variasi 4
+Premis 1: Tidak ada seniman yang merupakan birokrat.
+Premis 2: Semua birokrat adalah pegawai negeri.
+Kesimpulan: ...
