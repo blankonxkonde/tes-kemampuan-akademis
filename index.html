@@ -102,6 +102,7 @@
             background-color: #0056b3;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.5.1/github-markdown.min.css">
 </head>
 <body>
     <h1 id="main-title">Daftar File</h1>
@@ -111,7 +112,7 @@
 
     <div id="content-viewer">
         <button id="back-button">← Kembali ke Daftar File</button>
-        <div id="md-content"></div>
+        <div id="md-content" class="markdown-body"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -239,7 +240,7 @@
 
                         const isMarkdown = item.__path.endsWith('.md');
                         
-                        a.href = item.__path;
+                        a.href = isMarkdown ? `?file=${encodeURIComponent(item.__path)}` : item.__path;
                         a.textContent = formatFileName(item.__path);
                         
                         if (isMarkdown) {
@@ -268,27 +269,32 @@
             const mainTitle = document.getElementById('main-title');
 
             try {
-                // URL untuk mengambil konten mentah dari repo GitHub
-                const repoRawUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/`;
-                const contentUrl = `${repoRawUrl}${path}`;
+                // URL untuk mengambil konten mentah dari GitHub Pages/repo
+                const contentUrl = `${path}`;
                 const response = await fetch(contentUrl);
                 if (!response.ok) throw new Error(`Gagal memuat konten: ${response.statusText}`);
                 
                 let text = await response.text();
 
-                // Ganti path gambar relatif ke path absolut di repo GitHub
-                const fileDirUrl = `${repoRawUrl}${path.substring(0, path.lastIndexOf('/') + 1)}`;
+                // Ganti path gambar relatif ke URL absolut berbasis direktori file Markdown
+                const repoRawBase = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/`;
+                const fileDir = path.includes('/') ? path.substring(0, path.lastIndexOf('/') + 1) : '';
+                const fileDirUrl = `${repoRawBase}${fileDir}`;
                 text = text.replace(/!\[(.*?)\]\((?!https?:\/\/)(.*?)\)/g, (match, alt, src) => {
-                    // Buat URL absolut dari path relatif gambar
                     const imageUrl = new URL(src, fileDirUrl).href;
                     return `![${alt}](${imageUrl})`;
                 });
-
+ 
+ 
                 mdContent.innerHTML = marked.parse(text);
 
                 fileList.style.display = 'none';
                 contentViewer.style.display = 'block';
                 mainTitle.textContent = formatFileName(path);
+
+                // Perbarui URL agar dapat dibookmark/dishare
+                const newUrl = `${location.pathname}?file=${encodeURIComponent(path)}`;
+                history.pushState({ file: path }, '', newUrl);
 
             } catch (error) {
                 console.error("Gagal menampilkan konten Markdown:", error);
@@ -307,6 +313,7 @@
                 contentViewer.style.display = 'none';
                 fileList.style.display = 'block';
                 mainTitle.textContent = 'Daftar File';
+                history.pushState({}, '', location.pathname);
             });
 
             try {
@@ -318,6 +325,25 @@
                 const list = document.getElementById('file-list');
                 list.innerHTML = `<li>Gagal memuat daftar file. Cek konsol (F12) untuk detail error.</li>`;
             }
+
+            // Deep-link: buka file jika ?file=... ada
+            const params = new URLSearchParams(location.search);
+            const initialFile = params.get('file');
+            if (initialFile) {
+                showMarkdownContent(initialFile);
+            }
+
+            // Navigasi back/forward
+            window.addEventListener('popstate', () => {
+                const p = new URLSearchParams(location.search).get('file');
+                if (p) {
+                    showMarkdownContent(p);
+                } else {
+                    contentViewer.style.display = 'none';
+                    fileList.style.display = 'block';
+                    mainTitle.textContent = 'Daftar File';
+                }
+            });
         });
     </script>
     <script src="dark-mode-toggler.js" defer></script>
