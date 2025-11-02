@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Materi Silogisme 2</title>
+    <style>
+      :root {
+        --bg: #0b0c0f;
+        --surface: #111319;
+        --text: #e8eaed;
+        --muted: #a8b0bd;
+        --accent: #6ea8fe;
+        --border: #2a2f3a;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+      }
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 24px 16px 80px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(6px);
+        background: color-mix(in hsl, var(--bg) 82%, transparent);
+        border-bottom: 1px solid var(--border);
+        z-index: 5;
+      }
+      header .bar {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      header .bar h1 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px;
+      }
+      #content :is(h1, h2, h3, h4) {
+        margin-top: 1.6em;
+        margin-bottom: 0.6em;
+        line-height: 1.25;
+      }
+      #content h1 { font-size: 1.8rem; }
+      #content h2 { font-size: 1.4rem; }
+      #content h3 { font-size: 1.15rem; }
+      #content p { margin: 0.6em 0; }
+      #content a { color: var(--accent); text-decoration: none; }
+      #content a:hover { text-decoration: underline; }
+      #content code, #content pre {
+        background: #0d1016;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: #e6edf3;
+      }
+      #content pre {
+        padding: 12px 14px;
+        overflow: auto;
+      }
+      #content code { padding: 2px 6px; }
+      .embed { margin: 12px 0 20px; }
+      .embed-youtube {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #000;
+      }
+      .embed-youtube iframe {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%; border: 0;
+      }
+      .media-img { display: block; margin: 10px 0 20px; width: 100%; max-width: 820px; border-radius: 10px; border: 1px solid var(--border); }
+      .note { color: var(--muted); font-size: 0.9rem; }
+      .lead { color: var(--muted); margin-top: 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bar">
+        <h1>Materi Silogisme 2</h1>
+        <div class="note">Sumber konten di-render dari markdown tanpa perubahan kata</div>
+      </div>
+    </header>
+    <main class="page">
+      <div class="card">
+        <p class="lead">Berikut adalah materi yang dirender dari file markdown <code>materi-silogisme-2.md</code> apa adanya. Link YouTube/TikTok di-embed di bawah baris aslinya. Gambar yang dirujuk oleh path akan ditampilkan.</p>
+        <div id="content"></div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      // Render markdown exactly as-is (no word changes)
+      const rawMd = String.raw`Video Materi
+https://youtu.be/M4EM0J4yJp0?si=ZGwJ-kxur-k7wPBR
+https://youtu.be/NqtwlDF0J1s?si=HHCyWKUitT2pGbgk
+
+
+=========
+Contoh Umum:
+    p = hari ini hujan
+    q = saya membawa payung
+
+(~q) saya tidak membawa payung, (~p) hari ini tidak hujan (benar)
+(~p) hari ini tidak hujan, (~q) saya tidak membawa payung (salah/tidak dapat disimpulkan) --> ini merupakan contoh menyangkal anteseden (sebab), contoh lain kondisi serupa tetapi tidak sama ada di bagian MENYANGKAL ANTESEDEN
+
+(q) saya membawa payung, (p) hari ini hujan (salah/tidak dapat disimpulkan)
+(p) hari ini hujan, (q) saya membawa payung (benar)
+
+~p v q hari ini tidak hujan atau saya membawa payung (ekuivalen)
+~q v p saya tidak membawa payung atau hari ini hujan (tidak ekuivalen)
+
+~p ʌ q hari ini tidak hujan dan saya membawa payung (bukan kesimpulan dan bukan negasi)
+p ʌ ~q hari ini hujan dan saya tidak membawa payung (negasi/ingkaran terhadap peraturan)
+
+Semua tas yang sudah melewati proses penjahitan DAN finishing dilakukan pengecekan kualitas. Tas yang
+diproduksi hari ini belum dicek kualitasnya.
+
+p = tas yang sudah melewati proses penjahitan
+q = tas yang sudah melewati finishing
+r = dilakukan pengecekan kualitas
+
+Model logika:
+(p ʌ q) -> r = Semua tas yang sudah melewati proses penjahitan dan finishing dilakukan pengecekan kualitas
+~r = Tas yang diproduksi hari ini belum dicek kualitasnya
+
+Kesimpulan
+~r -> ~(p v q)
+(~r) Tas yang diproduksi hari ini belum dicek kualitasnya.(~(p v q)) Tas yang diproduksi hari ini belum melewati proses penjahitan ATAU belum melewati proses finishing
+
+Penjelasan Sederhana:
+Premis awal mengatakan bahwa untuk bisa dicek kualitasnya, sebuah tas harus memenuhi dua syarat sekaligus: sudah dijahit DAN sudah difinishing.
+Faktanya, tas hari ini belum dicek kualitasnya. Ini berarti tas tersebut pasti telah gagal memenuhi setidaknya *salah satu* dari dua syarat wajib tersebut. Mungkin proses penjahitannya belum selesai, atau mungkin proses finishingnya yang belum selesai, atau bahkan kedua-duanya belum selesai. Ketiga kemungkinan ini dirangkum dengan sempurna oleh kata "ATAU"
+========SEMPURNAKAN STRUKTUR CONTOH DI BAWAH INI=====
+
+Premis Baru: "Semua tas yang sudah melewati proses penjahitan ATAU finishing dilakukan pengecekan kualitas."
+Model Logika: (p v q) → r
+Fakta: "Tas yang diproduksi hari ini belum dicek kualitasnya."
+Model Logika: ~r
+Sekarang, dengan menggunakan Modus Tollens:
+Jika (p v q) → r benar, dan ~r benar, maka kesimpulannya adalah ~(p v q).
+Menurut Hukum De Morgan, ~(p v q) ekuivalen dengan ~p ʌ ~q.
+Kesimpulan dari Premis Baru: "Tas yang diproduksi hari ini belum melewati proses penjahitan DAN belum melewati proses finishing."
+
+Logikanya: Jika menyelesaikan salah satu dari dua proses itu (jahit ATAU finishing) saja sudah cukup untuk memicu pengecekan kualitas, dan ternyata pengecekan tidak terjadi, maka kita bisa 100% yakin bahwa kedua proses tersebut pasti belum ada yang selesai
+=================
+p: Seorang seniman ingin mengadakan pameran.
+q: Ia harus mendapat persetujuan dari galeri
+Kesimpulan:
+~q -> ~p Ia tidak mendapatkan persetujuan dari galeri, maka ia tidak mengadakan pameran
+
+~p v q Seorang seniman tidak ingin mengadakan pameran atau ia mendapat persetujuan dari galeri
+
+DISTRAKTOR
+Meskipun terdapat 3 premis, jika salah 1 premis adalah distraktor maka kesimpulan didapatkan dari 2 premis
+
+Contoh 1
+Premis 1: Semua bunga mawar di taman ini berwarna merah.
+Premis 2: Sebagian bunga yang harum adalah bunga mawar.
+Premis 3: Beberapa tanaman berwarna merah tidak disukai serangga.
+
+Premis 2: (p) Sebagian bunga yang harum adalah (q) bunga mawar.
+Premis 1: (q) Semua bunga mawar di taman ini berwarna merah (r).
+
+kesimpulan dari 2 premis ini adalah sebagian bunga yang harum berwarna merah
+
+Premis 3: Premis 3: Beberapa tanaman berwarna merah tidak disukai serangga. Merupakan DISTRAKTOR 
+
+Mengapa ini distraktor?
+- Premis ini memberikan informasi baru tentang kategori "tanaman berwarna merah", yaitu sebagian di antaranya "tidak disukai serangga".
+- Kesalahan yang mungkin terjadi adalah mencoba menyimpulkan: "Sebagian bunga yang harum tidak disukai serangga."
+- Kesimpulan ini tidak valid karena tidak ada jaminan logis bahwa "bunga harum berwarna merah" (yang kita simpulkan dari P1 & P2) adalah bagian dari kelompok "tanaman berwarna merah yang tidak disukai serangga" (yang disebutkan di P3).
+
+Premis 3 tidak akan menjadi distraktor jika:
+Premis 1: Semua bunga mawar di taman ini berwarna merah.
+Premis 2: Sebagian bunga yang harum adalah bunga mawar.
+Premis 3: SEMUA tanaman berwarna merah tidak disukai serangga.
+
+Sehingga kesimpulan: P2 & P1 adalah Sebagian bunga yang harum berwarna merah
+Kemudian dihubungkan dengan P3 menjadi Sebagian bunga yang harum tidak disukai serangga
+
+Selanjutnya, bagaimana jika premisnya menjadi:
+
+Premis 1: Sebagian bunga mawar di taman ini berwarna merah.
+Premis 2: Sebagian bunga yang harum adalah bunga mawar.
+Premis 3: SEMUA tanaman berwarna merah tidak disukai serangga.
+
+Kesimpulannya: tidak dapat disimpulkan
+
+=================
+https://www.youtube.com/watch?v=NqtwlDF0J1s&t=220s
+
+Pada contoh Al-Faiz ini no 10:
+Semua pesawat adalah kendaraan
+Sebagian kendaraan tidak komersial
+Kesimpulan: Sebagian pesawat tidak komersial
+
+Apabila menggunakan logika yang sama untuk premis yang berbeda:
+
+Semua lurah adalah laki-laki
+Sebagian laki-laki adalah kuli
+
+Jika berdasarkan ilmu yang diajarkan Al-Faiz, otomatis untuk hal ini serta-merta disimpulkan "Sebagian lurah adalah kuli". Padahal sebenarnya kita tidak tahu "sebagian laki-laki" yang dimaksud di sini apakah yang ada bagian dengan "lurah" di dalamnya atau "tanpa lurah" di dalamnya, sehingga TDDS. Kecuali jika soal:
+
+Semua lurah adalah laki-laki
+Sebagian lurah adalah kuli
+
+Maka kesimpulan:
+1. Sebagian lurah adalah laki-laki dan kuli/kuli dan laki-laki
+2. Semua lurah yang kuli adalah laki-laki
+3. Sebagian lurah adalah laki-laki juga kuli
+
+Jadi singkatnya rata-rata opsi menyediakan jawaban "Sebagian pesawat tidak komersial" tapi tidak menyediakan opsi TDDS, maka pilih saja opsi tersebut
+
+Contoh lain:
+Semua polisi adalah penegak hukum
+Sebagian penegak hukum adalah koruptor
+
+Sebagian polisi adalah koruptor?
+TDDS?
+
+===
+HANYA
+
+Kalimat "Hanya A yang adalah B" secara logika berarti "Jika B, maka A"
+
+Hanya mahasiswa yang rajin yang mendapat nilai A
+Budi mendapat nilai A
+
+Pernyataan: "Hanya mahasiswa yang rajin yang mendapat nilai A."
+Artinya: "Jika seseorang mendapat nilai A, maka dapat dipastikan dia adalah mahasiswa yang rajin."
+Arah Logika: Mendapat Nilai A → Mahasiswa Rajin
+
+Penting untuk diperhatikan, hubungan ini tidak berlaku sebaliknya. Pernyataan di atas tidak berarti "Jika seorang mahasiswa rajin, maka dia pasti mendapat nilai A". Mungkin saja ada mahasiswa rajin yang karena suatu hal tidak mendapat nilai A.
+
+HANYA JIKA
+
+Kalimat "A jika dan hanya jika B" berarti dua hal sekaligus:
+1. Jika A, maka B.
+2. Jika B, maka A.
+
+Pernyataan: "Sebuah bilangan adalah genap jika dan hanya jika bilangan tersebut habis dibagi dua."
+Artinya: Ini adalah hubungan dua arah yang mutlak.
+Arah 1: "Jika sebuah bilangan adalah genap, maka bilangan tersebut pasti habis dibagi dua." (Benar)
+Arah 2: "Jika sebuah bilangan habis dibagi dua, maka bilangan tersebut pasti genap." (Benar)
+Arah Logika: Bilangan Genap ↔ Habis Dibagi Dua
+
+Kedua kondisi tersebut saling mengunci dan tidak dapat dipisahkan. Anda tidak akan menemukan bilangan genap yang tidak habis dibagi dua, atau sebaliknya.
+
+MENYANGKAL ANTESEDEN
+
+Menyangkal anteseden adalah kesesatan berpikir dimana menyangkan sebab. Contohnya
+P1: Jika hujan (p), maka jalanan akan basah (q)
+~q->~p benar; tetapi 
+~p->~q salah, ini namanya menyangkal sebab/anteseden.
+
+Lebih lanjut ada keadaan lain:
+
+
+Sebagaimana sudah disinggung sebelumnya, pada contoh umum, tidak semua ~p~q salah, tetapi ada beberapa kondisi yang membenarkan ini. Contoh adalah jika syarat satu-satunya untuk terjadi q terjadi p maka ketika p tidak terjadi maka q pasti tidak akan terjadi. Contohnya:
+
+soal dari Tiktok @siskamrd_
+P1: Jika disiplin belajar, maka lulus SKD
+P2: Jika lulus SKD, maka lanjut ke SKB
+P3: Jika lanjut ke SKB, maka peluang jadi CPNS terbuka
+
+Fakta: Budi tidak lulus SKD
+Pilihan jawaban:
+a. Budi tetap bisa lanjut ke SKB
+b. Budi tetap punya peluang diangkat CPNS
+c. Budi tidak bisa lanjut ke SKB
+d. Budi lulus SKD meski tidak disiplin belajar
+e. Tidak dapat disimpulkan
+
+Jika hanya dilihat pada P2 saja, maka akan dapat dituliskan p->q, kemudian fakta ~p maka kesimpulan TDDS. Tetapi harus melihat rantai sebab akibat
+
+Satu-satunya jalan menuju q adalah p, maka ketika ~p tidak terjadi maka q sudah pasti tidak terjadi (bukan lagi melawan anteseden). Sehingga jawaban yang tepat adalah c. Budi tidak bisa lanjut ke SKB.
+
+Jadi memang terkadang juga harus melihat apakah soal tersebut mengandung syarat pasti atau umum. Untuk soal tersebut bisa dimaknai juga sebagai HANYA JIKA, menjadi "Hanya jika lulus SKD, maka ia bisa lanjut ke SKB"
+
+===========
+BELUM TENTU DAN MUNGKIN
+
+Jika terdapat 2 opsi jawaban yang menyodorkan ada mungkin dan belum tentu. Maka cara ini bisa diterapkan.
+Contoh soal
+
+dari Tiktok @siskamrd_
+P1: Semua guru adalah pendidik
+P2: Sebagian pendidik adalah dosen
+P3: Semua dosen adalah ASN
+Fakta: Tono adalah guru
+
+Pilihan jawaban:
+a. Tono pasti ASN
+b. Tono mungkin ASN
+c. Tono belum tentu ASN
+d. Tono pasti dosen
+e. Tidak dapat disimpulkan
+
+mungkin ASN-> menyatakan ada kemungkinan Tono ASN (butuh dukungan positif dari premis/ada jalan terbuka yang jelas)
+belum tentu ASN-> artinya tidak bisa dipastikan ASN, lebih netral dan posisinya tidak ada jaminan iya atau tidak
+Sehingga jawabn yang benar adalah c. Tono belum tentu ASN
+
+=========
+
+PELUANG (APA NAMA MATERINYA BELUM PASTI)
+
+soal dari Tiktok @siskamrd_
+P1: Jika seseorang lulus SKD, maka ia berhak ikut SKB
+P2: Jika ikut SKB, maka peluang CPNS terbuka
+P3: Jika peluang CPNS terbuka, maka ada kesempatan menjadi ASN
+Fakta: Amir ikut SKB tetapi ia tidak menjadi ASN
+
+Pilihan jawaban:
+a. Amir tidak lulus SKD
+b. Amir tetap berpeluang jadi ASN
+c. Amir peluangnya tertutup sejak awal
+d. Amir tidak memenuhi syarat menjadi ASN
+e. Informasi tidak cukup
+
+Jawaban dari author adalah b. Amir tetap berpeluang jadi ASN. Karena 'tidak menjadi ASN' tidak membatalkan bahwa ia tetap *sempat punya* peluang 
+
+==============
+NEGASI DARI KESIMPULAN
+
+P1: Jika hujan (p), maka jalanan basah (q)
+P2: Jika jalanan basah (r), maka saya membawa payung (s)
+
+**Negasi dari kesimpulannya adalah**
+
+Pilihan jawaban:
+a. Jika hujan maka saya membawa payung (masih bentuk premis)
+b. Hujan atau saya tidak membawa payung (kesimpulan harus menggunakan dan untuk kasus ini karena dan menunjukkan bahwa kejadian harus terjadi saat bersamaan)
+c. Tidak hujan atau saya membawa payung (bukan kesimpulan dan bukan negasi/tidak melanggar aturan premis, konjungsi harus dan)
+d. Hujan dan saya tidak membawa payung
+e. Tidak hujan dan saya membawa payung (bukan kesimpulan dan bukan negasi/tidak melanggar aturan premis, sah-sah saja membawa payung)
+
+Kesimpulan: Jika hujan, maka saya akan membawa payung (kesimpulanya berupa aturan (implikasi), bukan fakta (konjungsi))
+Negasi: Hujan dan saya tidak membawa payung (beda halnya jika kesimpulan berupa "hujan, dan saya akan membawa payung", jika demikian kesimpulannya menjadi "tidak hujan atau saya tidak bawa payung" baca **NEGASI DARI IMPLIKASI ATAUKAH DARI FAKTA**)
+
+Tujuan kita adalah menemukan satu skenario yang membuktikan pernyataan ini adalah sebuah kebohongan atau aturan yang dilanggar. Jawaban yang benar d. Hujan dan saya tidak membawa payung. Kesimpulan dari premis yang diberikan adalah Jika hujan (p), maka saya membawa payung (s), maka pelanggaran (nagasi/ingkaran) dari ketentuan tersebut adalah Hujan dan saya tidak membawa payung (pʌ~s) (alias ini ngeyel woi, padahal sudah ditentukan aturan hujan dan bawa payung, tetapi malah ttp gabawa)
+
+Untuk menjawab kenapa bukan "Tidak hujan dan saya membawa payung" yang benar:
+Analogi Sederhana
+Bayangkan seorang ibu berkata kepada anaknya:
+"Jika kamu ranking 1, maka ibu akan belikan sepeda."
+Kapan janji ibu ini terbukti bohong (negasinya terjadi)?
+
+Janji ini hanya terbukti bohong jika:
+"Kamu ranking 1, DAN ibu tidak membelikan sepeda."
+
+Sekarang, mari kita lihat skenario yang mirip dengan pertanyaan Anda:
+"Kamu tidak ranking 1, DAN ibu tetap membelikan sepeda."
+
+Apakah dalam skenario ini janji ibu terbukti bohong? Tidak. Janji ibu hanya berlaku jika anaknya ranking 1. Jika tidak ranking 1, ibu bebas mau membelikan sepeda atau tidak karena kebaikan hatinya. Tindakan ibu ini tidak melanggar janji awalnya.
+
+**NEGASI DARI ATURAN (IMPLIKASI) ATAUKAH FAKTA (KONJUNGSI)**
+
+Contoh kesimpulan berupa aturan (implikasi)
+P1: Jika hujan (p), maka jalanan basah (q)
+P2: Jika jalanan basah (r), maka saya membawa payung (s)
+
+Kesimpulan: Jika hujan, saya akan membawa payung
+Negasi: Hujan, dan saya tidak bawa payung
+
+Contoh kesimpulan berupa fakta (konjungsi)
+P1: Hari ini hujan (p)
+P2: Saya membawa payung (q)
+
+Kesimpulan: Hujan dan saya membawa payung
+Negasi: Tidak hujan dan saya tidak membawa payung
+
+**DAN-ATAU**
+*DAN*
+Dalam silogisme, konjungsi "DAN" digunakan untuk menghubungkan dua atau lebih syarat yang bersifat akumulatif dan wajib. Ini berarti, untuk suatu kondisi atau kesimpulan dapat terpenuhi, SEMUA syarat yang dihubungkan oleh kata "DAN" harus benar atau terpenuhi tanpa terkecuali.
+
+Contoh Silogisme dengan "DAN"
+Premis 1: Untuk lulus seleksi beasiswa, seorang mahasiswa harus memiliki IPK di atas 3,75 DAN aktif dalam organisasi kemahasiswaan.
+Premis 2: Anisa memiliki IPK 3,80, tetapi ia tidak aktif dalam organisasi kemahasiswaan manapun.
+
+Karena logika "DAN" menuntut semua syarat terpenuhi, dan Anisa hanya memenuhi satu dari dua syarat, maka syarat utama tidak terpenuhi.
+
+Kesimpulan: Anisa tidak akan lulus seleksi beasiswa
+
+*ATAU*
+Disjungsi "ATAU" digunakan untuk menghubungkan dua atau lebih syarat yang bersifat alternatif atau pilihan. Ini berarti, untuk suatu kondisi atau kesimpulan dapat terpenuhi, CUKUP SALAH SATU dari syarat yang dihubungkan oleh kata "ATAU" yang benar atau terpenuhi.
+
+Contoh Silogisme dengan "ATAU"
+Premis 1: Sebuah laptop dinyatakan lolos kontrol kualitas jika lolos uji performa ATAU lolos uji ketahanan baterai.
+Premis 2: Laptop Model X tidak lolos uji performa, tetapi berhasil lolos uji ketahanan baterai.
+
+Karena logika "ATAU" hanya membutuhkan minimal satu syarat terpenuhi, dan Laptop Model X telah memenuhi salah satunya (uji baterai), maka syarat utama sudah terpenuhi. Jika kedua syarat terpenuhi tidak menjadi masalah.
+
+Kesimpulan: Laptop Model X dinyatakan lolos kontrol kualitas
+
+Contoh lebih lanjut tentang *ATAU*:
+
+Premis Mayor: Saya akan membeli mobil baru atau saya akan merenovasi rumah.
+Premis Minor: Saya tidak membeli mobil baru.
+Kesimpulan: ...
+
+Jika diuraikan berdasarkan segala kemungkinan dari Premis 1, maka:
+
+Kemungkinan Benar:
+Saya tidak akan membeli mobil baru atau saya akan merenovasi rumah (ini yang sesuai dengan premis 2)
+Saya akan membeli mobil baru atau saya tidak akan merenovasi rumah
+Saya akan membeli mobil baru dan saya akan merenovasi rumah
+
+Pasti Salah:
+Saya tidak akan membeli mobil baru dan saya tidak akan merenovasi rumah
+
+**SEMUA-SEBAGIAN-SEMENTARA (PLURAL-SINGULAR)**
+Refernsi Materi Youtube:
+1. https://www.youtube.com/watch?v=ToR7vNxxqGw
+
+Di bawah ini (Variasi 1-4) adalah materi dari AI
+
+Variasi 1
+Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
+Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.
+Kesimpulan: TDDS
+
+Penjelasan
+Ini adalah contoh umum jebakan dalam logika silogisme. Mari kita pecah alasannya:
+
+Premis 1: Menempatkan semua murid kelas 12 ke dalam kelompok yang lebih besar, yaitu kelompok pemakai seragam putih abu-abu.
+
+Bayangkan sebuah lingkaran besar bernama "Pemakai Putih Abu-abu".
+
+Di dalam lingkaran besar itu, ada lingkaran yang lebih kecil bernama "Murid Kelas 12".
+
+Premis 2: Menyatakan bahwa sebagian dari kelompok besar "Pemakai Putih Abu-abu" pergi ke kantin.
+
+Masalahnya terletak pada kata "sebagian".
+
+"Sebagian" yang pergi ke kantin itu bisa saja adalah anggota kelompok "Pemakai Putih Abu-abu" yang bukan murid kelas 12 (misalnya, murid dari sekolah lain yang kebetulan seragamnya sama, atau murid kelas 10 dan 11 dari sekolah yang sama).
+
+Karena kita tidak tahu apakah irisan "sebagian" itu mencakup murid kelas 12 atau tidak, kita tidak bisa membuat kesimpulan pasti.
+
+Kemungkinan 1: Sebagian murid kelas 12 pergi ke kantin. (Bisa jadi benar)
+
+Kemungkinan 2: Tidak ada sama sekali murid kelas 12 yang pergi ke kantin. (Bisa jadi benar juga)
+
+Karena kedua kemungkinan itu bisa terjadi, maka tidak ada kesimpulan yang dapat ditarik secara logis dan pasti.
+
+Variasi 2
+Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
+Premis 2: Sebagian murid kelas 12 pergi ke kantin.
+Kesimpulan: Sebagian yang memakai seragam putih abu-abu pergi ke kantin
+
+Variasi 3
+Premis 1: Semua yang memakai seragam putih abu-abu adalah murid kelas 12.
+Premis 2: Sebagian murid kelas 12 pergi ke kantin.
+Kesimpulan: TDDS (Sama dengan Variasi 1)
+Ada dua kemungkinan yang sama-sama valid berdasarkan premis di atas:
+
+Kemungkinan A: "Sebagian murid kelas 12" yang pergi ke kantin adalah mereka yang memakai seragam putih abu-abu.
+
+Kemungkinan B: "Sebagian murid kelas 12" yang pergi ke kantin adalah kelompok murid kelas 12 yang TIDAK memakai seragam putih abu-abu.
+
+Karena kita tidak bisa memastikan apakah yang terjadi adalah Kemungkinan A atau Kemungkinan B, maka tidak ada kesimpulan pasti yang bisa diambil tentang hubungan antara "pemakai seragam" dan "orang yang pergi ke kantin".
+
+Variasi 4
+Premis 1: Tidak ada seniman yang merupakan birokrat.
+Premis 2: Semua birokrat adalah pegawai negeri.
+Kesimpulan: Ada di contoh soal
+
+Varisasi lain:
+Tiktok @belajarbareng_yuk https://vt.tiktok.com/ZSyh1j5XE/
+Premis 1: Semua X adalah A
+Premis 2: Sebagian X adalah B
+Kesimpulan: ...
+
+A. Semua X yang bukan A adalah B
+B. Semua X yang bukan B adalah A
+C. Semua B yang bukan X adalah A
+D. Semua A yang bukan X adalah B
+E. Semua X adalah A dan B
+
+Jika menurut author, maka diagram akan digambar seperti ini:
+tes-kemampuan-akademis\img\materi-2.jpeg
+
+Sedangkan, jika menurut AI Gemini dan ChatGPT maka diagram yang akan digambarkan adalah sebagai berikut:
+tes-kemampuan-akademis\img\materi-1.jpeg
+
+*Kontradiksi penjelasan terkait plural singular*
+Ada beberapa perbedaan pendapat terkait kesimpulan untuk contoh Variasi 1. Ada yan gmengatakan TDDS tapi ada yang mengatakan bisa disimpulkan
+
+Variasi 1
+Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
+Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.
+Kesimpulan: ...
+
+Yang menyimpulkan ada kesimpulan:
+Jika menggunakan teori dari buku Al-Faiz hal 196 maka kesimpulannya adalah "Sebagian murid kelas 12 pergi ke kantin"
+Jika menggunakan teori dari Tiktok @sobatrandra https://vt.tiktok.com/ZSyr3RBev/ maka kesimpulannya adalah "Sebagian murid kelas 12 pergi ke kantin"
+
+Yang menyimpulkan TDDS
+Jika menggunakan teori Tiktok @hadyanriz pada video https://vt.tiktok.com/ZSyrbCDWR/ maka kesimpulannya TDDS. Karena kita tidak tau yang dimaksud "sebagian yang memakai seragam putih abu-abu" ini sebagian yang termasuk murid kelas 12 atau sebagian lain di luar itu (yang bukan murid kelas 12). Karena bisa jadi ada tukang, pegawai pabrik, dll yang memakai seragam putih abu-abu. Jadi bisa jadi malah tidak ada murid kelas 12 yang ke kantin tetapi ternyata malah pegawai pabrik yang kesana
+
+Jika menggunakan AI, Gemini dan ChatGPT menjawab TDDS. Sebagaimana penjelasan dari Variasi 1-4 sebelumnya
+
+Kesimpulan dari kontradiksi:
+Untuk saat ini berdasarkan pemahaman saya, sebenarnya masih masuk akal untuk bagian "Yang menyimpulkan ada kesimpulan" dan ini lebih aman karena mayoritas tentor mejelaskan demikian. 
+
+Sehingga sebaiknya sementara mengacu pada petunjuk di buku Al-Faiz halaman 196-197
+
+Tetapi amannya, jika tidak ada opsi jawaban "Yang menyimpulkan ada kesimpulan" maka pilih saja jawaban "Yang menyimpulkan TDDS"`;
+
+      // Configure marked to respect single line breaks
+      marked.setOptions({ gfm: true, breaks: true });
+      const container = document.getElementById('content');
+      container.innerHTML = marked.parse(rawMd);
+
+      // Utility: find nearest block ancestor to insert embeds after
+      function nearestBlock(node) {
+        let el = node.parentElement;
+        const isBlock = (tag) => /^(P|DIV|LI|PRE|BLOCKQUOTE|H1|H2|H3|H4|H5|H6)$/i.test(tag);
+        while (el && !isBlock(el.tagName)) el = el.parentElement;
+        return el || node.parentElement;
+      }
+
+      // YouTube helpers
+      function parseTimeToSeconds(t) {
+        if (!t) return 0;
+        if (/^\d+$/.test(t)) return parseInt(t, 10);
+        const m = String(t).match(/(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/i);
+        if (!m) return 0;
+        const h = parseInt(m[1] || '0', 10);
+        const mm = parseInt(m[2] || '0', 10);
+        const s = parseInt(m[3] || '0', 10);
+        return h * 3600 + mm * 60 + s;
+      }
+
+      function extractYouTube(urlStr) {
+        try {
+          const u = new URL(urlStr);
+          let id = null;
+          if (u.hostname.includes('youtu.be')) {
+            id = u.pathname.replace(/^\//, '').split('/')[0];
+          } else if (u.hostname.includes('youtube.com')) {
+            if (u.pathname === '/watch') id = u.searchParams.get('v');
+            else if (u.pathname.startsWith('/shorts/')) id = u.pathname.split('/')[2] || u.pathname.split('/')[1];
+          }
+          if (!id) return null;
+          const t = u.searchParams.get('t') || u.searchParams.get('start');
+          const start = parseTimeToSeconds(t);
+          return { id, start };
+        } catch (_) { return null; }
+      }
+
+      function createYouTubeEmbed(urlStr) {
+        const info = extractYouTube(urlStr);
+        if (!info) return null;
+        const src = 'https://www.youtube.com/embed/' + info.id + (info.start ? ('?start=' + info.start) : '');
+        const wrap = document.createElement('div');
+        wrap.className = 'embed embed-youtube';
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        wrap.appendChild(iframe);
+        return wrap;
+      }
+
+      // TikTok helpers
+      function ensureTikTokScript() {
+        if (document.querySelector('script[src^="https://www.tiktok.com/embed.js"]')) return;
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.tiktok.com/embed.js';
+        document.body.appendChild(s);
+      }
+      function createTikTokEmbed(urlStr) {
+        const bq = document.createElement('blockquote');
+        bq.className = 'tiktok-embed';
+        bq.setAttribute('cite', urlStr);
+        bq.style.maxWidth = '605px';
+        bq.style.minWidth = '325px';
+        const section = document.createElement('section');
+        bq.appendChild(section);
+        ensureTikTokScript();
+        return bq;
+      }
+
+      // Walk text nodes and append embeds beneath the line where URLs appear
+      const textNodes = [];
+      const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      const ytRegex = /https?:\/\/(?:www\.)?(?:youtu\.be\/[^\s]+|youtube\.com\/watch\?[^\s]+|youtube\.com\/shorts\/[^\s]+)/ig;
+      const ttRegex = /https?:\/\/(?:www\.)?vt\.tiktok\.com\/[^\s)]+/ig;
+      const imgRegex = /tes-kemampuan-akademis[\\\/]img[\\\/]([A-Za-z0-9_\-.]+\.(?:png|jpg|jpeg|gif|webp))/ig;
+
+      for (const node of textNodes) {
+        const text = node.nodeValue;
+        if (!text) continue;
+
+        // YouTube embeds
+        let m;
+        ytRegex.lastIndex = 0;
+        while ((m = ytRegex.exec(text)) !== null) {
+          const url = m[0];
+          const block = nearestBlock(node);
+          const embed = createYouTubeEmbed(url);
+          if (block && embed) block.insertAdjacentElement('afterend', embed);
+        }
+
+        // TikTok embeds
+        ttRegex.lastIndex = 0;
+        while ((m = ttRegex.exec(text)) !== null) {
+          const url = m[0];
+          const block = nearestBlock(node);
+          const embed = createTikTokEmbed(url);
+          if (block && embed) block.insertAdjacentElement('afterend', embed);
+        }
+
+        // Image displays (keep original path text; add image below)
+        imgRegex.lastIndex = 0;
+        while ((m = imgRegex.exec(text)) !== null) {
+          const fileName = m[1];
+          const img = document.createElement('img');
+          img.className = 'media-img';
+          img.src = '../img/' + fileName; // relative to this HTML file location
+          img.alt = fileName;
+          const block = nearestBlock(node);
+          if (block) block.insertAdjacentElement('afterend', img);
+        }
+      }
+    </script>
+  </body>
+</html>
+
+
