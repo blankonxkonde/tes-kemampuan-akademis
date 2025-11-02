@@ -74,14 +74,47 @@
         #file-list .folder.expanded > .folder-name::before {
             content: '📂 '; /* Open folder icon */
         }
+
+        #content-viewer {
+            display: none; /* Sembunyikan secara default */
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        #content-viewer img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #back-button {
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #back-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <h1>Daftar File</h1>
+    <h1 id="main-title">Daftar File</h1>
     <ul id="file-list">
         <li class="loading">Memuat daftar file...</li>
     </ul>
 
+    <div id="content-viewer">
+        <button id="back-button">← Kembali ke Daftar File</button>
+        <div id="md-content"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         // --- KONFIGURASI GITHUB ---
         // Ganti dengan username GitHub Anda
@@ -201,17 +234,26 @@
                         renderLevel(item.__children, sublist);
                     } else {
                         li.classList.add('file');
-                const a = document.createElement('a');
-                const span = document.createElement('span');
-                
+                        const a = document.createElement('a');
+                        const span = document.createElement('span');
+
+                        const isMarkdown = item.__path.endsWith('.md');
+                        
                         a.href = item.__path;
                         a.textContent = formatFileName(item.__path);
+                        
+                        if (isMarkdown) {
+                            a.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                showMarkdownContent(item.__path);
+                            });
+                        }
                 
-                span.className = 'file-type';
+                        span.className = 'file-type';
                         span.textContent = `(${getFileType(item.__path)})`;
                 
-                li.appendChild(a);
-                li.appendChild(span);
+                        li.appendChild(a);
+                        li.appendChild(span);
                     }
                     container.appendChild(li);
                 }
@@ -219,7 +261,55 @@
             renderLevel(tree, list);
         }
 
+        async function showMarkdownContent(path) {
+            const fileList = document.getElementById('file-list');
+            const contentViewer = document.getElementById('content-viewer');
+            const mdContent = document.getElementById('md-content');
+            const mainTitle = document.getElementById('main-title');
+
+            try {
+                // URL untuk mengambil konten mentah dari GitHub Pages/repo
+                const contentUrl = `${path}`;
+                const response = await fetch(contentUrl);
+                if (!response.ok) throw new Error(`Gagal memuat konten: ${response.statusText}`);
+                
+                let text = await response.text();
+
+                // Ganti path gambar relatif ke path absolut di repo GitHub
+                // Asumsi: folder 'img' ada di root repo. Sesuaikan jika berbeda.
+                const repoRootUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/`;
+                text = text.replace(/!\[(.*?)\]\((?!https?:)(.*?)\)/g, (match, alt, src) => {
+                    // Pastikan path gambar relatif terhadap root repo
+                    let imgSrc = src.startsWith('/') ? src.substring(1) : src;
+                    return `![${alt}](${repoRootUrl}${imgSrc})`;
+                });
+
+
+                mdContent.innerHTML = marked.parse(text);
+
+                fileList.style.display = 'none';
+                contentViewer.style.display = 'block';
+                mainTitle.textContent = formatFileName(path);
+
+            } catch (error) {
+                console.error("Gagal menampilkan konten Markdown:", error);
+                mdContent.innerHTML = `<p>Gagal memuat konten dari file: ${path}.</p>`;
+                fileList.style.display = 'none';
+                contentViewer.style.display = 'block';
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
+            const fileList = document.getElementById('file-list');
+            const contentViewer = document.getElementById('content-viewer');
+            const mainTitle = document.getElementById('main-title');
+
+            document.getElementById('back-button').addEventListener('click', () => {
+                contentViewer.style.display = 'none';
+                fileList.style.display = 'block';
+                mainTitle.textContent = 'Daftar File';
+            });
+
             try {
                 const files = await getRepoFiles();
                 const fileTree = buildFileTree(files);
