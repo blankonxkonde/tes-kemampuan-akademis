@@ -413,3 +413,28 @@ Untuk saat ini berdasarkan pemahaman saya, sebenarnya masih masuk akal untuk bag
 Sehingga sebaiknya sementara mengacu pada petunjuk di buku Al-Faiz halaman 196-197
 
 Tetapi amannya, jika tidak ada opsi jawaban "Yang menyimpulkan ada kesimpulan" maka pilih saja jawaban "Yang menyimpulkan TDDS"
+
+**TIDAK SELALU BERARTI NEGASI**
+
+Bagian ini menekankan bahwa jika ada premis baru yang seolah-olah menegasikan salah satu premis, maka cermati apakah itu merupakan negasi yang mana bisa jadi dapat disimpulkan (jika yang dinegasikan akibatnya (Modus Tollens)) atukah tetap tidak dapat disimpulkan (jika yang dinegasikan sebabnya (melawan anteseden))
+
+---
+
+*   **Contoh 1: Premis Baru yang Tidak Relevan**
+    *   **Premis 1**: Jika Andi tampan (`p`) maka Ratna suka pada Andi (`q`).
+    *   **Premis 2**: Ratna suka pada Edo (`r`).
+    *   **Kesimpulan**: Tidak Dapat Ditarik Simpulan (TDDS).
+    > *Penjelasan*: Premis kedua (`Ratna suka pada Edo`) adalah pernyataan yang sama sekali baru (`r`) dan tidak berhubungan dengan hubungan sebab-akibat antara `Andi tampan` (p) dan `Ratna suka pada Andi` (q). Tidak ada dasar logis untuk menghubungkannya.
+
+*   **Contoh 2: Modus Tollens (Valid)**
+    *   **Premis 1**: Jika saklar ditekan (`p`), maka lampu akan menyala (`q`).
+    *   **Premis 2**: Lampu itu Mati (`~q`).
+    *   **Kesimpulan**: Saklar tidak ditekan (`~p`).
+    > *Penjelasan*: Ini adalah contoh valid dari **Modus Tollens**.
+
+*   **Contoh 3: Menyangkal Anteseden (Tidak Valid)**
+    *   **Premis 1**: Semua unggas (`p`) adalah hewan bertelur (`q`).
+    *   **Premis 2**: Buaya bukan unggas (`~p`).
+    *   **Kesimpulan**: Tidak Dapat Ditarik Simpulan (TDDS).
+    > *Penjelasan*: Ini adalah kesesatan logika **menyangkal anteseden**.
+
