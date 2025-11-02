@@ -325,22 +325,52 @@ Di bawah ini (Variasi 1-4) adalah materi dari AI
 Variasi 1
 Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
 Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.
-Kesimpulan: ...
+Kesimpulan: TDDS
+
+Penjelasan
+Ini adalah contoh umum jebakan dalam logika silogisme. Mari kita pecah alasannya:
+
+Premis 1: Menempatkan semua murid kelas 12 ke dalam kelompok yang lebih besar, yaitu kelompok pemakai seragam putih abu-abu.
+
+Bayangkan sebuah lingkaran besar bernama "Pemakai Putih Abu-abu".
+
+Di dalam lingkaran besar itu, ada lingkaran yang lebih kecil bernama "Murid Kelas 12".
+
+Premis 2: Menyatakan bahwa sebagian dari kelompok besar "Pemakai Putih Abu-abu" pergi ke kantin.
+
+Masalahnya terletak pada kata "sebagian".
+
+"Sebagian" yang pergi ke kantin itu bisa saja adalah anggota kelompok "Pemakai Putih Abu-abu" yang bukan murid kelas 12 (misalnya, murid dari sekolah lain yang kebetulan seragamnya sama, atau murid kelas 10 dan 11 dari sekolah yang sama).
+
+Karena kita tidak tahu apakah irisan "sebagian" itu mencakup murid kelas 12 atau tidak, kita tidak bisa membuat kesimpulan pasti.
+
+Kemungkinan 1: Sebagian murid kelas 12 pergi ke kantin. (Bisa jadi benar)
+
+Kemungkinan 2: Tidak ada sama sekali murid kelas 12 yang pergi ke kantin. (Bisa jadi benar juga)
+
+Karena kedua kemungkinan itu bisa terjadi, maka tidak ada kesimpulan yang dapat ditarik secara logis dan pasti.
 
 Variasi 2
 Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
 Premis 2: Sebagian murid kelas 12 pergi ke kantin.
-Kesimpulan: ...
+Kesimpulan: Sebagian yang memakai seragam putih abu-abu pergi ke kantin
 
 Variasi 3
 Premis 1: Semua yang memakai seragam putih abu-abu adalah murid kelas 12.
 Premis 2: Sebagian murid kelas 12 pergi ke kantin.
-Kesimpulan: ...
+Kesimpulan: TDDS (Sama dengan Variasi 1)
+Ada dua kemungkinan yang sama-sama valid berdasarkan premis di atas:
+
+Kemungkinan A: "Sebagian murid kelas 12" yang pergi ke kantin adalah mereka yang memakai seragam putih abu-abu.
+
+Kemungkinan B: "Sebagian murid kelas 12" yang pergi ke kantin adalah kelompok murid kelas 12 yang TIDAK memakai seragam putih abu-abu.
+
+Karena kita tidak bisa memastikan apakah yang terjadi adalah Kemungkinan A atau Kemungkinan B, maka tidak ada kesimpulan pasti yang bisa diambil tentang hubungan antara "pemakai seragam" dan "orang yang pergi ke kantin".
 
 Variasi 4
 Premis 1: Tidak ada seniman yang merupakan birokrat.
 Premis 2: Semua birokrat adalah pegawai negeri.
-Kesimpulan: ...
+Kesimpulan: Ada di contoh soal
 
 Varisasi lain:
 Tiktok @belajarbareng_yuk https://vt.tiktok.com/ZSyh1j5XE/
