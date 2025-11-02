@@ -268,22 +268,21 @@
             const mainTitle = document.getElementById('main-title');
 
             try {
-                // URL untuk mengambil konten mentah dari GitHub Pages/repo
-                const contentUrl = `${path}`;
+                // URL untuk mengambil konten mentah dari repo GitHub
+                const repoRawUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/`;
+                const contentUrl = `${repoRawUrl}${path}`;
                 const response = await fetch(contentUrl);
                 if (!response.ok) throw new Error(`Gagal memuat konten: ${response.statusText}`);
                 
                 let text = await response.text();
 
                 // Ganti path gambar relatif ke path absolut di repo GitHub
-                // Asumsi: folder 'img' ada di root repo. Sesuaikan jika berbeda.
-                const repoRootUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/`;
-                text = text.replace(/!\[(.*?)\]\((?!https?:)(.*?)\)/g, (match, alt, src) => {
-                    // Pastikan path gambar relatif terhadap root repo
-                    let imgSrc = src.startsWith('/') ? src.substring(1) : src;
-                    return `![${alt}](${repoRootUrl}${imgSrc})`;
+                const fileDirUrl = `${repoRawUrl}${path.substring(0, path.lastIndexOf('/') + 1)}`;
+                text = text.replace(/!\[(.*?)\]\((?!https?:\/\/)(.*?)\)/g, (match, alt, src) => {
+                    // Buat URL absolut dari path relatif gambar
+                    const imageUrl = new URL(src, fileDirUrl).href;
+                    return `![${alt}](${imageUrl})`;
                 });
-
 
                 mdContent.innerHTML = marked.parse(text);
 

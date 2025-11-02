@@ -350,10 +350,10 @@ D. Semua A yang bukan X adalah B
 E. Semua X adalah A dan B
 
 Jika menurut author, maka diagram akan digambar seperti ini:
-![materi-2.jpeg](tes-kemampuan-akademis/img/materi-2.jpeg)
+![materi-2.jpeg](../img/materi-2.jpeg)
 
 Sedangkan, jika menurut AI Gemini dan ChatGPT maka diagram yang akan digambarkan adalah sebagai berikut:
-![materi-1.jpeg](tes-kemampuan-akademis/img/materi-1.jpeg)
+![materi-1.jpeg](../img/materi-1.jpeg)
 
 ***Kontradiksi penjelasan terkait plural singular***
 Ada beberapa perbedaan pendapat terkait kesimpulan untuk contoh Variasi 1. Ada yan gmengatakan TDDS tapi ada yang mengatakan bisa disimpulkan
