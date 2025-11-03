@@ -390,31 +390,33 @@ tes-kemampuan-akademis\img\materi-2.jpeg
 Sedangkan, jika menurut AI Gemini dan ChatGPT maka diagram yang akan digambarkan adalah sebagai berikut:
 tes-kemampuan-akademis\img\materi-1.jpeg
 
-*Kontradiksi penjelasan terkait plural singular*
+## Kontradiksi Penjelasan Terkait Plural Singular
 Ada beberapa perbedaan pendapat terkait kesimpulan untuk contoh Variasi 1. Ada yan gmengatakan TDDS tapi ada yang mengatakan bisa disimpulkan
 
-Variasi 1
-Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.
-Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.
-Kesimpulan: ...
+> **Variasi 1**
+> 
+> Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.<br>
+> Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.<br>
+> 
+> Kesimpulan: ...
 
-Yang menyimpulkan ada kesimpulan:
-Jika menggunakan teori dari buku Al-Faiz hal 196 maka kesimpulannya adalah "Sebagian murid kelas 12 pergi ke kantin"
-Jika menggunakan teori dari Tiktok @sobatrandra https://vt.tiktok.com/ZSyr3RBev/ maka kesimpulannya adalah "Sebagian murid kelas 12 pergi ke kantin"
+---
+### Yang menyimpulkan ada kesimpulan
+- Jika menggunakan teori dari buku Al-Faiz hal 196 maka kesimpulannya adalah "Sebagian murid kelas 12 pergi ke kantin"
+- Jika menggunakan teori dari Tiktok @sobatrandra https://vt.tiktok.com/ZSyr3RBev/ maka kesimpulannya adalah "Sebagian murid kelas 12 pergi ke kantin"
 
-Yang menyimpulkan TDDS
-Jika menggunakan teori Tiktok @hadyanriz pada video https://vt.tiktok.com/ZSyrbCDWR/ maka kesimpulannya TDDS. Karena kita tidak tau yang dimaksud "sebagian yang memakai seragam putih abu-abu" ini sebagian yang termasuk murid kelas 12 atau sebagian lain di luar itu (yang bukan murid kelas 12). Karena bisa jadi ada tukang, pegawai pabrik, dll yang memakai seragam putih abu-abu. Jadi bisa jadi malah tidak ada murid kelas 12 yang ke kantin tetapi ternyata malah pegawai pabrik yang kesana
+### Yang menyimpulkan TDDS
+- Jika menggunakan teori Tiktok @hadyanriz pada video https://vt.tiktok.com/ZSyrbCDWR/ maka kesimpulannya TDDS. Karena kita tidak tau yang dimaksud "sebagian yang memakai seragam putih abu-abu" ini sebagian yang termasuk murid kelas 12 atau sebagian lain di luar itu (yang bukan murid kelas 12). Karena bisa jadi ada tukang, pegawai pabrik, dll yang memakai seragam putih abu-abu. Jadi bisa jadi malah tidak ada murid kelas 12 yang ke kantin tetapi ternyata malah pegawai pabrik yang kesana
+- Jika menggunakan AI, Gemini dan ChatGPT menjawab TDDS. Sebagaimana penjelasan dari Variasi 1-4 sebelumnya
 
-Jika menggunakan AI, Gemini dan ChatGPT menjawab TDDS. Sebagaimana penjelasan dari Variasi 1-4 sebelumnya
-
-Kesimpulan dari kontradiksi:
+### Kesimpulan dari kontradiksi tersebut
 Untuk saat ini berdasarkan pemahaman saya, sebenarnya masih masuk akal untuk bagian "Yang menyimpulkan ada kesimpulan" dan ini lebih aman karena mayoritas tentor mejelaskan demikian. 
 
 Sehingga sebaiknya sementara mengacu pada petunjuk di buku Al-Faiz halaman 196-197
 
 Tetapi amannya, jika tidak ada opsi jawaban "Yang menyimpulkan ada kesimpulan" maka pilih saja jawaban "Yang menyimpulkan TDDS"
 
-**TIDAK SELALU BERARTI NEGASI**
+## Tidak Selalu Berarti Negasi
 
 Bagian ini menekankan bahwa jika ada premis baru yang seolah-olah menegasikan salah satu premis, maka cermati apakah itu merupakan negasi yang mana bisa jadi dapat disimpulkan (jika yang dinegasikan akibatnya (Modus Tollens)) atukah tetap tidak dapat disimpulkan (jika yang dinegasikan sebabnya (melawan anteseden))
 
