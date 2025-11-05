@@ -330,12 +330,18 @@ E. Jika hari ini cerah maka harga cokelat lebih murah
 
 Belinda tidak pergi ke mall atau harga cokelat tidak lebih murah (~q v ~s) ekuivalen dengan Tidak benar bahwa [Belinda pergi ke mall dan harga cokelat lebih murah] ~(q ʌ s) = ~q ʌ ~s
 
+Di bawah ini sebenarnya tidak ada hubungannya dengan jawaban, karena jawaban hanya perlu mencari Modus Tollens. Yang artinya hanya perlu meneerapkan jika akibat dinegasikan (~q v ~s), maka jawabannya adalah sebab dinegasikan juga (~p v ~r) jawabannya b. Hari ini tidak cerah atau sekarang bukan bulan Februari
+
+Di bawah ini sebagai tambahan saja, jika ada pertanyaan kapan kondisi bertentangan (negasi) dari fakta (seperti di bagian NEGASI DARI KESIMPULAN)
+
 Jika diuraikan berdasarkan segala kemungkinan dari Fakta, maka:
 Kemungkinan benar: (ini harus dikoreksi, krena hukum d morgan, cek Gemini sebelumnya)
 Belinda tidak pergi ke mall dan harga cokelat tidak lebih murah
-Belinda pergi ke mall dan harga cokelat 
+Belinda tidak pergi ke mall dan harga cokelat lebih murah
+Belinda pergi ke mall dan harga cokelat tidak lebih murah
 
 Pasti salah:
+Belinda pergi ke mall dan harga cokelat lebih murah
 
 **SEMUA-SEBAGIAN-SEMENTARA (PLURAL-SINGULAR)**
 Refernsi Materi Youtube:

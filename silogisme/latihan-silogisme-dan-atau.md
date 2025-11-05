@@ -51,7 +51,7 @@ b. Laporan proyek belum dianggap selesai.
 c. Direktur tidak perlu menyetujui laporan.
 d. Laporan proyek disetujui manajer atau direktur.
 
-Laporan proyek belum dianggap selesai (a)
+Laporan proyek belum dianggap selesai (b)
 
 7. Premis 1: Semua ASN harus bersikap netral dan profesional.
 Premis 2: Sebagian ASN adalah tenaga pendidik.
@@ -61,8 +61,7 @@ b. Sebagian tenaga pendidik harus bersikap netral dan profesional.
 c. Sebagian ASN yang bukan tenaga pendidik tidak harus profesional.
 d. Semua ASN adalah tenaga pendidik yang netral.
 
-Sekurangnya satu tenaga pendidik mesti bersikap netral dan profesional. Kita tidak tau apakah semua tenaga pendidik itu ASN atau bukan, yang diketahui hanyalah ada tenaga pendidik yang ASN (P2: sebagian ASN adalah tenaga pendidik, begitu sebaliknya sekurangnya 1 ASN adalah tenaga pendidik), artinya Sebagian tenaga pendidik harus bersikap netral dan profesional (b). Jadi sebagian bisa dimaknai sebagai 'ada' atau setidaknya ada 1 dari tenaga pendidik tersebut adalah ASN
---Sebaiknya untuk tipe soal di atas dibuatkan latihan
+Baca bagian 'Kontradiksi Penjelasan Terkait Plural Singular' pada materi silogisme. Jika menggunakan aliran 'Yang menyimpulkan ada kesimpulan', maka jawabannya adalah b. Sebagian tenaga pendidik harus bersikap netral dan profesional 
 
 8. Premis 1: Pengajuan cuti akan disetujui jika pemohon tidak memiliki pekerjaan mendesak atau ada pegawai lain yang bisa menggantikan.
 Premis 2: Pengajuan cuti Doni tidak disetujui.
