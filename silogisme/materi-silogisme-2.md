@@ -309,12 +309,33 @@ Kesimpulan: ...
 Jika diuraikan berdasarkan segala kemungkinan dari Premis 1, maka:
 
 Kemungkinan Benar:
-Saya tidak akan membeli mobil baru atau saya akan merenovasi rumah (ini yang sesuai dengan premis 2)
-Saya akan membeli mobil baru atau saya tidak akan merenovasi rumah
+Saya tidak akan membeli mobil baru dan saya akan merenovasi rumah (ini yang sesuai dengan premis 2)
+Saya akan membeli mobil baru dan saya tidak akan merenovasi rumah
 Saya akan membeli mobil baru dan saya akan merenovasi rumah
 
 Pasti Salah:
 Saya tidak akan membeli mobil baru dan saya tidak akan merenovasi rumah
+
+Contoh 2 (Al-Faiz hal 205):
+Premis 1: Jika hari ini cerah maka Belinda pergi ke mall (p->q)
+Premis 2: Jika sekarang bulan Februari maka harga cokelat lebih murah (r->s)
+Fakta: Belinda tidak pergi ke mall atau harga cokelat tidak lebih murah (~q v ~s)
+
+Opsi:
+A. Hari ini cerah dan sekarang bukan bulan Februari
+B. Hari ini tidak cerah atau sekarang bukan bulan Februari
+C. Belinda pergi ke mall atau harga cokelat lebih murah
+D. Jika sekarang bulan Februari maka Belinda pergi ke mall
+E. Jika hari ini cerah maka harga cokelat lebih murah
+
+Belinda tidak pergi ke mall atau harga cokelat tidak lebih murah (~q v ~s) ekuivalen dengan Tidak benar bahwa [Belinda pergi ke mall dan harga cokelat lebih murah] ~(q ʌ s) = ~q ʌ ~s
+
+Jika diuraikan berdasarkan segala kemungkinan dari Fakta, maka:
+Kemungkinan benar: (ini harus dikoreksi, krena hukum d morgan, cek Gemini sebelumnya)
+Belinda tidak pergi ke mall dan harga cokelat tidak lebih murah
+Belinda pergi ke mall dan harga cokelat 
+
+Pasti salah:
 
 **SEMUA-SEBAGIAN-SEMENTARA (PLURAL-SINGULAR)**
 Refernsi Materi Youtube:
