@@ -23,3 +23,8 @@
 12. Ali dan Budi berangkat dari kota P ke kota Q yang berjarak 390 km. Ali mengendarai mobil dengan kecepatan konstan. Budi, yang juga mengendarai mobil, berangkat 1 jam setelah Ali dengan kecepatan 20 km/jam lebih cepat dari Ali. Jika Budi tiba di kota Q 30 menit lebih awal dari Ali, berapakah kecepatan mobil Ali dan Budi?
 
 13. Ali dan Budi berangkat dari kota P ke kota Q yang berjarak 360 km. Ali mengendarai mobil dengan kecepatan konstan. Budi, yang juga mengendarai mobil, berangkat 1 jam setelah Ali dengan kecepatan 20 km/jam lebih cepat dari Ali. Jika Budi tiba di kota Q 30 menit lebih awal dari Ali, berapakah kecepatan mobil Ali dan Budi?
+
+14. 
+Sebuah mobil travel berangkat dari kota P ke kota Q dengan kecepatan 80 km/jam. Karena jalanan lebih padat saat kembali, mobil tersebut pulang dari kota Q ke kota P dengan kecepatan 50 km/jam. Berapakah kecepatan rata-rata mobil travel untuk seluruh perjalanan pulang-pergi tersebut?
+15. 
+Seorang pengendara sepeda motor menempuh perjalanan dari kota X ke kota Z yang melewati kota Y. Jarak dari kota X ke Y sama dengan jarak dari kota Y ke Z. Jika kecepatan dari X ke Y adalah 30 km/jam dan kecepatan dari Y ke Z adalah 60 km/jam, berapakah kecepatan rata-rata pengendara motor tersebut dari kota X ke Z?

@@ -258,13 +258,20 @@
             <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
             <div class="answer">
                 <p><strong>Logika:</strong> Kecepatan rata-rata BUKAN (60+40)/2. Triknya adalah dengan memisalkan jaraknya (misal 120 km, kelipatan dari 60 dan 40) lalu menghitung waktu total dan jarak total.</p>
-                <p><strong>Jawaban:</strong><br>
-                Misalkan jarak A-B adalah 120 km.<br>
-                1. Waktu pergi (t1) = 120 km / 60 km/jam = 2 jam.<br>
-                2. Waktu pulang (t2) = 120 km / 40 km/jam = 3 jam.<br>
-                3. Jarak total = 120 km + 120 km = 240 km.<br>
-                4. Waktu total = 2 jam + 3 jam = 5 jam.<br>
-                5. Kecepatan rata-rata = Jarak total / Waktu total = 240 km / 5 jam = 48 km/jam.</p>
+                <p><strong>Jawaban:</strong></p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    s_{AB} &= 120 \text{ km},\\
+                    t_1 &= \frac{120}{60} = 2 \text{ jam},\\
+                    t_2 &= \frac{120}{40} = 3 \text{ jam},\\
+                    s_{\text{total}} &= 120 + 120 = 240 \text{ km},\\
+                    t_{\text{total}} &= 2 + 3 = 5 \text{ jam},\\
+                    v_{\text{rata}} &= \frac{240}{5} = 48 \text{ km/jam}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Menghitung \((60 + 40) / 2 = 50\) km/jam hanya memberi rata-rata aritmetika dari dua kecepatan—cara ini baru benar bila lama waktunya sama, bukan saat jarak yang ditempuh sama seperti pada soal ini.</p>
             </div>
         </div>
         
@@ -274,17 +281,23 @@
             <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
             <div class="answer">
                 <p><strong>Logika:</strong> Ini adalah variasi soal berpapasan. Saat mobil berangkat, motor sudah berjalan 1 jam. Jadi, sisa jarak yang harus ditempuh bersama-sama sudah berkurang.</p>
-                <p><strong>Jawaban:</strong><br>
-                1. Jarak yang ditempuh motor dalam 1 jam pertama = 50 km/jam × 1 jam = 50 km.<br>
-                2. Sisa jarak saat mobil mulai berangkat = 130 km - 50 km = 80 km.<br>
-                3. Waktu berpapasan setelah mobil berangkat = Sisa Jarak / (v_motor + v_mobil) = 80 km / (50 + 60) km/jam = 80 / 110 jam ≈ 0.73 jam.<br>
-                4. Jarak dari kota P saat berpapasan = Jarak awal motor + Jarak motor setelah mobil jalan<br>
-                Jarak = 50 km + (50 km/jam × 80/110 jam) = 50 + 45.45 = 95.45 km.<br>
-                Mereka berpapasan sekitar 95.45 km dari kota P.</p>
+                <p><strong>Jawaban:</strong></p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    d_{\text{awal}} &= 50 \times 1 = 50 \text{ km},\\
+                    d_{\text{sisa}} &= 130 - 50 = 80 \text{ km},\\
+                    t_{\text{papasan}} &= \frac{80}{50 + 60} = \frac{80}{110} \approx 0.73 \text{ jam},\\
+                    d_{\text{tambahan}} &= 50 \times \frac{80}{110} \approx 36.36 \text{ km},\\
+                    d_{\text{dari P}} &= 50 + 36.36 \approx 86.36 \text{ km}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Mereka berpapasan sekitar 86.36 km dari kota P.</p>
             </div>
         </div>
 
-        <!-- Tingkat Kesulitan 4: Skenario Kompleks dengan Variasi -->
+        <!-- Tingkat Kesulitan 4: SkenarioF Kompleks dengan Variasi -->
         <h2 class="difficulty-level">Tingkat Kesulitan 4: Logika Tingkat Lanjut</h2>
 
         <div class="question-block">
@@ -325,12 +338,45 @@
             <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
             <div class="answer">
                 <p><strong>Logika:</strong> Ini adalah soal berpapasan dalam konteks lintasan melingkar. Jarak total yang harus mereka "tutup" bersama-sama adalah satu keliling lintasan.</p>
-                <p><strong>Jawaban:</strong><br>
-                1. Konsepnya sama dengan berpapasan di lintasan lurus. Jarak totalnya adalah panjang lintasan.<br>
-                2. Kecepatan gabungan = 8 km/jam + 12 km/jam = 20 km/jam.<br>
-                3. Waktu untuk bertemu (t) = Jarak total / Kecepatan gabungan = 1.2 km / 20 km/jam = 0.06 jam.<br>
-                4. Konversi ke menit: 0.06 jam × 60 menit/jam = 3.6 menit.<br>
-                Mereka akan bertemu setelah 3.6 menit.</p>
+                <p><strong>Jawaban:</strong></p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    s &= 1.2 \text{ km},\\
+                    v_{\text{Adi}} &= 8 \text{ km/jam},\\
+                    v_{\text{Beni}} &= 12 \text{ km/jam},\\
+                    v_{\text{gabungan}} &= 20 \text{ km/jam}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    \[
+                    \require{cancel}
+                    \begin{aligned}
+                    t &= \frac{s}{v_{\text{gabungan}}},\\
+                    t &= \frac{1.2}{20},\\
+                    t &= \frac{12}{10} \times \frac{1}{20},\\
+                    t &= \frac{\cancel{12}^{6}}{\cancel{10}^{5}} \times \frac{1}{20},\\
+                    t &= \frac{6}{5} \times \frac{1}{20},\\
+                    t &= \frac{3}{5} \times \frac{1}{10},\\
+                    t &= \frac{3}{50} \text{ jam}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    t_{\text{menit}} &= \frac{3}{50} \times 60,\\
+                    t_{\text{menit}} &= \frac{3}{50} \times \frac{60}{1},\\
+                    t_{\text{menit}} &= \frac{3 \times 60}{50},\\
+                    t_{\text{menit}} &= \frac{180}{50},\\
+                    t_{\text{menit}} &= 3 + \frac{30}{50},\\
+                    t_{\text{menit}} &= 3 + \frac{3}{5},\\
+                    t_{\text{menit}} &= 3.6 \text{ menit}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Mereka akan bertemu pertama kali setelah 3.6 menit.</p>
             </div>
         </div>
         
@@ -340,15 +386,28 @@
             <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
             <div class="answer">
                 <p><strong>Logika:</strong> Ini adalah soal aljabar. Kuncinya adalah menyadari bahwa selisih waktu antara dua skenario perjalanan adalah 15 menit (10 menit terlambat + 5 menit lebih awal). Jaraknya sama (s).</p>
-                <p><strong>Jawaban:</strong><br>
-                Misal s = jarak, t_seharusnya = waktu tiba yang tepat.<br>
-                Skenario 1: s / 4 = t_seharusnya + 10/60 jam<br>
-                Skenario 2: s / 5 = t_seharusnya - 5/60 jam<br>
-                Kurangi persamaan 1 dengan persamaan 2:<br>
-                s/4 - s/5 = (t_seharusnya + 10/60) - (t_seharusnya - 5/60)<br>
-                (5s - 4s) / 20 = 15/60 jam<br>
-                s / 20 = 1/4 jam<br>
-                s = 20 / 4 = 5 km.</p>
+                <p><strong>Jawaban:</strong></p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    s &= \text{jarak (km)},\\
+                    t &= \text{waktu tepat (jam)},\\
+                    \frac{s}{4} &= t + \frac{10}{60},\\
+                    \frac{s}{5} &= t - \frac{5}{60}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    \frac{s}{4} - \frac{s}{5} &= \frac{15}{60},\\
+                    \frac{5s - 4s}{20} &= \frac{1}{4},\\
+                    \frac{s}{20} &= \frac{1}{4},\\
+                    s &= 5 \text{ km}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Jadi jarak dari rumah ke kantor adalah 5 km.</p>
             </div>
         </div>
 
@@ -357,20 +416,41 @@
 
         <div class="question-block">
             <p class="question-title">Soal 17</p>
-            <p>Seorang petani berjalan dari desa ke ladangnya. Jika ia berjalan dengan kecepatan 4 km/jam, ia akan tiba di ladang pukul 10:00. Jika ia berjalan dengan kecepatan 6 km/jam, ia akan tiba pukul 09:00. Pukul berapa ia harus berangkat agar tiba di ladang tepat pukul 09:30?</p>
+            <p>Seorang petani berjalan dari desa ke ladangnya. Jika ia berjalan dengan kecepatan 4 km/jam, ia akan tiba di ladang pukul 10:00. Jika ia berjalan dengan kecepatan 6 km/jam, ia akan tiba pukul 09:00. Sekarang ia ingin menentukan sendiri jam berangkat dan memilih satu kecepatan konstan (tidak harus 4 atau 6 km/jam) agar tiba tepat pukul 09:30. Tentukan pasangan waktu berangkat dan kecepatan yang harus ia ambil.</p>
             <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
             <div class="answer">
-                <p><strong>Logika:</strong> Pertama, temukan jarak dengan menyamakan dua skenario perjalanan (mirip soal 16). Kemudian, gunakan jarak tersebut untuk menghitung waktu tempuh yang ideal dan mencari waktu keberangkatan.</p>
-                <p><strong>Jawaban:</strong><br>
-                Misal s = jarak, t_berangkat = waktu berangkat.<br>
-                Skenario 1: s/4 = 10 - t_berangkat<br>
-                Skenario 2: s/6 = 9 - t_berangkat<br>
-                Kurangi pers. 1 dengan pers. 2: s/4 - s/6 = 1 jam -> (3s-2s)/12 = 1 -> s = 12 km.<br>
-                Jaraknya 12 km.
-                Untuk tiba pukul 09:30, kita perlu tahu kecepatan yang dibutuhkan. Pertama cari waktu berangkat.<br>
-                Gunakan skenario 1: 12/4 = 3 jam. Waktu tempuh 3 jam, tiba jam 10:00. Berarti berangkat pukul 07:00.<br>
-                Untuk tiba pukul 09:30 dari pukul 07:00, butuh waktu 2.5 jam.
-                Jadi, petani harus berangkat pukul 07:00.</p>
+                <p><strong>Logika:</strong> Gunakan dua skenario awal untuk membentuk sistem persamaan dan memperoleh jarak serta jam keberangkatan aktual. Setelah itu, gunakan syarat baru (tiba 09:30 dengan satu kecepatan konstan) untuk menentukan nilai kecepatannya.</p>
+                <p><strong>Jawaban:</strong></p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    s &= \text{jarak (km)},\\
+                    t_b &= \text{waktu berangkat (jam)},\\
+                    \frac{s}{4} &= 10 - t_b,\\[4pt]
+                    \frac{s}{6} &= 9 - t_b.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    \frac{s}{4} - \frac{s}{6} &= 1,\\
+                    \frac{3s - 2s}{12} &= 1,\\
+                    \frac{s}{12} &= 1,\\
+                    s &= 12 \text{ km}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    t_b &= 10 - \frac{s}{4} = 10 - 3 = 07{:}00,\\[6pt]
+                    t_{\text{target}} &= 09{:}30 - t_b = 2.5 \text{ jam},\\
+                    v_{\text{target}} &= \frac{s}{t_{\text{target}}} = \frac{12}{2.5} = 4.8 \text{ km/jam}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Kesimpulannya, petani perlu berangkat pukul 07:00 dan menjaga kecepatan konstan sekitar 4,8 km/jam agar sampai tepat pukul 09:30.</p>
             </div>
         </div>
 
