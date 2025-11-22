@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Kecepatan 2 - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Kecepatan 2 - Pembahasan</h1>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Sebuah mobil dan sebuah motor berangkat pada waktu yang sama dari kota C ke kota D yang berjarak 180km. Kecepatan mobil 20% lebih cepat daripada motor. Mobil berhenti selama 30 menit di tengah perjalanan untuk mengisi bensin, namun keduanya tiba di kota D pada waktu yang sama. Berapakah kecepatan motor?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 180 km<br>
+                    - \(v_{\text{mobil}} = 1{,}2 \times v_{\text{motor}}\) (20% lebih cepat)<br>
+                    - Mobil berhenti 30 menit = 0,5 jam<br>
+                    - Keduanya tiba bersamaan
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\text{motor}} = v\) km/jam, maka \(v_{\text{mobil}} = 1{,}2v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh motor:</strong> \[t_{\text{motor}} = \frac{180}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh mobil:</strong> \[t_{\text{mobil}} = \frac{180}{1{,}2v} + 0{,}5 = \frac{150}{v} + 0{,}5 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Karena tiba bersamaan:</strong><br>
+                    \[\frac{180}{v} = \frac{150}{v} + 0{,}5\]<br>
+                    \[\frac{180}{v} - \frac{150}{v} = 0{,}5\]<br>
+                    \[\frac{30}{v} = 0{,}5\]<br>
+                    \[v = \frac{30}{0{,}5} = 60 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan motor adalah 60 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Kecepatan sebuah kereta api 50% lebih cepat dari bus. Bus dan kereta tersebut berangkat dan sampai pada waktu yang sama dari kota A ke kota B sejauh 75 km. Jika kereta api berhenti di sebuah stasiun antara kota A dan B selama 12,5 menit maka kecepatan bis adalah
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 75 km<br>
+                    - \(v_{\text{kereta}} = 1{,}5 \times v_{\text{bus}}\) (50% lebih cepat)<br>
+                    - Kereta berhenti 12,5 menit = \(\frac{12{,}5}{60} = \frac{5}{24}\) jam<br>
+                    - Keduanya tiba bersamaan
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\text{bus}} = v\) km/jam, maka \(v_{\text{kereta}} = 1{,}5v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh bus:</strong> \[t_{\text{bus}} = \frac{75}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh kereta:</strong> \[t_{\text{kereta}} = \frac{75}{1{,}5v} + \frac{5}{24} = \frac{50}{v} + \frac{5}{24} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Karena tiba bersamaan:</strong><br>
+                    \[\frac{75}{v} = \frac{50}{v} + \frac{5}{24}\]<br>
+                    \[\frac{75}{v} - \frac{50}{v} = \frac{5}{24}\]<br>
+                    \[\frac{25}{v} = \frac{5}{24}\]<br>
+                    \[v = \frac{25 \times 24}{5} = 120 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan bus adalah 120 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Sebuah mobil bergerak sejauh 42km dengan menggunakan 5/7 kecepatan maksimumnya dalam waktu 1 jam 40 menit 48 detik. Kecepatan maksimum yg dapat dicapai adalah
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 42 km<br>
+                    - \(v_{\text{aktual}} = \frac{5}{7} \times v_{\max}\)<br>
+                    - Waktu = 1 jam 40 menit 48 detik
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi waktu ke jam:</strong><br>
+                    1 jam 40 menit 48 detik = \(1 + \frac{40}{60} + \frac{48}{3600}\)<br>
+                    = \(1 + \frac{2}{3} + \frac{2}{150} = 1 + 0{,}6667 + 0{,}0133 = 1{,}68\) jam
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus:</strong> Jarak = Kecepatan × Waktu<br>
+                    \[42 = \left(\frac{5}{7} \times v_{\max}\right) \times 1{,}68\]
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari \(v_{\max}\):</strong><br>
+                    \[42 = \frac{5}{7} \times v_{\max} \times 1{,}68\]<br>
+                    \[v_{\max} = \frac{42 \times 7}{5 \times 1{,}68}\]<br>
+                    \[v_{\max} = \frac{294}{8{,}4} = 35 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah 35 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Sebuah mobil dan sebuah motor berangkat bersamaan dari Kota A menuju Kota B yang berjarak 120 km. Kecepatan motor 25% lebih cepat daripada kecepatan mobil. Di tengah perjalanan, motor berhenti untuk istirahat selama 30 menit. Karena berhenti, motor justru tiba di Kota B 15 menit lebih lambat daripada mobil. Berapakah kecepatan mobil?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 120 km<br>
+                    - \(v_{\text{motor}} = 1{,}25 \times v_{\text{mobil}}\) (25% lebih cepat)<br>
+                    - Motor berhenti 30 menit = 0,5 jam<br>
+                    - Motor tiba 15 menit = 0,25 jam lebih lambat dari mobil
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\text{mobil}} = v\) km/jam, maka \(v_{\text{motor}} = 1{,}25v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh mobil:</strong> \[t_{\text{mobil}} = \frac{120}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh motor:</strong> \[t_{\text{motor}} = \frac{120}{1{,}25v} + 0{,}5 = \frac{96}{v} + 0{,}5 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Motor tiba 0,25 jam lebih lambat:</strong><br>
+                    \[t_{\text{motor}} = t_{\text{mobil}} + 0{,}25\]<br>
+                    \[\frac{96}{v} + 0{,}5 = \frac{120}{v} + 0{,}25\]<br>
+                    \[\frac{96}{v} - \frac{120}{v} = 0{,}25 - 0{,}5\]<br>
+                    \[-\frac{24}{v} = -0{,}25\]<br>
+                    \[v = \frac{24}{0{,}25} = 96 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan mobil adalah 96 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Sebuah sepeda motor menempuh jarak 60 km dengan menggunakan 3/4 dari kecepatan maksimumnya. Jika waktu yang dibutuhkan adalah 2 jam 30 menit, berapakah kecepatan maksimum sepeda motor tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 60 km<br>
+                    - \(v_{\text{aktual}} = \frac{3}{4} \times v_{\max}\)<br>
+                    - Waktu = 2 jam 30 menit = 2,5 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus:</strong> Jarak = Kecepatan × Waktu<br>
+                    \[60 = \left(\frac{3}{4} \times v_{\max}\right) \times 2{,}5\]
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari \(v_{\max}\):</strong><br>
+                    \[60 = \frac{3}{4} \times v_{\max} \times 2{,}5\]<br>
+                    \[60 = \frac{3 \times 2{,}5}{4} \times v_{\max}\]<br>
+                    \[60 = \frac{7{,}5}{4} \times v_{\max}\]<br>
+                    \[v_{\max} = \frac{60 \times 4}{7{,}5} = \frac{240}{7{,}5} = 32 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah 32 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Sebuah mobil menempuh perjalanan 70 km. Untuk 35 km pertama, mobil tersebut melaju dengan kecepatan maksimumnya. Kemudian, untuk 35 km sisanya, mobil melaju dengan kecepatan 1/2 dari kecepatan maksimumnya. Jika total waktu tempuh adalah 3 jam, berapakah kecepatan maksimum mobil tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak total = 70 km<br>
+                    - 35 km pertama dengan \(v_{\max}\)<br>
+                    - 35 km kedua dengan \(\frac{1}{2}v_{\max}\)<br>
+                    - Total waktu = 3 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\max} = v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 35 km pertama:</strong> \[t_1 = \frac{35}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 35 km kedua:</strong> \[t_2 = \frac{35}{v/2} = \frac{70}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Total waktu:</strong><br>
+                    \[t_1 + t_2 = 3\]<br>
+                    \[\frac{35}{v} + \frac{70}{v} = 3\]<br>
+                    \[\frac{105}{v} = 3\]<br>
+                    \[v = \frac{105}{3} = 35 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah 35 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Sebuah mobil menempuh jarak 150 km dengan menggunakan 5/6 dari kecepatan maksimumnya. Jika waktu yang dibutuhkan adalah 3 jam 45 menit, berapakah kecepatan maksimum mobil tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 150 km<br>
+                    - \(v_{\text{aktual}} = \frac{5}{6} \times v_{\max}\)<br>
+                    - Waktu = 3 jam 45 menit = 3,75 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus:</strong> Jarak = Kecepatan × Waktu<br>
+                    \[150 = \left(\frac{5}{6} \times v_{\max}\right) \times 3{,}75\]
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari \(v_{\max}\):</strong><br>
+                    \[150 = \frac{5}{6} \times v_{\max} \times 3{,}75\]<br>
+                    \[150 = \frac{5 \times 3{,}75}{6} \times v_{\max}\]<br>
+                    \[150 = \frac{18{,}75}{6} \times v_{\max}\]<br>
+                    \[v_{\max} = \frac{150 \times 6}{18{,}75} = \frac{900}{18{,}75} = 48 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah 48 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Seorang pelari menempuh jarak 10 km. Pada 4 km pertama, ia berlari dengan kecepatan maksimumnya. Pada 6 km sisanya, ia berlari dengan 2/3 dari kecepatan maksimumnya. Jika total waktu yang ia butuhkan adalah 1 jam 10 menit, berapakah kecepatan maksimum pelari tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak total = 10 km<br>
+                    - 4 km pertama dengan \(v_{\max}\)<br>
+                    - 6 km kedua dengan \(\frac{2}{3}v_{\max}\)<br>
+                    - Total waktu = 1 jam 10 menit = \(1 + \frac{10}{60} = 1 + \frac{1}{6} = \frac{7}{6}\) jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\max} = v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 4 km pertama:</strong> \[t_1 = \frac{4}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 6 km kedua:</strong> \[t_2 = \frac{6}{2v/3} = \frac{6 \times 3}{2v} = \frac{18}{2v} = \frac{9}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Total waktu:</strong><br>
+                    \[t_1 + t_2 = \frac{7}{6}\]<br>
+                    \[\frac{4}{v} + \frac{9}{v} = \frac{7}{6}\]<br>
+                    \[\frac{13}{v} = \frac{7}{6}\]<br>
+                    \[v = \frac{13 \times 6}{7} = \frac{78}{7} \approx 11{,}14 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah \(\frac{78}{7}\) km/jam atau \(\approx 11{,}14\) km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Sebuah sepeda motor menempuh perjalanan 120 km. Untuk 60 km pertama, motor melaju dengan kecepatan maksimumnya. Kemudian, untuk 60 km sisanya, motor melaju dengan kecepatan 1/3 dari kecepatan maksimumnya. Jika total waktu tempuh adalah 4 jam, berapakah kecepatan maksimum motor tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak total = 120 km<br>
+                    - 60 km pertama dengan \(v_{\max}\)<br>
+                    - 60 km kedua dengan \(\frac{1}{3}v_{\max}\)<br>
+                    - Total waktu = 4 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\max} = v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 60 km pertama:</strong> \[t_1 = \frac{60}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 60 km kedua:</strong> \[t_2 = \frac{60}{v/3} = \frac{180}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Total waktu:</strong><br>
+                    \[t_1 + t_2 = 4\]<br>
+                    \[\frac{60}{v} + \frac{180}{v} = 4\]<br>
+                    \[\frac{240}{v} = 4\]<br>
+                    \[v = \frac{240}{4} = 60 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah 60 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Sebuah bus antarkota menempuh jarak 100 km dalam waktu 2,5 jam. Perjalanan tersebut terdiri dari 20 km pertama melewati lalu lintas kota, 60 km di jalan tol, dan 20 km terakhir di kota tujuan. Jika kecepatan di jalan tol adalah kecepatan maksimumnya, dan kecepatan di dalam kota hanya 1/4 dari kecepatan maksimumnya, berapakah kecepatan maksimum bus tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak total = 100 km<br>
+                    - 20 km pertama (kota) dengan \(\frac{1}{4}v_{\max}\)<br>
+                    - 60 km (tol) dengan \(v_{\max}\)<br>
+                    - 20 km terakhir (kota) dengan \(\frac{1}{4}v_{\max}\)<br>
+                    - Total waktu = 2,5 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\max} = v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 20 km pertama:</strong> \[t_1 = \frac{20}{v/4} = \frac{80}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 60 km (tol):</strong> \[t_2 = \frac{60}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu untuk 20 km terakhir:</strong> \[t_3 = \frac{20}{v/4} = \frac{80}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Total waktu:</strong><br>
+                    \[t_1 + t_2 + t_3 = 2{,}5\]<br>
+                    \[\frac{80}{v} + \frac{60}{v} + \frac{80}{v} = 2{,}5\]<br>
+                    \[\frac{220}{v} = 2{,}5\]<br>
+                    \[v = \frac{220}{2{,}5} = 88 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan maksimum adalah 88 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Sebuah truk dan sebuah bus berangkat pada waktu yang sama dari kota A ke kota B yang berjarak 240 km. Kecepatan bus 25% lebih cepat daripada truk. Bus berhenti selama 40 menit di tengah perjalanan untuk istirahat, namun keduanya tiba di kota B pada waktu yang sama. Berapakah kecepatan truk?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 240 km<br>
+                    - \(v_{\text{bus}} = 1{,}25 \times v_{\text{truk}}\) (25% lebih cepat)<br>
+                    - Bus berhenti 40 menit = \(\frac{40}{60} = \frac{2}{3}\) jam<br>
+                    - Keduanya tiba bersamaan
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\text{truk}} = v\) km/jam, maka \(v_{\text{bus}} = 1{,}25v\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh truk:</strong> \[t_{\text{truk}} = \frac{240}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh bus:</strong> \[t_{\text{bus}} = \frac{240}{1{,}25v} + \frac{2}{3} = \frac{192}{v} + \frac{2}{3} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Karena tiba bersamaan:</strong><br>
+                    \[\frac{240}{v} = \frac{192}{v} + \frac{2}{3}\]<br>
+                    \[\frac{240}{v} - \frac{192}{v} = \frac{2}{3}\]<br>
+                    \[\frac{48}{v} = \frac{2}{3}\]<br>
+                    \[v = \frac{48 \times 3}{2} = 72 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan truk adalah 72 km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Ali dan Budi berangkat dari kota P ke kota Q yang berjarak 390 km. Ali mengendarai mobil dengan kecepatan konstan. Budi, yang juga mengendarai mobil, berangkat 1 jam setelah Ali dengan kecepatan 20 km/jam lebih cepat dari Ali. Jika Budi tiba di kota Q 30 menit lebih awal dari Ali, berapakah kecepatan mobil Ali dan Budi?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 390 km<br>
+                    - \(v_{\text{Budi}} = v_{\text{Ali}} + 20\) km/jam<br>
+                    - Budi berangkat 1 jam setelah Ali<br>
+                    - Budi tiba 30 menit = 0,5 jam lebih awal dari Ali
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\text{Ali}} = v\) km/jam, maka \(v_{\text{Budi}} = v + 20\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh Ali:</strong> \[t_{\text{Ali}} = \frac{390}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh Budi:</strong> \[t_{\text{Budi}} = \frac{390}{v + 20} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Selisih waktu tiba:</strong><br>
+                    Budi tiba 0,5 jam lebih awal, tetapi berangkat 1 jam lebih lambat<br>
+                    Jadi: \(t_{\text{Ali}} = t_{\text{Budi}} + 1 - 0{,}5 = t_{\text{Budi}} + 0{,}5\)<br>
+                    \[\frac{390}{v} = \frac{390}{v + 20} + 0{,}5\]
+                </div>
+                <div class="solution-step">
+                    <strong>Menyelesaikan persamaan:</strong><br>
+                    \[\frac{390}{v} - \frac{390}{v + 20} = 0{,}5\]<br>
+                    \[390(v + 20) - 390v = 0{,}5v(v + 20)\]<br>
+                    \[7800 = 0{,}5v^2 + 10v\]<br>
+                    \[0{,}5v^2 + 10v - 7800 = 0\]<br>
+                    \[v^2 + 20v - 15600 = 0\]<br>
+                    Menggunakan rumus kuadrat: \[v = \frac{-20 \pm \sqrt{400 + 62400}}{2}\]<br>
+                    \[v = \frac{-20 \pm \sqrt{62800}}{2} = \frac{-20 \pm 250{,}6}{2}\]<br>
+                    \[v = 115{,}3 \text{ km/jam}\] (ambil nilai positif)
+                </div>
+                <div class="answer">Jawaban: Kecepatan Ali \(\approx 115{,}3\) km/jam, Kecepatan Budi \(\approx 135{,}3\) km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Ali dan Budi berangkat dari kota P ke kota Q yang berjarak 360 km. Ali mengendarai mobil dengan kecepatan konstan. Budi, yang juga mengendarai mobil, berangkat 1 jam setelah Ali dengan kecepatan 20 km/jam lebih cepat dari Ali. Jika Budi tiba di kota Q 30 menit lebih awal dari Ali, berapakah kecepatan mobil Ali dan Budi?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak = 360 km<br>
+                    - \(v_{\text{Budi}} = v_{\text{Ali}} + 20\) km/jam<br>
+                    - Budi berangkat 1 jam setelah Ali<br>
+                    - Budi tiba 30 menit = 0,5 jam lebih awal dari Ali
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> \(v_{\text{Ali}} = v\) km/jam, maka \(v_{\text{Budi}} = v + 20\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh Ali:</strong> \[t_{\text{Ali}} = \frac{360}{v} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu tempuh Budi:</strong> \[t_{\text{Budi}} = \frac{360}{v + 20} \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Selisih waktu tiba:</strong><br>
+                    \(t_{\text{Ali}} = t_{\text{Budi}} + 1 - 0{,}5 = t_{\text{Budi}} + 0{,}5\)<br>
+                    \[\frac{360}{v} = \frac{360}{v + 20} + 0{,}5\]
+                </div>
+                <div class="solution-step">
+                    <strong>Menyelesaikan persamaan:</strong><br>
+                    \[\frac{360}{v} - \frac{360}{v + 20} = 0{,}5\]<br>
+                    \[360(v + 20) - 360v = 0{,}5v(v + 20)\]<br>
+                    \[7200 = 0{,}5v^2 + 10v\]<br>
+                    \[0{,}5v^2 + 10v - 7200 = 0\]<br>
+                    \[v^2 + 20v - 14400 = 0\]<br>
+                    Menggunakan rumus kuadrat: \[v = \frac{-20 \pm \sqrt{400 + 57600}}{2}\]<br>
+                    \[v = \frac{-20 \pm \sqrt{58000}}{2} = \frac{-20 \pm 240{,}83}{2}\]<br>
+                    \[v = 110{,}42 \text{ km/jam}\] (ambil nilai positif)
+                </div>
+                <div class="answer">Jawaban: Kecepatan Ali \(\approx 110{,}4\) km/jam, Kecepatan Budi \(\approx 130{,}4\) km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Sebuah mobil travel berangkat dari kota P ke kota Q dengan kecepatan 80 km/jam. Karena jalanan lebih padat saat kembali, mobil tersebut pulang dari kota Q ke kota P dengan kecepatan 50 km/jam. Berapakah kecepatan rata-rata mobil travel untuk seluruh perjalanan pulang-pergi tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Kecepatan pergi = 80 km/jam<br>
+                    - Kecepatan pulang = 50 km/jam<br>
+                    - Jarak pergi = jarak pulang = \(s\) (misalkan)
+                </div>
+                <div class="solution-step">
+                    <strong>Catatan penting:</strong><br>
+                    Kecepatan rata-rata untuk perjalanan pulang-pergi TIDAK sama dengan rata-rata aritmatika dari kedua kecepatan!
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus kecepatan rata-rata:</strong><br>
+                    \[v_{\text{rata-rata}} = \frac{\text{Total jarak}}{\text{Total waktu}}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan jarak = \(s\) km:</strong><br>
+                    Waktu pergi = \(\frac{s}{80}\) jam<br>
+                    Waktu pulang = \(\frac{s}{50}\) jam<br>
+                    Total waktu = \(\frac{s}{80} + \frac{s}{50} = \frac{5s + 8s}{400} = \frac{13s}{400}\) jam<br>
+                    Total jarak = \(2s\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Kecepatan rata-rata:</strong><br>
+                    \[v_{\text{rata-rata}} = \frac{2s}{13s/400} = 2s \times \frac{400}{13s} = \frac{800}{13} \approx 61{,}54 \text{ km/jam}\]
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong> \[v_{\text{rata-rata}} = \frac{2v_1v_2}{v_1 + v_2} = \frac{2(80)(50)}{80+50} = \frac{8000}{130} = \frac{800}{13} \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan rata-rata adalah \(\frac{800}{13}\) km/jam atau \(\approx 61{,}54\) km/jam</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Seorang pengendara sepeda motor menempuh perjalanan dari kota X ke kota Z yang melewati kota Y. Jarak dari kota X ke Y sama dengan jarak dari kota Y ke Z. Jika kecepatan dari X ke Y adalah 30 km/jam dan kecepatan dari Y ke Z adalah 60 km/jam, berapakah kecepatan rata-rata pengendara motor tersebut dari kota X ke Z?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak XY = jarak YZ = \(s\) (misalkan)<br>
+                    - Kecepatan XY = 30 km/jam<br>
+                    - Kecepatan YZ = 60 km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus kecepatan rata-rata:</strong><br>
+                    \[v_{\text{rata-rata}} = \frac{\text{Total jarak}}{\text{Total waktu}}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan jarak XY = YZ = \(s\) km:</strong><br>
+                    Waktu XY = \(\frac{s}{30}\) jam<br>
+                    Waktu YZ = \(\frac{s}{60}\) jam<br>
+                    Total waktu = \(\frac{s}{30} + \frac{s}{60} = \frac{2s + s}{60} = \frac{3s}{60} = \frac{s}{20}\) jam<br>
+                    Total jarak = \(2s\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Kecepatan rata-rata:</strong><br>
+                    \[v_{\text{rata-rata}} = \frac{2s}{s/20} = 2s \times \frac{20}{s} = 40 \text{ km/jam}\]
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong> \[v_{\text{rata-rata}} = \frac{2v_1v_2}{v_1 + v_2} = \frac{2(30)(60)}{30+60} = \frac{3600}{90} = 40 \text{ km/jam}\]
+                </div>
+                <div class="answer">Jawaban: Kecepatan rata-rata adalah 40 km/jam</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
