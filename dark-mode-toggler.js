@@ -50,6 +50,41 @@
     const ORIGINAL_STYLES_ATTR = 'data-original-inline-style';
     const DARK_MODE_APPLIED_ATTR = 'data-dark-mode-applied';
 
+    let mutationObserver = null;
+    let observerScheduled = false;
+    let isDarkModeActive = false;
+
+    function runOnNextFrame(callback) {
+        const raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame;
+        if (raf) {
+            raf(callback);
+        } else {
+            setTimeout(callback, 16);
+        }
+    }
+
+    function scheduleDarkModeRefresh() {
+        if (!isDarkModeActive || observerScheduled) return;
+        observerScheduled = true;
+        runOnNextFrame(() => {
+            observerScheduled = false;
+            applyDynamicDarkMode(true);
+        });
+    }
+
+    function startMutationObserver() {
+        if (mutationObserver || !document.body) return;
+        mutationObserver = new MutationObserver(() => scheduleDarkModeRefresh());
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
+    }
+
+    function stopMutationObserver() {
+        if (!mutationObserver) return;
+        mutationObserver.disconnect();
+        mutationObserver = null;
+        observerScheduled = false;
+    }
+
     /**
      * Applies or removes the dynamic dark mode styles.
      * @param {boolean} enable - True to enable dark mode, false to disable.
@@ -116,9 +151,15 @@
 
         // 2. Main toggle function
         function setDarkMode(isDark) {
+            isDarkModeActive = isDark;
             localStorage.setItem('darkMode', isDark);
             toggler.textContent = isDark ? '☀️' : '🌙';
             applyDynamicDarkMode(isDark);
+            if (isDark) {
+                startMutationObserver();
+            } else {
+                stopMutationObserver();
+            }
         }
 
         // 3. Add click event listener
@@ -136,5 +177,12 @@
         } else {
             setDarkMode(false);
         }
+
+        window.addEventListener('pageshow', (event) => {
+            if (!event.persisted) return;
+            if (localStorage.getItem('darkMode') === 'true') {
+                setDarkMode(true);
+            }
+        });
     });
 })();
