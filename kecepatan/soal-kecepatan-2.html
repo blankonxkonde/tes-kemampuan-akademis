@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soal Kecepatan 2 - Pembahasan</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         window.MathJax = {
             tex: {
                 inlineMath: [['\\(', '\\)']],
                 displayMath: [['\\[', '\\]']],
                 processEscapes: true,
-                processEnvironments: true
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
             },
             options: {
                 ignoreHtmlClass: 'tex2jax_ignore',
@@ -20,6 +23,7 @@
             }
         };
     </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         * {
             margin: 0;
@@ -162,11 +166,38 @@
         .solution-step .MathJax {
             font-size: 1.05em;
         }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Soal Kecepatan 2 - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Penting: Menggunakan Waktu Berkendara, Bukan Total Waktu</strong>
+            <p>Dalam soal-soal kecepatan yang melibatkan kendaraan yang berhenti di tengah perjalanan, kita harus memisahkan <strong>waktu berkendara</strong> (waktu saat kendaraan benar-benar bergerak) dari <strong>total waktu</strong> (waktu dari berangkat sampai tiba, termasuk waktu berhenti). Rumus kecepatan \(v = \frac{s}{t}\) hanya berlaku untuk waktu saat kendaraan bergerak, karena kecepatan didefinisikan sebagai jarak yang ditempuh per satuan waktu saat bergerak. Oleh karena itu, waktu berhenti harus dikurangkan dari total waktu atau ditambahkan secara terpisah dalam perhitungan.</p>
+        </div>
         
         <!-- Soal 1 -->
         <div class="question">
@@ -191,14 +222,17 @@
                     <strong>Waktu tempuh motor:</strong> \[t_{\text{motor}} = \frac{180}{v} \text{ jam}\]
                 </div>
                 <div class="solution-step">
-                    <strong>Waktu tempuh mobil:</strong> \[t_{\text{mobil}} = \frac{180}{1{,}2v} + 0{,}5 = \frac{150}{v} + 0{,}5 \text{ jam}\]
+                    <strong>Waktu tempuh mobil:</strong> \[t_{\text{mobil}} = \frac{180}{1{,}2v} + 0{,}5\]<br>
+                    Menyederhanakan: \[\frac{180}{1{,}2v} = \frac{180}{1{,}2 \cdot v} = \frac{180 \times 10}{1{,}2 \times 10 \cdot v} = \frac{1800}{12v} = \frac{\cancel{1800}^{150}}{\cancel{12}_1 \cdot v} = \frac{150}{v}\]<br>
+                    Jadi: \[t_{\text{mobil}} = \frac{150}{v} + 0{,}5 \text{ jam}\]
                 </div>
                 <div class="solution-step">
                     <strong>Karena tiba bersamaan:</strong><br>
                     \[\frac{180}{v} = \frac{150}{v} + 0{,}5\]<br>
                     \[\frac{180}{v} - \frac{150}{v} = 0{,}5\]<br>
+                    \[\frac{180 - 150}{v} = 0{,}5\]<br>
                     \[\frac{30}{v} = 0{,}5\]<br>
-                    \[v = \frac{30}{0{,}5} = 60 \text{ km/jam}\]
+                    \[v = \frac{30}{0{,}5} = \frac{30 \times 2}{0{,}5 \times 2} = \frac{60}{1} = 60 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan motor adalah 60 km/jam</div>
             </div>
@@ -227,14 +261,17 @@
                     <strong>Waktu tempuh bus:</strong> \[t_{\text{bus}} = \frac{75}{v} \text{ jam}\]
                 </div>
                 <div class="solution-step">
-                    <strong>Waktu tempuh kereta:</strong> \[t_{\text{kereta}} = \frac{75}{1{,}5v} + \frac{5}{24} = \frac{50}{v} + \frac{5}{24} \text{ jam}\]
+                    <strong>Waktu tempuh kereta:</strong> \[t_{\text{kereta}} = \frac{75}{1{,}5v} + \frac{5}{24}\]<br>
+                    Menyederhanakan: \[\frac{75}{1{,}5v} = \frac{75}{1{,}5 \cdot v} = \frac{75 \times 10}{1{,}5 \times 10 \cdot v} = \frac{750}{15v} = \frac{\cancel{750}^{50}}{\cancel{15}_1 \cdot v} = \frac{50}{v}\]<br>
+                    Jadi: \[t_{\text{kereta}} = \frac{50}{v} + \frac{5}{24} \text{ jam}\]
                 </div>
                 <div class="solution-step">
                     <strong>Karena tiba bersamaan:</strong><br>
                     \[\frac{75}{v} = \frac{50}{v} + \frac{5}{24}\]<br>
                     \[\frac{75}{v} - \frac{50}{v} = \frac{5}{24}\]<br>
+                    \[\frac{75 - 50}{v} = \frac{5}{24}\]<br>
                     \[\frac{25}{v} = \frac{5}{24}\]<br>
-                    \[v = \frac{25 \times 24}{5} = 120 \text{ km/jam}\]
+                    \[v = \frac{25 \times 24}{5} = \frac{\cancel{25}^5 \times 24}{\cancel{5}_1} = 5 \times 24 = 120 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan bus adalah 120 km/jam</div>
             </div>
@@ -258,7 +295,7 @@
                 <div class="solution-step">
                     <strong>Konversi waktu ke jam:</strong><br>
                     1 jam 40 menit 48 detik = \(1 + \frac{40}{60} + \frac{48}{3600}\)<br>
-                    = \(1 + \frac{2}{3} + \frac{2}{150} = 1 + 0{,}6667 + 0{,}0133 = 1{,}68\) jam
+                    = \(1 + \frac{\cancel{40}^2}{\cancel{60}_3} + \frac{\cancel{48}^2}{\cancel{3600}_{150}} = 1 + \frac{2}{3} + \frac{2}{150} = 1 + 0{,}6667 + 0{,}0133 = 1{,}68\) jam
                 </div>
                 <div class="solution-step">
                     <strong>Rumus:</strong> Jarak = Kecepatan × Waktu<br>
@@ -268,7 +305,7 @@
                     <strong>Mencari \(v_{\max}\):</strong><br>
                     \[42 = \frac{5}{7} \times v_{\max} \times 1{,}68\]<br>
                     \[v_{\max} = \frac{42 \times 7}{5 \times 1{,}68}\]<br>
-                    \[v_{\max} = \frac{294}{8{,}4} = 35 \text{ km/jam}\]
+                    \[v_{\max} = \frac{294}{8{,}4} = \frac{\cancel{294}^{35}}{\cancel{8{,}4}_{1}} = \frac{294 \div 8{,}4}{8{,}4 \div 8{,}4} = 35 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan maksimum adalah 35 km/jam</div>
             </div>
@@ -297,15 +334,18 @@
                     <strong>Waktu tempuh mobil:</strong> \[t_{\text{mobil}} = \frac{120}{v} \text{ jam}\]
                 </div>
                 <div class="solution-step">
-                    <strong>Waktu tempuh motor:</strong> \[t_{\text{motor}} = \frac{120}{1{,}25v} + 0{,}5 = \frac{96}{v} + 0{,}5 \text{ jam}\]
+                    <strong>Waktu tempuh motor:</strong> \[t_{\text{motor}} = \frac{120}{1{,}25v} + 0{,}5\]<br>
+                    Menyederhanakan: \[\frac{120}{1{,}25v} = \frac{120 \times \cancel{100}}{1{,}25v \times \cancel{100}} = \frac{12000}{125v} = \frac{\cancel{12000}^{96}}{\cancel{125}_1 \cdot v} = \frac{96}{v}\]<br>
+                    Jadi: \[t_{\text{motor}} = \frac{96}{v} + 0{,}5 \text{ jam}\]
                 </div>
                 <div class="solution-step">
                     <strong>Motor tiba 0,25 jam lebih lambat:</strong><br>
                     \[t_{\text{motor}} = t_{\text{mobil}} + 0{,}25\]<br>
                     \[\frac{96}{v} + 0{,}5 = \frac{120}{v} + 0{,}25\]<br>
                     \[\frac{96}{v} - \frac{120}{v} = 0{,}25 - 0{,}5\]<br>
+                    \[\frac{96 - 120}{v} = -0{,}25\]<br>
                     \[-\frac{24}{v} = -0{,}25\]<br>
-                    \[v = \frac{24}{0{,}25} = 96 \text{ km/jam}\]
+                    \[v = \frac{24}{0{,}25} = \frac{24 \times 4}{0{,}25 \times 4} = \frac{96}{1} = 96 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan mobil adalah 96 km/jam</div>
             </div>
@@ -335,7 +375,7 @@
                     \[60 = \frac{3}{4} \times v_{\max} \times 2{,}5\]<br>
                     \[60 = \frac{3 \times 2{,}5}{4} \times v_{\max}\]<br>
                     \[60 = \frac{7{,}5}{4} \times v_{\max}\]<br>
-                    \[v_{\max} = \frac{60 \times 4}{7{,}5} = \frac{240}{7{,}5} = 32 \text{ km/jam}\]
+                    \[v_{\max} = \frac{60 \times 4}{7{,}5} = \frac{240}{7{,}5} = \frac{\cancel{240}^{32}}{\cancel{7{,}5}_{1}} = 32 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan maksimum adalah 32 km/jam</div>
             </div>
@@ -401,7 +441,7 @@
                     \[150 = \frac{5}{6} \times v_{\max} \times 3{,}75\]<br>
                     \[150 = \frac{5 \times 3{,}75}{6} \times v_{\max}\]<br>
                     \[150 = \frac{18{,}75}{6} \times v_{\max}\]<br>
-                    \[v_{\max} = \frac{150 \times 6}{18{,}75} = \frac{900}{18{,}75} = 48 \text{ km/jam}\]
+                    \[v_{\max} = \frac{150 \times 6}{18{,}75} = \frac{900}{18{,}75} = \frac{\cancel{900}^{48}}{\cancel{18{,}75}_{1}} = 48 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan maksimum adalah 48 km/jam</div>
             </div>
@@ -436,6 +476,7 @@
                     <strong>Total waktu:</strong><br>
                     \[t_1 + t_2 = \frac{7}{6}\]<br>
                     \[\frac{4}{v} + \frac{9}{v} = \frac{7}{6}\]<br>
+                    \[\frac{4 + 9}{v} = \frac{7}{6}\]<br>
                     \[\frac{13}{v} = \frac{7}{6}\]<br>
                     \[v = \frac{13 \times 6}{7} = \frac{78}{7} \approx 11{,}14 \text{ km/jam}\]
                 </div>
@@ -542,14 +583,17 @@
                     <strong>Waktu tempuh truk:</strong> \[t_{\text{truk}} = \frac{240}{v} \text{ jam}\]
                 </div>
                 <div class="solution-step">
-                    <strong>Waktu tempuh bus:</strong> \[t_{\text{bus}} = \frac{240}{1{,}25v} + \frac{2}{3} = \frac{192}{v} + \frac{2}{3} \text{ jam}\]
+                    <strong>Waktu tempuh bus:</strong> \[t_{\text{bus}} = \frac{240}{1{,}25v} + \frac{2}{3}\]<br>
+                    Menyederhanakan: \[\frac{240}{1{,}25v} = \frac{240 \times \cancel{100}}{1{,}25v \times \cancel{100}} = \frac{24000}{125v} = \frac{\cancel{24000}^{192}}{\cancel{125}_1 \cdot v} = \frac{192}{v}\]<br>
+                    Jadi: \[t_{\text{bus}} = \frac{192}{v} + \frac{2}{3} \text{ jam}\]
                 </div>
                 <div class="solution-step">
                     <strong>Karena tiba bersamaan:</strong><br>
                     \[\frac{240}{v} = \frac{192}{v} + \frac{2}{3}\]<br>
                     \[\frac{240}{v} - \frac{192}{v} = \frac{2}{3}\]<br>
+                    \[\frac{240 - 192}{v} = \frac{2}{3}\]<br>
                     \[\frac{48}{v} = \frac{2}{3}\]<br>
-                    \[v = \frac{48 \times 3}{2} = 72 \text{ km/jam}\]
+                    \[v = \frac{48 \times 3}{2} = \frac{\cancel{48}^{24} \times 3}{\cancel{2}_1} = 24 \times 3 = 72 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan truk adalah 72 km/jam</div>
             </div>
@@ -673,15 +717,15 @@
                     <strong>Misalkan jarak = \(s\) km:</strong><br>
                     Waktu pergi = \(\frac{s}{80}\) jam<br>
                     Waktu pulang = \(\frac{s}{50}\) jam<br>
-                    Total waktu = \(\frac{s}{80} + \frac{s}{50} = \frac{5s + 8s}{400} = \frac{13s}{400}\) jam<br>
+                    Total waktu = \(\frac{s}{80} + \frac{s}{50} = \frac{s \times 5}{80 \times 5} + \frac{s \times 8}{50 \times 8} = \frac{5s + 8s}{400} = \frac{13s}{400}\) jam<br>
                     Total jarak = \(2s\) km
                 </div>
                 <div class="solution-step">
                     <strong>Kecepatan rata-rata:</strong><br>
-                    \[v_{\text{rata-rata}} = \frac{2s}{13s/400} = 2s \times \frac{400}{13s} = \frac{800}{13} \approx 61{,}54 \text{ km/jam}\]
+                    \[v_{\text{rata-rata}} = \frac{2s}{13s/400} = 2s \times \frac{400}{13s} = \frac{2\cancel{s} \times 400}{13\cancel{s}} = \frac{800}{13} \approx 61{,}54 \text{ km/jam}\]
                 </div>
                 <div class="formula">
-                    <strong>Rumus umum:</strong> \[v_{\text{rata-rata}} = \frac{2v_1v_2}{v_1 + v_2} = \frac{2(80)(50)}{80+50} = \frac{8000}{130} = \frac{800}{13} \text{ km/jam}\]
+                    <strong>Rumus umum:</strong> \[v_{\text{rata-rata}} = \frac{2v_1v_2}{v_1 + v_2} = \frac{2(80)(50)}{80+50} = \frac{8000}{130} = \frac{\cancel{8000}^{800}}{\cancel{130}_{13}} = \frac{800}{13} \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan rata-rata adalah \(\frac{800}{13}\) km/jam atau \(\approx 61{,}54\) km/jam</div>
             </div>
@@ -710,15 +754,15 @@
                     <strong>Misalkan jarak XY = YZ = \(s\) km:</strong><br>
                     Waktu XY = \(\frac{s}{30}\) jam<br>
                     Waktu YZ = \(\frac{s}{60}\) jam<br>
-                    Total waktu = \(\frac{s}{30} + \frac{s}{60} = \frac{2s + s}{60} = \frac{3s}{60} = \frac{s}{20}\) jam<br>
+                    Total waktu = \(\frac{s}{30} + \frac{s}{60} = \frac{s \times 2}{30 \times 2} + \frac{s}{60} = \frac{2s + s}{60} = \frac{3s}{60} = \frac{\cancel{3s}^{s}}{\cancel{60}_{20}} = \frac{s}{20}\) jam<br>
                     Total jarak = \(2s\) km
                 </div>
                 <div class="solution-step">
                     <strong>Kecepatan rata-rata:</strong><br>
-                    \[v_{\text{rata-rata}} = \frac{2s}{s/20} = 2s \times \frac{20}{s} = 40 \text{ km/jam}\]
+                    \[v_{\text{rata-rata}} = \frac{2s}{s/20} = 2s \times \frac{20}{s} = \frac{2\cancel{s} \times 20}{\cancel{s}} = 40 \text{ km/jam}\]
                 </div>
                 <div class="formula">
-                    <strong>Rumus umum:</strong> \[v_{\text{rata-rata}} = \frac{2v_1v_2}{v_1 + v_2} = \frac{2(30)(60)}{30+60} = \frac{3600}{90} = 40 \text{ km/jam}\]
+                    <strong>Rumus umum:</strong> \[v_{\text{rata-rata}} = \frac{2v_1v_2}{v_1 + v_2} = \frac{2(30)(60)}{30+60} = \frac{3600}{90} = \frac{\cancel{3600}^{40}}{\cancel{90}_{1}} = 40 \text{ km/jam}\]
                 </div>
                 <div class="answer">Jawaban: Kecepatan rata-rata adalah 40 km/jam</div>
             </div>

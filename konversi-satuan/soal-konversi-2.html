@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Konversi Satuan 2</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .difficulty-section {
+            margin-bottom: 40px;
+        }
+        
+        .difficulty-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .question {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container tex2jax_process">
+        <h1>Soal Konversi Satuan 2</h1>
+        
+        <!-- Tingkat Mudah -->
+        <div class="difficulty-section">
+            <div class="difficulty-title">Tingkat Mudah (Soal 1-5)</div>
+            
+            <!-- Soal 1 -->
+            <div class="question">
+                <div class="question-number">Soal 1</div>
+                <div class="question-text">
+                    Konversikan \(12\) inci ke dalam satuan cm!
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution1">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ inci} = 2{,}54 \text{ cm}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Konversi:</strong><br>
+                        \[12 \text{ inci} = 12 \times 2{,}54 \text{ cm}\]<br>
+                        \[12 \text{ inci} = 30{,}48 \text{ cm}\]
+                    </div>
+                    <div class="answer">Jawaban: \(12\) inci = \(30{,}48\) cm</div>
+                </div>
+            </div>
+            
+            <!-- Soal 2 -->
+            <div class="question">
+                <div class="question-number">Soal 2</div>
+                <div class="question-text">
+                    Berapa kuintal jika \(500\) kg?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution2">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ kuintal} = 100 \text{ kg}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Konversi:</strong><br>
+                        \[500 \text{ kg} = \frac{500}{100} \text{ kuintal}\]<br>
+                        \[500 \text{ kg} = 5 \text{ kuintal}\]
+                    </div>
+                    <div class="answer">Jawaban: \(500\) kg = \(5\) kuintal</div>
+                </div>
+            </div>
+            
+            <!-- Soal 3 -->
+            <div class="question">
+                <div class="question-number">Soal 3</div>
+                <div class="question-text">
+                    \(3\) lustrum sama dengan berapa tahun?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution3">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ lustrum} = 5 \text{ tahun}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Konversi:</strong><br>
+                        \[3 \text{ lustrum} = 3 \times 5 \text{ tahun}\]<br>
+                        \[3 \text{ lustrum} = 15 \text{ tahun}\]
+                    </div>
+                    <div class="answer">Jawaban: \(3\) lustrum = \(15\) tahun</div>
+                </div>
+            </div>
+            
+            <!-- Soal 4 -->
+            <div class="question">
+                <div class="question-number">Soal 4</div>
+                <div class="question-text">
+                    Berapa \(m^2\) jika \(2\) hektar?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution4">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ hektar} = 10000 \text{ m}^2\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Konversi:</strong><br>
+                        \[2 \text{ hektar} = 2 \times 10000 \text{ m}^2\]<br>
+                        \[2 \text{ hektar} = 20000 \text{ m}^2\]
+                    </div>
+                    <div class="answer">Jawaban: \(2\) hektar = \(20000\) m\(^2\)</div>
+                </div>
+            </div>
+            
+            <!-- Soal 5 -->
+            <div class="question">
+                <div class="question-number">Soal 5</div>
+                <div class="question-text">
+                    \(5\) gros sama dengan berapa lusin?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution5">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ gros} = 12 \text{ lusin}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Konversi:</strong><br>
+                        \[5 \text{ gros} = 5 \times 12 \text{ lusin}\]<br>
+                        \[5 \text{ gros} = 60 \text{ lusin}\]
+                    </div>
+                    <div class="answer">Jawaban: \(5\) gros = \(60\) lusin</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tingkat Sulit -->
+        <div class="difficulty-section">
+            <div class="difficulty-title">Tingkat Sulit (Soal 6-10)</div>
+            
+            <!-- Soal 6 -->
+            <div class="question">
+                <div class="question-number">Soal 6</div>
+                <div class="question-text">
+                    Sebuah lapangan memiliki luas \(0{,}5\) hektar. Berapakah luas lapangan tersebut dalam satuan are?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution6">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ hektar} = 100 \text{ are}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Konversi:</strong><br>
+                        \[0{,}5 \text{ hektar} = 0{,}5 \times 100 \text{ are}\]<br>
+                        \[0{,}5 \text{ hektar} = 50 \text{ are}\]
+                    </div>
+                    <div class="answer">Jawaban: \(0{,}5\) hektar = \(50\) are</div>
+                </div>
+            </div>
+            
+            <!-- Soal 7 -->
+            <div class="question">
+                <div class="question-number">Soal 7</div>
+                <div class="question-text">
+                    Seorang petani memiliki \(2{,}5\) ton beras. Berapakah berat beras tersebut dalam satuan pon? Jika harga beras adalah Rp \(10.000\) per kg, berapakah total nilai beras tersebut?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution7">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        - \(1 \text{ ton} = 1000 \text{ kg}\)<br>
+                        - \(1 \text{ kg} = 2 \text{ pon}\)<br>
+                        - Harga per kg = Rp \(10.000\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 1: Konversi ton ke kg</strong><br>
+                        \[2{,}5 \text{ ton} = 2{,}5 \times 1000 \text{ kg} = 2500 \text{ kg}\]
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 2: Konversi kg ke pon</strong><br>
+                        \[2500 \text{ kg} = 2500 \times 2 \text{ pon} = 5000 \text{ pon}\]
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 3: Hitung total nilai beras</strong><br>
+                        Total nilai = \(2500 \text{ kg} \times \text{Rp }10.000 = \text{Rp }25.000.000\)
+                    </div>
+                    <div class="answer">Jawaban: Berat beras adalah \(5000\) pon dan total nilainya adalah Rp \(25.000.000\)</div>
+                </div>
+            </div>
+            
+            <!-- Soal 8 -->
+            <div class="question">
+                <div class="question-number">Soal 8</div>
+                <div class="question-text">
+                    Sebuah kolam renang memiliki volume \(50\) m\(^3\). Berapakah volume kolam tersebut dalam satuan liter?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution8">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ liter} = 1 \text{ dm}^3\)<br>
+                        \(1 \text{ m}^3 = 1000 \text{ dm}^3\) (karena \(1 \text{ m} = 10 \text{ dm}\), maka \(1 \text{ m}^3 = 10^3 \text{ dm}^3 = 1000 \text{ dm}^3\))
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 1: Konversi m\(^3\) ke dm\(^3\)</strong><br>
+                        \[50 \text{ m}^3 = 50 \times 1000 \text{ dm}^3 = 50000 \text{ dm}^3\]
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 2: Konversi dm\(^3\) ke liter</strong><br>
+                        Karena \(1 \text{ liter} = 1 \text{ dm}^3\), maka:<br>
+                        \[50000 \text{ dm}^3 = 50000 \text{ liter}\]
+                    </div>
+                    <div class="answer">Jawaban: \(50\) m\(^3\) = \(50000\) liter</div>
+                </div>
+            </div>
+            
+            <!-- Soal 9 -->
+            <div class="question">
+                <div class="question-number">Soal 9</div>
+                <div class="question-text">
+                    Sebuah proyek pembangunan membutuhkan waktu \(2\) dasawarsa. Berapakah waktu proyek tersebut dalam satuan semester?
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution9">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ dasawarsa} = 10 \text{ tahun}\)<br>
+                        \(1 \text{ semester} = 6 \text{ bulan}\)<br>
+                        \(1 \text{ tahun} = 12 \text{ bulan}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 1: Konversi dasawarsa ke tahun</strong><br>
+                        \[2 \text{ dasawarsa} = 2 \times 10 \text{ tahun} = 20 \text{ tahun}\]
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 2: Konversi tahun ke bulan</strong><br>
+                        \[20 \text{ tahun} = 20 \times 12 \text{ bulan} = 240 \text{ bulan}\]
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 3: Konversi bulan ke semester</strong><br>
+                        \[240 \text{ bulan} = \frac{240}{6} \text{ semester} = 40 \text{ semester}\]
+                    </div>
+                    <div class="answer">Jawaban: \(2\) dasawarsa = \(40\) semester</div>
+                </div>
+            </div>
+            
+            <!-- Soal 10 -->
+            <div class="question">
+                <div class="question-number">Soal 10</div>
+                <div class="question-text">
+                    Seorang pedagang membeli \(3\) gros kemeja dan \(5\) kodi celana. Jika \(1\) kemeja dijual dengan harga Rp \(75.000\) dan \(1\) celana dijual dengan harga Rp \(100.000\), berapakah total pendapatan pedagang tersebut jika semua barang terjual? (Nyatakan juga dalam satuan lusin untuk kemeja)
+                </div>
+                <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+                <div class="solution" id="solution10">
+                    <div class="solution-title">Pembahasan:</div>
+                    <div class="solution-step">
+                        <strong>Diketahui:</strong><br>
+                        \(1 \text{ gros} = 144 \text{ buah}\)<br>
+                        \(1 \text{ gros} = 12 \text{ lusin}\)<br>
+                        \(1 \text{ kodi} = 20 \text{ buah}\)<br>
+                        Harga kemeja = Rp \(75.000\) per buah<br>
+                        Harga celana = Rp \(100.000\) per buah
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 1: Hitung jumlah kemeja</strong><br>
+                        \[3 \text{ gros} = 3 \times 144 \text{ buah} = 432 \text{ buah}\]<br>
+                        Atau: \(3 \text{ gros} = 3 \times 12 \text{ lusin} = 36 \text{ lusin}\)
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 2: Hitung jumlah celana</strong><br>
+                        \[5 \text{ kodi} = 5 \times 20 \text{ buah} = 100 \text{ buah}\]
+                    </div>
+                    <div class="solution-step">
+                        <strong>Langkah 3: Hitung total pendapatan</strong><br>
+                        Pendapatan dari kemeja = \(432 \times \text{Rp }75.000 = \text{Rp }32.400.000\)<br>
+                        Pendapatan dari celana = \(100 \times \text{Rp }100.000 = \text{Rp }10.000.000\)<br>
+                        Total pendapatan = Rp \(32.400.000 + \text{Rp }10.000.000 = \text{Rp }42.400.000\)
+                    </div>
+                    <div class="answer">Jawaban: Total pendapatan adalah Rp \(42.400.000\). Kemeja yang dibeli adalah \(36\) lusin.</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
