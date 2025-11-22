@@ -147,6 +147,44 @@
         toggler.id = 'darkModeToggler';
         toggler.setAttribute('aria-label', 'Toggle dark mode');
         toggler.setAttribute('title', 'Toggle dark mode');
+        
+        // Add inline styles for the toggle button
+        toggler.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            padding: 10px;
+            background-color: #fff;
+            color: #1a1a1a;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            line-height: 1;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        `;
+        
+        // Add hover effect
+        toggler.addEventListener('mouseenter', () => {
+            toggler.style.backgroundColor = '#333';
+            toggler.style.color = '#fff';
+            toggler.style.borderColor = '#555';
+        });
+        toggler.addEventListener('mouseleave', () => {
+            if (!isDarkModeActive) {
+                toggler.style.backgroundColor = '#fff';
+                toggler.style.color = '#1a1a1a';
+                toggler.style.borderColor = '#ccc';
+            }
+        });
+        
         document.body.insertBefore(toggler, document.body.firstChild);
 
         // 2. Main toggle function
@@ -154,6 +192,18 @@
             isDarkModeActive = isDark;
             localStorage.setItem('darkMode', isDark);
             toggler.textContent = isDark ? '☀️' : '🌙';
+            
+            // Update button appearance based on dark mode
+            if (isDark) {
+                toggler.style.backgroundColor = '#333';
+                toggler.style.color = '#fff';
+                toggler.style.borderColor = '#555';
+            } else {
+                toggler.style.backgroundColor = '#fff';
+                toggler.style.color = '#1a1a1a';
+                toggler.style.borderColor = '#ccc';
+            }
+            
             applyDynamicDarkMode(isDark);
             if (isDark) {
                 startMutationObserver();

@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const directory = __dirname;
-const scriptTag = '<script src="dark-mode-toggler.js" defer></script>\n</body>';
 
 // Find all HTML files recursively
 function findHtmlFiles(dir, filelist = []) {
@@ -18,6 +17,16 @@ function findHtmlFiles(dir, filelist = []) {
     return filelist;
 }
 
+// Calculate relative path from HTML file to dark-mode-toggler.js
+function getRelativePath(htmlFilePath) {
+    const htmlDir = path.dirname(htmlFilePath);
+    const relativePath = path.relative(htmlDir, directory);
+    // Convert Windows path separators to forward slashes for HTML
+    const normalizedPath = relativePath.split(path.sep).join('/');
+    // If file is in root directory, use 'dark-mode-toggler.js', otherwise use '../' prefix
+    return normalizedPath === '' ? 'dark-mode-toggler.js' : normalizedPath + '/dark-mode-toggler.js';
+}
+
 const htmlFiles = findHtmlFiles(directory);
 
 if (htmlFiles.length === 0) {
@@ -26,21 +35,41 @@ if (htmlFiles.length === 0) {
 }
 
 let injectedCount = 0;
+let updatedCount = 0;
 htmlFiles.forEach(file => {
     try {
         let content = fs.readFileSync(file, 'utf8');
 
-        // Check if the script is already there to avoid duplicates
+        // Check if the script is already there
         if (content.includes('dark-mode-toggler.js')) {
-            console.log(`Script already exists in ${file}. Skipping.`);
+            // Check if path is correct
+            const correctPath = getRelativePath(file);
+            // Match the entire script tag including any attributes
+            const scriptPattern = /<script\s+[^>]*src=["']([^"']*dark-mode-toggler\.js[^"']*)["'][^>]*><\/script>/i;
+            const match = content.match(scriptPattern);
+            
+            if (match && match[1] !== correctPath) {
+                // Path is incorrect, replace the entire script tag
+                const newScriptTag = `<script src="${correctPath}" defer></script>`;
+                content = content.replace(scriptPattern, newScriptTag);
+                fs.writeFileSync(file, content, 'utf8');
+                console.log(`Updated script path in ${file} to ${correctPath}`);
+                updatedCount++;
+            } else if (match) {
+                console.log(`Script already exists with correct path in ${file}. Skipping.`);
+            } else {
+                console.log(`Script already exists in ${file}. Skipping.`);
+            }
             return;
         }
 
         // Inject the script before the closing body tag
         if (content.includes('</body>')) {
+            const relativePath = getRelativePath(file);
+            const scriptTag = `<script src="${relativePath}" defer></script>\n</body>`;
             content = content.replace('</body>', scriptTag);
             fs.writeFileSync(file, content, 'utf8');
-            console.log(`Successfully injected script into ${file}`);
+            console.log(`Successfully injected script into ${file} with path ${relativePath}`);
             injectedCount++;
         } else {
             console.warn(`Could not find </body> tag in ${file}. Skipping.`);
@@ -50,4 +79,6 @@ htmlFiles.forEach(file => {
     }
 });
 
-console.log(`\nInjection complete. Processed ${htmlFiles.length} HTML files and injected the script into ${injectedCount} of them.`);
+console.log(`\nInjection complete. Processed ${htmlFiles.length} HTML files:`);
+console.log(`  - Injected script into ${injectedCount} files`);
+console.log(`  - Updated path in ${updatedCount} files`);
