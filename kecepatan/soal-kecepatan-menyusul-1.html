@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Kecepatan Menyusul 1 - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Kecepatan Menyusul 1 - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Menyusul dan Berpapasan</strong>
+            <p>Dalam soal menyusul, kendaraan yang berangkat belakangan akan menyusul kendaraan yang berangkat lebih dulu ketika jarak yang ditempuh keduanya sama. Dalam soal berpapasan, dua kendaraan yang bergerak dari arah berlawanan akan bertemu ketika total jarak yang ditempuh keduanya sama dengan jarak total antara titik awal mereka.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Rina berangkat dari kota A pada pukul 07:00 dengan kecepatan 50 km/jam. Kemudian, Doni berangkat dari kota A pada pukul 07:30 dengan kecepatan 70 km/jam melalui jalur yang sama. Pukul berapa Doni akan menyusul Rina?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Rina berangkat pukul 07:00 dengan kecepatan 50 km/jam<br>
+                    - Doni berangkat pukul 07:30 dengan kecepatan 70 km/jam<br>
+                    - Selisih waktu berangkat = 30 menit = 0,5 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Doni menyusul Rina setelah \(t\) jam sejak Doni berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Rina:</strong><br>
+                    Rina sudah bergerak selama \((t + 0{,}5)\) jam<br>
+                    \[s_{\text{Rina}} = 50 \times (t + 0{,}5) = 50t + 25\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Doni:</strong><br>
+                    \[s_{\text{Doni}} = 70t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Doni menyusul Rina, jarak mereka sama:</strong><br>
+                    \[s_{\text{Rina}} = s_{\text{Doni}}\]<br>
+                    \[50t + 25 = 70t\]<br>
+                    \[25 = 70t - 50t\]<br>
+                    \[25 = 20t\]<br>
+                    \[t = \frac{25}{20} = 1{,}25 \text{ jam} = 1 \text{ jam } 15 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu Doni menyusul Rina:</strong><br>
+                    Doni berangkat pukul 07:30<br>
+                    Waktu menyusul = 07:30 + 1 jam 15 menit = <strong>08:45</strong>
+                </div>
+                <div class="answer">Jawaban: Doni akan menyusul Rina pada pukul 08:45</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Kereta Api Argo Lawu berangkat dari Stasiun Solo Balapan pada pukul 08:00 menuju Jakarta dengan kecepatan 80 km/jam. Pada pukul 08:15, Kereta Api Taksaka berangkat dari stasiun yang sama dan di jalur yang sama dengan kecepatan 100 km/jam. Pada kilometer berapa Kereta Api Taksaka akan menyusul Kereta Api Argo Lawu?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Argo Lawu berangkat pukul 08:00 dengan kecepatan 80 km/jam<br>
+                    - Taksaka berangkat pukul 08:15 dengan kecepatan 100 km/jam<br>
+                    - Selisih waktu berangkat = 15 menit = 0,25 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Taksaka menyusul Argo Lawu setelah \(t\) jam sejak Taksaka berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Argo Lawu:</strong><br>
+                    Argo Lawu sudah bergerak selama \((t + 0{,}25)\) jam<br>
+                    \[s_{\text{Argo}} = 80 \times (t + 0{,}25) = 80t + 20\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Taksaka:</strong><br>
+                    \[s_{\text{Taksaka}} = 100t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Taksaka menyusul Argo Lawu:</strong><br>
+                    \[s_{\text{Argo}} = s_{\text{Taksaka}}\]<br>
+                    \[80t + 20 = 100t\]<br>
+                    \[20 = 100t - 80t\]<br>
+                    \[20 = 20t\]<br>
+                    \[t = 1 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak dari stasiun saat menyusul:</strong><br>
+                    \[s = 100t = 100 \times 1 = 100 \text{ km}\]
+                </div>
+                <div class="answer">Jawaban: Kereta Api Taksaka akan menyusul Kereta Api Argo Lawu pada kilometer ke-100 dari Stasiun Solo Balapan</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Budi berangkat dari kota X pada pukul 09:00 dengan kecepatan 45 km/jam. Candra berangkat dari kota X pada pukul 09:20 dengan kecepatan 60 km/jam. Pukul berapa Candra akan menyusul Budi?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Budi berangkat pukul 09:00 dengan kecepatan 45 km/jam<br>
+                    - Candra berangkat pukul 09:20 dengan kecepatan 60 km/jam<br>
+                    - Selisih waktu berangkat = 20 menit = \(\frac{20}{60} = \frac{1}{3}\) jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Candra menyusul Budi setelah \(t\) jam sejak Candra berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Budi:</strong><br>
+                    Budi sudah bergerak selama \(\left(t + \frac{1}{3}\right)\) jam<br>
+                    \[s_{\text{Budi}} = 45 \times \left(t + \frac{1}{3}\right) = 45t + 15\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Candra:</strong><br>
+                    \[s_{\text{Candra}} = 60t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Candra menyusul Budi:</strong><br>
+                    \[s_{\text{Budi}} = s_{\text{Candra}}\]<br>
+                    \[45t + 15 = 60t\]<br>
+                    \[15 = 60t - 45t\]<br>
+                    \[15 = 15t\]<br>
+                    \[t = 1 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu Candra menyusul Budi:</strong><br>
+                    Candra berangkat pukul 09:20<br>
+                    Waktu menyusul = 09:20 + 1 jam = <strong>10:20</strong>
+                </div>
+                <div class="answer">Jawaban: Candra akan menyusul Budi pada pukul 10:20</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Mobil A berangkat dari Jakarta pukul 10:00 dengan kecepatan 60 km/jam menuju Bandung. Mobil B berangkat dari Jakarta pukul 10:45 dengan kecepatan 80 km/jam melalui rute yang sama. Pada kilometer keberapa dari Jakarta Mobil B akan menyusul Mobil A?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Mobil A berangkat pukul 10:00 dengan kecepatan 60 km/jam<br>
+                    - Mobil B berangkat pukul 10:45 dengan kecepatan 80 km/jam<br>
+                    - Selisih waktu berangkat = 45 menit = \(\frac{45}{60} = \frac{3}{4}\) jam = 0,75 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Mobil B menyusul Mobil A setelah \(t\) jam sejak Mobil B berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Mobil A:</strong><br>
+                    Mobil A sudah bergerak selama \((t + 0{,}75)\) jam<br>
+                    \[s_{\text{A}} = 60 \times (t + 0{,}75) = 60t + 45\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Mobil B:</strong><br>
+                    \[s_{\text{B}} = 80t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Mobil B menyusul Mobil A:</strong><br>
+                    \[s_{\text{A}} = s_{\text{B}}\]<br>
+                    \[60t + 45 = 80t\]<br>
+                    \[45 = 80t - 60t\]<br>
+                    \[45 = 20t\]<br>
+                    \[t = \frac{45}{20} = \frac{9}{4} = 2{,}25 \text{ jam} = 2 \text{ jam } 15 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak dari Jakarta saat menyusul:</strong><br>
+                    \[s = 80t = 80 \times 2{,}25 = 180 \text{ km}\]
+                </div>
+                <div class="answer">Jawaban: Mobil B akan menyusul Mobil A pada kilometer ke-180 dari Jakarta</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Bus A berangkat dari terminal pada pukul 13:00 dengan kecepatan 50 km/jam. Bus B berangkat dari terminal yang sama pada pukul 13:40 dengan kecepatan 75 km/jam. Pada kilometer keberapa dari terminal Bus B akan menyusul Bus A?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Bus A berangkat pukul 13:00 dengan kecepatan 50 km/jam<br>
+                    - Bus B berangkat pukul 13:40 dengan kecepatan 75 km/jam<br>
+                    - Selisih waktu berangkat = 40 menit = \(\frac{40}{60} = \frac{2}{3}\) jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Bus B menyusul Bus A setelah \(t\) jam sejak Bus B berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Bus A:</strong><br>
+                    Bus A sudah bergerak selama \(\left(t + \frac{2}{3}\right)\) jam<br>
+                    \[s_{\text{A}} = 50 \times \left(t + \frac{2}{3}\right) = 50t + \frac{100}{3}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Bus B:</strong><br>
+                    \[s_{\text{B}} = 75t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Bus B menyusul Bus A:</strong><br>
+                    \[s_{\text{A}} = s_{\text{B}}\]<br>
+                    \[50t + \frac{100}{3} = 75t\]<br>
+                    \[\frac{100}{3} = 75t - 50t\]<br>
+                    \[\frac{100}{3} = 25t\]<br>
+                    \[t = \frac{100}{3 \times 25} = \frac{100}{75} = \frac{4}{3} \text{ jam} = 1 \text{ jam } 20 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak dari terminal saat menyusul:</strong><br>
+                    \[s = 75t = 75 \times \frac{4}{3} = \frac{300}{3} = 100 \text{ km}\]
+                </div>
+                <div class="answer">Jawaban: Bus B akan menyusul Bus A pada kilometer ke-100 dari terminal</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Jarak kota P dan kota Q adalah 280 km. Dari kota P, sebuah motor berangkat menuju kota Q pada pukul 08:00 dengan kecepatan 50 km/jam. Pada saat yang bersamaan, dari kota Q, sebuah mobil berangkat menuju kota P dengan kecepatan 90 km/jam. Pukul berapa mereka akan berpapasan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak PQ = 280 km<br>
+                    - Motor dari P ke Q, berangkat pukul 08:00 dengan kecepatan 50 km/jam<br>
+                    - Mobil dari Q ke P, berangkat pukul 08:00 dengan kecepatan 90 km/jam<br>
+                    - Keduanya berangkat bersamaan
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Mereka berpapasan setelah \(t\) jam sejak berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh motor (dari P):</strong><br>
+                    \[s_{\text{motor}} = 50t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh mobil (dari Q):</strong><br>
+                    \[s_{\text{mobil}} = 90t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat berpapasan, total jarak yang ditempuh = jarak PQ:</strong><br>
+                    \[s_{\text{motor}} + s_{\text{mobil}} = 280\]<br>
+                    \[50t + 90t = 280\]<br>
+                    \[140t = 280\]<br>
+                    \[t = \frac{280}{140} = 2 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu berpapasan:</strong><br>
+                    Mereka berangkat pukul 08:00<br>
+                    Waktu berpapasan = 08:00 + 2 jam = <strong>10:00</strong>
+                </div>
+                <div class="answer">Jawaban: Mereka akan berpapasan pada pukul 10:00</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Motor A berangkat dari kota M pada pukul 08:00 dengan kecepatan 40 km/jam. Motor B berangkat dari kota M pada pukul 08:30 dengan kecepatan 60 km/jam. Pada kilometer keberapa dari kota M, Motor B akan menyusul Motor A?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Motor A berangkat pukul 08:00 dengan kecepatan 40 km/jam<br>
+                    - Motor B berangkat pukul 08:30 dengan kecepatan 60 km/jam<br>
+                    - Selisih waktu berangkat = 30 menit = 0,5 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Motor B menyusul Motor A setelah \(t\) jam sejak Motor B berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Motor A:</strong><br>
+                    Motor A sudah bergerak selama \((t + 0{,}5)\) jam<br>
+                    \[s_{\text{A}} = 40 \times (t + 0{,}5) = 40t + 20\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Motor B:</strong><br>
+                    \[s_{\text{B}} = 60t\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Motor B menyusul Motor A:</strong><br>
+                    \[s_{\text{A}} = s_{\text{B}}\]<br>
+                    \[40t + 20 = 60t\]<br>
+                    \[20 = 60t - 40t\]<br>
+                    \[20 = 20t\]<br>
+                    \[t = 1 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak dari kota M saat menyusul:</strong><br>
+                    \[s = 60t = 60 \times 1 = 60 \text{ km}\]
+                </div>
+                <div class="answer">Jawaban: Motor B akan menyusul Motor A pada kilometer ke-60 dari kota M</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Sari berangkat dari kota P menuju kota Q pada pukul 07:00 dengan kecepatan 60 km/jam. Setelah berkendara selama 1,5 jam, Sari berhenti untuk beristirahat selama 30 menit, lalu melanjutkan perjalanan dengan kecepatan yang sama. Dari kota P, Tono berangkat pada pukul 08:00 dengan kecepatan 75 km/jam. Pukul berapa Tono akan menyusul Sari?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Sari berangkat pukul 07:00 dengan kecepatan 60 km/jam<br>
+                    - Sari berkendara 1,5 jam, lalu berhenti 30 menit<br>
+                    - Tono berangkat pukul 08:00 dengan kecepatan 75 km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis perjalanan Sari:</strong><br>
+                    - Pukul 07:00 - 08:30: Sari berkendara, jarak = \(60 \times 1{,}5 = 90\) km<br>
+                    - Pukul 08:30 - 09:00: Sari berhenti (30 menit)<br>
+                    - Pukul 09:00: Sari melanjutkan perjalanan
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis perjalanan Tono:</strong><br>
+                    - Tono berangkat pukul 08:00<br>
+                    - Pada pukul 08:30, Tono sudah berkendara 30 menit = 0,5 jam<br>
+                    - Jarak Tono pada pukul 08:30 = \(75 \times 0{,}5 = 37{,}5\) km<br>
+                    - Jarak Sari pada pukul 08:30 = 90 km (sedang berhenti)
+                </div>
+                <div class="solution-step">
+                    <strong>Pada pukul 09:00:</strong><br>
+                    - Tono sudah berkendara 1 jam, jarak = \(75 \times 1 = 75\) km<br>
+                    - Sari sudah berkendara 1,5 jam, jarak = 90 km (masih di posisi yang sama karena berhenti)
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah pukul 09:00, keduanya bergerak:</strong><br>
+                    Misalkan setelah pukul 09:00, Tono menyusul Sari dalam waktu \(t\) jam<br>
+                    Jarak Sari setelah pukul 09:00 = \(90 + 60t\)<br>
+                    Jarak Tono setelah pukul 09:00 = \(75 + 75t\)
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Tono menyusul Sari:</strong><br>
+                    \[75 + 75t = 90 + 60t\]<br>
+                    \[75t - 60t = 90 - 75\]<br>
+                    \[15t = 15\]<br>
+                    \[t = 1 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu Tono menyusul Sari:</strong><br>
+                    Pukul 09:00 + 1 jam = <strong>10:00</strong>
+                </div>
+                <div class="answer">Jawaban: Tono akan menyusul Sari pada pukul 10:00</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Kereta A berangkat dari Stasiun Gambir pukul 06:00 dengan kecepatan 80 km/jam. Setelah berjalan selama 2 jam, kereta mengalami gangguan dan berhenti di rel selama 15 menit. Setelah itu, kereta melanjutkan perjalanan dengan kecepatan yang sama. Kereta B berangkat dari Stasiun Gambir pukul 07:00 dengan kecepatan 100 km/jam. Pukul berapa Kereta B akan menyusul Kereta A?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Kereta A berangkat pukul 06:00 dengan kecepatan 80 km/jam<br>
+                    - Kereta A berjalan 2 jam, lalu berhenti 15 menit<br>
+                    - Kereta B berangkat pukul 07:00 dengan kecepatan 100 km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis perjalanan Kereta A:</strong><br>
+                    - Pukul 06:00 - 08:00: Kereta A berkendara, jarak = \(80 \times 2 = 160\) km<br>
+                    - Pukul 08:00 - 08:15: Kereta A berhenti (15 menit)<br>
+                    - Pukul 08:15: Kereta A melanjutkan perjalanan
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis perjalanan Kereta B:</strong><br>
+                    - Kereta B berangkat pukul 07:00<br>
+                    - Pada pukul 08:00, Kereta B sudah berkendara 1 jam, jarak = \(100 \times 1 = 100\) km<br>
+                    - Pada pukul 08:15, Kereta B sudah berkendara 1 jam 15 menit = 1,25 jam<br>
+                    - Jarak Kereta B pada pukul 08:15 = \(100 \times 1{,}25 = 125\) km<br>
+                    - Jarak Kereta A pada pukul 08:15 = 160 km (sedang berhenti)
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah pukul 08:15, keduanya bergerak:</strong><br>
+                    Misalkan setelah pukul 08:15, Kereta B menyusul Kereta A dalam waktu \(t\) jam<br>
+                    Jarak Kereta A setelah pukul 08:15 = \(160 + 80t\)<br>
+                    Jarak Kereta B setelah pukul 08:15 = \(125 + 100t\)
+                </div>
+                <div class="solution-step">
+                    <strong>Saat Kereta B menyusul Kereta A:</strong><br>
+                    \[125 + 100t = 160 + 80t\]<br>
+                    \[100t - 80t = 160 - 125\]<br>
+                    \[20t = 35\]<br>
+                    \[t = \frac{35}{20} = \frac{7}{4} = 1{,}75 \text{ jam} = 1 \text{ jam } 45 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu Kereta B menyusul Kereta A:</strong><br>
+                    Pukul 08:15 + 1 jam 45 menit = <strong>10:00</strong>
+                </div>
+                <div class="answer">Jawaban: Kereta B akan menyusul Kereta A pada pukul 10:00</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Jarak Jakarta - Cirebon adalah 240 km. Sebuah mobil berangkat dari Jakarta menuju Cirebon pada pukul 08:00 dengan kecepatan 70 km/jam. Dari arah berlawanan, sebuah bus berangkat dari Cirebon menuju Jakarta pada pukul 08:30 dengan kecepatan 50 km/jam. Mobil yang dari Jakarta berhenti untuk mengisi bensin selama 10 menit pada pukul 09:30. Pukul berapa mereka akan berpapasan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak Jakarta-Cirebon = 240 km<br>
+                    - Mobil dari Jakarta berangkat pukul 08:00 dengan kecepatan 70 km/jam<br>
+                    - Bus dari Cirebon berangkat pukul 08:30 dengan kecepatan 50 km/jam<br>
+                    - Mobil berhenti 10 menit pada pukul 09:30
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis perjalanan mobil (dari Jakarta):</strong><br>
+                    - Pukul 08:00 - 09:30: Mobil berkendara selama 1,5 jam<br>
+                    - Jarak yang ditempuh = \(70 \times 1{,}5 = 105\) km<br>
+                    - Pukul 09:30 - 09:40: Mobil berhenti (10 menit)<br>
+                    - Pukul 09:40: Mobil melanjutkan perjalanan
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis perjalanan bus (dari Cirebon):</strong><br>
+                    - Bus berangkat pukul 08:30<br>
+                    - Pada pukul 09:30, bus sudah berkendara 1 jam, jarak = \(50 \times 1 = 50\) km dari Cirebon<br>
+                    - Jarak bus dari Jakarta = \(240 - 50 = 190\) km<br>
+                    - Pada pukul 09:40, bus sudah berkendara 1 jam 10 menit = \(\frac{7}{6}\) jam<br>
+                    - Jarak bus pada pukul 09:40 = \(50 \times \frac{7}{6} = \frac{175}{3}\) km dari Cirebon<br>
+                    - Jarak bus dari Jakarta = \(240 - \frac{175}{3} = \frac{545}{3}\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Pada pukul 09:40:</strong><br>
+                    - Jarak mobil dari Jakarta = 105 km<br>
+                    - Jarak bus dari Jakarta = \(\frac{545}{3}\) km<br>
+                    - Jarak antara mereka = \(\frac{545}{3} - 105 = \frac{545 - 315}{3} = \frac{230}{3}\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah pukul 09:40, keduanya bergerak saling mendekat:</strong><br>
+                    Kecepatan relatif = \(70 + 50 = 120\) km/jam<br>
+                    Waktu untuk berpapasan = \(\frac{\frac{230}{3}}{120} = \frac{230}{360} = \frac{23}{36}\) jam<br>
+                    \(\frac{23}{36} \times 60 = \frac{115}{3} = 38{,}33\) menit = 38 menit 20 detik
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu berpapasan:</strong><br>
+                    Pukul 09:40 + 38 menit 20 detik = <strong>10:18:20</strong> atau dibulatkan menjadi <strong>10:18</strong>
+                </div>
+                <div class="answer">Jawaban: Mereka akan berpapasan pada pukul 10:18 (atau tepatnya 10:18:20)</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+

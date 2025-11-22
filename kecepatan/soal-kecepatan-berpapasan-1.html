@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Kecepatan Berpapasan 1 - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Kecepatan Berpapasan 1 - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Berpapasan</strong>
+            <p>Dalam soal berpapasan, dua kendaraan yang bergerak dari arah berlawanan akan bertemu ketika total jarak yang ditempuh keduanya sama dengan jarak total antara titik awal mereka. Kecepatan relatif adalah jumlah dari kedua kecepatan karena mereka saling mendekat.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Mobil P berangkat dari Kota M menuju Kota N dengan kecepatan 50 km/jam. Pada saat yang sama, Mobil Q berangkat dari Kota N menuju Kota M dengan kecepatan 70 km/jam. Jika jarak kedua kota adalah 360 km, kapan mereka akan berpapasan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Mobil P dari M ke N, kecepatan 50 km/jam<br>
+                    - Mobil Q dari N ke M, kecepatan 70 km/jam<br>
+                    - Jarak MN = 360 km<br>
+                    - Keduanya berangkat bersamaan
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan:</strong> Mereka berpapasan setelah \(t\) jam sejak berangkat
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Mobil P:</strong><br>
+                    \[s_{\text{P}} = 50t \text{ km}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Mobil Q:</strong><br>
+                    \[s_{\text{Q}} = 70t \text{ km}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Saat berpapasan, total jarak yang ditempuh = jarak MN:</strong><br>
+                    \[s_{\text{P}} + s_{\text{Q}} = 360\]<br>
+                    \[50t + 70t = 360\]<br>
+                    \[120t = 360\]<br>
+                    \[t = \frac{360}{120} = 3 \text{ jam}\]
+                </div>
+                <div class="formula">
+                    <strong>Alternatif menggunakan kecepatan relatif:</strong><br>
+                    Kecepatan relatif = \(50 + 70 = 120\) km/jam<br>
+                    Waktu berpapasan = \(\frac{360}{120} = 3\) jam
+                </div>
+                <div class="answer">Jawaban: Mereka akan berpapasan setelah 3 jam sejak berangkat</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Bus R berangkat dari Terminal A pukul 07.00 dengan kecepatan 40 km/jam menuju Terminal B. Satu jam kemudian, Bus S berangkat dari Terminal B menuju Terminal A dengan kecepatan 60 km/jam. Jika jarak kedua terminal adalah 460 km, pukul berapa mereka akan berpapasan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Bus R berangkat pukul 07:00 dari A ke B, kecepatan 40 km/jam<br>
+                    - Bus S berangkat pukul 08:00 dari B ke A, kecepatan 60 km/jam<br>
+                    - Jarak AB = 460 km<br>
+                    - Selisih waktu berangkat = 1 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Pada pukul 08:00 (saat Bus S berangkat):</strong><br>
+                    Bus R sudah bergerak selama 1 jam<br>
+                    Jarak yang ditempuh Bus R = \(40 \times 1 = 40\) km dari Terminal A<br>
+                    Sisa jarak antara mereka = \(460 - 40 = 420\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah pukul 08:00, keduanya bergerak saling mendekat:</strong><br>
+                    Kecepatan relatif = \(40 + 60 = 100\) km/jam<br>
+                    Misalkan mereka berpapasan setelah \(t\) jam sejak pukul 08:00<br>
+                    Jarak yang ditempuh bersama = \(100t\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Sisa jarak harus ditempuh:</strong><br>
+                    \[100t = 420\]<br>
+                    \[t = \frac{420}{100} = 4{,}2 \text{ jam} = 4 \text{ jam } 12 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu berpapasan:</strong><br>
+                    Pukul 08:00 + 4 jam 12 menit = <strong>12:12</strong>
+                </div>
+                <div class="answer">Jawaban: Mereka akan berpapasan pada pukul 12:12</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Sepeda motor A berangkat dari kota P pukul 09.00 dengan kecepatan 50 km/jam menuju kota Q. Tiga puluh menit kemudian, sepeda motor B berangkat dari kota Q menuju kota P dengan kecepatan 60 km/jam. Jika jarak kedua kota adalah 300 km, pukul berapa mereka akan berpapasan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Motor A berangkat pukul 09:00 dari P ke Q, kecepatan 50 km/jam<br>
+                    - Motor B berangkat pukul 09:30 dari Q ke P, kecepatan 60 km/jam<br>
+                    - Jarak PQ = 300 km<br>
+                    - Selisih waktu berangkat = 30 menit = 0,5 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Pada pukul 09:30 (saat Motor B berangkat):</strong><br>
+                    Motor A sudah bergerak selama 0,5 jam<br>
+                    Jarak yang ditempuh Motor A = \(50 \times 0{,}5 = 25\) km dari kota P<br>
+                    Sisa jarak antara mereka = \(300 - 25 = 275\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah pukul 09:30, keduanya bergerak saling mendekat:</strong><br>
+                    Kecepatan relatif = \(50 + 60 = 110\) km/jam<br>
+                    Misalkan mereka berpapasan setelah \(t\) jam sejak pukul 09:30<br>
+                    Jarak yang ditempuh bersama = \(110t\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Sisa jarak harus ditempuh:</strong><br>
+                    \[110t = 275\]<br>
+                    \[t = \frac{275}{110} = \frac{5}{2} = 2{,}5 \text{ jam} = 2 \text{ jam } 30 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu berpapasan:</strong><br>
+                    Pukul 09:30 + 2 jam 30 menit = <strong>12:00</strong>
+                </div>
+                <div class="answer">Jawaban: Mereka akan berpapasan pada pukul 12:00</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Kereta Api Cepat berangkat dari Jakarta pukul 06.00 menuju Bandung dengan kecepatan 120 km/jam. Jarak Jakarta-Bandung adalah 150 km. Pada saat yang sama, Kereta Api Lokal berangkat dari Bandung menuju Jakarta dengan kecepatan 60 km/jam. Di kilometer berapa (dihitung dari Jakarta) kedua kereta tersebut akan berpapasan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Kereta Cepat dari Jakarta ke Bandung, kecepatan 120 km/jam<br>
+                    - Kereta Lokal dari Bandung ke Jakarta, kecepatan 60 km/jam<br>
+                    - Jarak Jakarta-Bandung = 150 km<br>
+                    - Keduanya berangkat bersamaan pukul 06:00
+                </div>
+                <div class="solution-step">
+                    <strong>Kecepatan relatif:</strong><br>
+                    Kecepatan relatif = \(120 + 60 = 180\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu berpapasan:</strong><br>
+                    \[t = \frac{150}{180} = \frac{5}{6} \text{ jam} = \frac{5}{6} \times 60 = 50 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Kereta Cepat dari Jakarta:</strong><br>
+                    \[s_{\text{Cepat}} = 120 \times \frac{5}{6} = \frac{600}{6} = 100 \text{ km}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Jarak yang ditempuh Kereta Lokal dari Bandung = \(60 \times \frac{5}{6} = 50\) km<br>
+                    Total jarak = \(100 + 50 = 150\) km ✓
+                </div>
+                <div class="answer">Jawaban: Kedua kereta akan berpapasan pada kilometer ke-100 dari Jakarta</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Dua pengendara sepeda, Adi dan Budi, terpisah jarak 60 km. Adi berangkat dari titik A menuju B dengan kecepatan 15 km/jam. Pada saat yang sama, Budi berangkat dari titik B menuju A dengan kecepatan 25 km/jam. Di kilometer berapa (dihitung dari titik A) mereka akan bertemu?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jarak AB = 60 km<br>
+                    - Adi dari A ke B, kecepatan 15 km/jam<br>
+                    - Budi dari B ke A, kecepatan 25 km/jam<br>
+                    - Keduanya berangkat bersamaan
+                </div>
+                <div class="solution-step">
+                    <strong>Kecepatan relatif:</strong><br>
+                    Kecepatan relatif = \(15 + 25 = 40\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu bertemu:</strong><br>
+                    \[t = \frac{60}{40} = \frac{3}{2} = 1{,}5 \text{ jam}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh Adi dari titik A:</strong><br>
+                    \[s_{\text{Adi}} = 15 \times 1{,}5 = 22{,}5 \text{ km}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Jarak yang ditempuh Budi dari titik B = \(25 \times 1{,}5 = 37{,}5\) km<br>
+                    Total jarak = \(22{,}5 + 37{,}5 = 60\) km ✓
+                </div>
+                <div class="answer">Jawaban: Mereka akan bertemu pada kilometer ke-22,5 dari titik A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Sebuah mobil polisi mengejar seorang perampok yang melarikan diri dengan mobil. Perampok berada 2 km di depan polisi dan melaju dengan kecepatan konstan 100 km/jam. Jika mobil polisi melaju dengan kecepatan 120 km/jam, berapa jarak yang dibutuhkan mobil polisi untuk menyusul perampok tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Perampok berada 2 km di depan polisi<br>
+                    - Kecepatan perampok = 100 km/jam<br>
+                    - Kecepatan polisi = 120 km/jam<br>
+                    <em>Catatan: Ini adalah soal menyusul, bukan berpapasan</em>
+                </div>
+                <div class="solution-step">
+                    <strong>Kecepatan relatif:</strong><br>
+                    Karena keduanya bergerak ke arah yang sama, kecepatan relatif adalah selisih kecepatan:<br>
+                    Kecepatan relatif = \(120 - 100 = 20\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Waktu yang dibutuhkan polisi untuk menyusul perampok:</strong><br>
+                    \[t = \frac{\text{Jarak awal}}{\text{Kecepatan relatif}} = \frac{2}{20} = \frac{1}{10} = 0{,}1 \text{ jam} = 6 \text{ menit}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Jarak yang ditempuh polisi saat menyusul:</strong><br>
+                    \[s_{\text{polisi}} = 120 \times 0{,}1 = 12 \text{ km}\]
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Jarak yang ditempuh perampok = \(100 \times 0{,}1 = 10\) km<br>
+                    Selisih jarak = \(12 - 10 = 2\) km ✓ (sesuai jarak awal)
+                </div>
+                <div class="answer">Jawaban: Mobil polisi membutuhkan jarak 12 km untuk menyusul perampok tersebut</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
