@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Pecahan dan Desimal - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin: 8px 0;
+            list-style: none;
+        }
+        
+        .options li:before {
+            content: counter(option-counter, upper-alpha) ". ";
+            counter-increment: option-counter;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .options {
+            counter-reset: option-counter;
+        }
+        
+        .comparison-table {
+            margin: 15px 0;
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 10px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Pecahan dan Desimal - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Pecahan dan Desimal</strong>
+            <p>Pecahan dan desimal adalah representasi bilangan yang berbeda. Pecahan menggunakan pembilang dan penyebut, sedangkan desimal menggunakan sistem basis 10. Soal-soal ini menguji kemampuan operasi dasar dengan pecahan dan desimal, termasuk konversi antara keduanya, operasi aritmetika, dan perbandingan kuantitas.</p>
+        </div>
+        
+        <h2>Halaman 138</h2>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Hasil dari \(\frac{2}{6} \times 12 - \frac{1}{5} \div 4 + \frac{1}{10} = \dots\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>405</li>
+                <li>40,5</li>
+                <li>4,05</li>
+                <li>0,405</li>
+                <li>0,0405</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengikuti urutan operasi (PEMDAS):</strong><br>
+                    \(\frac{2}{6} \times 12 - \frac{1}{5} \div 4 + \frac{1}{10}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Perkalian dan pembagian dari kiri ke kanan</strong><br>
+                    \(\frac{2}{6} \times 12 = \frac{2 \times 12}{6} = \frac{24}{6} = 4\)<br>
+                    \(\frac{1}{5} \div 4 = \frac{1}{5} \times \frac{1}{4} = \frac{1}{20}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi hasil</strong><br>
+                    \(4 - \frac{1}{20} + \frac{1}{10}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Penjumlahan dan pengurangan</strong><br>
+                    Samakan penyebut: KPK dari 20 dan 10 adalah 20<br>
+                    \(4 - \frac{1}{20} + \frac{1}{10} = 4 - \frac{1}{20} + \frac{2}{20} = 4 + \frac{1}{20} = 4 + 0,05 = 4,05\)
+                </div>
+                <div class="answer">Jawaban: C. 4,05</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Hasil dari \(\frac{5}{7} - (-5) \div 5\frac{5}{6} \times (-20) + (\frac{1}{21} \div \frac{3}{27}) = \dots\)
+            </div>
+            <ul class="options">
+                <li>\(-16\)</li>
+                <li>\(-16\frac{1}{7}\)</li>
+                <li>\(-16\frac{2}{7}\)</li>
+                <li>\(-16\frac{3}{7}\)</li>
+                <li>\(-16\frac{4}{7}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengikuti urutan operasi:</strong><br>
+                    \(\frac{5}{7} - (-5) \div 5\frac{5}{6} \times (-20) + (\frac{1}{21} \div \frac{3}{27})\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi pecahan campuran</strong><br>
+                    \(5\frac{5}{6} = \frac{35}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian dan perkalian</strong><br>
+                    \((-5) \div \frac{35}{6} = (-5) \times \frac{6}{35} = -\frac{30}{35} = -\frac{6}{7}\)<br>
+                    \(-\frac{6}{7} \times (-20) = \frac{120}{7}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung pembagian dalam kurung</strong><br>
+                    \(\frac{1}{21} \div \frac{3}{27} = \frac{1}{21} \times \frac{27}{3} = \frac{1}{21} \times 9 = \frac{9}{21} = \frac{3}{7}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Gabungkan semua</strong><br>
+                    \(\frac{5}{7} + \frac{120}{7} + \frac{3}{7} = \frac{128}{7} = 18\frac{2}{7}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Koreksi: Perhatikan tanda negatif</strong><br>
+                    \(\frac{5}{7} - (-5) \div 5\frac{5}{6} \times (-20) + \frac{3}{7}\)<br>
+                    \(= \frac{5}{7} - \frac{120}{7} + \frac{3}{7}\)<br>
+                    \(= \frac{5 - 120 + 3}{7} = \frac{-112}{7} = -16\)
+                </div>
+                <div class="answer">Jawaban: A. \(-16\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Hasil dari \(5,5 - \frac{3+2}{5} + (-\frac{6}{17}) \div \frac{2}{34} = \dots\)
+            </div>
+            <ul class="options">
+                <li>0,8</li>
+                <li>-0,8</li>
+                <li>11,8</li>
+                <li>-11,8</li>
+                <li>-5,8</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menyederhanakan langkah demi langkah:</strong><br>
+                    \(5,5 - \frac{3+2}{5} + (-\frac{6}{17}) \div \frac{2}{34}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung dalam kurung</strong><br>
+                    \(\frac{3+2}{5} = \frac{5}{5} = 1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian</strong><br>
+                    \(-\frac{6}{17} \div \frac{2}{34} = -\frac{6}{17} \times \frac{34}{2} = -\frac{6 \times 34}{17 \times 2} = -\frac{204}{34} = -6\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Gabungkan semua</strong><br>
+                    \(5,5 - 1 + (-6) = 5,5 - 1 - 6 = 4,5 - 6 = -1,5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Koreksi ulang:</strong><br>
+                    \(-\frac{6}{17} \div \frac{2}{34} = -\frac{6}{17} \times \frac{34}{2} = -\frac{6 \times 34}{17 \times 2}\)<br>
+                    \(= -\frac{6 \times 2}{1 \times 1} = -12\)<br>
+                    \(5,5 - 1 + (-12) = 4,5 - 12 = -7,5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Perhitungan yang benar:</strong><br>
+                    \(-\frac{6}{17} \div \frac{2}{34} = -\frac{6}{17} \times \frac{34}{2} = -\frac{6 \times 34}{17 \times 2}\)<br>
+                    Karena \(34 = 2 \times 17\):<br>
+                    \(= -\frac{6 \times 2 \times 17}{17 \times 2} = -6\)<br>
+                    \(5,5 - 1 - 6 = -1,5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mari hitung ulang dengan teliti:</strong><br>
+                    \(5,5 = \frac{11}{2}\)<br>
+                    \(\frac{11}{2} - 1 - 6 = \frac{11}{2} - \frac{2}{2} - \frac{12}{2} = \frac{11 - 2 - 12}{2} = \frac{-3}{2} = -1,5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi perhitungan:</strong><br>
+                    \(-\frac{6}{17} \div \frac{2}{34} = -\frac{6}{17} \times \frac{34}{2} = -\frac{6 \times 34}{17 \times 2}\)<br>
+                    \(= -\frac{6 \times 2 \times 17}{17 \times 2} = -6\) ✓<br>
+                    \(5,5 - 1 - 6 = -1,5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Catatan:</strong><br>
+                    Hasil perhitungan adalah \(-1,5\), namun tidak ada di pilihan. Pilihan terdekat adalah B. \(-0,8\). Kemungkinan ada kesalahan dalam soal atau pilihan jawaban, atau ada interpretasi urutan operasi yang berbeda.
+                </div>
+                <div class="answer">Jawaban: Berdasarkan perhitungan, hasilnya adalah \(-1,5\), namun tidak ada di pilihan. Pilihan terdekat adalah B. \(-0,8\).</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Hasil dari \(185\% + 2\frac{1}{4} - 1,25 = \dots\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>2</li>
+                <li>2,25</li>
+                <li>2,85</li>
+                <li>1,85</li>
+                <li>1</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi semua ke bentuk desimal:</strong><br>
+                    \(185\% = 1,85\)<br>
+                    \(2\frac{1}{4} = 2 + 0,25 = 2,25\)<br>
+                    \(1,25 = 1,25\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung:</strong><br>
+                    \(1,85 + 2,25 - 1,25 = 4,10 - 1,25 = 2,85\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif menggunakan pecahan:</strong><br>
+                    \(185\% = \frac{185}{100} = \frac{37}{20}\)<br>
+                    \(2\frac{1}{4} = \frac{9}{4}\)<br>
+                    \(1,25 = \frac{5}{4}\)<br>
+                    KPK dari 20 dan 4 adalah 20:<br>
+                    \(\frac{37}{20} + \frac{45}{20} - \frac{25}{20} = \frac{57}{20} = 2,85\)
+                </div>
+                <div class="answer">Jawaban: C. 2,85</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Hasil dari \((1 + \frac{7}{8}) \div (2 - \frac{1}{4}) \times (\frac{3}{5} - 2) = \dots\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>\(\frac{3}{2}\)</li>
+                <li>\(-\frac{3}{2}\)</li>
+                <li>\(\frac{2}{3}\)</li>
+                <li>\(-\frac{2}{3}\)</li>
+                <li>2</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung setiap bagian dalam kurung:</strong><br>
+                    \(1 + \frac{7}{8} = \frac{8}{8} + \frac{7}{8} = \frac{15}{8}\)<br>
+                    \(2 - \frac{1}{4} = \frac{8}{4} - \frac{1}{4} = \frac{7}{4}\)<br>
+                    \(\frac{3}{5} - 2 = \frac{3}{5} - \frac{10}{5} = -\frac{7}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Substitusi dan hitung:</strong><br>
+                    \(\frac{15}{8} \div \frac{7}{4} \times (-\frac{7}{5})\)<br>
+                    \(= \frac{15}{8} \times \frac{4}{7} \times (-\frac{7}{5})\)
+                </div>
+                <div class="solution-step">
+                    <strong>Sederhanakan:</strong><br>
+                    \(= \frac{15 \times 4 \times (-7)}{8 \times 7 \times 5}\)<br>
+                    \(= \frac{15 \times 4 \times (-1)}{8 \times 5}\)<br>
+                    \(= \frac{15 \times (-1)}{2 \times 5} = \frac{-15}{10} = -\frac{3}{2}\)
+                </div>
+                <div class="answer">Jawaban: B. \(-\frac{3}{2}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Hasil dari \((-0,375 + \frac{5}{8}) \div (\frac{3}{4} - 0,25) \times (-6 + \frac{2}{3}) = \dots\)
+            </div>
+            <ul class="options">
+                <li>\(2\frac{3}{2}\)</li>
+                <li>\(-2\frac{3}{2}\)</li>
+                <li>\(2\frac{2}{3}\)</li>
+                <li>\(-2\frac{2}{3}\)</li>
+                <li>2</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi desimal ke pecahan:</strong><br>
+                    \(0,375 = \frac{3}{8}\)<br>
+                    \(0,25 = \frac{1}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung setiap bagian:</strong><br>
+                    \(-0,375 + \frac{5}{8} = -\frac{3}{8} + \frac{5}{8} = \frac{2}{8} = \frac{1}{4}\)<br>
+                    \(\frac{3}{4} - 0,25 = \frac{3}{4} - \frac{1}{4} = \frac{2}{4} = \frac{1}{2}\)<br>
+                    \(-6 + \frac{2}{3} = -\frac{18}{3} + \frac{2}{3} = -\frac{16}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Gabungkan:</strong><br>
+                    \(\frac{1}{4} \div \frac{1}{2} \times (-\frac{16}{3})\)<br>
+                    \(= \frac{1}{4} \times \frac{2}{1} \times (-\frac{16}{3})\)<br>
+                    \(= \frac{1 \times 2 \times (-16)}{4 \times 1 \times 3}\)<br>
+                    \(= \frac{-32}{12} = -\frac{8}{3} = -2\frac{2}{3}\)
+                </div>
+                <div class="answer">Jawaban: D. \(-2\frac{2}{3}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Hasil dari \((-\frac{7}{15} - 3) \div (-26\frac{1}{9} + 0,1111) \times (-\frac{3}{4} - 0,25) = \dots\)
+            </div>
+            <ul class="options">
+                <li>\(-\frac{2}{15}\)</li>
+                <li>\(\frac{2}{15}\)</li>
+                <li>\(-\frac{3}{15}\)</li>
+                <li>\(\frac{3}{15}\)</li>
+                <li>\(\frac{4}{15}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi dan sederhanakan:</strong><br>
+                    \(0,1111 \approx \frac{1}{9}\)<br>
+                    \(0,25 = \frac{1}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung setiap bagian:</strong><br>
+                    \(-\frac{7}{15} - 3 = -\frac{7}{15} - \frac{45}{15} = -\frac{52}{15}\)<br>
+                    \(-26\frac{1}{9} + \frac{1}{9} = -\frac{235}{9} + \frac{1}{9} = -\frac{234}{9} = -26\)<br>
+                    \(-\frac{3}{4} - \frac{1}{4} = -\frac{4}{4} = -1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Gabungkan:</strong><br>
+                    \(-\frac{52}{15} \div (-26) \times (-1)\)<br>
+                    \(= -\frac{52}{15} \times (-\frac{1}{26}) \times (-1)\)<br>
+                    \(= \frac{52}{15 \times 26} \times (-1)\)<br>
+                    \(= \frac{2}{15} \times (-1) = -\frac{2}{15}\)
+                </div>
+                <div class="answer">Jawaban: A. \(-\frac{2}{15}\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 139</h2>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Hasil dari \((\frac{5}{6} + 0,1667) \div (\frac{7}{6} - 1,833) \times (\frac{3}{5} - 3) = \dots\)
+            </div>
+            <ul class="options">
+                <li>0,6</li>
+                <li>9</li>
+                <li>1,2</li>
+                <li>2,4</li>
+                <li>3,6</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi desimal ke pecahan:</strong><br>
+                    \(0,1667 \approx \frac{1}{6}\)<br>
+                    \(1,833 \approx \frac{11}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung setiap bagian:</strong><br>
+                    \(\frac{5}{6} + \frac{1}{6} = \frac{6}{6} = 1\)<br>
+                    \(\frac{7}{6} - \frac{11}{6} = -\frac{4}{6} = -\frac{2}{3}\)<br>
+                    \(\frac{3}{5} - 3 = \frac{3}{5} - \frac{15}{5} = -\frac{12}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Gabungkan:</strong><br>
+                    \(1 \div (-\frac{2}{3}) \times (-\frac{12}{5})\)<br>
+                    \(= 1 \times (-\frac{3}{2}) \times (-\frac{12}{5})\)<br>
+                    \(= \frac{3 \times 12}{2 \times 5} = \frac{36}{10} = 3,6\)
+                </div>
+                <div class="answer">Jawaban: E. 3,6</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Hasil dari \(6 + 0,75 - 2\frac{1}{2}\) adalah...
+            </div>
+            <ul class="options">
+                <li>\(\frac{13}{4}\)</li>
+                <li>\(\frac{14}{4}\)</li>
+                <li>\(\frac{15}{4}\)</li>
+                <li>\(\frac{16}{4}\)</li>
+                <li>\(\frac{17}{4}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi ke pecahan:</strong><br>
+                    \(0,75 = \frac{3}{4}\)<br>
+                    \(2\frac{1}{2} = \frac{5}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung:</strong><br>
+                    \(6 + \frac{3}{4} - \frac{5}{2}\)<br>
+                    \(= \frac{24}{4} + \frac{3}{4} - \frac{10}{4}\)<br>
+                    \(= \frac{24 + 3 - 10}{4} = \frac{17}{4}\)
+                </div>
+                <div class="answer">Jawaban: E. \(\frac{17}{4}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Hasil dari \(20 : 4 + \frac{4}{5} \times 2\frac{1}{5}\) adalah... (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>6,5</li>
+                <li>6,76</li>
+                <li>8,2</li>
+                <li>11,2</li>
+                <li>11,8</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengikuti urutan operasi (perkalian/pembagian dulu):</strong><br>
+                    \(20 : 4 + \frac{4}{5} \times 2\frac{1}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung pembagian dan perkalian:</strong><br>
+                    \(20 : 4 = 5\)<br>
+                    \(2\frac{1}{5} = \frac{11}{5}\)<br>
+                    \(\frac{4}{5} \times \frac{11}{5} = \frac{44}{25} = 1,76\)
+                </div>
+                <div class="solution-step">
+                    <strong>Jumlahkan:</strong><br>
+                    \(5 + 1,76 = 6,76\)
+                </div>
+                <div class="answer">Jawaban: B. 6,76</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Hasil dari \(6\frac{3}{4} + 2 - 5\frac{3}{8}\) adalah...
+            </div>
+            <ul class="options">
+                <li>\(3\frac{3}{4}\)</li>
+                <li>\(3\frac{3}{8}\)</li>
+                <li>\(4\frac{3}{4}\)</li>
+                <li>\(4\frac{3}{8}\)</li>
+                <li>\(5\frac{3}{4}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi ke pecahan biasa:</strong><br>
+                    \(6\frac{3}{4} = \frac{27}{4}\)<br>
+                    \(2 = \frac{16}{8}\)<br>
+                    \(5\frac{3}{8} = \frac{43}{8}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Samakan penyebut (KPK dari 4 dan 8 adalah 8):</strong><br>
+                    \(\frac{27}{4} = \frac{54}{8}\)<br>
+                    \(\frac{54}{8} + \frac{16}{8} - \frac{43}{8} = \frac{27}{8} = 3\frac{3}{8}\)
+                </div>
+                <div class="answer">Jawaban: B. \(3\frac{3}{8}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Hasil dari \(2,7 : \frac{3}{4} + 3\frac{3}{5} \times \frac{2}{3}\) adalah...
+            </div>
+            <ul class="options">
+                <li>\(4\frac{1}{5}\)</li>
+                <li>\(5\frac{1}{15}\)</li>
+                <li>6</li>
+                <li>\(6\frac{11}{5}\)</li>
+                <li>8</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung pembagian dan perkalian terlebih dahulu:</strong><br>
+                    \(2,7 : \frac{3}{4} = \frac{27}{10} \times \frac{4}{3} = \frac{108}{30} = \frac{36}{10} = 3,6\)<br>
+                    \(3\frac{3}{5} = \frac{18}{5}\)<br>
+                    \(\frac{18}{5} \times \frac{2}{3} = \frac{36}{15} = \frac{12}{5} = 2,4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Jumlahkan:</strong><br>
+                    \(3,6 + 2,4 = 6\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif menggunakan pecahan:</strong><br>
+                    \(\frac{36}{10} + \frac{12}{5} = \frac{36}{10} + \frac{24}{10} = \frac{60}{10} = 6\)
+                </div>
+                <div class="answer">Jawaban: C. 6</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Hasil dari \(\frac{3}{4} + 2 - 5 \times \frac{1}{3} = \dots\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>\(\frac{2}{3}\)</li>
+                <li>\(1\frac{1}{3}\)</li>
+                <li>\(1\frac{1}{12}\)</li>
+                <li>\(1\frac{2}{12}\)</li>
+                <li>\(1\frac{3}{12}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengikuti urutan operasi (perkalian dulu):</strong><br>
+                    \(5 \times \frac{1}{3} = \frac{5}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Substitusi:</strong><br>
+                    \(\frac{3}{4} + 2 - \frac{5}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Samakan penyebut (KPK dari 4 dan 3 adalah 12):</strong><br>
+                    \(\frac{3}{4} = \frac{9}{12}\)<br>
+                    \(2 = \frac{24}{12}\)<br>
+                    \(\frac{5}{3} = \frac{20}{12}\)<br>
+                    \(\frac{9}{12} + \frac{24}{12} - \frac{20}{12} = \frac{13}{12} = 1\frac{1}{12}\)
+                </div>
+                <div class="answer">Jawaban: C. \(1\frac{1}{12}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Diketahui tabel dibawah ini!
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>\(\frac{2}{3} + 8\)</td>
+                    <td>\(9 - \frac{2}{3}\)</td>
+                </tr>
+            </table>
+            <div class="question-text" style="margin-top: 15px;">
+                Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....
+            </div>
+            <ul class="options">
+                <li>\(X > Y\)</li>
+                <li>\(X < Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+                <li>\(X + Y = 0\)</li>
+                <li>\(X = Y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung nilai X dan Y:</strong><br>
+                    \(X = \frac{2}{3} + 8 = \frac{2}{3} + \frac{24}{3} = \frac{26}{3} = 8\frac{2}{3}\)<br>
+                    \(Y = 9 - \frac{2}{3} = \frac{27}{3} - \frac{2}{3} = \frac{25}{3} = 8\frac{1}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bandingkan:</strong><br>
+                    \(X = \frac{26}{3}\)<br>
+                    \(Y = \frac{25}{3}\)<br>
+                    Karena \(\frac{26}{3} > \frac{25}{3}\), maka \(X > Y\)
+                </div>
+                <div class="answer">Jawaban: A. \(X > Y\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 140</h2>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                \(\frac{5+3}{0,25} \div \frac{10}{2} = \dots\)
+            </div>
+            <ul class="options">
+                <li>0,08</li>
+                <li>0,33</li>
+                <li>0,67</li>
+                <li>1,33</li>
+                <li>33,3</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Sederhanakan:</strong><br>
+                    \(\frac{5+3}{0,25} = \frac{8}{0,25} = 8 \div 0,25 = 32\)<br>
+                    \(\frac{10}{2} = 5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung pembagian:</strong><br>
+                    \(32 \div 5 = 6,4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Koreksi: Perhatikan urutan operasi</strong><br>
+                    \(\frac{8}{0,25} \div \frac{10}{2} = 32 \div 5 = 6,4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mari hitung ulang dengan teliti:</strong><br>
+                    \(\frac{8}{0,25} = \frac{8}{\frac{1}{4}} = 8 \times 4 = 32\) ✓<br>
+                    \(\frac{10}{2} = 5\) ✓<br>
+                    \(32 \div 5 = 6,4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Perhitungan alternatif:</strong><br>
+                    \(\frac{8}{0,25} \div \frac{10}{2} = \frac{8}{0,25} \times \frac{2}{10} = \frac{16}{2,5} = 6,4\)
+                </div>
+                <div class="answer">Jawaban: Berdasarkan perhitungan, hasilnya adalah 6,4, namun tidak ada di pilihan. Kemungkinan ada kesalahan dalam soal atau pilihan jawaban. (Catatan: Pilihan D adalah 1,33 yang mungkin merupakan hasil dari interpretasi berbeda)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                \(\frac{3}{2}\) dari \((\frac{14}{6} \times \frac{18}{2})\) adalah...
+            </div>
+            <ul class="options">
+                <li>21,5</li>
+                <li>31,5</li>
+                <li>43,5</li>
+                <li>53,5</li>
+                <li>63,5</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung dalam kurung terlebih dahulu:</strong><br>
+                    \(\frac{14}{6} \times \frac{18}{2} = \frac{14 \times 18}{6 \times 2} = \frac{252}{12} = 21\)
+                </div>
+                <div class="solution-step">
+                    <strong>Kalikan dengan \(\frac{3}{2}\):</strong><br>
+                    \(\frac{3}{2} \times 21 = \frac{63}{2} = 31,5\)
+                </div>
+                <div class="answer">Jawaban: B. 31,5</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Nilai dari \(0,008 \times 25 = \dots\)
+            </div>
+            <ul class="options">
+                <li>0,02</li>
+                <li>0,2</li>
+                <li>2</li>
+                <li>20</li>
+                <li>200</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung langsung:</strong><br>
+                    \(0,008 \times 25 = \frac{8}{1000} \times 25 = \frac{200}{1000} = 0,2\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif:</strong><br>
+                    \(0,008 \times 25 = 8 \times 0,001 \times 25 = 8 \times 0,025 = 0,2\)
+                </div>
+                <div class="answer">Jawaban: B. 0,2</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Nilai dari \(0,24 : 0,08 = \dots\)
+            </div>
+            <ul class="options">
+                <li>0,03</li>
+                <li>0,3</li>
+                <li>3</li>
+                <li>4</li>
+                <li>0,4</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung pembagian:</strong><br>
+                    \(0,24 : 0,08 = \frac{24}{100} \div \frac{8}{100} = \frac{24}{100} \times \frac{100}{8} = \frac{24}{8} = 3\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif:</strong><br>
+                    \(0,24 : 0,08 = \frac{0,24}{0,08} = \frac{24}{8} = 3\)
+                </div>
+                <div class="answer">Jawaban: C. 3</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Nilai dari \(144 : 0,12 = \dots\)
+            </div>
+            <ul class="options">
+                <li>0,12</li>
+                <li>1,2</li>
+                <li>12</li>
+                <li>120</li>
+                <li>1200</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung pembagian:</strong><br>
+                    \(144 : 0,12 = 144 \div \frac{12}{100} = 144 \times \frac{100}{12} = \frac{14400}{12} = 1200\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif:</strong><br>
+                    \(144 : 0,12 = \frac{144}{0,12} = \frac{14400}{12} = 1200\)
+                </div>
+                <div class="answer">Jawaban: E. 1200</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Diketahui tabel dibawah ini!
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>\(0,23 \times 0,21\)</td>
+                    <td>\(0,012 : 3\)</td>
+                </tr>
+            </table>
+            <div class="question-text" style="margin-top: 15px;">
+                Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....
+            </div>
+            <ul class="options">
+                <li>\(X > Y\)</li>
+                <li>\(X < Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+                <li>\(X + Y = 0\)</li>
+                <li>\(X = Y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung nilai X dan Y:</strong><br>
+                    \(X = 0,23 \times 0,21 = \frac{23}{100} \times \frac{21}{100} = \frac{483}{10000} = 0,0483\)<br>
+                    \(Y = 0,012 : 3 = \frac{12}{1000} \div 3 = \frac{12}{1000} \times \frac{1}{3} = \frac{12}{3000} = \frac{4}{1000} = 0,004\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bandingkan:</strong><br>
+                    \(X = 0,0483\)<br>
+                    \(Y = 0,004\)<br>
+                    Karena \(0,0483 > 0,004\), maka \(X > Y\)
+                </div>
+                <div class="answer">Jawaban: A. \(X > Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Diketahui tabel dibawah ini!
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>\(0,72 : 8\)</td>
+                    <td>\(0,33 \times 21 + 9 \times 0,33\)</td>
+                </tr>
+            </table>
+            <div class="question-text" style="margin-top: 15px;">
+                Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....
+            </div>
+            <ul class="options">
+                <li>\(X > Y\)</li>
+                <li>\(X < Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+                <li>\(X + Y = 0\)</li>
+                <li>\(X = Y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung nilai X dan Y:</strong><br>
+                    \(X = 0,72 : 8 = \frac{72}{100} \div 8 = \frac{72}{100} \times \frac{1}{8} = \frac{72}{800} = \frac{9}{100} = 0,09\)<br>
+                    \(Y = 0,33 \times 21 + 9 \times 0,33 = 0,33(21 + 9) = 0,33 \times 30 = 9,9\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bandingkan:</strong><br>
+                    \(X = 0,09\)<br>
+                    \(Y = 9,9\)<br>
+                    Karena \(0,09 < 9,9\), maka \(X < Y\)
+                </div>
+                <div class="answer">Jawaban: B. \(X < Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                \(3,8 \times 33 + 2,1 \times 17 + 33 \times 2,1 + 17 \times 3,8 = \dots\)
+            </div>
+            <ul class="options">
+                <li>245</li>
+                <li>295</li>
+                <li>345</li>
+                <li>1000</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Kelompokkan suku-suku yang sama:</strong><br>
+                    \(3,8 \times 33 + 2,1 \times 17 + 33 \times 2,1 + 17 \times 3,8\)<br>
+                    \(= 3,8 \times 33 + 17 \times 3,8 + 2,1 \times 17 + 33 \times 2,1\)<br>
+                    \(= 3,8(33 + 17) + 2,1(17 + 33)\)<br>
+                    \(= 3,8 \times 50 + 2,1 \times 50\)<br>
+                    \(= 50(3,8 + 2,1) = 50 \times 5,9 = 295\)
+                </div>
+                <div class="answer">Jawaban: B. 295</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 141</h2>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                \((3.256)^2 - (3.254 \times 3.256) = \dots\)
+            </div>
+            <ul class="options">
+                <li>6.552</li>
+                <li>6.512</li>
+                <li>6.612</li>
+                <li>6.652</li>
+                <li>6.712</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Faktorkan:</strong><br>
+                    \((3.256)^2 - (3.254 \times 3.256) = 3.256(3.256 - 3.254) = 3.256 \times 2 = 6.512\)
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    \((3.256)^2 = 10.601.536\)<br>
+                    \(3.254 \times 3.256 = 10.595.024\)<br>
+                    Selisih = \(10.601.536 - 10.595.024 = 6.512\) ✓
+                </div>
+                <div class="answer">Jawaban: B. 6.512</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                \(65432 \times 65432 - 65431 \times 65433 = \dots\)
+            </div>
+            <ul class="options">
+                <li>\(-1\)</li>
+                <li>\(-2\)</li>
+                <li>1</li>
+                <li>3</li>
+                <li>5</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Gunakan identitas aljabar:</strong><br>
+                    Misalkan \(n = 65432\), maka:<br>
+                    \(n^2 - (n-1)(n+1) = n^2 - (n^2 - 1) = n^2 - n^2 + 1 = 1\)
+                </div>
+                <div class="formula">
+                    <strong>Identitas yang digunakan:</strong><br>
+                    \((n-1)(n+1) = n^2 - 1\)<br>
+                    Jadi \(n^2 - (n^2 - 1) = 1\)
+                </div>
+                <div class="answer">Jawaban: C. 1</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                \((234 - 13)^2 - (161 + 59)^2 = \dots\)
+            </div>
+            <ul class="options">
+                <li>441</li>
+                <li>534</li>
+                <li>521</li>
+                <li>741</li>
+                <li>821</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Gunakan identitas selisih kuadrat:</strong><br>
+                    \(a^2 - b^2 = (a+b)(a-b)\)<br>
+                    Dimana \(a = 234 - 13 = 221\) dan \(b = 161 + 59 = 220\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung:</strong><br>
+                    \((221)^2 - (220)^2 = (221 + 220)(221 - 220) = 441 \times 1 = 441\)
+                </div>
+                <div class="answer">Jawaban: A. 441</div>
+            </div>
+        </div>
+        
+        <!-- Soal 26 -->
+        <div class="question">
+            <div class="question-number">Soal 26</div>
+            <div class="question-text">
+                Diketahui
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>x</th>
+                    <th>y</th>
+                </tr>
+                <tr>
+                    <td>\(25 \%\) dari \(\frac{4}{5}\)</td>
+                    <td>\(20 \%\)</td>
+                </tr>
+            </table>
+            <div class="question-text" style="margin-top: 15px;">
+                Manakah hubungan yang benar antara kuantitas x dan y berikut berdasarkan informasi yang diberikan...
+            </div>
+            <ul class="options">
+                <li>\(4x = 3y\)</li>
+                <li>\(3x > 2y\)</li>
+                <li>Hubungan x dan y tidak dapat ditentukan</li>
+                <li>\(x > 2y\)</li>
+                <li>\(2x < y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(26)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution26">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung nilai x dan y:</strong><br>
+                    \(x = 25\% \times \frac{4}{5} = \frac{25}{100} \times \frac{4}{5} = \frac{1}{4} \times \frac{4}{5} = \frac{1}{5} = 20\%\)<br>
+                    \(y = 20\%\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bandingkan:</strong><br>
+                    \(x = 20\% = \frac{1}{5}\)<br>
+                    \(y = 20\% = \frac{1}{5}\)<br>
+                    Jadi \(x = y\)
+                </div>
+                <div class="solution-step">
+                    <strong>Cek pilihan yang sesuai:</strong><br>
+                    Karena \(x = y\), maka:<br>
+                    \(4x = 4y\), bukan \(4x = 3y\)<br>
+                    \(x = y\), bukan \(x > 2y\) atau \(2x < y\)<br>
+                    Tidak ada pilihan yang tepat menyatakan \(x = y\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mari cek apakah \(4x = 3y\):</strong><br>
+                    \(4x = 4 \times \frac{1}{5} = \frac{4}{5}\)<br>
+                    \(3y = 3 \times \frac{1}{5} = \frac{3}{5}\)<br>
+                    \(\frac{4}{5} \neq \frac{3}{5}\), jadi \(4x \neq 3y\)
+                </div>
+                <div class="solution-step">
+                    <strong>Karena \(x = y = \frac{1}{5}\), mari cek setiap pilihan:</strong><br>
+                    A. \(4x = 3y\) → \(4 \times \frac{1}{5} = 3 \times \frac{1}{5}\) → \(\frac{4}{5} = \frac{3}{5}\) ✗<br>
+                    B. \(3x > 2y\) → \(3 \times \frac{1}{5} > 2 \times \frac{1}{5}\) → \(\frac{3}{5} > \frac{2}{5}\) ✓ (benar, tapi tidak tepat karena seharusnya \(3x = 3y\))<br>
+                    C. Hubungan tidak dapat ditentukan ✗<br>
+                    D. \(x > 2y\) → \(\frac{1}{5} > \frac{2}{5}\) ✗<br>
+                    E. \(2x < y\) → \(\frac{2}{5} < \frac{1}{5}\) ✗
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Meskipun \(x = y\), pilihan B (\(3x > 2y\)) secara teknis benar karena \(3x = 3y > 2y\), meskipun tidak menyatakan kesetaraan secara eksplisit.
+                </div>
+                <div class="answer">Jawaban: B. \(3x > 2y\) (meskipun \(x = y\), pernyataan \(3x > 2y\) tetap benar karena \(3y > 2y\))</div>
+            </div>
+        </div>
+        
+        <!-- Soal 27 -->
+        <div class="question">
+            <div class="question-number">Soal 27</div>
+            <div class="question-text">
+                Diketahui
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>M</th>
+                    <th>N</th>
+                </tr>
+                <tr>
+                    <td>\(30 \%\) dari \(\frac{10}{6}\)</td>
+                    <td>\(\frac{1}{2}\)</td>
+                </tr>
+            </table>
+            <div class="question-text" style="margin-top: 15px;">
+                Manakah hubungan yang benar antara kuantitas M dan N berikut berdasarkan informasi yang diberikan....
+            </div>
+            <ul class="options">
+                <li>\(3M + 2N = 0\)</li>
+                <li>\(3M - 2N = 0\)</li>
+                <li>Hubungan M dan N tidak dapat ditentukan</li>
+                <li>\(M > 2N\)</li>
+                <li>\(2M > N\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(27)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution27">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Hitung nilai M dan N:</strong><br>
+                    \(M = 30\% \times \frac{10}{6} = \frac{30}{100} \times \frac{10}{6} = \frac{3}{10} \times \frac{10}{6} = \frac{3}{6} = \frac{1}{2}\)<br>
+                    \(N = \frac{1}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bandingkan:</strong><br>
+                    \(M = \frac{1}{2}\)<br>
+                    \(N = \frac{1}{2}\)<br>
+                    Jadi \(M = N\)
+                </div>
+                <div class="solution-step">
+                    <strong>Cek pilihan:</strong><br>
+                    \(3M - 2N = 3 \times \frac{1}{2} - 2 \times \frac{1}{2} = \frac{3}{2} - 1 = \frac{1}{2} \neq 0\)<br>
+                    Mari cek lagi: \(3M = 3N\), jadi \(3M - 2N = 3N - 2N = N = \frac{1}{2} \neq 0\)
+                </div>
+                <div class="solution-step">
+                    <strong>Karena \(M = N = \frac{1}{2}\), mari cek setiap pilihan:</strong><br>
+                    A. \(3M + 2N = 0\) → \(3 \times \frac{1}{2} + 2 \times \frac{1}{2} = \frac{3}{2} + 1 = \frac{5}{2} \neq 0\) ✗<br>
+                    B. \(3M - 2N = 0\) → \(3 \times \frac{1}{2} - 2 \times \frac{1}{2} = \frac{3}{2} - 1 = \frac{1}{2} \neq 0\) ✗<br>
+                    C. Hubungan tidak dapat ditentukan ✗<br>
+                    D. \(M > 2N\) → \(\frac{1}{2} > 1\) ✗<br>
+                    E. \(2M > N\) → \(1 > \frac{1}{2}\) ✓
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Karena \(M = N = \frac{1}{2}\), maka \(2M = 1 > \frac{1}{2} = N\), jadi pilihan E benar.
+                </div>
+                <div class="answer">Jawaban: E. \(2M > N\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 28 -->
+        <div class="question">
+            <div class="question-number">Soal 28</div>
+            <div class="question-text">
+                Hasil dari \(3 + \frac{6}{10} - \frac{2}{5} \times 35 = \dots\)
+            </div>
+            <ul class="options">
+                <li>\(-10,04\)</li>
+                <li>\(-10,4\)</li>
+                <li>\(-11,4\)</li>
+                <li>\(-11,04\)</li>
+                <li>\(-10,02\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(28)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution28">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengikuti urutan operasi (perkalian dulu):</strong><br>
+                    \(\frac{2}{5} \times 35 = \frac{2 \times 35}{5} = \frac{70}{5} = 14\)
+                </div>
+                <div class="solution-step">
+                    <strong>Substitusi:</strong><br>
+                    \(3 + \frac{6}{10} - 14\)<br>
+                    \(= 3 + 0,6 - 14\)<br>
+                    \(= 3,6 - 14 = -10,4\)
+                </div>
+                <div class="answer">Jawaban: B. \(-10,4\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 29 -->
+        <div class="question">
+            <div class="question-number">Soal 29</div>
+            <div class="question-text">
+                Hasil dari \(165\% + 4\frac{1}{4} - 3,15 = \dots\)
+            </div>
+            <ul class="options">
+                <li>9</li>
+                <li>9,05</li>
+                <li>9,5</li>
+                <li>9,52</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(29)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution29">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konversi ke desimal:</strong><br>
+                    \(165\% = 1,65\)<br>
+                    \(4\frac{1}{4} = 4,25\)<br>
+                    \(3,15 = 3,15\)
+                </div>
+                <div class="solution-step">
+                    <strong>Hitung:</strong><br>
+                    \(1,65 + 4,25 - 3,15 = 5,9 - 3,15 = 2,75\)
+                </div>
+                <div class="solution-step">
+                    <strong>Koreksi ulang:</strong><br>
+                    \(1,65 + 4,25 = 5,9\)<br>
+                    \(5,9 - 3,15 = 2,75\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mari hitung dengan teliti:</strong><br>
+                    \(165\% = \frac{165}{100} = 1,65\) ✓<br>
+                    \(4\frac{1}{4} = 4 + 0,25 = 4,25\) ✓<br>
+                    \(1,65 + 4,25 = 5,9\) ✓<br>
+                    \(5,9 - 3,15 = 2,75\)
+                </div>
+                <div class="solution-step">
+                    <strong>Perhitungan alternatif menggunakan pecahan:</strong><br>
+                    \(165\% = \frac{165}{100} = \frac{33}{20}\)<br>
+                    \(4\frac{1}{4} = \frac{17}{4}\)<br>
+                    \(3,15 = \frac{315}{100} = \frac{63}{20}\)<br>
+                    KPK dari 20 dan 4 adalah 20:<br>
+                    \(\frac{33}{20} + \frac{85}{20} - \frac{63}{20} = \frac{55}{20} = 2,75\)
+                </div>
+                <div class="answer">Jawaban: Berdasarkan perhitungan, hasilnya adalah 2,75, namun tidak ada di pilihan. Kemungkinan ada kesalahan dalam soal atau pilihan jawaban. (Catatan: Pilihan terdekat adalah 9,05 yang mungkin dari interpretasi berbeda)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 142</h2>
+        
+        <!-- Soal 30 -->
+        <div class="question">
+            <div class="question-number">Soal 30</div>
+            <div class="question-text">
+                Hasil dari \(20 : 5 + \frac{3}{5} \times 2\frac{2}{5}\) adalah ...
+            </div>
+            <ul class="options">
+                <li>4</li>
+                <li>4,44</li>
+                <li>5</li>
+                <li>5,4</li>
+                <li>5,44</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(30)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution30">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengikuti urutan operasi (perkalian/pembagian dulu):</strong><br>
+                    \(20 : 5 = 4\)<br>
+                    \(2\frac{2}{5} = \frac{12}{5}\)<br>
+                    \(\frac{3}{5} \times \frac{12}{5} = \frac{36}{25} = 1,44\)
+                </div>
+                <div class="solution-step">
+                    <strong>Jumlahkan:</strong><br>
+                    \(4 + 1,44 = 5,44\)
+                </div>
+                <div class="answer">Jawaban: E. 5,44</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+    <script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
