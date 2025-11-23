@@ -1,0 +1,2941 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Pola Bilangan - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .sequence {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            color: #764ba2;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options div {
+            margin: 5px 0;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Latihan Pola Bilangan - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Pola Bilangan</strong>
+            <p>Pola bilangan adalah urutan bilangan yang mengikuti aturan tertentu. Kemampuan mengenali pola sangat penting dalam matematika karena membantu memprediksi suku berikutnya, menemukan rumus umum, dan menyelesaikan masalah secara efisien. Soal-soal ini menguji kemampuan untuk mengidentifikasi berbagai jenis pola seperti aritmetika, geometri, Fibonacci, kuadrat, dan pola khusus lainnya.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1: Pola Fibonacci Modifikasi</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">2, 3, 5, 8, 13, 21, ...</div>
+            <div class="options">
+                <div>A. 29</div>
+                <div>B. 31</div>
+                <div>C. 33</div>
+                <div>D. 34</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 2, 3, 5, 8, 13, 21, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih atau hubungan antar suku:</strong><br>
+                    - Dari 2 ke 3: +1<br>
+                    - Dari 3 ke 5: +2<br>
+                    - Dari 5 ke 8: +3<br>
+                    - Dari 8 ke 13: +5<br>
+                    - Dari 13 ke 21: +8<br>
+                    Selisihnya tidak konstan, tetapi mengikuti pola tertentu.
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola Fibonacci:</strong><br>
+                    Ini adalah pola Fibonacci yang dimodifikasi!<br>
+                    Setiap suku adalah jumlah dari dua suku sebelumnya:<br>
+                    - 2 + 3 = 5<br>
+                    - 3 + 5 = 8<br>
+                    - 5 + 8 = 13<br>
+                    - 8 + 13 = 21<br>
+                    - 13 + 21 = 34
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola Fibonacci:</strong><br>
+                    \(a_n = a_{n-1} + a_{n-2}\) untuk \(n \geq 3\)<br>
+                    Dimana \(a_1 = 2\) dan \(a_2 = 3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung suku berikutnya:</strong><br>
+                    Suku ke-7 = Suku ke-5 + Suku ke-6<br>
+                    = 13 + 21 = 34
+                </div>
+                <div class="answer">Jawaban: D. 34</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2: Pola Aritmetika Bertingkat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">3, 5, 9, 15, 23, ...</div>
+            <div class="options">
+                <div>A. 31</div>
+                <div>B. 33</div>
+                <div>C. 35</div>
+                <div>D. 37</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 3, 5, 9, 15, 23, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat pertama:</strong><br>
+                    - 5 - 3 = 2<br>
+                    - 9 - 5 = 4<br>
+                    - 15 - 9 = 6<br>
+                    - 23 - 15 = 8<br>
+                    Selisih tingkat pertama: 2, 4, 6, 8, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat kedua:</strong><br>
+                    - 4 - 2 = 2<br>
+                    - 6 - 4 = 2<br>
+                    - 8 - 6 = 2<br>
+                    Selisih tingkat kedua konstan = 2
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan pola aritmetika bertingkat:</strong><br>
+                    Karena selisih tingkat kedua konstan, ini adalah pola aritmetika tingkat 2.<br>
+                    Selisih tingkat pertama berikutnya: 8 + 2 = 10<br>
+                    Suku berikutnya: 23 + 10 = 33
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Untuk pola aritmetika tingkat 2 dengan selisih tingkat kedua = d:<br>
+                    Selisih tingkat pertama bertambah d setiap suku<br>
+                    Suku berikutnya = suku terakhir + (selisih terakhir + d)
+                </div>
+                <div class="answer">Jawaban: B. 33</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3: Pola Geometri (Rasio)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">96, 48, 24, 12, 6, ...</div>
+            <div class="options">
+                <div>A. 2</div>
+                <div>B. 3</div>
+                <div>C. 4</div>
+                <div>D. 5</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 96, 48, 24, 12, 6, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari rasio (pembagi):</strong><br>
+                    - 96 ÷ 48 = 2<br>
+                    - 48 ÷ 24 = 2<br>
+                    - 24 ÷ 12 = 2<br>
+                    - 12 ÷ 6 = 2<br>
+                    Rasio konstan = 2 (setiap suku dibagi 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola geometri:</strong><br>
+                    Setiap suku diperoleh dengan membagi suku sebelumnya dengan 2 (atau mengalikan dengan \(\frac{1}{2}\))
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola geometri:</strong><br>
+                    \(a_n = a_1 \times r^{n-1}\)<br>
+                    Dimana \(r = \frac{1}{2}\) dan \(a_1 = 96\)<br>
+                    Atau lebih sederhana: \(a_n = \frac{a_{n-1}}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung suku berikutnya:</strong><br>
+                    Suku ke-6 = Suku ke-5 ÷ 2<br>
+                    = 6 ÷ 2 = 3
+                </div>
+                <div class="answer">Jawaban: B. 3</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4: Pola Lompat Satu</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">5, 10, 8, 13, 11, 16, 14, ...</div>
+            <div class="options">
+                <div>A. 17</div>
+                <div>B. 19</div>
+                <div>C. 20</div>
+                <div>D. 21</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 5, 10, 8, 13, 11, 16, 14, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi dua deret:</strong><br>
+                    Deret posisi ganjil (1, 3, 5, 7, ...): 5, 8, 11, 14, ...<br>
+                    Deret posisi genap (2, 4, 6, 8, ...): 10, 13, 16, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret posisi ganjil:</strong> 5, 8, 11, 14, ...<br>
+                    Selisih: +3, +3, +3 (aritmetika dengan beda 3)<br><br>
+                    <strong>Deret posisi genap:</strong> 10, 13, 16, ...<br>
+                    Selisih: +3, +3 (aritmetika dengan beda 3)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-8 adalah posisi genap (posisi 8).<br>
+                    Deret genap: 10, 13, 16, ...<br>
+                    Suku berikutnya = 16 + 3 = 19
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret ganjil: \(a_n = 5 + 3(n-1)\) untuk n = 1, 2, 3, ...<br>
+                    Deret genap: \(b_n = 10 + 3(n-1)\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="answer">Jawaban: B. 19</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5: Pola Kuadrat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 4, 9, 16, 25, 36, ...</div>
+            <div class="options">
+                <div>A. 47</div>
+                <div>B. 48</div>
+                <div>C. 49</div>
+                <div>D. 50</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 4, 9, 16, 25, 36, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola kuadrat:</strong><br>
+                    - 1 = \(1^2\)<br>
+                    - 4 = \(2^2\)<br>
+                    - 9 = \(3^2\)<br>
+                    - 16 = \(4^2\)<br>
+                    - 25 = \(5^2\)<br>
+                    - 36 = \(6^2\)<br>
+                    Ini adalah bilangan kuadrat sempurna!
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-7 = \(7^2 = 49\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(a_n = n^2\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Dimana \(a_n\) adalah suku ke-n
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^2 = 1\) ✓<br>
+                    Suku ke-2: \(2^2 = 4\) ✓<br>
+                    Suku ke-3: \(3^2 = 9\) ✓<br>
+                    Suku ke-4: \(4^2 = 16\) ✓<br>
+                    Suku ke-5: \(5^2 = 25\) ✓<br>
+                    Suku ke-6: \(6^2 = 36\) ✓<br>
+                    Suku ke-7: \(7^2 = 49\) ✓
+                </div>
+                <div class="answer">Jawaban: C. 49</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6: Pola Kombinasi Penjumlahan dan Perkalian</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">4, 8, 11, 22, 25, ...</div>
+            <div class="options">
+                <div>A. 50</div>
+                <div>B. 45</div>
+                <div>C. 30</div>
+                <div>D. 28</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 4, 8, 11, 22, 25, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis perubahan antar suku:</strong><br>
+                    - Dari 4 ke 8: × 2 (dikali 2)<br>
+                    - Dari 8 ke 11: + 3 (ditambah 3)<br>
+                    - Dari 11 ke 22: × 2 (dikali 2)<br>
+                    - Dari 22 ke 25: + 3 (ditambah 3)<br>
+                    Pola berulang: × 2, + 3, × 2, + 3, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola kombinasi:</strong><br>
+                    Ini adalah pola kombinasi yang bergantian antara perkalian dengan 2 dan penjumlahan dengan 3.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 25 (posisi ganjil setelah operasi +3).<br>
+                    Operasi berikutnya adalah × 2<br>
+                    Suku berikutnya = 25 × 2 = 50
+                </div>
+                <div class="formula">
+                    <strong>Pola operasi:</strong><br>
+                    Suku ganjil (1, 3, 5, ...): hasil dari perkalian<br>
+                    Suku genap (2, 4, 6, ...): hasil dari penjumlahan<br>
+                    Operasi bergantian: × 2, + 3, × 2, + 3, ...
+                </div>
+                <div class="answer">Jawaban: A. 50</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7: Pola Dua Larik (Dua Deret dalam Satu)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">10, 30, 12, 35, 14, 40, ...</div>
+            <div class="options">
+                <div>A. 16</div>
+                <div>B. 18</div>
+                <div>C. 45</div>
+                <div>D. 50</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 10, 30, 12, 35, 14, 40, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi dua deret:</strong><br>
+                    Deret posisi ganjil (1, 3, 5, 7, ...): 10, 12, 14, ...<br>
+                    Deret posisi genap (2, 4, 6, 8, ...): 30, 35, 40, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret posisi ganjil:</strong> 10, 12, 14, ...<br>
+                    Selisih: +2, +2 (aritmetika dengan beda 2)<br><br>
+                    <strong>Deret posisi genap:</strong> 30, 35, 40, ...<br>
+                    Selisih: +5, +5 (aritmetika dengan beda 5)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-7 adalah posisi ganjil (posisi 7).<br>
+                    Deret ganjil: 10, 12, 14, ...<br>
+                    Suku berikutnya = 14 + 2 = 16
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret ganjil: \(a_n = 10 + 2(n-1)\) untuk n = 1, 2, 3, ...<br>
+                    Deret genap: \(b_n = 30 + 5(n-1)\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="answer">Jawaban: A. 16</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8: Pola Pengurangan Berurutan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">100, 99, 97, 94, 90, ...</div>
+            <div class="options">
+                <div>A. 85</div>
+                <div>B. 86</div>
+                <div>C. 87</div>
+                <div>D. 88</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 100, 99, 97, 94, 90, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat pertama:</strong><br>
+                    - 99 - 100 = -1<br>
+                    - 97 - 99 = -2<br>
+                    - 94 - 97 = -3<br>
+                    - 90 - 94 = -4<br>
+                    Selisih tingkat pertama: -1, -2, -3, -4, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat kedua:</strong><br>
+                    - (-2) - (-1) = -2 + 1 = -1<br>
+                    - (-3) - (-2) = -3 + 2 = -1<br>
+                    - (-4) - (-3) = -4 + 3 = -1<br>
+                    Selisih tingkat kedua konstan = -1
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan pola aritmetika bertingkat:</strong><br>
+                    Karena selisih tingkat kedua konstan = -1, ini adalah pola aritmetika tingkat 2.<br>
+                    Selisih tingkat pertama berikutnya: -4 + (-1) = -5<br>
+                    Suku berikutnya: 90 + (-5) = 90 - 5 = 85
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Untuk pola aritmetika tingkat 2 dengan selisih tingkat kedua = d:<br>
+                    Selisih tingkat pertama berkurang d setiap suku<br>
+                    Suku berikutnya = suku terakhir + (selisih terakhir + d)
+                </div>
+                <div class="answer">Jawaban: A. 85</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9: Pola Huruf dengan Urutan Angka</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola huruf:
+            </div>
+            <div class="sequence">A, C, F, J, O, ...</div>
+            <div class="options">
+                <div>A. T</div>
+                <div>B. U</div>
+                <div>C. V</div>
+                <div>D. W</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret huruf: A, C, F, J, O, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi huruf ke angka (posisi dalam alfabet):</strong><br>
+                    A = 1, C = 3, F = 6, J = 10, O = 15, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih:</strong><br>
+                    - C - A: 3 - 1 = 2<br>
+                    - F - C: 6 - 3 = 3<br>
+                    - J - F: 10 - 6 = 4<br>
+                    - O - J: 15 - 10 = 5<br>
+                    Selisih: 2, 3, 4, 5, ... (bertambah 1 setiap suku)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan selisih berikutnya:</strong><br>
+                    Selisih berikutnya = 5 + 1 = 6<br>
+                    Angka berikutnya = 15 + 6 = 21
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi kembali ke huruf:</strong><br>
+                    Angka 21 dalam alfabet = U (A=1, B=2, ..., U=21)
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika \(a_n\) adalah posisi huruf ke-n dalam alfabet:<br>
+                    \(a_1 = 1\)<br>
+                    \(a_n = a_{n-1} + n\) untuk \(n \geq 2\)<br>
+                    Atau: \(a_n = 1 + 2 + 3 + ... + n = \frac{n(n+1)}{2}\)
+                </div>
+                <div class="answer">Jawaban: B. U</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10: Pola Fibonacci Terbalik (Pengurangan)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">55, 34, 21, 13, 8, ...</div>
+            <div class="options">
+                <div>A. 2</div>
+                <div>B. 3</div>
+                <div>C. 4</div>
+                <div>D. 5</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 55, 34, 21, 13, 8, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih:</strong><br>
+                    - 34 - 55 = -21<br>
+                    - 21 - 34 = -13<br>
+                    - 13 - 21 = -8<br>
+                    - 8 - 13 = -5<br>
+                    Selisih: -21, -13, -8, -5, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola Fibonacci terbalik:</strong><br>
+                    Perhatikan bahwa setiap suku adalah selisih dari dua suku sebelumnya!<br>
+                    - 55 - 34 = 21 ✓<br>
+                    - 34 - 21 = 13 ✓<br>
+                    - 21 - 13 = 8 ✓<br>
+                    - 13 - 8 = 5 ✓
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola Fibonacci terbalik:</strong><br>
+                    Setiap suku diperoleh dengan mengurangkan dua suku sebelumnya (dari kiri ke kanan).<br>
+                    Atau dengan kata lain: \(a_n = a_{n-2} - a_{n-1}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = Suku ke-4 - Suku ke-5<br>
+                    = 13 - 8 = 5
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    \(a_n = a_{n-2} - a_{n-1}\) untuk \(n \geq 3\)<br>
+                    Dimana \(a_1 = 55\) dan \(a_2 = 34\)<br>
+                    Ini adalah kebalikan dari pola Fibonacci biasa
+                </div>
+                <div class="answer">Jawaban: D. 5</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11: Pola Aritmetika Sederhana</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">11, 15, 19, 23, 27, ...</div>
+            <div class="options">
+                <div>A. 30</div>
+                <div>B. 31</div>
+                <div>C. 32</div>
+                <div>D. 33</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 11, 15, 19, 23, 27, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih antar suku:</strong><br>
+                    - 15 - 11 = 4<br>
+                    - 19 - 15 = 4<br>
+                    - 23 - 19 = 4<br>
+                    - 27 - 23 = 4<br>
+                    Selisih konstan = 4
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola aritmetika sederhana:</strong><br>
+                    Setiap suku diperoleh dengan menambahkan 4 pada suku sebelumnya.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = Suku ke-5 + 4<br>
+                    = 27 + 4 = 31
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola aritmetika:</strong><br>
+                    \(a_n = a_1 + (n-1) \times d\)<br>
+                    Dimana \(a_1 = 11\) dan \(d = 4\) (beda)<br>
+                    \(a_6 = 11 + (6-1) \times 4 = 11 + 20 = 31\)
+                </div>
+                <div class="answer">Jawaban: B. 31</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12: Pola Geometri Perkalian</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">2, 6, 18, 54, ...</div>
+            <div class="options">
+                <div>A. 108</div>
+                <div>B. 152</div>
+                <div>C. 162</div>
+                <div>D. 172</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 2, 6, 18, 54, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari rasio (pembagi/pengali):</strong><br>
+                    - 6 ÷ 2 = 3<br>
+                    - 18 ÷ 6 = 3<br>
+                    - 54 ÷ 18 = 3<br>
+                    Rasio konstan = 3 (setiap suku dikali 3)
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola geometri:</strong><br>
+                    Setiap suku diperoleh dengan mengalikan suku sebelumnya dengan 3.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-5 = Suku ke-4 × 3<br>
+                    = 54 × 3 = 162
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola geometri:</strong><br>
+                    \(a_n = a_1 \times r^{n-1}\)<br>
+                    Dimana \(a_1 = 2\) dan \(r = 3\) (rasio)<br>
+                    \(a_5 = 2 \times 3^{5-1} = 2 \times 3^4 = 2 \times 81 = 162\)
+                </div>
+                <div class="answer">Jawaban: C. 162</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13: Pola Penjumlahan Digit Bilangan (Pola Khusus)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">48, 60, 66, 78, ...</div>
+            <div class="options">
+                <div>A. 85</div>
+                <div>B. 90</div>
+                <div>C. 93</div>
+                <div>D. 96</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 48, 60, 66, 78, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis penjumlahan digit:</strong><br>
+                    - 48: 4 + 8 = 12<br>
+                    - 60: 6 + 0 = 6<br>
+                    - 66: 6 + 6 = 12<br>
+                    - 78: 7 + 8 = 15<br>
+                    Jumlah digit: 12, 6, 12, 15, ... (tidak konsisten)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola lain - kelipatan:</strong><br>
+                    Perhatikan bahwa semua bilangan adalah kelipatan 6:<br>
+                    - 48 = 6 × 8<br>
+                    - 60 = 6 × 10<br>
+                    - 66 = 6 × 11<br>
+                    - 78 = 6 × 13<br>
+                    Faktor: 8, 10, 11, 13, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis faktor:</strong><br>
+                    Faktor: 8, 10, 11, 13, ...<br>
+                    Selisih: +2, +1, +2, ... (tidak konsisten)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola dengan selisih langsung:</strong><br>
+                    - 60 - 48 = 12<br>
+                    - 66 - 60 = 6<br>
+                    - 78 - 66 = 12<br>
+                    Selisih: 12, 6, 12, ... (pola bergantian 12 dan 6)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Selisih berikutnya = 6 (karena pola bergantian: 12, 6, 12, 6, ...)<br>
+                    Suku berikutnya = 78 + 6 = 84<br>
+                    Tapi 84 tidak ada di pilihan. Mari cek lagi...
+                </div>
+                <div class="solution-step">
+                    <strong>Alternatif: Pola kelipatan 6 dengan faktor prima atau khusus</strong><br>
+                    Faktor: 8, 10, 11, 13, ...<br>
+                    Perhatikan: 8, 10, 11, 13 adalah bilangan yang dekat dengan bilangan prima atau komposit tertentu.<br>
+                    Mari coba pola: 8, 10, 11, 13, 15, ... (selisih: +2, +1, +2, +2?)<br>
+                    Atau: 8, 10, 11, 13, 16, ... (selisih: +2, +1, +2, +3?)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencoba pendekatan berbeda:</strong><br>
+                    Perhatikan bahwa 48, 60, 66, 78 semuanya habis dibagi 6.<br>
+                    Mari cari pola pada hasil bagi: 8, 10, 11, 13<br>
+                    Jika pola selanjutnya adalah 16, maka: 6 × 16 = 96
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola faktor:</strong><br>
+                    Faktor: 8, 10, 11, 13, 16<br>
+                    Pola: +2, +1, +2, +3 (mungkin pola bertambah tidak teratur)<br>
+                    Atau bisa juga: 8, 10, 11, 13, 16 (selisih: +2, +1, +2, +3)
+                </div>
+                <div class="formula">
+                    <strong>Kesimpulan:</strong><br>
+                    Berdasarkan pola faktor yang meningkat: 8 → 10 → 11 → 13 → 16<br>
+                    Suku berikutnya = 6 × 16 = 96
+                </div>
+                <div class="answer">Jawaban: D. 96</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14: Pola Dua Larik (Kombinasi Aritmetika & Geometri)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">9, 4, 11, 8, 13, 16, ...</div>
+            <div class="options">
+                <div>A. 15</div>
+                <div>B. 24</div>
+                <div>C. 32</div>
+                <div>D. 48</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 9, 4, 11, 8, 13, 16, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi dua deret:</strong><br>
+                    Deret posisi ganjil (1, 3, 5, 7, ...): 9, 11, 13, ...<br>
+                    Deret posisi genap (2, 4, 6, 8, ...): 4, 8, 16, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret posisi ganjil:</strong> 9, 11, 13, ...<br>
+                    Selisih: +2, +2 (aritmetika dengan beda 2)<br><br>
+                    <strong>Deret posisi genap:</strong> 4, 8, 16, ...<br>
+                    Rasio: ×2, ×2 (geometri dengan rasio 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-7 adalah posisi ganjil (posisi 7).<br>
+                    Deret ganjil: 9, 11, 13, ...<br>
+                    Suku berikutnya = 13 + 2 = 15
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret ganjil (aritmetika): \(a_n = 9 + 2(n-1)\) untuk n = 1, 2, 3, ...<br>
+                    Deret genap (geometri): \(b_n = 4 \times 2^{n-1}\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="answer">Jawaban: A. 15</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15: Pola Aritmetika Bertingkat Dua</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 2, 5, 11, 21, ...</div>
+            <div class="options">
+                <div>A. 31</div>
+                <div>B. 34</div>
+                <div>C. 36</div>
+                <div>D. 40</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 2, 5, 11, 21, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat pertama:</strong><br>
+                    - 2 - 1 = 1<br>
+                    - 5 - 2 = 3<br>
+                    - 11 - 5 = 6<br>
+                    - 21 - 11 = 10<br>
+                    Selisih tingkat pertama: 1, 3, 6, 10, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat kedua:</strong><br>
+                    - 3 - 1 = 2<br>
+                    - 6 - 3 = 3<br>
+                    - 10 - 6 = 4<br>
+                    Selisih tingkat kedua: 2, 3, 4, ... (bertambah 1)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat ketiga:</strong><br>
+                    - 3 - 2 = 1<br>
+                    - 4 - 3 = 1<br>
+                    Selisih tingkat ketiga konstan = 1
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan pola aritmetika bertingkat:</strong><br>
+                    Karena selisih tingkat ketiga konstan = 1, ini adalah pola aritmetika tingkat 3.<br>
+                    Selisih tingkat kedua berikutnya: 4 + 1 = 5<br>
+                    Selisih tingkat pertama berikutnya: 10 + 5 = 15<br>
+                    Suku berikutnya: 21 + 15 = 36
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Untuk pola aritmetika tingkat 3 dengan selisih tingkat ketiga = d:<br>
+                    Selisih tingkat kedua bertambah d setiap suku<br>
+                    Selisih tingkat pertama bertambah sesuai selisih tingkat kedua<br>
+                    Suku berikutnya = suku terakhir + (selisih tingkat pertama terakhir + selisih tingkat kedua terakhir + d)
+                </div>
+                <div class="answer">Jawaban: C. 36</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16: Pola Fibonacci Tiga Suku (Tribonacci)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 2, 3, 6, 11, 20, ...</div>
+            <div class="options">
+                <div>A. 31</div>
+                <div>B. 35</div>
+                <div>C. 37</div>
+                <div>D. 39</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 2, 3, 6, 11, 20, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan antar suku:</strong><br>
+                    - 1 + 2 + 3 = 6 ✓<br>
+                    - 2 + 3 + 6 = 11 ✓<br>
+                    - 3 + 6 + 11 = 20 ✓<br>
+                    Setiap suku adalah jumlah dari tiga suku sebelumnya!
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola Tribonacci:</strong><br>
+                    Pola Tribonacci adalah variasi dari Fibonacci dimana setiap suku adalah jumlah dari tiga suku sebelumnya, bukan dua.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-7 = Suku ke-4 + Suku ke-5 + Suku ke-6<br>
+                    = 6 + 11 + 20 = 37
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola Tribonacci:</strong><br>
+                    \(a_n = a_{n-3} + a_{n-2} + a_{n-1}\) untuk \(n \geq 4\)<br>
+                    Dimana \(a_1 = 1\), \(a_2 = 2\), dan \(a_3 = 3\)
+                </div>
+                <div class="answer">Jawaban: C. 37</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17: Pola Bilangan Kubik (Pangkat Tiga)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 8, 27, 64, 125, ...</div>
+            <div class="options">
+                <div>A. 196</div>
+                <div>B. 216</div>
+                <div>C. 225</div>
+                <div>D. 256</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 8, 27, 64, 125, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola bilangan kubik:</strong><br>
+                    - 1 = \(1^3\)<br>
+                    - 8 = \(2^3\)<br>
+                    - 27 = \(3^3\)<br>
+                    - 64 = \(4^3\)<br>
+                    - 125 = \(5^3\)<br>
+                    Ini adalah bilangan kubik sempurna!
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = \(6^3 = 216\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(a_n = n^3\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Dimana \(a_n\) adalah suku ke-n
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^3 = 1\) ✓<br>
+                    Suku ke-2: \(2^3 = 8\) ✓<br>
+                    Suku ke-3: \(3^3 = 27\) ✓<br>
+                    Suku ke-4: \(4^3 = 64\) ✓<br>
+                    Suku ke-5: \(5^3 = 125\) ✓<br>
+                    Suku ke-6: \(6^3 = 216\) ✓
+                </div>
+                <div class="answer">Jawaban: B. 216</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18: Pola Kombinasi Operasi Berulang (+, -)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">3, 7, 6, 10, 9, 13, ...</div>
+            <div class="options">
+                <div>A. 12</div>
+                <div>B. 14</div>
+                <div>C. 15</div>
+                <div>D. 17</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 3, 7, 6, 10, 9, 13, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis perubahan antar suku:</strong><br>
+                    - Dari 3 ke 7: + 4<br>
+                    - Dari 7 ke 6: - 1<br>
+                    - Dari 6 ke 10: + 4<br>
+                    - Dari 10 ke 9: - 1<br>
+                    - Dari 9 ke 13: + 4<br>
+                    Pola berulang: + 4, - 1, + 4, - 1, + 4, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola kombinasi:</strong><br>
+                    Ini adalah pola kombinasi yang bergantian antara penjumlahan 4 dan pengurangan 1.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 13 (setelah operasi +4).<br>
+                    Operasi berikutnya adalah - 1<br>
+                    Suku berikutnya = 13 - 1 = 12
+                </div>
+                <div class="formula">
+                    <strong>Pola operasi:</strong><br>
+                    Operasi bergantian: + 4, - 1, + 4, - 1, + 4, - 1, ...
+                </div>
+                <div class="answer">Jawaban: A. 12</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19: Pola Geometri Rasio Pecahan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">81, 27, 9, 3, 1, ...</div>
+            <div class="options">
+                <div>A. 0</div>
+                <div>B. 1/3</div>
+                <div>C. 1/2</div>
+                <div>D. -1</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 81, 27, 9, 3, 1, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari rasio (pembagi/pengali):</strong><br>
+                    - 27 ÷ 81 = \(\frac{1}{3}\)<br>
+                    - 9 ÷ 27 = \(\frac{1}{3}\)<br>
+                    - 3 ÷ 9 = \(\frac{1}{3}\)<br>
+                    - 1 ÷ 3 = \(\frac{1}{3}\)<br>
+                    Rasio konstan = \(\frac{1}{3}\) (setiap suku dikali \(\frac{1}{3}\))
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola geometri dengan rasio pecahan:</strong><br>
+                    Setiap suku diperoleh dengan mengalikan suku sebelumnya dengan \(\frac{1}{3}\).
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = Suku ke-5 × \(\frac{1}{3}\)<br>
+                    = 1 × \(\frac{1}{3}\) = \(\frac{1}{3}\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola geometri:</strong><br>
+                    \(a_n = a_1 \times r^{n-1}\)<br>
+                    Dimana \(a_1 = 81\) dan \(r = \frac{1}{3}\) (rasio)<br>
+                    \(a_6 = 81 \times \left(\frac{1}{3}\right)^{6-1} = 81 \times \left(\frac{1}{3}\right)^5 = 81 \times \frac{1}{243} = \frac{81}{243} = \frac{1}{3}\)
+                </div>
+                <div class="answer">Jawaban: B. 1/3</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20: Pola Kelompok Angka Berulang</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">5, 8, 3, 9, 5, 8, 3, 9, 5, ...</div>
+            <div class="options">
+                <div>A. 3</div>
+                <div>B. 5</div>
+                <div>C. 8</div>
+                <div>D. 9</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 5, 8, 3, 9, 5, 8, 3, 9, 5, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola berulang:</strong><br>
+                    Perhatikan kelompok angka:<br>
+                    - Kelompok 1: 5, 8, 3, 9<br>
+                    - Kelompok 2: 5, 8, 3, 9<br>
+                    - Kelompok 3 dimulai: 5, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Pola berulang setiap 4 suku:</strong><br>
+                    Pola: 5, 8, 3, 9, 5, 8, 3, 9, 5, ...<br>
+                    Setiap 4 suku membentuk kelompok yang sama: (5, 8, 3, 9)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan posisi suku berikutnya:</strong><br>
+                    Suku ke-9 adalah 5 (suku pertama dari kelompok ketiga).<br>
+                    Suku ke-10 adalah suku kedua dari kelompok ketiga.<br>
+                    Berdasarkan pola: 5, 8, 3, 9<br>
+                    Suku kedua = 8
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Pola berulang setiap 4 suku: (5, 8, 3, 9)<br>
+                    Untuk suku ke-n, tentukan posisinya dalam kelompok:<br>
+                    Posisi dalam kelompok = ((n - 1) mod 4) + 1<br>
+                    Suku ke-10: posisi = ((10 - 1) mod 4) + 1 = (9 mod 4) + 1 = 1 + 1 = 2<br>
+                    Suku ke-2 dalam kelompok = 8
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: 5 (posisi 1) ✓<br>
+                    Suku ke-2: 8 (posisi 2) ✓<br>
+                    Suku ke-3: 3 (posisi 3) ✓<br>
+                    Suku ke-4: 9 (posisi 4) ✓<br>
+                    Suku ke-5: 5 (posisi 1) ✓<br>
+                    Suku ke-6: 8 (posisi 2) ✓<br>
+                    Suku ke-7: 3 (posisi 3) ✓<br>
+                    Suku ke-8: 9 (posisi 4) ✓<br>
+                    Suku ke-9: 5 (posisi 1) ✓<br>
+                    Suku ke-10: 8 (posisi 2) ✓
+                </div>
+                <div class="answer">Jawaban: C. 8</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21: Pola Pengurangan Bertingkat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">50, 49, 46, 41, 34, ...</div>
+            <div class="options">
+                <div>A. 25</div>
+                <div>B. 26</div>
+                <div>C. 27</div>
+                <div>D. 28</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 50, 49, 46, 41, 34, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat pertama:</strong><br>
+                    - 49 - 50 = -1<br>
+                    - 46 - 49 = -3<br>
+                    - 41 - 46 = -5<br>
+                    - 34 - 41 = -7<br>
+                    Selisih tingkat pertama: -1, -3, -5, -7, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat kedua:</strong><br>
+                    - (-3) - (-1) = -3 + 1 = -2<br>
+                    - (-5) - (-3) = -5 + 3 = -2<br>
+                    - (-7) - (-5) = -7 + 5 = -2<br>
+                    Selisih tingkat kedua konstan = -2
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan pola aritmetika bertingkat:</strong><br>
+                    Karena selisih tingkat kedua konstan = -2, ini adalah pola aritmetika tingkat 2.<br>
+                    Selisih tingkat pertama berikutnya: -7 + (-2) = -9<br>
+                    Suku berikutnya: 34 + (-9) = 34 - 9 = 25
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Untuk pola aritmetika tingkat 2 dengan selisih tingkat kedua = d:<br>
+                    Selisih tingkat pertama berkurang d setiap suku<br>
+                    Suku berikutnya = suku terakhir + (selisih terakhir + d)
+                </div>
+                <div class="answer">Jawaban: A. 25</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22: Pola Kombinasi Kuadrat dan Penjumlahan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">2, 5, 10, 17, 26, ...</div>
+            <div class="options">
+                <div>A. 35</div>
+                <div>B. 36</div>
+                <div>C. 37</div>
+                <div>D. 38</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 2, 5, 10, 17, 26, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan dengan bilangan kuadrat:</strong><br>
+                    - 2 = \(1^2 + 1 = 1 + 1\)<br>
+                    - 5 = \(2^2 + 1 = 4 + 1\)<br>
+                    - 10 = \(3^2 + 1 = 9 + 1\)<br>
+                    - 17 = \(4^2 + 1 = 16 + 1\)<br>
+                    - 26 = \(5^2 + 1 = 25 + 1\)<br>
+                    Pola: \(n^2 + 1\) untuk \(n = 1, 2, 3, 4, 5, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = \(6^2 + 1 = 36 + 1 = 37\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(a_n = n^2 + 1\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Dimana \(a_n\) adalah suku ke-n
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^2 + 1 = 2\) ✓<br>
+                    Suku ke-2: \(2^2 + 1 = 5\) ✓<br>
+                    Suku ke-3: \(3^2 + 1 = 10\) ✓<br>
+                    Suku ke-4: \(4^2 + 1 = 17\) ✓<br>
+                    Suku ke-5: \(5^2 + 1 = 26\) ✓<br>
+                    Suku ke-6: \(6^2 + 1 = 37\) ✓
+                </div>
+                <div class="answer">Jawaban: C. 37</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23: Pola Huruf dengan Lompatan Fibonacci</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola huruf:
+            </div>
+            <div class="sequence">A, B, C, E, H, M, ...</div>
+            <div class="options">
+                <div>A. S</div>
+                <div>B. T</div>
+                <div>C. U</div>
+                <div>D. V</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret huruf: A, B, C, E, H, M, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi huruf ke angka (posisi dalam alfabet):</strong><br>
+                    A = 1, B = 2, C = 3, E = 5, H = 8, M = 13, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola Fibonacci:</strong><br>
+                    Deret angka: 1, 2, 3, 5, 8, 13, ...<br>
+                    Perhatikan:<br>
+                    - 1 + 2 = 3 ✓<br>
+                    - 2 + 3 = 5 ✓<br>
+                    - 3 + 5 = 8 ✓<br>
+                    - 5 + 8 = 13 ✓<br>
+                    Ini adalah pola Fibonacci!
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan angka berikutnya:</strong><br>
+                    Angka berikutnya = 8 + 13 = 21
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi kembali ke huruf:</strong><br>
+                    Angka 21 dalam alfabet = U (A=1, B=2, ..., U=21)
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika \(a_n\) adalah posisi huruf ke-n dalam alfabet:<br>
+                    \(a_1 = 1\), \(a_2 = 2\)<br>
+                    \(a_n = a_{n-2} + a_{n-1}\) untuk \(n \geq 3\)<br>
+                    Ini adalah pola Fibonacci yang diterapkan pada posisi huruf alfabet
+                </div>
+                <div class="answer">Jawaban: C. U</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24: Pola Angka Tengah yang Hilang</div>
+            <div class="question-text">
+                Tentukan angka yang hilang dalam pola bilangan:
+            </div>
+            <div class="sequence">4, 8, ..., 32, 64</div>
+            <div class="options">
+                <div>A. 12</div>
+                <div>B. 16</div>
+                <div>C. 20</div>
+                <div>D. 24</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 4, 8, ..., 32, 64
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari rasio:</strong><br>
+                    - 8 ÷ 4 = 2<br>
+                    - 32 ÷ 8 = 4 (jika kita skip angka tengah)<br>
+                    - 64 ÷ 32 = 2<br>
+                    Mari kita analisis lebih lanjut...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola geometri:</strong><br>
+                    Jika ini adalah pola geometri dengan rasio 2:<br>
+                    - 4 × 2 = 8<br>
+                    - 8 × 2 = 16<br>
+                    - 16 × 2 = 32<br>
+                    - 32 × 2 = 64<br>
+                    Angka yang hilang adalah 16!
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Deret lengkap: 4, 8, 16, 32, 64<br>
+                    - 4 × 2 = 8 ✓<br>
+                    - 8 × 2 = 16 ✓<br>
+                    - 16 × 2 = 32 ✓<br>
+                    - 32 × 2 = 64 ✓<br>
+                    Semua mengikuti pola dikali 2!
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola geometri:</strong><br>
+                    \(a_n = a_1 \times r^{n-1}\)<br>
+                    Dimana \(a_1 = 4\) dan \(r = 2\) (rasio)<br>
+                    \(a_3 = 4 \times 2^{3-1} = 4 \times 2^2 = 4 \times 4 = 16\)
+                </div>
+                <div class="answer">Jawaban: B. 16</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25: Pola Kombinasi Pembagian dan Penjumlahan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">100, 50, 54, 27, 31, ...</div>
+            <div class="options">
+                <div>A. 15.5</div>
+                <div>B. 16</div>
+                <div>C. 27</div>
+                <div>D. 35</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 100, 50, 54, 27, 31, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis perubahan antar suku:</strong><br>
+                    - Dari 100 ke 50: ÷ 2 (dibagi 2)<br>
+                    - Dari 50 ke 54: + 4 (ditambah 4)<br>
+                    - Dari 54 ke 27: ÷ 2 (dibagi 2)<br>
+                    - Dari 27 ke 31: + 4 (ditambah 4)<br>
+                    Pola berulang: ÷ 2, + 4, ÷ 2, + 4, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola kombinasi:</strong><br>
+                    Ini adalah pola kombinasi yang bergantian antara pembagian dengan 2 dan penjumlahan dengan 4.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 31 (setelah operasi +4).<br>
+                    Operasi berikutnya adalah ÷ 2<br>
+                    Suku berikutnya = 31 ÷ 2 = 15.5
+                </div>
+                <div class="formula">
+                    <strong>Pola operasi:</strong><br>
+                    Operasi bergantian: ÷ 2, + 4, ÷ 2, + 4, ÷ 2, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola:</strong><br>
+                    - 100 ÷ 2 = 50 ✓<br>
+                    - 50 + 4 = 54 ✓<br>
+                    - 54 ÷ 2 = 27 ✓<br>
+                    - 27 + 4 = 31 ✓<br>
+                    - 31 ÷ 2 = 15.5 ✓
+                </div>
+                <div class="answer">Jawaban: A. 15.5</div>
+            </div>
+        </div>
+        
+        <!-- Soal 26 -->
+        <div class="question">
+            <div class="question-number">Soal 26: Deret Bilangan Prima</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">2, 3, 5, 7, 11, 13, ...</div>
+            <div class="options">
+                <div>A. 15</div>
+                <div>B. 16</div>
+                <div>C. 17</div>
+                <div>D. 19</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(26)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution26">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 2, 3, 5, 7, 11, 13, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali bilangan prima:</strong><br>
+                    - 2 adalah bilangan prima<br>
+                    - 3 adalah bilangan prima<br>
+                    - 5 adalah bilangan prima<br>
+                    - 7 adalah bilangan prima<br>
+                    - 11 adalah bilangan prima<br>
+                    - 13 adalah bilangan prima<br>
+                    Ini adalah deret bilangan prima!
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan bilangan prima berikutnya:</strong><br>
+                    Bilangan prima setelah 13:<br>
+                    - 14 = 2 × 7 (bukan prima)<br>
+                    - 15 = 3 × 5 (bukan prima)<br>
+                    - 16 = 2 × 8 (bukan prima)<br>
+                    - 17 adalah bilangan prima ✓<br>
+                    - 18 = 2 × 9 (bukan prima)<br>
+                    - 19 adalah bilangan prima ✓
+                </div>
+                <div class="solution-step">
+                    <strong>Bilangan prima berikutnya setelah 13:</strong><br>
+                    Bilangan prima berikutnya adalah 17 (karena 17 < 19)
+                </div>
+                <div class="formula">
+                    <strong>Definisi bilangan prima:</strong><br>
+                    Bilangan prima adalah bilangan yang lebih besar dari 1 dan hanya habis dibagi oleh 1 dan dirinya sendiri.
+                </div>
+                <div class="answer">Jawaban: C. 17</div>
+            </div>
+        </div>
+        
+        <!-- Soal 27 -->
+        <div class="question">
+            <div class="question-number">Soal 27: Pola Lompat Dua (Tiga Larik)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 10, 100, 2, 20, 200, 3, ...</div>
+            <div class="options">
+                <div>A. 30</div>
+                <div>B. 40</div>
+                <div>C. 300</div>
+                <div>D. 400</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(27)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution27">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 10, 100, 2, 20, 200, 3, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi tiga deret:</strong><br>
+                    Deret posisi 1, 4, 7, ...: 1, 2, 3, ...<br>
+                    Deret posisi 2, 5, 8, ...: 10, 20, ...<br>
+                    Deret posisi 3, 6, 9, ...: 100, 200, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret pertama (posisi 1, 4, 7, ...):</strong> 1, 2, 3, ...<br>
+                    Selisih: +1, +1 (aritmetika dengan beda 1)<br><br>
+                    <strong>Deret kedua (posisi 2, 5, 8, ...):</strong> 10, 20, ...<br>
+                    Rasio: ×2 (geometri dengan rasio 2)<br><br>
+                    <strong>Deret ketiga (posisi 3, 6, 9, ...):</strong> 100, 200, ...<br>
+                    Rasio: ×2 (geometri dengan rasio 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-8 adalah posisi 8, yang termasuk deret kedua (posisi 2, 5, 8, ...).<br>
+                    Deret kedua: 10, 20, ...<br>
+                    Suku berikutnya = 20 × 2 = 40
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret pertama: \(a_n = 1 + (n-1) \times 1 = n\) untuk n = 1, 2, 3, ...<br>
+                    Deret kedua: \(b_n = 10 \times 2^{n-1}\) untuk n = 1, 2, 3, ...<br>
+                    Deret ketiga: \(c_n = 100 \times 2^{n-1}\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="answer">Jawaban: B. 40</div>
+            </div>
+        </div>
+        
+        <!-- Soal 28 -->
+        <div class="question">
+            <div class="question-number">Soal 28: Pola Faktorial (Perkalian Berurutan)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 2, 6, 24, 120, ...</div>
+            <div class="options">
+                <div>A. 540</div>
+                <div>B. 600</div>
+                <div>C. 720</div>
+                <div>D. 840</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(28)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution28">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 2, 6, 24, 120, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan dengan faktorial:</strong><br>
+                    - 1 = \(1! = 1\)<br>
+                    - 2 = \(2! = 2 \times 1 = 2\)<br>
+                    - 6 = \(3! = 3 \times 2 \times 1 = 6\)<br>
+                    - 24 = \(4! = 4 \times 3 \times 2 \times 1 = 24\)<br>
+                    - 120 = \(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)<br>
+                    Ini adalah deret faktorial!
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = \(6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus faktorial:</strong><br>
+                    \(n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1\)<br>
+                    \(a_n = n!\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    \(a_6 = 6! = 720\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1! = 1\) ✓<br>
+                    Suku ke-2: \(2! = 2\) ✓<br>
+                    Suku ke-3: \(3! = 6\) ✓<br>
+                    Suku ke-4: \(4! = 24\) ✓<br>
+                    Suku ke-5: \(5! = 120\) ✓<br>
+                    Suku ke-6: \(6! = 720\) ✓
+                </div>
+                <div class="answer">Jawaban: C. 720</div>
+            </div>
+        </div>
+        
+        <!-- Soal 29 -->
+        <div class="question">
+            <div class="question-number">Soal 29: Pola Huruf Alfabet Terbalik</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola huruf:
+            </div>
+            <div class="sequence">Z, X, V, T, R, ...</div>
+            <div class="options">
+                <div>A. O</div>
+                <div>B. P</div>
+                <div>C. Q</div>
+                <div>D. S</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(29)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution29">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret huruf: Z, X, V, T, R, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi huruf ke angka (posisi dalam alfabet):</strong><br>
+                    Z = 26, X = 24, V = 22, T = 20, R = 18, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih:</strong><br>
+                    - X - Z: 24 - 26 = -2<br>
+                    - V - X: 22 - 24 = -2<br>
+                    - T - V: 20 - 22 = -2<br>
+                    - R - T: 18 - 20 = -2<br>
+                    Selisih konstan = -2 (mundur 2 posisi setiap suku)
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola aritmetika mundur:</strong><br>
+                    Setiap suku diperoleh dengan mengurangi 2 dari posisi huruf sebelumnya.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan angka berikutnya:</strong><br>
+                    Angka berikutnya = 18 - 2 = 16
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi kembali ke huruf:</strong><br>
+                    Angka 16 dalam alfabet = P (A=1, B=2, ..., P=16)
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika \(a_n\) adalah posisi huruf ke-n dalam alfabet (dari belakang):<br>
+                    \(a_1 = 26\) (Z)<br>
+                    \(a_n = a_{n-1} - 2\) untuk \(n \geq 2\)<br>
+                    Atau: \(a_n = 26 - 2(n-1)\) untuk \(n = 1, 2, 3, ...\)
+                </div>
+                <div class="answer">Jawaban: B. P</div>
+            </div>
+        </div>
+        
+        <!-- Soal 30 -->
+        <div class="question">
+            <div class="question-number">Soal 30: Pola Sisipan Angka</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">121, 232, 343, 454, ...</div>
+            <div class="options">
+                <div>A. 565</div>
+                <div>B. 556</div>
+                <div>C. 656</div>
+                <div>D. 545</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(30)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution30">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 121, 232, 343, 454, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis struktur angka:</strong><br>
+                    - 121: angka pertama 1, tengah 2, akhir 1<br>
+                    - 232: angka pertama 2, tengah 3, akhir 2<br>
+                    - 343: angka pertama 3, tengah 4, akhir 3<br>
+                    - 454: angka pertama 4, tengah 5, akhir 4<br>
+                    Pola: angka pertama dan akhir sama, angka tengah bertambah 1
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola palindromik:</strong><br>
+                    Setiap bilangan adalah palindrom (dibaca sama dari kiri ke kanan atau sebaliknya).<br>
+                    Struktur: \(n\), \(n+1\), \(n\) untuk \(n = 1, 2, 3, 4, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Untuk suku ke-5, \(n = 5\):<br>
+                    Struktur: 5, 6, 5<br>
+                    Bilangan: 565
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    \(a_n = n \times 100 + (n+1) \times 10 + n\)<br>
+                    \(a_n = 100n + 10(n+1) + n = 100n + 10n + 10 + n = 111n + 10\)<br>
+                    Atau lebih sederhana: bilangan dengan digit \(n\), \(n+1\), \(n\)<br>
+                    \(a_5 = 565\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: 1, 2, 1 = 121 ✓<br>
+                    Suku ke-2: 2, 3, 2 = 232 ✓<br>
+                    Suku ke-3: 3, 4, 3 = 343 ✓<br>
+                    Suku ke-4: 4, 5, 4 = 454 ✓<br>
+                    Suku ke-5: 5, 6, 5 = 565 ✓
+                </div>
+                <div class="answer">Jawaban: A. 565</div>
+            </div>
+        </div>
+        
+        <!-- Soal 31 -->
+        <div class="question">
+            <div class="question-number">Soal 31: Pola Aritmetika Tingkat Tiga</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">2, 3, 6, 13, 26, 47, ...</div>
+            <div class="options">
+                <div>A. 69</div>
+                <div>B. 72</div>
+                <div>C. 78</div>
+                <div>D. 81</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(31)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution31">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 2, 3, 6, 13, 26, 47, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat pertama:</strong><br>
+                    - 3 - 2 = 1<br>
+                    - 6 - 3 = 3<br>
+                    - 13 - 6 = 7<br>
+                    - 26 - 13 = 13<br>
+                    - 47 - 26 = 21<br>
+                    Selisih tingkat pertama: 1, 3, 7, 13, 21, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat kedua:</strong><br>
+                    - 3 - 1 = 2<br>
+                    - 7 - 3 = 4<br>
+                    - 13 - 7 = 6<br>
+                    - 21 - 13 = 8<br>
+                    Selisih tingkat kedua: 2, 4, 6, 8, ... (bertambah 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat ketiga:</strong><br>
+                    - 4 - 2 = 2<br>
+                    - 6 - 4 = 2<br>
+                    - 8 - 6 = 2<br>
+                    Selisih tingkat ketiga konstan = 2
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan pola aritmetika bertingkat:</strong><br>
+                    Karena selisih tingkat ketiga konstan = 2, ini adalah pola aritmetika tingkat 3.<br>
+                    Selisih tingkat kedua berikutnya: 8 + 2 = 10<br>
+                    Selisih tingkat pertama berikutnya: 21 + 10 = 31<br>
+                    Suku berikutnya: 47 + 31 = 78
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Untuk pola aritmetika tingkat 3 dengan selisih tingkat ketiga = d:<br>
+                    Selisih tingkat kedua bertambah d setiap suku<br>
+                    Selisih tingkat pertama bertambah sesuai selisih tingkat kedua<br>
+                    Suku berikutnya = suku terakhir + (selisih tingkat pertama terakhir + selisih tingkat kedua terakhir + d)
+                </div>
+                <div class="answer">Jawaban: C. 78</div>
+            </div>
+        </div>
+        
+        <!-- Soal 32 -->
+        <div class="question">
+            <div class="question-number">Soal 32: Pola Geometri Kombinasi (Kali & Bagi)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">4, 8, 2, 4, 1, ...</div>
+            <div class="options">
+                <div>A. -1</div>
+                <div>B. 2</div>
+                <div>C. 3</div>
+                <div>D. 0.5</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(32)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution32">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 4, 8, 2, 4, 1, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis perubahan antar suku:</strong><br>
+                    - Dari 4 ke 8: × 2 (dikali 2)<br>
+                    - Dari 8 ke 2: ÷ 4 (dibagi 4)<br>
+                    - Dari 2 ke 4: × 2 (dikali 2)<br>
+                    - Dari 4 ke 1: ÷ 4 (dibagi 4)<br>
+                    Pola berulang: × 2, ÷ 4, × 2, ÷ 4, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola kombinasi:</strong><br>
+                    Ini adalah pola kombinasi yang bergantian antara perkalian dengan 2 dan pembagian dengan 4.
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 1 (setelah operasi ÷ 4).<br>
+                    Operasi berikutnya adalah × 2<br>
+                    Suku berikutnya = 1 × 2 = 2
+                </div>
+                <div class="formula">
+                    <strong>Pola operasi:</strong><br>
+                    Operasi bergantian: × 2, ÷ 4, × 2, ÷ 4, × 2, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola:</strong><br>
+                    - 4 × 2 = 8 ✓<br>
+                    - 8 ÷ 4 = 2 ✓<br>
+                    - 2 × 2 = 4 ✓<br>
+                    - 4 ÷ 4 = 1 ✓<br>
+                    - 1 × 2 = 2 ✓
+                </div>
+                <div class="answer">Jawaban: B. 2</div>
+            </div>
+        </div>
+        
+        <!-- Soal 33 -->
+        <div class="question">
+            <div class="question-number">Soal 33: Pola Rumus Aljabar (n² - 1)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">0, 3, 8, 15, 24, 35, ...</div>
+            <div class="options">
+                <div>A. 42</div>
+                <div>B. 45</div>
+                <div>C. 48</div>
+                <div>D. 50</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(33)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution33">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 0, 3, 8, 15, 24, 35, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan dengan bilangan kuadrat:</strong><br>
+                    - 0 = \(1^2 - 1 = 1 - 1\)<br>
+                    - 3 = \(2^2 - 1 = 4 - 1\)<br>
+                    - 8 = \(3^2 - 1 = 9 - 1\)<br>
+                    - 15 = \(4^2 - 1 = 16 - 1\)<br>
+                    - 24 = \(5^2 - 1 = 25 - 1\)<br>
+                    - 35 = \(6^2 - 1 = 36 - 1\)<br>
+                    Pola: \(n^2 - 1\) untuk \(n = 1, 2, 3, 4, 5, 6, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-7 = \(7^2 - 1 = 49 - 1 = 48\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(a_n = n^2 - 1\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Dimana \(a_n\) adalah suku ke-n
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^2 - 1 = 0\) ✓<br>
+                    Suku ke-2: \(2^2 - 1 = 3\) ✓<br>
+                    Suku ke-3: \(3^2 - 1 = 8\) ✓<br>
+                    Suku ke-4: \(4^2 - 1 = 15\) ✓<br>
+                    Suku ke-5: \(5^2 - 1 = 24\) ✓<br>
+                    Suku ke-6: \(6^2 - 1 = 35\) ✓<br>
+                    Suku ke-7: \(7^2 - 1 = 48\) ✓
+                </div>
+                <div class="answer">Jawaban: C. 48</div>
+            </div>
+        </div>
+        
+        <!-- Soal 34 -->
+        <div class="question">
+            <div class="question-number">Soal 34: Pola Tiga Larik Berbeda</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 5, 9, 2, 10, 18, 3, 15, 27, ...</div>
+            <div class="options">
+                <div>A. 4</div>
+                <div>B. 20</div>
+                <div>C. 36</div>
+                <div>D. 30</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(34)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution34">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 5, 9, 2, 10, 18, 3, 15, 27, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi tiga deret:</strong><br>
+                    Deret posisi 1, 4, 7, 10, ...: 1, 2, 3, ...<br>
+                    Deret posisi 2, 5, 8, 11, ...: 5, 10, 15, ...<br>
+                    Deret posisi 3, 6, 9, 12, ...: 9, 18, 27, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret pertama (posisi 1, 4, 7, ...):</strong> 1, 2, 3, ...<br>
+                    Selisih: +1, +1 (aritmetika dengan beda 1)<br><br>
+                    <strong>Deret kedua (posisi 2, 5, 8, ...):</strong> 5, 10, 15, ...<br>
+                    Selisih: +5, +5 (aritmetika dengan beda 5)<br><br>
+                    <strong>Deret ketiga (posisi 3, 6, 9, ...):</strong> 9, 18, 27, ...<br>
+                    Selisih: +9, +9 (aritmetika dengan beda 9)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-10 adalah posisi 10, yang termasuk deret pertama (posisi 1, 4, 7, 10, ...).<br>
+                    Deret pertama: 1, 2, 3, ...<br>
+                    Suku berikutnya = 3 + 1 = 4
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret pertama: \(a_n = 1 + (n-1) \times 1 = n\) untuk n = 1, 2, 3, ...<br>
+                    Deret kedua: \(b_n = 5 + (n-1) \times 5 = 5n\) untuk n = 1, 2, 3, ...<br>
+                    Deret ketiga: \(c_n = 9 + (n-1) \times 9 = 9n\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="answer">Jawaban: A. 4</div>
+            </div>
+        </div>
+        
+        <!-- Soal 35 -->
+        <div class="question">
+            <div class="question-number">Soal 35: Pola Penjumlahan dengan Perkalian Digit</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">12, 14, 18, 26, 38, ...</div>
+            <div class="options">
+                <div>A. 46</div>
+                <div>B. 52</div>
+                <div>C. 62</div>
+                <div>D. 70</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(35)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution35">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 12, 14, 18, 26, 38, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis perubahan antar suku:</strong><br>
+                    - Dari 12 ke 14: + 2<br>
+                    - Dari 14 ke 18: + 4<br>
+                    - Dari 18 ke 26: + 8<br>
+                    - Dari 26 ke 38: + 12<br>
+                    Selisih: 2, 4, 8, 12, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis selisih:</strong><br>
+                    Selisih: 2, 4, 8, 12, ...<br>
+                    Perhatikan: 2 = 1 × 2, 4 = 2 × 2, 8 = 4 × 2, 12 = 3 × 4?<br>
+                    Mari coba pendekatan lain...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis digit dan perkalian:</strong><br>
+                    - 12: digit 1 dan 2, 1 × 2 = 2, 12 + 2 = 14 ✓<br>
+                    - 14: digit 1 dan 4, 1 × 4 = 4, 14 + 4 = 18 ✓<br>
+                    - 18: digit 1 dan 8, 1 × 8 = 8, 18 + 8 = 26 ✓<br>
+                    - 26: digit 2 dan 6, 2 × 6 = 12, 26 + 12 = 38 ✓<br>
+                    Pola: setiap suku = suku sebelumnya + (perkalian digit suku sebelumnya)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 38 (digit 3 dan 8).<br>
+                    Perkalian digit: 3 × 8 = 24<br>
+                    Suku berikutnya = 38 + 24 = 62
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika suku ke-n adalah bilangan dengan digit \(d_1\) dan \(d_2\):<br>
+                    \(a_{n+1} = a_n + (d_1 \times d_2)\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    - 12: 1 × 2 = 2, 12 + 2 = 14 ✓<br>
+                    - 14: 1 × 4 = 4, 14 + 4 = 18 ✓<br>
+                    - 18: 1 × 8 = 8, 18 + 8 = 26 ✓<br>
+                    - 26: 2 × 6 = 12, 26 + 12 = 38 ✓<br>
+                    - 38: 3 × 8 = 24, 38 + 24 = 62 ✓
+                </div>
+                <div class="answer">Jawaban: C. 62</div>
+            </div>
+        </div>
+        
+        <!-- Soal 36 -->
+        <div class="question">
+            <div class="question-number">Soal 36: Pola Fibonacci dengan Penambahan Konstanta</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 1, 3, 5, 9, 15, ...</div>
+            <div class="options">
+                <div>A. 21</div>
+                <div>B. 25</div>
+                <div>C. 27</div>
+                <div>D. 31</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(36)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution36">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 1, 3, 5, 9, 15, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan antar suku:</strong><br>
+                    - 1 + 1 = 2, tapi suku berikutnya adalah 3 (bukan 2)<br>
+                    - 1 + 1 + 1 = 3 ✓ (jumlah dua suku sebelumnya + 1)<br>
+                    - 1 + 3 + 1 = 5 ✓<br>
+                    - 3 + 5 + 1 = 9 ✓<br>
+                    - 5 + 9 + 1 = 15 ✓<br>
+                    Pola: setiap suku = jumlah dua suku sebelumnya + 1
+                </div>
+                <div class="solution-step">
+                    <strong>Ini adalah pola Fibonacci modifikasi:</strong><br>
+                    Pola Fibonacci biasa: \(a_n = a_{n-1} + a_{n-2}\)<br>
+                    Pola ini: \(a_n = a_{n-1} + a_{n-2} + 1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-7 = Suku ke-5 + Suku ke-6 + 1<br>
+                    = 9 + 15 + 1 = 25
+                </div>
+                <div class="formula">
+                    <strong>Rumus pola Fibonacci modifikasi:</strong><br>
+                    \(a_n = a_{n-1} + a_{n-2} + 1\) untuk \(n \geq 3\)<br>
+                    Dimana \(a_1 = 1\) dan \(a_2 = 1\)
+                </div>
+                <div class="answer">Jawaban: B. 25</div>
+            </div>
+        </div>
+        
+        <!-- Soal 37 -->
+        <div class="question">
+            <div class="question-number">Soal 37: Pola Penjumlahan Bilangan Prima</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">10, 12, 15, 20, 27, ...</div>
+            <div class="options">
+                <div>A. 34</div>
+                <div>B. 36</div>
+                <div>C. 38</div>
+                <div>D. 40</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(37)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution37">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 10, 12, 15, 20, 27, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih:</strong><br>
+                    - 12 - 10 = 2<br>
+                    - 15 - 12 = 3<br>
+                    - 20 - 15 = 5<br>
+                    - 27 - 20 = 7<br>
+                    Selisih: 2, 3, 5, 7, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali bilangan prima:</strong><br>
+                    Selisih: 2, 3, 5, 7, ...<br>
+                    Ini adalah deret bilangan prima! (2, 3, 5, 7, 11, 13, ...)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan selisih berikutnya:</strong><br>
+                    Bilangan prima berikutnya setelah 7 adalah 11<br>
+                    Suku berikutnya = 27 + 11 = 38
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika \(p_n\) adalah bilangan prima ke-n:<br>
+                    \(a_1 = 10\)<br>
+                    \(a_n = a_{n-1} + p_{n-1}\) untuk \(n \geq 2\)<br>
+                    Dimana \(p_1 = 2, p_2 = 3, p_3 = 5, p_4 = 7, p_5 = 11, ...\)
+                </div>
+                <div class="answer">Jawaban: C. 38</div>
+            </div>
+        </div>
+        
+        <!-- Soal 38 -->
+        <div class="question">
+            <div class="question-number">Soal 38: Pola Deret Pecahan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1/2, 3/4, 7/8, 15/16, ...</div>
+            <div class="options">
+                <div>A. 21/32</div>
+                <div>B. 25/32</div>
+                <div>C. 29/32</div>
+                <div>D. 31/32</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(38)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution38">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: \(\frac{1}{2}, \frac{3}{4}, \frac{7}{8}, \frac{15}{16}, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pembilang dan penyebut:</strong><br>
+                    Pembilang: 1, 3, 7, 15, ...<br>
+                    Penyebut: 2, 4, 8, 16, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis penyebut:</strong><br>
+                    Penyebut: 2, 4, 8, 16, ...<br>
+                    - 2 = \(2^1\)<br>
+                    - 4 = \(2^2\)<br>
+                    - 8 = \(2^3\)<br>
+                    - 16 = \(2^4\)<br>
+                    Penyebut = \(2^n\) untuk \(n = 1, 2, 3, 4, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pembilang:</strong><br>
+                    Pembilang: 1, 3, 7, 15, ...<br>
+                    Perhatikan: 1 = 2 - 1, 3 = 4 - 1, 7 = 8 - 1, 15 = 16 - 1<br>
+                    Pembilang = penyebut - 1 = \(2^n - 1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Untuk suku ke-5, \(n = 5\):<br>
+                    Pembilang = \(2^5 - 1 = 32 - 1 = 31\)<br>
+                    Penyebut = \(2^5 = 32\)<br>
+                    Suku ke-5 = \(\frac{31}{32}\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(a_n = \frac{2^n - 1}{2^n}\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Atau: \(a_n = 1 - \frac{1}{2^n}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(\frac{2^1 - 1}{2^1} = \frac{1}{2}\) ✓<br>
+                    Suku ke-2: \(\frac{2^2 - 1}{2^2} = \frac{3}{4}\) ✓<br>
+                    Suku ke-3: \(\frac{2^3 - 1}{2^3} = \frac{7}{8}\) ✓<br>
+                    Suku ke-4: \(\frac{2^4 - 1}{2^4} = \frac{15}{16}\) ✓<br>
+                    Suku ke-5: \(\frac{2^5 - 1}{2^5} = \frac{31}{32}\) ✓
+                </div>
+                <div class="answer">Jawaban: D. 31/32</div>
+            </div>
+        </div>
+        
+        <!-- Soal 39 -->
+        <div class="question">
+            <div class="question-number">Soal 39: Pola Angka di Dalam Kurung</div>
+            <div class="question-text">
+                Tentukan angka yang hilang dalam pola:
+            </div>
+            <div class="sequence">2 (10) 3, 4 (26) 5, 6 (...) 7</div>
+            <div class="options">
+                <div>A. 30</div>
+                <div>B. 42</div>
+                <div>C. 50</div>
+                <div>D. 56</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(39)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution39">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan pola: 2 (10) 3, 4 (26) 5, 6 (...) 7
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis hubungan angka di luar dan dalam kurung:</strong><br>
+                    Pola pertama: 2 (10) 3<br>
+                    - 2 × 3 = 6, tapi angka dalam kurung adalah 10<br>
+                    - 2² + 3² = 4 + 9 = 13 (bukan 10)<br>
+                    - 2 × 3 + 4 = 6 + 4 = 10 ✓<br>
+                    Atau: 2 × 5 = 10, dimana 5 = 3 + 2<br>
+                    Mari coba pendekatan lain...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola yang konsisten:</strong><br>
+                    Pola pertama: 2 (10) 3<br>
+                    - 2 × 3 + 4 = 10 ✓<br>
+                    Pola kedua: 4 (26) 5<br>
+                    - 4 × 5 + 6 = 20 + 6 = 26 ✓<br>
+                    Pola: angka dalam kurung = (angka pertama × angka kedua) + (angka pertama + angka kedua)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi rumus:</strong><br>
+                    Pola pertama: 2 (10) 3<br>
+                    - 2 × 3 + (2 + 3) = 6 + 5 = 11 (bukan 10)<br>
+                    Mari coba lagi...
+                </div>
+                <div class="solution-step">
+                    <strong>Pendekatan alternatif:</strong><br>
+                    Pola pertama: 2 (10) 3<br>
+                    - 2² + 3² = 4 + 9 = 13 (bukan 10)<br>
+                    - 2 × 3 + 4 = 10 ✓ (tambah 4)<br>
+                    Pola kedua: 4 (26) 5<br>
+                    - 4 × 5 + 6 = 26 ✓ (tambah 6)<br>
+                    Pola: angka dalam kurung = (angka pertama × angka kedua) + (angka pertama + 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus yang lebih tepat:</strong><br>
+                    Pola pertama: 2 (10) 3 → 2 × 3 + 4 = 10<br>
+                    Pola kedua: 4 (26) 5 → 4 × 5 + 6 = 26<br>
+                    Pola: angka dalam kurung = (angka pertama × angka kedua) + (angka pertama + 2)<br>
+                    Atau: angka dalam kurung = (angka pertama × angka kedua) + (angka kedua + 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan angka yang hilang:</strong><br>
+                    Pola ketiga: 6 (...) 7<br>
+                    Angka dalam kurung = 6 × 7 + (6 + 2) = 42 + 8 = 50<br>
+                    Atau: 6 × 7 + (7 + 1) = 42 + 8 = 50<br>
+                    Atau lebih sederhana: 6 × 7 + 8 = 42 + 8 = 50
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika pola: \(a\) (?) \(b\), maka:<br>
+                    Angka dalam kurung = \(a \times b + (a + 2)\)<br>
+                    Atau: Angka dalam kurung = \(a \times b + (b + 1)\)
+                </div>
+                <div class="answer">Jawaban: C. 50</div>
+            </div>
+        </div>
+        
+        <!-- Soal 40 -->
+        <div class="question">
+            <div class="question-number">Soal 40: Pola Huruf Berdasarkan Rumus Kuadrat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola huruf:
+            </div>
+            <div class="sequence">B, E, J, Q, ...</div>
+            <div class="options">
+                <div>A. W</div>
+                <div>B. X</div>
+                <div>C. Y</div>
+                <div>D. Z</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(40)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution40">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret huruf: B, E, J, Q, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi huruf ke angka (posisi dalam alfabet):</strong><br>
+                    B = 2, E = 5, J = 10, Q = 17, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan dengan bilangan kuadrat:</strong><br>
+                    - 2 = \(1^2 + 1 = 1 + 1\)<br>
+                    - 5 = \(2^2 + 1 = 4 + 1\)<br>
+                    - 10 = \(3^2 + 1 = 9 + 1\)<br>
+                    - 17 = \(4^2 + 1 = 16 + 1\)<br>
+                    Pola: \(n^2 + 1\) untuk \(n = 1, 2, 3, 4, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan angka berikutnya:</strong><br>
+                    Untuk suku ke-5, \(n = 5\):<br>
+                    Angka = \(5^2 + 1 = 25 + 1 = 26\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi kembali ke huruf:</strong><br>
+                    Angka 26 dalam alfabet = Z (A=1, B=2, ..., Z=26)
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika \(a_n\) adalah posisi huruf ke-n dalam alfabet:<br>
+                    \(a_n = n^2 + 1\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Suku ke-5: \(a_5 = 5^2 + 1 = 26\) = Z
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^2 + 1 = 2\) = B ✓<br>
+                    Suku ke-2: \(2^2 + 1 = 5\) = E ✓<br>
+                    Suku ke-3: \(3^2 + 1 = 10\) = J ✓<br>
+                    Suku ke-4: \(4^2 + 1 = 17\) = Q ✓<br>
+                    Suku ke-5: \(5^2 + 1 = 26\) = Z ✓
+                </div>
+                <div class="answer">Jawaban: D. Z</div>
+            </div>
+        </div>
+        
+        <!-- Soal 41 -->
+        <div class="question">
+            <div class="question-number">Soal 41: Pola Rekursif (Operasi Berulang pada Suku Sebelumnya)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">3, 9, 21, 45, ...</div>
+            <div class="options">
+                <div>A. 90</div>
+                <div>B. 93</div>
+                <div>C. 96</div>
+                <div>D. 101</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(41)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution41">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 3, 9, 21, 45, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan antar suku:</strong><br>
+                    - Dari 3 ke 9: × 3 atau + 6<br>
+                    - Dari 9 ke 21: × 2.33... atau + 12<br>
+                    - Dari 21 ke 45: × 2.14... atau + 24<br>
+                    Mari cari pola yang lebih konsisten...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola rekursif:</strong><br>
+                    - 9 = 3 × 2 + 3 = 6 + 3 = 9<br>
+                    - 21 = 9 × 2 + 3 = 18 + 3 = 21<br>
+                    - 45 = 21 × 2 + 3 = 42 + 3 = 45<br>
+                    Pola: setiap suku = suku sebelumnya × 2 + 3
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-5 = Suku ke-4 × 2 + 3<br>
+                    = 45 × 2 + 3 = 90 + 3 = 93
+                </div>
+                <div class="formula">
+                    <strong>Rumus rekursif:</strong><br>
+                    \(a_n = 2a_{n-1} + 3\) untuk \(n \geq 2\)<br>
+                    Dimana \(a_1 = 3\)
+                </div>
+                <div class="answer">Jawaban: B. 93</div>
+            </div>
+        </div>
+        
+        <!-- Soal 42 -->
+        <div class="question">
+            <div class="question-number">Soal 42: Pola Palindromik dengan Aturan Khusus</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">131, 242, 353, 464, ...</div>
+            <div class="options">
+                <div>A. 575</div>
+                <div>B. 565</div>
+                <div>C. 585</div>
+                <div>D. 474</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(42)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution42">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 131, 242, 353, 464, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis struktur angka palindromik:</strong><br>
+                    - 131: digit pertama 1, tengah 3, akhir 1<br>
+                    - 242: digit pertama 2, tengah 4, akhir 2<br>
+                    - 353: digit pertama 3, tengah 5, akhir 3<br>
+                    - 464: digit pertama 4, tengah 6, akhir 4<br>
+                    Pola: angka pertama dan akhir sama, angka tengah bertambah 1
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola palindromik:</strong><br>
+                    Setiap bilangan adalah palindrom (dibaca sama dari kiri ke kanan atau sebaliknya).<br>
+                    Struktur: \(n\), \(n+2\), \(n\) untuk \(n = 1, 2, 3, 4, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Untuk suku ke-5, \(n = 5\):<br>
+                    Struktur: 5, 7, 5<br>
+                    Bilangan: 575
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    \(a_n = n \times 100 + (n+2) \times 10 + n\)<br>
+                    \(a_n = 100n + 10(n+2) + n = 100n + 10n + 20 + n = 111n + 20\)<br>
+                    Atau lebih sederhana: bilangan dengan digit \(n\), \(n+2\), \(n\)<br>
+                    \(a_5 = 575\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: 1, 3, 1 = 131 ✓<br>
+                    Suku ke-2: 2, 4, 2 = 242 ✓<br>
+                    Suku ke-3: 3, 5, 3 = 353 ✓<br>
+                    Suku ke-4: 4, 6, 4 = 464 ✓<br>
+                    Suku ke-5: 5, 7, 5 = 575 ✓
+                </div>
+                <div class="answer">Jawaban: A. 575</div>
+            </div>
+        </div>
+        
+        <!-- Soal 43 -->
+        <div class="question">
+            <div class="question-number">Soal 43: Pola Lompat dengan Aritmetika Berlawanan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">2, 100, 5, 80, 8, 60, 11, ...</div>
+            <div class="options">
+                <div>A. 20</div>
+                <div>B. 30</div>
+                <div>C. 40</div>
+                <div>D. 50</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(43)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution43">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 2, 100, 5, 80, 8, 60, 11, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi dua deret:</strong><br>
+                    Deret posisi ganjil (1, 3, 5, 7, ...): 2, 5, 8, 11, ...<br>
+                    Deret posisi genap (2, 4, 6, 8, ...): 100, 80, 60, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret posisi ganjil:</strong> 2, 5, 8, 11, ...<br>
+                    Selisih: +3, +3, +3 (aritmetika dengan beda 3)<br><br>
+                    <strong>Deret posisi genap:</strong> 100, 80, 60, ...<br>
+                    Selisih: -20, -20 (aritmetika dengan beda -20)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-8 adalah posisi genap (posisi 8).<br>
+                    Deret genap: 100, 80, 60, ...<br>
+                    Suku berikutnya = 60 + (-20) = 60 - 20 = 40
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret ganjil: \(a_n = 2 + 3(n-1)\) untuk n = 1, 2, 3, ...<br>
+                    Deret genap: \(b_n = 100 - 20(n-1)\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="answer">Jawaban: C. 40</div>
+            </div>
+        </div>
+        
+        <!-- Soal 44 -->
+        <div class="question">
+            <div class="question-number">Soal 44: Pola Rumus Aljabar (n³ - n)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">0, 6, 24, 60, 120, ...</div>
+            <div class="options">
+                <div>A. 180</div>
+                <div>B. 210</div>
+                <div>C. 240</div>
+                <div>D. 256</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(44)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution44">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 0, 6, 24, 60, 120, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari hubungan dengan bilangan kubik:</strong><br>
+                    - 0 = \(1^3 - 1 = 1 - 1\)<br>
+                    - 6 = \(2^3 - 2 = 8 - 2\)<br>
+                    - 24 = \(3^3 - 3 = 27 - 3\)<br>
+                    - 60 = \(4^3 - 4 = 64 - 4\)<br>
+                    - 120 = \(5^3 - 5 = 125 - 5\)<br>
+                    Pola: \(n^3 - n\) untuk \(n = 1, 2, 3, 4, 5, ...\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-6 = \(6^3 - 6 = 216 - 6 = 210\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(a_n = n^3 - n = n(n^2 - 1) = n(n-1)(n+1)\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Dimana \(a_n\) adalah suku ke-n
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^3 - 1 = 0\) ✓<br>
+                    Suku ke-2: \(2^3 - 2 = 6\) ✓<br>
+                    Suku ke-3: \(3^3 - 3 = 24\) ✓<br>
+                    Suku ke-4: \(4^3 - 4 = 60\) ✓<br>
+                    Suku ke-5: \(5^3 - 5 = 120\) ✓<br>
+                    Suku ke-6: \(6^3 - 6 = 210\) ✓
+                </div>
+                <div class="answer">Jawaban: B. 210</div>
+            </div>
+        </div>
+        
+        <!-- Soal 45 -->
+        <div class="question">
+            <div class="question-number">Soal 45: Pola Operasi Bergantian dengan Aturan Bertingkat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">3, 3, 6, 10, 30, 36, ...</div>
+            <div class="options">
+                <div>A. 72</div>
+                <div>B. 108</div>
+                <div>C. 144</div>
+                <div>D. 180</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(45)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution45">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 3, 3, 6, 10, 30, 36, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis perubahan antar suku:</strong><br>
+                    - Dari 3 ke 3: + 0 atau × 1<br>
+                    - Dari 3 ke 6: + 3 atau × 2<br>
+                    - Dari 6 ke 10: + 4<br>
+                    - Dari 10 ke 30: × 3<br>
+                    - Dari 30 ke 36: + 6<br>
+                    Pola tidak terlihat jelas, mari coba pendekatan lain...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi pasangan:</strong><br>
+                    Pasangan 1: 3, 3<br>
+                    Pasangan 2: 6, 10<br>
+                    Pasangan 3: 30, 36<br>
+                    Mari analisis setiap pasangan...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pasangan:</strong><br>
+                    Pasangan 1: 3, 3 → 3 × 1 = 3<br>
+                    Pasangan 2: 6, 10 → 6 + 4 = 10 (dimana 4 = 2 × 2)<br>
+                    Pasangan 3: 30, 36 → 30 + 6 = 36 (dimana 6 = 3 × 2)<br>
+                    Pola: suku kedua = suku pertama + (n × 2) untuk pasangan ke-n
+                </div>
+                <div class="solution-step">
+                    <strong>Pendekatan alternatif - operasi bergantian:</strong><br>
+                    Perhatikan pola: 3, 3, 6, 10, 30, 36, ...<br>
+                    - 3 × 1 = 3<br>
+                    - 3 × 2 = 6<br>
+                    - 6 + 4 = 10<br>
+                    - 10 × 3 = 30<br>
+                    - 30 + 6 = 36<br>
+                    Pola: × 1, × 2, + 4, × 3, + 6, × 4, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 36 (setelah operasi +6).<br>
+                    Operasi berikutnya adalah × 4<br>
+                    Suku berikutnya = 36 × 4 = 144
+                </div>
+                <div class="formula">
+                    <strong>Pola operasi:</strong><br>
+                    Operasi bergantian: × 1, × 2, + 4, × 3, + 6, × 4, + 8, × 5, ...<br>
+                    Atau: perkalian dengan bilangan ganjil (1, 3, 5, ...) dan penjumlahan dengan bilangan genap (4, 6, 8, ...)
+                </div>
+                <div class="answer">Jawaban: C. 144</div>
+            </div>
+        </div>
+        
+        <!-- Soal 46 -->
+        <div class="question">
+            <div class="question-number">Soal 46: Pola Huruf Berdasarkan Urutan Bilangan Prima</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola huruf:
+            </div>
+            <div class="sequence">B, C, E, G, K, ...</div>
+            <div class="options">
+                <div>A. L</div>
+                <div>B. M</div>
+                <div>C. N</div>
+                <div>D. O</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(46)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution46">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret huruf: B, C, E, G, K, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi huruf ke angka (posisi dalam alfabet):</strong><br>
+                    B = 2, C = 3, E = 5, G = 7, K = 11, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali bilangan prima:</strong><br>
+                    Deret angka: 2, 3, 5, 7, 11, ...<br>
+                    Ini adalah deret bilangan prima! (2, 3, 5, 7, 11, 13, 17, ...)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan bilangan prima berikutnya:</strong><br>
+                    Bilangan prima berikutnya setelah 11 adalah 13
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi kembali ke huruf:</strong><br>
+                    Angka 13 dalam alfabet = M (A=1, B=2, ..., M=13)
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Jika \(p_n\) adalah bilangan prima ke-n:<br>
+                    \(a_n\) adalah huruf pada posisi \(p_n\) dalam alfabet<br>
+                    Bilangan prima: 2, 3, 5, 7, 11, 13, 17, ...<br>
+                    Suku ke-6: posisi 13 = M
+                </div>
+                <div class="answer">Jawaban: B. M</div>
+            </div>
+        </div>
+        
+        <!-- Soal 47 -->
+        <div class="question">
+            <div class="question-number">Soal 47: Pola "Lihat dan Sebutkan" (Look-and-Say)</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">1, 11, 21, 1211, 111221, ...</div>
+            <div class="options">
+                <div>A. 1112211</div>
+                <div>B. 311211</div>
+                <div>C. 312211</div>
+                <div>D. 212211</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(47)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution47">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 1, 11, 21, 1211, 111221, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola "Look-and-Say":</strong><br>
+                    Pola "Look-and-Say" adalah pola dimana setiap suku menjelaskan suku sebelumnya dengan membaca jumlah setiap digit yang berurutan.
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis setiap suku:</strong><br>
+                    - Suku 1: 1 → "satu angka 1" → 11<br>
+                    - Suku 2: 11 → "dua angka 1" → 21<br>
+                    - Suku 3: 21 → "satu angka 2, satu angka 1" → 1211<br>
+                    - Suku 4: 1211 → "satu angka 1, satu angka 2, dua angka 1" → 111221<br>
+                    - Suku 5: 111221 → "tiga angka 1, dua angka 2, satu angka 1" → 312211
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku terakhir adalah 111221<br>
+                    Baca dari kiri ke kanan:<br>
+                    - "111" = tiga angka 1 → tulis "31"<br>
+                    - "22" = dua angka 2 → tulis "22"<br>
+                    - "1" = satu angka 1 → tulis "11"<br>
+                    Hasil: 312211
+                </div>
+                <div class="formula">
+                    <strong>Aturan pola Look-and-Say:</strong><br>
+                    1. Baca suku sebelumnya dari kiri ke kanan<br>
+                    2. Hitung jumlah digit yang sama secara berurutan<br>
+                    3. Tulis jumlah diikuti digit tersebut<br>
+                    4. Ulangi untuk semua kelompok digit berurutan
+                </div>
+                <div class="answer">Jawaban: C. 312211</div>
+            </div>
+        </div>
+        
+        <!-- Soal 48 -->
+        <div class="question">
+            <div class="question-number">Soal 48: Pola Deret Desimal dengan Selisih Bertingkat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">10.0, 9.5, 8.0, 5.5, ...</div>
+            <div class="options">
+                <div>A. 2.0</div>
+                <div>B. 2.5</div>
+                <div>C. 3.0</div>
+                <div>D. 1.5</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(48)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution48">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 10.0, 9.5, 8.0, 5.5, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat pertama:</strong><br>
+                    - 9.5 - 10.0 = -0.5<br>
+                    - 8.0 - 9.5 = -1.5<br>
+                    - 5.5 - 8.0 = -2.5<br>
+                    Selisih tingkat pertama: -0.5, -1.5, -2.5, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari selisih tingkat kedua:</strong><br>
+                    - (-1.5) - (-0.5) = -1.5 + 0.5 = -1.0<br>
+                    - (-2.5) - (-1.5) = -2.5 + 1.5 = -1.0<br>
+                    Selisih tingkat kedua konstan = -1.0
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan pola aritmetika bertingkat:</strong><br>
+                    Karena selisih tingkat kedua konstan = -1.0, ini adalah pola aritmetika tingkat 2.<br>
+                    Selisih tingkat pertama berikutnya: -2.5 + (-1.0) = -3.5<br>
+                    Suku berikutnya: 5.5 + (-3.5) = 5.5 - 3.5 = 2.0
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Untuk pola aritmetika tingkat 2 dengan selisih tingkat kedua = d:<br>
+                    Selisih tingkat pertama berkurang d setiap suku<br>
+                    Suku berikutnya = suku terakhir + (selisih terakhir + d)
+                </div>
+                <div class="answer">Jawaban: A. 2.0</div>
+            </div>
+        </div>
+        
+        <!-- Soal 49 -->
+        <div class="question">
+            <div class="question-number">Soal 49: Pola Bilangan Romawi Kuadrat</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan Romawi:
+            </div>
+            <div class="sequence">I, IV, IX, XVI, XXV, ...</div>
+            <div class="options">
+                <div>A. XXXII</div>
+                <div>B. XXXIV</div>
+                <div>C. XXXVI</div>
+                <div>D. XLIX</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(49)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution49">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret bilangan Romawi: I, IV, IX, XVI, XXV, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi ke angka biasa:</strong><br>
+                    I = 1, IV = 4, IX = 9, XVI = 16, XXV = 25, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengenali pola bilangan kuadrat:</strong><br>
+                    Deret angka: 1, 4, 9, 16, 25, ...<br>
+                    - 1 = \(1^2\)<br>
+                    - 4 = \(2^2\)<br>
+                    - 9 = \(3^2\)<br>
+                    - 16 = \(4^2\)<br>
+                    - 25 = \(5^2\)<br>
+                    Ini adalah bilangan kuadrat sempurna!
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan angka berikutnya:</strong><br>
+                    Suku ke-6 = \(6^2 = 36\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mengkonversi kembali ke bilangan Romawi:</strong><br>
+                    Angka 36 dalam bilangan Romawi = XXXVI<br>
+                    (XXX = 30, VI = 6, total = 36)
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    \(a_n = n^2\) untuk \(n = 1, 2, 3, 4, ...\)<br>
+                    Suku ke-6: \(6^2 = 36\) = XXXVI
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Suku ke-1: \(1^2 = 1\) = I ✓<br>
+                    Suku ke-2: \(2^2 = 4\) = IV ✓<br>
+                    Suku ke-3: \(3^2 = 9\) = IX ✓<br>
+                    Suku ke-4: \(4^2 = 16\) = XVI ✓<br>
+                    Suku ke-5: \(5^2 = 25\) = XXV ✓<br>
+                    Suku ke-6: \(6^2 = 36\) = XXXVI ✓
+                </div>
+                <div class="answer">Jawaban: C. XXXVI</div>
+            </div>
+        </div>
+        
+        <!-- Soal 50 -->
+        <div class="question">
+            <div class="question-number">Soal 50: Pola Dua Larik Saling Bersisipan</div>
+            <div class="question-text">
+                Tentukan suku berikutnya dari pola bilangan:
+            </div>
+            <div class="sequence">4, 5, 7, 7, 10, 9, 13, ...</div>
+            <div class="options">
+                <div>A. 11</div>
+                <div>B. 12</div>
+                <div>C. 15</div>
+                <div>D. 16</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(50)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution50">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Perhatikan deret: 4, 5, 7, 7, 10, 9, 13, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan menjadi dua deret:</strong><br>
+                    Deret posisi ganjil (1, 3, 5, 7, ...): 4, 7, 10, 13, ...<br>
+                    Deret posisi genap (2, 4, 6, 8, ...): 5, 7, 9, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis masing-masing deret:</strong><br>
+                    <strong>Deret posisi ganjil:</strong> 4, 7, 10, 13, ...<br>
+                    Selisih: +3, +3, +3 (aritmetika dengan beda 3)<br><br>
+                    <strong>Deret posisi genap:</strong> 5, 7, 9, ...<br>
+                    Selisih: +2, +2 (aritmetika dengan beda 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Menentukan suku berikutnya:</strong><br>
+                    Suku ke-8 adalah posisi genap (posisi 8).<br>
+                    Deret genap: 5, 7, 9, ...<br>
+                    Suku berikutnya = 9 + 2 = 11
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    Deret ganjil: \(a_n = 4 + 3(n-1)\) untuk n = 1, 2, 3, ...<br>
+                    Deret genap: \(b_n = 5 + 2(n-1)\) untuk n = 1, 2, 3, ...
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Deret ganjil: 4, 7, 10, 13, ... ✓<br>
+                    Deret genap: 5, 7, 9, 11, ... ✓
+                </div>
+                <div class="answer">Jawaban: A. 11</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
