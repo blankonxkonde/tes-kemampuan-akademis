@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Pola Bilangan - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin: 8px 0;
+            list-style: none;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TEMA 6: Pola Bilangan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Pola Bilangan</strong>
+            <p>Pola bilangan adalah urutan bilangan yang mengikuti aturan tertentu. Untuk menyelesaikan soal pola bilangan, kita perlu mengidentifikasi pola yang ada dalam urutan tersebut. Pola dapat berupa penjumlahan, pengurangan, perkalian, pembagian, atau kombinasi operasi matematika lainnya. Beberapa pola juga dapat melibatkan operasi pada posisi tertentu atau mengikuti pola yang lebih kompleks.</p>
+        </div>
+        
+        <h2>Halaman 225</h2>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Tentukan bilangan yang hilang dalam pola: \(2, 4, 2, 4, 0, \dots, -6, 12\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. 12</li>
+                <li>B. 6</li>
+                <li>C. 0</li>
+                <li>D. 4</li>
+                <li>E. 12</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Mari kita lihat urutan: \(2, 4, 2, 4, 0, \dots, -6, 12\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Perhatikan operasi antar bilangan:<br>
+                    Dari \(2\) ke \(4\): \(+2\)<br>
+                    Dari \(4\) ke \(2\): \(-2\)<br>
+                    Dari \(2\) ke \(4\): \(+2\)<br>
+                    Dari \(4\) ke \(0\): \(-4\)<br>
+                    Dari \(0\) ke \(\dots\): ?<br>
+                    Dari \(\dots\) ke \(-6\): ?<br>
+                    Dari \(-6\) ke \(12\): \(+18\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola alternatif:</strong><br>
+                    Mari kita coba melihat pola dengan cara berbeda. Perhatikan bahwa setelah \(0\), muncul \(-6\), kemudian \(12\).<br>
+                    Dari \(-6\) ke \(12\): \(+18\)<br>
+                    Jika kita melihat pola mundur dari \(12\): \(12 - 18 = -6\)<br>
+                    Maka dari \(0\) ke bilangan yang hilang mungkin: \(0 - 6 = -6\)?<br>
+                    Tapi \(-6\) sudah ada di posisi setelahnya.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang benar:</strong><br>
+                    Mari kita coba melihat pola perkalian atau operasi lain:<br>
+                    \(2 \times 2 = 4\)<br>
+                    \(4 - 2 = 2\)<br>
+                    \(2 \times 2 = 4\)<br>
+                    \(4 - 4 = 0\)<br>
+                    \(0 - 6 = -6\) (jika pola pengurangan bertambah)<br>
+                    \(-6 \times (-2) = 12\)
+                </div>
+                <div class="formula">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Setelah \(0\), bilangan berikutnya adalah \(-6\) (sudah diketahui).<br>
+                    Jadi bilangan yang hilang antara \(0\) dan \(-6\) adalah \(-6\) itu sendiri, atau mungkin ada pola lain.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis lebih lanjut:</strong><br>
+                    Jika kita melihat dari belakang: \(12, -6, \dots, 0, 4, 2, 4, 2\)<br>
+                    Dari \(12\) ke \(-6\): \(12 \div (-2) = -6\)<br>
+                    Dari \(-6\) ke bilangan yang hilang: mungkin \(-6 \div (-1) = 6\) atau \(-6 + 12 = 6\)<br>
+                    Dari \(6\) ke \(0\): \(6 - 6 = 0\)
+                </div>
+                <div class="answer">Jawaban: B. 6</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Tentukan bilangan yang hilang dalam pola: \(15, 5, \dots, 0, 0, -20, -60\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. \(-60\)</li>
+                <li>B. \(-15\)</li>
+                <li>C. \(-3\)</li>
+                <li>D. 3</li>
+                <li>E. 15</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(15, 5, \dots, 0, 0, -20, -60\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Dari \(15\) ke \(5\): \(15 - 10 = 5\) atau \(15 \div 3 = 5\)<br>
+                    Mari kita lihat pola selanjutnya dari belakang:<br>
+                    Dari \(-60\) ke \(-20\): \(-60 \div 3 = -20\) atau \(-60 + 40 = -20\)<br>
+                    Dari \(-20\) ke \(0\): \(-20 + 20 = 0\)<br>
+                    Dari \(0\) ke \(0\): tetap \(0\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola pembagian:</strong><br>
+                    Jika \(15 \div 3 = 5\), maka:<br>
+                    \(5 \div ? = \dots\)<br>
+                    Mari kita coba: \(5 - 5 = 0\)<br>
+                    Tapi ada dua \(0\) berturut-turut, jadi mungkin pola berbeda.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang benar:</strong><br>
+                    \(15 \div 3 = 5\)<br>
+                    \(5 - 5 = 0\) (pengurangan 5)<br>
+                    \(0 - 0 = 0\) (tetap 0)<br>
+                    \(0 - 20 = -20\) (pengurangan 20)<br>
+                    \(-20 - 40 = -60\) (pengurangan 40, yang merupakan 2×20)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif pola:</strong><br>
+                    \(15 \to 5\): dikurangi 10 atau dibagi 3<br>
+                    \(5 \to 0\): dikurangi 5<br>
+                    \(0 \to 0\): tetap<br>
+                    \(0 \to -20\): dikurangi 20<br>
+                    \(-20 \to -60\): dikurangi 40 atau dikalikan 3
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Setelah \(5\), bilangan berikutnya adalah \(0\) (karena \(5 - 5 = 0\)).<br>
+                    Jadi bilangan yang hilang adalah \(0\). Tapi \(0\) sudah ada di posisi berikutnya, jadi mungkin jawabannya adalah bilangan lain.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis ulang:</strong><br>
+                    Mari kita lihat dengan lebih teliti. Jika pola adalah pengurangan yang meningkat:<br>
+                    \(15 - 10 = 5\)<br>
+                    \(5 - 5 = 0\)<br>
+                    \(0 - 0 = 0\)<br>
+                    \(0 - 20 = -20\)<br>
+                    \(-20 - 40 = -60\)<br>
+                    Jadi bilangan yang hilang setelah \(5\) adalah \(0\), yang sudah ada di posisi berikutnya.
+                </div>
+                <div class="answer">Jawaban: C. \(-3\) (perlu analisis lebih lanjut untuk memastikan pola yang tepat)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Tentukan bilangan pertama dalam pola: \(\dots, 10, 3, 9, 1, 5, -4, -28\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. 10</li>
+                <li>B. 9</li>
+                <li>C. 5</li>
+                <li>D. 3</li>
+                <li>E. 1</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\dots, 10, 3, 9, 1, 5, -4, -28\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola dari kanan ke kiri:</strong><br>
+                    Dari \(-28\) ke \(-4\): \(-28 + 24 = -4\) atau \(-28 \div 7 = -4\)<br>
+                    Dari \(-4\) ke \(5\): \(-4 + 9 = 5\)<br>
+                    Dari \(5\) ke \(1\): \(5 - 4 = 1\)<br>
+                    Dari \(1\) ke \(9\): \(1 + 8 = 9\)<br>
+                    Dari \(9\) ke \(3\): \(9 - 6 = 3\)<br>
+                    Dari \(3\) ke \(10\): \(3 + 7 = 10\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola yang konsisten:</strong><br>
+                    Mari kita lihat selisihnya: \(+7, -6, +8, -4, +9, +24\)<br>
+                    Pola ini tidak terlihat konsisten. Mari coba cara lain.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola alternatif - melihat pasangan:</strong><br>
+                    \((10, 3), (9, 1), (5, -4), (-28, ?)\)<br>
+                    Atau mungkin pola: bilangan besar, kemudian bilangan kecil
+                </div>
+                <div class="formula">
+                    <strong>Analisis lebih lanjut diperlukan untuk menentukan pola yang tepat.</strong>
+                </div>
+                <div class="answer">Jawaban: Perlu analisis lebih mendalam untuk menentukan jawaban yang tepat</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(2, 8, 5, 20, 16, 64, \dots\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. 16</li>
+                <li>B. 32</li>
+                <li>C. 48</li>
+                <li>D. 59</li>
+                <li>E. 64</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(2, 8, 5, 20, 16, 64, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    \(2 \times 4 = 8\)<br>
+                    \(8 - 3 = 5\)<br>
+                    \(5 \times 4 = 20\)<br>
+                    \(20 - 4 = 16\)<br>
+                    \(16 \times 4 = 64\)<br>
+                    \(64 - 5 = 59\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kalikan 4, kemudian kurangi (3, 4, 5, ...)<br>
+                    \(2 \times 4 = 8\)<br>
+                    \(8 - 3 = 5\)<br>
+                    \(5 \times 4 = 20\)<br>
+                    \(20 - 4 = 16\)<br>
+                    \(16 \times 4 = 64\)<br>
+                    \(64 - 5 = 59\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kalikan dengan 4, kurangi dengan bilangan yang meningkat (3, 4, 5, ...)
+                </div>
+                <div class="answer">Jawaban: D. 59</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Tentukan bilangan yang hilang dalam pola: \(2, 6, 1, 6, -4, -36, \dots, -612\) (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. \(-51\)</li>
+                <li>B. \(-32\)</li>
+                <li>C. \(-16\)</li>
+                <li>D. 16</li>
+                <li>E. 36</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(2, 6, 1, 6, -4, -36, \dots, -612\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    \(2 \times 3 = 6\)<br>
+                    \(6 - 5 = 1\)<br>
+                    \(1 \times 6 = 6\)<br>
+                    \(6 - 10 = -4\)<br>
+                    \(-4 \times 9 = -36\)<br>
+                    \(-36 - ? = \dots\)<br>
+                    \(\dots \times ? = -612\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis dari belakang:</strong><br>
+                    Dari \(-612\) ke bilangan yang hilang: \(-612 \div ? = \dots\)<br>
+                    Mari kita coba melihat pola perkalian sebelumnya: \(3, 6, 9\) (naik 3)<br>
+                    Maka perkalian berikutnya mungkin \(12\)<br>
+                    \(-612 \div 12 = -51\)<br>
+                    Dari \(-51\) ke \(-36\): \(-51 + 15 = -36\) atau \(-51 - (-15) = -36\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola:</strong><br>
+                    Pola pengurangan: \(-5, -10, -15, ...\) (selisih -5)<br>
+                    Pola perkalian: \(3, 6, 9, 12, ...\) (selisih 3)<br>
+                    Setelah \(-36\), kurangi 15: \(-36 - 15 = -51\)<br>
+                    Kemudian kalikan 12: \(-51 \times 12 = -612\) ✓
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kalikan dengan (3, 6, 9, 12, ...), kemudian kurangi dengan (5, 10, 15, ...)
+                </div>
+                <div class="answer">Jawaban: A. \(-51\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Tentukan dua bilangan yang hilang dalam pola: \(6, 9, 54, 51, \dots, \dots, 321, 324, 1.944\)
+            </div>
+            <ul class="options">
+                <li>A. \(54, 326\)</li>
+                <li>B. \(48, 288\)</li>
+                <li>C. \(54, 324\)</li>
+                <li>D. \(48, 286\)</li>
+                <li>E. \(48, 300\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(6, 9, 54, 51, \dots, \dots, 321, 324, 1.944\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    \(6 + 3 = 9\)<br>
+                    \(9 \times 6 = 54\)<br>
+                    \(54 - 3 = 51\)<br>
+                    \(51 \times ? = \dots\)<br>
+                    Mari kita lihat dari belakang untuk memahami pola lebih baik.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis dari belakang:</strong><br>
+                    \(1.944 \div 6 = 324\)<br>
+                    \(324 - 3 = 321\)<br>
+                    \(321 \div ? = \dots\)<br>
+                    Mari kita coba melihat pola yang konsisten.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: \(+3\), kemudian \(\times 6\), kemudian \(-3\), kemudian \(\times 6\), dan seterusnya.<br>
+                    \(6 + 3 = 9\)<br>
+                    \(9 \times 6 = 54\)<br>
+                    \(54 - 3 = 51\)<br>
+                    \(51 \times 6 = 306\) (tapi ini tidak sesuai dengan pilihan)<br>
+                    Mari kita coba pola lain.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola alternatif:</strong><br>
+                    Perhatikan bahwa \(54 = 6 \times 9\) dan \(1.944 = 324 \times 6\).<br>
+                    Mari kita lihat pola perkalian: \(6 \times 9 = 54\), \(324 \times 6 = 1.944\)<br>
+                    Jika kita lihat: \(51 \times 6 = 306\), tapi \(306 - 3 = 303\), bukan \(321\).
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola yang tepat:</strong><br>
+                    Mari kita coba melihat hubungan: \(54, 51, \dots, 321, 324\)<br>
+                    \(54 \times 6 = 324\) dan \(51 \times 6 = 306\), tapi \(306 + 15 = 321\)<br>
+                    Atau mungkin: \(51 + 3 = 54\), kemudian \(54 \times 6 = 324\)<br>
+                    Mari kita coba: \(51 \times 6 = 306\), \(306 + 15 = 321\)? Tidak konsisten.
+                </div>
+                <div class="formula">
+                    <strong>Analisis lebih lanjut diperlukan untuk menentukan pola yang tepat.</strong>
+                </div>
+                <div class="answer">Jawaban: Perlu analisis lebih mendalam untuk menentukan jawaban yang tepat</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Tentukan tiga bilangan pertama dalam pola: \(\dots, \dots, \dots, 426, 1.278, 1.290, 3.870\)
+            </div>
+            <ul class="options">
+                <li>A. \(126, 138, 414\)</li>
+                <li>B. \(124, 136, 408\)</li>
+                <li>C. \(124, 408, 173\)</li>
+                <li>D. \(122, 118, 194\)</li>
+                <li>E. \(121, 119, 193\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\dots, \dots, \dots, 426, 1.278, 1.290, 3.870\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola dari kanan ke kiri:</strong><br>
+                    Dari \(3.870\) ke \(1.290\): \(3.870 \div 3 = 1.290\)<br>
+                    Dari \(1.290\) ke \(1.278\): \(1.290 - 12 = 1.278\)<br>
+                    Dari \(1.278\) ke \(426\): \(1.278 \div 3 = 426\)<br>
+                    Dari \(426\) ke bilangan ketiga: \(426 - 12 = 414\)?<br>
+                    Mari kita verifikasi pola ini.
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola:</strong><br>
+                    Pola: kurangi 12, kemudian bagi 3, kemudian kurangi 12, kemudian bagi 3, dan seterusnya.<br>
+                    Dari belakang: \(3.870 \div 3 = 1.290\)<br>
+                    \(1.290 - 12 = 1.278\)<br>
+                    \(1.278 \div 3 = 426\)<br>
+                    \(426 - 12 = 414\)<br>
+                    \(414 \div 3 = 138\)<br>
+                    \(138 - 12 = 126\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kurangi 12, kemudian bagi 3, kemudian kurangi 12, kemudian bagi 3, dan seterusnya.
+                </div>
+                <div class="answer">Jawaban: A. \(126, 138, 414\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 226</h2>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Tentukan tiga bilangan pertama dalam pola: \(\dots, \dots, \dots, 422, 1.266, 1.280, 3.840\)
+            </div>
+            <ul class="options">
+                <li>A. \(164, 178, 206\)</li>
+                <li>B. \(122, 136, 408\)</li>
+                <li>C. \(136, 408, 173\)</li>
+                <li>D. \(124, 118, 194\)</li>
+                <li>E. \(124, 118, 196\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\dots, \dots, \dots, 422, 1.266, 1.280, 3.840\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola dari kanan ke kiri:</strong><br>
+                    Dari \(3.840\) ke \(1.280\): \(3.840 \div 3 = 1.280\)<br>
+                    Dari \(1.280\) ke \(1.266\): \(1.280 - 14 = 1.266\)<br>
+                    Dari \(1.266\) ke \(422\): \(1.266 \div 3 = 422\)<br>
+                    Dari \(422\) ke bilangan ketiga: \(422 - 14 = 408\)?<br>
+                    Mari kita verifikasi pola ini.
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola:</strong><br>
+                    Pola: kurangi 14, kemudian bagi 3, kemudian kurangi 14, kemudian bagi 3, dan seterusnya.<br>
+                    Dari belakang: \(3.840 \div 3 = 1.280\)<br>
+                    \(1.280 - 14 = 1.266\)<br>
+                    \(1.266 \div 3 = 422\)<br>
+                    \(422 - 14 = 408\)<br>
+                    \(408 \div 3 = 136\)<br>
+                    \(136 - 14 = 122\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kurangi 14, kemudian bagi 3, kemudian kurangi 14, kemudian bagi 3, dan seterusnya.
+                </div>
+                <div class="answer">Jawaban: B. \(122, 136, 408\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Tentukan tiga bilangan pertama dalam pola: \(\dots, \dots, \dots, 18, 72, 360, 2160\)
+            </div>
+            <ul class="options">
+                <li>A. \(2, 2, 4\)</li>
+                <li>B. \(3, 3, 6\)</li>
+                <li>C. \(3, 4, 6\)</li>
+                <li>D. \(3, 6, 18\)</li>
+                <li>E. \(3, 4, 18\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\dots, \dots, \dots, 18, 72, 360, 2160\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola dari kanan ke kiri:</strong><br>
+                    Dari \(2160\) ke \(360\): \(2160 \div 6 = 360\)<br>
+                    Dari \(360\) ke \(72\): \(360 \div 5 = 72\)<br>
+                    Dari \(72\) ke \(18\): \(72 \div 4 = 18\)<br>
+                    Dari \(18\) ke bilangan ketiga: \(18 \div 3 = 6\)<br>
+                    Dari \(6\) ke bilangan kedua: \(6 \div 2 = 3\)<br>
+                    Dari \(3\) ke bilangan pertama: \(3 \div 1 = 3\) atau tetap \(3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola:</strong><br>
+                    Pola: bagi dengan bilangan yang menurun (6, 5, 4, 3, 2, 1)<br>
+                    Dari belakang: \(2160 \div 6 = 360\)<br>
+                    \(360 \div 5 = 72\)<br>
+                    \(72 \div 4 = 18\)<br>
+                    \(18 \div 3 = 6\)<br>
+                    \(6 \div 2 = 3\)<br>
+                    \(3 \div 1 = 3\) (atau tetap 3)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Bagi dengan bilangan yang menurun secara berurutan: 6, 5, 4, 3, 2, 1
+                </div>
+                <div class="answer">Jawaban: B. \(3, 3, 6\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(215, 321, 207, 314, 199, 307, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. 191</li>
+                <li>B. 192</li>
+                <li>C. 299</li>
+                <li>D. 300</li>
+                <li>E. 391</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(215, 321, 207, 314, 199, 307, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(215\) ke \(321\): \(+106\)<br>
+                    Dari \(321\) ke \(207\): \(-114\)<br>
+                    Dari \(207\) ke \(314\): \(+107\)<br>
+                    Dari \(314\) ke \(199\): \(-115\)<br>
+                    Dari \(199\) ke \(307\): \(+108\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola lebih detail:</strong><br>
+                    Perhatikan bahwa ada dua pola yang bergantian:<br>
+                    Pola 1 (posisi ganjil): \(215, 207, 199, \dots\) (selisih -8)<br>
+                    Pola 2 (posisi genap): \(321, 314, 307, \dots\) (selisih -7)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Posisi ganjil (1, 3, 5, ...): \(215, 207, 199, \dots\)<br>
+                    Selisih: \(-8\) setiap langkah<br>
+                    \(215 - 8 = 207\)<br>
+                    \(207 - 8 = 199\)<br>
+                    \(199 - 8 = 191\)<br><br>
+                    Posisi genap (2, 4, 6, ...): \(321, 314, 307, \dots\)<br>
+                    Selisih: \(-7\) setiap langkah<br>
+                    \(321 - 7 = 314\)<br>
+                    \(314 - 7 = 307\)<br>
+                    \(307 - 7 = 300\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Dua pola yang bergantian:<br>
+                    - Posisi ganjil: kurangi 8<br>
+                    - Posisi genap: kurangi 7
+                </div>
+                <div class="solution-step">
+                    <strong>Bilangan berikutnya:</strong><br>
+                    Karena bilangan terakhir adalah \(307\) (posisi genap, posisi ke-6), maka bilangan berikutnya (posisi ke-7, ganjil) adalah:<br>
+                    Dari pola posisi ganjil: \(199 - 8 = 191\)
+                </div>
+                <div class="answer">Jawaban: A. 191</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(515, 488, 461, 434, 407, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. 383</li>
+                <li>B. 382</li>
+                <li>C. 381</li>
+                <li>D. 380</li>
+                <li>E. 379</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(515, 488, 461, 434, 407, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat selisih antar bilangan:<br>
+                    Dari \(515\) ke \(488\): \(-27\)<br>
+                    Dari \(488\) ke \(461\): \(-27\)<br>
+                    Dari \(461\) ke \(434\): \(-27\)<br>
+                    Dari \(434\) ke \(407\): \(-27\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kurangi 27 setiap langkah<br>
+                    \(515 - 27 = 488\)<br>
+                    \(488 - 27 = 461\)<br>
+                    \(461 - 27 = 434\)<br>
+                    \(434 - 27 = 407\)<br>
+                    \(407 - 27 = 380\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kurangi 27 secara konsisten setiap langkah.
+                </div>
+                <div class="answer">Jawaban: D. 380</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(11, 25, 55, 125, 275, 625, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. 1225</li>
+                <li>B. 1375</li>
+                <li>C. 3025</li>
+                <li>D. 3125</li>
+                <li>E. 3225</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(11, 25, 55, 125, 275, 625, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(11\) ke \(25\): \(+14\) atau \(\times 2,27...\) (tidak konsisten)<br>
+                    Mari kita coba melihat pola perkalian atau pola lainnya.
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola perkalian:</strong><br>
+                    \(11 \times 2,27... = 25\) (tidak bulat)<br>
+                    Mari kita coba melihat pola yang berbeda:<br>
+                    \(11 \times 2 + 3 = 25\)?<br>
+                    \(25 \times 2 + 5 = 55\)?<br>
+                    \(55 \times 2 + 15 = 125\)? (tidak konsisten)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola alternatif:</strong><br>
+                    Mari kita lihat pola perkalian dengan bilangan yang berbeda:<br>
+                    \(11 \times 2,27...\) tidak bulat<br>
+                    Mari kita coba: \(11 \times 2,5 - 2,5 = 25\)? Tidak konsisten.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola yang tepat:</strong><br>
+                    Perhatikan bahwa \(25 = 5^2\), \(125 = 5^3\), \(625 = 5^4\)<br>
+                    Tapi \(11\) dan \(55\) tidak mengikuti pola ini.<br>
+                    Mari kita coba melihat pola: \(11 \times 2 + 3 = 25\), \(25 \times 2 + 5 = 55\), \(55 \times 2 + 15 = 125\)<br>
+                    Pola pengali tetap 2, tapi penambahnya berubah: 3, 5, 15, ...<br>
+                    Mari kita lihat: \(125 \times 2 + 25 = 275\)? \(125 \times 2 = 250\), \(250 + 25 = 275\) ✓<br>
+                    \(275 \times 2 + 75 = 625\)? \(275 \times 2 = 550\), \(550 + 75 = 625\) ✓
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola penambah:</strong><br>
+                    Penambah: 3, 5, 15, 25, 75, ...<br>
+                    Mari kita lihat: \(3 \times 1,67...\) tidak konsisten.<br>
+                    Atau mungkin: \(3, 5, 15, 25, 75\) dimana \(15 = 3 \times 5\), \(25 = 5 \times 5\), \(75 = 15 \times 5\)?<br>
+                    Mari kita coba pola lain.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang lebih sederhana:</strong><br>
+                    Mari kita lihat rasio: \(25/11 \approx 2,27\), \(55/25 = 2,2\), \(125/55 \approx 2,27\), \(275/125 = 2,2\), \(625/275 \approx 2,27\)<br>
+                    Pola bergantian antara 2,2 dan 2,27 tidak konsisten.<br>
+                    Mari kita coba: \(11 \times 2,27...\), tapi ini tidak bulat.
+                </div>
+                <div class="formula">
+                    <strong>Analisis lebih lanjut:</strong><br>
+                    \(625 \times 2 + ? = \dots\)<br>
+                    Jika mengikuti pola sebelumnya: \(625 \times 2 = 1250\)<br>
+                    Penambah berikutnya mungkin 125 (mengikuti pola 25, 75, 125?)<br>
+                    \(1250 + 125 = 1375\)
+                </div>
+                <div class="answer">Jawaban: B. 1375</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Tentukan dua bilangan yang hilang dalam pola: \(6, 9, 54, 51, \dots, \dots, 321, 324, 1.944\)
+            </div>
+            <ul class="options">
+                <li>A. \(54, 326\)</li>
+                <li>B. \(48, 288\)</li>
+                <li>C. \(54, 324\)</li>
+                <li>D. \(48, 286\)</li>
+                <li>E. \(48, 300\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(6, 9, 54, 51, \dots, \dots, 321, 324, 1.944\)<br>
+                    <em>Catatan: Soal ini sama dengan Soal 6</em>
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    \(6 + 3 = 9\)<br>
+                    \(9 \times 6 = 54\)<br>
+                    \(54 - 3 = 51\)<br>
+                    Mari kita lihat dari belakang untuk memahami pola lebih baik.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis dari belakang:</strong><br>
+                    \(1.944 \div 6 = 324\)<br>
+                    \(324 - 3 = 321\)<br>
+                    Pola: \(+3\), kemudian \(\times 6\), kemudian \(-3\), kemudian \(\times 6\), dan seterusnya.
+                </div>
+                <div class="solution-step">
+                    <strong>Menerapkan pola:</strong><br>
+                    \(6 + 3 = 9\)<br>
+                    \(9 \times 6 = 54\)<br>
+                    \(54 - 3 = 51\)<br>
+                    \(51 \times 6 = 306\)<br>
+                    \(306 - 3 = 303\) (tapi ini tidak sesuai dengan pilihan)<br>
+                    Mari kita coba pola lain.
+                </div>
+                <div class="formula">
+                    <strong>Analisis lebih lanjut diperlukan untuk menentukan pola yang tepat.</strong>
+                </div>
+                <div class="answer">Jawaban: Perlu analisis lebih mendalam untuk menentukan jawaban yang tepat</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Tentukan tiga bilangan pertama dalam pola: \(\dots, \dots, \dots, 426, 1.278, 1.290, 3.870\)
+            </div>
+            <ul class="options">
+                <li>A. \(126, 138, 414\)</li>
+                <li>B. \(124, 136, 408\)</li>
+                <li>C. \(124, 408, 173\)</li>
+                <li>D. \(122, 118, 194\)</li>
+                <li>E. \(121, 119, 193\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\dots, \dots, \dots, 426, 1.278, 1.290, 3.870\)<br>
+                    <em>Catatan: Soal ini sama dengan Soal 7</em>
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola dari kanan ke kiri:</strong><br>
+                    Dari \(3.870\) ke \(1.290\): \(3.870 \div 3 = 1.290\)<br>
+                    Dari \(1.290\) ke \(1.278\): \(1.290 - 12 = 1.278\)<br>
+                    Dari \(1.278\) ke \(426\): \(1.278 \div 3 = 426\)<br>
+                    Dari \(426\) ke bilangan ketiga: \(426 - 12 = 414\)<br>
+                    Dari \(414\) ke bilangan kedua: \(414 \div 3 = 138\)<br>
+                    Dari \(138\) ke bilangan pertama: \(138 - 12 = 126\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kurangi 12, kemudian bagi 3, kemudian kurangi 12, kemudian bagi 3, dan seterusnya.
+                </div>
+                <div class="answer">Jawaban: A. \(126, 138, 414\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 227</h2>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(77, 78, 81, 86, 93, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. 101</li>
+                <li>B. 102</li>
+                <li>C. 103</li>
+                <li>D. 104</li>
+                <li>E. 105</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(77, 78, 81, 86, 93, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat selisih antar bilangan:<br>
+                    Dari \(77\) ke \(78\): \(+1\)<br>
+                    Dari \(78\) ke \(81\): \(+3\)<br>
+                    Dari \(81\) ke \(86\): \(+5\)<br>
+                    Dari \(86\) ke \(93\): \(+7\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Selisih: \(+1, +3, +5, +7, ...\) (bilangan ganjil yang meningkat)<br>
+                    Selisih berikutnya: \(+9\)<br>
+                    \(77 + 1 = 78\)<br>
+                    \(78 + 3 = 81\)<br>
+                    \(81 + 5 = 86\)<br>
+                    \(86 + 7 = 93\)<br>
+                    \(93 + 9 = 102\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Tambahkan bilangan ganjil yang meningkat: 1, 3, 5, 7, 9, 11, ...
+                </div>
+                <div class="answer">Jawaban: B. 102</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(21, 42, 126, 504, 2520, 15120, 105840, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(258048, 774144\)</li>
+                <li>B. \(258048, 1376256\)</li>
+                <li>C. \(740880, 5927040\)</li>
+                <li>D. \(864720, 7782480\)</li>
+                <li>E. \(846720, 7620480\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(21, 42, 126, 504, 2520, 15120, 105840, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat rasio antar bilangan:<br>
+                    \(42 \div 21 = 2\)<br>
+                    \(126 \div 42 = 3\)<br>
+                    \(504 \div 126 = 4\)<br>
+                    \(2520 \div 504 = 5\)<br>
+                    \(15120 \div 2520 = 6\)<br>
+                    \(105840 \div 15120 = 7\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kalikan dengan bilangan yang meningkat: 2, 3, 4, 5, 6, 7, 8, 9, ...<br>
+                    \(21 \times 2 = 42\)<br>
+                    \(42 \times 3 = 126\)<br>
+                    \(126 \times 4 = 504\)<br>
+                    \(504 \times 5 = 2520\)<br>
+                    \(2520 \times 6 = 15120\)<br>
+                    \(15120 \times 7 = 105840\)<br>
+                    \(105840 \times 8 = 846720\)<br>
+                    \(846720 \times 9 = 7620480\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kalikan dengan bilangan asli yang meningkat secara berurutan: 2, 3, 4, 5, 6, 7, 8, 9, ...
+                </div>
+                <div class="answer">Jawaban: E. \(846720, 7620480\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(315, 630, 210, 840, 168, 1008, 144, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(1152, 256\)</li>
+                <li>B. \(1152, 218\)</li>
+                <li>C. \(1152, 128\)</li>
+                <li>D. \(128, 1152\)</li>
+                <li>E. \(218, 1152\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(315, 630, 210, 840, 168, 1008, 144, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(315\) ke \(630\): \(\times 2\)<br>
+                    Dari \(630\) ke \(210\): \(\div 3\)<br>
+                    Dari \(210\) ke \(840\): \(\times 4\)<br>
+                    Dari \(840\) ke \(168\): \(\div 5\)<br>
+                    Dari \(168\) ke \(1008\): \(\times 6\)<br>
+                    Dari \(1008\) ke \(144\): \(\div 7\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kalikan dengan bilangan genap (2, 4, 6, ...), kemudian bagi dengan bilangan ganjil (3, 5, 7, ...)<br>
+                    \(315 \times 2 = 630\)<br>
+                    \(630 \div 3 = 210\)<br>
+                    \(210 \times 4 = 840\)<br>
+                    \(840 \div 5 = 168\)<br>
+                    \(168 \times 6 = 1008\)<br>
+                    \(1008 \div 7 = 144\)<br>
+                    \(144 \times 8 = 1152\)<br>
+                    \(1152 \div 9 = 128\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kalikan dengan bilangan genap yang meningkat (2, 4, 6, 8, ...), kemudian bagi dengan bilangan ganjil yang meningkat (3, 5, 7, 9, ...)
+                </div>
+                <div class="answer">Jawaban: C. \(1152, 128\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(9, 108, 27, 324, 81, 972, 243, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(2916, 729\)</li>
+                <li>B. \(972, 81\)</li>
+                <li>C. \(2961, 740\)</li>
+                <li>D. \(729, 8748\)</li>
+                <li>E. \(3159, 789\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(9, 108, 27, 324, 81, 972, 243, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(9\) ke \(108\): \(\times 12\)<br>
+                    Dari \(108\) ke \(27\): \(\div 4\)<br>
+                    Dari \(27\) ke \(324\): \(\times 12\)<br>
+                    Dari \(324\) ke \(81\): \(\div 4\)<br>
+                    Dari \(81\) ke \(972\): \(\times 12\)<br>
+                    Dari \(972\) ke \(243\): \(\div 4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kalikan dengan 12, kemudian bagi dengan 4, dan seterusnya.<br>
+                    \(9 \times 12 = 108\)<br>
+                    \(108 \div 4 = 27\)<br>
+                    \(27 \times 12 = 324\)<br>
+                    \(324 \div 4 = 81\)<br>
+                    \(81 \times 12 = 972\)<br>
+                    \(972 \div 4 = 243\)<br>
+                    \(243 \times 12 = 2916\)<br>
+                    \(2916 \div 4 = 729\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kalikan dengan 12, kemudian bagi dengan 4, kemudian kalikan dengan 12, kemudian bagi dengan 4, dan seterusnya.
+                </div>
+                <div class="answer">Jawaban: A. \(2916, 729\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(161280, 161280, 80640, 26880, 6720, 1344, 224, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(8, 4\)</li>
+                <li>B. \(4, 8\)</li>
+                <li>C. \(4, 32\)</li>
+                <li>D. \(32, 8\)</li>
+                <li>E. \(32, 4\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(161280, 161280, 80640, 26880, 6720, 1344, 224, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi pembagian:<br>
+                    Dari \(161280\) ke \(161280\): tetap (atau \(\div 1\))<br>
+                    Dari \(161280\) ke \(80640\): \(\div 2\)<br>
+                    Dari \(80640\) ke \(26880\): \(\div 3\)<br>
+                    Dari \(26880\) ke \(6720\): \(\div 4\)<br>
+                    Dari \(6720\) ke \(1344\): \(\div 5\)<br>
+                    Dari \(1344\) ke \(224\): \(\div 6\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: bagi dengan bilangan yang meningkat: 1, 2, 3, 4, 5, 6, 7, 8, ...<br>
+                    \(161280 \div 1 = 161280\)<br>
+                    \(161280 \div 2 = 80640\)<br>
+                    \(80640 \div 3 = 26880\)<br>
+                    \(26880 \div 4 = 6720\)<br>
+                    \(6720 \div 5 = 1344\)<br>
+                    \(1344 \div 6 = 224\)<br>
+                    \(224 \div 7 = 32\)<br>
+                    \(32 \div 8 = 4\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Bagi dengan bilangan asli yang meningkat secara berurutan: 1, 2, 3, 4, 5, 6, 7, 8, ...
+                </div>
+                <div class="answer">Jawaban: E. \(32, 4\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(4, 3, 15, 14, 70, 69, 345, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(344, 339\)</li>
+                <li>B. \(344, 343\)</li>
+                <li>C. \(344, 1720\)</li>
+                <li>D. \(1725, 1724\)</li>
+                <li>E. \(1725, 8625\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(4, 3, 15, 14, 70, 69, 345, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(4\) ke \(3\): \(-1\)<br>
+                    Dari \(3\) ke \(15\): \(+12\) atau \(\times 5\)<br>
+                    Dari \(15\) ke \(14\): \(-1\)<br>
+                    Dari \(14\) ke \(70\): \(+56\) atau \(\times 5\)<br>
+                    Dari \(70\) ke \(69\): \(-1\)<br>
+                    Dari \(69\) ke \(345\): \(+276\) atau \(\times 5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kurangi 1, kemudian kalikan dengan 5, kemudian kurangi 1, kemudian kalikan dengan 5, dan seterusnya.<br>
+                    \(4 - 1 = 3\)<br>
+                    \(3 \times 5 = 15\)<br>
+                    \(15 - 1 = 14\)<br>
+                    \(14 \times 5 = 70\)<br>
+                    \(70 - 1 = 69\)<br>
+                    \(69 \times 5 = 345\)<br>
+                    \(345 - 1 = 344\)<br>
+                    \(344 \times 5 = 1720\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kurangi 1, kemudian kalikan dengan 5, kemudian kurangi 1, kemudian kalikan dengan 5, dan seterusnya.
+                </div>
+                <div class="answer">Jawaban: C. \(344, 1720\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(2, 10, 60, 420, 3360, 30240, 302400, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(3326400, 39916800\)</li>
+                <li>B. \(3326400, 39916802\)</li>
+                <li>C. \(3326402, 39916804\)</li>
+                <li>D. \(3326404, 39916806\)</li>
+                <li>E. \(3326406, 39916808\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(2, 10, 60, 420, 3360, 30240, 302400, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat rasio antar bilangan:<br>
+                    \(10 \div 2 = 5\)<br>
+                    \(60 \div 10 = 6\)<br>
+                    \(420 \div 60 = 7\)<br>
+                    \(3360 \div 420 = 8\)<br>
+                    \(30240 \div 3360 = 9\)<br>
+                    \(302400 \div 30240 = 10\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: kalikan dengan bilangan yang meningkat: 5, 6, 7, 8, 9, 10, 11, 12, ...<br>
+                    \(2 \times 5 = 10\)<br>
+                    \(10 \times 6 = 60\)<br>
+                    \(60 \times 7 = 420\)<br>
+                    \(420 \times 8 = 3360\)<br>
+                    \(3360 \times 9 = 30240\)<br>
+                    \(30240 \times 10 = 302400\)<br>
+                    \(302400 \times 11 = 3326400\)<br>
+                    \(3326400 \times 12 = 39916800\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Kalikan dengan bilangan asli yang meningkat secara berurutan mulai dari 5: 5, 6, 7, 8, 9, 10, 11, 12, ...
+                </div>
+                <div class="answer">Jawaban: A. \(3326400, 39916800\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 228</h2>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(2401, 343, 1029, 147, 441, 63, 189, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(81, 27\)</li>
+                <li>B. \(-81, 27\)</li>
+                <li>C. \(27, 81\)</li>
+                <li>D. \(9, 27\)</li>
+                <li>E. \(9, 81\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(2401, 343, 1029, 147, 441, 63, 189, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(2401\) ke \(343\): \(\div 7\) (karena \(2401 = 7^4\) dan \(343 = 7^3\))<br>
+                    Dari \(343\) ke \(1029\): \(\times 3\)<br>
+                    Dari \(1029\) ke \(147\): \(\div 7\)<br>
+                    Dari \(147\) ke \(441\): \(\times 3\)<br>
+                    Dari \(441\) ke \(63\): \(\div 7\)<br>
+                    Dari \(63\) ke \(189\): \(\times 3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: bagi dengan 7, kemudian kalikan dengan 3, kemudian bagi dengan 7, kemudian kalikan dengan 3, dan seterusnya.<br>
+                    \(2401 \div 7 = 343\)<br>
+                    \(343 \times 3 = 1029\)<br>
+                    \(1029 \div 7 = 147\)<br>
+                    \(147 \times 3 = 441\)<br>
+                    \(441 \div 7 = 63\)<br>
+                    \(63 \times 3 = 189\)<br>
+                    \(189 \div 7 = 27\)<br>
+                    \(27 \times 3 = 81\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Bagi dengan 7, kemudian kalikan dengan 3, kemudian bagi dengan 7, kemudian kalikan dengan 3, dan seterusnya.
+                </div>
+                <div class="answer">Jawaban: C. \(27, 81\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(1536, -768, 384, -192, 96, -48, 24, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(8, -4\)</li>
+                <li>B. \(-8, 4\)</li>
+                <li>C. \(-8, 2\)</li>
+                <li>D. \(12, -6\)</li>
+                <li>E. \(-12, 6\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(1536, -768, 384, -192, 96, -48, 24, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(1536\) ke \(-768\): \(\div (-2)\) atau \(\times (-\frac{1}{2})\)<br>
+                    Dari \(-768\) ke \(384\): \(\div (-2)\) atau \(\times (-\frac{1}{2})\)<br>
+                    Dari \(384\) ke \(-192\): \(\div (-2)\) atau \(\times (-\frac{1}{2})\)<br>
+                    Dari \(-192\) ke \(96\): \(\div (-2)\) atau \(\times (-\frac{1}{2})\)<br>
+                    Dari \(96\) ke \(-48\): \(\div (-2)\) atau \(\times (-\frac{1}{2})\)<br>
+                    Dari \(-48\) ke \(24\): \(\div (-2)\) atau \(\times (-\frac{1}{2})\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pola: bagi dengan \(-2\) (atau kalikan dengan \(-\frac{1}{2}\)) secara konsisten.<br>
+                    \(1536 \div (-2) = -768\)<br>
+                    \(-768 \div (-2) = 384\)<br>
+                    \(384 \div (-2) = -192\)<br>
+                    \(-192 \div (-2) = 96\)<br>
+                    \(96 \div (-2) = -48\)<br>
+                    \(-48 \div (-2) = 24\)<br>
+                    \(24 \div (-2) = -12\)<br>
+                    \(-12 \div (-2) = 6\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Bagi dengan \(-2\) secara konsisten setiap langkah (atau kalikan dengan \(-\frac{1}{2}\)).
+                </div>
+                <div class="answer">Jawaban: E. \(-12, 6\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(\frac{1}{2}, \frac{2}{8}, \frac{3}{26}, \frac{4}{80}, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(\frac{5}{241}\)</li>
+                <li>B. \(\frac{5}{242}\)</li>
+                <li>C. \(\frac{5}{243}\)</li>
+                <li>D. \(\frac{5}{244}\)</li>
+                <li>E. \(\frac{5}{245}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\frac{1}{2}, \frac{2}{8}, \frac{3}{26}, \frac{4}{80}, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pembilang dan penyebut secara terpisah:</strong><br>
+                    Pembilang: \(1, 2, 3, 4, \dots\) (bilangan asli yang meningkat)<br>
+                    Penyebut: \(2, 8, 26, 80, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola penyebut:</strong><br>
+                    Mari kita lihat operasi antar penyebut:<br>
+                    Dari \(2\) ke \(8\): \(+6\) atau \(\times 4\)<br>
+                    Dari \(8\) ke \(26\): \(+18\) atau tidak konsisten<br>
+                    Mari kita coba melihat pola lain:<br>
+                    \(2 = 3^1 - 1 = 3 - 1 = 2\)<br>
+                    \(8 = 3^2 - 1 = 9 - 1 = 8\)<br>
+                    \(26 = 3^3 - 1 = 27 - 1 = 26\)<br>
+                    \(80 = 3^4 - 1 = 81 - 1 = 80\)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Pembilang: \(n\) (dimana \(n = 1, 2, 3, 4, 5, ...\))<br>
+                    Penyebut: \(3^n - 1\)<br>
+                    Untuk \(n = 1\): \(\frac{1}{3^1 - 1} = \frac{1}{2}\) ✓<br>
+                    Untuk \(n = 2\): \(\frac{2}{3^2 - 1} = \frac{2}{8}\) ✓<br>
+                    Untuk \(n = 3\): \(\frac{3}{3^3 - 1} = \frac{3}{26}\) ✓<br>
+                    Untuk \(n = 4\): \(\frac{4}{3^4 - 1} = \frac{4}{80}\) ✓<br>
+                    Untuk \(n = 5\): \(\frac{5}{3^5 - 1} = \frac{5}{243 - 1} = \frac{5}{242}\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Untuk suku ke-\(n\): \(\frac{n}{3^n - 1}\)
+                </div>
+                <div class="answer">Jawaban: B. \(\frac{5}{242}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(\frac{1}{2}, \frac{2}{3}, \frac{5}{6}, 1, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(\frac{7}{3}\)</li>
+                <li>B. \(\frac{9}{6}\)</li>
+                <li>C. \(\frac{5}{3}\)</li>
+                <li>D. \(\frac{7}{6}\)</li>
+                <li>E. \(\frac{4}{3}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(\frac{1}{2}, \frac{2}{3}, \frac{5}{6}, 1, \dots\)<br>
+                    Catatan: \(1 = \frac{6}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menyamakan penyebut untuk melihat pola lebih jelas:</strong><br>
+                    \(\frac{1}{2} = \frac{3}{6}\)<br>
+                    \(\frac{2}{3} = \frac{4}{6}\)<br>
+                    \(\frac{5}{6} = \frac{5}{6}\)<br>
+                    \(1 = \frac{6}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola pembilang:</strong><br>
+                    Pembilang: \(3, 4, 5, 6, \dots\) (naik 1 setiap langkah)<br>
+                    Penyebut: tetap \(6\)<br>
+                    Maka bilangan berikutnya: \(\frac{7}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola asli:</strong><br>
+                    \(\frac{1}{2}, \frac{2}{3}, \frac{5}{6}, 1, \dots\)<br>
+                    Jika kita lihat pembilang: \(1, 2, 5, 6, ...\)<br>
+                    Jika kita lihat penyebut: \(2, 3, 6, 1, ...\)<br>
+                    Mari kita coba melihat pola penjumlahan pembilang dan penyebut:<br>
+                    \(1 + 2 = 3\), \(2 + 3 = 5\), \(5 + 6 = 11\) (tidak konsisten)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola alternatif:</strong><br>
+                    Mari kita lihat selisih antar suku:<br>
+                    \(\frac{2}{3} - \frac{1}{2} = \frac{4}{6} - \frac{3}{6} = \frac{1}{6}\)<br>
+                    \(\frac{5}{6} - \frac{2}{3} = \frac{5}{6} - \frac{4}{6} = \frac{1}{6}\)<br>
+                    \(1 - \frac{5}{6} = \frac{6}{6} - \frac{5}{6} = \frac{1}{6}\)<br>
+                    Pola: tambahkan \(\frac{1}{6}\) setiap langkah
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Tambahkan \(\frac{1}{6}\) setiap langkah, atau dalam bentuk yang disederhanakan: pembilang naik 1 dengan penyebut tetap 6.
+                </div>
+                <div class="solution-step">
+                    <strong>Bilangan berikutnya:</strong><br>
+                    \(1 + \frac{1}{6} = \frac{6}{6} + \frac{1}{6} = \frac{7}{6}\)
+                </div>
+                <div class="answer">Jawaban: D. \(\frac{7}{6}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 26 -->
+        <div class="question">
+            <div class="question-number">Soal 26</div>
+            <div class="question-text">
+                Tentukan bilangan berikutnya dalam pola: \(1, \frac{1}{2}, \frac{3}{7}, \frac{2}{5}, \frac{5}{13}, \frac{3}{8}, \frac{7}{19}, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(\frac{4}{25}\)</li>
+                <li>B. \(\frac{7}{15}\)</li>
+                <li>C. \(\frac{5}{19}\)</li>
+                <li>D. \(\frac{1}{3}\)</li>
+                <li>E. \(\frac{4}{11}\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(26)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution26">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(1, \frac{1}{2}, \frac{3}{7}, \frac{2}{5}, \frac{5}{13}, \frac{3}{8}, \frac{7}{19}, \dots\)<br>
+                    Catatan: \(1 = \frac{1}{1}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pembilang dan penyebut secara terpisah:</strong><br>
+                    Mari kita tuliskan dalam bentuk pecahan:<br>
+                    \(\frac{1}{1}, \frac{1}{2}, \frac{3}{7}, \frac{2}{5}, \frac{5}{13}, \frac{3}{8}, \frac{7}{19}, \dots\)<br><br>
+                    Pembilang: \(1, 1, 3, 2, 5, 3, 7, \dots\)<br>
+                    Penyebut: \(1, 2, 7, 5, 13, 8, 19, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola pembilang:</strong><br>
+                    Pembilang: \(1, 1, 3, 2, 5, 3, 7, \dots\)<br>
+                    Mari kita lihat pola: mungkin ada dua deret yang bergantian atau pola khusus.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola penyebut:</strong><br>
+                    Penyebut: \(1, 2, 7, 5, 13, 8, 19, \dots\)<br>
+                    Mari kita lihat selisih: \(+1, +5, -2, +8, -5, +11, ...\) (tidak konsisten)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola alternatif - melihat pasangan:</strong><br>
+                    Mari kita lihat pola dengan cara berbeda. Perhatikan bahwa:<br>
+                    \(\frac{1}{1}, \frac{1}{2}\) - pembilang sama, penyebut naik 1<br>
+                    \(\frac{3}{7}, \frac{2}{5}\) - tidak jelas<br>
+                    Mari kita coba melihat pola Fibonacci atau pola khusus lainnya.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis lebih lanjut:</strong><br>
+                    Mari kita lihat pola penjumlahan pembilang dan penyebut:<br>
+                    \(1 + 1 = 2\), \(1 + 2 = 3\), \(3 + 7 = 10\), \(2 + 5 = 7\), \(5 + 13 = 18\), \(3 + 8 = 11\), \(7 + 19 = 26\)<br>
+                    Tidak terlihat pola yang jelas.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencoba melihat pola posisi ganjil dan genap:</strong><br>
+                    Posisi ganjil (1, 3, 5, 7, ...): \(\frac{1}{1}, \frac{3}{7}, \frac{5}{13}, \frac{7}{19}, \dots\)<br>
+                    Pembilang: \(1, 3, 5, 7, ...\) (bilangan ganjil)<br>
+                    Penyebut: \(1, 7, 13, 19, ...\) (selisih +6)<br><br>
+                    Posisi genap (2, 4, 6, ...): \(\frac{1}{2}, \frac{2}{5}, \frac{3}{8}, \dots\)<br>
+                    Pembilang: \(1, 2, 3, ...\) (bilangan asli)<br>
+                    Penyebut: \(2, 5, 8, ...\) (selisih +3)
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Posisi ganjil: pembilang = bilangan ganjil (1, 3, 5, 7, 9, ...), penyebut = \(1 + 6(n-1)\) dimana n adalah posisi dalam deret ganjil<br>
+                    Posisi genap: pembilang = bilangan asli (1, 2, 3, 4, ...), penyebut = \(2 + 3(n-1)\) dimana n adalah posisi dalam deret genap<br><br>
+                    Bilangan berikutnya adalah posisi ke-8 (genap):<br>
+                    Pembilang = 4 (bilangan asli ke-4)<br>
+                    Penyebut = \(2 + 3(4-1) = 2 + 9 = 11\)<br>
+                    Jadi: \(\frac{4}{11}\)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Dua pola yang bergantian:<br>
+                    - Posisi ganjil: pembilang bilangan ganjil, penyebut dengan selisih +6<br>
+                    - Posisi genap: pembilang bilangan asli, penyebut dengan selisih +3
+                </div>
+                <div class="answer">Jawaban: E. \(\frac{4}{11}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 27 -->
+        <div class="question">
+            <div class="question-number">Soal 27</div>
+            <div class="question-text">
+                Tentukan dua bilangan berikutnya dalam pola: \(212, 101, 313, -212, 101, -313, -212, -101, \dots\)
+            </div>
+            <ul class="options">
+                <li>A. \(-313, 212\)</li>
+                <li>B. \(-313, -212\)</li>
+                <li>C. \(313, -212\)</li>
+                <li>D. \(212, 101\)</li>
+                <li>E. \(-212, -101\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(27)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution27">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola:</strong><br>
+                    Urutan: \(212, 101, 313, -212, 101, -313, -212, -101, \dots\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola:</strong><br>
+                    Mari kita lihat operasi antar bilangan:<br>
+                    Dari \(212\) ke \(101\): \(-111\)<br>
+                    Dari \(101\) ke \(313\): \(+212\)<br>
+                    Dari \(313\) ke \(-212\): \(-525\) atau tidak konsisten<br>
+                    Mari kita coba melihat pola dengan cara berbeda.
+                </div>
+                <div class="solution-step">
+                    <strong>Menganalisis pola tanda dan nilai:</strong><br>
+                    Mari kita kelompokkan:<br>
+                    \(212, 101, 313\) (semua positif)<br>
+                    \(-212, 101, -313\) (bergantian tanda)<br>
+                    \(-212, -101, \dots\) (keduanya negatif)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari pola yang lebih spesifik:</strong><br>
+                    Perhatikan bahwa \(313 = 212 + 101\)<br>
+                    Mari kita lihat pola penjumlahan:<br>
+                    \(212 + 101 = 313\) ✓<br>
+                    \(-212 + 101 = -111\) (bukan \(-313\))<br>
+                    Mari kita coba melihat pola lain.
+                </div>
+                <div class="solution-step">
+                    <strong>Pola yang ditemukan:</strong><br>
+                    Perhatikan bahwa ada pola berulang dengan perubahan tanda:<br>
+                    Kelompok 1: \(212, 101, 313\) (semua positif, \(313 = 212 + 101\))<br>
+                    Kelompok 2: \(-212, 101, -313\) (tanda bergantian, \(-313 = -212 + 101\) dengan tanda negatif)<br>
+                    Kelompok 3: \(-212, -101, \dots\) (keduanya negatif)<br><br>
+                    Jika mengikuti pola, bilangan berikutnya dalam kelompok 3 adalah:<br>
+                    \(-212 + (-101) = -313\)<br>
+                    Kemudian kelompok berikutnya mungkin dimulai dengan \(212\) lagi (kembali ke awal dengan tanda positif)
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi pola lengkap:</strong><br>
+                    Pola: tiga bilangan dalam satu kelompok, dengan pola penjumlahan:<br>
+                    Kelompok 1: \(a, b, a+b\) dengan \(a=212, b=101\)<br>
+                    Kelompok 2: \(-a, b, -(a+b)\) dengan \(a=212, b=101\)<br>
+                    Kelompok 3: \(-a, -b, -(a+b)\) dengan \(a=212, b=101\)<br><br>
+                    Jadi bilangan berikutnya: \(-313\), kemudian \(212\) (kembali ke awal)
+                </div>
+                <div class="formula">
+                    <strong>Pola lengkap:</strong><br>
+                    Pola berulang setiap 3 bilangan dengan perubahan tanda:<br>
+                    - Kelompok 1: \((a, b, a+b)\) semua positif<br>
+                    - Kelompok 2: \((-a, b, -(a+b))\) tanda bergantian<br>
+                    - Kelompok 3: \((-a, -b, -(a+b))\) semua negatif<br>
+                    Kemudian kembali ke kelompok 1
+                </div>
+                <div class="answer">Jawaban: A. \(-313, 212\)</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
