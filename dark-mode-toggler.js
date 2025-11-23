@@ -65,8 +65,10 @@
     const countdownState = {
         elements: null,
         intervalId: null,
+        overtimeIntervalId: null,
         remainingMs: 0,
-        isRunning: false
+        isRunning: false,
+        overtimeStart: null
     };
 
     let mutationObserver = null;
@@ -201,6 +203,13 @@
                 font-size: 0.9rem;
                 text-align: center;
             }
+            #${COUNTDOWN_IDS.wrapper} .countdown-overtime {
+                font-size: 0.8rem;
+                text-align: center;
+                color: #d0d0d0;
+                min-height: 16px;
+                visibility: hidden;
+            }
             #${COUNTDOWN_IDS.wrapper} .countdown-inputs,
             #${COUNTDOWN_IDS.wrapper} .countdown-controls {
                 display: flex;
@@ -271,6 +280,10 @@
         display.id = COUNTDOWN_IDS.display;
         display.textContent = '00:00';
 
+        const overtimeDisplay = document.createElement('div');
+        overtimeDisplay.className = 'countdown-overtime';
+        overtimeDisplay.textContent = '+00:00';
+
         const inputsRow = document.createElement('div');
         inputsRow.className = 'countdown-inputs';
 
@@ -311,12 +324,14 @@
 
         wrapper.appendChild(title);
         wrapper.appendChild(display);
+        wrapper.appendChild(overtimeDisplay);
         wrapper.appendChild(inputsRow);
         wrapper.appendChild(controlsRow);
 
         return {
             wrapper,
             display,
+            overtimeDisplay,
             minutesInput,
             secondsInput,
             startButton,
@@ -350,6 +365,14 @@
     function updateCountdownDisplay(ms) {
         if (!countdownState.elements) return;
         countdownState.elements.display.textContent = formatCountdown(ms);
+    }
+
+    function updateOvertimeDisplay(ms) {
+        if (!countdownState.elements) return;
+        const seconds = Math.floor(ms / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        countdownState.elements.overtimeDisplay.textContent = `+${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
 
     function getInputDurationMs() {
@@ -387,6 +410,7 @@
 
         stopCountdownBlink();
         stopCountdownInterval();
+        stopOvertimeTicker();
 
         countdownState.isRunning = true;
         setStartButtonLabel('Jeda');
@@ -411,6 +435,7 @@
 
     function resetCountdown() {
         stopCountdownInterval();
+        stopOvertimeTicker();
         countdownState.isRunning = false;
         countdownState.remainingMs = 0;
         stopCountdownBlink();
@@ -425,6 +450,7 @@
         setStartButtonLabel('Mulai');
         updateCountdownDisplay(0);
         startCountdownBlink();
+        startOvertimeTicker();
     }
 
     function startCountdownBlink() {
@@ -460,6 +486,27 @@
 
     function handleCountdownReset() {
         resetCountdown();
+    }
+
+    function startOvertimeTicker() {
+        if (!countdownState.elements) return;
+        stopOvertimeTicker();
+        countdownState.overtimeStart = Date.now();
+        countdownState.elements.overtimeDisplay.style.visibility = 'visible';
+        updateOvertimeDisplay(0);
+        countdownState.overtimeIntervalId = window.setInterval(() => {
+            const elapsed = Date.now() - countdownState.overtimeStart;
+            updateOvertimeDisplay(elapsed);
+        }, 200);
+    }
+
+    function stopOvertimeTicker() {
+        if (!countdownState.elements) return;
+        countdownState.elements.overtimeDisplay.style.visibility = 'hidden';
+        if (countdownState.overtimeIntervalId) {
+            clearInterval(countdownState.overtimeIntervalId);
+            countdownState.overtimeIntervalId = null;
+        }
     }
 
     function initCountdownWidget() {
