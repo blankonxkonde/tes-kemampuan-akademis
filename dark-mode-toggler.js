@@ -170,9 +170,9 @@
                 bottom: 20px;
                 right: 90px;
                 z-index: 10000;
-                background-color: #ffffff;
-                color: #1a1a1a;
-                border: 1px solid #ccc;
+                background-color: #1f1f1f;
+                color: #f5f5f5;
+                border: 1px solid #3d3d3d;
                 border-radius: 12px;
                 padding: 12px;
                 width: 210px;
@@ -180,7 +180,7 @@
                 flex-direction: column;
                 gap: 10px;
                 font-family: inherit;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.35);
                 transition: border-color 0.3s ease, box-shadow 0.3s ease;
             }
             #${COUNTDOWN_IDS.wrapper}.countdown-blink #${COUNTDOWN_IDS.display} {
@@ -188,7 +188,7 @@
             }
             #${COUNTDOWN_IDS.wrapper}.countdown-invalid {
                 border-color: #ff4d4f;
-                box-shadow: 0 0 0 2px rgba(255,77,79,0.2);
+                box-shadow: 0 0 0 2px rgba(255,77,79,0.4);
             }
             #${COUNTDOWN_IDS.display} {
                 font-size: 1.6rem;
@@ -210,12 +210,14 @@
                 flex: 1;
                 padding: 6px 8px;
                 font-size: 0.85rem;
-                border: 1px solid #ccc;
+                border: 1px solid #3d3d3d;
                 border-radius: 8px;
                 outline: none;
+                background-color: #2b2b2b;
+                color: #f5f5f5;
             }
             #${COUNTDOWN_IDS.wrapper} .countdown-inputs input:focus {
-                border-color: #555;
+                border-color: #777;
             }
             #${COUNTDOWN_IDS.wrapper} .countdown-controls button {
                 flex: 1;
@@ -227,12 +229,13 @@
                 transition: background-color 0.2s ease, color 0.2s ease;
             }
             #${COUNTDOWN_IDS.wrapper} .countdown-controls button.primary {
-                background-color: #1a1a1a;
-                color: #ffffff;
+                background-color: #f2b705;
+                color: #1a1a1a;
             }
             #${COUNTDOWN_IDS.wrapper} .countdown-controls button.secondary {
-                background-color: #f3f3f3;
-                color: #1a1a1a;
+                background-color: #2b2b2b;
+                color: #f5f5f5;
+                border: 1px solid #3d3d3d;
             }
             #${COUNTDOWN_IDS.wrapper} .countdown-controls button:disabled {
                 opacity: 0.6;
@@ -491,9 +494,9 @@
             right: 20px;
             z-index: 10000;
             padding: 10px;
-            background-color: #fff;
-            color: #1a1a1a;
-            border: 1px solid #ccc;
+            background-color: #2b2b2b;
+            color: #f5f5f5;
+            border: 1px solid #555;
             border-radius: 50%;
             cursor: pointer;
             font-size: 1.5rem;
@@ -509,15 +512,15 @@
         
         // Add hover effect
         toggler.addEventListener('mouseenter', () => {
-            toggler.style.backgroundColor = '#333';
-            toggler.style.color = '#fff';
-            toggler.style.borderColor = '#555';
+            toggler.style.backgroundColor = '#3b3b3b';
+            toggler.style.color = '#fefefe';
+            toggler.style.borderColor = '#666';
         });
         toggler.addEventListener('mouseleave', () => {
             if (!isDarkModeActive) {
-                toggler.style.backgroundColor = '#fff';
-                toggler.style.color = '#1a1a1a';
-                toggler.style.borderColor = '#ccc';
+                toggler.style.backgroundColor = '#2b2b2b';
+                toggler.style.color = '#f5f5f5';
+                toggler.style.borderColor = '#555';
             }
         });
         
@@ -536,13 +539,13 @@
             
             // Update button appearance based on dark mode
             if (isDark) {
-                toggler.style.backgroundColor = '#333';
-                toggler.style.color = '#fff';
-                toggler.style.borderColor = '#555';
-            } else {
-                toggler.style.backgroundColor = '#fff';
+                toggler.style.backgroundColor = '#f2b705';
                 toggler.style.color = '#1a1a1a';
-                toggler.style.borderColor = '#ccc';
+                toggler.style.borderColor = '#f2b705';
+            } else {
+                toggler.style.backgroundColor = '#2b2b2b';
+                toggler.style.color = '#f5f5f5';
+                toggler.style.borderColor = '#555';
             }
             
             applyDynamicDarkMode(isDark);
