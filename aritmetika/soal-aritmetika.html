@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Aritmetika - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Aritmetika - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Aritmetika</strong>
+            <p>Aritmetika adalah cabang matematika yang mempelajari operasi dasar seperti penjumlahan, pengurangan, perkalian, dan pembagian. Soal-soal aritmetika menguji kemampuan berpikir logis, mengenali pola, dan menerapkan konsep matematika dasar untuk menyelesaikan masalah.</p>
+        </div>
+        
+        <h2>Tingkat 1: Sangat Mudah (Pemanasan)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal-soal di tingkat ini menguji pemahaman konsep dasar secara langsung.</p>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Dalam satu kelas berisi 30 siswa, 20 siswa suka sepak bola dan 15 siswa suka basket. Berapa jumlah minimal siswa yang suka keduanya?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Total siswa = 30<br>
+                    - Siswa suka sepak bola = 20<br>
+                    - Siswa suka basket = 15
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep Prinsip Inklusi-Eksklusi:</strong><br>
+                    Jika semua siswa yang suka sepak bola dan basket tidak ada yang overlap, maka totalnya adalah:<br>
+                    \(20 + 15 = 35\) siswa
+                </div>
+                <div class="solution-step">
+                    <strong>Karena hanya ada 30 siswa, maka ada overlap:</strong><br>
+                    Overlap minimal = \(35 - 30 = 5\) siswa
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Minimal yang suka keduanya = (Suka A + Suka B) - Total siswa<br>
+                    = \(20 + 15 - 30 = 5\)
+                </div>
+                <div class="answer">Jawaban: Jumlah minimal siswa yang suka keduanya adalah 5 siswa</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Perbandingan kelereng Ali dan Budi adalah 2 : 5. Jika Ali memiliki 10 kelereng, berapa banyak kelereng Budi?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Perbandingan Ali : Budi = 2 : 5<br>
+                    - Kelereng Ali = 10
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai perbandingan:</strong><br>
+                    Jika Ali memiliki 10 kelereng dan perbandingannya 2, maka:<br>
+                    Nilai perbandingan = \(\frac{10}{2} = 5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Kelereng Budi:</strong><br>
+                    Kelereng Budi = \(5 \times 5 = 25\) kelereng
+                </div>
+                <div class="formula">
+                    <strong>Alternatif menggunakan proporsi:</strong><br>
+                    \(\frac{\text{Ali}}{\text{Budi}} = \frac{2}{5}\)<br>
+                    \(\frac{10}{\text{Budi}} = \frac{2}{5}\)<br>
+                    \(\text{Budi} = \frac{10 \times 5}{2} = 25\)
+                </div>
+                <div class="answer">Jawaban: Budi memiliki 25 kelereng</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Jika x = y + 5 dan y = 3, berapakah nilai x?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(x = y + 5\)<br>
+                    - \(y = 3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Substitusi nilai y ke persamaan:</strong><br>
+                    \(x = y + 5\)<br>
+                    \(x = 3 + 5\)<br>
+                    \(x = 8\)
+                </div>
+                <div class="answer">Jawaban: Nilai x adalah 8</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Sebuah pekerjaan jika dikerjakan oleh A selesai dalam 2 hari. Jika dikerjakan oleh B selesai dalam 2 hari. Jika mereka bekerja bersama, berapa hari pekerjaan itu selesai?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - A selesai dalam 2 hari<br>
+                    - B selesai dalam 2 hari<br>
+                    <em>Catatan: Ada kemungkinan typo di soal, karena biasanya berbeda. Kita asumsikan keduanya sama.</em>
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan pekerjaan = 1 unit:</strong><br>
+                    Laju kerja A = \(\frac{1}{2}\) pekerjaan/hari<br>
+                    Laju kerja B = \(\frac{1}{2}\) pekerjaan/hari
+                </div>
+                <div class="solution-step">
+                    <strong>Jika bekerja bersama:</strong><br>
+                    Laju kerja bersama = \(\frac{1}{2} + \frac{1}{2} = 1\) pekerjaan/hari<br>
+                    Waktu selesai = \(\frac{1 \text{ pekerjaan}}{1 \text{ pekerjaan/hari}} = 1\) hari
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum untuk bekerja bersama:</strong><br>
+                    \(\frac{1}{t_{\text{bersama}}} = \frac{1}{t_A} + \frac{1}{t_B}\)<br>
+                    \(\frac{1}{t_{\text{bersama}}} = \frac{1}{2} + \frac{1}{2} = 1\)<br>
+                    \(t_{\text{bersama}} = 1\) hari
+                </div>
+                <div class="answer">Jawaban: Jika bekerja bersama, pekerjaan selesai dalam 1 hari</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 2: Mudah (Mulai Berpikir)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal-soal di tingkat ini memerlukan satu atau dua langkah pemikiran atau penataan ulang.</p>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Sebanyak 100 orang disurvei. 70 orang punya mobil, 75 orang punya motor, dan 5 orang tidak punya keduanya. Berapa orang yang punya mobil dan motor?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Total orang = 100<br>
+                    - Punya mobil = 70<br>
+                    - Punya motor = 75<br>
+                    - Tidak punya keduanya = 5
+                </div>
+                <div class="solution-step">
+                    <strong>Orang yang punya minimal salah satu:</strong><br>
+                    Punya mobil atau motor = \(100 - 5 = 95\) orang
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan Prinsip Inklusi-Eksklusi:</strong><br>
+                    Punya mobil atau motor = Punya mobil + Punya motor - Punya keduanya<br>
+                    \(95 = 70 + 75 - \text{Punya keduanya}\)<br>
+                    \(95 = 145 - \text{Punya keduanya}\)<br>
+                    Punya keduanya = \(145 - 95 = 50\) orang
+                </div>
+                <div class="formula">
+                    <strong>Rumus:</strong><br>
+                    \(|A \cup B| = |A| + |B| - |A \cap B|\)<br>
+                    \(|A \cap B| = |A| + |B| - |A \cup B|\)<br>
+                    \(|A \cap B| = 70 + 75 - 95 = 50\)
+                </div>
+                <div class="answer">Jawaban: Ada 50 orang yang punya mobil dan motor</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Jumlah umur Ayah dan Ibu adalah 90 tahun. Jika perbandingan umur mereka 8 : 7, berapakah umur Ibu?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Umur Ayah + Umur Ibu = 90 tahun<br>
+                    - Perbandingan Ayah : Ibu = 8 : 7
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan nilai perbandingan = k:</strong><br>
+                    Umur Ayah = \(8k\)<br>
+                    Umur Ibu = \(7k\)<br>
+                    Total = \(8k + 7k = 15k = 90\)<br>
+                    \(k = \frac{90}{15} = 6\)
+                </div>
+                <div class="solution-step">
+                    <strong>Umur Ibu:</strong><br>
+                    Umur Ibu = \(7k = 7 \times 6 = 42\) tahun
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Umur Ayah = \(8 \times 6 = 48\) tahun<br>
+                    Total = \(48 + 42 = 90\) tahun ✓
+                </div>
+                <div class="answer">Jawaban: Umur Ibu adalah 42 tahun</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Diketahui a + b = 15 dan a - b = 5. Berapakah nilai dari a × b?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(a + b = 15\)<br>
+                    - \(a - b = 5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Metode 1: Menyelesaikan sistem persamaan</strong><br>
+                    Dari \(a + b = 15\) dan \(a - b = 5\):<br>
+                    Tambahkan kedua persamaan: \((a + b) + (a - b) = 15 + 5\)<br>
+                    \(2a = 20\)<br>
+                    \(a = 10\)<br>
+                    Substitusi: \(10 + b = 15\), maka \(b = 5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Nilai a × b:</strong><br>
+                    \(a \times b = 10 \times 5 = 50\)
+                </div>
+                <div class="formula">
+                    <strong>Metode 2: Menggunakan identitas aljabar</strong><br>
+                    \((a + b)^2 = a^2 + 2ab + b^2\)<br>
+                    \((a - b)^2 = a^2 - 2ab + b^2\)<br>
+                    Kurangkan: \((a + b)^2 - (a - b)^2 = 4ab\)<br>
+                    \(15^2 - 5^2 = 4ab\)<br>
+                    \(225 - 25 = 4ab\)<br>
+                    \(200 = 4ab\)<br>
+                    \(ab = 50\)
+                </div>
+                <div class="answer">Jawaban: Nilai a × b adalah 50</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Rata-rata dari tiga bilangan adalah 10. Jika bilangan pertama adalah 7 dan bilangan kedua adalah 9, berapakah bilangan ketiga?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Rata-rata tiga bilangan = 10<br>
+                    - Bilangan pertama = 7<br>
+                    - Bilangan kedua = 9<br>
+                    - Bilangan ketiga = ?
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus rata-rata:</strong><br>
+                    Rata-rata = \(\frac{\text{Jumlah semua bilangan}}{\text{Banyak bilangan}}\)<br>
+                    \(10 = \frac{7 + 9 + \text{bilangan ketiga}}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari bilangan ketiga:</strong><br>
+                    \(10 = \frac{16 + \text{bilangan ketiga}}{3}\)<br>
+                    \(30 = 16 + \text{bilangan ketiga}\)<br>
+                    Bilangan ketiga = \(30 - 16 = 14\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif:</strong><br>
+                    Jumlah ketiga bilangan = \(10 \times 3 = 30\)<br>
+                    Bilangan ketiga = \(30 - 7 - 9 = 14\)
+                </div>
+                <div class="answer">Jawaban: Bilangan ketiga adalah 14</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 3: Sedang (Membutuhkan Trik)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Di tingkat ini, Anda perlu melihat pola atau menggunakan trik aljabar untuk menyelesaikannya secara efisien.</p>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Jika p × q = 4, q × r = 6, dan r × p = 6, berapakah perbandingan p : q : r?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(pq = 4\)<br>
+                    - \(qr = 6\)<br>
+                    - \(rp = 6\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai p, q, dan r:</strong><br>
+                    Dari \(pq = 4\) dan \(rp = 6\), kita dapat:<br>
+                    \(\frac{rp}{pq} = \frac{6}{4}\)<br>
+                    \(\frac{r}{q} = \frac{3}{2}\)<br>
+                    Jadi \(r = \frac{3q}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Substitusi ke qr = 6:</strong><br>
+                    \(q \times \frac{3q}{2} = 6\)<br>
+                    \(\frac{3q^2}{2} = 6\)<br>
+                    \(3q^2 = 12\)<br>
+                    \(q^2 = 4\)<br>
+                    \(q = 2\) (kita ambil nilai positif)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari p dan r:</strong><br>
+                    Dari \(pq = 4\): \(p \times 2 = 4\), maka \(p = 2\)<br>
+                    Dari \(qr = 6\): \(2 \times r = 6\), maka \(r = 3\)<br>
+                    Verifikasi: \(rp = 3 \times 2 = 6\) ✓
+                </div>
+                <div class="solution-step">
+                    <strong>Perbandingan:</strong><br>
+                    \(p : q : r = 2 : 2 : 3\)
+                </div>
+                <div class="formula">
+                    <strong>Alternatif menggunakan perkalian:</strong><br>
+                    \((pq)(qr)(rp) = 4 \times 6 \times 6 = 144\)<br>
+                    \((pqr)^2 = 144\)<br>
+                    \(pqr = 12\) (nilai positif)<br>
+                    Dari sini dapat dicari masing-masing nilai.
+                </div>
+                <div class="answer">Jawaban: Perbandingan p : q : r adalah 2 : 2 : 3</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Berapakah hasil dari: (x - a)(x - b)(x - c) ... (x - z)?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Ini adalah soal trik!</strong><br>
+                    Perhatikan pola: \((x - a)(x - b)(x - c) \ldots (x - z)\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mengidentifikasi pola:</strong><br>
+                    Huruf-huruf dari a sampai z mencakup semua huruf alfabet.<br>
+                    Di antara faktor-faktor tersebut, ada faktor \((x - x)\)!
+                </div>
+                <div class="solution-step">
+                    <strong>Faktor yang membuat hasil nol:</strong><br>
+                    \((x - x) = 0\)<br>
+                    Ketika dikalikan dengan bilangan apapun, hasilnya adalah 0.
+                </div>
+                <div class="formula">
+                    <strong>Kesimpulan:</strong><br>
+                    Karena ada faktor \((x - x) = 0\) dalam perkalian, maka:<br>
+                    \((x - a)(x - b)(x - c) \ldots (x - x) \ldots (x - z) = 0\)
+                </div>
+                <div class="answer">Jawaban: Hasilnya adalah 0</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Perbandingan uang A dan B adalah 4 : 5. Jika A memberikan Rp10.000 kepada B, perbandingan uang mereka menjadi 1 : 2. Berapa jumlah uang mereka berdua?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Perbandingan awal: A : B = 4 : 5<br>
+                    - A memberikan Rp10.000 kepada B<br>
+                    - Perbandingan baru: A : B = 1 : 2
+                </div>
+                <div class="solution-step">
+                    <strong>Misalkan nilai perbandingan awal = k:</strong><br>
+                    Uang A awal = \(4k\)<br>
+                    Uang B awal = \(5k\)<br>
+                    Total uang = \(4k + 5k = 9k\)
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah A memberikan Rp10.000 kepada B:</strong><br>
+                    Uang A baru = \(4k - 10.000\)<br>
+                    Uang B baru = \(5k + 10.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Perbandingan baru:</strong><br>
+                    \(\frac{4k - 10.000}{5k + 10.000} = \frac{1}{2}\)<br>
+                    \(2(4k - 10.000) = 1(5k + 10.000)\)<br>
+                    \(8k - 20.000 = 5k + 10.000\)<br>
+                    \(8k - 5k = 10.000 + 20.000\)<br>
+                    \(3k = 30.000\)<br>
+                    \(k = 10.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Jumlah uang mereka berdua:</strong><br>
+                    Total = \(9k = 9 \times 10.000 = 90.000\)
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Uang A awal = \(4 \times 10.000 = 40.000\)<br>
+                    Uang B awal = \(5 \times 10.000 = 50.000\)<br>
+                    Setelah transfer: A = 30.000, B = 60.000<br>
+                    Perbandingan = \(30.000 : 60.000 = 1 : 2\) ✓
+                </div>
+                <div class="answer">Jawaban: Jumlah uang mereka berdua adalah Rp90.000</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Dalam sebuah pesta, setiap tamu berjabat tangan dengan setiap tamu lain tepat satu kali. Jika ada total 28 jabat tangan, ada berapa tamu di pesta itu?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Setiap tamu berjabat tangan dengan setiap tamu lain tepat satu kali<br>
+                    - Total jabat tangan = 28
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep Kombinasi:</strong><br>
+                    Jika ada \(n\) tamu, maka banyaknya jabat tangan adalah kombinasi 2 dari \(n\):<br>
+                    \(\binom{n}{2} = \frac{n(n-1)}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menyelesaikan persamaan:</strong><br>
+                    \(\frac{n(n-1)}{2} = 28\)<br>
+                    \(n(n-1) = 56\)<br>
+                    \(n^2 - n - 56 = 0\)
+                </div>
+                <div class="solution-step">
+                    <strong>Memfaktorkan:</strong><br>
+                    \((n - 8)(n + 7) = 0\)<br>
+                    \(n = 8\) atau \(n = -7\)<br>
+                    Karena jumlah tamu harus positif, maka \(n = 8\)
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Dengan 8 tamu: \(\frac{8 \times 7}{2} = \frac{56}{2} = 28\) jabat tangan ✓
+                </div>
+                <div class="answer">Jawaban: Ada 8 tamu di pesta itu</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 4: Sulit (Logika Mendalam)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal di tingkat ini sering kali terlihat rumit atau kurang informasi, tetapi memiliki solusi elegan jika logikanya ditemukan.</p>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Jika x + y = 3, y + z = 4, dan z + x = 5, berapakah nilai dari x + y + z?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(x + y = 3\)<br>
+                    - \(y + z = 4\)<br>
+                    - \(z + x = 5\)
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Jumlahkan ketiga persamaan:</strong><br>
+                    \((x + y) + (y + z) + (z + x) = 3 + 4 + 5\)<br>
+                    \(2x + 2y + 2z = 12\)<br>
+                    \(2(x + y + z) = 12\)<br>
+                    \(x + y + z = 6\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    Jika \(x + y = a\), \(y + z = b\), dan \(z + x = c\), maka:<br>
+                    \(x + y + z = \frac{a + b + c}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bonus: Mencari nilai masing-masing:</strong><br>
+                    Dari \(x + y + z = 6\):<br>
+                    \(x = 6 - (y + z) = 6 - 4 = 2\)<br>
+                    \(y = 6 - (z + x) = 6 - 5 = 1\)<br>
+                    \(z = 6 - (x + y) = 6 - 3 = 3\)
+                </div>
+                <div class="answer">Jawaban: Nilai x + y + z adalah 6</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Jika diketahui a + 1/a = 3, berapakah nilai dari a² + 1/a²?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(a + \frac{1}{a} = 3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Kuadratkan kedua ruas:</strong><br>
+                    \((a + \frac{1}{a})^2 = 3^2\)<br>
+                    \(a^2 + 2 \cdot a \cdot \frac{1}{a} + \frac{1}{a^2} = 9\)<br>
+                    \(a^2 + 2 + \frac{1}{a^2} = 9\)<br>
+                    \(a^2 + \frac{1}{a^2} = 9 - 2 = 7\)
+                </div>
+                <div class="formula">
+                    <strong>Identitas yang digunakan:</strong><br>
+                    \((x + y)^2 = x^2 + 2xy + y^2\)<br>
+                    Dalam hal ini: \(x = a\) dan \(y = \frac{1}{a}\), sehingga \(xy = 1\)
+                </div>
+                <div class="answer">Jawaban: Nilai a² + 1/a² adalah 7</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Rata-rata nilai 10 siswa adalah 80. Setelah satu siswa dengan nilai 100 keluar dan digantikan oleh siswa baru, rata-ratanya menjadi 78. Berapakah nilai siswa baru tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Rata-rata 10 siswa = 80<br>
+                    - Siswa dengan nilai 100 keluar<br>
+                    - Digantikan siswa baru<br>
+                    - Rata-rata baru 10 siswa = 78
+                </div>
+                <div class="solution-step">
+                    <strong>Jumlah nilai awal:</strong><br>
+                    Jumlah nilai 10 siswa = \(10 \times 80 = 800\)
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah siswa nilai 100 keluar:</strong><br>
+                    Jumlah nilai 9 siswa = \(800 - 100 = 700\)
+                </div>
+                <div class="solution-step">
+                    <strong>Setelah siswa baru masuk, rata-rata menjadi 78:</strong><br>
+                    Jumlah nilai 10 siswa baru = \(10 \times 78 = 780\)<br>
+                    Nilai siswa baru = \(780 - 700 = 80\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus langsung:</strong><br>
+                    Nilai siswa baru = Rata-rata baru × 10 - (Jumlah awal - Nilai yang keluar)<br>
+                    = \(78 \times 10 - (800 - 100)\)<br>
+                    = \(780 - 700 = 80\)
+                </div>
+                <div class="answer">Jawaban: Nilai siswa baru tersebut adalah 80</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Sebuah jam dinding setiap hari terlambat 10 menit. Jika sekarang jam tersebut menunjukkan pukul 08:00 pagi tepat, pada hari apakah jam tersebut akan menunjukkan pukul 08:00 pagi tepat lagi?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jam terlambat 10 menit setiap hari<br>
+                    - Sekarang menunjukkan 08:00 tepat<br>
+                    - Ditanya: Kapan akan menunjukkan 08:00 tepat lagi?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep:</strong><br>
+                    Agar jam menunjukkan waktu yang sama lagi, jam harus terlambat total 12 jam (720 menit) atau kelipatannya, karena dalam 12 jam, waktu akan kembali ke angka yang sama.
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung hari yang dibutuhkan:</strong><br>
+                    Setiap hari terlambat 10 menit<br>
+                    Untuk terlambat 720 menit (12 jam), dibutuhkan:<br>
+                    \(\frac{720}{10} = 72\) hari
+                </div>
+                <div class="formula">
+                    <strong>Penjelasan:</strong><br>
+                    Setelah 72 hari, jam akan terlambat \(72 \times 10 = 720\) menit = 12 jam.<br>
+                    Jika sekarang menunjukkan 08:00 tepat, setelah 12 jam terlambat, jam akan menunjukkan 08:00 lagi (karena 08:00 + 12 jam = 20:00, tapi karena terlambat 12 jam, waktu sebenarnya adalah 08:00).
+                </div>
+                <div class="solution-step">
+                    <strong>Catatan penting:</strong><br>
+                    Setelah 72 hari, jika waktu sebenarnya adalah 08:00, jam akan menunjukkan 08:00 (karena terlambat 12 jam). Jadi jam akan menunjukkan 08:00 tepat lagi setelah 72 hari.
+                </div>
+                <div class="answer">Jawaban: Jam tersebut akan menunjukkan pukul 08:00 pagi tepat lagi setelah 72 hari</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 5: Sangat Sulit (Wawasan Ahli)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal-soal ini memerlukan wawasan matematika yang mendalam, mengenali identitas khusus, atau berpikir out-of-the-box.</p>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Tentukan hasil dari deret berikut: 1 - 2 + 3 - 4 + 5 - 6 + ... + 99 - 100.
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Deret: 1 - 2 + 3 - 4 + 5 - 6 + ... + 99 - 100</strong><br>
+                    Perhatikan pola: bilangan ganjil positif, bilangan genap negatif
+                </div>
+                <div class="solution-step">
+                    <strong>Mengelompokkan:</strong><br>
+                    \((1 - 2) + (3 - 4) + (5 - 6) + \ldots + (99 - 100)\)<br>
+                    Setiap pasangan menghasilkan: \(-1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Banyaknya pasangan:</strong><br>
+                    Dari 1 sampai 100, ada 50 pasangan (karena setiap pasangan terdiri dari 2 bilangan)
+                </div>
+                <div class="solution-step">
+                    <strong>Hasil:</strong><br>
+                    \(50 \times (-1) = -50\)
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum untuk deret ini:</strong><br>
+                    Untuk \(n\) bilangan genap: \(1 - 2 + 3 - 4 + \ldots + (n-1) - n = -\frac{n}{2}\)<br>
+                    Untuk \(n = 100\): Hasil = \(-\frac{100}{2} = -50\)
+                </div>
+                <div class="answer">Jawaban: Hasil deret tersebut adalah -50</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Jika a, b, dan c adalah bilangan positif dimana 3a + 4b = 20. Berapa nilai maksimum dari a + b jika a dan b adalah bilangan bulat?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(3a + 4b = 20\)<br>
+                    - \(a, b\) adalah bilangan bulat positif<br>
+                    - Mencari maksimum \(a + b\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menyatakan a dalam b:</strong><br>
+                    \(3a = 20 - 4b\)<br>
+                    \(a = \frac{20 - 4b}{3}\)<br>
+                    Agar \(a\) bulat positif, \(20 - 4b\) harus habis dibagi 3 dan positif
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai b yang mungkin:</strong><br>
+                    \(20 - 4b > 0\) → \(4b < 20\) → \(b < 5\)<br>
+                    \(b\) bulat positif: \(b = 1, 2, 3, 4\)<br>
+                    Cek mana yang membuat \(a\) bulat:
+                </div>
+                <div class="solution-step">
+                    <strong>Mencoba nilai b:</strong><br>
+                    - \(b = 1\): \(a = \frac{20 - 4}{3} = \frac{16}{3}\) (tidak bulat)<br>
+                    - \(b = 2\): \(a = \frac{20 - 8}{3} = \frac{12}{3} = 4\) → \(a + b = 6\)<br>
+                    - \(b = 3\): \(a = \frac{20 - 12}{3} = \frac{8}{3}\) (tidak bulat)<br>
+                    - \(b = 4\): \(a = \frac{20 - 16}{3} = \frac{4}{3}\) (tidak bulat)<br>
+                    - \(b = 5\): \(a = \frac{20 - 20}{3} = 0\) (tidak positif)
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari solusi lain dengan menyatakan b dalam a:</strong><br>
+                    \(4b = 20 - 3a\)<br>
+                    \(b = \frac{20 - 3a}{4}\)<br>
+                    Cek nilai a yang membuat b bulat positif
+                </div>
+                <div class="solution-step">
+                    <strong>Mencoba nilai a:</strong><br>
+                    - \(a = 1\): \(b = \frac{17}{4}\) (tidak bulat)<br>
+                    - \(a = 2\): \(b = \frac{14}{4} = \frac{7}{2}\) (tidak bulat)<br>
+                    - \(a = 3\): \(b = \frac{11}{4}\) (tidak bulat)<br>
+                    - \(a = 4\): \(b = \frac{8}{4} = 2\) → \(a + b = 6\) ✓<br>
+                    - \(a = 5\): \(b = \frac{5}{4}\) (tidak bulat)<br>
+                    - \(a = 6\): \(b = \frac{2}{4} = \frac{1}{2}\) (tidak bulat)
+                </div>
+                <div class="formula">
+                    <strong>Kesimpulan:</strong><br>
+                    Satu-satunya solusi bulat positif adalah \(a = 4, b = 2\)<br>
+                    Maksimum \(a + b = 4 + 2 = 6\)
+                </div>
+                <div class="answer">Jawaban: Nilai maksimum dari a + b adalah 6</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Jika f(x) adalah sebuah fungsi dimana f(x) + 2f(1/x) = 3x. Berapakah nilai dari f(2)?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(f(x) + 2f\left(\frac{1}{x}\right) = 3x\) untuk semua \(x \neq 0\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi x = 2</strong><br>
+                    \(f(2) + 2f\left(\frac{1}{2}\right) = 3(2) = 6\)<br>
+                    \(f(2) + 2f\left(\frac{1}{2}\right) = 6\) ... (persamaan 1)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi x = 1/2</strong><br>
+                    \(f\left(\frac{1}{2}\right) + 2f(2) = 3\left(\frac{1}{2}\right) = \frac{3}{2}\)<br>
+                    \(f\left(\frac{1}{2}\right) + 2f(2) = \frac{3}{2}\) ... (persamaan 2)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Menyelesaikan sistem persamaan</strong><br>
+                    Dari persamaan 1: \(f(2) = 6 - 2f\left(\frac{1}{2}\right)\)<br>
+                    Substitusi ke persamaan 2:<br>
+                    \(f\left(\frac{1}{2}\right) + 2\left(6 - 2f\left(\frac{1}{2}\right)\right) = \frac{3}{2}\)<br>
+                    \(f\left(\frac{1}{2}\right) + 12 - 4f\left(\frac{1}{2}\right) = \frac{3}{2}\)<br>
+                    \(-3f\left(\frac{1}{2}\right) = \frac{3}{2} - 12 = \frac{3 - 24}{2} = -\frac{21}{2}\)<br>
+                    \(f\left(\frac{1}{2}\right) = \frac{7}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Mencari f(2)</strong><br>
+                    \(f(2) = 6 - 2f\left(\frac{1}{2}\right) = 6 - 2 \times \frac{7}{2} = 6 - 7 = -1\)
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    \(f(2) + 2f\left(\frac{1}{2}\right) = -1 + 2 \times \frac{7}{2} = -1 + 7 = 6\) ✓<br>
+                    \(f\left(\frac{1}{2}\right) + 2f(2) = \frac{7}{2} + 2(-1) = \frac{7}{2} - 2 = \frac{3}{2}\) ✓
+                </div>
+                <div class="answer">Jawaban: Nilai f(2) adalah -1</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Jika a + b + c = 0, berapakah nilai dari (a³ + b³ + c³)/(3abc)? (Asumsikan a, b, c tidak nol).
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - \(a + b + c = 0\)<br>
+                    - \(a, b, c \neq 0\)<br>
+                    - Mencari nilai \(\frac{a^3 + b^3 + c^3}{3abc}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Identitas penting:</strong><br>
+                    Jika \(a + b + c = 0\), maka \(a^3 + b^3 + c^3 = 3abc\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bukti identitas:</strong><br>
+                    Dari \(a + b + c = 0\), kita dapat \(c = -(a + b)\)<br>
+                    \(a^3 + b^3 + c^3 = a^3 + b^3 + (-(a+b))^3\)<br>
+                    \(= a^3 + b^3 - (a+b)^3\)<br>
+                    \(= a^3 + b^3 - (a^3 + 3a^2b + 3ab^2 + b^3)\)<br>
+                    \(= a^3 + b^3 - a^3 - 3a^2b - 3ab^2 - b^3\)<br>
+                    \(= -3a^2b - 3ab^2\)<br>
+                    \(= -3ab(a + b)\)<br>
+                    Karena \(c = -(a + b)\), maka \(a + b = -c\)<br>
+                    \(= -3ab(-c) = 3abc\)
+                </div>
+                <div class="solution-step">
+                    <strong>Menerapkan identitas:</strong><br>
+                    Karena \(a + b + c = 0\), maka \(a^3 + b^3 + c^3 = 3abc\)<br>
+                    \(\frac{a^3 + b^3 + c^3}{3abc} = \frac{3abc}{3abc} = 1\)
+                </div>
+                <div class="formula">
+                    <strong>Catatan:</strong><br>
+                    Identitas \(a^3 + b^3 + c^3 = 3abc\) ketika \(a + b + c = 0\) adalah identitas penting dalam aljabar yang sering muncul dalam soal olimpiade matematika.
+                </div>
+                <div class="answer">Jawaban: Nilai dari (a³ + b³ + c³)/(3abc) adalah 1</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
