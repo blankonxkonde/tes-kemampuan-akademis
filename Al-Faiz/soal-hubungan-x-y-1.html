@@ -1407,12 +1407,8 @@
                         <th>N</th>
                     </tr>
                     <tr>
-                        <td>2009</td>
-                        <td>2009</td>
-                    </tr>
-                    <tr>
-                        <td>\(1009^2 + 2009\)</td>
-                        <td>\(10045^2 + 20045\)</td>
+                        <td>\(\frac{2009}{1009^2 + 2009}\)</td>
+                        <td>\(\frac{2009}{10045^2 + 20045}\)</td>
                     </tr>
                 </table>
             </div>
@@ -1431,31 +1427,56 @@
                 <div class="solution-title">Pembahasan:</div>
                 <div class="solution-step">
                     <strong>Menghitung nilai M:</strong><br>
-                    \(M = 1009^2 + 2009\)<br>
+                    \(M = \frac{2009}{1009^2 + 2009}\)<br>
+                    Hitung penyebut terlebih dahulu:<br>
                     \(1009^2 = (1000 + 9)^2 = 1000^2 + 2(1000)(9) + 9^2 = 1.000.000 + 18.000 + 81 = 1.018.081\)<br>
-                    \(M = 1.018.081 + 2009 = 1.020.090\)
+                    \(1009^2 + 2009 = 1.018.081 + 2009 = 1.020.090\)<br>
+                    \(M = \frac{2009}{1.020.090}\)
                 </div>
                 <div class="solution-step">
                     <strong>Menghitung nilai N:</strong><br>
-                    \(N = 10045^2 + 20045\)<br>
+                    \(N = \frac{2009}{10045^2 + 20045}\)<br>
+                    Hitung penyebut terlebih dahulu:<br>
                     \(10045^2 = (10000 + 45)^2 = 10000^2 + 2(10000)(45) + 45^2 = 100.000.000 + 900.000 + 2.025 = 100.902.025\)<br>
-                    \(N = 100.902.025 + 20045 = 100.922.070\)
+                    \(10045^2 + 20045 = 100.902.025 + 20045 = 100.922.070\)<br>
+                    \(N = \frac{2009}{100.922.070}\)
                 </div>
                 <div class="solution-step">
                     <strong>Membandingkan M dan N:</strong><br>
-                    \(M = 1.020.090\)<br>
-                    \(N = 100.922.070\)<br>
-                    Jadi \(M < N\) (M jauh lebih kecil dari N)
+                    Keduanya memiliki pembilang yang sama (2009).<br>
+                    Penyebut M = \(1009^2 + 2009\)<br>
+                    Penyebut N = \(10045^2 + 20045\)<br>
+                    Jelas terlihat bahwa penyebut N jauh lebih besar dari penyebut M (karena \(10045^2\) jauh lebih besar dari \(1009^2\))<br>
+                    Karena penyebut M < penyebut N, maka \(M > N\)<br>
+                    (Semakin kecil penyebut, semakin besar nilai pecahan jika pembilangnya sama)
+                </div>
+                <div class="formula">
+                    <strong>Cara Cepat:</strong><br>
+                    Ketika pembilang sama, kita cukup membandingkan penyebutnya saja!<br>
+                    • Jika penyebut lebih besar → pecahan lebih kecil<br>
+                    • Jika penyebut lebih kecil → pecahan lebih besar<br>
+                    <br>
+                    Dalam soal ini:<br>
+                    Penyebut M = \(1009^2 + 2009\)<br>
+                    Penyebut N = \(10045^2 + 20045\)<br>
+                    Jelas terlihat bahwa penyebut N jauh lebih besar dari penyebut M (karena \(10045^2\) jauh lebih besar dari \(1009^2\))<br>
+                    Karena penyebut M lebih kecil, maka M lebih besar dari N<br>
+                    Jadi langsung dapat disimpulkan: \(M > N\) tanpa perlu menghitung nilai pastinya!
+                </div>
+                <div class="formula">
+                    <strong>Konsep penting:</strong><br>
+                    Untuk pecahan dengan pembilang yang sama, semakin besar penyebut, semakin kecil nilainya.<br>
+                    \(\frac{a}{b} > \frac{a}{c}\) jika \(b < c\) (dengan \(a, b, c > 0\))
                 </div>
                 <div class="solution-step">
                     <strong>Memeriksa opsi jawaban:</strong><br>
-                    A. \(M > N\) → \(1.020.090 > 100.922.070\)? Salah<br>
-                    B. \(3M < 5N\) → \(3(1.020.090) = 3.060.270\), \(5(100.922.070) = 504.610.350\), \(3.060.270 < 504.610.350\)? Benar ✓<br>
+                    A. \(M > N\) → \(\frac{2009}{1.020.090} > \frac{2009}{100.922.070}\)? Benar ✓<br>
+                    B. \(3M < 5N\) → Perlu dicek lebih lanjut, tapi opsi A sudah benar<br>
                     C. Hubungan tidak dapat ditentukan → Salah<br>
-                    D. \(3M + 2N = 0\) → \(3.060.270 + 2(100.922.070) = 3.060.270 + 201.844.140 = 204.904.410 = 0\)? Salah<br>
-                    E. \(5M = N\) → \(5(1.020.090) = 5.100.450\), \(5.100.450 = 100.922.070\)? Salah
+                    D. \(3M + 2N = 0\) → Jelas salah karena keduanya positif<br>
+                    E. \(5M = N\) → Jelas salah karena M > N
                 </div>
-                <div class="answer">Jawaban: B. \(3M < 5N\)</div>
+                <div class="answer">Jawaban: A. \(M > N\)</div>
             </div>
         </div>
         
