@@ -49,6 +49,25 @@
     };
     const ORIGINAL_STYLES_ATTR = 'data-original-inline-style';
     const DARK_MODE_APPLIED_ATTR = 'data-dark-mode-applied';
+    const COUNTDOWN_IDS = {
+        wrapper: 'darkModeCountdown',
+        display: 'darkModeCountdownDisplay',
+        startButton: 'darkModeCountdownStart',
+        resetButton: 'darkModeCountdownReset',
+        minutesInput: 'darkModeCountdownMinutes',
+        secondsInput: 'darkModeCountdownSeconds'
+    };
+    const COUNTDOWN_CLASSES = {
+        blink: 'countdown-blink',
+        invalid: 'countdown-invalid'
+    };
+    const COUNTDOWN_STYLE_ID = 'darkModeCountdownStyles';
+    const countdownState = {
+        elements: null,
+        intervalId: null,
+        remainingMs: 0,
+        isRunning: false
+    };
 
     let mutationObserver = null;
     let observerScheduled = false;
@@ -93,7 +112,7 @@
         const elements = document.querySelectorAll('body, body *');
 
         elements.forEach(el => {
-            if (el.id === 'darkModeToggler') return;
+            if (el.id === 'darkModeToggler' || el.id === COUNTDOWN_IDS.wrapper) return;
 
             if (enable) {
                 const style = window.getComputedStyle(el);
@@ -138,6 +157,323 @@
             document.body.style.backgroundColor = '';
             document.body.style.color = '';
         }
+    }
+
+    // --- Countdown Widget Helpers ---
+    function ensureCountdownStyles() {
+        if (document.getElementById(COUNTDOWN_STYLE_ID)) return;
+        const style = document.createElement('style');
+        style.id = COUNTDOWN_STYLE_ID;
+        style.textContent = `
+            #${COUNTDOWN_IDS.wrapper} {
+                position: fixed;
+                bottom: 20px;
+                right: 90px;
+                z-index: 10000;
+                background-color: #ffffff;
+                color: #1a1a1a;
+                border: 1px solid #ccc;
+                border-radius: 12px;
+                padding: 12px;
+                width: 210px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-family: inherit;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+            #${COUNTDOWN_IDS.wrapper}.countdown-blink #${COUNTDOWN_IDS.display} {
+                animation: countdownBlink 1s steps(2, start) infinite;
+            }
+            #${COUNTDOWN_IDS.wrapper}.countdown-invalid {
+                border-color: #ff4d4f;
+                box-shadow: 0 0 0 2px rgba(255,77,79,0.2);
+            }
+            #${COUNTDOWN_IDS.display} {
+                font-size: 1.6rem;
+                font-weight: 600;
+                text-align: center;
+                letter-spacing: 1px;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-title {
+                font-weight: 600;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-inputs,
+            #${COUNTDOWN_IDS.wrapper} .countdown-controls {
+                display: flex;
+                gap: 8px;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-inputs input {
+                flex: 1;
+                padding: 6px 8px;
+                font-size: 0.85rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                outline: none;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-inputs input:focus {
+                border-color: #555;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-controls button {
+                flex: 1;
+                padding: 7px 8px;
+                font-size: 0.85rem;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.2s ease, color 0.2s ease;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-controls button.primary {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-controls button.secondary {
+                background-color: #f3f3f3;
+                color: #1a1a1a;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-controls button:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            @keyframes countdownBlink {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+            }
+            @media (max-width: 640px) {
+                #${COUNTDOWN_IDS.wrapper} {
+                    right: 20px;
+                    bottom: 80px;
+                    width: calc(100% - 40px);
+                    max-width: 320px;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    function createCountdownElements() {
+        const wrapper = document.createElement('div');
+        wrapper.id = COUNTDOWN_IDS.wrapper;
+        wrapper.setAttribute('role', 'region');
+        wrapper.setAttribute('aria-label', 'Timer hitung mundur');
+
+        const title = document.createElement('div');
+        title.textContent = 'Hitung Mundur';
+        title.className = 'countdown-title';
+
+        const display = document.createElement('div');
+        display.id = COUNTDOWN_IDS.display;
+        display.textContent = '00:00';
+
+        const inputsRow = document.createElement('div');
+        inputsRow.className = 'countdown-inputs';
+
+        const minutesInput = document.createElement('input');
+        minutesInput.type = 'number';
+        minutesInput.id = COUNTDOWN_IDS.minutesInput;
+        minutesInput.placeholder = 'Menit';
+        minutesInput.min = '0';
+        minutesInput.max = '999';
+
+        const secondsInput = document.createElement('input');
+        secondsInput.type = 'number';
+        secondsInput.id = COUNTDOWN_IDS.secondsInput;
+        secondsInput.placeholder = 'Detik';
+        secondsInput.min = '0';
+        secondsInput.max = '59';
+
+        inputsRow.appendChild(minutesInput);
+        inputsRow.appendChild(secondsInput);
+
+        const controlsRow = document.createElement('div');
+        controlsRow.className = 'countdown-controls';
+
+        const startButton = document.createElement('button');
+        startButton.type = 'button';
+        startButton.id = COUNTDOWN_IDS.startButton;
+        startButton.className = 'primary';
+        startButton.textContent = 'Mulai';
+
+        const resetButton = document.createElement('button');
+        resetButton.type = 'button';
+        resetButton.id = COUNTDOWN_IDS.resetButton;
+        resetButton.className = 'secondary';
+        resetButton.textContent = 'Reset';
+
+        controlsRow.appendChild(startButton);
+        controlsRow.appendChild(resetButton);
+
+        wrapper.appendChild(title);
+        wrapper.appendChild(display);
+        wrapper.appendChild(inputsRow);
+        wrapper.appendChild(controlsRow);
+
+        return {
+            wrapper,
+            display,
+            minutesInput,
+            secondsInput,
+            startButton,
+            resetButton
+        };
+    }
+
+    function clampInputValue(input, min, max) {
+        if (!input) return;
+        if (input.value === '') return;
+        const numeric = parseInt(input.value, 10);
+        if (Number.isNaN(numeric)) {
+            input.value = '';
+            return;
+        }
+        const clamped = Math.min(max, Math.max(min, numeric));
+        if (clamped !== numeric) {
+            input.value = clamped;
+        }
+    }
+
+    function formatCountdown(ms) {
+        const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        const paddedMinutes = String(minutes).padStart(2, '0');
+        const paddedSeconds = String(seconds).padStart(2, '0');
+        return `${paddedMinutes}:${paddedSeconds}`;
+    }
+
+    function updateCountdownDisplay(ms) {
+        if (!countdownState.elements) return;
+        countdownState.elements.display.textContent = formatCountdown(ms);
+    }
+
+    function getInputDurationMs() {
+        if (!countdownState.elements) return 0;
+        const minutes = parseInt(countdownState.elements.minutesInput.value, 10);
+        const seconds = parseInt(countdownState.elements.secondsInput.value, 10);
+        const safeMinutes = Number.isNaN(minutes) ? 0 : Math.max(0, minutes);
+        const safeSeconds = Number.isNaN(seconds) ? 0 : Math.max(0, Math.min(59, seconds));
+        return (safeMinutes * 60 + safeSeconds) * 1000;
+    }
+
+    function setStartButtonLabel(label) {
+        if (!countdownState.elements) return;
+        countdownState.elements.startButton.textContent = label;
+    }
+
+    function showCountdownInputError() {
+        if (!countdownState.elements) return;
+        const { wrapper } = countdownState.elements;
+        wrapper.classList.add(COUNTDOWN_CLASSES.invalid);
+        setTimeout(() => {
+            wrapper.classList.remove(COUNTDOWN_CLASSES.invalid);
+        }, 600);
+    }
+
+    function stopCountdownInterval() {
+        if (countdownState.intervalId) {
+            clearInterval(countdownState.intervalId);
+            countdownState.intervalId = null;
+        }
+    }
+
+    function startCountdown() {
+        if (!countdownState.elements || countdownState.remainingMs <= 0) return;
+
+        stopCountdownBlink();
+        stopCountdownInterval();
+
+        countdownState.isRunning = true;
+        setStartButtonLabel('Jeda');
+
+        const endTime = Date.now() + countdownState.remainingMs;
+        countdownState.intervalId = window.setInterval(() => {
+            countdownState.remainingMs = Math.max(0, endTime - Date.now());
+            updateCountdownDisplay(countdownState.remainingMs);
+
+            if (countdownState.remainingMs <= 0) {
+                completeCountdown();
+            }
+        }, 200);
+    }
+
+    function pauseCountdown() {
+        if (!countdownState.isRunning) return;
+        stopCountdownInterval();
+        countdownState.isRunning = false;
+        setStartButtonLabel('Lanjut');
+    }
+
+    function resetCountdown() {
+        stopCountdownInterval();
+        countdownState.isRunning = false;
+        countdownState.remainingMs = 0;
+        stopCountdownBlink();
+        setStartButtonLabel('Mulai');
+        updateCountdownDisplay(0);
+    }
+
+    function completeCountdown() {
+        stopCountdownInterval();
+        countdownState.isRunning = false;
+        countdownState.remainingMs = 0;
+        setStartButtonLabel('Mulai');
+        updateCountdownDisplay(0);
+        startCountdownBlink();
+    }
+
+    function startCountdownBlink() {
+        if (!countdownState.elements) return;
+        countdownState.elements.wrapper.classList.add(COUNTDOWN_CLASSES.blink);
+    }
+
+    function stopCountdownBlink() {
+        if (!countdownState.elements) return;
+        countdownState.elements.wrapper.classList.remove(COUNTDOWN_CLASSES.blink);
+    }
+
+    function handleCountdownToggle() {
+        if (!countdownState.elements) return;
+
+        if (countdownState.isRunning) {
+            pauseCountdown();
+            return;
+        }
+
+        if (countdownState.remainingMs <= 0) {
+            const duration = getInputDurationMs();
+            if (duration <= 0) {
+                showCountdownInputError();
+                return;
+            }
+            countdownState.remainingMs = duration;
+            updateCountdownDisplay(duration);
+        }
+
+        startCountdown();
+    }
+
+    function handleCountdownReset() {
+        resetCountdown();
+    }
+
+    function initCountdownWidget() {
+        if (!document.body) return null;
+        if (countdownState.elements) return countdownState.elements.wrapper;
+
+        ensureCountdownStyles();
+        const elements = createCountdownElements();
+        countdownState.elements = elements;
+
+        elements.startButton.addEventListener('click', handleCountdownToggle);
+        elements.resetButton.addEventListener('click', handleCountdownReset);
+        elements.minutesInput.addEventListener('input', () => clampInputValue(elements.minutesInput, 0, 999));
+        elements.secondsInput.addEventListener('input', () => clampInputValue(elements.secondsInput, 0, 59));
+
+        updateCountdownDisplay(0);
+        return elements.wrapper;
     }
 
     // --- Script Initialization ---
@@ -186,6 +522,11 @@
         });
         
         document.body.insertBefore(toggler, document.body.firstChild);
+
+        const countdownWidget = initCountdownWidget();
+        if (countdownWidget) {
+            document.body.insertBefore(countdownWidget, toggler.nextSibling);
+        }
 
         // 2. Main toggle function
         function setDarkMode(isDark) {
