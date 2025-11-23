@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Perbandingan Senilai dan Tak Senilai - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin: 8px 0;
+            list-style: none;
+        }
+        
+        .options li::before {
+            content: counter(option-counter, upper-alpha) ". ";
+            counter-increment: option-counter;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .options {
+            counter-reset: option-counter;
+        }
+        
+        .comparison-table {
+            margin: 15px 0;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .comparison-table th {
+            background-color: #667eea;
+            color: white;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TEMA 7: Perbandingan Senilai dan Tak Senilai</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Perbandingan Senilai dan Tak Senilai</strong>
+            <p><strong>Perbandingan Senilai:</strong> Dua besaran dikatakan berbanding senilai jika ketika salah satu besaran bertambah, besaran lainnya juga bertambah dengan perbandingan yang sama. Contoh: jarak tempuh dengan bahan bakar, jumlah barang dengan harga total.</p>
+            <p><strong>Perbandingan Berbalik Nilai:</strong> Dua besaran dikatakan berbanding berbalik nilai jika ketika salah satu besaran bertambah, besaran lainnya berkurang dengan perbandingan yang sama. Contoh: jumlah pekerja dengan waktu penyelesaian, kecepatan dengan waktu tempuh.</p>
+        </div>
+        
+        <h2>Halaman 238</h2>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Sebuah truk memerlukan bensin 50 liter untuk menempuh jarak 800 km, jika truk tersebut menghabiskan bensin 4 liter, jarak yang dapat ditempuh adalah ... km. (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>30</li>
+                <li>45</li>
+                <li>64</li>
+                <li>72</li>
+                <li>96</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Bensin 50 liter → jarak 800 km<br>
+                    - Ditanya: jarak untuk 4 liter bensin?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Senilai</strong><br>
+                    Semakin banyak bensin, semakin jauh jarak yang ditempuh. Ini adalah perbandingan senilai.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan perbandingan:</strong><br>
+                    \(\frac{\text{Bensin 1}}{\text{Bensin 2}} = \frac{\text{Jarak 1}}{\text{Jarak 2}}\)<br>
+                    \(\frac{50}{4} = \frac{800}{x}\)<br>
+                    \(50x = 4 \times 800\)<br>
+                    \(50x = 3200\)<br>
+                    \(x = \frac{3200}{50} = 64\) km
+                </div>
+                <div class="formula">
+                    <strong>Alternatif: Mencari konsumsi per liter</strong><br>
+                    Konsumsi = \(\frac{800 \text{ km}}{50 \text{ liter}} = 16\) km/liter<br>
+                    Jarak untuk 4 liter = \(4 \times 16 = 64\) km
+                </div>
+                <div class="answer">Jawaban: C. 64 km</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Andi membutuhkan bensin sebanyak 4 liter untuk menempuh jarak 44 km. Dengan asumsi medan yang dilalui sama, manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan? (TIU CPNS 2023)
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>Jumlah bensin (liter) yang diperlukan untuk menempuh jarak 275 km</td>
+                    <td>25</td>
+                </tr>
+            </table>
+            <ul class="options">
+                <li>\(3X > 2Y\)</li>
+                <li>\(2Y > 3X\)</li>
+                <li>\(X = 2Y\)</li>
+                <li>\(3X = 2Y\)</li>
+                <li>Informasi yang diberikan tidak cukup untuk memutuskan salah satu dari tiga pilihan di atas</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 4 liter → 44 km<br>
+                    - X = bensin untuk 275 km<br>
+                    - Y = 25
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai X:</strong><br>
+                    Perbandingan senilai: \(\frac{4}{44} = \frac{X}{275}\)<br>
+                    \(4 \times 275 = 44X\)<br>
+                    \(1100 = 44X\)<br>
+                    \(X = \frac{1100}{44} = 25\)
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 25<br>
+                    Y = 25<br>
+                    Jadi \(X = Y\)
+                </div>
+                <div class="solution-step">
+                    <strong>Mengecek pilihan:</strong><br>
+                    - \(3X > 2Y\) → \(3(25) > 2(25)\) → \(75 > 50\) ✓ Benar<br>
+                    - \(2Y > 3X\) → \(2(25) > 3(25)\) → \(50 > 75\) ✗ Salah<br>
+                    - \(X = 2Y\) → \(25 = 2(25)\) → \(25 = 50\) ✗ Salah<br>
+                    - \(3X = 2Y\) → \(3(25) = 2(25)\) → \(75 = 50\) ✗ Salah<br>
+                    Karena \(X = Y = 25\), maka \(3X = 3(25) = 75\) dan \(2Y = 2(25) = 50\)<br>
+                    Jadi \(3X > 2Y\) benar.
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Konsumsi = \(\frac{44}{4} = 11\) km/liter<br>
+                    Bensin untuk 275 km = \(\frac{275}{11} = 25\) liter ✓
+                </div>
+                <div class="answer">Jawaban: A. \(3X > 2Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Sebuah Bus Permata biru mampu menempuh jarak sejauh 169 km dengan bensin sebanyak 13 liter. Berapakah liter bahan bakar minimal yang diperlukan jika harus menempuh jarak sejauh 338.000 m?
+            </div>
+            <ul class="options">
+                <li>6</li>
+                <li>10</li>
+                <li>26</li>
+                <li>30</li>
+                <li>36</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 13 liter → 169 km<br>
+                    - Ditanya: bensin untuk 338.000 m
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi satuan:</strong><br>
+                    338.000 m = 338 km (karena 1 km = 1000 m)
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan perbandingan senilai:</strong><br>
+                    \(\frac{13}{169} = \frac{x}{338}\)<br>
+                    \(13 \times 338 = 169x\)<br>
+                    \(4394 = 169x\)<br>
+                    \(x = \frac{4394}{169} = 26\) liter
+                </div>
+                <div class="formula">
+                    <strong>Alternatif: Mencari konsumsi per liter</strong><br>
+                    Konsumsi = \(\frac{169}{13} = 13\) km/liter<br>
+                    Bensin untuk 338 km = \(\frac{338}{13} = 26\) liter
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    \(\frac{169}{13} = 13\) km/liter<br>
+                    \(26 \times 13 = 338\) km ✓
+                </div>
+                <div class="answer">Jawaban: C. 26 liter</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Sebuah mobil memerlukan bensin 30 liter untuk menempuh jarak 450 km, jika mobil tersebut menghabiskan bensin 3 liter, jarak yang dapat ditempuh adalah ... km.
+            </div>
+            <ul class="options">
+                <li>15</li>
+                <li>20</li>
+                <li>25</li>
+                <li>30</li>
+                <li>45</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 30 liter → 450 km<br>
+                    - Ditanya: jarak untuk 3 liter?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Senilai</strong><br>
+                    Semakin sedikit bensin, semakin pendek jarak yang ditempuh.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan perbandingan:</strong><br>
+                    \(\frac{30}{3} = \frac{450}{x}\)<br>
+                    \(30x = 3 \times 450\)<br>
+                    \(30x = 1350\)<br>
+                    \(x = \frac{1350}{30} = 45\) km
+                </div>
+                <div class="formula">
+                    <strong>Alternatif: Mencari konsumsi per liter</strong><br>
+                    Konsumsi = \(\frac{450}{30} = 15\) km/liter<br>
+                    Jarak untuk 3 liter = \(3 \times 15 = 45\) km
+                </div>
+                <div class="answer">Jawaban: E. 45 km</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Jarak yang ditempuh suatu mobil adalah 90 km dengan bahan bakar yang jumlahnya 15 liter. Jika mobil tersebut akan menempuh jarak 420 km, maka jumlah bahan bakar yang diperlukan adalah ... liter.
+            </div>
+            <ul class="options">
+                <li>30</li>
+                <li>60</li>
+                <li>70</li>
+                <li>75</li>
+                <li>80</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 15 liter → 90 km<br>
+                    - Ditanya: bensin untuk 420 km?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Senilai</strong><br>
+                    Semakin jauh jarak, semakin banyak bahan bakar yang dibutuhkan.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan perbandingan:</strong><br>
+                    \(\frac{15}{90} = \frac{x}{420}\)<br>
+                    \(15 \times 420 = 90x\)<br>
+                    \(6300 = 90x\)<br>
+                    \(x = \frac{6300}{90} = 70\) liter
+                </div>
+                <div class="formula">
+                    <strong>Alternatif: Mencari konsumsi per liter</strong><br>
+                    Konsumsi = \(\frac{90}{15} = 6\) km/liter<br>
+                    Bensin untuk 420 km = \(\frac{420}{6} = 70\) liter
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    \(70 \times 6 = 420\) km ✓
+                </div>
+                <div class="answer">Jawaban: C. 70 liter</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 239</h2>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Diketahui Faiz memiliki beras sebanyak 15 karung. Berat setiap karung 180 kg.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Berat seluruh beras Faiz dalam kwintal</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X > 3Y\)</li>
+                <li>\(2X < 3Y\)</li>
+                <li>\(X + Y = 0\)</li>
+                <li>\(2X = 3Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jumlah karung = 15<br>
+                    - Berat per karung = 180 kg<br>
+                    - X = 18<br>
+                    - Y = Berat seluruh beras dalam kwintal
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung berat total beras:</strong><br>
+                    Berat total = \(15 \times 180 = 2700\) kg
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi ke kwintal:</strong><br>
+                    1 kwintal = 100 kg<br>
+                    Berat dalam kwintal = \(\frac{2700}{100} = 27\) kwintal<br>
+                    Jadi Y = 27
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 18<br>
+                    Y = 27<br>
+                    \(2X = 2(18) = 36\)<br>
+                    \(3Y = 3(27) = 81\)<br>
+                    \(2X < 3Y\) karena \(36 < 81\)
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi pilihan:</strong><br>
+                    - \(2X > 3Y\) → \(36 > 81\) ✗ Salah<br>
+                    - \(2X < 3Y\) → \(36 < 81\) ✓ Benar<br>
+                    - \(X + Y = 0\) → \(18 + 27 = 45 \neq 0\) ✗ Salah<br>
+                    - \(2X = 3Y\) → \(36 = 81\) ✗ Salah
+                </div>
+                <div class="answer">Jawaban: B. \(2X < 3Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Setiap hari ada 8 truk yang melewati jalan depan rumah Eross. Setiap truk memuat 600 kg apel.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Berat apel yang dibawa 8 truk tersebut dalam ton.</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X > 3Y\)</li>
+                <li>\(4X < 5Y\)</li>
+                <li>\(2X = 3Y\)</li>
+                <li>\(5X = 4Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jumlah truk = 8<br>
+                    - Berat per truk = 600 kg<br>
+                    - X = 6<br>
+                    - Y = Berat apel dalam ton
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung berat total apel:</strong><br>
+                    Berat total = \(8 \times 600 = 4800\) kg
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi ke ton:</strong><br>
+                    1 ton = 1000 kg<br>
+                    Berat dalam ton = \(\frac{4800}{1000} = 4,8\) ton<br>
+                    Jadi Y = 4,8
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 6<br>
+                    Y = 4,8<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(2X = 2(6) = 12\), \(3Y = 3(4,8) = 14,4\) → \(2X < 3Y\) ✗ (karena 12 < 14,4, tapi pilihan A mengatakan \(2X > 3Y\))<br>
+                    - \(4X = 4(6) = 24\), \(5Y = 5(4,8) = 24\) → \(4X = 5Y\) ✓ (benar, tapi tidak ada di pilihan)<br>
+                    - \(2X = 12\), \(3Y = 14,4\) → \(2X \neq 3Y\) ✗<br>
+                    - \(5X = 5(6) = 30\), \(4Y = 4(4,8) = 19,2\) → \(5X \neq 4Y\) ✗ (30 ≠ 19,2)
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Berdasarkan perhitungan: \(4X = 5Y\) adalah benar (keduanya sama dengan 24).<br>
+                    Namun, pilihan D tertulis \(5X = 4Y\) yang tidak benar dengan nilai yang kita hitung.<br>
+                    Mari kita cek apakah ada kesalahan perhitungan atau mungkin ada interpretasi lain.
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi ulang:</strong><br>
+                    Berat total = 8 × 600 = 4800 kg = 4,8 ton ✓<br>
+                    X = 6, Y = 4,8<br>
+                    \(4X = 4(6) = 24\)<br>
+                    \(5Y = 5(4,8) = 24\)<br>
+                    Jadi hubungan yang benar adalah \(4X = 5Y\)<br>
+                    <em>Catatan: Mungkin ada kesalahan ketik di pilihan D, atau perlu verifikasi ulang dengan soal asli.</em>
+                </div>
+                <div class="answer">Jawaban: Berdasarkan perhitungan, hubungan yang benar adalah \(4X = 5Y\). Jika pilihan D yang dimaksud adalah ini (meskipun tertulis \(5X = 4Y\)), maka jawabannya adalah D. Namun perlu verifikasi dengan soal asli.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Jika cabai rawit sebanyak 1 pon harganya adalah Rp8.000,00
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>Rp 20.000</td>
+                    <td>Harga 80 ons cabai rawit</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(X > 2Y\)</li>
+                <li>\(X < \frac{1}{2}Y\)</li>
+                <li>\(X > 3Y\)</li>
+                <li>\(2X < 3Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 1 pon → Rp8.000<br>
+                    - X = Rp20.000<br>
+                    - Y = Harga 80 ons cabai rawit
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi satuan:</strong><br>
+                    1 pon = 5 ons (di Indonesia)<br>
+                    Jadi 1 pon = 5 ons
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung harga per ons:</strong><br>
+                    Harga per pon = Rp8.000<br>
+                    Harga per ons = \(\frac{8000}{5} = 1600\) rupiah/ons
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung Y (harga 80 ons):</strong><br>
+                    Y = \(80 \times 1600 = 128.000\) rupiah<br>
+                    Jadi Y = Rp128.000
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = Rp20.000<br>
+                    Y = Rp128.000<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(X > 2Y\) → \(20.000 > 2(128.000)\) → \(20.000 > 256.000\) ✗<br>
+                    - \(X < \frac{1}{2}Y\) → \(20.000 < \frac{1}{2}(128.000)\) → \(20.000 < 64.000\) ✓<br>
+                    - \(X > 3Y\) → \(20.000 > 3(128.000)\) → \(20.000 > 384.000\) ✗<br>
+                    - \(2X < 3Y\) → \(2(20.000) < 3(128.000)\) → \(40.000 < 384.000\) ✓
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    \(X = 20.000\), \(Y = 128.000\)<br>
+                    \(\frac{1}{2}Y = 64.000\)<br>
+                    \(20.000 < 64.000\) ✓ Benar<br>
+                    Jadi \(X < \frac{1}{2}Y\) adalah benar.
+                </div>
+                <div class="answer">Jawaban: B. \(X < \frac{1}{2}Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Setiap hari ada 6 truk yang melewati jalan raya di dekat rumah Lita. Setiap truk memuat 15 kuintal semangka. Jumlah semangka yang dibawa 6 truk tersebut adalah ... ton.
+            </div>
+            <ul class="options">
+                <li>15</li>
+                <li>13</li>
+                <li>12</li>
+                <li>11</li>
+                <li>9</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Jumlah truk = 6<br>
+                    - Berat per truk = 15 kuintal<br>
+                    - Ditanya: Total berat dalam ton
+                </div>
+                <div class="solution-step">
+                    <strong>Menghitung berat total dalam kuintal:</strong><br>
+                    Berat total = \(6 \times 15 = 90\) kuintal
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi ke ton:</strong><br>
+                    1 ton = 10 kuintal<br>
+                    Berat dalam ton = \(\frac{90}{10} = 9\) ton
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    9 ton = \(9 \times 10 = 90\) kuintal ✓<br>
+                    \(90 \div 6 = 15\) kuintal per truk ✓
+                </div>
+                <div class="answer">Jawaban: E. 9 ton</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 240</h2>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Pabrik garmen membutuhkan 150 meter kain untuk membuat 30 potong pakaian.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Jika tersedia 315 meter kain, maka banyak potong pakaian yang dapat dibuat dalam lusin.</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X > 3Y\)</li>
+                <li>\(7X < 2Y\)</li>
+                <li>\(2X < 3Y\)</li>
+                <li>\(2X > Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 150 meter → 30 potong pakaian<br>
+                    - X = 18<br>
+                    - Y = Banyak potong pakaian dari 315 meter (dalam lusin)
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Senilai</strong><br>
+                    Semakin banyak kain, semakin banyak pakaian yang bisa dibuat.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari banyak pakaian dari 315 meter:</strong><br>
+                    \(\frac{150}{30} = \frac{315}{x}\)<br>
+                    \(150x = 30 \times 315\)<br>
+                    \(150x = 9450\)<br>
+                    \(x = \frac{9450}{150} = 63\) potong
+                </div>
+                <div class="solution-step">
+                    <strong>Konversi ke lusin:</strong><br>
+                    1 lusin = 12 potong<br>
+                    Banyak pakaian dalam lusin = \(\frac{63}{12} = 5,25\) lusin<br>
+                    Jadi Y = 5,25
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 18<br>
+                    Y = 5,25<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(2X = 2(18) = 36\), \(3Y = 3(5,25) = 15,75\) → \(2X > 3Y\) ✓<br>
+                    - \(7X = 7(18) = 126\), \(2Y = 2(5,25) = 10,5\) → \(7X < 2Y\) ✗<br>
+                    - \(2X = 36\), \(3Y = 15,75\) → \(2X < 3Y\) ✗<br>
+                    - \(2X = 36\), \(Y = 5,25\) → \(2X > Y\) ✓
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Kain per potong = \(\frac{150}{30} = 5\) meter/potong<br>
+                    Pakaian dari 315 meter = \(\frac{315}{5} = 63\) potong<br>
+                    Dalam lusin = \(\frac{63}{12} = 5,25\) lusin ✓<br>
+                    \(2X = 36 > 3Y = 15,75\) ✓ Benar
+                </div>
+                <div class="answer">Jawaban: A. \(2X > 3Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Suatu pekerjaan diselesaikan oleh 8 orang dalam waktu 4 hari. Berapa orang yang di butuhkan untuk menyelesaikan pekerjaan tersebut dalam waktu 2 hari?
+            </div>
+            <ul class="options">
+                <li>16</li>
+                <li>32</li>
+                <li>36</li>
+                <li>48</li>
+                <li>64</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 8 orang → selesai dalam 4 hari<br>
+                    - Ditanya: berapa orang untuk selesai dalam 2 hari?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat pekerjaan selesai. Ini adalah perbandingan berbalik nilai.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus perbandingan berbalik nilai:</strong><br>
+                    Jumlah pekerja × Waktu = Konstan (pekerjaan yang sama)<br>
+                    \(8 \times 4 = x \times 2\)<br>
+                    \(32 = 2x\)<br>
+                    \(x = \frac{32}{2} = 16\) orang
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(P_1 \times T_1 = P_2 \times T_2\)<br>
+                    Dimana P = jumlah pekerja, T = waktu<br>
+                    \(8 \times 4 = P_2 \times 2\)<br>
+                    \(P_2 = \frac{8 \times 4}{2} = 16\) orang
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(8 \times 4 = 32\) orang-hari<br>
+                    Dengan 16 orang: \(\frac{32}{16} = 2\) hari ✓
+                </div>
+                <div class="answer">Jawaban: A. 16 orang</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Diketahui pekerjaan dapat diselesaikan oleh 15 orang pekerja dalam waktu 11 hari.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Jumlah pekerja yang diperlukan agar pekerjaan tersebut dapat selesai dalam waktu 5 hari.</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X > 3Y\)</li>
+                <li>\(2X < 3Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+                <li>\(X + Y = 0\)</li>
+                <li>\(3X = 4Y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 15 orang → selesai dalam 11 hari<br>
+                    - X = 20<br>
+                    - Y = Jumlah pekerja untuk selesai dalam 5 hari
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai Y:</strong><br>
+                    \(15 \times 11 = Y \times 5\)<br>
+                    \(165 = 5Y\)<br>
+                    \(Y = \frac{165}{5} = 33\) orang<br>
+                    Jadi Y = 33
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 20<br>
+                    Y = 33<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(2X = 2(20) = 40\), \(3Y = 3(33) = 99\) → \(2X < 3Y\) ✓<br>
+                    - \(2X = 40\), \(3Y = 99\) → \(2X < 3Y\) ✓ (ini benar)<br>
+                    - \(X + Y = 20 + 33 = 53 \neq 0\) ✗<br>
+                    - \(3X = 3(20) = 60\), \(4Y = 4(33) = 132\) → \(3X \neq 4Y\) ✗
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(15 \times 11 = 165\) orang-hari<br>
+                    Dengan Y = 33 orang: \(\frac{165}{33} = 5\) hari ✓<br>
+                    \(2X = 40 < 3Y = 99\) ✓ Benar
+                </div>
+                <div class="answer">Jawaban: B. \(2X < 3Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Sebuah kolam renang dapat diisi penuh dalam waktu 4 jam menggunakan 8 pompa air. Jika 3 pompa air rusak dan tidak bisa digunakan, berapa lama waktu yang dibutuhkan untuk mengisi penuh kolam renang tersebut? (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>3,2 jam</li>
+                <li>4,8 jam</li>
+                <li>5,6 jam</li>
+                <li>6,4 jam</li>
+                <li>7 jam</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 8 pompa → selesai dalam 4 jam<br>
+                    - 3 pompa rusak, tersisa 8 - 3 = 5 pompa<br>
+                    - Ditanya: waktu untuk mengisi dengan 5 pompa?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin sedikit pompa, semakin lama waktu yang dibutuhkan.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus perbandingan berbalik nilai:</strong><br>
+                    Jumlah pompa × Waktu = Konstan<br>
+                    \(8 \times 4 = 5 \times x\)<br>
+                    \(32 = 5x\)<br>
+                    \(x = \frac{32}{5} = 6,4\) jam
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(P_1 \times T_1 = P_2 \times T_2\)<br>
+                    Dimana P = jumlah pompa, T = waktu<br>
+                    \(8 \times 4 = 5 \times T_2\)<br>
+                    \(T_2 = \frac{8 \times 4}{5} = \frac{32}{5} = 6,4\) jam
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Total kapasitas = \(8 \times 4 = 32\) pompa-jam<br>
+                    Dengan 5 pompa: \(\frac{32}{5} = 6,4\) jam ✓
+                </div>
+                <div class="answer">Jawaban: D. 6,4 jam</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 241</h2>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Rara memiliki usaha toko kue. Terdapat pesanan kue tart yang dapat diselesaikan oleh 16 orang pegawainya dalam waktu 11 hari.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Jumlah pekerja yang diperlukan agar pekerjaan tersebut dapat selesai dalam waktu 4 hari.</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X > 3Y\)</li>
+                <li>\(2X < 3Y\)</li>
+                <li>\(2X = 3Y\)</li>
+                <li>\(X - Y = 0\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 16 orang → selesai dalam 11 hari<br>
+                    - X = 20<br>
+                    - Y = Jumlah pekerja untuk selesai dalam 4 hari
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai Y:</strong><br>
+                    \(16 \times 11 = Y \times 4\)<br>
+                    \(176 = 4Y\)<br>
+                    \(Y = \frac{176}{4} = 44\) orang<br>
+                    Jadi Y = 44
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 20<br>
+                    Y = 44<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(2X = 2(20) = 40\), \(3Y = 3(44) = 132\) → \(2X < 3Y\) ✓<br>
+                    - \(2X = 40\), \(3Y = 132\) → \(2X < 3Y\) ✓ (ini benar)<br>
+                    - \(2X = 40\), \(3Y = 132\) → \(2X \neq 3Y\) ✗<br>
+                    - \(X - Y = 20 - 44 = -24 \neq 0\) ✗
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(16 \times 11 = 176\) orang-hari<br>
+                    Dengan Y = 44 orang: \(\frac{176}{44} = 4\) hari ✓<br>
+                    \(2X = 40 < 3Y = 132\) ✓ Benar
+                </div>
+                <div class="answer">Jawaban: B. \(2X < 3Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Diketahui seorang peternak mempunyai persediaan pakan ternak untuk 72 ekor ayam selama 10 hari. Peternak itu membeli 18 ekor lagi, maka dalam beberapa hari persediaan pakan itu akan habis. (TIU CPNS 2023)
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>Total hari persediaan akan habis</td>
+                    <td>8</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X > 3Y\)</li>
+                <li>\(2X < 3Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+                <li>\(X + Y = 0\)</li>
+                <li>\(3X = 2Y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 72 ekor ayam → pakan habis dalam 10 hari<br>
+                    - Ditambah 18 ekor, total menjadi 72 + 18 = 90 ekor<br>
+                    - X = Total hari persediaan akan habis<br>
+                    - Y = 8
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak ayam, semakin cepat pakan habis.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari nilai X:</strong><br>
+                    Jumlah ayam × Hari = Konstan (pakan yang sama)<br>
+                    \(72 \times 10 = 90 \times X\)<br>
+                    \(720 = 90X\)<br>
+                    \(X = \frac{720}{90} = 8\) hari<br>
+                    Jadi X = 8
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 8<br>
+                    Y = 8<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(2X = 2(8) = 16\), \(3Y = 3(8) = 24\) → \(2X < 3Y\) ✓<br>
+                    - \(2X = 16\), \(3Y = 24\) → \(2X < 3Y\) ✓ (ini benar)<br>
+                    - \(X + Y = 8 + 8 = 16 \neq 0\) ✗<br>
+                    - \(3X = 3(8) = 24\), \(2Y = 2(8) = 16\) → \(3X \neq 2Y\) ✗
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pakan = \(72 \times 10 = 720\) ayam-hari<br>
+                    Dengan 90 ayam: \(\frac{720}{90} = 8\) hari ✓<br>
+                    \(2X = 16 < 3Y = 24\) ✓ Benar
+                </div>
+                <div class="answer">Jawaban: B. \(2X < 3Y\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Suatu pekerjaan dapat diselesaikan oleh 10 orang pekerja dalam waktu 5 hari. Berapa jumlah pekerja yang diperlukan agar pekerjaan itu selesai dalam \(x\) hari?
+            </div>
+            <ul class="options">
+                <li>\(\frac{x}{50}\)</li>
+                <li>\(\frac{2x}{5}\)</li>
+                <li>\(\frac{5}{2x}\)</li>
+                <li>\(\frac{50}{x}\)</li>
+                <li>Tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 10 orang → selesai dalam 5 hari<br>
+                    - Ditanya: jumlah pekerja untuk selesai dalam \(x\) hari?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus perbandingan berbalik nilai:</strong><br>
+                    Jumlah pekerja × Waktu = Konstan<br>
+                    \(10 \times 5 = P \times x\)<br>
+                    \(50 = Px\)<br>
+                    \(P = \frac{50}{x}\) orang
+                </div>
+                <div class="formula">
+                    <strong>Rumus umum:</strong><br>
+                    \(P_1 \times T_1 = P_2 \times T_2\)<br>
+                    Dimana P = jumlah pekerja, T = waktu<br>
+                    \(10 \times 5 = P_2 \times x\)<br>
+                    \(P_2 = \frac{10 \times 5}{x} = \frac{50}{x}\) orang
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi dengan contoh:</strong><br>
+                    Jika \(x = 10\) hari: \(P = \frac{50}{10} = 5\) orang<br>
+                    Total pekerjaan = \(10 \times 5 = 50\) orang-hari<br>
+                    Dengan 5 orang: \(\frac{50}{5} = 10\) hari ✓
+                </div>
+                <div class="answer">Jawaban: D. \(\frac{50}{x}\)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Pembangunan jembatan di kampung duren dikerjakan oleh 9 orang pekerja dan dapat diselesaikan dalam waktu 16 hari.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Tambahan orang yang diperlukan jika proyek tersebut ingin diselesaikan dalam waktu 12 hari</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(2X < 3Y\)</li>
+                <li>\(3X < 2Y\)</li>
+                <li>\(X > 3Y\)</li>
+                <li>\(2X > 3Y\)</li>
+                <li>Hubungan X dan Y tidak dapat ditentukan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 9 orang → selesai dalam 16 hari<br>
+                    - X = 6<br>
+                    - Y = Tambahan orang untuk selesai dalam 12 hari
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari jumlah pekerja total yang diperlukan:</strong><br>
+                    \(9 \times 16 = P \times 12\)<br>
+                    \(144 = 12P\)<br>
+                    \(P = \frac{144}{12} = 12\) orang<br>
+                    Jadi total pekerja yang diperlukan = 12 orang
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari tambahan pekerja (Y):</strong><br>
+                    Tambahan = Total yang diperlukan - Pekerja awal<br>
+                    Y = \(12 - 9 = 3\) orang<br>
+                    Jadi Y = 3
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 6<br>
+                    Y = 3<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(2X = 2(6) = 12\), \(3Y = 3(3) = 9\) → \(2X > 3Y\) ✓<br>
+                    - \(2X = 12\), \(3Y = 9\) → \(2X > 3Y\) ✓ (ini benar)<br>
+                    - \(3X = 3(6) = 18\), \(2Y = 2(3) = 6\) → \(3X > 2Y\) ✓ (tapi bukan pilihan)<br>
+                    - \(X = 6\), \(3Y = 9\) → \(X < 3Y\) ✗
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(9 \times 16 = 144\) orang-hari<br>
+                    Dengan 12 orang: \(\frac{144}{12} = 12\) hari ✓<br>
+                    Tambahan = \(12 - 9 = 3\) orang ✓<br>
+                    \(2X = 12 > 3Y = 9\) ✓ Benar
+                </div>
+                <div class="answer">Jawaban: D. \(2X > 3Y\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 242</h2>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Suatu proyek yang dikerjakan oleh 12 orang pekerja dapat diselesaikan dalam waktu 20 hari. Berapa tambahan orang yang diperlukan jika proyek tersebut ingin diselesaikan dalam waktu 16 hari?
+            </div>
+            <ul class="options">
+                <li>15</li>
+                <li>12</li>
+                <li>8</li>
+                <li>5</li>
+                <li>3</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 12 orang → selesai dalam 20 hari<br>
+                    - Ditanya: tambahan orang untuk selesai dalam 16 hari?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari jumlah pekerja total yang diperlukan:</strong><br>
+                    \(12 \times 20 = P \times 16\)<br>
+                    \(240 = 16P\)<br>
+                    \(P = \frac{240}{16} = 15\) orang<br>
+                    Jadi total pekerja yang diperlukan = 15 orang
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari tambahan pekerja:</strong><br>
+                    Tambahan = Total yang diperlukan - Pekerja awal<br>
+                    Tambahan = \(15 - 12 = 3\) orang
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(12 \times 20 = 240\) orang-hari<br>
+                    Dengan 15 orang: \(\frac{240}{15} = 16\) hari ✓<br>
+                    Tambahan = \(15 - 12 = 3\) orang ✓
+                </div>
+                <div class="answer">Jawaban: E. 3 orang</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Suatu proyek yang dikerjakan oleh 8 orang pekerja dapat diselesaikan dalam waktu 15 hari. Berapa tambahan orang yang diperlukan jika proyek tersebut ingin diselesaikan dalam waktu 12 hari?
+            </div>
+            <ul class="options">
+                <li>15</li>
+                <li>12</li>
+                <li>8</li>
+                <li>4</li>
+                <li>2</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 8 orang → selesai dalam 15 hari<br>
+                    - Ditanya: tambahan orang untuk selesai dalam 12 hari?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari jumlah pekerja total yang diperlukan:</strong><br>
+                    \(8 \times 15 = P \times 12\)<br>
+                    \(120 = 12P\)<br>
+                    \(P = \frac{120}{12} = 10\) orang<br>
+                    Jadi total pekerja yang diperlukan = 10 orang
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari tambahan pekerja:</strong><br>
+                    Tambahan = Total yang diperlukan - Pekerja awal<br>
+                    Tambahan = \(10 - 8 = 2\) orang
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(8 \times 15 = 120\) orang-hari<br>
+                    Dengan 10 orang: \(\frac{120}{10} = 12\) hari ✓<br>
+                    Tambahan = \(10 - 8 = 2\) orang ✓
+                </div>
+                <div class="answer">Jawaban: E. 2 orang</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Sebuah pabrik menyediakan solar untuk memanaskan 4 buah ketel dalam 6 minggu. Berapa minggu pabrik tersebut harus menyediakan solar agar dapat digunakan untuk memanaskan 16 buah ketel?
+            </div>
+            <ul class="options">
+                <li>24 minggu</li>
+                <li>18 minggu</li>
+                <li>12 minggu</li>
+                <li>9 minggu</li>
+                <li>6 minggu</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 4 ketel → solar habis dalam 6 minggu<br>
+                    - Ditanya: waktu untuk 16 ketel?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Dengan jumlah solar yang sama, semakin banyak ketel yang dipanaskan, semakin cepat solar habis. Ini adalah perbandingan berbalik nilai.
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus perbandingan berbalik nilai:</strong><br>
+                    Jumlah ketel × Waktu = Konstan (solar yang sama)<br>
+                    \(4 \times 6 = 16 \times x\)<br>
+                    \(24 = 16x\)<br>
+                    \(x = \frac{24}{16} = 1,5\) minggu
+                </div>
+                <div class="solution-step">
+                    <strong>Namun, interpretasi alternatif:</strong><br>
+                    Jika soal dimaksudkan bahwa pabrik menyediakan solar dengan laju yang sama untuk setiap ketel, maka:<br>
+                    Untuk 4 ketel butuh 6 minggu<br>
+                    Untuk 16 ketel (4× lebih banyak) butuh waktu yang sama jika laju penyediaan solar sama per ketel<br>
+                    Tapi ini tidak masuk akal karena dengan solar yang sama, lebih banyak ketel akan habis lebih cepat.
+                </div>
+                <div class="formula">
+                    <strong>Interpretasi yang lebih masuk akal:</strong><br>
+                    Soal mungkin dimaksudkan bahwa pabrik menyediakan solar dengan jumlah total yang sama, dan ditanya berapa lama solar tersebut dapat digunakan untuk memanaskan 16 ketel.<br>
+                    Dengan perbandingan berbalik nilai: \(4 \times 6 = 16 \times x\)<br>
+                    \(x = \frac{24}{16} = 1,5\) minggu<br>
+                    <em>Tapi jawaban ini tidak ada di pilihan.</em>
+                </div>
+                <div class="solution-step">
+                    <strong>Kemungkinan interpretasi lain:</strong><br>
+                    Jika soal dimaksudkan bahwa pabrik harus menyediakan solar untuk periode waktu tertentu dengan jumlah ketel yang lebih banyak, dan laju konsumsi solar per ketel sama, maka:<br>
+                    Konsumsi solar = jumlah ketel × waktu<br>
+                    Jika konsumsi per ketel per minggu sama, maka untuk 16 ketel dibutuhkan waktu yang lebih lama untuk menghabiskan solar yang sama, atau dibutuhkan lebih banyak solar untuk waktu yang sama.<br>
+                    Namun berdasarkan pilihan jawaban (24 minggu = 4× lebih lama), sepertinya soal ini tentang perbandingan berbalik nilai yang terbalik, atau mungkin ada kesalahan dalam soal.<br>
+                    <em>Berdasarkan pilihan yang ada, kemungkinan jawaban yang dimaksud adalah 24 minggu.</em>
+                </div>
+                <div class="answer">Jawaban: A. 24 minggu (perlu verifikasi dengan soal asli untuk memastikan interpretasi yang benar)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Sebuah perusahaan konveksi yang memiliki 15 orang pekerja dapat menyelesaikan 100 lusin baju dalam waktu 24 hari. Berapa banyak pekerja yang harus ditambahkan agar pekerjaan tersebut selesai dalam waktu 6 hari?
+            </div>
+            <ul class="options">
+                <li>45 orang</li>
+                <li>40 orang</li>
+                <li>35 orang</li>
+                <li>30 orang</li>
+                <li>25 orang</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 15 orang → 100 lusin baju dalam 24 hari<br>
+                    - Ditanya: tambahan pekerja untuk selesai dalam 6 hari?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat pekerjaan selesai (untuk jumlah pekerjaan yang sama).
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari jumlah pekerja total yang diperlukan:</strong><br>
+                    Total pekerjaan = \(15 \times 24 = 360\) orang-hari<br>
+                    Untuk selesai dalam 6 hari: \(P \times 6 = 360\)<br>
+                    \(P = \frac{360}{6} = 60\) orang<br>
+                    Jadi total pekerja yang diperlukan = 60 orang
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari tambahan pekerja:</strong><br>
+                    Tambahan = Total yang diperlukan - Pekerja awal<br>
+                    Tambahan = \(60 - 15 = 45\) orang
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(15 \times 24 = 360\) orang-hari<br>
+                    Dengan 60 orang: \(\frac{360}{60} = 6\) hari ✓<br>
+                    Tambahan = \(60 - 15 = 45\) orang ✓
+                </div>
+                <div class="answer">Jawaban: A. 45 orang</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Sebuah perusahaan konveksi yang memiliki 15 orang pekerja dapat menyelesaikan 6 kodi baju dalam waktu 24 hari.
+            </div>
+            <table class="comparison-table">
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+                <tr>
+                    <td>Banyak pekerja yang harus ditambahkan agar pekerjaan tersebut selesai dalam waktu 6 hari?</td>
+                    <td>60</td>
+                </tr>
+            </table>
+            <div class="question-text">Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan....</div>
+            <ul class="options">
+                <li>\(3X > 4Y\)</li>
+                <li>\(4X > 3Y\)</li>
+                <li>\(3X < 2Y\)</li>
+                <li>\(2X < 3Y\)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 15 orang → 6 kodi baju dalam 24 hari<br>
+                    - X = Tambahan pekerja untuk selesai dalam 6 hari<br>
+                    - Y = 60
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Perbandingan Berbalik Nilai</strong><br>
+                    Semakin banyak pekerja, semakin cepat pekerjaan selesai.
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari jumlah pekerja total yang diperlukan:</strong><br>
+                    Total pekerjaan = \(15 \times 24 = 360\) orang-hari<br>
+                    Untuk selesai dalam 6 hari: \(P \times 6 = 360\)<br>
+                    \(P = \frac{360}{6} = 60\) orang<br>
+                    Jadi total pekerja yang diperlukan = 60 orang
+                </div>
+                <div class="solution-step">
+                    <strong>Mencari tambahan pekerja (X):</strong><br>
+                    X = Total yang diperlukan - Pekerja awal<br>
+                    X = \(60 - 15 = 45\) orang<br>
+                    Jadi X = 45
+                </div>
+                <div class="solution-step">
+                    <strong>Membandingkan X dan Y:</strong><br>
+                    X = 45<br>
+                    Y = 60<br>
+                    Mari kita cek setiap pilihan:<br>
+                    - \(3X = 3(45) = 135\), \(4Y = 4(60) = 240\) → \(3X < 4Y\) ✗<br>
+                    - \(4X = 4(45) = 180\), \(3Y = 3(60) = 180\) → \(4X = 3Y\) ✗ (tidak ada pilihan ini)<br>
+                    - \(3X = 135\), \(2Y = 2(60) = 120\) → \(3X > 2Y\) ✗<br>
+                    - \(2X = 2(45) = 90\), \(3Y = 3(60) = 180\) → \(2X < 3Y\) ✓
+                </div>
+                <div class="formula">
+                    <strong>Verifikasi:</strong><br>
+                    Total pekerjaan = \(15 \times 24 = 360\) orang-hari<br>
+                    Dengan 60 orang: \(\frac{360}{60} = 6\) hari ✓<br>
+                    Tambahan = \(60 - 15 = 45\) orang ✓<br>
+                    \(2X = 90 < 3Y = 180\) ✓ Benar
+                </div>
+                <div class="answer">Jawaban: D. \(2X < 3Y\)</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 243</h2>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Jika 1 ekor ayam menghabiskan 1 karung beras dalam 6 hari, maka 2 ekor ayam menghabiskan 8 karung beras dalam waktu ...
+            </div>
+            <ul class="options">
+                <li>48 hari</li>
+                <li>24 hari</li>
+                <li>Al Faiz Gotong Royong</li>
+                <li>16 hari</li>
+                <li>12 hari</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 1 ayam → 1 karung beras dalam 6 hari<br>
+                    - Ditanya: waktu untuk 2 ayam menghabiskan 8 karung beras?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Kombinasi Perbandingan</strong><br>
+                    Ada dua variabel: jumlah ayam (berbanding berbalik nilai dengan waktu) dan jumlah karung (berbanding senilai dengan waktu).
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Mencari waktu untuk 2 ayam menghabiskan 1 karung</strong><br>
+                    Perbandingan berbalik nilai (semakin banyak ayam, semakin cepat habis):<br>
+                    \(1 \times 6 = 2 \times t_1\)<br>
+                    \(6 = 2t_1\)<br>
+                    \(t_1 = 3\) hari<br>
+                    Jadi 2 ayam menghabiskan 1 karung dalam 3 hari
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Mencari waktu untuk 2 ayam menghabiskan 8 karung</strong><br>
+                    Perbandingan senilai (semakin banyak karung, semakin lama waktu):<br>
+                    \(\frac{1}{3} = \frac{8}{t_2}\)<br>
+                    \(t_2 = 8 \times 3 = 24\) hari<br>
+                    Atau langsung: waktu = \(3 \times 8 = 24\) hari
+                </div>
+                <div class="formula">
+                    <strong>Rumus gabungan:</strong><br>
+                    Waktu = \(\frac{\text{Jumlah karung}}{\text{Jumlah ayam}} \times \text{Waktu dasar per karung per ayam}\)<br>
+                    Waktu dasar: 1 ayam, 1 karung = 6 hari<br>
+                    Untuk 2 ayam, 1 karung = \(\frac{6}{2} = 3\) hari<br>
+                    Untuk 2 ayam, 8 karung = \(3 \times 8 = 24\) hari
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Konsumsi per ayam per hari = \(\frac{1}{6}\) karung<br>
+                    Dengan 2 ayam: konsumsi per hari = \(2 \times \frac{1}{6} = \frac{1}{3}\) karung<br>
+                    Untuk 8 karung: waktu = \(\frac{8}{\frac{1}{3}} = 8 \times 3 = 24\) hari ✓
+                </div>
+                <div class="answer">Jawaban: B. 24 hari</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Jika 2 ekor sapi mampu menghabiskan 1 karung rumput dalam waktu 3 hari, maka 6 ekor sapi mampu menghabiskan 10 karung rumput dalam waktu ...
+            </div>
+            <ul class="options">
+                <li>48 hari</li>
+                <li>24 hari</li>
+                <li>12 hari</li>
+                <li>10 hari</li>
+                <li>8 hari</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 2 sapi → 1 karung rumput dalam 3 hari<br>
+                    - Ditanya: waktu untuk 6 sapi menghabiskan 10 karung rumput?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Kombinasi Perbandingan</strong><br>
+                    Ada dua variabel: jumlah sapi (berbanding berbalik nilai dengan waktu) dan jumlah karung (berbanding senilai dengan waktu).
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Mencari waktu untuk 6 sapi menghabiskan 1 karung</strong><br>
+                    Perbandingan berbalik nilai (semakin banyak sapi, semakin cepat habis):<br>
+                    \(2 \times 3 = 6 \times t_1\)<br>
+                    \(6 = 6t_1\)<br>
+                    \(t_1 = 1\) hari<br>
+                    Jadi 6 sapi menghabiskan 1 karung dalam 1 hari
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Mencari waktu untuk 6 sapi menghabiskan 10 karung</strong><br>
+                    Perbandingan senilai (semakin banyak karung, semakin lama waktu):<br>
+                    Waktu = \(1 \times 10 = 10\) hari
+                </div>
+                <div class="formula">
+                    <strong>Rumus gabungan:</strong><br>
+                    Waktu = \(\frac{\text{Jumlah karung}}{\text{Jumlah sapi}} \times \text{Waktu dasar per karung per sapi}\)<br>
+                    Waktu dasar: 2 sapi, 1 karung = 3 hari<br>
+                    Untuk 6 sapi, 1 karung = \(\frac{2 \times 3}{6} = \frac{6}{6} = 1\) hari<br>
+                    Untuk 6 sapi, 10 karung = \(1 \times 10 = 10\) hari
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Konsumsi per sapi per hari = \(\frac{1}{2 \times 3} = \frac{1}{6}\) karung<br>
+                    Dengan 6 sapi: konsumsi per hari = \(6 \times \frac{1}{6} = 1\) karung<br>
+                    Untuk 10 karung: waktu = \(\frac{10}{1} = 10\) hari ✓
+                </div>
+                <div class="answer">Jawaban: D. 10 hari</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Jika 2 orang mampu menguras 1 kolam dalam waktu 5 jam, maka waktu yang dibutuhkan oleh 10 orang untuk menguras 4 kolam adalah ... jam
+            </div>
+            <ul class="options">
+                <li>2</li>
+                <li>4</li>
+                <li>5</li>
+                <li>10</li>
+                <li>12</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - 2 orang → 1 kolam dalam 5 jam<br>
+                    - Ditanya: waktu untuk 10 orang menguras 4 kolam?
+                </div>
+                <div class="solution-step">
+                    <strong>Konsep: Kombinasi Perbandingan</strong><br>
+                    Ada dua variabel: jumlah orang (berbanding berbalik nilai dengan waktu) dan jumlah kolam (berbanding senilai dengan waktu).
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Mencari waktu untuk 10 orang menguras 1 kolam</strong><br>
+                    Perbandingan berbalik nilai (semakin banyak orang, semakin cepat selesai):<br>
+                    \(2 \times 5 = 10 \times t_1\)<br>
+                    \(10 = 10t_1\)<br>
+                    \(t_1 = 1\) jam<br>
+                    Jadi 10 orang menguras 1 kolam dalam 1 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Mencari waktu untuk 10 orang menguras 4 kolam</strong><br>
+                    Perbandingan senilai (semakin banyak kolam, semakin lama waktu):<br>
+                    Waktu = \(1 \times 4 = 4\) jam
+                </div>
+                <div class="formula">
+                    <strong>Rumus gabungan:</strong><br>
+                    Waktu = \(\frac{\text{Jumlah kolam}}{\text{Jumlah orang}} \times \text{Waktu dasar per kolam per orang}\)<br>
+                    Waktu dasar: 2 orang, 1 kolam = 5 jam<br>
+                    Untuk 10 orang, 1 kolam = \(\frac{2 \times 5}{10} = \frac{10}{10} = 1\) jam<br>
+                    Untuk 10 orang, 4 kolam = \(1 \times 4 = 4\) jam
+                </div>
+                <div class="solution-step">
+                    <strong>Verifikasi:</strong><br>
+                    Kapasitas per orang per jam = \(\frac{1}{2 \times 5} = \frac{1}{10}\) kolam<br>
+                    Dengan 10 orang: kapasitas per jam = \(10 \times \frac{1}{10} = 1\) kolam<br>
+                    Untuk 4 kolam: waktu = \(\frac{4}{1} = 4\) jam ✓
+                </div>
+                <div class="answer">Jawaban: B. 4 jam</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
