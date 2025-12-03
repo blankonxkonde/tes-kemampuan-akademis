@@ -1,6 +1,100 @@
 ## PROMPT AI GENERATE SOAL
 Setelah selesai menjelaskan dan menjawab, pada bagian akhir berikan 2 soal. 1 soal seperti soal yang saat ini dikerjakan hanya subjek-subjeknya atau sedikit urutannya, 1 soal lagi merupakan pengembangan dari soal tersebut. Tujuannya adalah untuk memastikan pemahaman pengguna
 
+## TIPE SOAL URUTAN
+Ciri-ciri:
+
+Contoh Soal 1:
+Terdapat lima siswa sedang mengerjakan soal ujian.
+1) Zidane mengerjakan soal lebih cepat dari Valena
+2) Wulan selesai tidak lebih cepat dari Xabiru
+3) Yuni selesai lebih lambat dari Valena
+Jika Xabiru selesai lebih lambat dari Valena dan Yuni tidak lebih cepat dari Wulan maka yang selesai pada urutan ke-4 adalah ...
+A. Zidane
+B. Valena
+C. Wulan
+D. Xabiru
+E. Yuni
+
+Contoh Soal 2:
+Untuk mengecek kesehatan 6 orang anak dilakukan penimbangan berat badan.
+Ajeng lebih berat dari Bilqis. Berat Cendikia sama dengan berat Ebiet. Fortuna lebih berat dari pada Desfira. Hanya ada dua orang anak yang berat badannya sama.
+Pernyataan berikut yang pasti salah adalah...
+A. Bilqis lebih berat daripada Desfira
+B. Ajeng lebih berat daripada Fortuna
+C. Berat Ajeng sama dengan berat Ebiet
+D. Desfira lebih berat daripada Ajeng
+E. Desfira lebih ringan daripada Fortuna
+
+## TIPE SOAL KELOMPOK
+Ciri-ciri:
+
+Contoh Soal 1:
+Arsana, Bulan dan Cindy berencana mengunjungi salah satu destinasi wisata yang disediakan oleh biro perjalanan.
+*   Destinasi: Bali, Lombok, Labuan Bajo, Raja Ampat dan Flores.
+*   Masing-masing orang memilih destinasi berbeda.
+*   Jika Arsana memilih Lombok maka Cindy memilih Flores.
+*   Ada satu orang yang memilih Labuan Bajo.
+Jika Arsana memilih Lombok dan tidak ada yang memilih Bali maka pernyataan yang benar adalah...
+A. Bulan memilih Labuan Bajo
+B. Cindy tidak memilih Flores
+C. Arsana memilih Raja Ampat
+D. Bulan memilih Raja Ampat
+E. Tidak ada yang memilih Flores
+
+## TIPE SOAL DUDUK MELINGKAR
+Ciri-ciri:
+
+Contoh Soal 1:
+Suatu meja bundar dikelilingi empat buah kursi.
+1) Rista, Sekar, Tiara dan Uchi menempati kursi tersebut.
+2) Sekar dan Uchi duduk saling berhadapan
+Jika Rista duduk di sebelah kiri Uchi maka pernyataan yang benar adalah ...
+A. Sekar duduk di sebelah kanan Rista
+B. Uchi duduk di sebelah kanan Tiara
+C. Tiara duduk di sebelah kiri Rista
+D. Rista duduk di sebelah kanan Tiara
+E. Tiara duduk di sebelah kanan Uchi
+
+Contoh Soal 2:
+Dalam sebuah acara makan malam, terdapat 8 orang tamu yang duduk dalam dua baris pada kedua sisi meja.** Bimo berada di antara Tania dan Romi dan berhadapan dengan Dodi. Yosep berada di sebelah Dodi, sedangkan Romi duduk berhadapan dengan Shima dan di antara Bimo dan Eross. Jika Nindi duduk di sebelah Shima, siapakah yang berada di antara Yosep dan Shima?
+A. Nindi
+B. Dodi
+C. Tania
+D. Bimo
+E. Romi
+
+## TIPE SOAL SEJAJAR
+Ciri-ciri:
+
+Contoh Soal 1:
+Seorang manajer akan menempatkan 6 karyawan di ruang K, L, M, N, O, P.**
+*Catatan untuk soal: meskipun tidak disebutkan secara eksplisit Shalza tidak bisa bersebelahan dengan ruang perokok, anggap saja ada larangan tersebut*
+1) Pingkan memiliki suara keras hingga terdengar di ruang sebelahya.
+2) Flandy dan Gilang memiliki ruang saling berdekatan.
+3) Shalza alergi asap rokok dan menempati ruang O.
+4) Ma'ruf tidak suka suara keras yang mengganggu pekerjaannya.
+5) Rifki, Flandy dan Ma'ruf adalah perokok.
+
+Tiga karyawan perokok ditempatkan di ruang ...
+A. K, L, N
+B. L, M, F
+C. K, L, M
+D. L, M, N
+E. K, L, P
+
+
+## TIPE SOAL RUTE
+Ciri-ciri:
+
+Contoh Soal 1:
+Tiga kesenian negara A akan melakukan pertunjukkan di negara F dan mereka pergi menggunakan pesawat.** Terdapat penerbangan langsung dari negara A ke negara F. Namun, ada alternatif jalur lain yang lebih murah. Terdapat penerbangan dari negara A ke negara B atau ke negara C. Dari negara B ada penerbangan ke negara D. Dari negara C ada penerbangan ke negara E. Sementara itu, dari negara D ada penerbangan langsung ke negara F, begitu pula dari negara E ke negara F. Berapa alternatif jalur yang bisa ditempuh oleh tim kesenian negara A tersebut untuk melakukan perjalanan ke negara F?
+A. 1 jalur
+B. 2 jalur
+C. 3 jalur
+D. 4 jalur
+E. 5 jalur
+
 ## TIPE SOAL ELIMINASI
 Ciri-ciri:
 1. Pada soal ada pilihan lengkap urutan
