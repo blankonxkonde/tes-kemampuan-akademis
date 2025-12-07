@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soal Penalaran Analitis - Pembahasan</title>
+    <title>Soal Penalaran Analitis - Tema 10</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
         window.MathJax = {
@@ -89,27 +89,39 @@
             line-height: 1.8;
         }
         
-        .question-text ul {
-            margin-left: 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
+        .question-info {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            border-left: 3px solid #28a745;
         }
         
-        .question-text li {
-            margin-bottom: 5px;
+        .question-info strong {
+            color: #28a745;
         }
         
         .options {
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin: 15px 0;
+            padding-left: 0;
+            counter-reset: option-counter;
         }
         
-        .options div {
-            padding: 8px;
-            margin: 5px 0;
-            background: #fff;
-            border-left: 3px solid #667eea;
-            padding-left: 15px;
+        .options li {
+            margin: 8px 0;
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .options li:before {
+            content: counter(option-counter, upper-alpha) ".";
+            counter-increment: option-counter;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #667eea;
         }
         
         .toggle-btn {
@@ -123,6 +135,7 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 10px;
         }
         
         .toggle-btn:hover {
@@ -182,23 +195,6 @@
             font-size: 1.1em;
         }
         
-        .formula {
-            background: #fff3cd;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-family: 'Courier New', monospace;
-            border-left: 3px solid #ffc107;
-        }
-        
-        .solution-step {
-            overflow-x: auto;
-        }
-        
-        .solution-step .MathJax {
-            font-size: 1.05em;
-        }
-        
         .explanation-box {
             background: #fff3cd;
             border-left: 4px solid #ffc107;
@@ -221,27 +217,14 @@
             line-height: 1.6;
         }
         
-        .type-badge {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        
-        .constraint-box {
-            background: #e7f3ff;
-            border-left: 3px solid #2196F3;
-            padding: 15px;
-            margin: 10px 0;
+        .note {
+            background: #f0f0f0;
+            padding: 10px 15px;
             border-radius: 5px;
-        }
-        
-        .constraint-box strong {
-            color: #1976D2;
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #666;
         }
     </style>
 </head>
@@ -251,81 +234,36 @@
         
         <div class="explanation-box">
             <strong>Konsep Penalaran Analitis</strong>
-            <p>Penalaran analitis adalah kemampuan untuk menganalisis informasi, mengidentifikasi pola, dan menyusun kesimpulan logis berdasarkan data yang diberikan. Soal-soal penalaran analitis menguji kemampuan berpikir sistematis, menyusun urutan, mengelompokkan informasi, dan menyelesaikan masalah logika.</p>
+            <p>Penalaran analitis menguji kemampuan untuk menganalisis informasi, membuat kesimpulan logis, dan menyelesaikan masalah berdasarkan data yang diberikan. Soal-soal ini mencakup berbagai tipe seperti urutan, kelompok, duduk melingkar, sejajar, rute, waktu, dan eliminasi.</p>
         </div>
-        
-        <h2>Soal 1-5: Tipe URUTAN</h2>
-        <p style="margin-bottom: 20px; color: #666;">Soal-soal di bagian ini menguji kemampuan menyusun urutan berdasarkan informasi yang diberikan. Perhatikan kata kunci seperti "lebih cepat", "lebih lambat", "tidak lebih cepat", dan "sama dengan".</p>
         
         <!-- Soal 1 -->
         <div class="question">
             <div class="question-number">Soal 1</div>
             <div class="question-text">
-                <strong>Terdapat lima siswa sedang mengerjakan soal ujian.</strong>
-                <ul>
-                    <li>1) Zidane mengerjakan soal lebih cepat dari Valena</li>
-                    <li>2) Wulan selesai tidak lebih cepat dari Xabiru</li>
-                    <li>3) Yuni selesai lebih lambat dari Valena</li>
-                </ul>
+                <strong>Terdapat lima siswa sedang mengerjakan soal ujian.</strong><br><br>
+                1) Zidane mengerjakan soal lebih cepat dari Valena<br>
+                2) Wulan selesai tidak lebih cepat dari Xabiru<br>
+                3) Yuni selesai lebih lambat dari Valena<br><br>
                 Jika Xabiru selesai lebih lambat dari Valena dan Yuni tidak lebih cepat dari Wulan maka yang selesai pada urutan ke-4 adalah ...
             </div>
-            <div class="options">
-                <div>A. Zidane</div>
-                <div>B. Valena</div>
-                <div>C. Wulan</div>
-                <div>D. Xabiru</div>
-                <div>E. Yuni</div>
+            <div class="question-info">
+                <strong>Tipe soal:</strong> URUTAN<br>
+                <strong>Kata kunci:</strong> tidak lebih cepat, tidak lebih lambat, lebih cepat, lebih lambat
             </div>
-            <span class="type-badge">Tipe: URUTAN</span>
+            <ol class="options">
+                <li>Zidane</li>
+                <li>Valena</li>
+                <li>Wulan</li>
+                <li>Xabiru</li>
+                <li>Yuni</li>
+            </ol>
             <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
             <div class="solution" id="solution1">
                 <div class="solution-title">Pembahasan:</div>
                 <div class="solution-step">
-                    <strong>Informasi Awal:</strong><br>
-                    <div class="constraint-box">
-                        <strong>1)</strong> Zidane lebih cepat dari Valena → Z > V<br>
-                        <strong>2)</strong> Wulan tidak lebih cepat dari Xabiru → W ≤ X (Wulan sama cepat atau lebih lambat dari Xabiru)<br>
-                        <strong>3)</strong> Yuni lebih lambat dari Valena → Y < V
-                    </div>
+                    <em>Pembahasan akan ditambahkan kemudian...</em>
                 </div>
-                <div class="solution-step">
-                    <strong>Informasi Tambahan:</strong><br>
-                    <div class="constraint-box">
-                        <strong>4)</strong> Xabiru lebih lambat dari Valena → X < V<br>
-                        <strong>5)</strong> Yuni tidak lebih cepat dari Wulan → Y ≤ W
-                    </div>
-                </div>
-                <div class="solution-step">
-                    <strong>Menyusun Urutan:</strong><br>
-                    Dari informasi di atas:<br>
-                    - Z > V (Zidane lebih cepat dari Valena)<br>
-                    - X < V (Xabiru lebih lambat dari Valena)<br>
-                    - Y < V (Yuni lebih lambat dari Valena)<br>
-                    - W ≤ X (Wulan tidak lebih cepat dari Xabiru, berarti W ≤ X < V)<br>
-                    - Y ≤ W (Yuni tidak lebih cepat dari Wulan)
-                </div>
-                <div class="solution-step">
-                    <strong>Kesimpulan Urutan:</strong><br>
-                    Dari Y ≤ W ≤ X < V dan Z > V, serta Y < V:<br>
-                    <strong>Urutan dari tercepat ke terlambat:</strong> Z > V > X ≥ W ≥ Y<br>
-                    Atau lebih tepatnya: <strong>Z > V > X ≥ W ≥ Y</strong>
-                </div>
-                <div class="solution-step">
-                    <strong>Mencari Urutan ke-4:</strong><br>
-                    Jika kita asumsikan W = X (karena W ≤ X dan tidak ada informasi yang memaksa W < X), maka:<br>
-                    Urutan: 1) Zidane, 2) Valena, 3) Xabiru/Wulan, 4) Wulan/Xabiru, 5) Yuni<br><br>
-                    Tapi karena Y ≤ W dan W ≤ X, maka Y adalah yang paling lambat.<br>
-                    Urutan yang paling konsisten: <strong>1) Zidane, 2) Valena, 3) Xabiru, 4) Wulan, 5) Yuni</strong>
-                </div>
-                <div class="formula">
-                    <strong>Verifikasi:</strong><br>
-                    ✓ Z > V (Zidane lebih cepat dari Valena)<br>
-                    ✓ X < V (Xabiru lebih lambat dari Valena)<br>
-                    ✓ Y < V (Yuni lebih lambat dari Valena)<br>
-                    ✓ W ≤ X (Wulan tidak lebih cepat dari Xabiru) → W bisa sama atau lebih lambat<br>
-                    ✓ Y ≤ W (Yuni tidak lebih cepat dari Wulan) → Y paling lambat
-                </div>
-                <div class="answer">Jawaban: <strong>C. Wulan</strong> (yang selesai pada urutan ke-4)</div>
             </div>
         </div>
         
@@ -333,69 +271,28 @@
         <div class="question">
             <div class="question-number">Soal 2</div>
             <div class="question-text">
-                <strong>Terdapat lima siswa sedang mengerjakan soal ujian.</strong>
-                <ul>
-                    <li>1) Zidane mengerjakan soal lebih cepat dari Valena</li>
-                    <li>2) Wulan selesai tidak lebih cepat dari Xabiru</li>
-                    <li>3) Yuni selesai lebih lambat dari Valena</li>
-                </ul>
+                <strong>Terdapat lima siswa sedang mengerjakan soal ujian.</strong><br><br>
+                1) Zidane mengerjakan soal lebih cepat dari Valena<br>
+                2) Wulan selesai tidak lebih cepat dari Xabiru<br>
+                3) Yuni selesai lebih lambat dari Valena<br><br>
                 Jika Wulan lebih cepat dari Valena maka pernyataan yang pasti salah adalah ...
             </div>
-            <div class="options">
-                <div>A. Zidane selesai di urutan ke-1</div>
-                <div>B. Wulan selesai di urutan ke-2</div>
-                <div>C. Xabiru selesai di urutan ke-2</div>
-                <div>D. Wulan selesai di urutan ke-3</div>
-                <div>E. Valena selesai di urutan ke-3</div>
+            <div class="question-info">
+                <strong>Tipe soal:</strong> URUTAN
             </div>
-            <span class="type-badge">Tipe: URUTAN</span>
+            <ol class="options">
+                <li>Zidane selesai di urutan ke-1</li>
+                <li>Wulan selesai di urutan ke-2</li>
+                <li>Xabiru selesai di urutan ke-2</li>
+                <li>Wulan selesai di urutan ke-3</li>
+                <li>Valena selesai di urutan ke-3</li>
+            </ol>
             <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
             <div class="solution" id="solution2">
                 <div class="solution-title">Pembahasan:</div>
                 <div class="solution-step">
-                    <strong>Informasi Awal:</strong><br>
-                    <div class="constraint-box">
-                        <strong>1)</strong> Zidane lebih cepat dari Valena → Z > V<br>
-                        <strong>2)</strong> Wulan tidak lebih cepat dari Xabiru → W ≤ X<br>
-                        <strong>3)</strong> Yuni lebih lambat dari Valena → Y < V
-                    </div>
+                    <em>Pembahasan akan ditambahkan kemudian...</em>
                 </div>
-                <div class="solution-step">
-                    <strong>Informasi Tambahan:</strong><br>
-                    <div class="constraint-box">
-                        <strong>4)</strong> Wulan lebih cepat dari Valena → W > V
-                    </div>
-                </div>
-                <div class="solution-step">
-                    <strong>Menyusun Urutan:</strong><br>
-                    Dari informasi:<br>
-                    - Z > V (Zidane lebih cepat dari Valena)<br>
-                    - W > V (Wulan lebih cepat dari Valena)<br>
-                    - W ≤ X (Wulan tidak lebih cepat dari Xabiru, berarti X ≥ W)<br>
-                    - Y < V (Yuni lebih lambat dari Valena)
-                </div>
-                <div class="solution-step">
-                    <strong>Analisis:</strong><br>
-                    Dari Z > V dan W > V, kita tahu Zidane dan Wulan keduanya lebih cepat dari Valena.<br>
-                    Dari W ≤ X, berarti Xabiru setidaknya sama cepat atau lebih cepat dari Wulan.<br>
-                    Karena W > V dan X ≥ W, maka X > V juga.<br>
-                    Jadi: Z, W, X semuanya lebih cepat dari V, dan Y lebih lambat dari V.
-                </div>
-                <div class="solution-step">
-                    <strong>Urutan yang Mungkin:</strong><br>
-                    Urutan dari tercepat: Z, W, X (dalam urutan tertentu) > V > Y<br>
-                    Atau: Z, X, W (dalam urutan tertentu) > V > Y<br><br>
-                    Yang pasti: V adalah urutan ke-4 atau ke-5, Y adalah urutan ke-5.
-                </div>
-                <div class="solution-step">
-                    <strong>Menganalisis Pilihan:</strong><br>
-                    <strong>A. Zidane selesai di urutan ke-1</strong> - Mungkin benar (Z > V, Z > Y, dan Z bisa lebih cepat dari W dan X)<br>
-                    <strong>B. Wulan selesai di urutan ke-2</strong> - Mungkin benar<br>
-                    <strong>C. Xabiru selesai di urutan ke-2</strong> - Mungkin benar<br>
-                    <strong>D. Wulan selesai di urutan ke-3</strong> - Mungkin benar<br>
-                    <strong>E. Valena selesai di urutan ke-3</strong> - <strong>PASTI SALAH</strong> karena V pasti di urutan ke-4 atau ke-5 (setelah Z, W, X)
-                </div>
-                <div class="answer">Jawaban: <strong>E. Valena selesai di urutan ke-3</strong> (pasti salah karena Valena pasti di urutan ke-4 atau ke-5)</div>
             </div>
         </div>
         
@@ -403,70 +300,28 @@
         <div class="question">
             <div class="question-number">Soal 3</div>
             <div class="question-text">
-                <strong>Terdapat lima siswa yang mengumpulkan tugas di waktu berbeda.</strong>
-                <ul>
-                    <li>1) Bima mengumpulkan tidak lebih cepat dari Andrew</li>
-                    <li>2) Andrew mengumpulkan lebih cepat dari Cecep</li>
-                    <li>3) Dava mengumpulkan lebih cepat dari Andrew</li>
-                </ul>
+                <strong>Terdapat lima siswa yang mengumpulkan tugas di waktu berbeda.</strong><br><br>
+                1) Bima mengumpulkan tidak lebih cepat dari Andrew<br>
+                2) Andrew mengumpulkan lebih cepat dari Cecep<br>
+                3) Dava mengumpulkan lebih cepat dari Andrew<br><br>
                 Jika Bima tidak lebih cepat dari Eva, maka pernyataan salah adalah ...
             </div>
-            <div class="options">
-                <div>A. Bima mengumpulkan di urutan terakhir</div>
-                <div>B. Dava mengumpulkan di urutan pertama</div>
-                <div>C. Andrew mengumpulkan di urutan keempat</div>
-                <div>D. Eva mengumpulkan di urutan pertama</div>
-                <div>E. Cecep mengumpulkan di urutan terakhir</div>
+            <div class="question-info">
+                <strong>Tipe soal:</strong> URUTAN
             </div>
-            <span class="type-badge">Tipe: URUTAN</span>
+            <ol class="options">
+                <li>Bima mengumpulkan di urutan terakhir</li>
+                <li>Dava mengumpulkan di urutan pertama</li>
+                <li>Andrew mengumpulkan di urutan keempat</li>
+                <li>Eva mengumpulkan di urutan pertama</li>
+                <li>Cecep mengumpulkan di urutan terakhir</li>
+            </ol>
             <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
             <div class="solution" id="solution3">
                 <div class="solution-title">Pembahasan:</div>
                 <div class="solution-step">
-                    <strong>Informasi Awal:</strong><br>
-                    <div class="constraint-box">
-                        <strong>1)</strong> Bima tidak lebih cepat dari Andrew → B ≤ A (Bima sama cepat atau lebih lambat)<br>
-                        <strong>2)</strong> Andrew lebih cepat dari Cecep → A > C<br>
-                        <strong>3)</strong> Dava lebih cepat dari Andrew → D > A
-                    </div>
+                    <em>Pembahasan akan ditambahkan kemudian...</em>
                 </div>
-                <div class="solution-step">
-                    <strong>Informasi Tambahan:</strong><br>
-                    <div class="constraint-box">
-                        <strong>4)</strong> Bima tidak lebih cepat dari Eva → B ≤ E
-                    </div>
-                </div>
-                <div class="solution-step">
-                    <strong>Menyusun Urutan:</strong><br>
-                    Dari informasi:<br>
-                    - D > A (Dava lebih cepat dari Andrew)<br>
-                    - A > C (Andrew lebih cepat dari Cecep)<br>
-                    - B ≤ A (Bima tidak lebih cepat dari Andrew)<br>
-                    - B ≤ E (Bima tidak lebih cepat dari Eva)
-                </div>
-                <div class="solution-step">
-                    <strong>Kesimpulan Urutan:</strong><br>
-                    Dava pasti lebih cepat dari Andrew, dan Andrew lebih cepat dari Cecep.<br>
-                    Jadi: <strong>D > A > C</strong><br><br>
-                    Bima tidak lebih cepat dari Andrew, berarti B ≤ A. Karena A > C, maka B bisa sama dengan A atau lebih lambat dari A, tapi pasti tidak lebih cepat dari A.<br>
-                    Bima juga tidak lebih cepat dari Eva (B ≤ E), tapi kita tidak tahu hubungan E dengan yang lain.
-                </div>
-                <div class="solution-step">
-                    <strong>Analisis Pilihan:</strong><br>
-                    <strong>A. Bima di urutan terakhir</strong> - Mungkin benar (jika B paling lambat)<br>
-                    <strong>B. Dava di urutan pertama</strong> - <strong>PASTI BENAR</strong> (D > A > C, dan D lebih cepat dari semua yang disebutkan)<br>
-                    <strong>C. Andrew di urutan keempat</strong> - Mungkin benar<br>
-                    <strong>D. Eva di urutan pertama</strong> - <strong>PASTI SALAH</strong> karena Dava pasti lebih cepat (D > A, dan A sudah lebih cepat dari beberapa orang)<br>
-                    <strong>E. Cecep di urutan terakhir</strong> - Mungkin benar (C adalah yang paling lambat dari yang disebutkan)
-                </div>
-                <div class="formula">
-                    <strong>Verifikasi:</strong><br>
-                    D > A > C (pasti)<br>
-                    B ≤ A (Bima tidak lebih cepat dari Andrew)<br>
-                    B ≤ E (Bima tidak lebih cepat dari Eva)<br>
-                    Dava adalah yang paling cepat di antara yang disebutkan, jadi Eva tidak mungkin di urutan pertama.
-                </div>
-                <div class="answer">Jawaban: <strong>D. Eva mengumpulkan di urutan pertama</strong> (pasti salah karena Dava pasti lebih cepat)</div>
             </div>
         </div>
         
@@ -474,74 +329,26 @@
         <div class="question">
             <div class="question-number">Soal 4</div>
             <div class="question-text">
-                <strong>Untuk mengecek kesehatan 6 orang anak dilakukan penimbangan berat badan.</strong><br>
+                <strong>Untuk mengecek kesehatan 6 orang anak dilakukan penimbangan berat badan.</strong><br><br>
                 Ajeng lebih berat dari Bilqis. Berat Cendikia sama dengan berat Ebiet. Fortuna lebih berat dari pada Desfira. Hanya ada dua orang anak yang berat badannya sama.<br><br>
                 Pernyataan berikut yang <strong>pasti salah</strong> adalah...
             </div>
-            <div class="options">
-                <div>A. Bilqis lebih berat daripada Desfira</div>
-                <div>B. Ajeng lebih berat daripada Fortuna</div>
-                <div>C. Berat Ajeng sama dengan berat Ebiet</div>
-                <div>D. Desfira lebih berat daripada Ajeng</div>
-                <div>E. Desfira lebih ringan daripada Fortuna</div>
+            <div class="question-info">
+                <strong>Tipe soal:</strong> URUTAN
             </div>
-            <span class="type-badge">Tipe: URUTAN</span>
+            <ol class="options">
+                <li>Bilqis lebih berat daripada Desfira</li>
+                <li>Ajeng lebih berat daripada Fortuna</li>
+                <li>Berat Ajeng sama dengan berat Ebiet</li>
+                <li>Desfira lebih berat daripada Ajeng</li>
+                <li>Desfira lebih ringan daripada Fortuna</li>
+            </ol>
             <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
             <div class="solution" id="solution4">
                 <div class="solution-title">Pembahasan:</div>
                 <div class="solution-step">
-                    <strong>Informasi yang Diketahui:</strong><br>
-                    <div class="constraint-box">
-                        <strong>1)</strong> Ajeng lebih berat dari Bilqis → A > B<br>
-                        <strong>2)</strong> Cendikia sama dengan Ebiet → C = E<br>
-                        <strong>3)</strong> Fortuna lebih berat dari Desfira → F > D<br>
-                        <strong>4)</strong> Hanya ada dua orang yang beratnya sama (yaitu C dan E)
-                    </div>
+                    <em>Pembahasan akan ditambahkan kemudian...</em>
                 </div>
-                <div class="solution-step">
-                    <strong>Analisis:</strong><br>
-                    Kita punya 6 orang: Ajeng (A), Bilqis (B), Cendikia (C), Desfira (D), Ebiet (E), Fortuna (F)<br>
-                    Informasi pasti: A > B, C = E, F > D<br>
-                    Tidak ada informasi langsung tentang hubungan antara A, C, D, F, dan B, E.
-                </div>
-                <div class="solution-step">
-                    <strong>Menganalisis Setiap Pilihan:</strong><br><br>
-                    <strong>A. Bilqis lebih berat daripada Desfira (B > D)</strong><br>
-                    Mungkin benar. Tidak ada informasi yang melarang ini.<br><br>
-                    <strong>B. Ajeng lebih berat daripada Fortuna (A > F)</strong><br>
-                    Mungkin benar. Tidak ada informasi yang melarang ini.<br><br>
-                    <strong>C. Berat Ajeng sama dengan berat Ebiet (A = E)</strong><br>
-                    Mungkin benar. Tidak ada informasi yang melarang ini secara langsung.<br><br>
-                    <strong>D. Desfira lebih berat daripada Ajeng (D > A)</strong><br>
-                    <strong>PASTI SALAH!</strong> Karena A > B, dan jika D > A, maka D > A > B. Tapi kita tidak punya informasi yang menghubungkan D dengan A atau B. Namun, perhatikan bahwa ini mungkin saja terjadi secara logis...<br>
-                    Tunggu, mari kita analisis lebih hati-hati. Tidak ada informasi yang melarang D > A secara langsung.<br><br>
-                    <strong>E. Desfira lebih ringan daripada Fortuna (D < F)</strong><br>
-                    <strong>PASTI BENAR!</strong> Karena F > D (Fortuna lebih berat dari Desfira), maka D < F pasti benar.
-                </div>
-                <div class="solution-step">
-                    <strong>Analisis Ulang yang Lebih Hati-hati:</strong><br>
-                    Mari kita cari yang <strong>pasti salah</strong>:<br><br>
-                    - A > B (pasti)<br>
-                    - C = E (pasti)<br>
-                    - F > D (pasti, berarti D < F juga pasti)<br><br>
-                    Pilihan E mengatakan "Desfira lebih ringan daripada Fortuna" yang sama dengan D < F, dan ini <strong>pasti benar</strong> berdasarkan informasi F > D.<br><br>
-                    Untuk pilihan D "Desfira lebih berat daripada Ajeng (D > A)":<br>
-                    Ini mungkin saja terjadi. Tidak ada informasi yang melarang D > A. Jadi ini <strong>tidak pasti salah</strong>.<br><br>
-                    Mari kita cek lagi pilihan yang lain untuk menemukan yang pasti salah...
-                </div>
-                <div class="solution-step">
-                    <strong>Kesimpulan:</strong><br>
-                    Dari informasi yang ada, kita tidak bisa memastikan bahwa D > A adalah salah. Yang pasti benar adalah E (D < F).<br><br>
-                    Namun, jika kita melihat konteks soal yang meminta "pasti salah", maka kita perlu mencari pernyataan yang bertentangan dengan informasi yang ada.<br><br>
-                    Pilihan E (Desfira lebih ringan daripada Fortuna) adalah <strong>pasti benar</strong>, bukan pasti salah.<br><br>
-                    Karena soal meminta yang "pasti salah", dan E pasti benar, maka E bukan jawabannya. Mari kita cari yang pasti salah dengan lebih teliti...
-                </div>
-                <div class="formula">
-                    <strong>Catatan Penting:</strong><br>
-                    Soal meminta pernyataan yang <strong>pasti salah</strong>. Dari semua pilihan, yang pasti benar adalah E (karena F > D berarti D < F).<br>
-                    Untuk menemukan yang pasti salah, kita perlu melihat pernyataan yang bertentangan dengan informasi yang ada atau yang tidak mungkin terjadi.
-                </div>
-                <div class="answer">Jawaban: <strong>E. Desfira lebih ringan daripada Fortuna</strong> - Ini sebenarnya pasti benar, bukan pasti salah. Namun berdasarkan logika soal, kemungkinan besar yang dimaksud adalah pernyataan yang tidak konsisten dengan informasi. Mari kita asumsikan jawaban yang paling logis berdasarkan analisis: <strong>D. Desfira lebih berat daripada Ajeng</strong> mungkin yang dimaksud, tapi sebenarnya tidak ada informasi yang melarang ini. Jawaban yang paling tepat adalah <strong>E</strong> karena ini pasti benar (bukan salah), jadi mungkin ada kesalahan dalam soal atau perlu analisis lebih lanjut.</div>
             </div>
         </div>
         
@@ -549,68 +356,26 @@
         <div class="question">
             <div class="question-number">Soal 5</div>
             <div class="question-text">
-                <strong>Untuk mengecek kesehatan 6 orang anak dilakukan penimbangan berat badan.</strong><br>
+                <strong>Untuk mengecek kesehatan 6 orang anak dilakukan penimbangan berat badan.</strong><br><br>
                 Ajeng lebih berat dari Bilqis. Berat Cendikia sama dengan berat Ebiet. Fortuna lebih berat dari pada Desfira. Hanya ada dua orang anak yang berat badannya sama.<br><br>
                 Jika Bilqis lebih berat dari Fortuna maka...
             </div>
-            <div class="options">
-                <div>A. Ajeng lebih berat daripada Desfira</div>
-                <div>B. Fortuna lebih berat daripada Ajeng</div>
-                <div>C. Desfira lebih berat daripada Bilqis</div>
-                <div>D. Cendikia lebih berat daripada Fortuna</div>
-                <div>E. Ebiet lebih berat daripada Cendikia</div>
+            <div class="question-info">
+                <strong>Tipe soal:</strong> URUTAN
             </div>
-            <span class="type-badge">Tipe: URUTAN</span>
+            <ol class="options">
+                <li>Ajeng lebih berat daripada Desfira</li>
+                <li>Fortuna lebih berat daripada Ajeng</li>
+                <li>Desfira lebih berat daripada Bilqis</li>
+                <li>Cendikia lebih berat daripada Fortuna</li>
+                <li>Ebiet lebih berat daripada Cendikia</li>
+            </ol>
             <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
             <div class="solution" id="solution5">
                 <div class="solution-title">Pembahasan:</div>
                 <div class="solution-step">
-                    <strong>Informasi yang Diketahui:</strong><br>
-                    <div class="constraint-box">
-                        <strong>1)</strong> Ajeng lebih berat dari Bilqis → A > B<br>
-                        <strong>2)</strong> Cendikia sama dengan Ebiet → C = E<br>
-                        <strong>3)</strong> Fortuna lebih berat dari Desfira → F > D<br>
-                        <strong>4)</strong> Hanya ada dua orang yang beratnya sama (C dan E)<br>
-                        <strong>5)</strong> <strong>Jika</strong> Bilqis lebih berat dari Fortuna → B > F
-                    </div>
+                    <em>Pembahasan akan ditambahkan kemudian...</em>
                 </div>
-                <div class="solution-step">
-                    <strong>Menyusun Urutan dengan Kondisi Tambahan:</strong><br>
-                    Dengan kondisi B > F:<br>
-                    - A > B (Ajeng lebih berat dari Bilqis)<br>
-                    - B > F (Bilqis lebih berat dari Fortuna) - kondisi tambahan<br>
-                    - F > D (Fortuna lebih berat dari Desfira)<br>
-                    - C = E (Cendikia sama dengan Ebiet)
-                </div>
-                <div class="solution-step">
-                    <strong>Urutan yang Terbentuk:</strong><br>
-                    Dari A > B > F > D, kita dapat:<br>
-                    <strong>A > B > F > D</strong><br><br>
-                    C dan E memiliki berat yang sama, tapi kita belum tahu posisinya relatif terhadap A, B, F, D.
-                </div>
-                <div class="solution-step">
-                    <strong>Menganalisis Setiap Pilihan:</strong><br><br>
-                    <strong>A. Ajeng lebih berat daripada Desfira (A > D)</strong><br>
-                    <strong>PASTI BENAR!</strong> Karena A > B > F > D, maka A > D pasti benar.<br><br>
-                    <strong>B. Fortuna lebih berat daripada Ajeng (F > A)</strong><br>
-                    <strong>PASTI SALAH!</strong> Karena A > B > F, maka F tidak mungkin lebih berat dari A.<br><br>
-                    <strong>C. Desfira lebih berat daripada Bilqis (D > B)</strong><br>
-                    <strong>PASTI SALAH!</strong> Karena A > B > F > D, maka D < B, jadi D tidak mungkin lebih berat dari B.<br><br>
-                    <strong>D. Cendikia lebih berat daripada Fortuna (C > F)</strong><br>
-                    Mungkin benar, mungkin salah. Kita tidak tahu posisi C relatif terhadap F.<br><br>
-                    <strong>E. Ebiet lebih berat daripada Cendikia (E > C)</strong><br>
-                    <strong>PASTI SALAH!</strong> Karena C = E (beratnya sama), maka E tidak mungkin lebih berat dari C.
-                </div>
-                <div class="formula">
-                    <strong>Kesimpulan:</strong><br>
-                    Dari A > B > F > D:<br>
-                    - A > D pasti benar (pilihan A)<br>
-                    - F > A pasti salah (pilihan B)<br>
-                    - D > B pasti salah (pilihan C)<br>
-                    - C > F mungkin benar atau salah (pilihan D)<br>
-                    - E > C pasti salah karena E = C (pilihan E)
-                </div>
-                <div class="answer">Jawaban: <strong>A. Ajeng lebih berat daripada Desfira</strong> (pasti benar berdasarkan A > B > F > D)</div>
             </div>
         </div>
         
@@ -636,5 +401,7 @@
             }
         }
     </script>
+<script src="../dark-mode-toggler.js" defer></script>
 </body>
 </html>
+
