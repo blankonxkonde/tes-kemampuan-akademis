@@ -3,79 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan Soal Perbandingan</title>
+    <title>Latihan Soal Perbandingan - Pembahasan</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        extensions: ["cancel.js"]
-      }
-    });
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
     </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            background-color: #f9f9f9;
             color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            min-height: 100vh;
         }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
         h1 {
             text-align: center;
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
         }
+        
         h2 {
-            color: #007bff;
-            margin-top: 30px;
-            border-bottom: 1px dashed #007bff;
-            padding-bottom: 5px;
-        }
-        .question-block {
-            margin-bottom: 25px;
-            padding: 15px;
-            background-color: #f0f8ff;
-            border-left: 5px solid #007bff;
-            border-radius: 5px;
-        }
-        .question-block p {
-            margin-top: 0;
-        }
-        details {
-            margin-top: 10px;
-            background-color: #e9ecef;
-            padding: 10px;
-            border-radius: 4px;
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: #0056b3;
-        }
-        .answer {
-            margin-top: 8px;
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
             padding-left: 15px;
-            border-left: 3px solid #28a745;
-            background-color: #f1f1f1;
         }
-        .highlight {
-            color: #d9534f;
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
             font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
-        .explanation {
-            font-style: italic;
-            color: #555;
-            margin-top:5px;
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -83,939 +200,767 @@
     <div class="container">
         <h1>Latihan Soal Perbandingan Senilai dan Berbalik Nilai</h1>
 
+        <div class="explanation-box">
+            <strong>Konsep Perbandingan</strong>
+            <p>Perbandingan senilai adalah perbandingan di mana jika satu nilai bertambah, nilai lainnya juga bertambah. Sedangkan perbandingan berbalik nilai adalah jika satu nilai bertambah, nilai lainnya justru berkurang.</p>
+        </div>
+
         <!-- Tingkat Kesulitan 1 -->
         <h2>Tingkat Kesulitan 1: Sangat Mudah</h2>
-        <div class="question-block">
-            <p><strong>Soal 1:</strong> Jika harga 3 buah pensil adalah Rp 6.000, berapakah harga 7 buah pensil yang sama?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai</p>
-                    <p><strong>Jawaban:</strong> Rp 14.000</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
-                        \begin{align}
-                        \frac{3 \text{ pensil}}{\text{Rp } 6.000} &= \frac{7 \text{ pensil}}{x} \\
-                        3x &= 7 \times 6.000 \\
-                        3x &= 42.000 \\
-                        x &= \frac{42.000}{3} \\
-                        x &= \frac{\cancel{42.000}^{14.000}}{\cancel{3}^1} \quad \text{(membagi pembilang dan penyebut dengan 3)} \\
-                        x &= \text{Rp } 14.000
-                        \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Praktis</strong><br><br>
-                        Harga per pensil = \( \frac{\text{Rp } 6.000}{3 \text{ pensil}} = \text{Rp } 2.000 \text{ per pensil} \)<br>
-                        Harga 7 pensil = \( 7 \text{ pensil} \times \text{Rp } 2.000 = \text{Rp } 14.000 \)
-                    </p>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Jika harga 3 buah pensil adalah Rp 6.000, berapakah harga 7 buah pensil yang sama?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Senilai
                 </div>
-            </details>
+                <div class="solution-step">
+                    <strong>Cara 1: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
+                    \begin{align}
+                    \frac{3 \text{ pensil}}{\text{Rp } 6.000} &= \frac{7 \text{ pensil}}{x} \\
+                    3x &= 7 \times 6.000 \\
+                    3x &= 42.000 \\
+                    x &= \frac{42.000}{3} \\
+                    x &= \frac{\cancel{42.000}^{14.000}}{\cancel{3}^1} \quad \text{(membagi pembilang dan penyebut dengan 3)} \\
+                    x &= \text{Rp } 14.000
+                    \end{align}
+                </div>
+                <div class="formula">
+                    <strong>Cara 2: Menggunakan Rumus Praktis</strong><br>
+                    Harga per pensil = \( \frac{\text{Rp } 6.000}{3 \text{ pensil}} = \text{Rp } 2.000 \text{ per pensil} \)<br>
+                    Harga 7 pensil = \( 7 \text{ pensil} \times \text{Rp } 2.000 = \text{Rp } 14.000 \)
+                </div>
+                <div class="answer">Jawaban: Rp 14.000</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 2:</strong> Sebanyak 4 orang pekerja dapat menyelesaikan sebuah pekerjaan dalam 12 hari. Berapa hari yang dibutuhkan jika pekerjaan tersebut dikerjakan oleh 6 orang pekerja?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
-                    <p><strong>Jawaban:</strong> 8 hari</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Perbandingan Berbalik Nilai</strong><br><br>
+
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Sebanyak 4 orang pekerja dapat menyelesaikan sebuah pekerjaan dalam 12 hari. Berapa hari yang dibutuhkan jika pekerjaan tersebut dikerjakan oleh 6 orang pekerja?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Berbalik Nilai
+                </div>
+                <div class="solution-step">
+                    <strong>Cara 1: Menggunakan Perbandingan Berbalik Nilai</strong><br><br>
+                    \begin{align}
+                    4 \text{ pekerja} \times 12 \text{ hari} &= 6 \text{ pekerja} \times x \text{ hari} \\
+                    48 &= 6x \\
+                    \frac{48}{6} &= x \\
+                    \frac{\cancel{48}^8}{\cancel{6}^1} &= x \quad \text{(membagi pembilang dan penyebut dengan 6)} \\
+                    x &= 8 \text{ hari}
+                    \end{align}
+                </div>
+                <div class="solution-step">
+                    <strong>Cara 2: Menggunakan Rumus Praktis Perbandingan Berbalik Nilai</strong><br>
+                    Pada perbandingan berbalik nilai, jika jumlah pekerja bertambah, maka waktu yang dibutuhkan berkurang.<br><br>
+                    \begin{align}
+                    B_2 &= \frac{A_1}{A_2} \times B_1 \\
+                    x &= \frac{4 \text{ pekerja}}{6 \text{ pekerja}} \times 12 \text{ hari} \\
+                    x &= \frac{\cancel{4}^2}{\cancel{6}^3} \times 12 \text{ hari} \quad \text{(menyederhanakan } \frac{4}{6} \text{ menjadi } \frac{2}{3} \text{)} \\
+                    x &= \frac{2}{3} \times 12 \text{ hari} \\
+                    x &= \frac{24}{3} \text{ hari} \\
+                    x &= 8 \text{ hari}
+                    \end{align}
+                </div>
+                <div class="answer">Jawaban: 8 hari</div>
+            </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Sebuah mobil memerlukan 5 liter bensin untuk menempuh jarak 50 km. Berapa liter bensin yang diperlukan untuk menempuh jarak 120 km?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Senilai
+                </div>
+                <div class="solution-step">
+                    <strong>Cara 1: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
+                    \begin{align}
+                    \frac{5 \text{ liter}}{50 \text{ km}} &= \frac{x \text{ liter}}{120 \text{ km}} \\
+                    50x &= 5 \times 120 \\
+                    50x &= 600 \\
+                    x &= \frac{600}{50} \\
+                    x &= \frac{\cancel{600}^{12}}{\cancel{50}^1} \quad \text{(membagi pembilang dan penyebut dengan 50)} \\
+                    x &= 12 \text{ liter}
+                    \end{align}
+                </div>
+                <div class="formula">
+                    <strong>Cara 2: Menggunakan Rumus Praktis</strong><br>
+                    Konsumsi bensin per km = \( \frac{5 \text{ liter}}{50 \text{ km}} = 0,1 \text{ liter/km} \)<br>
+                    Bensin untuk 120 km = \( 120 \text{ km} \times 0,1 \text{ liter/km} = 12 \text{ liter} \)
+                </div>
+                <div class="answer">Jawaban: 12 liter</div>
+            </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Persediaan makanan untuk 20 ekor ayam akan habis dalam 10 hari. Jika ayam dijual 5 ekor, berapa hari persediaan makanan tersebut akan habis?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Berbalik Nilai
+                </div>
+                <div class="solution-step">
+                    <strong>Cara 1: Menggunakan Konsep Unit Makanan</strong><br>
+                    1.  <strong>Hitung jumlah ayam yang tersisa:</strong><br>
                         \begin{align}
-                        4 \text{ pekerja} \times 12 \text{ hari} &= 6 \text{ pekerja} \times x \text{ hari} \\
-                        48 &= 6x \\
-                        \frac{48}{6} &= x \\
-                        \frac{\cancel{48}^8}{\cancel{6}^1} &= x \quad \text{(membagi pembilang dan penyebut dengan 6)} \\
-                        x &= 8 \text{ hari}
-                        \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Praktis Perbandingan Berbalik Nilai</strong><br><br>
-                        Pada perbandingan berbalik nilai, jika jumlah pekerja bertambah, maka waktu yang dibutuhkan berkurang.<br><br>
+                        \text{Jumlah ayam sisa} &= 20 - 5 = 15 \text{ ekor}
+                        \end{align}<br>
+                    2.  <strong>Hitung total unit makanan:</strong><br>
                         \begin{align}
-                        B_2 &= \frac{A_1}{A_2} \times B_1 \\
-                        x &= \frac{4 \text{ pekerja}}{6 \text{ pekerja}} \times 12 \text{ hari} \\
-                        x &= \frac{\cancel{4}^2}{\cancel{6}^3} \times 12 \text{ hari} \quad \text{(menyederhanakan } \frac{4}{6} \text{ menjadi } \frac{2}{3} \text{)} \\
-                        x &= \frac{2}{3} \times 12 \text{ hari} \\
-                        x &= \frac{24}{3} \text{ hari} \\
-                        x &= 8 \text{ hari}
+                        \text{Total unit makanan} &= 20 \text{ ayam} \times 10 \text{ hari} = 200 \text{ unit makanan}
+                        \end{align}<br>
+                    3.  <strong>Hitung berapa hari makanan akan habis:</strong><br>
+                        \begin{align}
+                        15 \text{ ayam} \times x \text{ hari} &= 200 \text{ unit makanan} \\
+                        15x &= 200 \\
+                        x &= \frac{200}{15} = \frac{\cancel{200}^{40}}{\cancel{15}^3} = 13\frac{1}{3} \text{ hari}
                         \end{align}
-                    </p>
                 </div>
-            </details>
-        </div>
-        <div class="question-block">
-            <p><strong>Soal 3:</strong> Sebuah mobil memerlukan 5 liter bensin untuk menempuh jarak 50 km. Berapa liter bensin yang diperlukan untuk menempuh jarak 120 km?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai</p>
-                    <p><strong>Jawaban:</strong> 12 liter</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
-                        \begin{align}
-                        \frac{5 \text{ liter}}{50 \text{ km}} &= \frac{x \text{ liter}}{120 \text{ km}} \\
-                        50x &= 5 \times 120 \\
-                        50x &= 600 \\
-                        x &= \frac{600}{50} \\
-                        x &= \frac{\cancel{600}^{12}}{\cancel{50}^1} \quad \text{(membagi pembilang dan penyebut dengan 50)} \\
-                        x &= 12 \text{ liter}
-                        \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Praktis</strong><br><br>
-                        Konsumsi bensin per km = \( \frac{5 \text{ liter}}{50 \text{ km}} = 0,1 \text{ liter/km} \)<br>
-                        Bensin untuk 120 km = \( 120 \text{ km} \times 0,1 \text{ liter/km} = 12 \text{ liter} \)
-                    </p>
+                <div class="solution-step">
+                    <strong>Cara 2: Menggunakan Rumus Perbandingan Berbalik Nilai</strong><br>
+                    \begin{align}
+                    B_2 &= \frac{A_1}{A_2} \times B_1 \\
+                    x &= \frac{20}{15} \times 10 = \frac{4}{3} \times 10 = 13\frac{1}{3} \text{ hari}
+                    \end{align}
                 </div>
-            </details>
-        </div>
-        <div class="question-block">
-            <p><strong>Soal 4:</strong> Persediaan makanan untuk 20 ekor ayam akan habis dalam 10 hari. Jika ayam dijual 5 ekor, berapa hari persediaan makanan tersebut akan habis?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
-                    <p><strong>Jawaban:</strong> \(13 \frac{1}{3}\) hari atau sekitar 13 hari 8 jam.</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Konsep Unit Makanan</strong><br><br>
-                        1.  <strong>Hitung jumlah ayam yang tersisa:</strong><br>
-                            \begin{align}
-                            \text{Jumlah ayam sisa} &= 20 - 5 \\
-                            &= 15 \text{ ekor}
-                            \end{align}<br><br>
-                        2.  <strong>Hitung total unit makanan:</strong><br>
-                            \begin{align}
-                            \text{Total unit makanan} &= 20 \text{ ayam} \times 10 \text{ hari} \\
-                            &= 200 \text{ unit makanan}
-                            \end{align}<br><br>
-                        3.  <strong>Hitung berapa hari makanan akan habis dengan jumlah ayam yang tersisa:</strong><br>
-                            \begin{align}
-                            15 \text{ ayam} \times x \text{ hari} &= 200 \text{ unit makanan} \\
-                            15x &= 200 \\
-                            x &= \frac{200}{15} \\
-                            x &= \frac{\cancel{200}^{40}}{\cancel{15}^3} \quad \text{(menyederhanakan dengan membagi pembilang dan penyebut dengan 5)} \\
-                            x &= \frac{40}{3} \\
-                            x &= 13\frac{1}{3} \text{ hari}
-                            \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Perbandingan Berbalik Nilai</strong><br><br>
-                        Pada perbandingan berbalik nilai untuk persediaan makanan, jika jumlah ayam berkurang, maka waktu bertambah.<br><br>
-                        \begin{align}
-                        B_2 &= \frac{A_1}{A_2} \times B_1 \\
-                        x &= \frac{20 \text{ ayam}}{15 \text{ ayam}} \times 10 \text{ hari} \\
-                        x &= \frac{\cancel{20}^4}{\cancel{15}^3} \times 10 \text{ hari} \quad \text{(menyederhanakan } \frac{20}{15} \text{ menjadi } \frac{4}{3} \text{)} \\
-                        x &= \frac{4}{3} \times 10 \text{ hari} \\
-                        x &= \frac{40}{3} \text{ hari} \\
-                        x &= 13\frac{1}{3} \text{ hari}
-                        \end{align}
-                    </p>
-                </div>
-            </details>
+                <div class="answer">Jawaban: \(13 \frac{1}{3}\) hari (sekitar 13 hari 8 jam)</div>
+            </div>
         </div>
 
         <!-- Tingkat Kesulitan 2 -->
         <h2>Tingkat Kesulitan 2: Mudah</h2>
-        <div class="question-block">
-            <p><strong>Soal 5:</strong> Seorang penjahit memerlukan 10 meter kain untuk membuat 4 buah kemeja. Jika ia ingin membuat 15 kemeja, berapa meter kain yang dibutuhkan?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai</p>
-                    <p><strong>Jawaban:</strong> 37,5 meter</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Konsep Kain per Kemeja</strong><br><br>
-                        1.  <strong>Hitung kebutuhan kain per kemeja:</strong><br>
-                            \begin{align}
-                            \text{Kain per kemeja} &= \frac{10 \text{ m}}{4 \text{ kemeja}} \\
-                            &= 2,5 \text{ m/kemeja}
-                            \end{align}<br><br>
-                        2.  <strong>Hitung total kebutuhan kain untuk 15 kemeja:</strong><br>
-                            \begin{align}
-                            \text{Kain untuk 15 kemeja} &= 15 \text{ kemeja} \times 2,5 \text{ m/kemeja} \\
-                            &= 37,5 \text{ meter}
-                            \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Perbandingan Senilai Langsung</strong><br><br>
+
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Seorang penjahit memerlukan 10 meter kain untuk membuat 4 buah kemeja. Jika ia ingin membuat 15 kemeja, berapa meter kain yang dibutuhkan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Senilai
+                </div>
+                <div class="solution-step">
+                    <strong>Cara 1: Menggunakan Konsep Kain per Kemeja</strong><br>
+                    1.  <strong>Hitung kebutuhan kain per kemeja:</strong><br>
                         \begin{align}
-                        \frac{10 \text{ meter}}{4 \text{ kemeja}} &= \frac{x \text{ meter}}{15 \text{ kemeja}} \\
-                        4x &= 10 \times 15 \\
-                        4x &= 150 \\
-                        x &= \frac{150}{4} \\
-                        x &= \frac{150}{4} \\
-                        x &= 37,5 \text{ meter}
+                        \text{Kain per kemeja} &= \frac{10 \text{ m}}{4 \text{ kemeja}} = 2,5 \text{ m/kemeja}
+                        \end{align}<br>
+                    2.  <strong>Hitung total kebutuhan kain untuk 15 kemeja:</strong><br>
+                        \begin{align}
+                        \text{Kain untuk 15 kemeja} &= 15 \times 2,5 = 37,5 \text{ meter}
                         \end{align}
-                    </p>
                 </div>
-            </details>
+                <div class="solution-step">
+                    <strong>Cara 2: Menggunakan Perbandingan Senilai Langsung</strong><br>
+                    \begin{align}
+                    \frac{10}{4} &= \frac{x}{15} \\
+                    4x &= 150 \\
+                    x &= 37,5 \text{ meter}
+                    \end{align}
+                </div>
+                <div class="answer">Jawaban: 37,5 meter</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 6:</strong> Kecepatan rata-rata sebuah motor adalah 60 km/jam dan memerlukan waktu 3 jam untuk sampai tujuan. Jika pengendara ingin sampai dalam waktu 2 jam, berapakah kecepatan rata-rata yang diperlukan?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
-                    <p><strong>Jawaban:</strong> 90 km/jam</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Konsep Jarak, Kecepatan, dan Waktu</strong><br><br>
-                        1.  <strong>Hitung jarak total yang ditempuh:</strong><br>
-                            \begin{align}
-                            \text{Jarak} &= \text{Kecepatan} \times \text{Waktu} \\
-                            &= 60 \text{ km/jam} \times 3 \text{ jam} \\
-                            &= 180 \text{ km}
-                            \end{align}<br><br>
-                        2.  <strong>Hitung kecepatan baru dengan waktu yang diinginkan:</strong><br>
-                            \begin{align}
-                            \text{Kecepatan baru} &= \frac{\text{Jarak}}{\text{Waktu baru}} \\
-                            &= \frac{180 \text{ km}}{2 \text{ jam}} \\
-                            &= 90 \text{ km/jam}
-                            \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Perbandingan Berbalik Nilai</strong><br><br>
-                        Pada perbandingan berbalik nilai untuk kecepatan dan waktu, jika waktu berkurang, maka kecepatan bertambah.<br><br>
-                        \begin{align}
-                        B_2 &= \frac{A_1}{A_2} \times B_1 \\
-                        \text{Kecepatan}_2 &= \frac{\text{Waktu}_1}{\text{Waktu}_2} \times \text{Kecepatan}_1 \\
-                        \text{Kecepatan}_2 &= \frac{3 \text{ jam}}{2 \text{ jam}} \times 60 \text{ km/jam} \\
-                        \text{Kecepatan}_2 &= \frac{3}{2} \times 60 \text{ km/jam} \\
-                        \text{Kecepatan}_2 &= \frac{180}{2} \text{ km/jam} \\
-                        \text{Kecepatan}_2 &= 90 \text{ km/jam}
-                        \end{align}<br><br>
-                        <strong>Cara 3: Menggunakan Persamaan Langsung</strong><br><br>
-                        \begin{align}
-                        60 \text{ km/jam} \times 3 \text{ jam} &= x \text{ km/jam} \times 2 \text{ jam} \\
-                        180 \text{ km} &= 2x \text{ km} \\
-                        \frac{180}{2} &= x \\
-                        90 \text{ km/jam} &= x
-                        \end{align}
-                    </p>
+
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Kecepatan rata-rata sebuah motor adalah 60 km/jam dan memerlukan waktu 3 jam untuk sampai tujuan. Jika pengendara ingin sampai dalam waktu 2 jam, berapakah kecepatan rata-rata yang diperlukan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Berbalik Nilai
                 </div>
-            </details>
+                <div class="solution-step">
+                    <strong>Cara 1: Menggunakan Konsep Jarak, Kecepatan, dan Waktu</strong><br>
+                    1.  <strong>Jarak total:</strong> \( 60 \text{ km/jam} \times 3 \text{ jam} = 180 \text{ km} \)<br>
+                    2.  <strong>Kecepatan baru:</strong> \( \frac{180 \text{ km}}{2 \text{ jam}} = 90 \text{ km/jam} \)
+                </div>
+                <div class="solution-step">
+                    <strong>Cara 2: Menggunakan Perbandingan Berbalik Nilai</strong><br>
+                    \begin{align}
+                    \text{Kecepatan}_2 &= \frac{\text{Waktu}_1}{\text{Waktu}_2} \times \text{Kecepatan}_1 \\
+                    &= \frac{3}{2} \times 60 = 90 \text{ km/jam}
+                    \end{align}
+                </div>
+                <div class="answer">Jawaban: 90 km/jam</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 7:</strong> Untuk membangun sebuah rumah, 8 pekerja memerlukan waktu 60 hari. Jika setelah 15 hari bekerja, 2 pekerja mengundurkan diri, berapa hari tambahan yang diperlukan untuk menyelesaikan rumah tersebut dari target awal?</p>
-             <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (dengan sisa pekerjaan)</p>
-                    <p><strong>Jawaban:</strong> Tambahan 15 hari dari target awal (total menjadi 75 hari).</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Konsep Unit Pekerjaan</strong><br><br>
-                        1.  <strong>Hitung total unit pekerjaan awal:</strong><br>
-                            \begin{align}
-                            \text{Total unit kerja} &= 8 \text{ pekerja} \times 60 \text{ hari} \\
-                            &= 480 \text{ unit pekerjaan}
-                            \end{align}<br><br>
-                        2.  <strong>Hitung pekerjaan yang sudah selesai:</strong><br>
-                            \begin{align}
-                            \text{Pekerjaan selesai} &= 8 \text{ pekerja} \times 15 \text{ hari} \\
-                            &= 120 \text{ unit pekerjaan}
-                            \end{align}<br><br>
-                        3.  <strong>Hitung sisa pekerjaan yang harus diselesaikan:</strong><br>
-                            \begin{align}
-                            \text{Sisa pekerjaan} &= \text{Total unit kerja} - \text{Pekerjaan selesai} \\
-                            &= 480 - 120 \\
-                            &= 360 \text{ unit pekerjaan}
-                            \end{align}<br><br>
-                        4.  <strong>Hitung sisa tenaga kerja:</strong><br>
-                            \begin{align}
-                            \text{Jumlah pekerja sisa} &= 8 - 2 \\
-                            &= 6 \text{ pekerja}
-                            \end{align}<br><br>
-                        5.  <strong>Hitung sisa waktu yang dibutuhkan oleh 6 pekerja:</strong><br>
-                            \begin{align}
-                            \text{Waktu sisa} &= \frac{\text{Sisa Pekerjaan}}{\text{Jumlah Pekerja Sisa}} \\
-                            &= \frac{360 \text{ unit}}{6 \text{ pekerja}} \\
-                            &= \frac{\cancel{360}^{60}}{\cancel{6}^1} \quad \text{(membagi pembilang dan penyebut dengan 6)} \\
-                            &= 60 \text{ hari}
-                            \end{align}<br><br>
-                        6.  <strong>Hitung total waktu pengerjaan dan hari tambahan:</strong><br>
-                            \begin{align}
-                            \text{Total waktu} &= \text{Waktu sudah berjalan} + \text{Waktu sisa} \\
-                            &= 15 \text{ hari} + 60 \text{ hari} \\
-                            &= 75 \text{ hari}
-                            \end{align}<br>
-                            Target awal adalah 60 hari, jadi tambahan waktu yang diperlukan adalah:<br>
-                            \begin{align}
-                            \text{Tambahan waktu} &= 75 - 60 \\
-                            &= 15 \text{ hari}
-                            \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Perbandingan Berbalik Nilai (langsung)</strong><br><br>
-                        1.  <strong>Tentukan sisa waktu jika tetap 8 pekerja:</strong><br>
-                            \begin{align}
-                            \text{Sisa waktu (dengan 8 pekerja)} &= 60 - 15 = 45 \text{ hari}
-                            \end{align}<br><br>
-                        2.  <strong>Terapkan perbandingan berbalik nilai untuk mengganti jumlah pekerja:</strong><br>
-                            8 pekerja \(\rightarrow\) 45 hari, 6 pekerja \(\rightarrow\) \(x\) hari.<br>
-                            \begin{align}
-                            8 \times 45 &= 6 \times x \\
-                            x &= \frac{8 \times 45}{6} \\
-                            x &= \frac{\cancel{8}^4 \times 45}{\cancel{6}^3} \\
-                            x &= 4 \times 15 = 60 \text{ hari}
-                            \end{align}<br><br>
-                        3.  <strong>Tambahan waktu dari target awal (tanpa menghitung total durasi):</strong><br>
-                            \begin{align}
-                            \text{Tambahan waktu} &= 60 - 45 = 15 \text{ hari}
-                            \end{align}
-                    </p>
+
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Untuk membangun sebuah rumah, 8 pekerja memerlukan waktu 60 hari. Jika setelah 15 hari bekerja, 2 pekerja mengundurkan diri, berapa hari tambahan yang diperlukan untuk menyelesaikan rumah tersebut dari target awal?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Berbalik Nilai (dengan sisa pekerjaan)
                 </div>
-            </details>
-        </div>
-        <div class="question-block">
-            <p><strong>Soal 7.2:</strong> Sebuah proyek direncanakan selesai dalam 72 hari oleh 12 pekerja. Setelah 18 hari, 3 pekerja mengundurkan diri sehingga tersisa 9 pekerja. Tentukan: (1) Total durasi proyek (waktu sudah berjalan + sisa waktu baru), (2) Tambahan waktu terhadap target awal (sisa waktu baru − sisa waktu lama).</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Sisa Pekerjaan)</p>
-                    <p class="explanation">
-                        <strong>Jawaban:</strong> Total durasi = <strong>90 hari</strong>; Tambahan waktu = <strong>18 hari</strong>.<br><br>
-                        <strong>Langkah:</strong><br><br>
+                <div class="solution-step">
+                    <strong>Langkah Penyelesaian:</strong><br>
+                    1.  Sisa waktu (jika pekerja tetap 8) = \( 60 - 15 = 45 \) hari.<br>
+                    2.  Sisa pekerja = \( 8 - 2 = 6 \) orang.<br>
+                    3.  Mencari waktu yang dibutuhkan 6 pekerja (\(x\)):<br>
                         \begin{align}
-                        \text{Total unit kerja} &= 72 \times 12 = 864 \\
-                        \text{Pekerjaan selesai} &= 18 \times 12 = 216 \\
-                        \text{Sisa pekerjaan} &= 864 - 216 = 648 \\
-                        \text{Sisa waktu baru (9 pekerja)} &= \frac{648}{9} = 72\\ \text{hari} \\
-                        \text{Sisa waktu lama (jika tetap 12 pekerja)} &= 72 - 18 = 54\\ \text{hari} \\
-                        \text{Total durasi} &= 18 + 72 = 90\\ \text{hari} \\
-                        \text{Tambahan waktu} &= 72 - 54 = 18\\ \text{hari}
-                        \end{align}
-                    </p>
+                        8 \text{ pekerja} \times 45 \text{ hari} &= 6 \text{ pekerja} \times x \text{ hari} \\
+                        360 &= 6x \\
+                        x &= 60 \text{ hari}
+                        \end{align}<br>
+                    4.  Tambahan waktu = \( 60 - 45 = 15 \) hari.
                 </div>
-            </details>
+                <div class="answer">Jawaban: 15 hari tambahan</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 7.3:</strong> Sebuah pekerjaan ditargetkan selesai dalam 100 hari oleh 20 pekerja. Setelah 25 hari, 5 pekerja dipindahkan ke proyek lain sehingga tersisa 15 pekerja. Tentukan: (1) Total durasi proyek (waktu sudah berjalan + sisa waktu baru), (2) Tambahan waktu terhadap target awal (sisa waktu baru − sisa waktu lama).</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Sisa Pekerjaan)</p>
-                    <p class="explanation">
-                        <strong>Jawaban:</strong> Total durasi = <strong>125 hari</strong>; Tambahan waktu = <strong>25 hari</strong>.<br><br>
-                        <strong>Langkah:</strong><br><br>
-                        \begin{align}
-                        \text{Total unit kerja} &= 100 \times 20 = 2000 \\
-                        \text{Pekerjaan selesai} &= 25 \times 20 = 500 \\
-                        \text{Sisa pekerjaan} &= 2000 - 500 = 1500 \\
-                        \text{Sisa waktu baru (15 pekerja)} &= \frac{1500}{15} = 100\\ \text{hari} \\
-                        \text{Sisa waktu lama (jika tetap 20 pekerja)} &= 100 - 25 = 75\\ \text{hari} \\
-                        \text{Total durasi} &= 25 + 100 = 125\\ \text{hari} \\
-                        \text{Tambahan waktu} &= 100 - 75 = 25\\ \text{hari}
-                        \end{align}
-                    </p>
+
+        <!-- Soal 7.2 -->
+        <div class="question">
+            <div class="question-number">Soal 7.2</div>
+            <div class="question-text">
+                Sebuah proyek direncanakan selesai dalam 72 hari oleh 12 pekerja. Setelah 18 hari, 3 pekerja mengundurkan diri sehingga tersisa 9 pekerja. Tentukan: (1) Total durasi proyek, (2) Tambahan waktu terhadap target awal.
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(72)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution72">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Total unit kerja} &= 72 \times 12 = 864 \\
+                    \text{Pekerjaan selesai} &= 18 \times 12 = 216 \\
+                    \text{Sisa pekerjaan} &= 864 - 216 = 648 \\
+                    \text{Sisa waktu (9 pekerja)} &= \frac{648}{9} = 72 \text{ hari} \\
+                    \text{Total durasi} &= 18 + 72 = 90 \text{ hari} \\
+                    \text{Tambahan waktu} &= 90 - 72 = 18 \text{ hari}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: Durasi = 90 hari; Tambahan = 18 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 7.4:</strong> Sebuah proyek ditargetkan 84 hari oleh 14 pekerja. Setelah 21 hari, manajer menambah 7 pekerja sehingga total menjadi 21 pekerja. Tentukan: (1) Total durasi proyek (waktu sudah berjalan + sisa waktu baru), (2) Perubahan waktu terhadap target (sisa waktu baru − sisa waktu lama; hasil negatif berarti lebih cepat).</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Sisa Pekerjaan)</p>
-                    <p class="explanation">
-                        <strong>Jawaban:</strong> Total durasi = <strong>63 hari</strong>; Perubahan waktu = <strong>−21 hari</strong> (lebih cepat 21 hari).<br><br>
-                        <strong>Langkah:</strong><br><br>
-                        \begin{align}
-                        \text{Total unit kerja} &= 84 \times 14 = 1176 \\
-                        \text{Pekerjaan selesai} &= 21 \times 14 = 294 \\
-                        \text{Sisa pekerjaan} &= 1176 - 294 = 882 \\
-                        \text{Sisa waktu baru (21 pekerja)} &= \frac{882}{21} = 42\\ \text{hari} \\
-                        \text{Sisa waktu lama (jika tetap 14 pekerja)} &= 84 - 21 = 63\\ \text{hari} \\
-                        \text{Total durasi} &= 21 + 42 = 63\\ \text{hari} \\
-                        \text{Perubahan waktu} &= 42 - 63 = -21\\ \text{hari}\\ (\text{lebih cepat 21 hari})
-                        \end{align}
-                    </p>
+
+        <!-- Soal 7.3 -->
+        <div class="question">
+            <div class="question-number">Soal 7.3</div>
+            <div class="question-text">
+                Sebuah pekerjaan ditargetkan selesai dalam 100 hari oleh 20 pekerja. Setelah 25 hari, 5 pekerja dipindahkan ke proyek lain sehingga tersisa 15 pekerja. Tentukan: (1) Total durasi proyek, (2) Tambahan waktu terhadap target awal.
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(73)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution73">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Sisa waktu (jika tetap 20 orang)} &= 100 - 25 = 75 \text{ hari} \\
+                    20 \times 75 &= 15 \times x \\
+                    x &= \frac{1500}{15} = 100 \text{ hari} \\
+                    \text{Total durasi} &= 25 + 100 = 125 \text{ hari} \\
+                    \text{Tambahan waktu} &= 100 - 75 = 25 \text{ hari}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: Durasi = 125 hari; Tambahan = 25 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 8:</strong> Sebuah peta memiliki skala 1 : 200.000. Jika jarak dua kota pada peta adalah 4.5 cm, berapakah jarak sebenarnya kedua kota tersebut dalam kilometer?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai (Skala)</p>
-                    <p><strong>Jawaban:</strong> 9 km</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Konsep Skala Peta</strong><br><br>
-                        1.  <strong>Hitung jarak sebenarnya dalam cm:</strong><br>
-                            \begin{align}
-                            \text{Jarak sebenarnya} &= \text{Jarak pada peta} \times \text{Skala} \\
-                            &= 4,5 \text{ cm} \times 200.000 \\
-                            &= 900.000 \text{ cm}
-                            \end{align}<br><br>
-                        2.  <strong>Konversi ke kilometer:</strong><br>
-                            \begin{align}
-                            \text{Jarak dalam km} &= \frac{900.000 \text{ cm}}{100.000 \text{ cm/km}} \\
-                            &= \frac{900.000}{100.000} \text{ km} \\
-                            &= \frac{\cancel{900.000}^9}{\cancel{100.000}^1} \text{ km} \quad \text{(membagi pembilang dan penyebut dengan 100.000)} \\
-                            &= 9 \text{ km}
-                            \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Perbandingan Senilai</strong><br><br>
-                        Skala 1 : 200.000 artinya 1 cm pada peta mewakili 200.000 cm pada kenyataan.<br><br>
-                        \begin{align}
-                        \frac{1 \text{ cm (peta)}}{200.000 \text{ cm (nyata)}} &= \frac{4,5 \text{ cm (peta)}}{x \text{ cm (nyata)}} \\
-                        x &= 4,5 \times 200.000 \\
-                        x &= 900.000 \text{ cm} \\
-                        &= 9.000 \text{ m} \\
-                        &= 9 \text{ km}
-                        \end{align}
-                    </p>
+
+        <!-- Soal 7.4 -->
+        <div class="question">
+            <div class="question-number">Soal 7.4</div>
+            <div class="question-text">
+                Sebuah proyek ditargetkan 84 hari oleh 14 pekerja. Setelah 21 hari, manajer menambah 7 pekerja sehingga total menjadi 21 pekerja. Tentukan: (1) Total durasi proyek, (2) Perubahan waktu terhadap target.
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(74)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution74">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Sisa waktu (jika tetap 14 orang)} &= 84 - 21 = 63 \text{ hari} \\
+                    14 \times 63 &= 21 \times x \\
+                    x &= \frac{882}{21} = 42 \text{ hari} \\
+                    \text{Total durasi} &= 21 + 42 = 63 \text{ hari} \\
+                    \text{Perubahan waktu} &= 42 - 63 = -21 \text{ hari (lebih cepat)}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: Durasi = 63 hari; Lebih cepat 21 hari</div>
+            </div>
+        </div>
+
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Sebuah peta memiliki skala 1 : 200.000. Jika jarak dua kota pada peta adalah 4.5 cm, berapakah jarak sebenarnya kedua kota tersebut dalam kilometer?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Senilai (Skala)
+                </div>
+                <div class="solution-step">
+                    1.  <strong>Jarak sebenarnya (cm):</strong> \( 4,5 \text{ cm} \times 200.000 = 900.000 \text{ cm} \)<br>
+                    2.  <strong>Konversi ke km:</strong> \( \frac{900.000}{100.000} = 9 \text{ km} \)
+                </div>
+                <div class="answer">Jawaban: 9 km</div>
+            </div>
         </div>
 
         <!-- Tingkat Kesulitan 3 -->
         <h2>Tingkat Kesulitan 3: Sedang</h2>
-        <div class="question-block">
-            <p><strong>Soal 9:</strong> Jika 5 mesin dapat memproduksi 1200 barang dalam 8 jam. Berapa banyak barang yang dapat diproduksi oleh 3 mesin dalam 10 jam?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Gabungan</p>
-                    <p><strong>Jawaban:</strong> 900 barang</p>
-                    <p class="explanation">
-                        <strong>Cara 1: Menggunakan Konsep Laju Produksi</strong><br><br>
-                        1.  <strong>Hitung laju produksi per mesin per jam:</strong><br>
-                            \begin{align}
-                            \text{Laju produksi} &= \frac{\text{Jumlah barang}}{\text{Jumlah mesin} \times \text{Jumlah jam}} \\
-                            &= \frac{1200 \text{ barang}}{5 \text{ mesin} \times 8 \text{ jam}} \\
-                            &= \frac{1200 \text{ barang}}{40 \text{ mesin-jam}} \\
-                            &= 30 \text{ barang per mesin-jam}
-                            \end{align}<br><br>
-                        2.  <strong>Hitung produksi dengan kondisi baru:</strong><br>
-                            \begin{align}
-                            \text{Produksi baru} &= \text{Laju produksi} \times \text{Jumlah mesin baru} \times \text{Jumlah jam baru} \\
-                            &= 30 \text{ barang per mesin-jam} \times 3 \text{ mesin} \times 10 \text{ jam} \\
-                            &= 30 \times 30 \text{ barang} \\
-                            &= 900 \text{ barang}
-                            \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Perbandingan Gabungan Senilai</strong><br><br>
-                        Untuk perbandingan gabungan senilai, kita gunakan rumus:<br>
-                        \begin{align}
-                        \frac{P_1}{M_1 \times T_1} &= \frac{P_2}{M_2 \times T_2} \\
-                        \frac{1200}{5 \times 8} &= \frac{P_2}{3 \times 10} \\
-                        \frac{1200}{40} &= \frac{P_2}{30} \\
-                        \frac{\cancel{1200}^{30}}{\cancel{40}^1} &= \frac{P_2}{30} \quad \text{(membagi pembilang dan penyebut dengan 40)} \\
-                        30 &= \frac{P_2}{30} \\
-                        P_2 &= 30 \times 30 \\
-                        P_2 &= 900 \text{ barang}
-                        \end{align}<br><br>
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Cara Menentukan Jenis Perbandingan untuk Soal Ini:</strong><br>
-                        Untuk menentukan jenis perbandingan, kita analisis hubungan antara variabel yang ditanyakan (Jumlah Barang Diproduksi - P) dengan variabel lainnya (Jumlah Mesin - M dan Jumlah Jam Kerja - T) satu per satu, sambil menganggap variabel ketiga konstan:<br><br>
-                        1.  <strong>Hubungan antara Jumlah Barang (P) dan Jumlah Mesin (M)</strong> (anggap jam kerja T konstan):<br>
-                            Jika jumlah mesin bertambah, jumlah barang yang diproduksi juga akan bertambah (senilai). Sebaliknya, jika mesin berkurang, barang berkurang.<br>
-                            Jadi, \(P\) berbanding senilai dengan \(M\).<br><br>
-                        2.  <strong>Hubungan antara Jumlah Barang (P) dan Jumlah Jam Kerja (T)</strong> (anggap jumlah mesin M konstan):<br>
-                            Jika jam kerja bertambah, jumlah barang yang diproduksi juga akan bertambah (senilai). Sebaliknya, jika jam kerja berkurang, barang berkurang.<br>
-                            Jadi, \(P\) berbanding senilai dengan \(T\).<br><br>
-                        <strong>Kesimpulan:</strong><br>
-                        Karena Jumlah Barang (P) berbanding senilai dengan Jumlah Mesin (M) dan juga berbanding senilai dengan Jumlah Jam Kerja (T), maka Jumlah Barang (P) berbanding senilai dengan hasil kali dari (Jumlah Mesin × Jumlah Jam Kerja). Ini mengarah pada rumus perbandingan gabungan yang bersifat senilai seperti yang digunakan di atas. Soal ini adalah contoh perbandingan senilai majemuk.
-                    </p>
+
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Jika 5 mesin dapat memproduksi 1200 barang dalam 8 jam. Berapa banyak barang yang dapat diproduksi oleh 3 mesin dalam 10 jam?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Gabungan (Senilai)
                 </div>
-            </details>
+                <div class="solution-step">
+                    <strong>Langkah Penyelesaian:</strong><br>
+                    \begin{align}
+                    \frac{P_1}{M_1 \times T_1} &= \frac{P_2}{M_2 \times T_2} \\
+                    \frac{1200}{5 \times 8} &= \frac{P_2}{3 \times 10} \\
+                    \frac{1200}{40} &= \frac{P_2}{30} \\
+                    30 &= \frac{P_2}{30} \Rightarrow P_2 = 900 \text{ barang}
+                    \end{align}
+                </div>
+                <div class="answer">Jawaban: 900 barang</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 9.1: Kucing dan Tikus</strong> Jika 5 ekor kucing menangkap 5 ekor tikus dalam waktu 5 menit, maka berapa tikus yang dapat ditangkap oleh 20 kucing dalam waktu 1 jam?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Gabungan (Senilai)</p>
-                    <p><strong>Jawaban:</strong> 240 tikus</p>
-                    <p class="explanation">
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Cara 1: Menggunakan Laju per Kucing</strong><br><br>
-                        \begin{align}
-                        \text{Laju per kucing per menit} &= \frac{5\ \text{tikus}}{5\ \text{kucing} \times 5\ \text{menit}} = \frac{1}{5}\ \text{tikus per kucing-menit} \\
-                        \text{Total kucing-menit} &= 20\ \text{kucing} \times 60\ \text{menit} = 1200 \\
-                        \text{Total tikus} &= 1200 \times \frac{1}{5} = 240
-                        \end{align}<br><br>
-                        <strong>Cara 2: Menggunakan Rumus Perbandingan Gabungan Senilai</strong><br><br>
-                        \begin{align}
-                        \frac{T_1}{K_1 \times W_1} &= \frac{T_2}{K_2 \times W_2} \\
-                        \frac{5}{5 \times 5} &= \frac{T_2}{20 \times 60} \\
-                        \frac{1}{5} &= \frac{T_2}{1200} \\
-                        T_2 &= 1200 \times \frac{1}{5} = 240
-                        \end{align}
-                    </p>
+        <!-- Soal 9.1 -->
+        <div class="question">
+            <div class="question-number">Soal 9.1</div>
+            <div class="question-text">
+                Jika 5 ekor kucing menangkap 5 ekor tikus dalam waktu 5 menit, maka berapa tikus yang dapat ditangkap oleh 20 kucing dalam waktu 1 jam?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(91)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution91">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Laju per kucing} &= \frac{5\ \text{tikus}}{5\ \text{kucing} \times 5\ \text{menit}} = \frac{1}{5}\ \text{tikus/menit} \\
+                    \text{Total tikus} &= 20\ \text{kucing} \times 60\ \text{menit} \times \frac{1}{5} = 240
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 240 tikus</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 9.2:</strong> Jika 1 ekor ayam menghabiskan 1 karung beras dalam 6 hari, maka 2 ekor ayam menghabiskan 8 karung beras dalam waktu berapa hari?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Gabungan (Senilai + Berbalik Nilai)</p>
-                    <p><strong>Jawaban:</strong> 24 hari</p>
-                    <p class="explanation">
-                        <strong>Langkah Pengerjaan:</strong><br>
-                        Laju konsumsi = \( \frac{1 \text{ karung beras}}{(1 \text{ ayam} \times 6 \text{ hari})} = \frac{1 \text{ karung}}{6 \text{ ayam-hari}} = \frac{1}{6} \text{ karung per ayam-hari} \).<br>
-                        Waktu untuk 2 ayam menghabiskan 8 karung = \( \frac{8 \text{ karung}}{2 \text{ ayam} \times \frac{1}{6} \text{ karung per ayam-hari}} = \frac{8}{\frac{2}{6}} = \frac{8 \times 6}{2} = 24 \text{ hari} \).<br><br>
-                        Atau dengan rumus perbandingan gabungan (senilai):<br>
-                        \( \frac{\text{Karung}_1}{\text{Ayam}_1 \times \text{Hari}_1} = \frac{\text{Karung}_2}{\text{Ayam}_2 \times \text{Hari}_2} \)<br>
-                        \( \frac{1}{1 \times 6} = \frac{8}{2 \times \text{Hari}_2} \)<br>
-                        \( \frac{1}{6} = \frac{8}{2 \times \text{Hari}_2} \)<br>
-                        \( 2 \times \text{Hari}_2 = 8 \times 6 = 48 \)<br>
-                        \( \text{Hari}_2 = \frac{48}{2} = 24 \text{ hari} \).<br><br>
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Cara Menentukan Jenis Perbandingan untuk Soal Ini:</strong><br>
-                        Untuk menentukan jenis perbandingan, kita analisis hubungan antara variabel yang ditanyakan (Waktu - T) dengan variabel lainnya (Jumlah Karung Beras - K dan Jumlah Ayam - A) satu per satu, sambil menganggap variabel ketiga konstan:<br><br>
-                        1.  <strong>Hubungan antara Waktu (T) dan Jumlah Karung Beras (K)</strong> (anggap jumlah ayam A konstan):<br>
-                            Jika karung beras yang harus dihabiskan bertambah, waktu yang dibutuhkan juga akan bertambah (senilai). Sebaliknya, jika karung beras berkurang, waktu berkurang.<br>
-                            Jadi, \(T\) berbanding senilai dengan \(K\).<br><br>
-                        2.  <strong>Hubungan antara Waktu (T) dan Jumlah Ayam (A)</strong> (anggap jumlah karung beras K konstan):<br>
-                            Jika jumlah ayam bertambah, waktu yang dibutuhkan untuk menghabiskan karung beras yang sama akan berkurang (berbalik nilai). Sebaliknya, jika ayam berkurang, waktu bertambah.<br>
-                            Jadi, \(T\) berbanding berbalik nilai dengan \(A\).<br><br>
-                        <strong>Kesimpulan:</strong><br>
-                        Karena Waktu (T) berbanding senilai dengan Jumlah Karung (K) dan berbanding berbalik nilai dengan Jumlah Ayam (A), maka rumus perbandingannya adalah:<br>
-                        \( \frac{K_1}{A_1 \times T_1} = \frac{K_2}{A_2 \times T_2} \)<br>
-                        Ini menunjukkan bahwa laju konsumsi (karung per ayam-hari) adalah konstan, sehingga ini adalah contoh perbandingan gabungan yang melibatkan kedua jenis perbandingan sekaligus.
-                    </p>
+        <!-- Soal 9.2 -->
+        <div class="question">
+            <div class="question-number">Soal 9.2</div>
+            <div class="question-text">
+                Jika 1 ekor ayam menghabiskan 1 karung beras dalam 6 hari, maka 2 ekor ayam menghabiskan 8 karung beras dalam waktu berapa hari?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(92)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution92">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \frac{1 \text{ karung}}{1 \text{ ayam} \times 6 \text{ hari}} &= \frac{8 \text{ karung}}{2 \text{ ayam} \times x \text{ hari}} \\
+                    \frac{1}{6} &= \frac{4}{x} \\
+                    x &= 24 \text{ hari}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 24 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 9.3:</strong> Untuk mengangkut barang, 4 truk dengan kapasitas 5 ton masing-masing membutuhkan 6 trip. Jika menggunakan 6 truk dengan kapasitas 8 ton masing-masing, berapa trip yang dibutuhkan?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Gabungan (Berbalik Nilai)</p>
-                    <p><strong>Jawaban:</strong> 2.5 trip</p>
-                    <p class="explanation">
-                        <strong>Langkah Pengerjaan:</strong><br>
-                        Total kapasitas angkut = Jumlah truk × Kapasitas per truk × Jumlah trip.<br>
-                        Karena total barang yang diangkut sama, maka total kapasitas angkut harus sama.<br><br>
-                        <strong>Kondisi 1:</strong> 4 truk × 5 ton/truk × 6 trip = 120 ton total<br>
-                        <strong>Kondisi 2:</strong> 6 truk × 8 ton/truk × ? trip = 120 ton total<br><br>
-                        Rumus perbandingan gabungan berbalik nilai:<br>
-                        \( (\text{Truk}_1 \times \text{Kapasitas}_1) \times \text{Trip}_1 = (\text{Truk}_2 \times \text{Kapasitas}_2) \times \text{Trip}_2 \)<br>
-                        \( (4 \times 5) \times 6 = (6 \times 8) \times \text{Trip}_2 \)<br>
-                        \( 20 \times 6 = 48 \times \text{Trip}_2 \)<br>
-                        \( 120 = 48 \times \text{Trip}_2 \)<br>
-                        \( \text{Trip}_2 = \frac{120}{48} = 2.5 \text{ trip} \)<br><br>
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Cara Menentukan Jenis Perbandingan untuk Soal Ini:</strong><br>
-                        Untuk menentukan jenis perbandingan, kita analisis hubungan antara variabel yang ditanyakan (Jumlah Trip - T) dengan variabel lainnya (Jumlah Truk - TR dan Kapasitas per Truk - K) satu per satu, sambil menganggap total barang konstan:<br><br>
-                        1.  <strong>Hubungan antara Jumlah Trip (T) dan Jumlah Truk (TR)</strong> (anggap kapasitas per truk K konstan):<br>
-                            Jika jumlah truk bertambah, jumlah trip yang dibutuhkan akan berkurang (berbalik nilai). Sebaliknya, jika truk berkurang, trip bertambah.<br>
-                            Jadi, \(T\) berbanding berbalik nilai dengan \(TR\).<br><br>
-                        2.  <strong>Hubungan antara Jumlah Trip (T) dan Kapasitas per Truk (K)</strong> (anggap jumlah truk TR konstan):<br>
-                            Jika kapasitas per truk bertambah, jumlah trip yang dibutuhkan akan berkurang (berbalik nilai). Sebaliknya, jika kapasitas berkurang, trip bertambah.<br>
-                            Jadi, \(T\) berbanding berbalik nilai dengan \(K\).<br><br>
-                        <strong>Kesimpulan:</strong><br>
-                        Karena Jumlah Trip (T) berbanding berbalik nilai dengan Jumlah Truk (TR) dan juga berbanding berbalik nilai dengan Kapasitas per Truk (K), maka Jumlah Trip (T) berbanding berbalik nilai dengan hasil kali dari (Jumlah Truk × Kapasitas per Truk). Ini mengarah pada rumus perbandingan gabungan yang bersifat berbalik nilai:<br>
-                        \( (\text{TR}_1 \times K_1) \times T_1 = (\text{TR}_2 \times K_2) \times T_2 \)<br>
-                        Soal ini adalah contoh <strong>perbandingan gabungan berbalik nilai murni</strong>, berbeda dengan soal 9.2 yang merupakan perbandingan gabungan campuran (senilai + berbalik nilai).
-                    </p>
+        <!-- Soal 9.3 -->
+        <div class="question">
+            <div class="question-number">Soal 9.3</div>
+            <div class="question-text">
+                Untuk mengangkut barang, 4 truk dengan kapasitas 5 ton masing-masing membutuhkan 6 trip. Jika menggunakan 6 truk dengan kapasitas 8 ton masing-masing, berapa trip yang dibutuhkan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(93)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution93">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep:</strong> Total kapasitas (Truk \(\times\) Ton \(\times\) Trip) adalah konstan.<br>
+                    \begin{align}
+                    4 \times 5 \times 6 &= 6 \times 8 \times x \\
+                    120 &= 48x \\
+                    x &= 2,5 \text{ trip}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 2,5 trip</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 9.4:</strong> Dengan kecepatan 60 km/jam dan 2 jalur jalan, perjalanan membutuhkan 3 jam. Jika kecepatan ditingkatkan menjadi 90 km/jam dan jalur jalan menjadi 3, berapa lama perjalanan?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Gabungan (Berbalik Nilai)</p>
-                    <p><strong>Jawaban:</strong> \(\frac{4}{3}\) jam atau 1 jam 20 menit</p>
-                    <p class="explanation">
-                        <strong>Langkah Pengerjaan:</strong><br>
-                        Konsep: Total kapasitas transportasi = Kecepatan × Jumlah jalur × Waktu.<br>
-                        Karena jarak total yang ditempuh sama, maka total kapasitas transportasi harus sama.<br><br>
-                        <strong>Kondisi 1:</strong> 60 km/jam × 2 jalur × 3 jam = 360 km-jalur total<br>
-                        <strong>Kondisi 2:</strong> 90 km/jam × 3 jalur × ? jam = 360 km-jalur total<br><br>
-                        Rumus perbandingan gabungan berbalik nilai:<br>
-                        \( (\text{Kecepatan}_1 \times \text{Jalur}_1) \times \text{Waktu}_1 = (\text{Kecepatan}_2 \times \text{Jalur}_2) \times \text{Waktu}_2 \)<br>
-                        \( (60 \times 2) \times 3 = (90 \times 3) \times \text{Waktu}_2 \)<br>
-                        \( 120 \times 3 = 270 \times \text{Waktu}_2 \)<br>
-                        \( 360 = 270 \times \text{Waktu}_2 \)<br>
-                        \( \text{Waktu}_2 = \frac{360}{270} = \frac{36}{27} = \frac{4}{3} \text{ jam} \)<br><br>
-                        Mengubah ke menit: \( \frac{4}{3} \text{ jam} = \frac{4}{3} \times 60 = 80 \text{ menit} = 1 \text{ jam } 20 \text{ menit} \)<br><br>
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Cara Menentukan Jenis Perbandingan untuk Soal Ini:</strong><br>
-                        Untuk menentukan jenis perbandingan, kita analisis hubungan antara variabel yang ditanyakan (Waktu Perjalanan - W) dengan variabel lainnya (Kecepatan - V dan Jumlah Jalur - J) satu per satu, sambil menganggap jarak total konstan:<br><br>
-                        1.  <strong>Hubungan antara Waktu Perjalanan (W) dan Kecepatan (V)</strong> (anggap jumlah jalur J konstan):<br>
-                            Jika kecepatan bertambah, waktu perjalanan akan berkurang (berbalik nilai). Sebaliknya, jika kecepatan berkurang, waktu bertambah.<br>
-                            Jadi, \(W\) berbanding berbalik nilai dengan \(V\).<br><br>
-                        2.  <strong>Hubungan antara Waktu Perjalanan (W) dan Jumlah Jalur (J)</strong> (anggap kecepatan V konstan):<br>
-                            Jika jumlah jalur bertambah, waktu perjalanan akan berkurang karena kapasitas transportasi meningkat (berbalik nilai). Sebaliknya, jika jalur berkurang, waktu bertambah.<br>
-                            Jadi, \(W\) berbanding berbalik nilai dengan \(J\).<br><br>
-                        <strong>Kesimpulan:</strong><br>
-                        Karena Waktu Perjalanan (W) berbanding berbalik nilai dengan Kecepatan (V) dan juga berbanding berbalik nilai dengan Jumlah Jalur (J), maka Waktu Perjalanan (W) berbanding berbalik nilai dengan hasil kali dari (Kecepatan × Jumlah Jalur). Ini mengarah pada rumus perbandingan gabungan yang bersifat berbalik nilai:<br>
-                        \( (V_1 \times J_1) \times W_1 = (V_2 \times J_2) \times W_2 \)<br>
-                        Soal ini adalah contoh lain dari <strong>perbandingan gabungan berbalik nilai murni</strong>, serupa dengan soal 9.3 tentang truk dan kapasitas angkut.
-                    </p>
+        <!-- Soal 9.4 -->
+        <div class="question">
+            <div class="question-number">Soal 9.4</div>
+            <div class="question-text">
+                Dengan kecepatan 60 km/jam dan 2 jalur jalan, perjalanan membutuhkan 3 jam. Jika kecepatan ditingkatkan menjadi 90 km/jam dan jalur jalan menjadi 3, berapa lama perjalanan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(94)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution94">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    60 \times 2 \times 3 &= 90 \times 3 \times x \\
+                    360 &= 270x \\
+                    x &= \frac{4}{3} \text{ jam} = 1 \text{ jam } 20 \text{ menit}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 1 jam 20 menit</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 10:</strong> Persediaan makanan untuk sejumlah ternak akan habis dalam 20 hari. Jika jumlah ternak bertambah 25% dari jumlah awal, berapa hari persediaan makanan tersebut akan habis?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai</p>
-                    <p><strong>Jawaban:</strong> 16 hari</p>
-                    <p class="explanation">
-                        <strong>Cara singkat (berbalik nilai):</strong><br><br>
-                        \begin{align}
-                        100\% \ \text{ternak} &\rightarrow 20 \ \text{hari} \\
-                        125\% \ \text{ternak} &\rightarrow x \ \text{hari} \\
-                        x &= \frac{100 \times 20}{125} \\
-                        x &= 16 \ \text{hari}
-                        \end{align}<br><br>
-                    </p>
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Persediaan makanan untuk sejumlah ternak akan habis dalam 20 hari. Jika jumlah ternak bertambah 25% dari jumlah awal, berapa hari persediaan makanan tersebut akan habis?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jenis:</strong> Perbandingan Berbalik Nilai
                 </div>
-            </details>
+                <div class="solution-step">
+                    \begin{align}
+                    100\% \ \text{ternak} &\rightarrow 20 \ \text{hari} \\
+                    125\% \ \text{ternak} &\rightarrow x \ \text{hari} \\
+                    x &= \frac{100 \times 20}{125} \\
+                    x &= 16 \ \text{hari}
+                    \end{align}
+                </div>
+                <div class="answer">Jawaban: 16 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 11:</strong> A, B, dan C dapat menyelesaikan pekerjaan masing-masing dalam 12, 15, dan 20 hari. Jika mereka bekerja bersama, berapa hari pekerjaan akan selesai?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Kerja Bersama)</p>
-                    <p><strong>Jawaban:</strong> 5 hari</p>
-                    <p class="explanation">
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Mengapa Angka 1 Digunakan Sebagai Pembilang?</strong><br>
-                        Angka "1" dalam konteks soal ini merepresentasikan <strong>satu unit pekerjaan secara keseluruhan</strong> atau <strong>satu pekerjaan penuh</strong> yang harus diselesaikan.<br><br>
-                        1.  <strong>Menyatakan Laju Kerja Individu:</strong><br>
-                            <ul>
-                                <li>Jika A menyelesaikan 1 pekerjaan dalam 12 hari, maka dalam 1 hari, A menyelesaikan \( \frac{1}{12} \) dari pekerjaan tersebut. Laju kerja A = \( \frac{1 \text{ pekerjaan}}{12 \text{ hari}} \).</li>
-                                <li>Demikian pula, laju kerja B = \( \frac{1}{15} \) pekerjaan/hari.</li>
-                                <li>Laju kerja C = \( \frac{1}{20} \) pekerjaan/hari.</li>
-                            </ul>
-                        2.  <strong>Menjumlahkan Laju Kerja Bersama:</strong><br>
-                            Saat bekerja bersama, laju mereka dijumlahkan: \( \frac{1}{12} + \frac{1}{15} + \frac{1}{20} = \frac{5+4+3}{60} = \frac{12}{60} = \frac{1}{5} \) pekerjaan/hari.<br>
-                            Ini berarti bersama-sama mereka menyelesaikan \( \frac{1}{5} \) dari total pekerjaan setiap harinya.<br><br>
-                        3.  <strong>Menghitung Waktu Total untuk Menyelesaikan 1 Pekerjaan Penuh Bersama:</strong><br>
-                            Waktu total = \( \frac{\text{Total Pekerjaan}}{\text{Laju Kerja Bersama per Hari}} = \frac{1}{\frac{1}{5}} = 1 \times \frac{5}{1} = 5 \) hari.<br><br>
-                        <strong>Langkah Pengerjaan Rinci:</strong><br>
-                        Bagian pekerjaan A per hari = \( \frac{1}{12} \).<br>
-                        Bagian pekerjaan B per hari = \( \frac{1}{15} \).<br>
-                        Bagian pekerjaan C per hari = \( \frac{1}{20} \).<br>
-                        Bagian pekerjaan bersama per hari = \( \frac{1}{12} + \frac{1}{15} + \frac{1}{20} = \frac{5+4+3}{60} = \frac{12}{60} = \frac{1}{5} \).<br>
-                        Jadi, waktu yang dibutuhkan jika bekerja bersama adalah \( \frac{1}{(1/5)} = 5 \) hari.
-                    </p>
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                A, B, dan C dapat menyelesaikan pekerjaan masing-masing dalam 12, 15, dan 20 hari. Jika mereka bekerja bersama, berapa hari pekerjaan akan selesai?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Laju bersama} &= \frac{1}{12} + \frac{1}{15} + \frac{1}{20} \\
+                    &= \frac{5+4+3}{60} = \frac{12}{60} = \frac{1}{5} \\
+                    \text{Waktu total} &= 5 \text{ hari}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 5 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 12:</strong> Sebuah proyek dijadwalkan selesai dalam 30 hari oleh 25 pekerja. Setelah 10 hari bekerja, proyek dihentikan selama 5 hari karena cuaca buruk. Berapa banyak pekerja tambahan yang dibutuhkan agar proyek selesai tepat waktu?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (dengan jeda)</p>
-                    <p><strong>Jawaban:</strong> 9 pekerja tambahan</p>
-                    <p class="explanation">
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Langkah-langkah Penyelesaian:</strong><br><br>
-                        1.  <strong>Hitung total unit pekerjaan awal:</strong><br>
-                            Total unit kerja = (jumlah hari awal) \( \times \) (jumlah pekerja awal)<br>
-                            Total unit kerja = \( 30 \text{ hari} \times 25 \text{ pekerja} = 750 \) unit pekerjaan.<br><br>
-                        2.  <strong>Hitung pekerjaan yang sudah selesai dalam 10 hari:</strong><br>
-                            Pekerjaan selesai = \( 10 \text{ hari} \times 25 \text{ pekerja} = 250 \) unit pekerjaan.<br><br>
-                        3.  <strong>Hitung sisa pekerjaan yang harus diselesaikan:</strong><br>
-                            Sisa pekerjaan = (Total unit kerja) - (Pekerjaan selesai)<br>
-                            Sisa pekerjaan = \( 750 - 250 = 500 \) unit pekerjaan.<br><br>
-                        4.  <strong>Hitung sisa waktu efektif untuk menyelesaikan proyek tepat waktu:</strong><br>
-                            Target waktu awal = 30 hari.<br>
-                            Waktu sudah berjalan = 10 hari.<br>
-                            Waktu penghentian = 5 hari.<br>
-                            Sisa waktu efektif = (Target waktu awal) - (Waktu sudah berjalan) - (Waktu penghentian)<br>
-                            Sisa waktu efektif = \( 30 - 10 - 5 = 15 \) hari.<br><br>
-                        5.  <strong>Hitung jumlah total pekerja (P') yang dibutuhkan untuk menyelesaikan sisa pekerjaan dalam sisa waktu efektif:</strong><br>
-                            Karena jenis pekerjaannya sama, kita gunakan prinsip perbandingan berbalik nilai: (Jumlah pekerja) \( \times \) (Waktu) = Konstan (unit pekerjaan).<br>
-                            \( P' \times \text{Sisa waktu efektif} = \text{Sisa pekerjaan} \)<br>
-                            \( P' \times 15 \text{ hari} = 500 \text{ unit pekerjaan} \)<br>
-                            \( P' = \frac{500}{15} = \frac{100}{3} = 33 \frac{1}{3} \) pekerja.<br><br>
-                        
-                        <strong>Memahami Logika Pembagian Unit (Kenapa 500 unit / 15 hari?):</strong><br>
-                        Ini adalah pertanyaan yang sangat bagus. Kunci untuk memahaminya adalah melihat unit yang sebenarnya kita gunakan:<br>
-                        <ul>
-                            <li><b>Unit Pekerjaan:</b> Kita mendefinisikannya sebagai `(jumlah pekerja) × (jumlah hari)`. Jadi, unit sebenarnya adalah <b>"pekerja-hari"</b> (<i>person-days</i>). Sisa pekerjaan kita adalah <b>500 pekerja-hari</b>.</li>
-                            <li><b>Sisa Waktu:</b> Sisa waktu kita adalah <b>15 hari</b>.</li>
-                        </ul>
-                        Ketika kita ingin mencari `Jumlah Pekerja` (P') yang dibutuhkan, rumusnya menjadi:<br>
-                        \( P' = \frac{\text{Sisa Pekerjaan}}{\text{Sisa Waktu}} = \frac{500 \text{ pekerja-hari}}{15 \text{ hari}} \)<br>
-                        Secara matematis, unit "hari" pada pembilang dan penyebut akan saling menghilangkan, menyisakan unit "pekerja" sebagai hasilnya. Inilah mengapa kita dapat membagi total beban kerja dengan sisa waktu untuk menemukan jumlah pekerja yang diperlukan.<br><br>
-                        
-                        6.  <strong>Hitung jumlah pekerja tambahan yang dibutuhkan:</strong><br>
-                            Karena jumlah pekerja harus berupa bilangan bulat dan kita membutuhkan setidaknya \(33 \frac{1}{3}\) pekerja agar pekerjaan selesai tepat waktu, maka jumlah total pekerja yang dibutuhkan dibulatkan ke atas menjadi 34 pekerja.<br>
-                            Jumlah pekerja awal = 25 pekerja.<br>
-                            Pekerja tambahan = (Total pekerja dibutuhkan) - (Jumlah pekerja awal)<br>
-                            Pekerja tambahan = \( 34 - 25 = 9 \) pekerja.<br><br>
-                        Jadi, dibutuhkan <strong>9 pekerja tambahan</strong> agar proyek selesai tepat waktu.<br><br>
-                        <strong>Analisis Tambahan: Mengapa Pendekatan Alternatif (Mengabaikan Pekerjaan Selesai) Tidak Tepat?</strong><br>
-                        Mungkin terpikir untuk menghitung sebagai berikut: \(30 \text{ hari} \times 25 \text{ pekerja} = 15 \text{ hari sisa} \times X \text{ pekerja}\), yang menghasilkan \(X = 50\) pekerja, atau 25 pekerja tambahan. Mengapa ini salah?<br><br>
-                        <ul>
-                            <li>Pendekatan \(30 \text{ hari} \times 25 \text{ pekerja} = 15 \text{ hari sisa} \times X \text{ pekerja}\) mengasumsikan bahwa \(X\) pekerja harus menyelesaikan <strong>seluruh 750 unit pekerjaan awal</strong> dalam 15 hari sisa.</li>
-                            <li>Ini tidak memperhitungkan bahwa <strong>250 unit pekerjaan sudah diselesaikan</strong> dalam 10 hari pertama.</li>
-                            <li>Oleh karena itu, yang harus diselesaikan dalam 15 hari sisa bukanlah 750 unit, melainkan hanya <strong>sisa pekerjaan</strong> yaitu \(750 - 250 = 500\) unit.</li>
-                            <li>Persamaan yang benar adalah memfokuskan pada sisa pekerjaan: \(500 \text{ unit} = 15 \text{ hari} \times P' \text{ pekerja}\), yang menghasilkan \(P' = 33 \frac{1}{3} \text{ pekerja} \) (dibulatkan menjadi 34), sehingga pekerja tambahannya adalah 9.</li>
-                        </ul>
-                        Penting untuk selalu memastikan bahwa unit pekerjaan yang dibandingkan dalam rumus perbandingan konsisten untuk kedua skenario (sebelum dan sesudah perubahan).
-                    </p>
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Sebuah proyek dijadwalkan selesai dalam 30 hari oleh 25 pekerja. Setelah 10 hari bekerja, proyek dihentikan selama 5 hari karena cuaca buruk. Berapa banyak pekerja tambahan yang dibutuhkan agar proyek selesai tepat waktu?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Sisa pekerjaan} &= (30 - 10) \times 25 = 500 \text{ unit} \\
+                    \text{Sisa waktu} &= 30 - 10 - 5 = 15 \text{ hari} \\
+                    \text{Pekerja dibutuhkan} &= \frac{500}{15} = 33,33 \rightarrow 34 \text{ pekerja} \\
+                    \text{Tambahan} &= 34 - 25 = 9 \text{ pekerja}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 9 pekerja tambahan</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 13:</strong> Terdapat pakan seberat 45 kg yang dapat dihabiskan oleh 120 ekor ayam dalam waktu 1 hari. Jika jumlah ayam menjadi 160 ekor, berapakah total pakan yang dibutuhkan untuk 3 hari?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Gabungan (Senilai)</p>
-                    <p><strong>Jawaban:</strong> 180 kg</p>
-                    <p class="explanation">
-                        <em>Catatan cepat:</em> Untuk menentukan apakah perbandingan senilai atau berbalik nilai, bandingkan variabel yang ditanya dengan variabel lain satu per satu.<br><br>
-                        <strong>Langkah Pengerjaan:</strong><br>
-                        Ini adalah masalah perbandingan gabungan. Ada dua metode utama untuk menyelesaikannya.<br><br>
-                        <strong>Metode 1: Menghitung Laju Konsumsi Satuan</strong><br>
-                        Pertama, kita hitung berapa banyak pakan yang dikonsumsi oleh satu ekor ayam dalam satu hari.<br>
-                        Laju konsumsi per ayam per hari = \( \frac{\text{Total Pakan}}{\text{Jumlah Ayam} \times \text{Waktu}} \)<br>
-                        Laju konsumsi = \( \frac{45 \text{ kg}}{120 \text{ ekor} \times 1 \text{ hari}} = 0.375 \) kg/ayam/hari.<br><br>
-                        Selanjutnya, kita gunakan laju ini untuk kondisi baru:<br>
-                        Total pakan dibutuhkan = (Jumlah ayam baru) \( \times \) (Jumlah hari baru) \( \times \) (Laju konsumsi)<br>
-                        Total pakan = \( 160 \text{ ekor} \times 3 \text{ hari} \times 0.375 \text{ kg/ayam/hari} \)<br>
-                        Total pakan = \( 480 \times 0.375 = 180 \) kg.<br><br>
-                        <strong>Metode 2: Menggunakan Rumus Perbandingan Gabungan Senilai</strong><br>
-                        Hubungan antar variabel adalah senilai (jika ayam/hari bertambah, pakan bertambah). Rumusnya:<br>
-                        \( \frac{\text{Pakan}_1}{\text{Ayam}_1 \times \text{Hari}_1} = \frac{\text{Pakan}_2}{\text{Ayam}_2 \times \text{Hari}_2} \)<br>
-                        \( \frac{45}{120 \times 1} = \frac{P_2}{160 \times 3} \)<br>
-                        \( \frac{45}{120} = \frac{P_2}{480} \)<br>
-                        \( P_2 = \frac{45 \times 480}{120} \)<br>
-                        \( P_2 = 45 \times 4 = 180 \) kg.
-                    </p>
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Terdapat pakan seberat 45 kg yang dapat dihabiskan oleh 120 ekor ayam dalam waktu 1 hari. Jika jumlah ayam menjadi 160 ekor, berapakah total pakan yang dibutuhkan untuk 3 hari?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \frac{P_1}{A_1 \times H_1} &= \frac{P_2}{A_2 \times H_2} \\
+                    \frac{45}{120 \times 1} &= \frac{P_2}{160 \times 3} \\
+                    \frac{45}{120} &= \frac{P_2}{480} \\
+                    P_2 &= \frac{45 \times 480}{120} = 180 \text{ kg}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 180 kg</div>
+            </div>
         </div>
 
-        <div class="question-block">
-            <p><strong>Soal 13.1:</strong> Jika harga barang Rp 105 dan PPN-nya adalah 11%, maka nilai PPN-nya adalah Rp 11.55. Agar nilai PPN-nya menjadi tepat Rp 12, tentukan: a) Berapa harga seharusnya jika persentase PPN tetap 11%? b) Berapa persentase PPN seharusnya jika harga tetap Rp 105?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai (Aplikasi Persentase)</p>
-                    <p><strong>Jawaban:</strong> a) Harga seharusnya Rp 109,09; b) PPN seharusnya 11,43%</p>
-                    <p class="explanation">
-                        Ini adalah masalah perbandingan senilai yang diterapkan pada perhitungan PPN.<br><br>
-
-                        <strong>a) Mencari Harga Seharusnya (PPN tetap 11%)</strong><br>
-                        Kita ingin mencari harga baru (H) yang jika dikalikan 11% akan menghasilkan PPN sebesar Rp 12.<br>
-                        \begin{align}
-                        H \times 11\% &= 12 \\
-                        H \times 0,11 &= 12 \\
-                        H &= \frac{12}{0,11} \\
-                        H &\approx 109,09
-                        \end{align}
-                        Jadi, harga seharusnya adalah <strong>Rp 109,09</strong> agar nilai PPN-nya Rp 12.<br><br>
-
-                        <strong>b) Mencari Persentase PPN Seharusnya (Harga tetap Rp 105)</strong><br>
-                        Kita ingin mencari persentase PPN baru (P) yang jika dikalikan dengan harga Rp 105 akan menghasilkan PPN sebesar Rp 12.<br>
-                        \begin{align}
-                        105 \times P &= 12 \\
-                        P &= \frac{12}{105} \\
-                        P &\approx 0,11428
-                        \end{align}
-                        Untuk mengubahnya menjadi persentase, kalikan dengan 100:<br>
-                        \( P \approx 0,11428 \times 100\% \approx 11,43\% \)<br>
-                        Jadi, persentase PPN seharusnya adalah <strong>11,43%</strong>.
-                    </p>
+        <!-- Soal 13.1 -->
+        <div class="question">
+            <div class="question-number">Soal 13.1</div>
+            <div class="question-text">
+                Jika harga barang Rp 105 dan PPN-nya adalah 11%, maka nilai PPN-nya adalah Rp 11.55. Agar nilai PPN-nya menjadi tepat Rp 12, tentukan: a) Berapa harga seharusnya jika persentase PPN tetap 11%? b) Berapa persentase PPN seharusnya jika harga tetap Rp 105?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(131)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution131">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>a) Harga seharusnya (PPN 11%):</strong><br>
+                    \begin{align}
+                    H \times 11\% &= 12 \\
+                    H &= \frac{12}{0,11} \approx 109,09
+                    \end{align}
                 </div>
-            </details>
+                <div class="solution-step">
+                    <strong>b) Persentase PPN (Harga 105):</strong><br>
+                    \begin{align}
+                    105 \times P &= 12 \\
+                    P &= \frac{12}{105} \approx 11,43\%
+                    \end{align}
+                </div>
+                <div class="answer">Jawaban: a) Rp 109,09; b) 11,43%</div>
+            </div>
         </div>
 
         <!-- Tingkat Kesulitan 4 -->
         <h2>Tingkat Kesulitan 4: Sulit</h2>
-        <div class="question-block">
-            <p><strong>Soal 14:</strong> Pipa A dapat mengisi kolam dalam 4 jam, pipa B dalam 6 jam. Pipa C dapat mengosongkan kolam yang penuh dalam 3 jam. Jika ketiga pipa dibuka bersamaan saat kolam kosong, berapa lama kolam akan terisi penuh?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Laju Gabungan)</p>
-                    <p><strong>Jawaban:</strong> 12 jam</p>
-                    <p class="explanation">
-                        Laju pipa A = \( +\frac{1}{4} \) kolam/jam.<br>
-                        Laju pipa B = \( +\frac{1}{6} \) kolam/jam.<br>
-                        Laju pipa C = \( -\frac{1}{3} \) kolam/jam (negatif karena mengosongkan).<br>
-                        Laju gabungan = \( \frac{1}{4} + \frac{1}{6} - \frac{1}{3} = \frac{3+2-4}{12} = \frac{1}{12} \) kolam/jam.<br>
-                        Waktu untuk penuh = \( \frac{1}{(1/12)} = 12 \) jam.
-                    </p>
+
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Pipa A dapat mengisi kolam dalam 4 jam, pipa B dalam 6 jam. Pipa C dapat mengosongkan kolam yang penuh dalam 3 jam. Jika ketiga pipa dibuka bersamaan saat kolam kosong, berapa lama kolam akan terisi penuh?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Laju gabungan} &= \frac{1}{4} + \frac{1}{6} - \frac{1}{3} \\
+                    &= \frac{3+2-4}{12} = \frac{1}{12} \text{ kolam/jam} \\
+                    \text{Waktu} &= 12 \text{ jam}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 12 jam</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 14.1: Pengisian Kolam (Parsial)</strong> Sebuah kolam sedang diisi oleh dua pipa air. Pipa A dapat mengisi kolam penuh dalam 6 jam. Pipa B dapat mengisi kolam penuh dalam 3 jam. Jika hanya pipa B yang dibuka selama 1 jam, lalu Pipa A dan Pipa B dibuka bersama-sama, berapa total waktu yang dibutuhkan untuk mengisi kolam sampai penuh?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Kerja Bersama Parsial/Laju Gabungan)</p>
-                    <p><strong>Jawaban:</strong> 2 jam 20 menit</p>
-                    <p class="explanation">
-                        \begin{align}
-                        r_A &= \frac{1}{6},\quad r_B = \frac{1}{3} \\
-                        \text{Setelah 1 jam (B saja)} &: \ \frac{1}{3}\ \text{kolam terisi} \\
-                        \text{Sisa} &= 1 - \frac{1}{3} = \frac{2}{3} \\
-                        r_{A+B} &= r_A + r_B = \frac{1}{6} + \frac{1}{3} = \frac{1}{2} \\
-                        t_{\text{sisa}} &= \frac{\frac{2}{3}}{\frac{1}{2}} = \frac{4}{3}\ \text{jam} = 1\ \text{jam }20\ \text{menit} \\
-                        t_{\text{total}} &= 1 + \frac{4}{3} = \frac{7}{3}\ \text{jam} = 2\ \text{jam }20\ \text{menit}
-                        \end{align}<br><br>
-                    </p>
+        <!-- Soal 14.1 -->
+        <div class="question">
+            <div class="question-number">Soal 14.1</div>
+            <div class="question-text">
+                Sebuah kolam sedang diisi oleh dua pipa air. Pipa A dapat mengisi kolam penuh dalam 6 jam. Pipa B dapat mengisi kolam penuh dalam 3 jam. Jika hanya pipa B yang dibuka selama 1 jam, lalu Pipa A dan Pipa B dibuka bersama-sama, berapa total waktu yang dibutuhkan untuk mengisi kolam sampai penuh?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(141)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution141">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Laju A} &= 1/6,\ \text{Laju B} = 1/3 \\
+                    \text{1 jam B saja} &= 1/3 \text{ bagian} \\
+                    \text{Sisa kolam} &= 1 - 1/3 = 2/3 \\
+                    \text{Laju bersama} &= 1/6 + 1/3 = 1/2 \\
+                    \text{Waktu sisa} &= \frac{2/3}{1/2} = 4/3 \text{ jam} = 1 \text{ jam } 20 \text{ mnt} \\
+                    \text{Total waktu} &= 1 + 1 \text{ jam } 20 \text{ mnt} = 2 \text{ jam } 20 \text{ mnt}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 2 jam 20 menit</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 15:</strong> Seorang pedagang membeli 25 kg beras jenis A seharga Rp 12.000/kg dan 15 kg beras jenis B seharga Rp 10.000/kg. Ia mencampur kedua jenis beras tersebut dan ingin mendapatkan keuntungan 20%. Berapa harga jual beras campuran per kg?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai (Rata-rata Tertimbang & Persentase)</p>
-                    <p><strong>Jawaban:</strong> Rp 13.500/kg</p>
-                    <p class="explanation">
-                        Total biaya beras A = \( 25 \text{ kg} \times Rp 12.000/kg = Rp 300.000 \).<br>
-                        Total biaya beras B = \( 15 \text{ kg} \times Rp 10.000/kg = Rp 150.000 \).<br>
-                        Total biaya campuran = \( Rp 300.000 + Rp 150.000 = Rp 450.000 \).<br>
-                        Total berat campuran = \( 25 \text{ kg} + 15 \text{ kg} = 40 \text{ kg} \).<br>
-                        Harga pokok per kg campuran = \( \frac{Rp 450.000}{40 \text{ kg}} = Rp 11.250/kg \).<br>
-                        Keuntungan 20% = \( 0.20 \times Rp 11.250 = Rp 2.250 \).<br>
-                        Harga jual per kg = \( Rp 11.250 + Rp 2.250 = Rp 13.500/kg \).
-                    </p>
+
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Seorang pedagang membeli 25 kg beras jenis A seharga Rp 12.000/kg dan 15 kg beras jenis B seharga Rp 10.000/kg. Ia mencampur kedua jenis beras tersebut dan ingin mendapatkan keuntungan 20%. Berapa harga jual beras campuran per kg?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Total biaya} &= (25 \times 12.000) + (15 \times 10.000) \\
+                    &= 300.000 + 150.000 = 450.000 \\
+                    \text{Harga pokok/kg} &= \frac{450.000}{40} = 11.250 \\
+                    \text{Harga jual (untung 20%)} &= 11.250 \times 1,2 = 13.500
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: Rp 13.500/kg</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 16:</strong> Sebuah pekerjaan dapat diselesaikan oleh Anton dalam 10 hari. Budi dapat menyelesaikan pekerjaan yang sama dalam 15 hari. Mereka mulai bekerja bersama, tetapi setelah 3 hari Anton berhenti. Berapa lama lagi Budi dapat menyelesaikan sisa pekerjaan sendirian?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Kerja Bersama Parsial)</p>
-                    <p><strong>Jawaban:</strong> 7.5 hari</p>
-                    <p class="explanation">
-                        Bagian kerja Anton/hari = \( \frac{1}{10} \). Bagian kerja Budi/hari = \( \frac{1}{15} \).<br>
-                        Bagian kerja bersama/hari = \( \frac{1}{10} + \frac{1}{15} = \frac{3+2}{30} = \frac{5}{30} = \frac{1}{6} \).<br>
-                        Pekerjaan selesai dalam 3 hari bersama = \( 3 \times \frac{1}{6} = \frac{3}{6} = \frac{1}{2} \).<br>
-                        Sisa pekerjaan = \( 1 - \frac{1}{2} = \frac{1}{2} \).<br>
-                        Waktu Budi selesaikan sisa = \( \frac{\text{Sisa pekerjaan}}{\text{Laju Budi}} = \frac{1/2}{1/15} = \frac{1}{2} \times 15 = 7.5 \text{ hari} \).
-                    </p>
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Sebuah pekerjaan dapat diselesaikan oleh Anton dalam 10 hari. Budi dapat menyelesaikan pekerjaan yang sama dalam 15 hari. Mereka mulai bekerja bersama, tetapi setelah 3 hari Anton berhenti. Berapa lama lagi Budi dapat menyelesaikan sisa pekerjaan sendirian?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Laju bersama} &= 1/10 + 1/15 = 1/6 \\
+                    \text{3 hari bersama} &= 3 \times 1/6 = 1/2 \\
+                    \text{Sisa pekerjaan} &= 1 - 1/2 = 1/2 \\
+                    \text{Waktu Budi} &= \frac{1/2}{1/15} = 7,5 \text{ hari}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 7,5 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 17:</strong> Sebuah roda berputar 12 kali untuk menempuh jarak 30 meter. Jika roda tersebut berdiameter dua kali lebih besar, berapa kali roda tersebut harus berputar untuk menempuh jarak 120 meter?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai & Berbalik Nilai (Geometri)</p>
-                    <p><strong>Jawaban:</strong> 24 putaran</p>
-                    <p class="explanation">
-                        Keliling roda (K) sebanding dengan diameter (d). Jarak (J) = Jumlah putaran (N) \( \times \) Keliling (K). Jadi \( J = N \times c \cdot d \) (c adalah konstanta).
-                        Maka, \( N \) berbanding lurus dengan \( J \) dan berbanding terbalik dengan \( d \).
-                        \( \frac{N_1 d_1}{J_1} = \frac{N_2 d_2}{J_2} \).<br>
-                        Roda baru, \( d_2 = 2d_1 \). Jarak baru \( J_2 = 120 \text{ m} \). \( N_1 = 12 \), \( J_1 = 30 \text{ m} \).
-                        \( \frac{12 \times d_1}{30} = \frac{N_2 \times 2d_1}{120} \).<br>
-                        \( \frac{12}{30} = \frac{2N_2}{120} \Rightarrow \frac{2}{5} = \frac{N_2}{60} \).<br>
-                        \( 5N_2 = 120 \Rightarrow N_2 = 24 \) putaran.
-                    </p>
+
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Sebuah roda berputar 12 kali untuk menempuh jarak 30 meter. Jika roda tersebut berdiameter dua kali lebih besar, berapa kali roda tersebut harus berputar untuk menempuh jarak 120 meter?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \frac{N_1 \times D_1}{J_1} &= \frac{N_2 \times D_2}{J_2} \\
+                    \frac{12 \times 1}{30} &= \frac{N_2 \times 2}{120} \\
+                    \frac{12}{30} &= \frac{N_2}{60} \\
+                    N_2 &= \frac{12 \times 60}{30} = 24
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 24 putaran</div>
+            </div>
         </div>
 
         <!-- Tingkat Kesulitan 5 -->
         <h2>Tingkat Kesulitan 5: Sangat Sulit</h2>
-        <div class="question-block">
-            <p><strong>Soal 18:</strong> Seorang kontraktor memperkirakan dapat menyelesaikan proyek dalam 80 hari dengan 60 pekerja. Setelah 20 hari bekerja, 20 pekerja mengundurkan diri. Setelah 10 hari berikutnya (total 30 hari dari awal), ia mempekerjakan sejumlah X pekerja tambahan. Jika ia ingin proyek selesai tepat 10 hari lebih cepat dari jadwal semula, berapa nilai X?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Berbalik Nilai (Multi-tahap)</p>
-                    <p><strong>Jawaban:</strong> 40 pekerja tambahan</p>
-                    <p class="explanation">
-                        Total unit kerja = \( 80 \times 60 = 4800 \) unit.<br>
-                        Target selesai baru = \( 80 - 10 = 70 \) hari.<br>
-                        Tahap 1 (20 hari): \( 20 \text{ hari} \times 60 \text{ pekerja} = 1200 \) unit kerja selesai.<br>
-                        Sisa \( 4800 - 1200 = 3600 \) unit. Sisa hari target \( 70-20=50 \) hari.
-                        Tahap 2 (10 hari berikutnya): Pekerja = \( 60 - 20 = 40 \) orang.
-                        Kerja selesai di tahap 2 = \( 10 \text{ hari} \times 40 \text{ pekerja} = 400 \) unit.
-                        Sisa pekerjaan setelah 30 hari = \( 3600 - 400 = 3200 \) unit.<br>
-                        Waktu tersisa untuk menyelesaikan proyek = \( 70 \text{ hari (target baru)} - 30 \text{ hari (sudah berjalan)} = 40 \text{ hari} \).<br>
-                        Jumlah pekerja dibutuhkan (P) untuk sisa pekerjaan: \( P \times 40 \text{ hari} = 3200 \text{ unit} \).<br>
-                        \( P = \frac{3200}{40} = 80 \) pekerja.<br>
-                        Pekerja saat ini sebelum penambahan X adalah 40 orang.
-                        Maka, pekerja tambahan X = \( 80 - 40 = 40 \) pekerja.<br><br>
-                        <strong>Cara 2: Perbandingan sejajar (mudah dibaca)</strong><br><br>
-                        \begin{align}
-                        60\ \text{pekerja} &\rightarrow 80\ \text{hari} &&= 1\ \text{pekerjaan (acuan)}\\
-                        60\ \text{pekerja} &\rightarrow 20\ \text{hari} &&= \tfrac{1}{4}\ \text{pekerjaan (tahap 1 selesai)}\\
-                        40\ \text{pekerja} &\rightarrow 10\ \text{hari} &&= \tfrac{1}{12}\ \text{pekerjaan (tahap 2 selesai)}\\
-                        P\ \text{pekerja} &\rightarrow 40\ \text{hari} &&= \tfrac{2}{3}\ \text{pekerjaan (sisa, target 70 hari)}
-                        \end{align}<br><br>
-                        \begin{align}
-                        \frac{P\cdot 40}{60\cdot 80} &= \frac{2}{3} \\
-                        P &= \frac{2}{3}\cdot\frac{60\cdot 80}{40} = 80 \\
-                        X &= P - 40 = 40\ \text{pekerja}
-                        \end{align}
-                    </p>
+
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Seorang kontraktor memperkirakan dapat menyelesaikan proyek dalam 80 hari dengan 60 pekerja. Setelah 20 hari bekerja, 20 pekerja mengundurkan diri. Setelah 10 hari berikutnya (total 30 hari dari awal), ia mempekerjakan sejumlah X pekerja tambahan. Jika ia ingin proyek selesai tepat 10 hari lebih cepat dari jadwal semula, berapa nilai X?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    \text{Total unit} &= 80 \times 60 = 4800 \\
+                    \text{20 hari pertama} &= 20 \times 60 = 1200 \\
+                    \text{10 hari kedua (40 org)} &= 10 \times 40 = 400 \\
+                    \text{Sisa unit} &= 4800 - 1200 - 400 = 3200 \\
+                    \text{Sisa waktu (target 70 hr)} &= 70 - 30 = 40 \text{ hari} \\
+                    \text{Pekerja dibutuhkan} &= 3200 / 40 = 80 \text{ orang} \\
+                    X &= 80 - 40 = 40 \text{ orang}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 40 pekerja tambahan</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 19:</strong> Dua lilin dengan tinggi yang sama dinyalakan pada saat bersamaan. Lilin pertama habis terbakar dalam 6 jam, dan lilin kedua habis terbakar dalam 4 jam. Dengan asumsi setiap lilin terbakar dengan laju konstan, setelah berapa jam tinggi lilin pertama menjadi dua kali tinggi lilin kedua?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Perbandingan Senilai (Laju Relatif)</p>
-                    <p><strong>Jawaban:</strong> 3 jam</p>
-                    <p class="explanation">
-                        Misal tinggi awal lilin = H.<br>
-                        Laju bakar lilin 1 = \( \frac{H}{6} \) per jam. Tinggi lilin 1 setelah t jam = \( H - \frac{Ht}{6} = H(1 - \frac{t}{6}) \).<br>
-                        Laju bakar lilin 2 = \( \frac{H}{4} \) per jam. Tinggi lilin 2 setelah t jam = \( H - \frac{Ht}{4} = H(1 - \frac{t}{4}) \).<br>
-                        Kondisi: Tinggi lilin 1 = 2 \( \times \) Tinggi lilin 2.<br>
-                        \( H(1 - \frac{t}{6}) = 2 \times H(1 - \frac{t}{4}) \). (H bisa dicoret karena H > 0)<br>
-                        \( 1 - \frac{t}{6} = 2(1 - \frac{t}{4}) \).<br>
-                        \( 1 - \frac{t}{6} = 2 - \frac{2t}{4} = 2 - \frac{t}{2} \).<br>
-                        Kalikan semua dengan 6: \( 6 - t = 12 - 3t \).<br>
-                        \( 3t - t = 12 - 6 \).<br>
-                        \( 2t = 6 \Rightarrow t = 3 \) jam.
-                    </p>
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Dua lilin dengan tinggi yang sama dinyalakan pada saat bersamaan. Lilin pertama habis terbakar dalam 6 jam, and lilin kedua habis terbakar dalam 4 jam. Dengan asumsi setiap lilin terbakar dengan laju konstan, setelah berapa jam tinggi lilin pertama menjadi dua kali tinggi lilin kedua?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    H_1(t) &= H(1 - t/6) \\
+                    H_2(t) &= H(1 - t/4) \\
+                    H(1 - t/6) &= 2H(1 - t/4) \\
+                    1 - t/6 &= 2 - t/2 \\
+                    t/2 - t/6 &= 1 \\
+                    t/3 &= 1 \Rightarrow t = 3 \text{ jam}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 3 jam</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 20:</strong> Suatu pekerjaan dibagi antara A dan B sedemikian rupa sehingga A bekerja 3 hari dan B bekerja 4 hari untuk menyelesaikan 1/2 pekerjaan. Kemudian, A bekerja 2 hari dan B bekerja 1 hari untuk menyelesaikan 1/5 pekerjaan sisanya dari total pekerjaan awal. Jika B bekerja sendiri, berapa hari ia akan menyelesaikan seluruh pekerjaan?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Sistem Persamaan Linear dari Laju Kerja</p>
-                    <p><strong>Jawaban:</strong> 12.5 hari</p>
-                    <p class="explanation">
-                        Misal laju kerja A = a (bagian/hari), laju kerja B = b (bagian/hari).<br>
-                        Persamaan 1: \( 3a + 4b = \frac{1}{2} \)<br>
-                        Menginterpretasikan "menyelesaikan 1/5 pekerjaan sisanya dari total pekerjaan awal" sebagai menyelesaikan tambahan 1/5 dari total pekerjaan awal (bukan 1/5 dari sisa 1/2).<br>
-                        Persamaan 2: \( 2a + b = \frac{1}{5} \)<br>
-                        Dari Persamaan 2: \( b = \frac{1}{5} - 2a \). Substitusi ke Persamaan 1:<br>
-                        \( 3a + 4(\frac{1}{5} - 2a) = \frac{1}{2} \)<br>
-                        \( 3a + \frac{4}{5} - 8a = \frac{1}{2} \)<br>
-                        \( -5a = \frac{1}{2} - \frac{4}{5} = \frac{5}{10} - \frac{8}{10} = -\frac{3}{10} \)<br>
-                        \( a = \frac{3}{50} \).<br>
-                        Substitusi nilai a ke persamaan untuk b:<br>
-                        \( b = \frac{1}{5} - 2(\frac{3}{50}) = \frac{1}{5} - \frac{6}{50} = \frac{10}{50} - \frac{6}{50} = \frac{4}{50} = \frac{2}{25} \).<br>
-                        Laju B adalah \(\frac{2}{25}\) bagian/hari.<br>
-                        Waktu B bekerja sendiri = \( \frac{1}{b} = \frac{1}{(2/25)} = \frac{25}{2} = 12.5 \) hari.
-                    </p>
+
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Suatu pekerjaan dibagi antara A dan B sedemikian rupa sehingga A bekerja 3 hari dan B bekerja 4 hari untuk menyelesaikan 1/2 pekerjaan. Kemudian, A bekerja 2 hari dan B bekerja 1 hari untuk menyelesaikan 1/5 pekerjaan sisanya dari total pekerjaan awal. Jika B bekerja sendiri, berapa hari ia akan menyelesaikan seluruh pekerjaan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    3a + 4b &= 1/2 \\
+                    2a + b &= 1/5 \Rightarrow b = 1/5 - 2a \\
+                    3a + 4(1/5 - 2a) &= 1/2 \\
+                    -5a &= 1/2 - 4/5 = -3/10 \Rightarrow a = 3/50 \\
+                    b &= 1/5 - 6/50 = 4/50 = 2/25 \\
+                    \text{Waktu B} &= 25/2 = 12,5 \text{ hari}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 12,5 hari</div>
+            </div>
         </div>
-        <div class="question-block">
-            <p><strong>Soal 21:</strong> Sebuah tangki memiliki 3 keran. Keran A dan B bersama-sama dapat mengisi tangki dalam 12 menit. Keran B dan C bersama-sama dapat mengisi tangki dalam 15 menit. Keran A dan C bersama-sama dapat mengisi tangki dalam 20 menit. Berapa lama waktu yang dibutuhkan jika ketiga keran dibuka bersamaan untuk mengisi tangki tersebut?</p>
-            <details>
-                <summary>Lihat Jawaban</summary>
-                <div class="answer">
-                    <p><strong>Jenis:</strong> Sistem Persamaan Linear dari Laju Kerja</p>
-                    <p><strong>Jawaban:</strong> 10 menit</p>
-                    <p class="explanation">
-                        Misal laju keran A, B, C adalah a, b, c (bagian/menit).<br>
-                        \( a + b = \frac{1}{12} \) (1)<br>
-                        \( b + c = \frac{1}{15} \) (2)<br>
-                        \( a + c = \frac{1}{20} \) (3)<br>
-                        Jumlahkan (1), (2), dan (3):<br>
-                        \( 2(a+b+c) = \frac{1}{12} + \frac{1}{15} + \frac{1}{20} \)<br>
-                        \( 2(a+b+c) = \frac{5+4+3}{60} = \frac{12}{60} = \frac{1}{5} \).<br>
-                        \( a+b+c = \frac{1}{10} \).<br>
-                        Jadi, jika ketiga keran dibuka bersamaan, waktu yang dibutuhkan adalah \( \frac{1}{(1/10)} = 10 \) menit.
-                    </p>
+
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Sebuah tangki memiliki 3 keran. Keran A dan B bersama-sama dapat mengisi tangki dalam 12 menit. Keran B dan C bersama-sama dapat mengisi tangki dalam 15 menit. Keran A dan C bersama-sama dapat mengisi tangki dalam 20 menit. Berapa lama waktu yang dibutuhkan jika ketiga keran dibuka bersamaan untuk mengisi tangki tersebut?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    \begin{align}
+                    a + b &= 1/12 \\
+                    b + c &= 1/15 \\
+                    a + c &= 1/20 \\
+                    2(a+b+c) &= 1/12 + 1/15 + 1/20 = 1/5 \\
+                    a+b+c &= 1/10 \\
+                    \text{Waktu} &= 10 \text{ menit}
+                    \end{align}
                 </div>
-            </details>
+                <div class="answer">Jawaban: 10 menit</div>
+            </div>
         </div>
 
     </div>
-<script src="dark-mode-toggler.js" defer></script>
+
+    <script>
+        function toggleSolution(id) {
+            const sol = document.getElementById('solution' + id);
+            const btn = sol.previousElementSibling;
+            if (sol.style.display === 'block') {
+                sol.style.display = 'none';
+                btn.textContent = 'Tampilkan Pembahasan';
+            } else {
+                sol.style.display = 'block';
+                btn.textContent = 'Sembunyikan Pembahasan';
+            }
+        }
+    </script>
+    <script src="dark-mode-toggler.js" defer></script>
 </body>
 </html> 
