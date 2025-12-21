@@ -385,24 +385,47 @@
             <p>Jika saya berjalan dengan kecepatan 4 km/jam, saya akan terlambat 10 menit untuk tiba di kantor. Jika saya berjalan dengan kecepatan 5 km/jam, saya akan tiba 5 menit lebih awal. Berapa jarak dari rumah ke kantor saya?</p>
             <button class="toggle-answer" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
             <div class="answer">
-                <p><strong>Logika:</strong> Ini adalah soal aljabar. Kuncinya adalah menyadari bahwa selisih waktu antara dua skenario perjalanan adalah 15 menit (10 menit terlambat + 5 menit lebih awal). Jaraknya sama (s).</p>
+                <p><strong>Logika:</strong> Ini adalah soal aljabar. Kita perlu membuat dua persamaan berdasarkan dua skenario, kemudian mengeliminasi variabel waktu tepat untuk mendapatkan jarak.</p>
                 <p><strong>Jawaban:</strong></p>
+                <p>Misalkan:</p>
                 <p>
                     \[
                     \begin{aligned}
                     s &= \text{jarak (km)},\\
-                    t &= \text{waktu tepat (jam)},\\
-                    \frac{s}{4} &= t + \frac{10}{60},\\
-                    \frac{s}{5} &= t - \frac{5}{60}.
+                    t &= \text{waktu tepat tiba (jam)}.
                     \end{aligned}
                     \]
                 </p>
+                <p><strong>Persamaan 1:</strong> Kecepatan 4 km/jam, terlambat 10 menit</p>
+                <p>
+                    \[
+                    \frac{s}{4} = t + \frac{10}{60}
+                    \]
+                </p>
+                <p><strong>Persamaan 2:</strong> Kecepatan 5 km/jam, lebih awal 5 menit</p>
+                <p>
+                    \[
+                    \frac{s}{5} = t - \frac{5}{60}
+                    \]
+                </p>
+                <p><strong>Eliminasi variabel t:</strong> Kurangkan persamaan 2 dari persamaan 1</p>
                 <p>
                     \[
                     \begin{aligned}
-                    \frac{s}{4} - \frac{s}{5} &= \frac{15}{60},\\
-                    \frac{5s - 4s}{20} &= \frac{1}{4},\\
-                    \frac{s}{20} &= \frac{1}{4},\\
+                    \frac{s}{4} - \frac{s}{5} &= \left(t + \frac{10}{60}\right) - \left(t - \frac{5}{60}\right),\\
+                    \frac{s}{4} - \frac{s}{5} &= \frac{10}{60} + \frac{5}{60},\\
+                    \frac{s}{4} - \frac{s}{5} &= \frac{15}{60}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p><strong>Selesaikan untuk s:</strong></p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    \frac{5s - 4s}{20} &= \frac{15}{60},\\
+                    \frac{s}{20} &= \frac{15}{60},\\
+                    s &= \frac{15 \times 20}{60},\\
+                    s &= \frac{300}{60},\\
                     s &= 5 \text{ km}.
                     \end{aligned}
                     \]
