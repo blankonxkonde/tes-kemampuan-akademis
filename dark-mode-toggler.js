@@ -55,11 +55,14 @@
         startButton: 'darkModeCountdownStart',
         resetButton: 'darkModeCountdownReset',
         minutesInput: 'darkModeCountdownMinutes',
-        secondsInput: 'darkModeCountdownSeconds'
+        secondsInput: 'darkModeCountdownSeconds',
+        minimizeButton: 'darkModeCountdownMinimize',
+        header: 'darkModeCountdownHeader'
     };
     const COUNTDOWN_CLASSES = {
         blink: 'countdown-blink',
-        invalid: 'countdown-invalid'
+        invalid: 'countdown-invalid',
+        minimized: 'countdown-minimized'
     };
     const COUNTDOWN_STYLE_ID = 'darkModeCountdownStyles';
     const countdownState = {
@@ -68,7 +71,8 @@
         overtimeIntervalId: null,
         remainingMs: 0,
         isRunning: false,
-        overtimeStart: null
+        overtimeStart: null,
+        isMinimized: false
     };
 
     let mutationObserver = null;
@@ -192,6 +196,57 @@
                 border-color: #ff4d4f;
                 box-shadow: 0 0 0 2px rgba(255,77,79,0.4);
             }
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized {
+                width: 120px;
+                padding: 8px;
+                gap: 4px;
+            }
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized .countdown-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0;
+            }
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized .countdown-title {
+                font-size: 0.7rem;
+                margin: 0;
+            }
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized #${COUNTDOWN_IDS.display} {
+                font-size: 1.2rem;
+                margin-top: 2px;
+            }
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized .countdown-inputs,
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized .countdown-controls,
+            #${COUNTDOWN_IDS.wrapper}.countdown-minimized .countdown-overtime {
+                display: none !important;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            #${COUNTDOWN_IDS.wrapper} .countdown-header .countdown-title {
+                flex: 1;
+            }
+            #${COUNTDOWN_IDS.wrapper} #${COUNTDOWN_IDS.minimizeButton} {
+                background: none;
+                border: none;
+                color: #f5f5f5;
+                cursor: pointer;
+                padding: 4px 6px;
+                font-size: 0.9rem;
+                line-height: 1;
+                border-radius: 4px;
+                transition: background-color 0.2s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 24px;
+                min-height: 24px;
+            }
+            #${COUNTDOWN_IDS.wrapper} #${COUNTDOWN_IDS.minimizeButton}:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
             #${COUNTDOWN_IDS.display} {
                 font-size: 1.6rem;
                 font-weight: 600;
@@ -272,9 +327,23 @@
         wrapper.setAttribute('role', 'region');
         wrapper.setAttribute('aria-label', 'Timer hitung mundur');
 
+        const header = document.createElement('div');
+        header.id = COUNTDOWN_IDS.header;
+        header.className = 'countdown-header';
+
         const title = document.createElement('div');
         title.textContent = 'Hitung Mundur';
         title.className = 'countdown-title';
+
+        const minimizeButton = document.createElement('button');
+        minimizeButton.type = 'button';
+        minimizeButton.id = COUNTDOWN_IDS.minimizeButton;
+        minimizeButton.setAttribute('aria-label', 'Minimize timer');
+        minimizeButton.setAttribute('title', 'Minimize timer');
+        minimizeButton.textContent = '−';
+
+        header.appendChild(title);
+        header.appendChild(minimizeButton);
 
         const display = document.createElement('div');
         display.id = COUNTDOWN_IDS.display;
@@ -322,7 +391,7 @@
         controlsRow.appendChild(startButton);
         controlsRow.appendChild(resetButton);
 
-        wrapper.appendChild(title);
+        wrapper.appendChild(header);
         wrapper.appendChild(display);
         wrapper.appendChild(overtimeDisplay);
         wrapper.appendChild(inputsRow);
@@ -330,12 +399,14 @@
 
         return {
             wrapper,
+            header,
             display,
             overtimeDisplay,
             minutesInput,
             secondsInput,
             startButton,
-            resetButton
+            resetButton,
+            minimizeButton
         };
     }
 
@@ -488,6 +559,28 @@
         resetCountdown();
     }
 
+    function toggleMinimizeCountdown() {
+        if (!countdownState.elements) return;
+        countdownState.isMinimized = !countdownState.isMinimized;
+        const { wrapper, minimizeButton } = countdownState.elements;
+        
+        if (countdownState.isMinimized) {
+            wrapper.classList.add(COUNTDOWN_CLASSES.minimized);
+            minimizeButton.textContent = '+';
+            minimizeButton.setAttribute('aria-label', 'Maximize timer');
+            minimizeButton.setAttribute('title', 'Maximize timer');
+        } else {
+            wrapper.classList.remove(COUNTDOWN_CLASSES.minimized);
+            minimizeButton.textContent = '−';
+            minimizeButton.setAttribute('aria-label', 'Minimize timer');
+            minimizeButton.setAttribute('title', 'Minimize timer');
+        }
+    }
+
+    function handleCountdownMinimize() {
+        toggleMinimizeCountdown();
+    }
+
     function startOvertimeTicker() {
         if (!countdownState.elements) return;
         stopOvertimeTicker();
@@ -519,6 +612,7 @@
 
         elements.startButton.addEventListener('click', handleCountdownToggle);
         elements.resetButton.addEventListener('click', handleCountdownReset);
+        elements.minimizeButton.addEventListener('click', handleCountdownMinimize);
         elements.minutesInput.addEventListener('input', () => clampInputValue(elements.minutesInput, 0, 999));
         elements.secondsInput.addEventListener('input', () => clampInputValue(elements.secondsInput, 0, 59));
 
