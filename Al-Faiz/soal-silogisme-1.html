@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Silogisme - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .premises {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .premises li {
+            margin-bottom: 8px;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin-bottom: 8px;
+            list-style-type: upper-alpha;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TEMA 5: Silogisme</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Silogisme</strong>
+            <p>Silogisme adalah bentuk penalaran deduktif yang terdiri dari dua premis (pernyataan) dan satu kesimpulan. Silogisme menguji kemampuan logika dan penalaran untuk menarik kesimpulan yang sah dari premis-premis yang diberikan.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Semua tanaman hias yang disukai memiliki bunga yang indah.<br>
+                Tanaman hias dengan bunga yang indah dianggap berharga oleh para kolektor.<br>
+                Tanaman itu tidak memiliki bunga yang indah.<br>
+                Kesimpulan dari ketiga premis di atas adalah ... (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>Semua tanaman hias yang memiliki bunga yang indah disukai.</li>
+                <li>Semua yang disukai dan memiliki bunga yang indah adalah tanaman hias.</li>
+                <li>Tanaman tersebut tidak disukai.</li>
+                <li>Tanaman tersebut memiliki bunga yang indah.</li>
+                <li>Tanaman tersebut tidak memiliki bunga.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua tanaman hias yang disukai memiliki bunga yang indah.<br>
+                    p = semua tanaman hias yang disukai<br>
+                    q = memiliki bunga yang indah<br><br>
+                    Premis 2: Tanaman hias dengan bunga yang indah dianggap berharga oleh para kolektor.<br>
+                    q = tanaman hias dengan bunga yang indah<br>
+                    r = dianggap berharga oleh para kolektor<br><br>
+                    Premis 3: Tanaman itu tidak memiliki bunga yang indah.<br>
+                    ~q = tanaman itu tidak memiliki bunga yang indah
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Premis 1 dan 2: p → q → r<br>
+                    Premis 3: ~q<br><br>
+                    Kita pisah premis 1 dan 2 menjadi p → q dan q → r, karena pertanyaan ~q maka kita gunakan premis 1. Jika kita gunakan premis 2 maka tidak dapat disimpulkan (seperti yang diajarkan di kelas online).<br><br>
+                    Premis 1: p → q<br>
+                    Premis 3: ~q<br>
+                    Kesimpulan: ~p
+                </div>
+                <div class="answer">Jawaban: C (Tanaman tersebut tidak disukai)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Semua lemari yang dipamerkan terbuat dari kayu.<br>
+                Pengrajin menganggap lemari kayu memiliki nilai keindahan.<br>
+                Lemari itu tidak terbuat dari kayu.<br>
+                Kesimpulan dari premis-premis di atas adalah ... (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>Semua yang memiliki nilai keindahan dan dipamerkan terbuat dari kayu.</li>
+                <li>Semua lemari yang terbuat dari kayu memiliki nilai keindahan.</li>
+                <li>Lemari itu tidak memiliki nilai keindahan.</li>
+                <li>Lemari itu memiliki nilai keindahan.</li>
+                <li>Lemari itu tidak dipamerkan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua lemari yang dipamerkan terbuat dari kayu.<br>
+                    p = semua lemari yang dipamerkan<br>
+                    q = lemari terbuat dari kayu<br><br>
+                    Premis 2: Pengrajin menganggap lemari kayu memiliki nilai keindahan.<br>
+                    q = lemari kayu<br>
+                    r = memiliki nilai keindahan<br><br>
+                    Premis 3: Lemari itu tidak terbuat dari kayu.<br>
+                    ~q = Lemari itu tidak terbuat dari kayu
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Premis 1 dan 2: p → q → r<br>
+                    Premis 3: ~q<br><br>
+                    Kita pisah premis 1 dan 2 menjadi p → q dan q → r, karena pertanyaan ~q maka kita gunakan premis 1. Jika kita gunakan premis 2 maka tidak dapat disimpulkan (seperti yang diajarkan di kelas online).<br><br>
+                    Premis 1: p → q<br>
+                    Premis 3: ~q<br>
+                    Kesimpulan: ~p
+                </div>
+                <div class="answer">Jawaban: E (Lemari itu tidak dipamerkan)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Setiap orang yang rajin bekerja akan mendapatkan promosi di tempat kerjanya.<br>
+                Orang yang mendapatkan promosi biasanya akan mendapatkan gaji yang lebih tinggi.<br>
+                Budi adalah seorang yang rajin bekerja.<br>
+                Kesimpulan yang tepat adalah ...
+            </div>
+            <ul class="options">
+                <li>Sebagian orang yang rajin bekerja akan mendapatkan gaji yang lebih tinggi.</li>
+                <li>Orang yang mendapatkan gaji yang lebih tinggi adalah orang yang rajin bekerja.</li>
+                <li>Budi akan mendapatkan gaji yang lebih tinggi.</li>
+                <li>Budi mendapatkan promosi.</li>
+                <li>Orang yang rajin bekerja adalah Budi.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1: p → q<br>
+                    Premis 2: q → r<br>
+                    Kesimpulan: p → r<br>
+                    Premis 3: p<br>
+                    Kesimpulan: r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Setiap orang yang rajin bekerja akan mendapatkan promosi di tempat kerjanya.<br>
+                    p = Setiap orang yang rajin bekerja<br>
+                    q = akan mendapatkan promosi di tempat kerjanya<br><br>
+                    Premis 2: Orang yang mendapatkan promosi biasanya akan mendapatkan gaji yang lebih tinggi.<br>
+                    q = Orang yang mendapatkan promosi<br>
+                    r = akan mendapatkan gaji yang lebih tinggi<br><br>
+                    Premis 3: Budi adalah seorang yang rajin bekerja.<br>
+                    p = Budi adalah seorang yang rajin bekerja
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dari Premis 1 dan 2: p → q → r, sehingga p → r<br>
+                    Dari Premis 3: p<br>
+                    Kesimpulan: r (Budi akan mendapatkan gaji yang lebih tinggi)
+                </div>
+                <div class="answer">Jawaban: C (Budi akan mendapatkan gaji yang lebih tinggi)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Atlet renang menggunakan jas renang impor luar negeri.<br>
+                Jas renang impor biasanya lebih baik dari jas renang lokal karena dapat membawa mereka ke babak final.<br>
+                Sinta berhasil masuk ke babak final. (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>Semua atlet renang masuk ke babak final karena menggunakan jas renang impor.</li>
+                <li>Beberapa atlet renang tidak masuk ke final karena menggunakan jas renang lokal.</li>
+                <li>Semua atlet renang kecuali Sinta menggunakan jas renang lokal.</li>
+                <li>Sinta mungkin atlet renang yang menggunakan jas renang impor.</li>
+                <li>Semua atlet renang tidak masuk ke final karena menggunakan jas renang lokal.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pilihan jawaban D adalah kesimpulan yang tepat. Meskipun tidak dinyatakan secara langsung bahwa Sinta menggunakan jas renang impor, namun karena ia berhasil masuk ke babak final dan jas renang impor cenderung membawa atlet ke babak final, maka ia mungkin menggunakan jas renang impor.
+                </div>
+                <div class="answer">Jawaban: D (Sinta mungkin atlet renang yang menggunakan jas renang impor)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Seorang koki terkenal menggunakan pisau dapur impor. Pisau dapur impor biasanya lebih baik dari pisau lokal karena memiliki kualitas yang lebih baik.<br>
+                Pak Bambang berhasil memotong bahan makanan dengan sangat presisi.
+            </div>
+            <ul class="options">
+                <li>Semua koki terkenal memotong bahan makanan dengan sangat presisi karena menggunakan pisau dapur impor.</li>
+                <li>Beberapa koki tidak memotong bahan makanan dengan sangat presisi karena menggunakan pisau lokal.</li>
+                <li>Semua koki terkenal kecuali Pak Bambang menggunakan pisau lokal.</li>
+                <li>Pak Bambang mungkin koki terkenal yang menggunakan pisau dapur impor.</li>
+                <li>Semua koki tidak memotong bahan makanan dengan sangat presisi karena menggunakan pisau lokal.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pilihan jawaban D adalah kesimpulan yang tepat berdasarkan premis-premis yang diberikan. Meskipun tidak disebutkan secara langsung bahwa Pak Bambang adalah koki terkenal, namun fakta bahwa ia berhasil memotong bahan makanan dengan sangat presisi menunjukkan bahwa ia mungkin memiliki keterampilan dan peralatan yang sesuai dengan koki terkenal, termasuk penggunaan pisau dapur impor yang berkualitas baik.
+                </div>
+                <div class="answer">Jawaban: D (Pak Bambang mungkin koki terkenal yang menggunakan pisau dapur impor)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Premis 1: Jika harga BBM naik, maka harga bahan pokok naik.<br>
+                Premis 2: Jika harga bahan pokok naik maka semua orang tidak senang.<br>
+                Kesimpulan yang sah adalah ...
+            </div>
+            <ul class="options">
+                <li>Jika harga BBM tidak naik, maka semua orang tidak senang</li>
+                <li>Jika harga BBM naik, maka semua orang senang</li>
+                <li>Jika harga BBM naik, maka semua orang tidak senang</li>
+                <li>Jika harga BBM tidak naik, maka semua orang senang</li>
+                <li>Aku tak tau lohh</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika harga BBM naik, maka harga bahan pokok naik.<br>
+                    p = harga BBM naik<br>
+                    q = harga bahan pokok naik<br><br>
+                    Premis 2: Jika harga bahan pokok naik maka semua orang tidak senang.<br>
+                    q = harga bahan pokok naik<br>
+                    r = semua orang tidak senang
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kesimpulan yang tepat adalah: Jika harga BBM naik maka semua orang tidak senang.
+                </div>
+                <div class="answer">Jawaban: C (Jika harga BBM naik, maka semua orang tidak senang)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Pimpinan meminta karyawan menyerahkan laporan kegiatan jika kegiatan telah dilaksanakan. Jika laporan kegiatan telah diserahkan, honor karyawan dibayarkan. Simpulan yang tepat adalah ...
+            </div>
+            <ul class="options">
+                <li>Jika honor kegiatan dibayarkan, pimpinan dapat menugaskan karyawan membuat laporan</li>
+                <li>Laporan kegiatan belum diserahkan berarti honor pimpinan tidak dibayarkan</li>
+                <li>Jika pimpinan meminta laporan, kegiatan segera dilaksanakan</li>
+                <li>Honor karyawan tidak dibayarkan berarti kegiatan belum dilaksanakan</li>
+                <li>Jika honor tidak ada, kegiatan tidak dapat dilaksanakan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r (ekuivalen dengan ~r → ~p)
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Pimpinan meminta karyawan menyerahkan laporan kegiatan jika kegiatan telah dilaksanakan.<br>
+                    Premis 1 juga dapat ditulis menjadi "Jika kegiatan telah dilaksanakan maka pimpinan meminta karyawan menyerahkan laporan kegiatan".<br>
+                    p = kegiatan telah dilaksanakan<br>
+                    q = pimpinan meminta karyawan menyerahkan laporan kegiatan<br><br>
+                    Premis 2: Jika laporan kegiatan telah diserahkan, honor karyawan dibayarkan.<br>
+                    q = laporan kegiatan telah diserahkan<br>
+                    r = honor karyawan dibayarkan
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r (ekuivalen ~r → ~p)<br><br>
+                    Kesimpulan yang tepat adalah: Honor karyawan tidak dibayarkan berarti kegiatan belum dilaksanakan.
+                </div>
+                <div class="answer">Jawaban: D (Honor karyawan tidak dibayarkan berarti kegiatan belum dilaksanakan)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Semua petani di Desa Sukamaju suka bekerja keras.<br>
+                Sebagian petani di Desa Sukamaju adalah pedagang...
+            </div>
+            <ul class="options">
+                <li>Semua petani di Desamaju adalah pedagang dan suka bekerja keras</li>
+                <li>Sebagian petani di Desa Sukamaju merupakan pedagang dan suka bekerja keras</li>
+                <li>Ada pedagang di Desa Sukamaju yang tidak suka bekerja keras</li>
+                <li>Sebagian petani di Desa Sukamaju adalah pedagang yang tidak suka bekerja keras</li>
+                <li>Semua petani yang suka bekerja keras berasal dari Desa Sukamaju</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = Semua p → q<br>
+                    Premis 2 = Sebagian p → r<br>
+                    Kesimpulan = Sebagian p → q dan r (atau Sebagian p → r dan q)
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua petani di Desa Sukamaju suka bekerja keras.<br>
+                    p = petani di Desa Sukamaju<br>
+                    q = suka bekerja keras<br><br>
+                    Premis 2: Sebagian petani di Desa Sukamaju adalah pedagang.<br>
+                    p = petani di Desa Sukamaju<br>
+                    r = pedagang
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    P1 = Semua p → q<br>
+                    P2 = Sebagian p → r<br>
+                    Kesimpulan: Sebagian p → r dan q<br><br>
+                    Kesimpulan yang tepat adalah: Sebagian petani di Desa Sukamaju merupakan pedagang dan suka bekerja keras.
+                </div>
+                <div class="answer">Jawaban: B (Sebagian petani di Desa Sukamaju merupakan pedagang dan suka bekerja keras)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Semua sepeda motor dilengkapi speedometer.<br>
+                Sebagian sepeda motor berwarna biru.
+            </div>
+            <ul class="options">
+                <li>Sebagian sepeda motor tidak dilengkapi speedometer dan tidak berwarna biru.</li>
+                <li>Sebagian sepeda motor berwarna biru dan tidak dilengkapi speedometer.</li>
+                <li>Semua sepeda motor berwarna biru dan dilengkapi speedometer.</li>
+                <li>Semua sepeda motor yang berwarna biru dilengkapi speedometer.</li>
+                <li>Semua sepeda motor tidak berwarna biru dan dilengkapi speedometer.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = Semua p → q<br>
+                    Premis 2 = Sebagian p → r<br>
+                    Kesimpulan = Semua p yang r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua sepeda motor dilengkapi speedometer.<br>
+                    p = sepeda motor<br>
+                    q = dilengkapi speedometer<br><br>
+                    Premis 2: Sebagian sepeda motor berwarna biru.<br>
+                    p = sepeda motor<br>
+                    r = berwarna biru
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    P1 = Semua p → q<br>
+                    P2 = Sebagian p → r<br>
+                    Kesimpulan: Semua p yang r → q<br><br>
+                    Kesimpulan yang tepat adalah: Semua sepeda motor yang berwarna biru dilengkapi speedometer.
+                </div>
+                <div class="answer">Jawaban: D (Semua sepeda motor yang berwarna biru dilengkapi speedometer)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Seluruh perwira baru wajib mengikuti latihan tempur.<br>
+                Sebagian perwira baru mengunjungi asrama.
+            </div>
+            <ul class="options">
+                <li>Seluruh perwira baru yang mengikuti latihan tempur tidak mengunjungi asrama</li>
+                <li>Seluruh perwira baru yang mengikuti latihan tempur mengunjungi asrama</li>
+                <li>Sebagian perwira baru yang mengunjungi asrama tidak mengikuti latihan tempur</li>
+                <li>Seluruh perwira baru yang mengunjungi asrama mengikuti latihan tempur</li>
+                <li>Sebagian perwira baru yang tidak mengunjungi asrama tidak mengikuti latihan tempur</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = Semua p → q<br>
+                    Premis 2 = Sebagian p → r<br>
+                    Kesimpulan = Semua p yang r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Seluruh perwira baru wajib mengikuti latihan tempur.<br>
+                    p = perwira baru<br>
+                    q = wajib mengikuti latihan tempur<br><br>
+                    Premis 2: Sebagian perwira baru mengunjungi asrama.<br>
+                    p = perwira baru<br>
+                    r = mengunjungi asrama
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    P1 = Semua p → q<br>
+                    P2 = Sebagian p → r<br>
+                    Kesimpulan: Semua p yang r → q<br><br>
+                    Kesimpulan yang tepat adalah: Seluruh perwira baru yang mengunjungi asrama mengikuti latihan tempur.
+                </div>
+                <div class="answer">Jawaban: D (Seluruh perwira baru yang mengunjungi asrama mengikuti latihan tempur)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Jika Naruto rajin belajar maka dia akan memperoleh Indeks Prestasi yang baik.<br>
+                Naruto tidak rajin belajar. Kesimpulannya adalah ....
+            </div>
+            <ul class="options">
+                <li>Naruto memperoleh Indeks Prestasi yang baik</li>
+                <li>Naruto memperoleh Indeks Prestasi yang baik walau-pun tidak rajin belajar</li>
+                <li>Naruto adalah anak yang pintar</li>
+                <li>Naruto tidak mendapat Indeks Prestasi yang baik</li>
+                <li>Tidak dapat disimpulkan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~p<br>
+                    Kesimpulan = TDDS (Tidak Dapat Disimpulkan)
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika Naruto rajin belajar maka dia akan memperoleh Indeks Prestasi yang baik.<br>
+                    p = Naruto rajin belajar<br>
+                    q = dia akan memperoleh Indeks Prestasi yang baik<br><br>
+                    Premis 2: Naruto tidak rajin belajar.<br>
+                    ~p = Naruto tidak rajin belajar
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dari Premis 1: p → q<br>
+                    Dari Premis 2: ~p<br>
+                    Kesimpulan = TDDS (Tidak Dapat Disimpulkan)
+                </div>
+                <div class="answer">Jawaban: E (Tidak dapat disimpulkan)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Jika tubuh sehat, maka jiwa akan sehat pula. Jika jiwa sehat, maka proses hidup akan dijalani dengan sehat. Goku memiliki tubuh yang tidak sehat.
+            </div>
+            <ul class="options">
+                <li>Proses hidup Goku dijalani dengan tidak sehat.</li>
+                <li>Proses hidup Goku dijalani dengan sehat.</li>
+                <li>Goku memiliki jiwa yang tidak sehat.</li>
+                <li>Goku memiliki jiwa yang sehat.</li>
+                <li>Tidak dapat disimpulkan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r<br><br>
+                    Namun jika Premis 1 = p → q dan Premis 2 = ~p, maka Kesimpulan = TDDS
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika tubuh sehat, maka jiwa akan sehat pula.<br>
+                    p = tubuh sehat<br>
+                    q = jiwa akan sehat pula<br><br>
+                    Premis 2: Jika jiwa sehat, maka proses hidup akan dijalani dengan sehat.<br>
+                    q = jiwa sehat<br>
+                    r = proses hidup akan dijalani dengan sehat<br><br>
+                    Premis 3: Goku memiliki tubuh yang tidak sehat.<br>
+                    ~p = Goku memiliki tubuh yang tidak sehat
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dari Premis 1 dan 2: p → q → r, sehingga p → r<br>
+                    Dari Premis 3: ~p<br>
+                    Kesimpulan = TDDS (Tidak Dapat Disimpulkan)
+                </div>
+                <div class="answer">Jawaban: E (Tidak dapat disimpulkan)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Diketahui pernyataan:<br>
+                P1: Jika Mbak Lili rajin belajar, maka ia naik kelas.<br>
+                P2: Jika Mbak Lili naik kelas, maka ia disayang nenek.<br>
+                P3: Mbak Lili tidak disayang nenek.<br>
+                Kesimpulan yang sah adalah ...
+            </div>
+            <ul class="options">
+                <li>Mbak Lili rajin belajar tetapi ia naik kelas.</li>
+                <li>Mbak Lili rajin belajar.</li>
+                <li>Mbak Lili tidak disayang nenek.</li>
+                <li>Mbak Lili naik kelas.</li>
+                <li>Mbak Lili tidak rajin belajar.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme dan Modus Tollens:</strong><br>
+                    Silogisme: Premis 1 = p → q, Premis 2 = q → r, Kesimpulan = p → r<br>
+                    Modus Tollens: Premis 1 = p → q, Premis 2 = ~q, Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika Mbak Lili rajin belajar, maka ia naik kelas.<br>
+                    p = Mbak Lili rajin belajar<br>
+                    q = ia naik kelas<br><br>
+                    Premis 2: Jika Mbak Lili naik kelas, maka ia disayang nenek.<br>
+                    q = Mbak Lili naik kelas<br>
+                    r = ia disayang nenek<br><br>
+                    Premis 3: Mbak Lili tidak disayang nenek.<br>
+                    ~r = Mbak Lili tidak disayang nenek
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    ~r<br>
+                    Kesimpulan: ~p<br><br>
+                    Kesimpulan = Mbak Lili tidak rajin belajar.
+                </div>
+                <div class="answer">Jawaban: E (Mbak Lili tidak rajin belajar)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Premis 1: Jika harga BBM naik, maka harga bahan pokok naik.<br>
+                Premis 2: Jika harga bahan pokok naik maka semua orang tidak senang.<br>
+                Premis 3: Semua orang merasa senang<br>
+                Kesimpulan yang sah adalah ...
+            </div>
+            <ul class="options">
+                <li>Jika harga BBM tidak naik, maka semua orang tidak senang.</li>
+                <li>Jika harga BBM naik, maka semua orang tidak senang</li>
+                <li>Harga bahan pokok naik.</li>
+                <li>Harga BBM naik.</li>
+                <li>Harga BBM tidak naik.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme dan Modus Tollens:</strong><br>
+                    Silogisme: Premis 1 = p → q, Premis 2 = q → r, Kesimpulan = p → r<br>
+                    Modus Tollens: Premis 1 = p → q, Premis 2 = ~q, Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika harga BBM naik, maka harga bahan pokok naik.<br>
+                    p = harga BBM naik<br>
+                    q = harga bahan pokok naik<br><br>
+                    Premis 2: Jika harga bahan pokok naik maka semua orang tidak senang.<br>
+                    q = harga bahan pokok naik<br>
+                    r = semua orang tidak senang<br><br>
+                    Premis 3: Semua orang merasa senang.<br>
+                    ~r = Semua orang merasa senang
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    ~r<br>
+                    Kesimpulan: ~p<br><br>
+                    Kesimpulan = Harga BBM tidak naik.
+                </div>
+                <div class="answer">Jawaban: E (Harga BBM tidak naik)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Jika suatu sarana merupakan sarana yang up to date maka sarana itu harus dioperasikan dengan sistem yang modern. Jika sistem itu modern maka sistem itu harus terkomputerisasi. Sarana Al Faiz merupakan sarana yang up to date.
+            </div>
+            <ul class="options">
+                <li>Jika suatu sarana dikatakan menggunakan sistem yang modern maka belum tentu sarana terkomputerisasi</li>
+                <li>Sarana Al Faiz merupakan sistem yang belum modern</li>
+                <li>Sarana Al Faiz sudah menggunakan sistem yang terkomputerisasi.</li>
+                <li>Sarana Al Faiz adalah sarana yang belum up to date</li>
+                <li>Sarana yang up to date pasti merupakan sarana Al Faiz</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme dan Modus Ponens:</strong><br>
+                    Silogisme: Premis 1 = p → q, Premis 2 = q → r, Kesimpulan = p → r<br>
+                    Modus Ponens: Premis 1 = p → q, Premis 2 = p, Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika suatu sarana merupakan sarana yang up to date maka sarana itu harus dioperasikan dengan sistem yang modern.<br>
+                    p = sarana yang up to date<br>
+                    q = harus dioperasikan dengan sistem yang modern<br><br>
+                    Premis 2: Jika sistem itu modern maka sistem itu harus terkomputerisasi.<br>
+                    q = sistem itu modern<br>
+                    r = harus terkomputerisasi<br><br>
+                    Premis 3: Sarana Al Faiz merupakan sarana yang up to date.<br>
+                    p = Sarana Al Faiz merupakan sarana yang up to date
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    p<br>
+                    Kesimpulan: r<br><br>
+                    Kesimpulan = Sarana Al Faiz sudah menggunakan sistem yang terkomputerisasi.
+                </div>
+                <div class="answer">Jawaban: C (Sarana Al Faiz sudah menggunakan sistem yang terkomputerisasi)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Orang yang memiliki gaya hidup hedon pasti tidak pernah merasa puas atas apa yang sudah dimilikinya. Seseorang yang tidak dapat mengendalikan keinginannya selalu menghamburkan uang. Orang yang suka menghamburkan uang pastinya memiliki gaya hidup hedon.
+            </div>
+            <ul class="options">
+                <li>Orang yang memiliki gaya hidup hedon, tidak pernah puas dengan yang sudah dimiliki</li>
+                <li>Orang yang tidak pernah puas dengan yang sudah dimiliki, tidak dapat mengendalikan keinginannya</li>
+                <li>Orang yang tidak dapat mengendalikan keinginannya, tidak pernah puas dengan yang sudah dimiliki</li>
+                <li>Orang yang tidak dapat mengendalikan keinginannya, menghamburkan uang</li>
+                <li>Orang yang tidak dapat mengendalikan keinginannya, memiliki gaya hidup hedon</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Orang yang memiliki gaya hidup hedon pasti tidak pernah merasa puas atas apa yang sudah dimilikinya.<br>
+                    p = memiliki gaya hidup hedon<br>
+                    q = tidak pernah merasa puas atas apa yang sudah dimilikinya<br><br>
+                    Premis 2: Seseorang yang tidak dapat mengendalikan keinginannya selalu menghamburkan uang.<br>
+                    r = tidak dapat mengendalikan keinginannya<br>
+                    s = menghamburkan uang<br><br>
+                    Premis 3: Orang yang suka menghamburkan uang pastinya memiliki gaya hidup hedon.<br>
+                    s = menghamburkan uang<br>
+                    p = memiliki gaya hidup hedon
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 2 dan Premis 3 terlebih dahulu:<br>
+                    P2 = r → s<br>
+                    P3 = s → p<br>
+                    Kesimpulan: r → p<br><br>
+                    Kemudian selesaikan dengan Premis 1:<br>
+                    r → p<br>
+                    P1 = p → q<br>
+                    Kesimpulan: r → q<br><br>
+                    Kesimpulan = Orang yang tidak dapat mengendalikan keinginannya, tidak pernah puas dengan yang sudah dimiliki.
+                </div>
+                <div class="answer">Jawaban: C (Orang yang tidak dapat mengendalikan keinginannya, tidak pernah puas dengan yang sudah dimiliki)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Winda akan memberikan pelatihan tari budaya hari ini jika dua minggu lagi akan diadakan pertunjukan seni. Jika Winda memberi pelatihan tari budaya hari ini, kostum penari akan segera disiapkan. Ternyata kostum tidak sedang disiapkan.
+            </div>
+            <ul class="options">
+                <li>Winda tidak memberikan pelatihan tari budaya hari ini</li>
+                <li>Dua minggu lagi tidak akan diadakan pertunjukan seni</li>
+                <li>Jika Winda tidak memberikan pelatihan maka tidak akan diadakan pertunjukan seni</li>
+                <li>Jika Winda tidak memberikan pelatihan tari maka kostum tidak akan disiapkan</li>
+                <li>Kostum penari belum disiapkan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Winda akan memberikan pelatihan tari budaya hari ini jika dua minggu lagi akan diadakan pertunjukan seni.<br>
+                    Premis 1 dapat ditulis sebagai "Jika dua minggu lagi akan diadakan pertunjukan seni maka Winda akan memberikan pelatihan tari budaya hari ini".<br>
+                    p = dua minggu lagi akan diadakan pertunjukan seni<br>
+                    q = Winda akan memberikan pelatihan tari budaya hari ini<br><br>
+                    Premis 2: Jika Winda memberi pelatihan tari budaya hari ini, kostum penari akan segera disiapkan.<br>
+                    q = Winda akan memberikan pelatihan tari budaya hari ini<br>
+                    r = kostum penari akan segera disiapkan<br><br>
+                    Premis 3: Ternyata kostum tidak sedang disiapkan.<br>
+                    ~r = kostum tidak sedang disiapkan
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    ~r<br>
+                    Kesimpulan: ~p<br><br>
+                    Kesimpulan = Dua minggu lagi tidak akan diadakan pertunjukan seni.
+                </div>
+                <div class="answer">Jawaban: B (Dua minggu lagi tidak akan diadakan pertunjukan seni)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Pernikahan usia dini memiliki beberapa dampak negatif. Semakin tinggi pengetahuan perempuan tentang dampak negatif dari pernikahan dini, sikap terhadap pernikahan usia dini semakin negatif. Ketika seorang perempuan memiliki sikap negatif terhadap pernikahan usia dini, kemungkinan kecil ia tidak akan melakukan pernikahan dini. Tia mengetahui bahwa pernikahan usia dini memiliki dampak negatif.
+            </div>
+            <ul class="options">
+                <li>Kemungkinan kecil Tia tidak akan melakukan pernikahan dini</li>
+                <li>Pernikahan dini tidak akan dilakukan oleh setiap perempuan</li>
+                <li>Rendahnya pengetahuan tentang dampak negatif pernikahan dini, kemungkinan kecil ia akan melakukan pernikahan dini</li>
+                <li>Tia cukup setuju bahwa pernikahan dini memiliki dampak negatif</li>
+                <li>Pernikahan dini bisa membawa dampak negatif dikemudian hari</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme dan Modus Ponens:</strong><br>
+                    Silogisme: Premis 1 = p → q, Premis 2 = q → r, Kesimpulan = p → r<br>
+                    Modus Ponens: Premis 1 = p → q, Premis 2 = p, Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semakin tinggi pengetahuan perempuan tentang dampak negatif dari pernikahan dini, sikap terhadap pernikahan usia dini semakin negatif.<br>
+                    p = Semakin tinggi pengetahuan perempuan tentang dampak negatif dari pernikahan dini<br>
+                    q = sikap terhadap pernikahan usia dini semakin negatif<br><br>
+                    Premis 2: Ketika seorang perempuan memiliki sikap negatif terhadap pernikahan usia dini, kemungkinan kecil ia tidak akan melakukan pernikahan dini.<br>
+                    q = seorang perempuan memiliki sikap negatif terhadap pernikahan usia dini<br>
+                    r = kemungkinan kecil ia tidak akan melakukan pernikahan dini<br><br>
+                    Premis 3: Tia mengetahui bahwa pernikahan usia dini memiliki dampak negatif.<br>
+                    p = Tia mengetahui bahwa pernikahan usia dini memiliki dampak negatif
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    p<br>
+                    Kesimpulan: r<br><br>
+                    Kesimpulan = Kemungkinan kecil Tia tidak akan melakukan pernikahan dini.
+                </div>
+                <div class="answer">Jawaban: A (Kemungkinan kecil Tia tidak akan melakukan pernikahan dini)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Mengonsumsi jeruk nipis akan mempercepat sistem metabolisme tubuh kita. Sistem metabolisme yang cepat dapat mengubah lemak dan gula menjadi sumber energi dengan cepat. Lemak dan gula yang berubah dengan cepat menjadi sumber energi akan memperlambat penumpukan lemak dalam tubuh.
+            </div>
+            <ul class="options">
+                <li>Lemak dan gula yang berubah dengan cepat akan mempercepat sistem metabolisme tubuh</li>
+                <li>Penumpukan lemak dalam tubuh akan mempercepat sistem metabolisme tubuh</li>
+                <li>Mengonsumsi jeruk nipis akan memperlambat lemak dan gula menjadi sumber energi</li>
+                <li>Mengonsumsi jeruk nipis akan memperlambat penumpukan lemak dalam tubuh</li>
+                <li>Sumber energi dapat kita peroleh dengan cepat melalui gula dan lemak</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Mengonsumsi jeruk nipis akan mempercepat sistem metabolisme tubuh kita.<br>
+                    p = Mengonsumsi jeruk nipis<br>
+                    q = mempercepat sistem metabolisme tubuh kita<br><br>
+                    Premis 2: Sistem metabolisme yang cepat dapat mengubah lemak dan gula menjadi sumber energi dengan cepat.<br>
+                    q = Sistem metabolisme yang cepat<br>
+                    r = mengubah lemak dan gula menjadi sumber energi dengan cepat<br><br>
+                    Premis 3: Lemak dan gula yang berubah dengan cepat menjadi sumber energi akan memperlambat penumpukan lemak dalam tubuh.<br>
+                    r = Lemak dan gula yang berubah dengan cepat menjadi sumber energi<br>
+                    s = memperlambat penumpukan lemak dalam tubuh
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    P1 = p → r<br>
+                    P3 = r → s<br>
+                    Kesimpulan: p → s<br><br>
+                    Kesimpulan = Mengonsumsi jeruk nipis akan memperlambat penumpukan lemak dalam tubuh.
+                </div>
+                <div class="answer">Jawaban: D (Mengonsumsi jeruk nipis akan memperlambat penumpukan lemak dalam tubuh)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Semua orang yang mengikuti UKM adalah mahasiswa bertopi hitam.<br>
+                Semua orang yang bertopi hitam adalah mahasiswa fakultas teknik.<br>
+                Mahasiswa fakultas teknik berkumpul di depan rektorat.
+            </div>
+            <ul class="options">
+                <li>Semua orang yang mengikuti UKM adalah mahasiswa fakultas teknik</li>
+                <li>Semua orang yang mengikuti UKM berkumpul di depan rektorat</li>
+                <li>Sebagian mahasiswa yang mengikuti UKM berkumpul di depan rektorat</li>
+                <li>Sebagian mahasiswa fakultas teknik mengikuti UKM</li>
+                <li>Di depan rektorat selalu menjadi tempat mahasiswa fakultas teknik berkumpul</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua orang yang mengikuti UKM adalah mahasiswa bertopi hitam.<br>
+                    p = Semua orang yang mengikuti UKM<br>
+                    q = mahasiswa bertopi hitam<br><br>
+                    Premis 2: Semua orang yang bertopi hitam adalah mahasiswa fakultas teknik.<br>
+                    q = Semua orang yang bertopi hitam<br>
+                    r = mahasiswa fakultas teknik<br><br>
+                    Premis 3: Mahasiswa fakultas teknik berkumpul di depan rektorat.<br>
+                    r = Mahasiswa fakultas teknik<br>
+                    s = berkumpul di depan rektorat
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    P1 = p → r<br>
+                    P3 = r → s<br>
+                    Kesimpulan: p → s<br><br>
+                    Kesimpulan = Semua orang yang mengikuti UKM berkumpul di depan rektorat.
+                </div>
+                <div class="answer">Jawaban: B (Semua orang yang mengikuti UKM berkumpul di depan rektorat)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Jika Hilman pergi ke Jakarta, maka orang tuanya juga pergi ke Jakarta. Jika orang tua Hilman pergi ke Jakarta, maka rumah akan sepi. Jika rumah sepi maka rumah Hilman dijaga oleh Pak Mariadi. Ternyata Pak Mariadi tidak menjaga rumah Hilman.
+            </div>
+            <ul class="options">
+                <li>Hilman pergi ke Jakarta sendirian</li>
+                <li>Orang tua Hilman saja yang pergi ke Jakarta sedangkan Hilman tidak</li>
+                <li>Hilman pergi ke Jakarta namun orang tuanya tidak pergi ke Jakarta</li>
+                <li>Hilman tidak pergi ke Jakarta</li>
+                <li>Hilman pergi ke Jakarta bersama Pak Mariadi</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme dan Modus Tollens:</strong><br>
+                    Silogisme: Premis 1 = p → q, Premis 2 = q → r, Kesimpulan = p → r<br>
+                    Modus Tollens: Premis 1 = p → q, Premis 2 = ~q, Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika Hilman pergi ke Jakarta, maka orang tuanya juga pergi ke Jakarta.<br>
+                    p = Hilman pergi ke Jakarta<br>
+                    q = orang tuanya juga pergi ke Jakarta<br><br>
+                    Premis 2: Jika orang tua Hilman pergi ke Jakarta, maka rumah akan sepi.<br>
+                    q = orang tua Hilman pergi ke Jakarta<br>
+                    r = rumah akan sepi<br><br>
+                    Premis 3: Jika rumah sepi maka rumah Hilman dijaga oleh Pak Mariadi.<br>
+                    r = rumah akan sepi<br>
+                    s = rumah Hilman dijaga oleh Pak Mariadi<br><br>
+                    Premis 4: Ternyata Pak Mariadi tidak menjaga rumah Hilman.<br>
+                    ~s = Pak Mariadi tidak menjaga rumah Hilman
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    P3 = r → s<br>
+                    Kesimpulan: p → s<br><br>
+                    Kemudian selesaikan dengan Premis 4:<br>
+                    p → s<br>
+                    ~s<br>
+                    Kesimpulan: ~p<br><br>
+                    Kesimpulan = Hilman tidak pergi ke Jakarta.
+                </div>
+                <div class="answer">Jawaban: D (Hilman tidak pergi ke Jakarta)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Jika Susi sakit, maka ia memakai jaket.<br>
+                Jika Susi memakai jaket maka ia minum obat.<br>
+                Kemarin Susi tidak minum obat.
+            </div>
+            <ul class="options">
+                <li>Susi memakai jaket karena kedinginan</li>
+                <li>Hari ini Susi tidak minum obat</li>
+                <li>Susi minum obat agar tidak sakit</li>
+                <li>Susi memakai jaket karena sakit</li>
+                <li>Kemarin Susi tidak sakit</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Silogisme dan Modus Tollens:</strong><br>
+                    Silogisme: Premis 1 = p → q, Premis 2 = q → r, Kesimpulan = p → r<br>
+                    Modus Tollens: Premis 1 = p → q, Premis 2 = ~q, Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika Susi sakit, maka ia memakai jaket.<br>
+                    p = Susi sakit<br>
+                    q = ia memakai jaket<br><br>
+                    Premis 2: Jika Susi memakai jaket maka ia minum obat.<br>
+                    q = Susi memakai jaket<br>
+                    r = ia minum obat<br><br>
+                    Premis 3: Kemarin Susi tidak minum obat.<br>
+                    ~r = Kemarin Susi tidak minum obat
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dan Premis 2 terlebih dahulu:<br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    Kesimpulan: p → r<br><br>
+                    Kemudian selesaikan dengan Premis 3:<br>
+                    p → r<br>
+                    ~r<br>
+                    Kesimpulan: ~p<br><br>
+                    Kesimpulan = Kemarin Susi tidak sakit.
+                </div>
+                <div class="answer">Jawaban: E (Kemarin Susi tidak sakit)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Tanaman yang bijinya berkeping dua memiliki akar tunggang.<br>
+                Semua tumbuhan palem memiliki akar serabut.<br>
+                Tanaman X adalah tanaman yang bijinya berkeping dua.
+            </div>
+            <ul class="options">
+                <li>Tanaman X bukan tumbuhan palem</li>
+                <li>Tumbuhan palem yang memiliki akar tunggang hanyalah tanaman X</li>
+                <li>Tanaman X memiliki akar serabut</li>
+                <li>Tanaman X adalah tumbuhan palem yang memiliki akar tunggang</li>
+                <li>Tanaman X adalah jenis tumbuhan palem</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dari premis dapat kita ketahui bahwa tanaman yang bijinya berkeping dua memiliki akar tunggang dan tumbuhan palem memiliki akar serabut. Tanaman X merupakan tanaman yang bijinya berkeping dua maka tanaman X memiliki akar tunggang sehingga tanaman X bukan tumbuhan palem.
+                </div>
+                <div class="answer">Jawaban: A (Tanaman X bukan tumbuhan palem)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Pohon anggur dapat berbuah dengan baik jika dirawat dan disiram.<br>
+                Finda punya pohon anggur di halaman belakang rumah.<br>
+                Finda selalu menyiram dan merawat pohon anggur tersebut.
+            </div>
+            <ul class="options">
+                <li>Pohon anggur di kebun Finda dapat berbuah dengan baik</li>
+                <li>Buah anggur di kebun Finda rasanya manis dan segar</li>
+                <li>Pohon anggur Finda tidak berbuah</li>
+                <li>Pohon yang berbuah tentu disiram setiap hari</li>
+                <li>Finda pandai berkebun</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Ponens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = p<br>
+                    Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Pohon anggur dapat berbuah dengan baik jika dirawat dan disiram.<br>
+                    p = dirawat dan disiram<br>
+                    q = pohon anggur dapat berbuah dengan baik<br><br>
+                    Premis 2: Finda selalu menyiram dan merawat pohon anggur tersebut.<br>
+                    p = Finda selalu menyiram dan merawat pohon anggur tersebut
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    P1 = p → q<br>
+                    P2 = p<br>
+                    Kesimpulan: q<br><br>
+                    Kesimpulan = Pohon anggur di kebun Finda dapat berbuah dengan baik.
+                </div>
+                <div class="answer">Jawaban: A (Pohon anggur di kebun Finda dapat berbuah dengan baik)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Semua mahasiswa jurusan Matematika harus lulus ujian kalkulus untuk mendapatkan gelar sarjana.<br>
+                Tidak satupun mahasiswa jurusan Matematika yang gagal lulus ujian kalkulus.
+            </div>
+            <ul class="options">
+                <li>Semua mahasiswa jurusan Matematika tidak lulus ujian kalkulus.</li>
+                <li>Tidak satupun mahasiswa jurusan Matematika yang lulus ujian kalkulus.</li>
+                <li>Semua mahasiswa jurusan Matematika lulus ujian kalkulus.</li>
+                <li>Semua mahasiswa jurusan Matematika harus lulus ujian kalkulus.</li>
+                <li>Semua mahasiswa jurusan Matematika mendapat gelar sarjana.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Ponens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = p<br>
+                    Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua mahasiswa jurusan Matematika harus lulus ujian kalkulus untuk mendapatkan gelar sarjana.<br>
+                    p = mahasiswa jurusan Matematika harus lulus ujian kalkulus<br>
+                    q = mendapatkan gelar sarjana<br><br>
+                    Premis 2: Tidak satupun mahasiswa jurusan Matematika yang gagal lulus ujian kalkulus.<br>
+                    p = semua mahasiswa jurusan Matematika lulus ujian kalkulus
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dengan menggunakan modus ponens:<br>
+                    P1 = p → q<br>
+                    P2 = p<br>
+                    Kesimpulan: q<br><br>
+                    Kesimpulan = Semua mahasiswa jurusan Matematika mendapat gelar sarjana.
+                </div>
+                <div class="answer">Jawaban: E (Semua mahasiswa jurusan Matematika mendapat gelar sarjana)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 26 -->
+        <div class="question">
+            <div class="question-number">Soal 26</div>
+            <div class="question-text">
+                Semua karyawan perusahaan X mendapat pemotongan upah jika tidak bekerja dengan baik.<br>
+                Tidak satupun karyawan perusahaan X yang mendapat pemotongan upah.<br>
+                (TIU CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>Semua karyawan perusahaan X tidak bekerja dengan baik sehingga mendapat pemotongan upah.</li>
+                <li>Tidak satupun karyawan Perusahaan X yang bekerja dengan baik.</li>
+                <li>Semua karyawan Perusahaan X bekerja dengan baik dan mendapat pemotongan gaji.</li>
+                <li>Semua karyawan Perusahaan X bekerja dengan baik.</li>
+                <li>Semua karyawan Perusahaan X mendapat pemotongan upah.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(26)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution26">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Semua karyawan perusahaan X mendapat pemotongan upah jika tidak bekerja dengan baik.<br>
+                    Premis 1 dapat ditulis sebagai "Jika tidak bekerja dengan baik maka mendapat pemotongan upah".<br>
+                    p = tidak bekerja dengan baik<br>
+                    q = mendapat pemotongan upah<br><br>
+                    Premis 2: Tidak ada karyawan perusahaan X yang mendapat pemotongan upah.<br>
+                    ~q = tidak ada karyawan yang mendapat pemotongan upah
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dengan menggunakan modus tollens:<br>
+                    P1 = p → q<br>
+                    P2 = ~q<br>
+                    Kesimpulan: ~p<br><br>
+                    Kesimpulan = Semua karyawan perusahaan X bekerja dengan baik.
+                </div>
+                <div class="answer">Jawaban: D (Semua karyawan Perusahaan X bekerja dengan baik)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 27 -->
+        <div class="question">
+            <div class="question-number">Soal 27</div>
+            <div class="question-text">
+                Menjelang semester dua, Reno berencana mengikuti ekstrakurikuler. Jika ia mengikuti ekstrakurikuler basket, ia membeli sepatu basket. Jika ia mengikuti ekstrakurikuler renang, ia membeli baju renang. Saat semester dua, Reno tidak membeli sepatu basket atau baju renang.
+            </div>
+            <ul class="options">
+                <li>Reno mengikuti ekstrakurikuler basket atau renang</li>
+                <li>Reno tidak mengikuti ekstrakurikuler basket tetapi renang</li>
+                <li>Reno tidak mengikuti ekstrakurikuler renang tetapi basket</li>
+                <li>Reno mengikuti ekstrakurikuler yang lain</li>
+                <li>Reno tidak mengikuti ekstrakurikuler basket atau renang</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(27)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution27">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika ia mengikuti ekstrakurikuler basket, ia membeli sepatu basket.<br>
+                    p = mengikuti ekstrakurikuler basket<br>
+                    q = membeli sepatu basket<br><br>
+                    Premis 2: Jika ia mengikuti ekstrakurikuler renang, ia membeli baju renang.<br>
+                    r = mengikuti ekstrakurikuler renang<br>
+                    s = membeli baju renang<br><br>
+                    Premis 3: Saat semester dua, Reno tidak membeli sepatu basket atau baju renang.<br>
+                    ~q = tidak membeli sepatu basket<br>
+                    ~s = tidak membeli baju renang
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dengan Premis 3:<br>
+                    P1 = p → q<br>
+                    P3 = ~q<br>
+                    Kesimpulan: ~p<br><br>
+                    Selesaikan Premis 2 dengan Premis 3:<br>
+                    P2 = r → s<br>
+                    P3 = ~s<br>
+                    Kesimpulan: ~r<br><br>
+                    Kesimpulan = Reno tidak mengikuti ekstrakurikuler basket atau renang.
+                </div>
+                <div class="answer">Jawaban: E (Reno tidak mengikuti ekstrakurikuler basket atau renang)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 28 -->
+        <div class="question">
+            <div class="question-number">Soal 28</div>
+            <div class="question-text">
+                Jika musim hujan telah tiba maka penjual jas hujan ramai pembeli.<br>
+                Jika penyakit flu meningkat maka keluarga memakai masker.<br>
+                Musim hujan telah tiba atau penyakit flu meningkat.
+            </div>
+            <ul class="options">
+                <li>Penjual jas hujan ramai pembeli atau keluarga memakai masker</li>
+                <li>Penjual jas hujan ramai pembeli dan sebagian keluarga memakai masker</li>
+                <li>Penjual jas hujan tidak ramai pembeli atau keluarga tidak memakai masker</li>
+                <li>Penyakit flu meningkat atau penjual jas hujan ramai pembeli</li>
+                <li>Penyakit flu meningkat dan penjual jas hujan ramai pembeli</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(28)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution28">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Ponens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = p<br>
+                    Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika musim hujan telah tiba maka penjual jas hujan ramai pembeli.<br>
+                    p = musim hujan telah tiba<br>
+                    q = penjual jas hujan ramai pembeli<br><br>
+                    Premis 2: Jika penyakit flu meningkat maka keluarga memakai masker.<br>
+                    r = penyakit flu meningkat<br>
+                    s = keluarga memakai masker<br><br>
+                    Premis 3: Musim hujan telah tiba atau penyakit flu meningkat.<br>
+                    p = musim hujan telah tiba<br>
+                    r = penyakit flu meningkat
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dengan Premis 3:<br>
+                    P1 = p → q<br>
+                    P3 = p<br>
+                    Kesimpulan: q<br><br>
+                    Selesaikan Premis 2 dengan Premis 3:<br>
+                    P2 = r → s<br>
+                    P3 = r<br>
+                    Kesimpulan: s<br><br>
+                    Kesimpulan = Penjual jas hujan ramai pembeli atau keluarga memakai masker.
+                </div>
+                <div class="answer">Jawaban: A (Penjual jas hujan ramai pembeli atau keluarga memakai masker)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 29 -->
+        <div class="question">
+            <div class="question-number">Soal 29</div>
+            <div class="question-text">
+                Jika hari ini cerah maka Belinda pergi ke mall.<br>
+                Jika sekarang bulan Februari maka harga cokelat lebih murah.<br>
+                Belinda tidak pergi ke mall atau harga cokelat tidak lebih murah.
+            </div>
+            <ul class="options">
+                <li>Hari ini cerah dan sekarang bukan bulan Februari</li>
+                <li>Hari ini tidak cerah atau sekarang bukan bulan Februari</li>
+                <li>Belinda pergi ke mall atau harga cokelat lebih murah</li>
+                <li>Jika sekarang bulan Februari maka Belinda pergi ke mall</li>
+                <li>Jika hari ini cerah maka harga cokelat lebih murah</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(29)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution29">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Jika hari ini cerah maka Belinda pergi ke mall.<br>
+                    p = hari ini cerah<br>
+                    q = Belinda pergi ke mall<br><br>
+                    Premis 2: Jika sekarang bulan Februari maka harga cokelat lebih murah.<br>
+                    r = sekarang bulan Februari<br>
+                    s = cokelat lebih murah<br><br>
+                    Premis 3: Belinda tidak pergi ke mall atau harga cokelat tidak lebih murah.<br>
+                    ~q = Belinda tidak pergi ke mall<br>
+                    ~s = harga cokelat tidak lebih murah
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dengan Premis 3:<br>
+                    P1 = p → q<br>
+                    P3 = ~q<br>
+                    Kesimpulan: ~p<br><br>
+                    Selesaikan Premis 2 dengan Premis 3:<br>
+                    P2 = r → s<br>
+                    P3 = ~s<br>
+                    Kesimpulan: ~r<br><br>
+                    Kesimpulan = Hari ini tidak cerah atau sekarang bukan bulan Februari.
+                </div>
+                <div class="answer">Jawaban: B (Hari ini tidak cerah atau sekarang bukan bulan Februari)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 30 -->
+        <div class="question">
+            <div class="question-number">Soal 30</div>
+            <div class="question-text">
+                Berat badan seseorang dapat terkontrol dengan pola makan teratur.<br>
+                Jika makan tidak terlalu kenyang, program diet dapat berhasil.<br>
+                Berat badan Imran saat ini tidak dapat terkontrol atau program diet tidak berhasil.
+            </div>
+            <ul class="options">
+                <li>Imran memiliki pola makan teratur tetapi makan terlalu kenyang</li>
+                <li>Imran makan tidak terlalu kenyang tetapi pola makannya tidak teratur</li>
+                <li>Imran memiliki pola makan tidak teratur atau makan terlalu kenyang</li>
+                <li>Imran makan dengan pola tidak teratur atau makan tidak terlalu kenyang</li>
+                <li>Imran makan terlalu kenyang sehingga pola makannya tidak teratur</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(30)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution30">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Konsep Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Premis yang diberikan:</strong><br>
+                    Premis 1: Berat badan seseorang dapat terkontrol dengan pola makan teratur.<br>
+                    Premis 1 dapat ditulis sebagai "Jika pola makan teratur maka berat badan seseorang dapat terkontrol".<br>
+                    p = pola makan teratur<br>
+                    q = berat badan seseorang dapat terkontrol<br><br>
+                    Premis 2: Jika makan tidak terlalu kenyang, program diet dapat berhasil.<br>
+                    r = makan tidak terlalu kenyang<br>
+                    s = program diet dapat berhasil<br><br>
+                    Premis 3: Berat badan Imran saat ini tidak dapat terkontrol atau program diet tidak berhasil.<br>
+                    ~q = Berat badan Imran saat ini tidak dapat terkontrol<br>
+                    ~s = program diet tidak berhasil
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selesaikan Premis 1 dengan Premis 3:<br>
+                    P1 = p → q<br>
+                    P3 = ~q<br>
+                    Kesimpulan: ~p<br><br>
+                    Selesaikan Premis 2 dengan Premis 3:<br>
+                    P2 = r → s<br>
+                    P3 = ~s<br>
+                    Kesimpulan: ~r<br><br>
+                    Kesimpulan = Imran memiliki pola makan tidak teratur atau makan terlalu kenyang.
+                </div>
+                <div class="answer">Jawaban: C (Imran memiliki pola makan tidak teratur atau makan terlalu kenyang)</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+    <script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
