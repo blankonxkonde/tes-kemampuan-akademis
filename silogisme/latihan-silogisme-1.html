@@ -1,522 +1,988 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Latihan Silogisme 1</title>
-  <style>
-    :root {
-      --bg: #0b0f17;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #22c55e;
-      --danger: #ef4444;
-      --info: #60a5fa;
-    }
-    html, body { background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
-    .container { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
-    h1 { font-size: 28px; margin: 12px 0 6px; }
-    .subtitle { color: var(--muted); margin: 0 0 18px; }
-    .note { background: #0f172a; border: 1px solid #1f2937; border-radius: 10px; padding: 12px 14px; margin-bottom: 18px; color: #cbd5e1; }
-    .question { background: var(--card); border: 1px solid #1f2937; border-radius: 12px; padding: 16px; margin: 14px 0; }
-    .qhead { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
-    .qlevel { color: var(--info); font-weight: 600; }
-    .qid { color: var(--muted); }
-    .premises { margin: 8px 0 10px; }
-    .options { margin: 10px 0 8px 18px; }
-    .options li { margin: 3px 0; }
-    .answer { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #374151; }
-    .answer strong { color: var(--accent); }
-    .invalid { color: var(--danger); }
-    .math { overflow-x: auto; padding: 4px 0; }
-    code.term { background: #0f172a; color: #93c5fd; padding: 0 6px; border-radius: 6px; }
-    a { color: #93c5fd; text-decoration: none; }
-  </style>
-  <meta name="description" content="Latihan Silogisme: 20 soal dengan jawaban dan pembahasan.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Silogisme 1</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .premises {
+            margin: 8px 0 10px;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 10px 0 8px 18px;
+        }
+        
+        .options li {
+            margin: 3px 0;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 15px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .invalid {
+            color: #dc3545;
+        }
+        
+        .note {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 8px;
+            color: #0d47a1;
+        }
+        
+        code.term {
+            background: #f4f4f4;
+            color: #667eea;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <meta name="description" content="Latihan Silogisme: 21 soal dengan jawaban dan pembahasan.">
 </head>
 <body>
-  <div class="container">
-    <h1>Latihan Silogisme 1</h1>
-    <p class="subtitle">20 soal berdasarkan <code class="term">latihan-silogisme.md</code> dengan jawaban dan pembahasan.</p>
-    
-    <div class="question" id="q1">
-      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 1</span></div>
-      <div class="premises">
-        Premis 1: Semua mamalia adalah hewan berdarah panas.<br/>
-        Premis 2: Semua kucing adalah mamalia.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Semua kucing adalah hewan berdarah panas.</li>
-        <li>B. Beberapa kucing adalah hewan berdarah panas.</li>
-        <li>C. Semua hewan berdarah panas adalah kucing.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Ini adalah contoh silogisme Barbara (AAA-1) yang valid. Jika semua kucing adalah mamalia, dan semua mamalia berdarah panas, maka semua kucing pasti berdarah panas.</p>
-      </div>
-    </div>
-
-    <div class="question" id="q2">
-      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 2</span></div>
-      <div class="premises">
-        Premis 1: Semua buah-buahan mengandung vitamin.<br/>
-        Premis 2: Apel adalah buah-buahan.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Apel mengandung vitamin.</li>
-        <li>B. Semua yang mengandung vitamin adalah apel.</li>
-        <li>C. Beberapa buah tidak mengandung vitamin.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Ini adalah penerapan langsung dari premis. Jika semua buah mengandung vitamin dan apel adalah buah, maka apel pasti mengandung vitamin.</p>
-      </div>
-    </div>
-
-    <div class="question" id="q3">
-      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 3</span></div>
-      <div class="premises">
-        Premis 1: Semua planet di tata surya mengorbit matahari.<br/>
-        Premis 2: Mars adalah planet di tata surya.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Mars mengorbit matahari.</li>
-        <li>B. Semua benda langit yang mengorbit matahari adalah Mars.</li>
-        <li>C. Matahari adalah sebuah planet.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Sama seperti soal sebelumnya, ini adalah penerapan langsung dari premis universal ke contoh spesifik (Mars).</p>
-      </div>
-    </div>
-
-    <div class="question" id="q4">
-      <div class="qhead"><span class="qlevel">Tingkat 1</span><span class="qid">Soal 4</span></div>
-      <div class="premises">
-        Premis 1: Semua koki bisa memasak.<br/>
-        Premis 2: Anton adalah seorang koki.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Anton bisa memasak.</li>
-        <li>B. Semua orang yang bisa memasak adalah Anton.</li>
-        <li>C. Anton tidak bisa memasak.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Jika semua koki bisa memasak, dan Anton adalah seorang koki, maka Anton pasti bisa memasak.</p>
-      </div>
-    </div>
-
-    <div class="question" id="q5">
-      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 5</span></div>
-      <div class="premises">
-        Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.<br/>
-        Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian murid kelas 12 pergi ke kantin.</li>
-        <li>B. Semua murid kelas 12 pergi ke kantin.</li>
-        <li>C. Murid yang tidak ke kantin bukan murid kelas 12.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> bisa D bisa A</p>
-        <p>Penjelasan: 
-          Jika didasarkan pada teori Yang Menyimpulkan TDDS (di file materi)<br/>
-          Kesimpulan tidak dapat ditarik karena kelompok "yang memakai seragam putih abu-abu" bisa lebih luas dari "murid kelas 12". Mereka yang pergi ke kantin bisa saja berasal dari kelompok tersebut tetapi bukan murid kelas 12.
-          <br/>
-          Jika didasarkan pada teori Yang Menyimpulkan ada kesimpulan (di file materi)<br/>
-          Kesimpulan: Sebagian murid kelas 12 pergi ke kantin.
-        </p>
-      </div>
-    </div>
-
-    <div class="question" id="q6">
-      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 6</span></div>
-      <div class="premises">
-        Premis 1: Beberapa dosen adalah peneliti.<br/>
-        Premis 2: Semua peneliti harus rajin membaca.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian dosen harus rajin membaca.</li>
-        <li>B. Semua dosen harus rajin membaca.</li>
-        <li>C. Semua yang rajin membaca adalah dosen.</li>
-        <li>D. Dosen tidak perlu membaca.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Karena ada sebagian dosen yang juga peneliti, dan semua peneliti harus rajin membaca, maka sebagian dosen tersebut juga harus rajin membaca.</p>
-      </div>
-    </div>
-
-    <div class="question" id="q7">
-      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 7</span></div>
-      <div class="premises">
-        Premis 1: Semua bunga mawar berwarna merah.<br/>
-        Premis 2: Sebagian bunga di taman adalah bunga mawar.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian bunga di taman berwarna merah.</li>
-        <li>B. Semua bunga di taman berwarna merah.</li>
-        <li>C. Semua yang berwarna merah adalah bunga dari taman.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan:<br/>
-          Urutan premis bisa dibalik:<br/>
-          Sebagian bunga di taman (r) adalah bunga mawar (p).<br/>
-          Semua bunga mawar (p) berwarna merah. (q)<br/>
-          Kesimpulan: r->q = Sebagian bunga di taman berwarna merah.
-        </p>
-      </div>
-    </div>
-
-    <div class="question" id="q8">
-      <div class="qhead"><span class="qlevel">Tingkat 2</span><span class="qid">Soal 8</span></div>
-      <div class="premises">
-        Premis 1: Ikan bernapas dengan insang.<br/>
-        Premis 2: Beberapa hewan peliharaan adalah ikan.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Beberapa hewan peliharaan bernapas dengan insang.</li>
-        <li>B. Semua hewan peliharaan bernapas dengan insang.</li>
-        <li>C. Semua hewan yang bernapas dengan insang adalah hewan peliharaan.</li>
-        <li>D. Hewan peliharaan tidak bernapas dengan insang.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan:<br/>
-          Urutan premis bisa dibalik:<br/>
-          Beberapa hewan peliharaan (r) adalah ikan (p).<br/>
-          Ikankan (p) bernapas dengan insang (q).<br/>
-          Kesimpulan: r->q = Beberapa hewan peliharaan bernapas dengan insang.
-        </p>
-      </div>
-    </div>
-
-    <div class="question" id="q9">
-      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 9</span></div>
-      <div class="premises">
-        Premis 1: Semua unggas adalah hewan bertelur.<br/>
-        Premis 2: Buaya bukan unggas.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Buaya tidak bertelur.</li>
-        <li>B. Semua hewan yang bertelur adalah unggas.</li>
-        <li>C. Sebagian hewan yang bukan unggas bertelur.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> D</p>
-        <p>Penjelasan:<br/>
-          Semua unggas adalah (p) hewan bertelur (q).<br/>
-          Buaya bukan unggas (~p).<br/>
-          Kesimpulan: TDDS, melawan anteseden (baca materi).
-        </p>
-      </div>
-    </div>
-
-    <div class="question" id="q10">
-      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 10</span></div>
-      <div class="premises">
-        Premis 1: Tidak ada seniman yang merupakan birokrat.<br/>
-        Premis 2: Semua birokrat adalah pegawai negeri.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian pegawai negeri bukan seniman.</li>
-        <li>B. Tidak ada seniman yang merupakan pegawai negeri.</li>
-        <li>C. Semua pegawai negeri adalah seniman.</li>
-        <li>D. Sebagian seniman adalah pegawai negeri.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan:</p>
-        <img src="../img/soal-10-silogisme-1.jpeg" alt="Ilustrasi Silogisme Soal 10" style="width: 100%; max-width: 600px; border-radius: 8px; margin: 8px 0;">
-        <p>Premis 1 bisa diubah menjadi:</p>
-        <ul style="margin-left: 18px; list-style-type: none; padding-left: 0;">
-            <li><b>Premis 1:</b> Semua seniman bukan birokrat</li>
-            <li><b>Premis 2:</b> Semua birokrat adalah pegawai negeri</li>
-        </ul>
-        <p>Kesimpulan:</p>
-        <ol style="margin-left: 18px;">
-          <li>Sebagian pegawai negeri bukan seniman; atau ekuivalen</li>
-          <li>Sebagian yang bukan seniman adalah pegawai negeri</li>
-        </ol>
-        <p>Saat menjawab ini saya muncul pertanyaan, jika "Sebagian pegawai negeri bukan seniman" benar, bukankah "Sebagian pegawai negeri adalah seniman" benar juga?</p>
-        <p>Pernyataan "sebagian" dalam logika hanya berarti "setidaknya ada satu". Mari kita lihat apa yang sebenarnya dikatakan oleh masing-masing kalimat:</p>
-
-        <ol style="margin-left: 18px;">
-          <li>"Sebagian pegawai negeri bukan seniman": Ini hanya mengonfirmasi bahwa ada minimal satu orang pegawai negeri yang tidak berprofesi sebagai seniman. Pernyataan ini tidak memberikan informasi apa pun tentang sisa pegawai negeri lainnya.</li>
-          <li>"Sebagian pegawai negeri adalah seniman": Ini mengonfirmasi bahwa ada minimal satu orang pegawai negeri yang juga seorang seniman.</li>
-        </ol>
+    <div class="container">
+        <h1>Latihan Silogisme 1</h1>
         
-        <p>Selanjutnya merupakan alasan kenapa jawaban lainnya salah:</p>
-        <p>Opsi "B. Tidak ada seniman yang merupakan pegawai negeri" salah karena tidak ada pernyataan mengenai PNS lain selain birokrat, bisa jadi ada seniman yang PNS bisa jadi juga tidak ada (dijelaskan di ilustrasi) </p>
-        <p>Opsi "C. Semua pegawai negeri adalah seniman" salah karena jelas bertentangan dengan premis, karena ada PNS birokrat (yang pasti bukan seniman (P2))</p>
-        <p>Opsi "D. Sebagian seniman adalah pegawai negeri" salah karena sama halnya dengan opsi B, tidak ada pernyataan mengenai apakah ada seniman yang merupakan PNS </p>
-      </div>
-    </div>
+        <div class="explanation-box">
+            <strong>Konsep Silogisme</strong>
+            <p>Silogisme adalah bentuk penalaran deduktif yang terdiri dari dua premis dan satu kesimpulan. Soal-soal silogisme menguji kemampuan berpikir logis, mengenali pola penalaran, dan menarik kesimpulan yang valid dari premis-premis yang diberikan.</p>
+        </div>
+        
+        <h2>Tingkat 1: Sangat Mudah (Pemanasan)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal-soal di tingkat ini menguji pemahaman konsep dasar silogisme secara langsung.</p>
+        
+        <!-- Soal 1 -->
+        <div class="question" id="q1">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua mamalia adalah hewan berdarah panas.<br/>
+                    Premis 2: Semua kucing adalah mamalia.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Semua kucing adalah hewan berdarah panas.</li>
+                    <li>B. Beberapa kucing adalah hewan berdarah panas.</li>
+                    <li>C. Semua hewan berdarah panas adalah kucing.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Ini adalah contoh silogisme Barbara (AAA-1) yang valid. Jika semua kucing adalah mamalia, dan semua mamalia berdarah panas, maka semua kucing pasti berdarah panas.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
 
-    <div class="question" id="q11">
-      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 11</span></div>
-      <div class="premises">
-        Premis 1: Sebagian besar karyawan di perusahaan X mendapat bonus.<br/>
-        Premis 2: Rina adalah karyawan di perusahaan X.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Rina mungkin mendapat bonus.</li>
-        <li>B. Rina pasti mendapat bonus.</li>
-        <li>C. Rina tidak mendapat bonus.</li>
-        <li>D. Semua karyawan di perusahaan X bernama Rina.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>"Sebagian besar" memberi indikasi probabilitas tinggi, bukan kepastian. Maka kesimpulan yang tepat adalah kemungkinan (bukan pasti).</p>
-      </div>
-    </div>
+        <!-- Soal 2 -->
+        <div class="question" id="q2">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua buah-buahan mengandung vitamin.<br/>
+                    Premis 2: Apel adalah buah-buahan.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Apel mengandung vitamin.</li>
+                    <li>B. Semua yang mengandung vitamin adalah apel.</li>
+                    <li>C. Beberapa buah tidak mengandung vitamin.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Ini adalah penerapan langsung dari premis. Jika semua buah mengandung vitamin dan apel adalah buah, maka apel pasti mengandung vitamin.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question" id="q3">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua planet di tata surya mengorbit matahari.<br/>
+                    Premis 2: Mars adalah planet di tata surya.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Mars mengorbit matahari.</li>
+                    <li>B. Semua benda langit yang mengorbit matahari adalah Mars.</li>
+                    <li>C. Matahari adalah sebuah planet.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Sama seperti soal sebelumnya, ini adalah penerapan langsung dari premis universal ke contoh spesifik (Mars).
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question" id="q4">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua koki bisa memasak.<br/>
+                    Premis 2: Anton adalah seorang koki.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Anton bisa memasak.</li>
+                    <li>B. Semua orang yang bisa memasak adalah Anton.</li>
+                    <li>C. Anton tidak bisa memasak.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Jika semua koki bisa memasak, dan Anton adalah seorang koki, maka Anton pasti bisa memasak.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 2: Mudah (Mulai Berpikir)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal-soal di tingkat ini memerlukan pemahaman tentang silogisme dengan premis sebagian.</p>
+        
+        <!-- Soal 5 -->
+        <div class="question" id="q5">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua murid kelas 12 memakai seragam putih abu-abu.<br/>
+                    Premis 2: Sebagian yang memakai seragam putih abu-abu pergi ke kantin.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian murid kelas 12 pergi ke kantin.</li>
+                    <li>B. Semua murid kelas 12 pergi ke kantin.</li>
+                    <li>C. Murid yang tidak ke kantin bukan murid kelas 12.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> bisa D bisa A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Jika didasarkan pada teori Yang Menyimpulkan TDDS (di file materi)<br>
+                    Kesimpulan tidak dapat ditarik karena kelompok "yang memakai seragam putih abu-abu" bisa lebih luas dari "murid kelas 12". Mereka yang pergi ke kantin bisa saja berasal dari kelompok tersebut tetapi bukan murid kelas 12.
+                    <br><br>
+                    Jika didasarkan pada teori Yang Menyimpulkan ada kesimpulan (di file materi)<br>
+                    Kesimpulan: Sebagian murid kelas 12 pergi ke kantin.
+                </div>
+                <div class="answer">Jawaban: bisa D bisa A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question" id="q6">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Beberapa dosen adalah peneliti.<br/>
+                    Premis 2: Semua peneliti harus rajin membaca.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian dosen harus rajin membaca.</li>
+                    <li>B. Semua dosen harus rajin membaca.</li>
+                    <li>C. Semua yang rajin membaca adalah dosen.</li>
+                    <li>D. Dosen tidak perlu membaca.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Karena ada sebagian dosen yang juga peneliti, dan semua peneliti harus rajin membaca, maka sebagian dosen tersebut juga harus rajin membaca.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
 
-    <div class="question" id="q12">
-      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 12</span></div>
-      <div class="premises">
-        Premis 1: Semua peserta ujian membawa pensil.<br/>
-        Premis 2: Sebagian peserta ujian tidak memakai jam tangan.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian peserta ujian yang membawa pensil tidak memakai jam tangan.</li>
-        <li>B. Semua peserta ujian yang tidak memakai jam tangan membawa pensil.</li>
-        <li>C. Peserta ujian yang membawa pensil pasti tidak memakai jam tangan.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A dan B</p>
-        <p>Penjelasan: Dari premis, kita tahu ada sekelompok peserta ujian yang tidak memakai jam tangan. Karena semua peserta ujian (termasuk kelompok ini) membawa pensil, maka kesimpulan A dan B keduanya valid.</p>
-        <p>Baca Al-Faiz 196-197 (Tipe 3 dan Tipe 4).</p>
-      </div>
-    </div>
+        <!-- Soal 7 -->
+        <div class="question" id="q7">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua bunga mawar berwarna merah.<br/>
+                    Premis 2: Sebagian bunga di taman adalah bunga mawar.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian bunga di taman berwarna merah.</li>
+                    <li>B. Semua bunga di taman berwarna merah.</li>
+                    <li>C. Semua yang berwarna merah adalah bunga dari taman.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Urutan premis bisa dibalik:<br>
+                    Sebagian bunga di taman (r) adalah bunga mawar (p).<br>
+                    Semua bunga mawar (p) berwarna merah. (q)<br>
+                    Kesimpulan: r->q = Sebagian bunga di taman berwarna merah.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question" id="q8">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Ikan bernapas dengan insang.<br/>
+                    Premis 2: Beberapa hewan peliharaan adalah ikan.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Beberapa hewan peliharaan bernapas dengan insang.</li>
+                    <li>B. Semua hewan peliharaan bernapas dengan insang.</li>
+                    <li>C. Semua hewan yang bernapas dengan insang adalah hewan peliharaan.</li>
+                    <li>D. Hewan peliharaan tidak bernapas dengan insang.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Urutan premis bisa dibalik:<br>
+                    Beberapa hewan peliharaan (r) adalah ikan (p).<br>
+                    Ikankan (p) bernapas dengan insang (q).<br>
+                    Kesimpulan: r->q = Beberapa hewan peliharaan bernapas dengan insang.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 3: Sedang (Membutuhkan Trik)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Di tingkat ini, Anda perlu melihat pola atau menggunakan trik logika untuk menyelesaikannya secara efisien.</p>
+        
+        <!-- Soal 9 -->
+        <div class="question" id="q9">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua unggas adalah hewan bertelur.<br/>
+                    Premis 2: Buaya bukan unggas.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Buaya tidak bertelur.</li>
+                    <li>B. Semua hewan yang bertelur adalah unggas.</li>
+                    <li>C. Sebagian hewan yang bukan unggas bertelur.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> D
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Semua unggas adalah (p) hewan bertelur (q).<br>
+                    Buaya bukan unggas (~p).<br>
+                    Kesimpulan: TDDS, melawan anteseden (baca materi).
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
 
-    <div class="question" id="q13">
-      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 13</span></div>
-      <div class="premises">
-        Premis 1: Sebagian atlet profesional memiliki cedera lutut.<br/>
-        Premis 2: Semua yang memiliki cedera lutut harus menjalani fisioterapi.<br/>
-        Premis 3: Fisioterapi membutuhkan biaya yang mahal.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian atlet profesional membutuhkan perawatan yang mahal.</li>
-        <li>B. Semua atlet profesional memiliki cedera lutut.</li>
-        <li>C. Fisioterapi hanya untuk atlet profesional.</li>
-        <li>D. Semua perawatan mahal adalah untuk cedera lutut.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan:<br>
-          Sebagian atlet profesional (p) memiliki cedera lutut (q).<br/>
-          Semua yang memiliki cedera lutut (q) harus menjalani fisioterapi (r).<br/>
-          Fisioterapi (r) membutuhkan biaya yang mahal (s).<br/>
-          Kesimpulan: p->s = Sebagian atlet profesional membutuhkan perawatan yang mahal.
-        </p>
-      </div>
-    </div>
+        <!-- Soal 10 -->
+        <div class="question" id="q10">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Tidak ada seniman yang merupakan birokrat.<br/>
+                    Premis 2: Semua birokrat adalah pegawai negeri.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian pegawai negeri bukan seniman.</li>
+                    <li>B. Tidak ada seniman yang merupakan pegawai negeri.</li>
+                    <li>C. Semua pegawai negeri adalah seniman.</li>
+                    <li>D. Sebagian seniman adalah pegawai negeri.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    <img src="../img/soal-10-silogisme-1.jpeg" alt="Ilustrasi Silogisme Soal 10" style="width: 100%; max-width: 600px; border-radius: 8px; margin: 8px 0;">
+                    <p>Premis 1 bisa diubah menjadi:</p>
+                    <ul style="margin-left: 18px; list-style-type: none; padding-left: 0;">
+                        <li><b>Premis 1:</b> Semua seniman bukan birokrat</li>
+                        <li><b>Premis 2:</b> Semua birokrat adalah pegawai negeri</li>
+                    </ul>
+                    <p>Kesimpulan:</p>
+                    <ol style="margin-left: 18px;">
+                        <li>Sebagian pegawai negeri bukan seniman; atau ekuivalen</li>
+                        <li>Sebagian yang bukan seniman adalah pegawai negeri</li>
+                    </ol>
+                    <p>Saat menjawab ini saya muncul pertanyaan, jika "Sebagian pegawai negeri bukan seniman" benar, bukankah "Sebagian pegawai negeri adalah seniman" benar juga?</p>
+                    <p>Pernyataan "sebagian" dalam logika hanya berarti "setidaknya ada satu". Mari kita lihat apa yang sebenarnya dikatakan oleh masing-masing kalimat:</p>
+                    <ol style="margin-left: 18px;">
+                        <li>"Sebagian pegawai negeri bukan seniman": Ini hanya mengonfirmasi bahwa ada minimal satu orang pegawai negeri yang tidak berprofesi sebagai seniman. Pernyataan ini tidak memberikan informasi apa pun tentang sisa pegawai negeri lainnya.</li>
+                        <li>"Sebagian pegawai negeri adalah seniman": Ini mengonfirmasi bahwa ada minimal satu orang pegawai negeri yang juga seorang seniman.</li>
+                    </ol>
+                    <p>Selanjutnya merupakan alasan kenapa jawaban lainnya salah:</p>
+                    <p>Opsi "B. Tidak ada seniman yang merupakan pegawai negeri" salah karena tidak ada pernyataan mengenai PNS lain selain birokrat, bisa jadi ada seniman yang PNS bisa jadi juga tidak ada (dijelaskan di ilustrasi)</p>
+                    <p>Opsi "C. Semua pegawai negeri adalah seniman" salah karena jelas bertentangan dengan premis, karena ada PNS birokrat (yang pasti bukan seniman (P2))</p>
+                    <p>Opsi "D. Sebagian seniman adalah pegawai negeri" salah karena sama halnya dengan opsi B, tidak ada pernyataan mengenai apakah ada seniman yang merupakan PNS</p>
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
 
-    <div class="question" id="q14">
-      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 14</span></div>
-      <div class="premises">
-        Premis 1: Jika hari ini hujan, maka jalanan menjadi basah.<br/>
-        Premis 2: Jika jalanan basah, maka lalu lintas menjadi macet.<br/>
-        Premis 3: Hari ini tidak hujan.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Lalu lintas tidak macet.</li>
-        <li>B. Jalanan tidak basah.</li>
-        <li>C. Jalanan basah tapi lalu lintas tidak macet.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> D</p>
-        <p>Penjelasan: Premis ketiga menyatakan "Hari ini tidak hujan". Ini membatalkan kondisi awal dari rantai sebab-akibat. Tidak adanya hujan tidak secara otomatis berarti jalanan tidak basah atau lalu lintas tidak macet, karena bisa ada penyebab lain.<br/>
-          Jika hari ini hujan (p), maka jalanan menjadi basah (q). <br/>
-          Jika jalanan basah (q), maka lalu lintas menjadi macet (r). <br/>
-          Hari ini tidak hujan (~p). <br/>
-          Kesimpulan: TDDS, melawan anteseden (baca materi).
-        </p>
-      </div>
-    </div>
+        <!-- Soal 11 -->
+        <div class="question" id="q11">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Sebagian besar karyawan di perusahaan X mendapat bonus.<br/>
+                    Premis 2: Rina adalah karyawan di perusahaan X.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Rina mungkin mendapat bonus.</li>
+                    <li>B. Rina pasti mendapat bonus.</li>
+                    <li>C. Rina tidak mendapat bonus.</li>
+                    <li>D. Semua karyawan di perusahaan X bernama Rina.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    "Sebagian besar" memberi indikasi probabilitas tinggi, bukan kepastian. Maka kesimpulan yang tepat adalah kemungkinan (bukan pasti).
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question" id="q12">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua peserta ujian membawa pensil.<br/>
+                    Premis 2: Sebagian peserta ujian tidak memakai jam tangan.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian peserta ujian yang membawa pensil tidak memakai jam tangan.</li>
+                    <li>B. Semua peserta ujian yang tidak memakai jam tangan membawa pensil.</li>
+                    <li>C. Peserta ujian yang membawa pensil pasti tidak memakai jam tangan.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A dan B
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Dari premis, kita tahu ada sekelompok peserta ujian yang tidak memakai jam tangan. Karena semua peserta ujian (termasuk kelompok ini) membawa pensil, maka kesimpulan A dan B keduanya valid.
+                    <br><br>
+                    Baca Al-Faiz 196-197 (Tipe 3 dan Tipe 4).
+                </div>
+                <div class="answer">Jawaban: A dan B</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 4: Sulit (Logika Mendalam)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal di tingkat ini sering kali terlihat rumit atau kurang informasi, tetapi memiliki solusi elegan jika logikanya ditemukan.</p>
+        
+        <!-- Soal 13 -->
+        <div class="question" id="q13">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Sebagian atlet profesional memiliki cedera lutut.<br/>
+                    Premis 2: Semua yang memiliki cedera lutut harus menjalani fisioterapi.<br/>
+                    Premis 3: Fisioterapi membutuhkan biaya yang mahal.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian atlet profesional membutuhkan perawatan yang mahal.</li>
+                    <li>B. Semua atlet profesional memiliki cedera lutut.</li>
+                    <li>C. Fisioterapi hanya untuk atlet profesional.</li>
+                    <li>D. Semua perawatan mahal adalah untuk cedera lutut.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Sebagian atlet profesional (p) memiliki cedera lutut (q).<br>
+                    Semua yang memiliki cedera lutut (q) harus menjalani fisioterapi (r).<br>
+                    Fisioterapi (r) membutuhkan biaya yang mahal (s).<br>
+                    Kesimpulan: p->s = Sebagian atlet profesional membutuhkan perawatan yang mahal.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question" id="q14">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Jika hari ini hujan, maka jalanan menjadi basah.<br/>
+                    Premis 2: Jika jalanan basah, maka lalu lintas menjadi macet.<br/>
+                    Premis 3: Hari ini tidak hujan.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Lalu lintas tidak macet.</li>
+                    <li>B. Jalanan tidak basah.</li>
+                    <li>C. Jalanan basah tapi lalu lintas tidak macet.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> D
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Premis ketiga menyatakan "Hari ini tidak hujan". Ini membatalkan kondisi awal dari rantai sebab-akibat. Tidak adanya hujan tidak secara otomatis berarti jalanan tidak basah atau lalu lintas tidak macet, karena bisa ada penyebab lain.<br><br>
+                    Jika hari ini hujan (p), maka jalanan menjadi basah (q).<br>
+                    Jika jalanan basah (q), maka lalu lintas menjadi macet (r).<br>
+                    Hari ini tidak hujan (~p).<br>
+                    Kesimpulan: TDDS, melawan anteseden (baca materi).
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question" id="q15">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua alat elektronik yang canggih harganya mahal.<br/>
+                    Premis 2: Sebagian ponsel pintar adalah alat elektronik yang canggih.<br/>
+                    Premis 3: Beberapa alat elektronik yang harganya mahal tidak awet.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian ponsel pintar harganya mahal.</li>
+                    <li>B. Semua ponsel pintar tidak awet.</li>
+                    <li>C. Semua alat elektronik yang mahal adalah ponsel pintar.</li>
+                    <li>D. Tidak ada kesimpulan valid mengenai keawetan ponsel pintar.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Dari Premis 1 dan 2, dapat disimpulkan bahwa sebagian ponsel pintar harganya mahal. Premis 3 tentang keawetan adalah informasi tambahan yang tidak berhubungan langsung dengan kesimpulan mengenai harga ponsel pintar (distraktor).
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
 
-    <div class="question" id="q15">
-      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 15</span></div>
-      <div class="premises">
-        Premis 1: Semua alat elektronik yang canggih harganya mahal.<br/>
-        Premis 2: Sebagian ponsel pintar adalah alat elektronik yang canggih.<br/>
-        Premis 3: Beberapa alat elektronik yang harganya mahal tidak awet.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian ponsel pintar harganya mahal.</li>
-        <li>B. Semua ponsel pintar tidak awet.</li>
-        <li>C. Semua alat elektronik yang mahal adalah ponsel pintar.</li>
-        <li>D. Tidak ada kesimpulan valid mengenai keawetan ponsel pintar.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Dari Premis 1 dan 2, dapat disimpulkan bahwa sebagian ponsel pintar harganya mahal. Premis 3 tentang keawetan adalah informasi tambahan yang tidak berhubungan langsung dengan kesimpulan mengenai harga ponsel pintar (distraktor).</p>
-      </div>
+        <!-- Soal 16 -->
+        <div class="question" id="q16">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Tidak ada sayuran yang rasanya manis seperti buah.<br/>
+                    Premis 2: Wortel adalah sayuran.<br/>
+                    Premis 3: Sebagian makanan manis disukai anak-anak.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Wortel tidak terasa manis seperti buah.</li>
+                    <li>B. Anak-anak tidak suka wortel.</li>
+                    <li>C. Semua makanan yang disukai anak-anak adalah buah.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Kesimpulan ini ditarik langsung dari Premis 1 dan 2. Jika tidak ada sayuran yang manis seperti buah, dan wortel adalah sayuran, maka wortel tidak terasa manis seperti buah. Premis 3 adalah distraktor.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <h2>Tingkat 5: Sangat Sulit (Wawasan Ahli)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Soal-soal ini memerlukan wawasan logika yang mendalam, mengenali pola khusus, atau berpikir out-of-the-box.</p>
+        
+        <!-- Soal 17 -->
+        <div class="question" id="q17">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua mahasiswa yang lulus cumlaude pasti memiliki IPK di atas 3,5.<br/>
+                    Premis 2: Beberapa mahasiswa yang aktif berorganisasi tidak lulus cumlaude.<br/>
+                    Premis 3: Setiap mahasiswa yang memiliki IPK di atas 3,5 mendapat beasiswa.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Semua mahasiswa yang lulus cumlaude mendapat beasiswa.</li>
+                    <li>B. Semua mahasiswa yang mendapat beasiswa lulus cumlaude.</li>
+                    <li>C. Sebagian mahasiswa yang mendapat beasiswa tidak aktif berorganisasi.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Premis 2 adalah distraktor
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question" id="q18">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Jika lampu merah menyala dan tidak ada polisi, beberapa pengendara akan menerobos.<br/>
+                    Premis 2: Saat ini lampu merah menyala, tetapi ada polisi di persimpangan.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Beberapa pengendara tidak akan menerobos.</li>
+                    <li>B. Semua pengendara akan berhenti.</li>
+                    <li>C. Polisi akan menerobos lampu merah.</li>
+                    <li>D. Tidak ada kesimpulan yang valid.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> D
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Kondisi pada premis 1 ("lampu merah menyala DAN tidak ada polisi") tidak terpenuhi karena pada premis 2 disebutkan ada polisi. Oleh karena itu, tidak ada kesimpulan yang bisa ditarik mengenai perilaku pengendara.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question" id="q19">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Hanya jika bahan baku berkualitas dan proses produksi higienis, maka produk makanan dianggap aman.<br/>
+                    Premis 2: Produk makanan merek Z dianggap tidak aman.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Bahan baku produk Z tidak berkualitas, atau proses produksinya tidak higienis, atau keduanya.</li>
+                    <li>B. Bahan baku produk Z pasti tidak berkualitas.</li>
+                    <li>C. Proses produksi produk Z pasti tidak higienis.</li>
+                    <li>D. Bahan baku produk Z tidak berkualitas dan proses produksinya tidak higienis.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban (umum pada soal ujian):</strong> A
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    <span class="invalid">Kalimat "A jika dan hanya jika B" berarti dua hal sekaligus:<br>
+                    1. Jika A, maka B.<br>
+                    2. Jika B, maka A.<br>
+                    Berdasarkan premis 1, syarat untuk makanan dianggap aman adalah bahan baku berkualitan DAN proses produksi higienis. Karena fakta adalah produk makanan merek Z dianggap tidak aman, maka setidaknya salah satu dari dua syarat tersebut tidak terpenuhi (menggunakan konjungsi ATAU). Sehingga jawaban "Bahan baku produk Z tidak berkualitas, atau proses produksinya tidak higienis, atau keduanya"</span>
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question" id="q20">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Semua pahlawan adalah orang yang berjasa.<br/>
+                    Premis 2: Beberapa orang yang berjasa tidak dikenal oleh masyarakat.<br/>
+                    Premis 3: Tidak ada orang yang tidak dikenal masyarakat yang mendapat penghargaan resmi.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Sebagian pahlawan tidak mendapat penghargaan resmi.</li>
+                    <li>B. Tidak ada pahlawan yang dikenal oleh masyarakat.</li>
+                    <li>C. Semua orang yang berjasa adalah pahlawan.</li>
+                    <li>D. Semua pahlawan mendapat penghargaan resmi.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> bisa A atau TDDS (baca materi).
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Jika didasarkan pada teori Yang Menyimpulkan ada kesimpulan (baca materi):<br>
+                    Kelompok "orang yang berjasa" yang "tidak dikenal masyarakat" tidak dijamin mencakup para pahlawan. Bisa jadi semua pahlawan dikenal masyarakat. Karena itu, kita tidak bisa menyimpulkan apapun tentang pahlawan dan penghargaan resmi dari premis yang ada.<br><br>
+                    Jika didasarkan pada teori Yang Menyimpulkan TDDS (baca materi):<br>
+                    Premisnya diubah agar mudah dipahami:<br>
+                    Sebagian pahlawan (p) adalah orang yang berjasa (q).<br>
+                    Beberapa orang yang berjasa (q) tidak dikenal oleh masyarakat (r).<br>
+                    Semua orang yang tidak dikenal masyarakat (r) tidak mendapat penghargaan resmi (s).<br>
+                    Kesimpulan: p->s = Sebagian pahlawan tidak mendapat penghargaan resmi.
+                </div>
+                <div class="answer">Jawaban: bisa A atau TDDS (baca materi)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question" id="q21">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                <div class="premises">
+                    Premis 1: Polisi harus lulus uji ketahanan fisik.<br/>
+                    Premis 2: Sebagian polisi sedang menderita cedera otot.<br/>
+                    Kesimpulan: ...
+                </div>
+                <ol class="options">
+                    <li>A. Polisi yang lulus uji ketahanan fisik adalah polisi yang cedera otot.</li>
+                    <li>B. Hanya sebagian saja polisi yang lulus uji ketahanan fisik.</li>
+                    <li>C. Ada polisi yang lulus uji ketahanan fisik tetapi cedera otot.</li>
+                    <li>D. Tidak ada polisi yang cedera otot yang dapat lulus uji ketahanan fisik.</li>
+                    <li>E. Semua polisi yang sedang cedera otot tidak ikut uji ketahanan fisik.</li>
+                </ol>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Jawaban:</strong> C
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Premis 1 menyatakan bahwa semua polisi lulus uji. Premis 2 menyatakan ada polisi yang cedera. Dengan menggabungkan keduanya, kita dapat menyimpulkan bahwa ada polisi yang cedera tersebut, dan mereka juga harus lulus uji. Maka, kesimpulan yang paling tepat adalah "Ada polisi yang lulus uji ketahanan fisik tetapi cedera otot".
+                    <br><br>
+                    <span class="invalid">Catatan: Opsi B secara langsung bertentangan dengan Premis 1 yang bersifat universal ("Polisi *harus* lulus..."). Namun, perlu dicatat bahwa di platform Ayocpns, jawaban untuk soal ini adalah B. Kesalahan umum pada soal seperti ini adalah mengimpor asumsi dunia nyata (misalnya, cedera menghalangi kelulusan) yang bertentangan dengan premis yang diberikan.</span>
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
     </div>
-
-    <div class="question" id="q16">
-      <div class="qhead"><span class="qlevel">Tingkat 4</span><span class="qid">Soal 16</span></div>
-      <div class="premises">
-        Premis 1: Tidak ada sayuran yang rasanya manis seperti buah.<br/>
-        Premis 2: Wortel adalah sayuran.<br/>
-        Premis 3: Sebagian makanan manis disukai anak-anak.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Wortel tidak terasa manis seperti buah.</li>
-        <li>B. Anak-anak tidak suka wortel.</li>
-        <li>C. Semua makanan yang disukai anak-anak adalah buah.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Kesimpulan ini ditarik langsung dari Premis 1 dan 2. Jika tidak ada sayuran yang manis seperti buah, dan wortel adalah sayuran, maka wortel tidak terasa manis seperti buah. Premis 3 adalah distraktor.</p>
-      </div>
-    </div>
-
-    <div class="question" id="q17">
-      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 17</span></div>
-      <div class="premises">
-        Premis 1: Semua mahasiswa yang lulus cumlaude pasti memiliki IPK di atas 3,5.<br/>
-        Premis 2: Beberapa mahasiswa yang aktif berorganisasi tidak lulus cumlaude.<br/>
-        Premis 3: Setiap mahasiswa yang memiliki IPK di atas 3,5 mendapat beasiswa.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Semua mahasiswa yang lulus cumlaude mendapat beasiswa.</li>
-        <li>B. Semua mahasiswa yang mendapat beasiswa lulus cumlaude.</li>
-        <li>C. Sebagian mahasiswa yang mendapat beasiswa tidak aktif berorganisasi.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> A</p>
-        <p>Penjelasan: Premis 2 adalah distraktor</p>
-      </div>
-    </div>
-
-    <div class="question" id="q18">
-      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 18</span></div>
-      <div class="premises">
-        Premis 1: Jika lampu merah menyala dan tidak ada polisi, beberapa pengendara akan menerobos.<br/>
-        Premis 2: Saat ini lampu merah menyala, tetapi ada polisi di persimpangan.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Beberapa pengendara tidak akan menerobos.</li>
-        <li>B. Semua pengendara akan berhenti.</li>
-        <li>C. Polisi akan menerobos lampu merah.</li>
-        <li>D. Tidak ada kesimpulan yang valid.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> D</p>
-        <p>Penjelasan: Kondisi pada premis 1 ("lampu merah menyala DAN tidak ada polisi") tidak terpenuhi karena pada premis 2 disebutkan ada polisi. Oleh karena itu, tidak ada kesimpulan yang bisa ditarik mengenai perilaku pengendara.</p>
-      </div>
-    </div>
-
-    <div class="question" id="q19">
-      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 19</span></div>
-      <div class="premises">
-        Premis 1: Hanya jika bahan baku berkualitas dan proses produksi higienis, maka produk makanan dianggap aman.<br/>
-        Premis 2: Produk makanan merek Z dianggap tidak aman.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Bahan baku produk Z tidak berkualitas, atau proses produksinya tidak higienis, atau keduanya.</li>
-        <li>B. Bahan baku produk Z pasti tidak berkualitas.</li>
-        <li>C. Proses produksi produk Z pasti tidak higienis.</li>
-        <li>D. Bahan baku produk Z tidak berkualitas dan proses produksinya tidak higienis.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban (umum pada soal ujian):</strong> A</p>
-        <p class="invalid">Kalimat "A jika dan hanya jika B" berarti dua hal sekaligus:
-          1. Jika A, maka B.
-          2. Jika B, maka A.
-        Berdasarkan premis 1, syarat untuk makanan dianggap aman adalah bahan baku berkualitan DAN proses produksi higienis. Karena fakta adalah produk makanan merek Z dianggap tidak aman, maka setidaknya salah satu dari dua syarat tersebut tidak terpenuhi (menggunakan konjungsi ATAU). Sehingga jawaban "Bahan baku produk Z tidak berkualitas, atau proses produksinya tidak higienis, atau keduanya"</p>
-      </div>
-    </div>
-
-    <div class="question" id="q20">
-      <div class="qhead"><span class="qlevel">Tingkat 5</span><span class="qid">Soal 20</span></div>
-      <div class="premises">
-        Premis 1: Semua pahlawan adalah orang yang berjasa.<br/>
-        Premis 2: Beberapa orang yang berjasa tidak dikenal oleh masyarakat.<br/>
-        Premis 3: Tidak ada orang yang tidak dikenal masyarakat yang mendapat penghargaan resmi.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Sebagian pahlawan tidak mendapat penghargaan resmi.</li>
-        <li>B. Tidak ada pahlawan yang dikenal oleh masyarakat.</li>
-        <li>C. Semua orang yang berjasa adalah pahlawan.</li>
-        <li>D. Semua pahlawan mendapat penghargaan resmi.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> bisa A atau TDDS (baca materi).</p>
-        <p>Penjelasan: <br/>
-          Jika didasarkan pada teori Yang Menyimpulkan ada kesimpulan (baca materi):<br/>
-          Kelompok "orang yang berjasa" yang "tidak dikenal masyarakat" tidak dijamin mencakup para pahlawan. Bisa jadi semua pahlawan dikenal masyarakat. Karena itu, kita tidak bisa menyimpulkan apapun tentang pahlawan dan penghargaan resmi dari premis yang ada.<br/>
-          <br/>
-          Jika didasarkan pada teori Yang Menyimpulkan TDDS (baca materi):<br/>
-          Premisnya diubah agar mudah dipahami:<br/>
-          Sebagian pahlawan (p) adalah orang yang berjasa (q).<br/>
-          Beberapa orang yang berjasa (q) tidak dikenal oleh masyarakat (r).<br/>
-          Semua orang yang tidak dikenal masyarakat (r) tidak mendapat penghargaan resmi (s).<br/>
-          Kesimpulan: p->s = Sebagian pahlawan tidak mendapat penghargaan resmi.
-        </p>
-      </div>
-    </div>
-
-    <div class="question" id="q21">
-      <div class="qhead"><span class="qlevel">Tingkat 3</span><span class="qid">Soal 21</span></div>
-      <div class="premises">
-        Premis 1: Polisi harus lulus uji ketahanan fisik.<br/>
-        Premis 2: Sebagian polisi sedang menderita cedera otot.<br/>
-        Kesimpulan: ...
-      </div>
-      <ol class="options">
-        <li>A. Polisi yang lulus uji ketahanan fisik adalah polisi yang cedera otot.</li>
-        <li>B. Hanya sebagian saja polisi yang lulus uji ketahanan fisik.</li>
-        <li>C. Ada polisi yang lulus uji ketahanan fisik tetapi cedera otot.</li>
-        <li>D. Tidak ada polisi yang cedera otot yang dapat lulus uji ketahanan fisik.</li>
-        <li>E. Semua polisi yang sedang cedera otot tidak ikut uji ketahanan fisik.</li>
-      </ol>
-      <div class="answer">
-        <p><strong>Jawaban:</strong> C</p>
-        <p>Penjelasan: Premis 1 menyatakan bahwa semua polisi lulus uji. Premis 2 menyatakan ada polisi yang cedera. Dengan menggabungkan keduanya, kita dapat menyimpulkan bahwa ada polisi yang cedera tersebut, dan mereka juga harus lulus uji. Maka, kesimpulan yang paling tepat adalah "Ada polisi yang lulus uji ketahanan fisik tetapi cedera otot".</p>
-        <p class="invalid">Catatan: Opsi B secara langsung bertentangan dengan Premis 1 yang bersifat universal ("Polisi *harus* lulus..."). Namun, perlu dicatat bahwa di platform Ayocpns, jawaban untuk soal ini adalah B. Kesalahan umum pada soal seperti ini adalah mengimpor asumsi dunia nyata (misalnya, cedera menghalangi kelulusan) yang bertentangan dengan premis yang diberikan.</p>
-      </div>
-    </div>
-
-    <p class="note">Ingin versi interaktif (klik untuk buka/tutup pembahasan, kuis otomatis, atau ringkasan skor)? Beri tahu saya; kita bisa menambahkannya bertahap.</p>
-  </div>
-<script src="../dark-mode-toggler.js" defer></script>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+    <script src="../dark-mode-toggler.js" defer></script>
 </body>
 </html>
 
