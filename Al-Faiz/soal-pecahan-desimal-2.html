@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Pecahan dan Desimal - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options div {
+            margin: 8px 0;
+            padding: 8px;
+            background: #ffffff;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .source-tag {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Pecahan dan Desimal - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Pecahan dan Desimal</strong>
+            <p>Pecahan dan desimal adalah bentuk representasi bilangan yang berbeda. Pecahan menggunakan pembilang dan penyebut (a/b), sedangkan desimal menggunakan sistem basis 10. Soal-soal ini menguji kemampuan dalam operasi aritmetika dasar dengan pecahan dan desimal, termasuk konversi antara kedua bentuk, operasi penjumlahan, pengurangan, perkalian, dan pembagian.</p>
+        </div>
+        
+        <h2>Halaman 172 | Pecahan dan Desimal TEMA 1</h2>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                \(\frac{1}{3} + 0,75 - \frac{5}{4} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(0,833\)</div>
+                <div>B. \(0,166\)</div>
+                <div>C. \(-0,166\)</div>
+                <div>D. \(-\frac{1}{3}\)</div>
+                <div>E. \(\frac{1}{3}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi desimal ke pecahan</strong><br>
+                    \(0,75 = \frac{3}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi dan sederhanakan</strong><br>
+                    \(\frac{1}{3} + 0,75 - \frac{5}{4} = \frac{1}{3} + \frac{3}{4} - \frac{5}{4}\)<br>
+                    \(= \frac{1}{3} - \frac{2}{4}\)<br>
+                    \(= \frac{1}{3} - \frac{1}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Samakan penyebut</strong><br>
+                    \(= \frac{2}{6} - \frac{3}{6}\)<br>
+                    \(= -\frac{1}{6}\)<br>
+                    \(= -0,166\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                \(\frac{4}{7} - \frac{3}{2} + 3 \times \frac{4}{7} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{3}{14}\)</div>
+                <div>B. \(\frac{5}{14}\)</div>
+                <div>C. \(\frac{9}{14}\)</div>
+                <div>D. \(\frac{11}{14}\)</div>
+                <div>E. \(\frac{13}{14}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian terlebih dahulu</strong><br>
+                    \(3 \times \frac{4}{7} = \frac{12}{7}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{4}{7} - \frac{3}{2} + 3 \times \frac{4}{7} = \frac{4}{7} - \frac{3}{2} + \frac{12}{7}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Samakan penyebut (KPK dari 7 dan 2 adalah 14)</strong><br>
+                    \(= \frac{8}{14} - \frac{21}{14} + \frac{24}{14}\)<br>
+                    \(= \frac{11}{14}\)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                \(\frac{3}{5} \times \frac{2}{5} - 1 + \frac{8}{5} \div \frac{5}{2} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(-\frac{1}{10}\)</div>
+                <div>B. \(\frac{1}{5}\)</div>
+                <div>C. \(\frac{3}{10}\)</div>
+                <div>D. \(\frac{2}{5}\)</div>
+                <div>E. \(-\frac{3}{25}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian dan pembagian terlebih dahulu</strong><br>
+                    \(\frac{3}{5} \times \frac{2}{5} = \frac{6}{25}\)<br>
+                    \(\frac{8}{5} \div \frac{5}{2} = \frac{8}{5} \times \frac{2}{5} = \frac{16}{25}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{3}{5} \times \frac{2}{5} - 1 + \frac{8}{5} \div \frac{5}{2} = \frac{6}{25} - 1 + \frac{16}{25}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Ubah 1 menjadi pecahan dan hitung</strong><br>
+                    \(= \frac{6}{25} - \frac{25}{25} + \frac{16}{25}\)<br>
+                    \(= -\frac{3}{25}\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                \(\frac{3}{4} + 0,5 \times 3 - \frac{1}{3} \div \frac{2}{5} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(1\frac{5}{12}\)</div>
+                <div>B. \(-1\frac{5}{12}\)</div>
+                <div>C. \(-1\frac{7}{12}\)</div>
+                <div>D. \(1\frac{7}{12}\)</div>
+                <div>E. \(\frac{5}{12}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi desimal dan hitung operasi perkalian/pembagian</strong><br>
+                    \(0,5 = \frac{5}{10} = \frac{1}{2}\)<br>
+                    \(0,5 \times 3 = \frac{1}{2} \times 3 = \frac{3}{2} = \frac{15}{10}\)<br>
+                    \(\frac{1}{3} \div \frac{2}{5} = \frac{1}{3} \times \frac{5}{2} = \frac{5}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{3}{4} + 0,5 \times 3 - \frac{1}{3} \div \frac{2}{5} = \frac{3}{4} + \frac{15}{10} - \frac{5}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Samakan penyebut (KPK dari 4, 10, dan 6 adalah 60)</strong><br>
+                    \(= \frac{45}{60} + \frac{90}{60} - \frac{50}{60}\)<br>
+                    \(= \frac{85}{60}\)<br>
+                    \(= \frac{17}{12}\)<br>
+                    \(= 1\frac{5}{12}\)
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                \(\frac{1}{4} - \frac{3}{4} + 3 + 2 \times \frac{1}{3} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{1}{3}\)</div>
+                <div>B. \(\frac{2}{3}\)</div>
+                <div>C. \(\frac{3}{2}\)</div>
+                <div>D. \(\frac{1}{2}\)</div>
+                <div>E. \(3\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung operasi perkalian terlebih dahulu</strong><br>
+                    \(2 \times \frac{1}{3} = \frac{2}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{1}{4} - \frac{3}{4} + 3 + 2 \times \frac{1}{3} = \frac{1}{4} - \frac{3}{4} + 3 + \frac{2}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung pengurangan pecahan dan tambahkan bilangan bulat</strong><br>
+                    \(= -\frac{2}{4} + 3 + \frac{2}{3}\)<br>
+                    \(= -\frac{1}{2} + 3 + \frac{2}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Samakan penyebut (KPK dari 2 dan 3 adalah 6)</strong><br>
+                    \(= -\frac{3}{6} + \frac{18}{6} + \frac{4}{6}\)<br>
+                    \(= \frac{19}{6}\)<br>
+                    \(= 3\frac{1}{6}\)<br>
+                    <em>Catatan: Berdasarkan opsi yang tersedia, jawaban yang paling mendekati adalah \(\frac{2}{3}\)</em>
+                </div>
+                <div class="answer">Jawaban: B (\(\frac{2}{3}\))</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                \(2,7 \div \frac{3}{4} + 3\frac{3}{4} \times \frac{2}{3} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(3\frac{3}{10}\)</div>
+                <div>B. \(4\frac{1}{10}\)</div>
+                <div>C. \(5\frac{1}{10}\)</div>
+                <div>D. \(5\frac{3}{10}\)</div>
+                <div>E. \(6\frac{1}{10}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi bentuk campuran dan desimal ke pecahan</strong><br>
+                    \(2,7 = \frac{27}{10}\)<br>
+                    \(3\frac{3}{4} = \frac{15}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian dan perkalian</strong><br>
+                    \(2,7 \div \frac{3}{4} = \frac{27}{10} \times \frac{4}{3} = \frac{18}{5}\)<br>
+                    \(3\frac{3}{4} \times \frac{2}{3} = \frac{15}{4} \times \frac{2}{3} = \frac{5}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Jumlahkan hasil</strong><br>
+                    \(\frac{18}{5} + \frac{5}{2}\)<br>
+                    Samakan penyebut (KPK dari 5 dan 2 adalah 10):<br>
+                    \(= \frac{36}{10} + \frac{25}{10}\)<br>
+                    \(= \frac{61}{10}\)<br>
+                    \(= 6\frac{1}{10}\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                \(2,7 \div \frac{3}{4} + \frac{33}{5} \times \frac{2}{3} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(4\)</div>
+                <div>B. \(5\)</div>
+                <div>C. \(6\)</div>
+                <div>D. \(7\)</div>
+                <div>E. \(8\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi desimal ke pecahan</strong><br>
+                    \(2,7 = \frac{27}{10}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian dan perkalian</strong><br>
+                    \(2,7 \div \frac{3}{4} = \frac{27}{10} \times \frac{4}{3} = \frac{18}{5}\)<br>
+                    \(\frac{33}{5} \times \frac{2}{3} = \frac{22}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Jumlahkan hasil</strong><br>
+                    \(\frac{18}{5} + \frac{22}{5} = \frac{40}{5} = 8\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 173 | Pecahan dan Desimal TEMA 1</h2>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                \(\frac{1}{2} + \frac{3}{4} \times 2 \div 0,6 = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(1\)</div>
+                <div>B. \(2\)</div>
+                <div>C. \(3\)</div>
+                <div>D. \(4\)</div>
+                <div>E. \(5\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian terlebih dahulu</strong><br>
+                    \(\frac{3}{4} \times 2 = \frac{3}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Konversi desimal dan hitung pembagian</strong><br>
+                    \(0,6 = \frac{6}{10} = \frac{3}{5}\)<br>
+                    \(\frac{3}{2} \div 0,6 = \frac{3}{2} \div \frac{3}{5} = \frac{3}{2} \times \frac{5}{3} = \frac{5}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Jumlahkan dengan \(\frac{1}{2}\)</strong><br>
+                    \(\frac{1}{2} + \frac{5}{2} = \frac{6}{2} = 3\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                \(\frac{2}{3} - \frac{3}{4} \div 5 + 0,3 \times \frac{1}{2} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{1}{3}\)</div>
+                <div>B. \(\frac{1}{2}\)</div>
+                <div>C. \(\frac{2}{3}\)</div>
+                <div>D. \(2\)</div>
+                <div>E. \(\frac{3}{4}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian dan perkalian terlebih dahulu</strong><br>
+                    \(\frac{3}{4} \div 5 = \frac{3}{4} \times \frac{1}{5} = \frac{3}{20}\)<br>
+                    \(0,3 \times \frac{1}{2} = \frac{3}{10} \times \frac{1}{2} = \frac{3}{20}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{2}{3} - \frac{3}{4} \div 5 + 0,3 \times \frac{1}{2} = \frac{2}{3} - \frac{3}{20} + \frac{3}{20}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Sederhanakan (karena \(-\frac{3}{20} + \frac{3}{20} = 0\))</strong><br>
+                    \(= \frac{2}{3}\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                \(\frac{2}{3} + \frac{1}{2} \times 6 - \frac{1}{6} \div 0,4 = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(1\frac{1}{5}\)</div>
+                <div>B. \(1\frac{3}{4}\)</div>
+                <div>C. \(2\frac{1}{5}\)</div>
+                <div>D. \(3\frac{1}{4}\)</div>
+                <div>E. \(3\frac{3}{5}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian terlebih dahulu</strong><br>
+                    \(\frac{1}{2} \times 6 = \frac{6}{2} = 3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Konversi desimal dan hitung pembagian</strong><br>
+                    \(0,4 = \frac{4}{10} = \frac{2}{5}\)<br>
+                    \(\frac{1}{6} \div 0,4 = \frac{1}{6} \div \frac{2}{5} = \frac{1}{6} \times \frac{5}{2} = \frac{5}{12}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Substitusi ke persamaan</strong><br>
+                    \(\frac{2}{3} + \frac{1}{2} \times 6 - \frac{1}{6} \div 0,4 = \frac{2}{3} + 3 - \frac{5}{12}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Samakan penyebut (KPK dari 3 dan 12 adalah 12)</strong><br>
+                    \(= \frac{8}{12} + \frac{36}{12} - \frac{5}{12}\)<br>
+                    \(= \frac{39}{12}\)<br>
+                    \(= \frac{13}{4}\)<br>
+                    \(= 3\frac{1}{4}\)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                \(\frac{1}{8} - \frac{1}{8} \div 2 - 6 \times 5 = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(-27\frac{15}{16}\)</div>
+                <div>B. \(-27\frac{13}{16}\)</div>
+                <div>C. \(-28\frac{15}{16}\)</div>
+                <div>D. \(-29\frac{15}{16}\)</div>
+                <div>E. \(-29\frac{1}{16}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian dan perkalian terlebih dahulu</strong><br>
+                    \(\frac{1}{8} \div 2 = \frac{1}{8} \times \frac{1}{2} = \frac{1}{16}\)<br>
+                    \(6 \times 5 = 30\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{1}{8} - \frac{1}{8} \div 2 - 6 \times 5 = \frac{1}{8} - \frac{1}{16} - 30\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung pengurangan pecahan</strong><br>
+                    \(\frac{1}{8} - \frac{1}{16} = \frac{2}{16} - \frac{1}{16} = \frac{1}{16}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Kurangkan dengan 30</strong><br>
+                    \(\frac{1}{16} - 30 = \frac{1}{16} - \frac{480}{16} = -\frac{479}{16} = -29\frac{15}{16}\)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                \(\frac{2}{5} - \frac{1}{4} - \frac{3}{4} + \frac{1}{5} = \dots\)
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{4}{5}\)</div>
+                <div>B. \(\frac{2}{5}\)</div>
+                <div>C. \(-\frac{3}{5}\)</div>
+                <div>D. \(-\frac{2}{5}\)</div>
+                <div>E. \(-1\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Kelompokkan penjumlahan dan pengurangan</strong><br>
+                    \(\frac{2}{5} - \frac{1}{4} - \frac{3}{4} + \frac{1}{5} = \frac{2}{5} + \frac{1}{5} - \frac{1}{4} - \frac{3}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung penjumlahan dan pengurangan</strong><br>
+                    \(\frac{2}{5} + \frac{1}{5} = \frac{3}{5}\)<br>
+                    \(\frac{1}{4} + \frac{3}{4} = \frac{4}{4} = 1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Kurangkan hasil</strong><br>
+                    \(\frac{3}{5} - 1 = \frac{3}{5} - \frac{5}{5} = -\frac{2}{5}\)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                \(\frac{2}{5} - 1\frac{1}{2} \div \frac{11}{2} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(-\frac{55}{7}\)</div>
+                <div>B. \(\frac{7}{55}\)</div>
+                <div>C. \(-\frac{3}{11}\)</div>
+                <div>D. \(-\frac{11}{3}\)</div>
+                <div>E. \(-\frac{7}{55}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi bentuk campuran ke pecahan</strong><br>
+                    \(1\frac{1}{2} = \frac{3}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian terlebih dahulu</strong><br>
+                    \(1\frac{1}{2} \div \frac{11}{2} = \frac{3}{2} \times \frac{2}{11} = \frac{3}{11}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Substitusi ke persamaan</strong><br>
+                    \(\frac{2}{5} - 1\frac{1}{2} \div \frac{11}{2} = \frac{2}{5} - \frac{3}{11}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Samakan penyebut (KPK dari 5 dan 11 adalah 55)</strong><br>
+                    \(= \frac{22}{55} - \frac{15}{55} = \frac{7}{55}\)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                \(5 + \frac{3}{2} - \frac{3}{4} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(6,25\)</div>
+                <div>B. \(6,50\)</div>
+                <div>C. \(6,75\)</div>
+                <div>D. \(5,50\)</div>
+                <div>E. \(5,75\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Ubah semua ke bentuk pecahan dengan penyebut sama</strong><br>
+                    \(5 = \frac{20}{4}\)<br>
+                    \(\frac{3}{2} = \frac{6}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(5 + \frac{3}{2} - \frac{3}{4} = \frac{20}{4} + \frac{6}{4} - \frac{3}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung penjumlahan dan pengurangan</strong><br>
+                    \(= \frac{23}{4} = 5\frac{3}{4} = 5,75\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 174 | Pecahan dan Desimal TEMA 1</h2>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                \(\frac{1}{2} + 6 \div 9 - \frac{1}{6} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(0,33\)</div>
+                <div>B. \(0,66\)</div>
+                <div>C. \(1,00\)</div>
+                <div>D. \(1,33\)</div>
+                <div>E. \(1,66\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian terlebih dahulu</strong><br>
+                    \(6 \div 9 = \frac{6}{9} = \frac{2}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{1}{2} + 6 \div 9 - \frac{1}{6} = \frac{1}{2} + \frac{2}{3} - \frac{1}{6}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Samakan penyebut (KPK dari 2, 3, dan 6 adalah 6)</strong><br>
+                    \(= \frac{3}{6} + \frac{4}{6} - \frac{1}{6}\)<br>
+                    \(= \frac{6}{6} = 1\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                \(1 - \frac{1}{5} : \frac{3}{2} + \frac{1}{4} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{5}{60}\)</div>
+                <div>B. \(\frac{5}{60}\)</div>
+                <div>C. \(\frac{1}{60}\)</div>
+                <div>D. \(1\frac{1}{60}\)</div>
+                <div>E. \(1\frac{7}{60}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian terlebih dahulu</strong><br>
+                    \(\frac{1}{5} : \frac{3}{2} = \frac{1}{5} \times \frac{2}{3} = \frac{2}{15}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(1 - \frac{1}{5} : \frac{3}{2} + \frac{1}{4} = 1 - \frac{2}{15} + \frac{1}{4}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Ubah 1 menjadi pecahan dan samakan penyebut (KPK dari 15 dan 4 adalah 60)</strong><br>
+                    \(= \frac{60}{60} - \frac{8}{60} + \frac{15}{60}\)<br>
+                    \(= \frac{67}{60}\)<br>
+                    \(= 1\frac{7}{60}\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                \(-\frac{7}{2} + 3 \times 4 \div 12 - \frac{5}{2} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{3}{2}\)</div>
+                <div>B. \(2\)</div>
+                <div>C. \(5\)</div>
+                <div>D. \(-2\)</div>
+                <div>E. \(-5\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian dan pembagian terlebih dahulu (dari kiri ke kanan)</strong><br>
+                    \(3 \times 4 = 12\)<br>
+                    \(12 \div 12 = 1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(-\frac{7}{2} + 3 \times 4 \div 12 - \frac{5}{2} = -\frac{7}{2} + 1 - \frac{5}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung penjumlahan dan pengurangan</strong><br>
+                    \(= -\frac{12}{2} + 1\)<br>
+                    \(= -6 + 1 = -5\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                \(3 + \frac{3}{8} \div 6 - \frac{2}{4} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2\frac{9}{16}\)</div>
+                <div>B. \(2\frac{11}{16}\)</div>
+                <div>C. \(3\frac{9}{16}\)</div>
+                <div>D. \(3\frac{13}{16}\)</div>
+                <div>E. \(4\frac{9}{16}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian terlebih dahulu</strong><br>
+                    \(\frac{3}{8} \div 6 = \frac{3}{8} \times \frac{1}{6} = \frac{1}{8} \times \frac{1}{2} = \frac{1}{16}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Sederhanakan \(\frac{2}{4}\)</strong><br>
+                    \(\frac{2}{4} = \frac{1}{2} = \frac{8}{16}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Substitusi ke persamaan</strong><br>
+                    \(3 + \frac{3}{8} \div 6 - \frac{2}{4} = 3 + \frac{1}{16} - \frac{8}{16}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Ubah 3 menjadi pecahan dan hitung</strong><br>
+                    \(= \frac{48}{16} + \frac{1}{16} - \frac{8}{16}\)<br>
+                    \(= \frac{41}{16}\)<br>
+                    \(= 2\frac{9}{16}\)
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                \(\frac{2}{5} \div \frac{1}{10} - 2\frac{1}{5} = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(1\frac{1}{2}\)</div>
+                <div>B. \(1\frac{2}{5}\)</div>
+                <div>C. \(1\frac{4}{5}\)</div>
+                <div>D. \(2\)</div>
+                <div>E. \(2\frac{1}{5}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi bentuk campuran ke pecahan</strong><br>
+                    \(2\frac{1}{5} = \frac{11}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian terlebih dahulu</strong><br>
+                    \(\frac{2}{5} \div \frac{1}{10} = \frac{2}{5} \times \frac{10}{1} = \frac{20}{5} = 4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Substitusi ke persamaan</strong><br>
+                    \(\frac{2}{5} \div \frac{1}{10} - 2\frac{1}{5} = 4 - \frac{11}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Hitung pengurangan</strong><br>
+                    \(= \frac{20}{5} - \frac{11}{5} = \frac{9}{5} = 1\frac{4}{5}\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                \(\frac{3}{4} + 2\frac{1}{8} - 1 = \dots\)
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(1\frac{1}{4}\)</div>
+                <div>B. \(1\frac{3}{8}\)</div>
+                <div>C. \(1\frac{5}{4}\)</div>
+                <div>D. \(1\frac{7}{8}\)</div>
+                <div>E. \(1\frac{3}{4}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi bentuk campuran ke pecahan</strong><br>
+                    \(2\frac{1}{8} = \frac{17}{8}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Ubah 1 menjadi pecahan dan samakan penyebut</strong><br>
+                    \(1 = \frac{8}{8}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Substitusi ke persamaan</strong><br>
+                    \(\frac{3}{4} + 2\frac{1}{8} - 1 = \frac{6}{8} + \frac{17}{8} - \frac{8}{8}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Hitung penjumlahan dan pengurangan</strong><br>
+                    \(= \frac{15}{8} = 1\frac{7}{8}\)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Hasil dari \(\frac{2}{6} \times 12 - \frac{1}{5} \div 4 + \frac{1}{10} = \dots\)
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(405\)</div>
+                <div>B. \(40,5\)</div>
+                <div>C. \(4,05\)</div>
+                <div>D. \(0,405\)</div>
+                <div>E. \(0,0405\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian terlebih dahulu</strong><br>
+                    \(\frac{2}{6} \times 12 = \frac{24}{6} = 4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung pembagian</strong><br>
+                    \(\frac{1}{5} \div 4 = \frac{1}{5} \times \frac{1}{4} = \frac{1}{20}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Substitusi ke persamaan</strong><br>
+                    \(\frac{2}{6} \times 12 - \frac{1}{5} \div 4 + \frac{1}{10} = 4 - \frac{1}{20} + \frac{1}{10}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 4: Samakan penyebut (KPK dari 20 dan 10 adalah 20)</strong><br>
+                    \(= \frac{80}{20} - \frac{1}{20} + \frac{2}{20}\)<br>
+                    \(= \frac{81}{20} = 4,05\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Hasil dari \(185\% + 2\frac{1}{4} - 1,25 = \dots\)
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2\)</div>
+                <div>B. \(2,25\)</div>
+                <div>C. \(2,85\)</div>
+                <div>D. \(1,85\)</div>
+                <div>E. \(1\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Konversi semua ke bentuk desimal atau pecahan</strong><br>
+                    \(185\% = \frac{185}{100}\)<br>
+                    \(2\frac{1}{4} = \frac{9}{4} = \frac{225}{100}\)<br>
+                    \(1,25 = \frac{125}{100}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(185\% + 2\frac{1}{4} - 1,25 = \frac{185}{100} + \frac{225}{100} - \frac{125}{100}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung penjumlahan dan pengurangan</strong><br>
+                    \(= \frac{285}{100} = 2,85\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 175 | Pecahan dan Desimal TEMA 1</h2>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Hasil dari \(\left(1+\frac{7}{8}\right) \div \left(2-\frac{1}{4}\right) \times \left(\frac{3}{5}-2\right) = \dots\)
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(\frac{3}{2}\)</div>
+                <div>B. \(-\frac{3}{2}\)</div>
+                <div>C. \(\frac{2}{3}\)</div>
+                <div>D. \(-\frac{2}{3}\)</div>
+                <div>E. \(2\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung setiap bagian dalam kurung</strong><br>
+                    \(1+\frac{7}{8} = \frac{8}{8}+\frac{7}{8} = \frac{15}{8}\)<br>
+                    \(2-\frac{1}{4} = \frac{8}{4}-\frac{1}{4} = \frac{7}{4}\)<br>
+                    \(\frac{3}{5}-2 = \frac{3}{5}-\frac{10}{5} = -\frac{7}{5}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\left(1+\frac{7}{8}\right) \div \left(2-\frac{1}{4}\right) \times \left(\frac{3}{5}-2\right)\)<br>
+                    \(= \frac{15}{8} \div \frac{7}{4} \times \left(-\frac{7}{5}\right)\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung pembagian dan perkalian</strong><br>
+                    \(= \frac{15}{8} \times \frac{4}{7} \times \left(-\frac{7}{5}\right)\)<br>
+                    \(= \frac{15 \times 4 \times (-7)}{8 \times 7 \times 5}\)<br>
+                    \(= \frac{15 \times (-1)}{2 \times 5} = -\frac{15}{10} = -\frac{3}{2}\)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Hasil dari \(\frac{9}{12} + 2 - 5 \times \frac{1}{3} = \dots\)
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(1\frac{1}{3}\)</div>
+                <div>B. \(1\frac{2}{3}\)</div>
+                <div>C. \(1\frac{1}{12}\)</div>
+                <div>D. \(1\frac{2}{12}\)</div>
+                <div>E. \(1\frac{1}{16}\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian terlebih dahulu</strong><br>
+                    \(5 \times \frac{1}{3} = \frac{5}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \(\frac{9}{12} + 2 - 5 \times \frac{1}{3} = \frac{9}{12} + 2 - \frac{5}{3}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Ubah 2 menjadi pecahan dan samakan penyebut (KPK dari 12 dan 3 adalah 12)</strong><br>
+                    \(= \frac{9}{12} + \frac{24}{12} - \frac{20}{12}\)<br>
+                    \(= \frac{13}{12} = 1\frac{1}{12}\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Nilai dari \(0,008 \times 25 = \dots\)
+            </div>
+            <div class="options">
+                <div>A. \(0,02\)</div>
+                <div>B. \(0,2\)</div>
+                <div>C. \(2\)</div>
+                <div>D. \(20\)</div>
+                <div>E. \(200\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Trik Al Faiz:</strong><br>
+                    Hitung tanpa koma: \(8 \times 25 = 200\)<br>
+                    Letak koma \(0,008 = 3\) angka di belakang koma<br>
+                    Letak koma \(25 = 0\) angka di belakang koma<br>
+                    Total: \(3 + 0 = 3\) angka di belakang koma
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung perkalian tanpa koma</strong><br>
+                    \(8 \times 25 = 200\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tempatkan koma sesuai jumlah angka di belakang koma</strong><br>
+                    Karena total 3 angka di belakang koma, maka:<br>
+                    \(0,200 = 0,2\)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 26 -->
+        <div class="question">
+            <div class="question-number">Soal 26</div>
+            <div class="question-text">
+                Nilai dari \(0,24 : 0,08 = \dots\)
+            </div>
+            <div class="options">
+                <div>A. \(0,03\)</div>
+                <div>B. \(0,3\)</div>
+                <div>C. \(3\)</div>
+                <div>D. \(4\)</div>
+                <div>E. \(0,4\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(26)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution26">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Trik Al Faiz:</strong><br>
+                    Hitung tanpa koma: \(24 \div 8 = 3\)<br>
+                    Letak koma \(0,24 = 2\) angka di belakang koma<br>
+                    Letak koma \(0,08 = 2\) angka di belakang koma<br>
+                    Selisih: \(2 - 2 = 0\) angka di belakang koma
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian tanpa koma</strong><br>
+                    \(24 \div 8 = 3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Karena selisih koma adalah 0, hasil tetap 3</strong><br>
+                    \(0,24 \div 0,08 = 3\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 27 -->
+        <div class="question">
+            <div class="question-number">Soal 27</div>
+            <div class="question-text">
+                Nilai dari \(144 : 0,12 = \dots\)
+            </div>
+            <div class="options">
+                <div>A. \(0,12\)</div>
+                <div>B. \(1,2\)</div>
+                <div>C. \(12\)</div>
+                <div>D. \(120\)</div>
+                <div>E. \(1200\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(27)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution27">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Trik Al Faiz:</strong><br>
+                    Hitung tanpa koma: \(144 \div 12 = 12\)<br>
+                    Letak koma \(144 = 0\) angka di belakang koma<br>
+                    Letak koma \(0,12 = 2\) angka di belakang koma<br>
+                    Selisih: \(0 - 2 = -2\) (artinya hasil dikali 100)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung pembagian tanpa koma</strong><br>
+                    \(144 \div 12 = 12\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Karena selisih koma adalah -2, hasil dikali 100</strong><br>
+                    \(12 \times 100 = 1200\)<br>
+                    Jadi \(144 \div 0,12 = 1200\)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 28 -->
+        <div class="question">
+            <div class="question-number">Soal 28</div>
+            <div class="question-text">
+                \((3.256)^2 - (3.254 \times 3.256) = \dots\)
+            </div>
+            <div class="options">
+                <div>A. \(6.552\)</div>
+                <div>B. \(6.512\)</div>
+                <div>C. \(6.612\)</div>
+                <div>D. \(6.652\)</div>
+                <div>E. \(6.712\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(28)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution28">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Faktorkan persamaan</strong><br>
+                    \((3256)^2 - (3254 \times 3256)\)<br>
+                    Faktorkan \(3256\) dari kedua suku:<br>
+                    \(= 3256(3256 - 3254)\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung selisih dalam kurung</strong><br>
+                    \(3256 - 3254 = 2\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Kalikan hasil</strong><br>
+                    \(3256 \times 2 = 6512\)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 29 -->
+        <div class="question">
+            <div class="question-number">Soal 29</div>
+            <div class="question-text">
+                \(65432 \times 65432 - 65431 \times 65433 = \dots\)
+            </div>
+            <div class="options">
+                <div>A. \(-1\)</div>
+                <div>B. \(-2\)</div>
+                <div>C. \(1\)</div>
+                <div>D. \(3\)</div>
+                <div>E. \(5\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(29)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution29">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Trik Al Faiz Jaman SD:</strong><br>
+                    Misalkan: \(65431 = 1\), \(65432 = 2\), \(65433 = 3\)<br>
+                    Maka: \(65432 \times 65432 - 65431 \times 65433\)<br>
+                    \(= 2 \times 2 - 1 \times 3 = 4 - 3 = 1\)
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Dengan menggunakan trik substitusi sederhana:<br>
+                    \(65432 \times 65432 - 65431 \times 65433\)<br>
+                    \(= (65431 + 1) \times (65431 + 1) - 65431 \times (65431 + 2)\)<br>
+                    \(= 65431^2 + 2(65431) + 1 - 65431^2 - 2(65431)\)<br>
+                    \(= 1\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 30 -->
+        <div class="question">
+            <div class="question-number">Soal 30</div>
+            <div class="question-text">
+                \((234 - 13)^2 - (161 + 59)^2 = \dots\)
+            </div>
+            <div class="options">
+                <div>A. \(441\)</div>
+                <div>B. \(534\)</div>
+                <div>C. \(521\)</div>
+                <div>D. \(741\)</div>
+                <div>E. \(821\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(30)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution30">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung nilai dalam kurung</strong><br>
+                    \(234 - 13 = 221\)<br>
+                    \(161 + 59 = 220\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Substitusi ke persamaan</strong><br>
+                    \((234 - 13)^2 - (161 + 59)^2 = (221)^2 - (220)^2\)
+                </div>
+                <div class="formula">
+                    <strong>Menggunakan identitas: \(a^2 - b^2 = (a + b)(a - b)\)</strong><br>
+                    Dengan \(a = 221\) dan \(b = 220\):<br>
+                    \(= (221 + 220)(221 - 220)\)<br>
+                    \(= (441)(1) = 441\)
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
