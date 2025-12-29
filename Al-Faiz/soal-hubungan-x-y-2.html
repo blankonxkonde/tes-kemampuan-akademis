@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Hubungan X dan Y - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .quantity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .quantity-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .quantity-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .quantity-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options div {
+            margin: 8px 0;
+            padding: 8px;
+            background: #ffffff;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .source-tag {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .given-info {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid #2196f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Hubungan X dan Y - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Hubungan X dan Y</strong>
+            <p>Soal hubungan X dan Y menguji kemampuan untuk membandingkan dua kuantitas dan menentukan hubungan matematis antara keduanya. Soal ini memerlukan kemampuan menghitung nilai dari ekspresi matematika, kemudian membandingkan hasilnya untuk menentukan apakah A lebih besar, lebih kecil, sama dengan, atau memiliki hubungan tertentu dengan B.</p>
+        </div>
+        
+        <h2>Halaman 185 | TEMA 2 Hubungan X dan Y</h2>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ahmad memiliki beras 3,5 kuintal dan disumbangkan 200 kg. Jumlah beras yang dimiliki Ahmad sekarang adalah...</td>
+                            <td>50 kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(A < 3B\)</div>
+                <div>B. \(A > 3B\)</div>
+                <div>C. \(A = 3B\)</div>
+                <div>D. \(3A = B\)</div>
+                <div>E. \(3A < B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas A</strong><br>
+                    \(A \rightarrow\) Jumlah beras Ahmad = 3,5 kuintal - 200 kg<br>
+                    3,5 kuintal = 350 kg<br>
+                    \(A = 350 - 200 = 150\) kg
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan kuantitas B</strong><br>
+                    \(B = 50\) kg
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan perbandingan</strong><br>
+                    Perbandingan \(A : B = 150 : 50 = 3 : 1\)<br>
+                    Maka \(A = 3B\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(5 + 27 - 21\)</td>
+                            <td>\(-6 - 7 + 38\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2A > 3B\)</div>
+                <div>B. \(4A < 5B\)</div>
+                <div>C. \(3A > 3B\)</div>
+                <div>D. \(4A > 2B\)</div>
+                <div>E. \(3A > 4B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas A</strong><br>
+                    \(A = 5 + 27 - 21 = 5 + 6 = 11\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas B</strong><br>
+                    \(B = -6 - 7 + 38 = -13 + 38 = 25\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Uji setiap opsi</strong><br>
+                    Opsi B: \(4A < 5B\)<br>
+                    \(4(11) < 5(25)\)<br>
+                    \(44 < 125\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai \(P = 9\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(10 + P - 3 \times 4\)</td>
+                            <td>\(5 \times 3 - 2 - P\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(A = B\)</div>
+                <div>B. \(A = 2B\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(2A > B\)</div>
+                <div>E. \(2A < B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai P = 9</strong><br>
+                    \(A = 10 + P - 3 \times 4 = 10 + 9 - 12 = 19 - 12 = 7\)<br>
+                    \(B = 5 \times 3 - 2 - P = 15 - 2 - 9 = 15 - 11 = 4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Uji setiap opsi</strong><br>
+                    • Opsi A: \(A = B \rightarrow 7 = 4\) (salah)<br>
+                    • Opsi B: \(A = 2B \rightarrow 7 = 2(4) = 8\) (salah)<br>
+                    • Opsi D: \(2A > B \rightarrow 2(7) > 4 \rightarrow 14 > 4\) ✓ (benar)<br>
+                    • Opsi E: \(2A < B \rightarrow 2(7) < 4 \rightarrow 14 < 4\) (salah)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>S</th>
+                            <th>T</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(15 + 26 - 4 \times 6\)</td>
+                            <td>\(6 + 10 \div 3 \times 6\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas S dan T berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(3S < \frac{1}{2}T\)</div>
+                <div>B. \(4S < \frac{3}{2}T\)</div>
+                <div>C. Hubungan S dan T tidak dapat ditentukan</div>
+                <div>D. \(S < 2T\)</div>
+                <div>E. \(S > 2T\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas S</strong><br>
+                    \(S = 15 + 26 - 4 \times 6 = 41 - 24 = 17\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas T</strong><br>
+                    \(T = 6 + 10 \div 3 \times 6 = 6 + \frac{10}{3} \times 6 = 6 + 20 = 26\)<br>
+                    <em>Catatan: Berdasarkan urutan operasi, pembagian dan perkalian dilakukan dari kiri ke kanan</em>
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan perbandingan</strong><br>
+                    Perbandingan \(S : T = 17 : 26\)<br>
+                    Uji opsi D: \(S < 2T \rightarrow 17 < 2(26) \rightarrow 17 < 52\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(4 + P + 3 \times 5\)</td>
+                            <td>\(5 - 14 - P \times 2\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="given-info">
+                    Jika nilai P adalah 10
+                </div>
+                <p>Manakah hubungan yang benar antara kuantitas X dan Y berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(3X < 2Y\)</div>
+                <div>B. \(X < 2Y\)</div>
+                <div>C. Hubungan X dan Y tidak dapat ditentukan</div>
+                <div>D. \(2X > 3Y\)</div>
+                <div>E. \(-X < 2Y\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai P = 10</strong><br>
+                    \(X = 4 + P + 3 \times 5 = 4 + 10 + 15 = 29\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas Y</strong><br>
+                    \(Y = 5 - 14 - P \times 2 = 5 - 14 - 10 \times 2 = 5 - 14 - 20 = -29\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan hubungan</strong><br>
+                    Perbandingan \(X : Y = 29 : -29 = 1 : -1\)<br>
+                    Uji opsi D: \(2X > 3Y \rightarrow 2(29) > 3(-29) \rightarrow 58 > -87\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 186 | Hubungan X dan Y TEMA 2</h2>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(16 : \frac{1}{2} \times 1\frac{2}{5}\)</td>
+                            <td>\(12\frac{1}{2} + 48 \times 1\frac{1}{2} - 3\frac{1}{2}\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(X > Y\)</div>
+                <div>B. \(3X < Y\)</div>
+                <div>C. Hubungan X dan Y tidak dapat ditentukan</div>
+                <div>D. \(2X < 3Y\)</div>
+                <div>E. \(3X = 2Y\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas X</strong><br>
+                    \(X = 16 : \frac{1}{2} \times 1\frac{2}{5}\)<br>
+                    \(= 16 \times \frac{2}{1} \times \frac{7}{5}\)<br>
+                    \(= 32 \times \frac{7}{5} = \frac{224}{5} = 44,8\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas Y</strong><br>
+                    \(Y = 12\frac{1}{2} + 48 \times 1\frac{1}{2} - 3\frac{1}{2}\)<br>
+                    \(= \frac{25}{2} + 48 \times \frac{3}{2} - \frac{7}{2}\)<br>
+                    \(= \frac{25}{2} + \frac{144}{2} - \frac{7}{2}\)<br>
+                    \(= \frac{162}{2} = 81\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan hubungan</strong><br>
+                    \(X = 44,8\) dan \(Y = 81\)<br>
+                    Uji opsi D: \(2X < 3Y \rightarrow 2(44,8) < 3(81) \rightarrow 89,6 < 243\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(-\frac{3}{2} + \frac{11}{2} + 8 \times 4\)</td>
+                            <td>\(-\frac{9}{2} + \frac{3}{2} + 3 \times 8\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2X = Y\)</div>
+                <div>B. \(3X = 4Y\)</div>
+                <div>C. Hubungan X dan Y tidak dapat ditentukan</div>
+                <div>D. \(3X < 2Y\)</div>
+                <div>E. \(2X > Y\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas X</strong><br>
+                    \(X = -\frac{3}{2} + \frac{11}{2} + 8 \times 4\)<br>
+                    \(= \frac{8}{2} + 32\)<br>
+                    \(= 4 + 32 = 36\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas Y</strong><br>
+                    \(Y = -\frac{9}{2} + \frac{3}{2} + 3 \times 8\)<br>
+                    \(= -\frac{6}{2} + 24\)<br>
+                    \(= -3 + 24 = 21\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan hubungan</strong><br>
+                    \(X = 36\) dan \(Y = 21\)<br>
+                    Uji opsi E: \(2X > Y \rightarrow 2(36) > 21 \rightarrow 72 > 21\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui \(x = 2\) dan \(y = \frac{1}{3}\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(2x - 3y\)</td>
+                            <td>\(3x + 6y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2A > 3B\)</div>
+                <div>B. \(2A < 3B\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(3A > 2B\)</div>
+                <div>E. \(3A < B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = 2 dan y = \(\frac{1}{3}\)</strong><br>
+                    \(A = 2x - 3y = 2(2) - 3\left(\frac{1}{3}\right) = 4 - 1 = 3\)<br>
+                    \(B = 3x + 6y = 3(2) + 6\left(\frac{1}{3}\right) = 6 + 2 = 8\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Uji setiap opsi</strong><br>
+                    Opsi B: \(2A < 3B \rightarrow 2(3) < 3(8) \rightarrow 6 < 24\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui \(x = 4\) dan \(y = \frac{3}{5}\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(7x - 10y\)</td>
+                            <td>\(2x + 5y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas P dan Q berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(3P < 2Q\)</div>
+                <div>B. \(2P < 3Q\)</div>
+                <div>C. Hubungan P dan Q tidak dapat ditentukan</div>
+                <div>D. \(3P > 2Q\)</div>
+                <div>E. \(P > 2Q\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = 4 dan y = \(\frac{3}{5}\)</strong><br>
+                    \(P = 7x - 10y = 7(4) - 10\left(\frac{3}{5}\right) = 28 - 6 = 22\)<br>
+                    \(Q = 2x + 5y = 2(4) + 5\left(\frac{3}{5}\right) = 8 + 3 = 11\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan perbandingan</strong><br>
+                    Perbandingan \(P : Q = 22 : 11 = 2 : 1\)<br>
+                    Uji opsi D: \(3P > 2Q \rightarrow 3(22) > 2(11) \rightarrow 66 > 22\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(4x + 3y\)</td>
+                            <td>\(4y + 3x\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="given-info">
+                    Jika nilai \(x = \frac{1}{2}\) dan \(y = 2\)
+                </div>
+                <p>Manakah hubungan yang benar antara kuantitas P dan Q berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(3P < 2Q\)</div>
+                <div>B. \(P > 2Q\)</div>
+                <div>C. Hubungan P dan Q tidak dapat ditentukan</div>
+                <div>D. \(2P < Q\)</div>
+                <div>E. \(2P > Q\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = \(\frac{1}{2}\) dan y = 2</strong><br>
+                    \(P = 4x + 3y = 4\left(\frac{1}{2}\right) + 3(2) = 2 + 6 = 8\)<br>
+                    \(Q = 4y + 3x = 4(2) + 3\left(\frac{1}{2}\right) = 8 + \frac{3}{2} = 9\frac{1}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan hubungan</strong><br>
+                    Perbandingan \(P : Q = 8 : 9\frac{1}{2}\)<br>
+                    Uji opsi E: \(2P > Q \rightarrow 2(8) > 9\frac{1}{2} \rightarrow 16 > 9,5\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 187 | TEMA 2 Hubungan X dan Y</h2>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui \(x = \frac{1}{2}\) dan \(y = 2\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(2x + 7y\)</td>
+                            <td>\(4x + 5y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas P dan Q berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(P < 2Q\)</div>
+                <div>B. \(2P < Q\)</div>
+                <div>C. Hubungan P dan Q tidak dapat ditentukan</div>
+                <div>D. \(2P > 5Q\)</div>
+                <div>E. \(2P > 4Q\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = \(\frac{1}{2}\) dan y = 2</strong><br>
+                    \(P = 2x + 7y = 2\left(\frac{1}{2}\right) + 7(2) = 1 + 14 = 15\)<br>
+                    \(Q = 4x + 5y = 4\left(\frac{1}{2}\right) + 5(2) = 2 + 10 = 12\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan perbandingan</strong><br>
+                    Perbandingan \(P : Q = 15 : 12 = 5 : 3\)<br>
+                    Uji opsi A: \(P < 2Q \rightarrow 15 < 2(12) \rightarrow 15 < 24\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai \(x = \frac{3}{4}\) dan \(y = 3\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(8x - y\)</td>
+                            <td>\(4x + 2y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berikut berdasarkan informasi yang diberikan?</p>
+            </div>
+            <div class="options">
+                <div>A. \(A = B\)</div>
+                <div>B. \(A = 2B\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(3A > B\)</div>
+                <div>E. \(2A < B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = \(\frac{3}{4}\) dan y = 3</strong><br>
+                    \(A = 8x - y = 8\left(\frac{3}{4}\right) - 3 = 6 - 3 = 3\)<br>
+                    \(B = 4x + 2y = 4\left(\frac{3}{4}\right) + 2(3) = 3 + 6 = 9\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Uji setiap opsi</strong><br>
+                    Opsi E: \(2A < B \rightarrow 2(3) < 9 \rightarrow 6 < 9\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai \(x = 2\) dan \(y = -1\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(2x + 2 + 2y\)</td>
+                            <td>\(x + 5y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2A < 3B\)</div>
+                <div>B. \(3A = 4B\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(A > 2B\)</div>
+                <div>E. \(3A < 4B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = 2 dan y = -1</strong><br>
+                    \(A = 2x + 2 + 2y = 2(2) + 2 + 2(-1) = 4 + 2 - 2 = 4\)<br>
+                    \(B = x + 5y = 2 + 5(-1) = 2 - 5 = -3\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Uji setiap opsi</strong><br>
+                    • Opsi A: \(2A < 3B \rightarrow 2(4) < 3(-3) \rightarrow 8 < -9\) (salah)<br>
+                    • Opsi B: \(3A = 4B \rightarrow 3(4) = 4(-3) \rightarrow 12 = -12\) (salah)<br>
+                    • Opsi D: \(A > 2B \rightarrow 4 > 2(-3) \rightarrow 4 > -6\) ✓ (benar)<br>
+                    • Opsi E: \(3A < 4B \rightarrow 3(4) < 4(-3) \rightarrow 12 < -12\) (salah)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai A sama dengan B</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(4x - \frac{1}{5}y\)</td>
+                            <td>\(\frac{1}{3}x + y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas \(x\) dan \(y\) berikut berdasarkan informasi yang diberikan?</p>
+            </div>
+            <div class="options">
+                <div>A. \(55x - 18y > 0\)</div>
+                <div>B. \(55x - 36y > 0\)</div>
+                <div>C. Hubungan x dan y tidak dapat ditentukan</div>
+                <div>D. \(55x - 18y = 0\)</div>
+                <div>E. \(55x - 36y = 0\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Karena A = B, buat persamaan</strong><br>
+                    \(4x - \frac{1}{5}y = \frac{1}{3}x + y\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Pindahkan semua suku ke satu ruas</strong><br>
+                    \(4x - \frac{1}{3}x = \frac{1}{5}y + y\)<br>
+                    \(\frac{12}{3}x - \frac{1}{3}x = \frac{1}{5}y + \frac{5}{5}y\)<br>
+                    \(\frac{11}{3}x = \frac{6}{5}y\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Kalikan kedua ruas dengan 15 (KPK dari 3 dan 5)</strong><br>
+                    \(\frac{11}{3}x \times 15 = \frac{6}{5}y \times 15\)<br>
+                    \(55x = 18y\)<br>
+                    \(55x - 18y = 0\)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai \(x = 4\) dan \(y = \frac{4}{5}\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(\frac{3}{4}x - 10y\)</td>
+                            <td>\(\frac{6}{3}x - 5y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(3A = B\)</div>
+                <div>B. \(A = 2B\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(5A > 3B\)</div>
+                <div>E. \(5A < 3B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = 4 dan y = \(\frac{4}{5}\)</strong><br>
+                    \(A = \frac{3}{4}x - 10y = \frac{3}{4}(4) - 10\left(\frac{4}{5}\right) = 3 - 8 = -5\)<br>
+                    \(B = \frac{6}{3}x - 5y = 2(4) - 5\left(\frac{4}{5}\right) = 8 - 4 = 4\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan hubungan</strong><br>
+                    \(A = -5\) dan \(B = 4\)<br>
+                    Uji opsi E: \(5A < 3B \rightarrow 5(-5) < 3(4) \rightarrow -25 < 12\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 188 | Hubungan X dan Y TEMA 2</h2>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai \(x = \frac{3}{4}\) dan \(y = 5\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(4x - \frac{1}{5}y\)</td>
+                            <td>\(\frac{1}{3}x + y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2A - 5B < 0\)</div>
+                <div>B. \(-2A + 5B < 0\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(A > \frac{1}{2}B\)</div>
+                <div>E. \(3A > 2B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = \(\frac{3}{4}\) dan y = 5</strong><br>
+                    \(A = 4x - \frac{1}{5}y = 4\left(\frac{3}{4}\right) - \frac{1}{5}(5) = 3 - 1 = 2\)<br>
+                    \(B = \frac{1}{3}x + y = \frac{1}{3}\left(\frac{3}{4}\right) + 5 = \frac{1}{4} + 5 = 5\frac{1}{4} = 5,25\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Uji opsi A</strong><br>
+                    Opsi A: \(2A - 5B < 0\)<br>
+                    \(2(2) - 5(5,25) < 0\)<br>
+                    \(4 - 26,25 < 0\)<br>
+                    \(-22,25 < 0\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                <div class="given-info">
+                    <strong>Diketahui nilai \(x = 10\) dan \(y = 8\)</strong>
+                </div>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(\frac{2}{5}x - y\)</td>
+                            <td>\(x + \frac{3}{4}y\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas A dan B berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div>A. \(4A > 2B\)</div>
+                <div>B. \(2B < -4A\)</div>
+                <div>C. Hubungan A dan B tidak dapat ditentukan</div>
+                <div>D. \(\frac{1}{3}A > \frac{1}{4}B\)</div>
+                <div>E. \(\frac{1}{2}A < \frac{1}{5}B\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Substitusi nilai x = 10 dan y = 8</strong><br>
+                    \(A = \frac{2}{5}x - y = \frac{2}{5}(10) - 8 = 4 - 8 = -4\)<br>
+                    \(B = x + \frac{3}{4}y = 10 + \frac{3}{4}(8) = 10 + 6 = 16\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Uji opsi E</strong><br>
+                    Opsi E: \(\frac{1}{2}A < \frac{1}{5}B \rightarrow \frac{1}{2}(-4) < \frac{1}{5}(16) \rightarrow -2 < 3,2\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>M</th>
+                            <th>N</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(12\frac{1}{2} + 42 \times 1\frac{1}{2} - 3\)</td>
+                            <td>\(20\%\) dari 150</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas M dan N berikut berdasarkan informasi yang diberikan?</p>
+            </div>
+            <div class="options">
+                <div>A. \(2M < 3N\)</div>
+                <div>B. \(-3M > -2N\)</div>
+                <div>C. Hubungan M dan N tidak dapat ditentukan</div>
+                <div>D. \(\frac{1}{2}M < 2N\)</div>
+                <div>E. \(\frac{1}{3}M < \frac{1}{2}N\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas M</strong><br>
+                    \(M = 12\frac{1}{2} + 42 \times 1\frac{1}{2} - 3\)<br>
+                    \(= 12\frac{1}{2} + 42 \times \frac{3}{2} - 3\)<br>
+                    \(= 12\frac{1}{2} + 63 - 3\)<br>
+                    \(= 12\frac{1}{2} + 60 = 72\frac{1}{2}\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas N</strong><br>
+                    \(N = 20\% \times 150 = \frac{20}{100} \times 150 = 30\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan hubungan</strong><br>
+                    \(M = 72,5\) dan \(N = 30\)<br>
+                    Uji opsi D: \(\frac{1}{2}M < 2N \rightarrow \frac{1}{2}(72,5) < 2(30) \rightarrow 36,25 < 60\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>M</th>
+                            <th>N</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(27\frac{1}{4} - 20 + 34 \div 4\frac{1}{4}\)</td>
+                            <td>\(1\%\) dari 1525</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas M dan N berikut berdasarkan informasi yang diberikan?</p>
+            </div>
+            <div class="options">
+                <div>A. \(4M - 3N = 0\)</div>
+                <div>B. \(M - N > 0\)</div>
+                <div>C. Hubungan M dan N tidak dapat ditentukan</div>
+                <div>D. \(3M < 2N\)</div>
+                <div>E. \(2M < 3N\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kuantitas M</strong><br>
+                    \(M = 27\frac{1}{4} - 20 + 34 \div 4\frac{1}{4}\)<br>
+                    \(= 27\frac{1}{4} - 20 + 34 \div \frac{17}{4}\)<br>
+                    \(= 27\frac{1}{4} - 20 + 34 \times \frac{4}{17}\)<br>
+                    \(= 7\frac{1}{4} + 8 = 15\frac{1}{4} = 15,25\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung kuantitas N</strong><br>
+                    \(N = 1\% \times 1525 = \frac{1}{100} \times 1525 = 15,25\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Karena M = N, maka</strong><br>
+                    \(M = N = 15,25\)<br>
+                    Uji opsi E: \(2M < 3N \rightarrow 2(15,25) < 3(15,25) \rightarrow 30,5 < 45,75\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 189 | TEMA 2 Hubungan X dan Y</h2>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                <strong>Diketahui jarak kota X dan Y adalah 120 km. Jarak tersebut ditempuh mobil selama \(1\frac{2}{3}\) jam.</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>M</th>
+                            <th>N</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kecepatan rata-rata mobil tersebut dalam km/jam</td>
+                            <td>72 km/jam</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas M dan N berikut berdasarkan informasi yang diberikan?</p>
+            </div>
+            <div class="options">
+                <div>A. \(M > 2N\)</div>
+                <div>B. \(5M < N\)</div>
+                <div>C. Hubungan M dan N tidak dapat ditentukan</div>
+                <div>D. \(M + 3N = 0\)</div>
+                <div>E. \(3M - 3N = 0\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung kecepatan rata-rata (M)</strong><br>
+                    Diketahui: Jarak = 120 km, Waktu = \(1\frac{2}{3}\) jam = \(\frac{5}{3}\) jam<br>
+                    \(M = V = \frac{S}{T} = \frac{120}{\frac{5}{3}} = 120 \times \frac{3}{5} = 72\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan kuantitas N</strong><br>
+                    \(N = 72\) km/jam
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Karena M = N, maka</strong><br>
+                    \(M = N = 72\)<br>
+                    Uji opsi E: \(3M - 3N = 0 \rightarrow 3(72) - 3(72) = 0\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>a</th>
+                            <th>b</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(\frac{32}{21} \times \frac{21}{48} \times \frac{17}{19}\)</td>
+                            <td>\(\frac{12}{48} \times \frac{17}{19} \times \frac{32}{21}\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas a dan b berikut berdasarkan informasi yang diberikan?</p>
+            </div>
+            <div class="options">
+                <div>A. \(a = b\)</div>
+                <div>B. \(a < b\)</div>
+                <div>C. \(a > b\)</div>
+                <div>D. \(a > 15b\)</div>
+                <div>E. \(a + b = 0\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Sederhanakan dengan mencoret faktor yang sama</strong><br>
+                    \(a = \frac{32}{21} \times \frac{21}{48} \times \frac{17}{19}\)<br>
+                    \(b = \frac{12}{48} \times \frac{17}{19} \times \frac{32}{21}\)
+                </div>
+                <div class="formula">
+                    <strong>Catatan:</strong><br>
+                    Jika beda ruas, boleh coret atas dengan atas dan bawah dengan bawah.<br>
+                    Jika dalam satu ruas, boleh coret atas dengan bawah.
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Bandingkan a dan b</strong><br>
+                    Setelah disederhanakan:<br>
+                    \(a : b = 1 : \frac{12}{21} = 1 : 0,57...\)<br>
+                    Karena \(\frac{12}{21} < 1\), maka \(a > b\)
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                <strong>Sebuah perusahaan konveksi memberikan keuntungan untuk setiap buruh yang memproduksi 1 potong baju sebesar Rp 15.000,00.</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15</td>
+                            <td>Jumlah baju yang diproduksi jika seorang buruh mendapatkan keuntungan Rp 240.000,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Manakah hubungan yang benar antara kuantitas X dan Y berikut berdasarkan informasi yang diberikan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2X > Y\)</div>
+                <div>B. \(X < \frac{1}{2}Y\)</div>
+                <div>C. Hubungan X dan Y tidak dapat ditentukan</div>
+                <div>D. \(X = Y\)</div>
+                <div>E. \(X = 2Y\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung jumlah baju yang diproduksi (Y)</strong><br>
+                    Keuntungan per baju = Rp 15.000<br>
+                    Total keuntungan = Rp 240.000<br>
+                    \(Y = \frac{240.000}{15.000} = 16\) baju
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Tentukan kuantitas X</strong><br>
+                    \(X = 15\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan hubungan</strong><br>
+                    \(X = 15\) dan \(Y = 16\)<br>
+                    Uji opsi A: \(2X > Y \rightarrow 2(15) > 16 \rightarrow 30 > 16\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                <strong>Diketahui:</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Menabung tiap bulan Rp 700.000 selama 3 bulan</td>
+                            <td>Harga sepatu Rp 2.000.000 diskon 10%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Jika seseorang memiliki uang di tabungan selama 3 bulan, lalu membeli sepatu dengan harga yang telah didiskon, berapa sisa uang di tabungan?</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. Rp 325.000</div>
+                <div>B. Rp 300.000</div>
+                <div>C. Rp 275.000</div>
+                <div>D. Rp 250.000</div>
+                <div>E. Rp 200.000</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung total tabungan selama 3 bulan</strong><br>
+                    Tabungan per bulan = Rp 700.000<br>
+                    Total tabungan = \(700.000 \times 3 = Rp 2.100.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung harga sepatu setelah diskon 10%</strong><br>
+                    Harga awal = Rp 2.000.000<br>
+                    Diskon = \(10\% \times 2.000.000 = Rp 200.000\)<br>
+                    Harga setelah diskon = \(2.000.000 - 200.000 = Rp 1.800.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Hitung sisa uang di tabungan</strong><br>
+                    Sisa = Total tabungan - Harga sepatu<br>
+                    Sisa = \(2.100.000 - 1.800.000 = Rp 300.000\)
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <h2>Halaman 190 | Hubungan X dan Y TEMA 2</h2>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                <strong>Diketahui</strong>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hasil penjualan kue hari ini Rp75.000</td>
+                            <td>Dalam satu hari terjual 17 kue dengan harga Rp5.000/kue</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Tentukan hubungan nilai X dan Y!</p>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(2X > 3Y\)</div>
+                <div>B. \(2X = 3Y\)</div>
+                <div>C. Tidak dapat ditentukan karena informasi tidak cukup</div>
+                <div>D. \(2X < 3Y\)</div>
+                <div>E. \(2X < Y\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Tentukan nilai X</strong><br>
+                    \(X = Rp 75.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung nilai Y</strong><br>
+                    \(Y = 17 \times Rp 5.000 = Rp 85.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan perbandingan dan hubungan</strong><br>
+                    Perbandingan \(X : Y = 75.000 : 85.000 = 15 : 17\)<br>
+                    Uji opsi D: \(2X < 3Y \rightarrow 2(75.000) < 3(85.000) \rightarrow 150.000 < 255.000\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                <strong>Perhatikan tabel berikut!</strong>
+                <p>Manakah di bawah ini hubungan X dan Y yang tepat?</p>
+                <table class="quantity-table">
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jarak yang ditempuh Andi dalam waktu 5 jam</td>
+                            <td>Jarak yang ditempuh Rina 120 km dalam 180 menit</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="source-tag">(TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div>A. \(5X < 3Y\)</div>
+                <div>B. \(2X < 3Y\)</div>
+                <div>C. Informasi yang diberikan tidak cukup untuk memutuskan salah satu dari tiga pilihan di atas</div>
+                <div>D. \(2X = 3Y\)</div>
+                <div>E. \(3X = 5Y\)</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Langkah 1: Hitung jarak yang ditempuh Rina (Y)</strong><br>
+                    \(Y = 120\) km dalam 180 menit = 3 jam
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 2: Hitung jarak yang ditempuh Andi (X) menggunakan perbandingan senilai</strong><br>
+                    Kecepatan Rina = \(\frac{120}{3} = 40\) km/jam<br>
+                    Jika Andi juga bergerak dengan kecepatan yang sama dalam 5 jam:<br>
+                    \(X = 40 \times 5 = 200\) km
+                </div>
+                <div class="formula">
+                    <strong>Alternatif menggunakan perbandingan senilai:</strong><br>
+                    \(\frac{3}{5} = \frac{120}{X}\)<br>
+                    \(3X = 600\)<br>
+                    \(X = 200\) km
+                </div>
+                <div class="solution-step">
+                    <strong>Langkah 3: Tentukan perbandingan dan hubungan</strong><br>
+                    \(X = 200\) km dan \(Y = 120\) km<br>
+                    Perbandingan \(X : Y = 200 : 120 = 5 : 3\)<br>
+                    Uji opsi E: \(3X = 5Y \rightarrow 3(200) = 5(120) \rightarrow 600 = 600\) ✓ (benar)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
