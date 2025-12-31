@@ -81,6 +81,20 @@
             color: #667eea;
             font-size: 1.2em;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+            margin-left: auto;
         }
         
         .question-text {
@@ -301,25 +315,6 @@
             }
         }
         
-        // Group items by category
-        function groupByCategory(items) {
-            const grouped = {};
-            items.forEach(item => {
-                const category = item.jenis || 'Lainnya';
-                if (!grouped[category]) {
-                    grouped[category] = [];
-                }
-                grouped[category].push(item);
-            });
-            
-            // Sort items in each category by nomor (ascending: 1 -> 110)
-            Object.keys(grouped).forEach(category => {
-                grouped[category].sort((a, b) => a.nomor - b.nomor);
-            });
-            
-            return grouped;
-        }
-        
         // Render content
         function renderContent(data) {
             const content = document.getElementById('content');
@@ -330,82 +325,77 @@
                 return;
             }
             
-            // Group by category
-            const grouped = groupByCategory(items);
-            const categories = Object.keys(grouped).sort();
+            // Sort all items by nomor (ascending: 1 -> 110)
+            const sortedItems = [...items].sort((a, b) => a.nomor - b.nomor);
             
             let html = '';
             
-            // Render each category
-            categories.forEach((category, categoryIndex) => {
-                const categoryItems = grouped[category];
+            // Render all questions in order
+            sortedItems.forEach((item) => {
+                const questionId = `question-${item.nomor}`;
+                const solutionId = `solution${item.nomor}`;
+                const category = item.jenis || 'Lainnya';
                 
-                html += `<h2>${category}</h2>`;
-                html += `<p style="margin-bottom: 20px; color: #666;">Total soal: ${categoryItems.length}</p>`;
+                html += `<div class="question" id="${questionId}">`;
+                html += `<div class="question-number">`;
+                html += `<span>Soal ${item.nomor}</span>`;
+                html += `<span class="category-badge">${escapeHtml(category)}</span>`;
+                html += `</div>`;
+                html += `<div class="question-text">${escapeHtml(item.pertanyaan)}</div>`;
                 
-                // Render each question
-                categoryItems.forEach((item, index) => {
-                    const questionId = `question-${item.nomor}`;
-                    const solutionId = `solution${item.nomor}`;
-                    
-                    html += `<div class="question" id="${questionId}">`;
-                    html += `<div class="question-number">Soal ${item.nomor}</div>`;
-                    html += `<div class="question-text">${escapeHtml(item.pertanyaan)}</div>`;
-                    
-                    // Render images if any
-                    if (item.pertanyaanImages && item.pertanyaanImages.length > 0) {
-                        html += '<div class="question-images">';
-                        item.pertanyaanImages.forEach(img => {
-                            html += `<img src="${escapeHtml(img)}" alt="Gambar soal ${item.nomor}">`;
-                        });
-                        html += '</div>';
-                    }
-                    
-                    // Render options (tanpa indikator jawaban benar untuk mode belajar)
-                    html += '<div class="options">';
-                    item.opsi.forEach(option => {
-                        html += `<div class="option">`;
-                        html += `<span class="option-key">${option.key}.</span>`;
-                        html += `<span>${escapeHtml(option.text)}</span>`;
-                        html += '</div>';
+                // Render images if any
+                if (item.pertanyaanImages && item.pertanyaanImages.length > 0) {
+                    html += '<div class="question-images">';
+                    item.pertanyaanImages.forEach(img => {
+                        html += `<img src="${escapeHtml(img)}" alt="Gambar soal ${item.nomor}">`;
                     });
                     html += '</div>';
-                    
-                    // Toggle button
-                    html += `<button class="toggle-btn" onclick="toggleSolution(${item.nomor})">Tampilkan Pembahasan</button>`;
-                    
-                    // Solution
-                    html += `<div class="solution" id="${solutionId}">`;
-                    html += '<div class="solution-title">Pembahasan:</div>';
-                    
-                    // Parse pembahasan (split by newline and format)
-                    const pembahasan = item.pembahasan || 'Pembahasan tidak tersedia.';
-                    const pembahasanLines = pembahasan.split('\n').filter(line => line.trim());
-                    
-                    pembahasanLines.forEach(line => {
-                        if (line.trim()) {
-                            html += `<div class="solution-step">${escapeHtml(line)}</div>`;
-                        }
-                    });
-                    
-                    // Find correct answer
-                    const correctOption = item.opsi.find(opt => opt.isCorrect);
-                    if (correctOption) {
-                        html += `<div class="answer">Jawaban: ${correctOption.key}. ${escapeHtml(correctOption.text)}</div>`;
-                    }
-                    
-                    // Render solution images if any
-                    if (item.pembahasanImages && item.pembahasanImages.length > 0) {
-                        html += '<div class="solution-images">';
-                        item.pembahasanImages.forEach(img => {
-                            html += `<img src="${escapeHtml(img)}" alt="Gambar pembahasan ${item.nomor}">`;
-                        });
-                        html += '</div>';
-                    }
-                    
-                    html += '</div>'; // solution
-                    html += '</div>'; // question
+                }
+                
+                // Render options (tanpa indikator jawaban benar untuk mode belajar)
+                html += '<div class="options">';
+                item.opsi.forEach(option => {
+                    html += `<div class="option">`;
+                    html += `<span class="option-key">${option.key}.</span>`;
+                    html += `<span>${escapeHtml(option.text)}</span>`;
+                    html += '</div>';
                 });
+                html += '</div>';
+                
+                // Toggle button
+                html += `<button class="toggle-btn" onclick="toggleSolution(${item.nomor})">Tampilkan Pembahasan</button>`;
+                
+                // Solution
+                html += `<div class="solution" id="${solutionId}">`;
+                html += '<div class="solution-title">Pembahasan:</div>';
+                
+                // Parse pembahasan (split by newline and format)
+                const pembahasan = item.pembahasan || 'Pembahasan tidak tersedia.';
+                const pembahasanLines = pembahasan.split('\n').filter(line => line.trim());
+                
+                pembahasanLines.forEach(line => {
+                    if (line.trim()) {
+                        html += `<div class="solution-step">${escapeHtml(line)}</div>`;
+                    }
+                });
+                
+                // Find correct answer
+                const correctOption = item.opsi.find(opt => opt.isCorrect);
+                if (correctOption) {
+                    html += `<div class="answer">Jawaban: ${correctOption.key}. ${escapeHtml(correctOption.text)}</div>`;
+                }
+                
+                // Render solution images if any
+                if (item.pembahasanImages && item.pembahasanImages.length > 0) {
+                    html += '<div class="solution-images">';
+                    item.pembahasanImages.forEach(img => {
+                        html += `<img src="${escapeHtml(img)}" alt="Gambar pembahasan ${item.nomor}">`;
+                    });
+                    html += '</div>';
+                }
+                
+                html += '</div>'; // solution
+                html += '</div>'; // question
             });
             
             content.innerHTML = html;
