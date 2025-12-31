@@ -312,9 +312,9 @@
                 grouped[category].push(item);
             });
             
-            // Sort items in each category by nomor (descending: 110 -> 1)
+            // Sort items in each category by nomor (ascending: 1 -> 110)
             Object.keys(grouped).forEach(category => {
-                grouped[category].sort((a, b) => b.nomor - a.nomor);
+                grouped[category].sort((a, b) => a.nomor - b.nomor);
             });
             
             return grouped;
@@ -361,11 +361,10 @@
                         html += '</div>';
                     }
                     
-                    // Render options
+                    // Render options (tanpa indikator jawaban benar untuk mode belajar)
                     html += '<div class="options">';
                     item.opsi.forEach(option => {
-                        const correctClass = option.isCorrect ? ' correct' : '';
-                        html += `<div class="option${correctClass}">`;
+                        html += `<div class="option">`;
                         html += `<span class="option-key">${option.key}.</span>`;
                         html += `<span>${escapeHtml(option.text)}</span>`;
                         html += '</div>';
