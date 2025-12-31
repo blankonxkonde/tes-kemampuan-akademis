@@ -347,7 +347,38 @@
                 if (item.pertanyaanImages && item.pertanyaanImages.length > 0) {
                     html += '<div class="question-images">';
                     item.pertanyaanImages.forEach(img => {
-                        html += `<img src="${escapeHtml(img)}" alt="Gambar soal ${item.nomor}">`;
+                        // Handle both string URLs and image objects
+                        let imgSrc = '';
+                        let fallbackUrl = '';
+                        let imgAlt = `Gambar soal ${item.nomor}`;
+                        
+                        if (typeof img === 'string') {
+                            imgSrc = img;
+                            fallbackUrl = img;
+                        } else if (img && typeof img === 'object') {
+                            // Try local file first, then fallback to URL
+                            if (img.filename) {
+                                imgSrc = img.filename;
+                            }
+                            if (img.url) {
+                                fallbackUrl = img.url;
+                                // If no local file, use URL as primary
+                                if (!imgSrc) {
+                                    imgSrc = img.url;
+                                }
+                            }
+                            if (img.alt) {
+                                imgAlt = img.alt;
+                            }
+                        }
+                        
+                        if (imgSrc) {
+                            if (fallbackUrl && fallbackUrl !== imgSrc) {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" onerror="this.onerror=null; this.src='${escapeHtml(fallbackUrl)}';" style="max-width: 100%; height: auto;">`;
+                            } else {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" style="max-width: 100%; height: auto;">`;
+                            }
+                        }
                     });
                     html += '</div>';
                 }
@@ -389,7 +420,38 @@
                 if (item.pembahasanImages && item.pembahasanImages.length > 0) {
                     html += '<div class="solution-images">';
                     item.pembahasanImages.forEach(img => {
-                        html += `<img src="${escapeHtml(img)}" alt="Gambar pembahasan ${item.nomor}">`;
+                        // Handle both string URLs and image objects
+                        let imgSrc = '';
+                        let fallbackUrl = '';
+                        let imgAlt = `Gambar pembahasan ${item.nomor}`;
+                        
+                        if (typeof img === 'string') {
+                            imgSrc = img;
+                            fallbackUrl = img;
+                        } else if (img && typeof img === 'object') {
+                            // Try local file first, then fallback to URL
+                            if (img.filename) {
+                                imgSrc = img.filename;
+                            }
+                            if (img.url) {
+                                fallbackUrl = img.url;
+                                // If no local file, use URL as primary
+                                if (!imgSrc) {
+                                    imgSrc = img.url;
+                                }
+                            }
+                            if (img.alt) {
+                                imgAlt = img.alt;
+                            }
+                        }
+                        
+                        if (imgSrc) {
+                            if (fallbackUrl && fallbackUrl !== imgSrc) {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" onerror="this.onerror=null; this.src='${escapeHtml(fallbackUrl)}';" style="max-width: 100%; height: auto;">`;
+                            } else {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" style="max-width: 100%; height: auto;">`;
+                            }
+                        }
                     });
                     html += '</div>';
                 }
