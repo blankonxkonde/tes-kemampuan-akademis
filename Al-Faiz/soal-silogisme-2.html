@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Silogisme - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .premise {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .premise::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .options {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .option {
+            margin: 8px 0;
+            padding: 8px;
+            background: #ffffff;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 15px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TEMA 5: Silogisme</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Silogisme</strong>
+            <p>Silogisme adalah bentuk penalaran deduktif yang terdiri dari dua premis (pernyataan) dan satu kesimpulan. Silogisme menguji kemampuan logika dan penalaran untuk menarik kesimpulan yang valid dari premis-premis yang diberikan. Dalam silogisme, kita perlu memahami hubungan logis antara kategori, sifat, atau kondisi yang dijelaskan dalam premis-premis tersebut.</p>
+        </div>
+
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                <div class="premise">Tidak ada pemain voli yang memiliki rambut gondrong.</div>
+                <div class="premise">Semua pemain Desa Mawar adalah pemain voli.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari kedua premis di atas adalah ... (TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua pemain Desa Mawar memiliki rambut gondrong.</div>
+                <div class="option"><strong>B.</strong> Sebagian pemain Desa Mawar memiliki rambut gondrong.</div>
+                <div class="option"><strong>C.</strong> Tidak ada pemain Desa Mawar yang memiliki rambut gondrong.</div>
+                <div class="option"><strong>D.</strong> Semua pemain voli memiliki rambut gondrong.</div>
+                <div class="option"><strong>E.</strong> Tidak semua pemain Desa Mawar memiliki rambut gondrong.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis-premis:</strong><br>
+                    Premis 1: Tidak ada pemain voli yang memiliki rambut gondrong.<br>
+                    Artinya, semua pemain voli pasti tidak memiliki rambut gondrong.<br>
+                    Premis 2: Semua pemain Desa Mawar adalah pemain voli.<br>
+                    Ini berarti bahwa setiap orang yang merupakan pemain Desa Mawar juga adalah pemain voli.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dari kedua premis di atas, kita dapat menyimpulkan bahwa semua pemain Desa Mawar adalah pemain voli yang tidak memiliki rambut gondrong.<br>
+                    Dengan demikian, kesimpulan yang benar adalah bahwa tidak ada pemain Desa Mawar yang memiliki rambut gondrong.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                <div class="premise">Siswa yang tidak dapat berenang adalah siswa SMP A.</div>
+                <div class="premise">SMA B adalah sekolah yang memiliki atlet renang remaja.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari kedua premis di atas adalah ... (TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua siswa SMA B adalah atlet renang.</div>
+                <div class="option"><strong>B.</strong> Tidak ada siswa SMP A yang menjadi atlet renang remaja.</div>
+                <div class="option"><strong>C.</strong> Sebagian siswa SMA B tidak dapat berenang.</div>
+                <div class="option"><strong>D.</strong> Semua siswa SMP A dapat berenang.</div>
+                <div class="option"><strong>E.</strong> Sebagian siswa SMP A adalah atlet renang remaja.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis-premis:</strong><br>
+                    Premis 1: Siswa yang tidak dapat berenang adalah siswa SMP A.<br>
+                    Artinya, setiap siswa SMP A tidak dapat berenang.<br>
+                    Premis 2: SMA B adalah sekolah yang memiliki atlet renang remaja.<br>
+                    Ini berarti bahwa di SMA B terdapat siswa-siswa yang menjadi atlet renang remaja.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dari kedua premis di atas, kita dapat menyimpulkan bahwa tidak ada siswa SMP A yang menjadi atlet renang remaja, karena semua siswa SMP A tidak dapat berenang. Oleh karena itu, siswa SMP A tidak memenuhi syarat untuk menjadi atlet renang remaja.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                <div class="premise">Perusahaan X rutin mengundang polisi untuk melakukan penyuluhan tentang kepatuhan berlalu lintas kepada semua karyawan, sehingga tidak ada karyawan di Perusahaan X yang terkena razia.</div>
+                <div class="premise">Perusahaan X terletak di Kota C dan saat ini sedang dilakukan razia di Kota C, sehingga banyak warga yang terkena razia.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Manakah kesimpulan yang paling tepat berdasarkan premis di atas... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Karyawan di Perusahaan X pasti terkena razia.</div>
+                <div class="option"><strong>B.</strong> Karyawan di Perusahaan X tidak terkena razia.</div>
+                <div class="option"><strong>C.</strong> Beberapa karyawan di Perusahaan X tidak terkena razia.</div>
+                <div class="option"><strong>D.</strong> Beberapa karyawan di Perusahaan X tidak mengikuti penyuluhan berlalu lintas.</div>
+                <div class="option"><strong>E.</strong> Semua karyawan di Perusahaan X terkena razia.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Perusahaan X rutin mengundang polisi untuk melakukan penyuluhan patuh berlalu lintas, sehingga tidak ada karyawan di Perusahaan X yang terkena razia.<br>
+                    Premis 2: Sedang dilakukan razia di Kota C di mana Perusahaan X berada dan banyak warga yang terkena razia.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan yang tepat adalah karyawan di Perusahaan X tidak terkena razia, karena sudah mendapatkan penyuluhan patuh berlalu lintas.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                <div class="premise">Semua agen penerbangan dalam negeri menyediakan paket tour guide. Paket tersebut hanya ada pada Bulan Desember.</div>
+                <div class="premise">Agen Penerbangan B tidak menyediakan paket gratis tour guide.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Manakah kesimpulan yang paling tepat berdasarkan premis di atas... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Agen Penerbangan B menyediakan paket gratis tour guide.</div>
+                <div class="option"><strong>B.</strong> Agen Penerbangan B mungkin menyediakan paket tour guide di Bulan Desember.</div>
+                <div class="option"><strong>C.</strong> Agen Penerbangan B bukan merupakan agen penerbangan dalam negeri.</div>
+                <div class="option"><strong>D.</strong> Semua agen penerbangan dalam negeri menyediakan paket tour gratis.</div>
+                <div class="option"><strong>E.</strong> Semua agen penerbangan dalam negeri menyediakan paket tour guide berbayar.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Semua agen penerbangan dalam negeri menyediakan paket tour guide yang hanya ada di bulan Desember.<br>
+                    Premis kedua menyatakan bahwa Agen Penerbangan B tidak menyediakan paket gratis tour guide, yang berarti jika Agen B menyediakan paket tour guide, paket tersebut bersifat berbayar.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Maka kesimpulan yang tepat adalah agen Penerbangan B mungkin menyediakan paket tour guide di Bulan Desember.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                <div class="premise">Semua hewan yang berada di Kebun Binatang A merupakan hewan herbivora.</div>
+                <div class="premise">Menurut para peneliti dari Universitas Haluoleo, hewan herbivora adalah hewan dengan rasa takut yang tinggi.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Manakah kesimpulan yang paling tepat berdasarkan premis di atas... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Hewan yang berada di Kebun Binatang A memiliki rasa takut yang tinggi.</div>
+                <div class="option"><strong>B.</strong> Beberapa hewan herbivora memiliki rasa takut yang tinggi.</div>
+                <div class="option"><strong>C.</strong> Semua hewan herbivora berada di Kebun Binatang A.</div>
+                <div class="option"><strong>D.</strong> Semua hewan dengan rasa takut yang tinggi berada di Kebun Binatang A.</div>
+                <div class="option"><strong>E.</strong> Hewan yang berada di Kebun Binatang A merupakan hewan karnivora.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis pertama: Semua hewan di Kebun Binatang A merupakan hewan herbivora.<br>
+                    Premis kedua: Semua hewan herbivora memiliki rasa takut yang tinggi.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Maka kesimpulan yang tepat adalah semua hewan yang berada di Kebun Binatang A memiliki rasa takut yang tinggi.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                <div class="premise">Tidak semua orang yang makan nasi minum air.</div>
+                <div class="premise">Semua orang yang olahraga minum air.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari kedua premis di atas adalah... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua yang makan nasi pasti minum air.</div>
+                <div class="option"><strong>B.</strong> Sebagian orang yang makan nasi mungkin tidak berolahraga.</div>
+                <div class="option"><strong>C.</strong> Semua orang yang olahraga juga makan nasi.</div>
+                <div class="option"><strong>D.</strong> Beberapa orang yang makan nasi juga berolahraga.</div>
+                <div class="option"><strong>E.</strong> Semua yang minum air pasti makan nasi.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis pertama: Tidak semua orang yang makan nasi minum air, artinya ada orang yang makan nasi tetapi tidak minum air.<br>
+                    Premis kedua: Semua orang yang berolahraga minum air.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dari kedua premis tersebut, dapat disimpulkan bahwa orang yang makan nasi namun tidak minum air pasti bukan orang yang berolahraga. Oleh karena itu, kesimpulan yang tepat adalah sebagian orang yang makan nasi mungkin tidak berolahraga.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                <div class="premise">Semua mangga di ladang Bapak X tidak manis karena turun hujan</div>
+                <div class="premise">Ibu membawa pulang mangga manis</div>
+                <div style="margin-top: 15px; font-weight: bold;">Manakah pernyataan yang tepat... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Ibu membawa pulang mangga yang berasal dari ladang Bapak X</div>
+                <div class="option"><strong>B.</strong> Mangga di ladang Bapak X dibeli oleh Ibu.</div>
+                <div class="option"><strong>C.</strong> Bapak X menjual mangganya kepada Ibu.</div>
+                <div class="option"><strong>D.</strong> Ibu tidak membawa pulang mangga yang berasal dari ladang Bapak X.</div>
+                <div class="option"><strong>E.</strong> Ibu membeli mangga di ladang Bapak Y.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis pertama: Semua mangga di ladang Bapak X tidak manis karena turun hujan.<br>
+                    Premis kedua: Mangga yang dibawa ibu pulang adalah mangga manis.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Maka kesimpulan yang tepat adalah mangga yang dibawa ibu tidak berasal dari ladang Bapak X.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                <div class="premise">Semua wisatawan yang akan ke pantai memakai topi.</div>
+                <div class="premise">Beberapa wisatawan asing memakai topi.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Manakah kesimpulan yang paling tepat berdasarkan premis di atas... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua wisatawan asing pergi ke pantai.</div>
+                <div class="option"><strong>B.</strong> Semua wisatawan memakai topi</div>
+                <div class="option"><strong>C.</strong> Beberapa wisatawan tidak memakai topi</div>
+                <div class="option"><strong>D.</strong> Beberapa wisatawan asing mungkin pergi ke pantai.</div>
+                <div class="option"><strong>E.</strong> Sebagian wisatawan pergi ke pantai</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis pertama: Semua wisatawan yang akan ke pantai memakai topi.<br>
+                    Premis kedua: Beberapa wisatawan asing memakai topi.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Maka kesimpulan yang tepat adalah beberapa wisatawan asing mungkin pergi ke pantai.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                <div class="premise">Dika menyukai makanan yang pedas.</div>
+                <div class="premise">Dika di rumah bersama nenek, sedangkan nenek hari ini tidak masak pedas</div>
+                <div style="margin-top: 15px; font-weight: bold;">Manakah kesimpulan yang tepat... (TIU CPNS 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Dika makan makanan yang ada di rumah.</div>
+                <div class="option"><strong>B.</strong> Dika dan nenek makan masakan yang ada di rumah.</div>
+                <div class="option"><strong>C.</strong> Dika tidak makan di rumah hari ini.</div>
+                <div class="option"><strong>D.</strong> Dika dan nenek makan makanan yang pedas hari ini.</div>
+                <div class="option"><strong>E.</strong> Dika mungkin tidak makan di rumah bersama nenek hari ini.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis pertama: Dika menyukai makanan yang pedas.<br>
+                    Premis kedua: Nenek tidak memasak makanan pedas hari ini.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Ada kemungkinan Dika memilih untuk tidak makan di rumah, karena tidak sesuai dengan makanan kesukaannya. Namun, kita tidak dapat memastikan bahwa Dika mungkin tidak makan di rumah bersama nenek hari ini. Maka kesimpulan yang tepat adalah yang E.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                <div class="premise">P1 = Semua bunga yang indah dipamerkan dalam pameran.</div>
+                <div class="premise">P2 = Semua bunga yang indah di pameran tersebut tidak berwarna kuning.</div>
+                <div class="premise">P3 = Rina membeli bunga yang indah berwarna kuning.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari ketiga premis tersebut adalah ... (TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Rina membeli bunga yang tidak ada di pameran tersebut.</div>
+                <div class="option"><strong>B.</strong> Rina membeli bunga yang indah dan berwarna kuning di pameran tersebut.</div>
+                <div class="option"><strong>C.</strong> Rina membeli bunga yang tidak indah di pameran tersebut.</div>
+                <div class="option"><strong>D.</strong> Rina membeli bunga berwarna kuning di pameran tersebut.</div>
+                <div class="option"><strong>E.</strong> Rina tidak membeli bunga di pameran lain.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    P1: Semua bunga yang indah dipamerkan dalam pameran.<br>
+                    P2: Semua bunga yang indah di pameran tersebut tidak berwarna kuning.<br>
+                    P3: Rina membeli bunga yang indah berwarna kuning.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan logis dari ketiga premis tersebut adalah bahwa bunga yang dibeli Rina tidak mungkin berasal dari pameran tersebut, karena bunga indah berwarna kuning tidak ada di pameran tersebut.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                <div class="premise">Tidak ada warga desa X mendapat bantuan.</div>
+                <div class="premise">Warga yang mendapat bantuan mendapatkan pelatihan.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari kedua premis adalah... (TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Warga Desa X pasti tidak mendapatkan pelatihan.</div>
+                <div class="option"><strong>B.</strong> Warga Desa X mungkin tidak mendapatkan pelatihan.</div>
+                <div class="option"><strong>C.</strong> Beberapa warga Desa X mendapat bantuan.</div>
+                <div class="option"><strong>D.</strong> Semua warga Desa X mendapatkan pelatihan.</div>
+                <div class="option"><strong>E.</strong> Tidak ada warga yang mendapatkan pelatihan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Tidak ada warga Desa X mendapat bantuan (~p)
+                </div>
+                <div class="formula">
+                    <strong>Aturan logika:</strong><br>
+                    Jika premis 1: p → q dan premis 2: ~p, maka kita tidak bisa menyimpulkan ~q (tidak mendapat pelatihan).<br>
+                    Konsepnya adalah p → q ≠ ~p → ~q.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Alasannya, q (pelatihan) bisa terjadi melalui cara lain yang tidak disebutkan dalam soal.<br>
+                    Karena tidak ada informasi tambahan, q (mendapat pelatihan) tetap tidak pasti. Maka kita bisa menjawab warga Desa X <strong>mungkin</strong> tidak mendapatkan pelatihan.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                <div class="premise">Semua warga Desa Durian menanam pohon kurma.</div>
+                <div class="premise">Tidak ada pegawai kantor X menanam kurma.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari premis-premis di atas adalah... (TIU SKD 2024)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Beberapa warga Desa Durian adalah pegawai kantor X</div>
+                <div class="option"><strong>B.</strong> Semua pegawai kantor X adalah warga Desa Durian</div>
+                <div class="option"><strong>C.</strong> Tidak ada warga Desa Durian yang menjadi pegawai kantor X</div>
+                <div class="option"><strong>D.</strong> Beberapa pegawai kantor X menanam pohon kurma</div>
+                <div class="option"><strong>E.</strong> Semua warga Desa Durian adalah pegawai kantor X</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua warga Desa Durian menanam pohon kurma<br>
+                    Premis 2: Tidak ada pegawai kantor X menanam kurma
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Karena tidak ada pegawai kantor X yang menanam pohon kurma, maka tidak mungkin seorang pegawai kantor X juga menjadi warga Desa Durian. Karena warga Desa Durian pasti menanam pohon kurma.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                <div class="premise">Semua tanaman hias yang disukai memiliki bunga yang indah.</div>
+                <div class="premise">Tanaman hias dengan bunga yang indah dianggap berharga oleh para kolektor.</div>
+                <div class="premise">Tanaman itu tidak memiliki bunga yang indah.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari ketiga premis di atas adalah ... (TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua tanaman hias yang memiliki bunga yang indah disukai.</div>
+                <div class="option"><strong>B.</strong> Semua yang disukai dan memiliki bunga yang indah adalah tanaman hias.</div>
+                <div class="option"><strong>C.</strong> Tanaman tersebut tidak disukai.</div>
+                <div class="option"><strong>D.</strong> Tanaman tersebut memiliki bunga yang indah.</div>
+                <div class="option"><strong>E.</strong> Tanaman tersebut tidak memiliki bunga.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua tanaman hias yang disukai memiliki bunga yang indah.<br>
+                    p = semua tanaman hias yang disukai<br>
+                    q = memiliki bunga yang indah.<br><br>
+                    Premis 2: Tanaman hias dengan bunga yang indah dianggap berharga oleh para kolektor.<br>
+                    q = tanaman hias dengan bunga yang indah<br>
+                    r = dianggap berharga oleh para kolektor<br><br>
+                    Premis 3: Tanaman itu tidak memiliki bunga yang indah.<br>
+                    ~q = tanaman itu tidak memiliki bunga yang indah
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    Premis 1 dan 2: p → q → r<br>
+                    Premis 3: ~q<br><br>
+                    Kita pisah premis 1 dan 2 menjadi p → q dan q → r, karena premis 3 adalah ~q maka kita gunakan premis 1.<br><br>
+                    Premis 1: p → q<br>
+                    Premis 3: ~q<br>
+                    ∴ ~p
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                <div class="premise">Semua tanaman yang tumbuh di taman adalah bunga.</div>
+                <div class="premise">Tukang kebun menganggap bunga memiliki keindahan.</div>
+                <div class="premise">Tanaman itu bukan bunga.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari premis-premis di atas adalah ... (TIU CPNS 2023)</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Tanaman itu tidak tumbuh di taman karena tidak memiliki keindahan.</div>
+                <div class="option"><strong>B.</strong> Semua tanaman yang memiliki keindahan adalah bunga.</div>
+                <div class="option"><strong>C.</strong> Tanaman itu memiliki keindahan tetapi tidak tumbuh di taman.</div>
+                <div class="option"><strong>D.</strong> Jika tanaman itu tidak tumbuh di taman, maka tanaman itu bukan bunga.</div>
+                <div class="option"><strong>E.</strong> Tanaman itu tidak tumbuh di taman.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua tanaman yang tumbuh di taman adalah bunga.<br>
+                    p = semua tanaman yang tumbuh di taman<br>
+                    q = bunga<br><br>
+                    Premis 2: Tukang kebun menganggap bunga memiliki keindahan.<br>
+                    q = bunga<br>
+                    r = memiliki keindahan<br><br>
+                    Premis 3: Tanaman itu bukan bunga.<br>
+                    ~q = bukan bunga
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    Premis 1 dan 2: p → q → r<br>
+                    Premis 3: ~q<br><br>
+                    Kita pisah premis 1 dan 2 menjadi p → q dan q → r, karena premis 3 adalah ~q maka kita gunakan premis 1.<br><br>
+                    Premis 1: p → q<br>
+                    Premis 3: ~q<br>
+                    ∴ ~p
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                <div class="premise">Seorang koki terkenal menggunakan pisau dapur impor. Pisau dapur impor biasanya lebih baik dari pisau lokal karena memiliki kualitas yang lebih baik. Pak Bambang berhasil memotong bahan makanan dengan sangat presisi.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua koki terkenal memotong bahan makanan dengan sangat presisi karena menggunakan pisau dapur impor.</div>
+                <div class="option"><strong>B.</strong> Beberapa koki tidak memotong bahan makanan dengan sangat presisi karena menggunakan pisau lokal.</div>
+                <div class="option"><strong>C.</strong> Semua koki terkenal kecuali Pak Bambang menggunakan pisau lokal.</div>
+                <div class="option"><strong>D.</strong> Pak Bambang mungkin koki terkenal yang menggunakan pisau dapur impor.</div>
+                <div class="option"><strong>E.</strong> Semua koki tidak memotong bahan makanan dengan sangat presisi karena menggunakan pisau lokal.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Seorang koki terkenal menggunakan pisau dapur impor. Pisau dapur impor biasanya lebih baik dari pisau lokal karena memiliki kualitas yang lebih baik. Pak Bambang berhasil memotong bahan makanan dengan sangat presisi.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Pilihan jawaban D adalah kesimpulan yang tepat berdasarkan premis-premis yang diberikan. Meskipun tidak disebutkan secara langsung bahwa Pak Bambang adalah koki terkenal, namun fakta bahwa ia berhasil memotong bahan makanan dengan sangat presisi menunjukkan bahwa ia mungkin memiliki keterampilan dan peralatan yang sesuai dengan koki terkenal, termasuk penggunaan pisau dapur impor yang berkualitas baik.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                <div class="premise">Pimpinan meminta karyawan menyerahkan laporan kegiatan jika kegiatan telah dilaksanakan. Jika laporan kegiatan telah diserahkan, honor karyawan dibayarkan.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Simpulan yang tepat adalah . . .</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Jika honor kegiatan dibayarkan, pimpinan dapat menugaskan karyawan membuat laporan</div>
+                <div class="option"><strong>B.</strong> Laporan kegiatan belum diserahkan berarti honor pimpinan tidak dibayarkan</div>
+                <div class="option"><strong>C.</strong> Jika pimpinan meminta laporan, kegiatan segera dilaksanakan</div>
+                <div class="option"><strong>D.</strong> Honor karyawan tidak dibayarkan berarti kegiatan belum dilaksanakan</div>
+                <div class="option"><strong>E.</strong> Jika honor tidak ada, kegiatan tidak dapat dilaksanakan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Pimpinan meminta karyawan menyerahkan laporan kegiatan jika kegiatan telah dilaksanakan.<br>
+                    Premis 1 juga dapat ditulis menjadi "Jika kegiatan telah dilaksanakan maka pimpinan meminta karyawan menyerahkan laporan kegiatan".<br>
+                    p = kegiatan telah dilaksanakan<br>
+                    q = pimpinan meminta karyawan menyerahkan laporan kegiatan<br><br>
+                    Premis 2: Jika laporan kegiatan telah diserahkan, honor karyawan dibayarkan.<br>
+                    q = laporan kegiatan telah diserahkan<br>
+                    r = honor karyawan dibayarkan
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r ≡ ~r → ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan yang tepat adalah honor karyawan tidak dibayarkan berarti kegiatan belum dilaksanakan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                <div class="premise">Semua petani di Desa Sukamaju suka bekerja keras.</div>
+                <div class="premise">Sebagian petani di Desa Sukamaju adalah pedagang...</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua petani di Desa Sukamaju adalah pedagang dan suka bekerja keras</div>
+                <div class="option"><strong>B.</strong> Sebagian petani di Desa Sukamaju merupakan pedagang dan suka bekerja keras</div>
+                <div class="option"><strong>C.</strong> Ada pedagang di Desa Sukamaju yang tidak suka bekerja keras</div>
+                <div class="option"><strong>D.</strong> Sebagian petani di Desa Sukamaju adalah pedagang yang tidak suka bekerja keras</div>
+                <div class="option"><strong>E.</strong> Semua petani yang suka bekerja keras berasal dari Desa Sukamaju</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = Semua p → q<br>
+                    Premis 2 = Sebagian p → r<br>
+                    Kesimpulan = Sebagian p → q dan r   atau   Sebagian p → r dan q
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua petani di Desa Sukamaju suka bekerja keras.<br>
+                    p = petani di Desa Sukamaju<br>
+                    q = suka bekerja keras<br><br>
+                    Premis 2: Sebagian petani di Desa Sukamaju adalah pedagang.<br>
+                    p = petani di Desa Sukamaju<br>
+                    r = pedagang
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    P1 = Semua p → q<br>
+                    P2 = Sebagian p → r<br>
+                    ∴ Sebagian p → r dan q
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan yang tepat adalah sebagian petani di Desa Sukamaju merupakan pedagang dan suka bekerja keras.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                <div class="premise">Semua sepeda motor dilengkapi speedometer.</div>
+                <div class="premise">Sebagian sepeda motor berwarna biru.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Sebagian sepeda motor tidak dilengkapi speedometer dan tidak berwarna biru.</div>
+                <div class="option"><strong>B.</strong> Sebagian sepeda motor berwarna biru dan tidak dilengkapi speedometer.</div>
+                <div class="option"><strong>C.</strong> Semua sepeda motor berwarna biru dan dilengkapi speedometer.</div>
+                <div class="option"><strong>D.</strong> Semua sepeda motor yang berwarna biru dilengkapi speedometer.</div>
+                <div class="option"><strong>E.</strong> Semua sepeda motor tidak berwarna biru dan dilengkapi speedometer.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = Semua p → q<br>
+                    Premis 2 = Sebagian p → r<br>
+                    Kesimpulan = Semua p yang r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua sepeda motor dilengkapi speedometer.<br>
+                    p = sepeda motor<br>
+                    q = dilengkapi speedometer<br><br>
+                    Premis 2: Sebagian sepeda motor berwarna biru.<br>
+                    p = sepeda motor<br>
+                    r = berwarna biru
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    P1 = Semua p → q<br>
+                    P2 = Sebagian p → r<br>
+                    ∴ Semua p yang r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan yang tepat adalah semua sepeda motor yang berwarna biru dilengkapi speedometer.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                <div class="premise">Seluruh perwira baru wajib mengikuti latihan tempur.</div>
+                <div class="premise">Sebagian perwira baru mengunjungi asrama.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Seluruh perwira baru yang mengikuti latihan tempur tidak mengunjungi asrama</div>
+                <div class="option"><strong>B.</strong> Seluruh perwira baru yang mengikuti latihan tempur mengunjungi asrama</div>
+                <div class="option"><strong>C.</strong> Sebagian perwira baru yang mengunjungi asrama tidak mengikuti latihan tempur</div>
+                <div class="option"><strong>D.</strong> Seluruh perwira baru yang mengunjungi asrama mengikuti latihan tempur</div>
+                <div class="option"><strong>E.</strong> Sebagian perwira baru yang tidak mengunjungi asrama tidak mengikuti latihan tempur</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = Semua p → q<br>
+                    Premis 2 = Sebagian p → r<br>
+                    Kesimpulan = Semua p yang r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Seluruh perwira baru wajib mengikuti latihan tempur.<br>
+                    p = perwira baru<br>
+                    q = wajib mengikuti latihan tempur<br><br>
+                    Premis 2: Sebagian perwira baru mengunjungi asrama.<br>
+                    p = perwira baru<br>
+                    r = mengunjungi asrama
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    P1 = Semua p → q<br>
+                    P2 = Sebagian p → r<br>
+                    ∴ Semua p yang r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan yang tepat adalah seluruh perwira baru yang mengunjungi asrama mengikuti latihan tempur.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                <div class="premise">Jika Naruto rajin belajar maka dia akan memperoleh Indeks Prestasi yang baik.</div>
+                <div class="premise">Naruto tidak rajin belajar.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulannya adalah ....</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Naruto memperoleh Indeks Prestasi yang baik</div>
+                <div class="option"><strong>B.</strong> Naruto memperoleh Indeks Prestasi yang baik walau-pun tidak rajin belajar</div>
+                <div class="option"><strong>C.</strong> Naruto adalah anak yang pintar</div>
+                <div class="option"><strong>D.</strong> Naruto tidak mendapat Indeks Prestasi yang baik</div>
+                <div class="option"><strong>E.</strong> Tidak dapat disimpulkan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Aturan logika:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~p<br>
+                    Kesimpulan = TDDS (Tidak Dapat Disimpulkan)
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Jika Naruto rajin belajar maka dia akan memperoleh Indeks Prestasi yang baik.<br>
+                    p = Naruto rajin belajar<br>
+                    q = dia akan memperoleh Indeks Prestasi yang baik<br><br>
+                    Premis 2: Naruto tidak rajin belajar.<br>
+                    ~p = Naruto tidak rajin belajar
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Kesimpulan = TDDS (Tidak Dapat Disimpulkan)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                <div class="premise">Jika tubuh sehat, maka jiwa akan sehat pula. Jika jiwa sehat, maka proses hidup akan dijalani dengan sehat.</div>
+                <div class="premise">Goku memiliki tubuh yang tidak sehat.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Proses hidup Goku dijalani dengan tidak sehat.</div>
+                <div class="option"><strong>B.</strong> Proses hidup Goku dijalani dengan sehat.</div>
+                <div class="option"><strong>C.</strong> Goku memiliki jiwa yang tidak sehat.</div>
+                <div class="option"><strong>D.</strong> Goku memiliki jiwa yang sehat.</div>
+                <div class="option"><strong>E.</strong> Tidak dapat disimpulkan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Jika tubuh sehat, maka jiwa akan sehat pula.<br>
+                    p = tubuh sehat<br>
+                    q = jiwa akan sehat pula<br><br>
+                    Premis 2: Jika jiwa sehat, maka proses hidup akan dijalani dengan sehat.<br>
+                    q = jiwa sehat<br>
+                    r = proses hidup akan dijalani dengan sehat
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis 3:</strong><br>
+                    Goku memiliki tubuh yang tidak sehat.<br>
+                    ~p = Goku memiliki tubuh yang tidak sehat<br><br>
+                    Kesimpulan = TDDS (Tidak Dapat Disimpulkan)
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                <div class="premise">Jika suatu sarana merupakan sarana yang up to date maka sarana itu harus dioperasikan dengan sistem yang modern. Jika sistem itu modern maka sistem itu harus terkomputerisasi.</div>
+                <div class="premise">Sarana Al Faiz merupakan sarana yang up to date.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Jika suatu sarana dikatakan menggunakan sistem yang modern maka belum tentu sarana terkomputerisasi</div>
+                <div class="option"><strong>B.</strong> Sarana Al Faiz merupakan sistem yang belum modern</div>
+                <div class="option"><strong>C.</strong> Sarana Al Faiz sudah menggunakan sistem yang terkomputerisasi.</div>
+                <div class="option"><strong>D.</strong> Sarana Al Faiz adalah sarana yang belum up to date</div>
+                <div class="option"><strong>E.</strong> Sarana yang up to date pasti merupakan sarana Al Faiz</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r<br><br>
+                    <strong>Modus Ponens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = p<br>
+                    Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Jika suatu sarana merupakan sarana yang up to date maka sarana itu harus dioperasikan dengan sistem yang modern.<br>
+                    p = sarana yang up to date<br>
+                    q = harus dioperasikan dengan sistem yang modern<br><br>
+                    Premis 2: Jika sistem itu modern maka sistem itu harus terkomputerisasi.<br>
+                    q = sistem itu modern<br>
+                    r = harus terkomputerisasi
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian Premis 1 dan Premis 2:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis 3:</strong><br>
+                    Sarana Al Faiz merupakan sarana yang up to date.<br>
+                    p = Sarana Al Faiz merupakan sarana yang up to date<br><br>
+                    Sehingga,<br>
+                    p → r<br>
+                    p<br>
+                    ∴ r<br><br>
+                    Kesimpulan = Sarana Al Faiz sudah menggunakan sistem yang terkomputerisasi.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                <div class="premise">Orang yang memiliki gaya hidup hedon pasti tidak pernah merasa puas atas apa yang sudah dimilikinya. Seseorang yang tidak dapat mengendalikan keinginannya selalu menghamburkan uang. Orang yang suka menghamburkan uang pastinya memiliki gaya hidup hedon.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Orang yang memiliki gaya hidup hedon, tidak pernah puas dengan yang sudah dimiliki</div>
+                <div class="option"><strong>B.</strong> Orang yang tidak pernah puas dengan yang sudah dimiliki, tidak dapat mengendalikan keinginannya</div>
+                <div class="option"><strong>C.</strong> Orang yang tidak dapat mengendalikan keinginannya, tidak pernah puas dengan yang sudah dimiliki</div>
+                <div class="option"><strong>D.</strong> Orang yang tidak dapat mengendalikan keinginannya, menghamburkan uang</div>
+                <div class="option"><strong>E.</strong> Orang yang tidak dapat mengendalikan keinginannya, memiliki gaya hidup hedon</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Orang yang memiliki gaya hidup hedon pasti tidak pernah merasa puas atas apa yang sudah dimilikinya.<br>
+                    p = memiliki gaya hidup hedon<br>
+                    q = tidak pernah merasa puas atas apa yang sudah dimilikinya<br><br>
+                    Premis 2: Seseorang yang tidak dapat mengendalikan keinginannya selalu menghamburkan uang.<br>
+                    r = tidak dapat mengendalikan keinginannya<br>
+                    s = menghamburkan uang<br><br>
+                    Premis 3: Orang yang suka menghamburkan uang pastinya memiliki gaya hidup hedon.<br>
+                    s = menghamburkan uang<br>
+                    p = memiliki gaya hidup hedon
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian Premis 2 dan Premis 3:</strong><br>
+                    P1 = r → s<br>
+                    P2 = s → p<br>
+                    ∴ r → p<br><br>
+                    <strong>Kemudian selesaikan dengan Premis 1:</strong><br>
+                    r → p<br>
+                    P1 = p → q<br>
+                    ∴ r → q
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Orang yang tidak dapat mengendalikan keinginannya, tidak pernah puas dengan yang sudah dimiliki.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                <div class="premise">Winda akan memberikan pelatihan tari budaya hari ini jika dua minggu lagi akan diadakan pertunjukan seni. Jika Winda memberi pelatihan tari budaya hari ini, kostum penari akan segera disiapkan.</div>
+                <div class="premise">Ternyata kostum tidak sedang disiapkan.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Winda tidak memberikan pelatihan tari budaya hari ini</div>
+                <div class="option"><strong>B.</strong> Dua minggu lagi tidak akan diadakan pertunjukan seni</div>
+                <div class="option"><strong>C.</strong> Jika Winda tidak memberikan pelatihan maka tidak akan diadakan pertunjukan seni</div>
+                <div class="option"><strong>D.</strong> Jika Winda tidak memberikan pelatihan tari maka kostum tidak akan disiapkan</div>
+                <div class="option"><strong>E.</strong> Kostum penari belum disiapkan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r<br><br>
+                    <strong>Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Winda akan memberikan pelatihan tari budaya hari ini jika dua minggu lagi akan diadakan pertunjukan seni.<br>
+                    Premis 1 dapat ditulis sebagai "Jika dua minggu lagi akan diadakan pertunjukan seni maka Winda akan memberikan pelatihan tari budaya hari ini".<br>
+                    p = dua minggu lagi akan diadakan pertunjukan seni<br>
+                    q = Winda akan memberikan pelatihan tari budaya hari ini<br><br>
+                    Premis 2: Jika Winda memberi pelatihan tari budaya hari ini, kostum penari akan segera disiapkan.<br>
+                    q = Winda akan memberikan pelatihan tari budaya hari ini<br>
+                    r = kostum penari akan segera disiapkan<br><br>
+                    Premis 3: Ternyata kostum tidak sedang disiapkan.<br>
+                    ~r = kostum tidak sedang disiapkan
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian Premis 1 dan Premis 2:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r<br><br>
+                    <strong>Kemudian selesaikan dengan Premis 3:</strong><br>
+                    p → r<br>
+                    P3 = ~r<br>
+                    ∴ ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dua minggu lagi tidak akan diadakan pertunjukan seni.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                <div class="premise">Pernikahan usia dini memiliki beberapa dampak negatif. Semakin tinggi pengetahuan perempuan tentang dampak negatif dari pernikahan dini, sikap terhadap pernikahan usia dini semakin negatif. Ketika seorang perempuan memiliki sikap negatif terhadap pernikahan usia dini, kemungkinan ia tidak akan melakukan pernikahan dini.</div>
+                <div class="premise">Tia mengetahui bahwa pernikahan usia dini memiliki dampak negatif.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Kemungkinan Tia tidak akan melakukan pernikahan dini</div>
+                <div class="option"><strong>B.</strong> Pernikahan dini tidak akan dilakukan oleh setiap perempuan</div>
+                <div class="option"><strong>C.</strong> Rendahnya pengetahuan tentang dampak negatif pernikahan dini, kemungkinan besar ia tidak akan melakukan pernikahan dini</div>
+                <div class="option"><strong>D.</strong> Tia cukup setuju bahwa pernikahan dini memiliki dampak negatif</div>
+                <div class="option"><strong>E.</strong> Pernikahan dini bisa membawa dampak negatif dikemudian hari</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r<br><br>
+                    <strong>Modus Ponens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = p<br>
+                    Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semakin tinggi pengetahuan perempuan tentang dampak negatif dari pernikahan dini, sikap terhadap pernikahan usia dini semakin negatif.<br>
+                    p = Semakin tinggi pengetahuan perempuan tentang dampak negatif dari pernikahan dini<br>
+                    q = sikap terhadap pernikahan usia dini semakin negatif<br><br>
+                    Premis 2: Ketika seorang perempuan memiliki sikap negatif terhadap pernikahan usia dini, kemungkinan ia tidak akan melakukan pernikahan dini.<br>
+                    q = seorang perempuan memiliki sikap negatif terhadap pernikahan usia dini<br>
+                    r = kemungkinan ia tidak akan melakukan pernikahan dini
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian Premis 1 dan Premis 2:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Premis 3:</strong><br>
+                    Tia mengetahui bahwa pernikahan usia dini memiliki dampak negatif.<br>
+                    p = Tia mengetahui bahwa pernikahan usia dini memiliki dampak negatif<br><br>
+                    Sehingga,<br>
+                    p → r<br>
+                    p<br>
+                    ∴ r<br><br>
+                    Kesimpulan = Kemungkinan Tia tidak akan melakukan pernikahan dini.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+
+        <!-- Soal 26 -->
+        <div class="question">
+            <div class="question-number">Soal 26</div>
+            <div class="question-text">
+                <div class="premise">Mengonsumsi jeruk nipis akan mempercepat sistem metabolisme tubuh kita. Sistem metabolisme yang cepat dapat mengubah lemak dan gula menjadi sumber energi dengan cepat. Lemak dan gula yang berubah dengan cepat menjadi sumber energi akan memperlambat penumpukan lemak dalam tubuh.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Lemak dan gula yang berubah dengan cepat akan mempercepat sistem metabolisme tubuh</div>
+                <div class="option"><strong>B.</strong> Penumpukan lemak dalam tubuh akan mempercepat sistem metabolisme tubuh</div>
+                <div class="option"><strong>C.</strong> Mengonsumsi jeruk nipis akan memperlambat lemak dan gula menjadi sumber energi</div>
+                <div class="option"><strong>D.</strong> Mengonsumsi jeruk nipis akan memperlambat penumpukan lemak dalam tubuh</div>
+                <div class="option"><strong>E.</strong> Sumber energi dapat kita peroleh dengan cepat melalui gula dan lemak</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(26)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution26">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Mengonsumsi jeruk nipis akan mempercepat sistem metabolisme tubuh kita.<br>
+                    p = Mengonsumsi jeruk nipis<br>
+                    q = mempercepat sistem metabolisme tubuh kita<br><br>
+                    Premis 2: Sistem metabolisme yang cepat dapat mengubah lemak dan gula menjadi sumber energi dengan cepat.<br>
+                    q = Sistem metabolisme yang cepat<br>
+                    r = mengubah lemak dan gula menjadi sumber energi dengan cepat<br><br>
+                    Premis 3: Lemak dan gula yang berubah dengan cepat menjadi sumber energi akan memperlambat penumpukan lemak dalam tubuh.<br>
+                    r = Lemak dan gula yang berubah dengan cepat menjadi sumber energi<br>
+                    s = memperlambat penumpukan lemak dalam tubuh
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r<br><br>
+                    Kemudian:<br>
+                    P1 = p → r<br>
+                    P2 = r → s<br>
+                    ∴ p → s
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Mengonsumsi jeruk nipis akan memperlambat penumpukan lemak dalam tubuh.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+
+        <!-- Soal 27 -->
+        <div class="question">
+            <div class="question-number">Soal 27</div>
+            <div class="question-text">
+                <div class="premise">Semua orang yang mengikuti UKM adalah mahasiswa bertopi hitam.</div>
+                <div class="premise">Semua orang yang bertopi hitam adalah mahasiswa fakultas teknik.</div>
+                <div class="premise">Mahasiswa fakultas teknik berkumpul di depan rektorat.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua orang yang mengikuti UKM adalah mahasiswa fakultas teknik</div>
+                <div class="option"><strong>B.</strong> Semua orang yang mengikuti UKM berkumpul di depan rektorat</div>
+                <div class="option"><strong>C.</strong> Sebagian mahasiswa yang mengikuti UKM berkumpul di depan rektorat</div>
+                <div class="option"><strong>D.</strong> Sebagian mahasiswa fakultas teknik mengikuti UKM</div>
+                <div class="option"><strong>E.</strong> Di depan rektorat selalu menjadi tempat mahasiswa fakultas teknik berkumpul</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(27)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution27">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="formula">
+                    <strong>Silogisme:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = q → r<br>
+                    Kesimpulan = p → r
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua orang yang mengikuti UKM adalah mahasiswa bertopi hitam.<br>
+                    p = Semua orang yang mengikuti UKM<br>
+                    q = mahasiswa bertopi hitam<br><br>
+                    Premis 2: Semua orang yang bertopi hitam adalah mahasiswa fakultas teknik.<br>
+                    q = Semua orang yang bertopi hitam<br>
+                    r = mahasiswa fakultas teknik<br><br>
+                    Premis 3: Mahasiswa fakultas teknik berkumpul di depan rektorat.<br>
+                    r = Mahasiswa fakultas teknik<br>
+                    s = berkumpul di depan rektorat
+                </div>
+                <div class="formula">
+                    <strong>Penyelesaian Premis 1 dan Premis 2:</strong><br>
+                    P1 = p → q<br>
+                    P2 = q → r<br>
+                    ∴ p → r<br><br>
+                    <strong>Kemudian dengan Premis 3:</strong><br>
+                    P1 = p → r<br>
+                    P2 = r → s<br>
+                    ∴ p → s
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Semua orang yang mengikuti UKM berkumpul di depan rektorat.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+
+        <!-- Soal 28 -->
+        <div class="question">
+            <div class="question-number">Soal 28</div>
+            <div class="question-text">
+                <div class="premise">Tanaman yang bijinya berkeping dua memiliki akar tunggang.</div>
+                <div class="premise">Semua tumbuhan palem memiliki akar serabut.</div>
+                <div class="premise">Tanaman X adalah tanaman yang bijinya berkeping dua.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Tanaman X bukan tumbuhan palem</div>
+                <div class="option"><strong>B.</strong> Tumbuhan palem yang memiliki akar tunggang hanyalah tanaman X</div>
+                <div class="option"><strong>C.</strong> Tanaman X memiliki akar serabut</div>
+                <div class="option"><strong>D.</strong> Tanaman X adalah tumbuhan palem yang memiliki akar tunggang</div>
+                <div class="option"><strong>E.</strong> Tanaman X adalah jenis tumbuhan palem</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(28)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution28">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Dari premis dapat kita ketahui bahwa:<br>
+                    - Tanaman yang bijinya berkeping dua memiliki akar tunggang<br>
+                    - Tumbuhan palem memiliki akar serabut<br>
+                    - Tanaman X adalah tanaman yang bijinya berkeping dua
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Tanaman X merupakan tanaman yang bijinya berkeping dua maka tanaman X memiliki akar tunggang sehingga tanaman X bukan tumbuhan palem.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+
+        <!-- Soal 29 -->
+        <div class="question">
+            <div class="question-number">Soal 29</div>
+            <div class="question-text">
+                <div class="premise">Semua mahasiswa Jurusan Matematika harus lulus ujian kalkulus untuk mendapatkan gelar sarjana.</div>
+                <div class="premise">Tidak satupun mahasiswa Jurusan Matematika yang gagal lulus ujian kalkulus.</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua mahasiswa Jurusan Matematika tidak lulus ujian kalkulus.</div>
+                <div class="option"><strong>B.</strong> Tidak satupun mahasiswa Jurusan Matematika yang lulus ujian kalkulus.</div>
+                <div class="option"><strong>C.</strong> Semua mahasiswa Jurusan Matematika lulus ujian kalkulus.</div>
+                <div class="option"><strong>D.</strong> Semua mahasiswa Jurusan Matematika harus lulus ujian kalkulus.</div>
+                <div class="option"><strong>E.</strong> Semua mahasiswa Jurusan Matematika mendapat gelar sarjana.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(29)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution29">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua mahasiswa Jurusan Matematika harus lulus ujian kalkulus untuk mendapatkan gelar sarjana.<br>
+                    Premis 2: Tidak satupun mahasiswa Jurusan Matematika yang gagal lulus ujian kalkulus.
+                </div>
+                <div class="formula">
+                    <strong>Modus Ponens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = p<br>
+                    Kesimpulan = q
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dengan menggunakan modus ponens maka didapat kesimpulan semua mahasiswa Jurusan Matematika mendapat gelar sarjana.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+
+        <!-- Soal 30 -->
+        <div class="question">
+            <div class="question-number">Soal 30</div>
+            <div class="question-text">
+                <div class="premise">Semua pelajar di Sekolah X mendapat sanksi jika tidak menyelesaikan tugas mereka.</div>
+                <div class="premise">Tidak satupun pelajar di Sekolah X yang mendapat sanksi.</div>
+                <div style="margin-top: 15px; font-weight: bold;">Kesimpulan dari premis-premis di atas adalah ...</div>
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Semua pelajar di Sekolah X tidak menyelesaikan tugas mereka sehingga mendapat sanksi.</div>
+                <div class="option"><strong>B.</strong> Tidak satupun pelajar di Sekolah X yang menyelesaikan tugas mereka.</div>
+                <div class="option"><strong>C.</strong> Semua pelajar di Sekolah X menyelesaikan tugas mereka dan mendapat sanksi.</div>
+                <div class="option"><strong>D.</strong> Semua pelajar di Sekolah X menyelesaikan tugas mereka.</div>
+                <div class="option"><strong>E.</strong> Semua pelajar di Sekolah X mendapat sanksi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(30)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution30">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Analisis premis:</strong><br>
+                    Premis 1: Semua pelajar di Sekolah X mendapat sanksi jika tidak menyelesaikan tugas mereka.<br>
+                    Premis 2: Tidak satupun pelajar di Sekolah X yang mendapat sanksi.
+                </div>
+                <div class="formula">
+                    <strong>Modus Tollens:</strong><br>
+                    Premis 1 = p → q<br>
+                    Premis 2 = ~q<br>
+                    Kesimpulan = ~p
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dengan menggunakan modus tollens didapat kesimpulan: Semua pelajar di Sekolah X menyelesaikan tugas mereka.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+    <script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
