@@ -22,6 +22,12 @@
         h1, h2 {
             color: #333;
         }
+        
+        /* Dark mode support - allow dark mode toggler to override colors */
+        body[data-dark-mode-applied] h1,
+        body[data-dark-mode-applied] h2 {
+            color: #e0e0e0;
+        }
         .calculation {
             margin-bottom: 30px;
             padding-bottom: 20px;
