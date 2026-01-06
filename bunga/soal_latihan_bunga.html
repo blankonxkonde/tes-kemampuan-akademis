@@ -5,532 +5,961 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soal Latihan - Matematika Keuangan</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
+            min-height: 100vh;
         }
+        
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
         }
-        .difficulty-level {
-            margin-bottom: 40px;
-            border-left: 4px solid #16a085;
-            padding-left: 20px;
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
         }
+        
         .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
             margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .answer {
-            display: none;
-            padding: 15px;
-            margin-top: 10px;
-            background-color: #ecf0f1;
-            border-left: 5px solid #3498db;
-            border-radius: 4px;
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
-        .toggle-button {
-            background-color: #3498db;
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
+            padding: 12px 25px;
+            border-radius: 25px;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
-        .toggle-button:hover {
-            background-color: #2980b9;
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ddd;
-            margin: 40px 0;
+        
+        .toggle-btn:active {
+            transform: translateY(0);
         }
-        .latex-block {
-             padding: 10px;
-             margin-top: 10px;
-             overflow-x: auto;
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
         }
-        .concept-note {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 10px;
-            border-radius: 4px;
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
             margin-bottom: 15px;
-            font-style: italic;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Soal Latihan: Bunga dan Anuitas</h1>
-    <p>Uji pemahaman Anda dengan soal-soal berikut yang dibagi berdasarkan tingkat kesulitan. Tingkat kesulitan ditentukan oleh <strong>kompleksitas konsep dan logika</strong>, bukan kerumitan angka. Semua angka dibuat sederhana agar fokus pada pemahaman konsep.</p>
-    <hr>
-
-    <!-- Tingkat 1: Sangat Dasar -->
-    <div class="difficulty-level">
-        <h2>Tingkat 1: Sangat Dasar (Bunga Tunggal - Aplikasi Langsung)</h2>
-        <div class="concept-note">
-            <strong>Fokus:</strong> Pemahaman rumus dasar bunga tunggal dengan penerapan langsung 1-2 langkah.
+    <div class="container">
+        <h1>Soal Latihan: Bunga dan Anuitas</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Matematika Keuangan</strong>
+            <p>Uji pemahaman Anda dengan soal-soal berikut yang dibagi berdasarkan tingkat kesulitan. Tingkat kesulitan ditentukan oleh <strong>kompleksitas konsep dan logika</strong>, bukan kerumitan angka. Semua angka dibuat sederhana agar fokus pada pemahaman konsep.</p>
         </div>
         
-        <div class="question" id="soal1">
-            <p><strong>1.</strong> Budi menabung uang sebesar Rp5.000.000 di bank dengan sistem bunga tunggal sebesar 10% per tahun. Berapa total saldo Budi setelah 3 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans1')">Lihat Jawaban</button>
-            <div class="answer" id="ans1">
-                <p>Menggunakan rumus bunga tunggal: \(A = P(1 + rt)\)</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A &= 5.000.000 \times (1 + 0.10 \times 3) \\
-                      &= 5.000.000 \times (1 + 0.30) \\
-                      &= 5.000.000 \times 1.30 \\
-                      &= 6.500.000
-                \end{aligned}
-                \]
+        <h2>Tingkat 1: Sangat Dasar (Bunga Tunggal - Aplikasi Langsung)</h2>
+        <p style="margin-bottom: 20px; color: #666;">Fokus: Pemahaman rumus dasar bunga tunggal dengan penerapan langsung 1-2 langkah.</p>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Budi menabung uang sebesar Rp5.000.000 di bank dengan sistem bunga tunggal sebesar 10% per tahun. Berapa total saldo Budi setelah 3 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp5.000.000<br>
+                    - Bunga (r) = 10% per tahun = 0,10<br>
+                    - Waktu (t) = 3 tahun
                 </div>
-                <p>Jadi, total saldo Budi adalah <strong>Rp6.500.000</strong>.</p>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus bunga tunggal:</strong><br>
+                    \(A = P(1 + rt)\)
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A &= 5.000.000 \times (1 + 0.10 \times 3) \\
+                          &= 5.000.000 \times (1 + 0.30) \\
+                          &= 5.000.000 \times 1.30 \\
+                          &= 6.500.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Total saldo Budi adalah Rp6.500.000</div>
             </div>
         </div>
-
-        <div class="question" id="soal2">
-            <p><strong>2.</strong> Sebuah koperasi memberikan pinjaman sebesar Rp2.000.000 dengan bunga tunggal 2% per bulan. Berapa total yang harus dikembalikan setelah 6 bulan?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans2')">Lihat Jawaban</button>
-            <div class="answer" id="ans2">
-                 <p>Menggunakan rumus bunga tunggal: \(A = P(1 + rt)\)</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A &= 2.000.000 \times (1 + 0.02 \times 6) \\
-                      &= 2.000.000 \times (1 + 0.12) \\
-                      &= 2.000.000 \times 1.12 \\
-                      &= 2.240.000
-                \end{aligned}
-                \]
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Sebuah koperasi memberikan pinjaman sebesar Rp2.000.000 dengan bunga tunggal 2% per bulan. Berapa total yang harus dikembalikan setelah 6 bulan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp2.000.000<br>
+                    - Bunga (r) = 2% per bulan = 0,02<br>
+                    - Waktu (t) = 6 bulan
                 </div>
-                <p>Jadi, total yang harus dikembalikan adalah <strong>Rp2.240.000</strong>.</p>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus bunga tunggal:</strong><br>
+                    \(A = P(1 + rt)\)
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A &= 2.000.000 \times (1 + 0.02 \times 6) \\
+                          &= 2.000.000 \times (1 + 0.12) \\
+                          &= 2.000.000 \times 1.12 \\
+                          &= 2.240.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Total yang harus dikembalikan adalah Rp2.240.000</div>
             </div>
         </div>
-
-        <div class="question" id="soal3">
-            <p><strong>3.</strong> Ani menginvestasikan Rp8.000.000 dengan bunga tunggal 5% per tahun. Berapa besar bunga (bukan total uang) yang ia peroleh setelah 4 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans3')">Lihat Jawaban</button>
-            <div class="answer" id="ans3">
-                <p>Langsung hitung bunga dengan rumus: \(I = P \times r \times t\)</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    I &= 8.000.000 \times 0.05 \times 4 \\
-                      &= 400.000 \times 4 \\
-                      &= 1.600.000
-                \end{aligned}
-                \]
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Ani menginvestasikan Rp8.000.000 dengan bunga tunggal 5% per tahun. Berapa besar bunga (bukan total uang) yang ia peroleh setelah 4 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp8.000.000<br>
+                    - Bunga (r) = 5% per tahun = 0,05<br>
+                    - Waktu (t) = 4 tahun
                 </div>
-                <p>Jadi, besar bunga yang diperoleh adalah <strong>Rp1.600.000</strong>.</p>
+                <div class="solution-step">
+                    <strong>Langsung hitung bunga dengan rumus:</strong><br>
+                    \(I = P \times r \times t\)
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        I &= 8.000.000 \times 0.05 \times 4 \\
+                          &= 400.000 \times 4 \\
+                          &= 1.600.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Besar bunga yang diperoleh adalah Rp1.600.000</div>
             </div>
         </div>
-
-        <div class="question" id="soal4">
-            <p><strong>4.</strong> Setelah 5 tahun, tabungan Susi di bank dengan bunga tunggal 4% per tahun menjadi Rp3.600.000. Berapa modal awal yang Susi tabungkan?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans4')">Lihat Jawaban</button>
-            <div class="answer" id="ans4">
-                <p><strong>Trik:</strong> Mencari variabel yang tidak diketahui (P) dari rumus \(A = P(1 + rt)\).</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    3.600.000 &= P \times (1 + 0.04 \times 5) \\
-                    3.600.000 &= P \times (1 + 0.20) \\
-                    3.600.000 &= P \times 1.20 \\
-                    P &= \frac{3.600.000}{1.20} \\
-                    P &= 3.000.000
-                \end{aligned}
-                \]
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Setelah 5 tahun, tabungan Susi di bank dengan bunga tunggal 4% per tahun menjadi Rp3.600.000. Berapa modal awal yang Susi tabungkan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Total akhir (A) = Rp3.600.000<br>
+                    - Bunga (r) = 4% per tahun = 0,04<br>
+                    - Waktu (t) = 5 tahun<br>
+                    - Modal awal (P) = ?
                 </div>
-                <p>Jadi, modal awal Susi adalah <strong>Rp3.000.000</strong>.</p>
+                <div class="solution-step">
+                    <strong>Trik: Mencari variabel yang tidak diketahui (P) dari rumus \(A = P(1 + rt)\)</strong>
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        3.600.000 &= P \times (1 + 0.04 \times 5) \\
+                        3.600.000 &= P \times (1 + 0.20) \\
+                        3.600.000 &= P \times 1.20 \\
+                        P &= \frac{3.600.000}{1.20} \\
+                        P &= 3.000.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Modal awal Susi adalah Rp3.000.000</div>
             </div>
         </div>
-    </div>
-
-    <hr>
-    
-    <!-- Tingkat 2: Dasar -->
-    <div class="difficulty-level">
+        
         <h2>Tingkat 2: Dasar (Bunga Majemuk - Pemahaman Konsep Eksponensial)</h2>
-        <div class="concept-note">
-            <strong>Fokus:</strong> Memahami perbedaan fundamental antara pertumbuhan linear (bunga tunggal) vs eksponensial (bunga majemuk).
-        </div>
-
-         <div class="question" id="soal5">
-            <p><strong>5.</strong> Rina menginvestasikan uang sebesar Rp10.000.000 dengan bunga majemuk 10% per tahun. Berapa total nilai investasinya setelah 3 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans5')">Lihat Jawaban</button>
-            <div class="answer" id="ans5">
-                <p>Menggunakan rumus bunga majemuk: \(A = P(1 + r)^t\)</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A &= 10.000.000 \times (1 + 0.10)^3 \\
-                      &= 10.000.000 \times (1.1)^3 \\
-                      &= 10.000.000 \times 1.331 \\
-                      &= 13.310.000
-                \end{aligned}
-                \]
+        <p style="margin-bottom: 20px; color: #666;">Fokus: Memahami perbedaan fundamental antara pertumbuhan linear (bunga tunggal) vs eksponensial (bunga majemuk).</p>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Rina menginvestasikan uang sebesar Rp10.000.000 dengan bunga majemuk 10% per tahun. Berapa total nilai investasinya setelah 3 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp10.000.000<br>
+                    - Bunga (r) = 10% per tahun = 0,10<br>
+                    - Waktu (t) = 3 tahun
                 </div>
-                <p>Jadi, total nilai investasinya adalah <strong>Rp13.310.000</strong>.</p>
-            </div>
-        </div>
-
-         <div class="question" id="soal6">
-            <p><strong>6.</strong> Sebuah deposito senilai Rp16.000.000 memberikan bunga majemuk 25% per tahun. Berapa nilai deposito tersebut setelah 2 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans6')">Lihat Jawaban</button>
-            <div class="answer" id="ans6">
-                 <p>Menggunakan rumus bunga majemuk: \(A = P(1 + r)^t\)</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A &= 16.000.000 \times (1 + 0.25)^{2} \\
-                      &= 16.000.000 \times (1.25)^{2} \\
-                      &= 16.000.000 \times 1.5625 \\
-                      &= 25.000.000
-                \end{aligned}
-                \]
+                <div class="solution-step">
+                    <strong>Menggunakan rumus bunga majemuk:</strong><br>
+                    \(A = P(1 + r)^t\)
                 </div>
-                <p>Jadi, nilai deposito tersebut adalah <strong>Rp25.000.000</strong>.</p>
-                <p><small><em>Note: (1.25)² = 1.25 × 1.25 = 1.5625 dapat dihitung mental dengan mudah.</em></small></p>
-            </div>
-        </div>
-
-        <div class="question" id="soal7">
-            <p><strong>7.</strong> Hitung selisih antara total akhir investasi Rp10.000.000 selama 2 tahun dengan bunga tunggal 20% per tahun dan bunga majemuk 20% per tahun.</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans7')">Lihat Jawaban</button>
-            <div class="answer" id="ans7">
-                <p><strong>Trik:</strong> Perbandingan pertumbuhan linear vs eksponensial.</p>
-                <p><strong>Bunga Tunggal:</strong></p>
-                <div class="latex-block">\(A_1 = 10.000.000 \times (1 + 0.20 \times 2) = 10.000.000 \times 1.4 = 14.000.000\)</div>
-                <p><strong>Bunga Majemuk:</strong></p>
-                <div class="latex-block">\(A_2 = 10.000.000 \times (1.20)^2 = 10.000.000 \times 1.44 = 14.400.000\)</div>
-                <p><strong>Selisih:</strong></p>
-                <div class="latex-block">\(Selisih = 14.400.000 - 14.000.000 = 400.000\)</div>
-                <p>Selisihnya adalah <strong>Rp400.000</strong>, bunga majemuk memberikan hasil lebih besar.</p>
-                <p><small><em>Note: (1.20)² = 1.2 × 1.2 = 1.44 mudah dihitung mental.</em></small></p>
-            </div>
-        </div>
-
-        <div class="question" id="soal8">
-            <p><strong>8.</strong> Ayah ingin memiliki uang sebesar Rp36.000.000 dalam 2 tahun untuk biaya pendidikan. Jika sebuah produk investasi menawarkan bunga majemuk 20% per tahun, berapa uang yang harus Ayah investasikan hari ini?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans8')">Lihat Jawaban</button>
-            <div class="answer" id="ans8">
-                <p><strong>Trik:</strong> Konsep Present Value - mencari nilai sekarang dari target masa depan.</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    36.000.000 &= P \times (1.20)^2 \\
-                    36.000.000 &= P \times 1.44 \\
-                    P &= \frac{36.000.000}{1.44} \\
-                    P &= 25.000.000
-                \end{aligned}
-                \]
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A &= 10.000.000 \times (1 + 0.10)^3 \\
+                          &= 10.000.000 \times (1.1)^3 \\
+                          &= 10.000.000 \times 1.331 \\
+                          &= 13.310.000
+                    \end{aligned}
+                    \]
                 </div>
-                <p>Uang yang harus diinvestasikan adalah <strong>Rp25.000.000</strong>.</p>
-                <p><small><em>Note: 36.000.000 ÷ 1.44 = 25.000.000 (dapat dihitung mental karena 36 ÷ 1.44 = 25).</em></small></p>
+                <div class="answer">Jawaban: Total nilai investasinya adalah Rp13.310.000</div>
             </div>
         </div>
-    </div>
-    
-    <hr>
-
-    <!-- Tingkat 3: Menengah -->
-    <div class="difficulty-level">
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Sebuah deposito senilai Rp16.000.000 memberikan bunga majemuk 25% per tahun. Berapa nilai deposito tersebut setelah 2 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp16.000.000<br>
+                    - Bunga (r) = 25% per tahun = 0,25<br>
+                    - Waktu (t) = 2 tahun
+                </div>
+                <div class="solution-step">
+                    <strong>Menggunakan rumus bunga majemuk:</strong><br>
+                    \(A = P(1 + r)^t\)
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A &= 16.000.000 \times (1 + 0.25)^{2} \\
+                          &= 16.000.000 \times (1.25)^{2} \\
+                          &= 16.000.000 \times 1.5625 \\
+                          &= 25.000.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="solution-step">
+                    <em>Catatan: (1.25)² = 1.25 × 1.25 = 1.5625 dapat dihitung mental dengan mudah.</em>
+                </div>
+                <div class="answer">Jawaban: Nilai deposito tersebut adalah Rp25.000.000</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Hitung selisih antara total akhir investasi Rp10.000.000 selama 2 tahun dengan bunga tunggal 20% per tahun dan bunga majemuk 20% per tahun.
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp10.000.000<br>
+                    - Waktu (t) = 2 tahun<br>
+                    - Bunga tunggal dan majemuk = 20% per tahun
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Perbandingan pertumbuhan linear vs eksponensial</strong>
+                </div>
+                <div class="solution-step">
+                    <strong>Bunga Tunggal:</strong><br>
+                    \(A_1 = 10.000.000 \times (1 + 0.20 \times 2) = 10.000.000 \times 1.4 = 14.000.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bunga Majemuk:</strong><br>
+                    \(A_2 = 10.000.000 \times (1.20)^2 = 10.000.000 \times 1.44 = 14.400.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Selisih:</strong><br>
+                    \(Selisih = 14.400.000 - 14.000.000 = 400.000\)
+                </div>
+                <div class="solution-step">
+                    <em>Catatan: (1.20)² = 1.2 × 1.2 = 1.44 mudah dihitung mental.</em>
+                </div>
+                <div class="answer">Jawaban: Selisihnya adalah Rp400.000, bunga majemuk memberikan hasil lebih besar</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Ayah ingin memiliki uang sebesar Rp36.000.000 dalam 2 tahun untuk biaya pendidikan. Jika sebuah produk investasi menawarkan bunga majemuk 20% per tahun, berapa uang yang harus Ayah investasikan hari ini?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Target akhir (A) = Rp36.000.000<br>
+                    - Bunga (r) = 20% per tahun = 0,20<br>
+                    - Waktu (t) = 2 tahun<br>
+                    - Modal awal (P) = ?
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Konsep Present Value - mencari nilai sekarang dari target masa depan</strong>
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        36.000.000 &= P \times (1.20)^2 \\
+                        36.000.000 &= P \times 1.44 \\
+                        P &= \frac{36.000.000}{1.44} \\
+                        P &= 25.000.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="solution-step">
+                    <em>Catatan: 36.000.000 ÷ 1.44 = 25.000.000 (dapat dihitung mental karena 36 ÷ 1.44 = 25).</em>
+                </div>
+                <div class="answer">Jawaban: Uang yang harus diinvestasikan adalah Rp25.000.000</div>
+            </div>
+        </div>
+        
         <h2>Tingkat 3: Menengah (Periode Majemuk - Konversi dan Perbandingan)</h2>
-        <div class="concept-note">
-            <strong>Fokus:</strong> Memahami pengaruh frekuensi pemajemukan dan konsep Effective Annual Rate (EAR).
-        </div>
-        <p>Gunakan rumus: \( A = P\left(1 + \frac{r}{n}\right)^{nt} \)</p>
-
-        <div class="question" id="soal9">
-            <p><strong>9.</strong> Dani menabung Rp8.000.000 dengan bunga 20% per tahun yang dimajemukkan setiap semester (6 bulan). Berapa saldo tabungannya setelah 1 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans9')">Lihat Jawaban</button>
-            <div class="answer" id="ans9">
-                <p>\(P=8.000.000\), \(r=0.20\), \(t=1\), \(n=2\) (2 semester per tahun).</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A &= 8.000.000 \times \left(1 + \frac{0.20}{2}\right)^{2 \times 1} \\
-                      &= 8.000.000 \times (1 + 0.10)^2 \\
-                      &= 8.000.000 \times (1.10)^2 \\
-                      &= 8.000.000 \times 1.21 \\
-                      &= 9.680.000
-                \end{aligned}
-                \]
+        <p style="margin-bottom: 20px; color: #666;">Fokus: Memahami pengaruh frekuensi pemajemukan dan konsep Effective Annual Rate (EAR).</p>
+        <p style="margin-bottom: 20px; color: #666;">Gunakan rumus: \( A = P\left(1 + \frac{r}{n}\right)^{nt} \)</p>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Dani menabung Rp8.000.000 dengan bunga 20% per tahun yang dimajemukkan setiap semester (6 bulan). Berapa saldo tabungannya setelah 1 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp8.000.000<br>
+                    - Bunga (r) = 20% per tahun = 0,20<br>
+                    - Waktu (t) = 1 tahun<br>
+                    - Frekuensi pemajemukan (n) = 2 (2 semester per tahun)
                 </div>
-                <p>Saldo tabungannya adalah <strong>Rp9.680.000</strong>.</p>
-                <p><small><em>Note: (1.10)² = 1.1 × 1.1 = 1.21 mudah dihitung mental.</em></small></p>
-            </div>
-        </div>
-
-        <div class="question" id="soal10">
-            <p><strong>10.</strong> Berapa nilai akhir dari modal Rp6.400.000 setelah 1 tahun jika bunga yang diberikan adalah 24% per tahun yang dimajemukkan setiap kuartal (3 bulan)?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans10')">Lihat Jawaban</button>
-            <div class="answer" id="ans10">
-                <p>\(P=6.400.000\), \(r=0.24\), \(t=1\), \(n=4\) (4 kuartal per tahun).</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A &= 6.400.000 \times \left(1 + \frac{0.24}{4}\right)^{4 \times 1} \\
-                      &= 6.400.000 \times (1 + 0.06)^{4} \\
-                      &= 6.400.000 \times (1.06)^{4} \\
-                      &= 6.400.000 \times 1.26 \\
-                      &= 8.064.000
-                \end{aligned}
-                \]
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A &= 8.000.000 \times \left(1 + \frac{0.20}{2}\right)^{2 \times 1} \\
+                          &= 8.000.000 \times (1 + 0.10)^2 \\
+                          &= 8.000.000 \times (1.10)^2 \\
+                          &= 8.000.000 \times 1.21 \\
+                          &= 9.680.000
+                    \end{aligned}
+                    \]
                 </div>
-                <p>Nilai akhirnya adalah <strong>Rp8.064.000</strong>.</p>
-                <p><small><em>Note: (1.06)⁴ ≈ 1.26. Untuk mental: (1.06)² = 1.1236 ≈ 1.12, maka (1.12)² ≈ 1.26.</em></small></p>
-            </div>
-        </div>
-
-        <div class="question" id="soal11">
-            <p><strong>11.</strong> Sebuah bank menawarkan bunga nominal 8% per tahun. Pilihan A dimajemukkan per kuartal. Pilihan B dimajemukkan per bulan. Hitung Suku Bunga Efektif (EAR) untuk kedua pilihan!</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans11')">Lihat Jawaban</button>
-            <div class="answer" id="ans11">
-                <p><strong>Trik:</strong> Memahami bahwa frekuensi pemajemukan yang lebih tinggi menghasilkan EAR lebih besar.</p>
-                <p>Rumus EAR: \( \left(1 + \frac{r_{nom}}{n}\right)^n - 1 \)</p>
-                <p><strong>Pilihan A (per kuartal, n=4):</strong></p>
-                <div class="latex-block">\( EAR_A = \left(1 + \frac{0.08}{4}\right)^4 - 1 = (1.02)^4 - 1 = 1.082 - 1 = 0.082 \) atau <strong>8.2%</strong>.</div>
-                <p><strong>Pilihan B (per bulan, n=12):</strong></p>
-                <div class="latex-block">\( EAR_B = \left(1 + \frac{0.08}{12}\right)^{12} - 1 = (1.0067)^{12} - 1 = 1.083 - 1 = 0.083 \) atau <strong>8.3%</strong>.</div>
-                 <p>Pilihan B lebih menguntungkan.</p>
-            </div>
-        </div>
-
-         <div class="question" id="soal12">
-            <p><strong>12.</strong> Untuk investasi Rp10.000.000 selama 2 tahun: Bank X menawarkan bunga tunggal 12% per tahun. Bank Y menawarkan bunga 11% per tahun dimajemukkan bulanan. Bank manakah yang lebih menguntungkan?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans12')">Lihat Jawaban</button>
-            <div class="answer" id="ans12">
-                <p><strong>Trik:</strong> Perbandingan produk keuangan dengan sistem bunga berbeda.</p>
-                <p><strong>Bank X (Bunga Tunggal):</strong></p>
-                 <div class="latex-block">\(A_X = 10.000.000 \times (1 + 0.12 \times 2) = 10.000.000 \times 1.24 = 12.400.000\)</div>
-                <p><strong>Bank Y (Bunga Majemuk Bulanan):</strong></p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    A_Y &= 10.000.000 \times \left(1 + \frac{0.11}{12}\right)^{12 \times 2} \\
-                        &= 10.000.000 \times (1.0092)^{24} \\
-                        &= 10.000.000 \times 1.245 \\
-                        &= 12.450.000
-                \end{aligned}
-                \]
+                <div class="solution-step">
+                    <em>Catatan: (1.10)² = 1.1 × 1.1 = 1.21 mudah dihitung mental.</em>
                 </div>
-                <p>Pilih <strong>Bank Y</strong> karena memberikan hasil lebih besar (Rp12.450.000 vs Rp12.400.000).</p>
+                <div class="answer">Jawaban: Saldo tabungannya adalah Rp9.680.000</div>
             </div>
         </div>
-    </div>
-    
-    <hr>
-
-    <!-- Tingkat 4: Mahir -->
-    <div class="difficulty-level">
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Berapa nilai akhir dari modal Rp6.400.000 setelah 1 tahun jika bunga yang diberikan adalah 24% per tahun yang dimajemukkan setiap kuartal (3 bulan)?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp6.400.000<br>
+                    - Bunga (r) = 24% per tahun = 0,24<br>
+                    - Waktu (t) = 1 tahun<br>
+                    - Frekuensi pemajemukan (n) = 4 (4 kuartal per tahun)
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A &= 6.400.000 \times \left(1 + \frac{0.24}{4}\right)^{4 \times 1} \\
+                          &= 6.400.000 \times (1 + 0.06)^{4} \\
+                          &= 6.400.000 \times (1.06)^{4} \\
+                          &= 6.400.000 \times 1.26 \\
+                          &= 8.064.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="solution-step">
+                    <em>Catatan: (1.06)⁴ ≈ 1.26. Untuk mental: (1.06)² = 1.1236 ≈ 1.12, maka (1.12)² ≈ 1.26.</em>
+                </div>
+                <div class="answer">Jawaban: Nilai akhirnya adalah Rp8.064.000</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Sebuah bank menawarkan bunga nominal 8% per tahun. Pilihan A dimajemukkan per kuartal. Pilihan B dimajemukkan per bulan. Hitung Suku Bunga Efektif (EAR) untuk kedua pilihan!
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Bunga nominal (r<sub>nom</sub>) = 8% per tahun = 0,08<br>
+                    - Pilihan A: n = 4 (per kuartal)<br>
+                    - Pilihan B: n = 12 (per bulan)
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Memahami bahwa frekuensi pemajemukan yang lebih tinggi menghasilkan EAR lebih besar</strong>
+                </div>
+                <div class="solution-step">
+                    <strong>Rumus EAR:</strong><br>
+                    \( EAR = \left(1 + \frac{r_{nom}}{n}\right)^n - 1 \)
+                </div>
+                <div class="solution-step">
+                    <strong>Pilihan A (per kuartal, n=4):</strong><br>
+                    \( EAR_A = \left(1 + \frac{0.08}{4}\right)^4 - 1 = (1.02)^4 - 1 = 1.082 - 1 = 0.082 \) atau <strong>8.2%</strong>
+                </div>
+                <div class="solution-step">
+                    <strong>Pilihan B (per bulan, n=12):</strong><br>
+                    \( EAR_B = \left(1 + \frac{0.08}{12}\right)^{12} - 1 = (1.0067)^{12} - 1 = 1.083 - 1 = 0.083 \) atau <strong>8.3%</strong>
+                </div>
+                <div class="answer">Jawaban: Pilihan B lebih menguntungkan (EAR 8.3% vs 8.2%)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Untuk investasi Rp10.000.000 selama 2 tahun: Bank X menawarkan bunga tunggal 12% per tahun. Bank Y menawarkan bunga 11% per tahun dimajemukkan bulanan. Bank manakah yang lebih menguntungkan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Modal (P) = Rp10.000.000<br>
+                    - Waktu (t) = 2 tahun<br>
+                    - Bank X: bunga tunggal 12% per tahun<br>
+                    - Bank Y: bunga majemuk 11% per tahun, n = 12 (bulanan)
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Perbandingan produk keuangan dengan sistem bunga berbeda</strong>
+                </div>
+                <div class="solution-step">
+                    <strong>Bank X (Bunga Tunggal):</strong><br>
+                    \(A_X = 10.000.000 \times (1 + 0.12 \times 2) = 10.000.000 \times 1.24 = 12.400.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Bank Y (Bunga Majemuk Bulanan):</strong>
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        A_Y &= 10.000.000 \times \left(1 + \frac{0.11}{12}\right)^{12 \times 2} \\
+                            &= 10.000.000 \times (1.0092)^{24} \\
+                            &= 10.000.000 \times 1.245 \\
+                            &= 12.450.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Pilih Bank Y karena memberikan hasil lebih besar (Rp12.450.000 vs Rp12.400.000)</div>
+            </div>
+        </div>
+        
         <h2>Tingkat 4: Mahir (Anuitas - Multiple Cash Flows)</h2>
-        <div class="concept-note">
-            <strong>Fokus:</strong> Memahami konsep anuitas - serangkaian pembayaran berkala yang sama besarnya.
-        </div>
-        <p>Rumus FV Anuitas: \( FV = PMT \times \frac{((1 + r)^t - 1)}{r} \)</p>
-
-        <div class="question" id="soal13">
-            <p><strong>13.</strong> Setiap akhir bulan, Sarah menabung Rp500.000 di reksa dana yang memberikan imbal hasil 12% per tahun (1% per bulan). Berapa total uang Sarah setelah menabung selama 2 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans13')">Lihat Jawaban</button>
-            <div class="answer" id="ans13">
-                <p><strong>Trik:</strong> Memahami bahwa setiap setoran tumbuh untuk periode yang berbeda-beda.</p>
-                <p>\(PMT=500.000\), \(r=0.01\), \(t=24\) bulan.</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    FV &= 500.000 \times \frac{((1.01)^{24} - 1)}{0.01} \\
-                       &= 500.000 \times \frac{(1.270 - 1)}{0.01} \\
-                       &= 500.000 \times \frac{0.270}{0.01} \\
-                       &= 500.000 \times 27.0 \\
-                       &= 13.500.000
-                \end{aligned}
-                \]
+        <p style="margin-bottom: 20px; color: #666;">Fokus: Memahami konsep anuitas - serangkaian pembayaran berkala yang sama besarnya.</p>
+        <p style="margin-bottom: 20px; color: #666;">Rumus FV Anuitas: \( FV = PMT \times \frac{((1 + r)^t - 1)}{r} \)</p>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Setiap akhir bulan, Sarah menabung Rp500.000 di reksa dana yang memberikan imbal hasil 12% per tahun (1% per bulan). Berapa total uang Sarah setelah menabung selama 2 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Pembayaran bulanan (PMT) = Rp500.000<br>
+                    - Bunga (r) = 1% per bulan = 0,01<br>
+                    - Waktu (t) = 24 bulan
                 </div>
-                <p>Total uang Sarah adalah <strong>Rp13.500.000</strong>.</p>
-            </div>
-        </div>
-
-        <div class="question" id="soal14">
-            <p><strong>14.</strong> Untuk dana pensiun, seorang karyawan menyisihkan Rp1.000.000 setiap bulan ke akun yang memberikan bunga 12% per tahun. Berapa total dana yang terkumpul setelah 10 tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans14')">Lihat Jawaban</button>
-            <div class="answer" id="ans14">
-                <p>\(PMT=1.000.000\), \(r = 0.12/12 = 0.01\), \(t = 10 \times 12 = 120\) bulan.</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    FV &= 1.000.000 \times \frac{((1.01)^{120} - 1)}{0.01} \\
-                       &= 1.000.000 \times \frac{(3.30 - 1)}{0.01} \\
-                       &= 1.000.000 \times 230 \\
-                       &= 230.000.000
-                \end{aligned}
-                \]
+                <div class="solution-step">
+                    <strong>Trik: Memahami bahwa setiap setoran tumbuh untuk periode yang berbeda-beda</strong>
                 </div>
-                <p>Total dana pensiunnya adalah <strong>Rp230.000.000</strong>.</p>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        FV &= 500.000 \times \frac{((1.01)^{24} - 1)}{0.01} \\
+                           &= 500.000 \times \frac{(1.270 - 1)}{0.01} \\
+                           &= 500.000 \times \frac{0.270}{0.01} \\
+                           &= 500.000 \times 27.0 \\
+                           &= 13.500.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Total uang Sarah adalah Rp13.500.000</div>
             </div>
         </div>
-
-        <div class="question" id="soal15">
-            <p><strong>15.</strong> Keluarga Ceria ingin punya dana liburan Rp36.000.000 dalam 3 tahun. Jika mereka menabung setiap akhir bulan di tempat yang memberi bunga 12% per tahun (1% per bulan), berapakah setoran bulanan yang harus mereka lakukan?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans15')">Lihat Jawaban</button>
-            <div class="answer" id="ans15">
-                <p><strong>Trik:</strong> Mencari PMT dari target FV yang diinginkan.</p>
-                <p>\(FV=36.000.000\), \(r=0.01\), \(t=36\) bulan.</p>
-                <p>Faktor Anuitas: \(\frac{((1.01)^{36} - 1)}{0.01} = \frac{1.43 - 1}{0.01} = 43\)</p>
-                <p>PMT: \(PMT = \frac{36.000.000}{43} = 837.000\)</p>
-                <p>Mereka harus menabung <strong>Rp837.000</strong> setiap bulan.</p>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Untuk dana pensiun, seorang karyawan menyisihkan Rp1.000.000 setiap bulan ke akun yang memberikan bunga 12% per tahun. Berapa total dana yang terkumpul setelah 10 tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Pembayaran bulanan (PMT) = Rp1.000.000<br>
+                    - Bunga (r) = 12% per tahun = 0,12/12 = 0,01 per bulan<br>
+                    - Waktu (t) = 10 × 12 = 120 bulan
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        FV &= 1.000.000 \times \frac{((1.01)^{120} - 1)}{0.01} \\
+                           &= 1.000.000 \times \frac{(3.30 - 1)}{0.01} \\
+                           &= 1.000.000 \times 230 \\
+                           &= 230.000.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Total dana pensiunnya adalah Rp230.000.000</div>
             </div>
         </div>
-
-        <div class="question" id="soal16">
-             <p><strong>16.</strong> Seorang investor menargetkan memiliki Rp500.000.000 dalam 10 tahun. Ia menyetor dana secara rutin tiap akhir tahun ke instrumen investasi dengan imbal hasil 10% per tahun. Berapa besar setoran tahunan yang harus ia lakukan?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans16')">Lihat Jawaban</button>
-            <div class="answer" id="ans16">
-                 <p>\(FV=500.000.000\), \(r=0.10\), \(t=10\) tahun.</p>
-                 <p>Faktor Anuitas: \(\frac{((1.10)^{10} - 1)}{0.10} = \frac{2.59 - 1}{0.10} = 15.9\)</p>
-                <p>Setoran Tahunan: \(PMT = \frac{500.000.000}{15.9} = 31.450.000\)</p>
-                <p>Ia harus menyetor <strong>Rp31.450.000</strong> setiap tahun.</p>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Keluarga Ceria ingin punya dana liburan Rp36.000.000 dalam 3 tahun. Jika mereka menabung setiap akhir bulan di tempat yang memberi bunga 12% per tahun (1% per bulan), berapakah setoran bulanan yang harus mereka lakukan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Target akhir (FV) = Rp36.000.000<br>
+                    - Bunga (r) = 1% per bulan = 0,01<br>
+                    - Waktu (t) = 36 bulan<br>
+                    - Pembayaran bulanan (PMT) = ?
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Mencari PMT dari target FV yang diinginkan</strong>
+                </div>
+                <div class="solution-step">
+                    Faktor Anuitas: \(\frac{((1.01)^{36} - 1)}{0.01} = \frac{1.43 - 1}{0.01} = 43\)
+                </div>
+                <div class="solution-step">
+                    PMT: \(PMT = \frac{36.000.000}{43} = 837.000\)
+                </div>
+                <div class="answer">Jawaban: Mereka harus menabung Rp837.000 setiap bulan</div>
             </div>
         </div>
-    </div>
-    
-    <hr>
-    
-    <!-- Tingkat 5: Pakar -->
-    <div class="difficulty-level">
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Seorang investor menargetkan memiliki Rp500.000.000 dalam 10 tahun. Ia menyetor dana secara rutin tiap akhir tahun ke instrumen investasi dengan imbal hasil 10% per tahun. Berapa besar setoran tahunan yang harus ia lakukan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Target akhir (FV) = Rp500.000.000<br>
+                    - Bunga (r) = 10% per tahun = 0,10<br>
+                    - Waktu (t) = 10 tahun<br>
+                    - Setoran tahunan (PMT) = ?
+                </div>
+                <div class="solution-step">
+                    Faktor Anuitas: \(\frac{((1.10)^{10} - 1)}{0.10} = \frac{2.59 - 1}{0.10} = 15.9\)
+                </div>
+                <div class="solution-step">
+                    Setoran Tahunan: \(PMT = \frac{500.000.000}{15.9} = 31.450.000\)
+                </div>
+                <div class="answer">Jawaban: Ia harus menyetor Rp31.450.000 setiap tahun</div>
+            </div>
+        </div>
+        
         <h2>Tingkat 5: Pakar (Problem Solving Kompleks & Analisis Keputusan)</h2>
-        <div class="concept-note">
-            <strong>Fokus:</strong> Kombinasi konsep, analisis multi-skenario, dan pengambilan keputusan finansial yang optimal.
-        </div>
-        <p>Rumus PV Anuitas: \( PV = PMT \times \frac{1 - (1 + r)^{-t}}{r} \)</p>
-
-         <div class="question" id="soal17">
-            <p><strong>17.</strong> Anda memenangkan undian dengan 2 pilihan hadiah:<br>
-            <strong>Pilihan A:</strong> Terima Rp50.000.000 hari ini<br>
-            <strong>Pilihan B:</strong> Terima Rp8.000.000 setiap tahun selama 8 tahun<br>
-            Jika suku bunga yang relevan adalah 10% per tahun, pilihan mana yang lebih menguntungkan?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans17')">Lihat Jawaban</button>
-            <div class="answer" id="ans17">
-                <p><strong>Trik:</strong> Perbandingan lump sum vs anuitas dengan konsep Present Value.</p>
-                <p><strong>Pilihan A:</strong> Nilai sekarang = Rp50.000.000</p>
-                <p><strong>Pilihan B:</strong> Hitung PV anuitas dengan \(PMT=8.000.000\), \(r=0.10\), \(t=8\).</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    PV_B &= 8.000.000 \times \frac{1 - (1.10)^{-8}}{0.10} \\
-                         &= 8.000.000 \times \frac{1 - 0.467}{0.10} \\
-                         &= 8.000.000 \times 5.33 \\
-                         &= 42.640.000
-                \end{aligned}
-                \]
+        <p style="margin-bottom: 20px; color: #666;">Fokus: Kombinasi konsep, analisis multi-skenario, dan pengambilan keputusan finansial yang optimal.</p>
+        <p style="margin-bottom: 20px; color: #666;">Rumus PV Anuitas: \( PV = PMT \times \frac{1 - (1 + r)^{-t}}{r} \)</p>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Anda memenangkan undian dengan 2 pilihan hadiah:<br>
+                <strong>Pilihan A:</strong> Terima Rp50.000.000 hari ini<br>
+                <strong>Pilihan B:</strong> Terima Rp8.000.000 setiap tahun selama 8 tahun<br>
+                Jika suku bunga yang relevan adalah 10% per tahun, pilihan mana yang lebih menguntungkan?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Pilihan A: Lump sum = Rp50.000.000<br>
+                    - Pilihan B: Anuitas = Rp8.000.000/tahun selama 8 tahun<br>
+                    - Suku bunga (r) = 10% per tahun = 0,10
                 </div>
-                <p>Pilih <strong>Pilihan A</strong> karena Rp50.000.000 > Rp42.640.000.</p>
-            </div>
-        </div>
-
-        <div class="question" id="soal18">
-            <p><strong>18.</strong> Pak Joko mengambil KPR sebesar Rp300.000.000 dengan bunga 12% per tahun yang dihitung bulanan. Jika jangka waktu pinjaman adalah 10 tahun, berapa cicilan bulanan yang harus ia bayar?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans18')">Lihat Jawaban</button>
-            <div class="answer" id="ans18">
-                <p><strong>Trik:</strong> Mencari PMT dari PV yang sudah diketahui (loan amount).</p>
-                <p>\(PV=300.000.000\), \(r=0.12/12=0.01\), \(t=120\) bulan.</p>
-                <p>Faktor Anuitas PV: \(\frac{1 - (1.01)^{-120}}{0.01} = \frac{1 - 0.30}{0.01} = 70\)</p>
-                <p>Cicilan Bulanan: \(PMT = \frac{300.000.000}{70} = 4.286.000\)</p>
-                <p>Cicilan bulanannya adalah <strong>Rp4.286.000</strong>.</p>
-            </div>
-        </div>
-
-        <div class="question" id="soal19">
-            <p><strong>19.</strong> Andi berinvestasi Rp20.000.000 hari ini dengan bunga majemuk 10% per tahun. Tepat 3 tahun dari sekarang, ia berencana menambahkan dana sebesar Rp10.000.000 ke dalam investasi yang sama. Berapa total nilai investasinya pada akhir tahun ke-5?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans19')">Lihat Jawaban</button>
-            <div class="answer" id="ans19">
-                <p><strong>Trik:</strong> Multi-period investment dengan timing berbeda - harus dipecah menjadi dua komponen.</p>
-                <p><strong>Komponen 1:</strong> Investasi awal tumbuh selama 5 tahun penuh.</p>
-                <div class="latex-block">\(A_1 = 20.000.000 \times (1.10)^5 = 20.000.000 \times 1.61 = 32.200.000\)</div>
-                <p><strong>Komponen 2:</strong> Dana tambahan hanya diinvestasikan 2 tahun (dari tahun ke-3 ke tahun ke-5).</p>
-                <div class="latex-block">\(A_2 = 10.000.000 \times (1.10)^2 = 10.000.000 \times 1.21 = 12.100.000\)</div>
-                <p><strong>Total:</strong> \(32.200.000 + 12.100.000 = 44.300.000\)</p>
-                <p>Total investasinya adalah <strong>Rp44.300.000</strong>.</p>
-            </div>
-        </div>
-
-        <div class="question" id="soal20">
-            <p><strong>20.</strong> Sebuah perusahaan ingin membeli mesin seharga Rp200.000.000. Mereka punya dua opsi: <br>
-            <strong>Opsi A:</strong> Bayar tunai dengan diskon 8%. <br>
-            <strong>Opsi B:</strong> Cicil selama 2 tahun dengan cicilan Rp10.000.000 per bulan. <br>
-            Jika opportunity cost perusahaan adalah 12% per tahun (1% per bulan), opsi manakah yang lebih murah?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans20')">Lihat Jawaban</button>
-            <div class="answer" id="ans20">
-                 <p><strong>Trik:</strong> Capital budgeting decision - bandingkan semua biaya dalam nilai sekarang.</p>
-                 <p><strong>Biaya Opsi A (Tunai):</strong></p>
-                 <div class="latex-block">\(Biaya_A = 200.000.000 \times (1 - 0.08) = 200.000.000 \times 0.92 = 184.000.000\)</div>
-                 <p><strong>Biaya Opsi B (Cicilan):</strong> Hitung PV dari semua cicilan.</p>
-                 <div class="latex-block">
-                \[
-                \begin{aligned}
-                    PV_B &= 10.000.000 \times \frac{1 - (1.01)^{-24}}{0.01} \\
-                         &= 10.000.000 \times \frac{1 - 0.788}{0.01} \\
-                         &= 10.000.000 \times 21.2 \\
-                         &= 212.000.000
-                \end{aligned}
-                \]
-                 </div>
-                 <p>Pilih <strong>Opsi A</strong> karena Rp184.000.000 < Rp212.000.000. Bayar tunai lebih murah!</p>
-            </div>
-        </div>
-
-        <div class="question" id="soal21">
-            <p><strong>21.</strong> Andi menempatkan dana pada deposito dengan bunga 7% per tahun. Jika bunga deposito dikenai pajak 20%, berapa persentase bunga bersih yang Andi terima setiap tahun?</p>
-            <button class="toggle-button" onclick="toggleAnswer('ans21')">Lihat Jawaban</button>
-            <div class="answer" id="ans21">
-                <p><strong>Trik:</strong> Pajak deposito dipotong dari bunga kotor, sehingga bunga bersih lebih kecil.</p>
-                <div class="latex-block">
-                \[
-                \begin{aligned}
-                    I_{\text{kotor}} &= 7\% \times P = 0{,}07P \\
-                    Pajak &= 20\% \times I_{\text{kotor}} = 0{,}20 \times 0{,}07P = 0{,}014P \\
-                    I_{\text{bersih}} &= I_{\text{kotor}} - Pajak = 0{,}07P - 0{,}014P = 0{,}056P
-                \end{aligned}
-                \]
+                <div class="solution-step">
+                    <strong>Trik: Perbandingan lump sum vs anuitas dengan konsep Present Value</strong>
                 </div>
-                <p>Bunga bersih yang diterima Andi adalah <strong>5,6%</strong> per tahun.</p>
+                <div class="solution-step">
+                    <strong>Pilihan A:</strong> Nilai sekarang = Rp50.000.000
+                </div>
+                <div class="solution-step">
+                    <strong>Pilihan B:</strong> Hitung PV anuitas dengan \(PMT=8.000.000\), \(r=0.10\), \(t=8\)
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        PV_B &= 8.000.000 \times \frac{1 - (1.10)^{-8}}{0.10} \\
+                             &= 8.000.000 \times \frac{1 - 0.467}{0.10} \\
+                             &= 8.000.000 \times 5.33 \\
+                             &= 42.640.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Pilih Pilihan A karena Rp50.000.000 > Rp42.640.000</div>
             </div>
         </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Pak Joko mengambil KPR sebesar Rp300.000.000 dengan bunga 12% per tahun yang dihitung bulanan. Jika jangka waktu pinjaman adalah 10 tahun, berapa cicilan bulanan yang harus ia bayar?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Pinjaman (PV) = Rp300.000.000<br>
+                    - Bunga (r) = 12% per tahun = 0,12/12 = 0,01 per bulan<br>
+                    - Waktu (t) = 10 × 12 = 120 bulan<br>
+                    - Cicilan bulanan (PMT) = ?
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Mencari PMT dari PV yang sudah diketahui (loan amount)</strong>
+                </div>
+                <div class="solution-step">
+                    Faktor Anuitas PV: \(\frac{1 - (1.01)^{-120}}{0.01} = \frac{1 - 0.30}{0.01} = 70\)
+                </div>
+                <div class="solution-step">
+                    Cicilan Bulanan: \(PMT = \frac{300.000.000}{70} = 4.286.000\)
+                </div>
+                <div class="answer">Jawaban: Cicilan bulanannya adalah Rp4.286.000</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Andi berinvestasi Rp20.000.000 hari ini dengan bunga majemuk 10% per tahun. Tepat 3 tahun dari sekarang, ia berencana menambahkan dana sebesar Rp10.000.000 ke dalam investasi yang sama. Berapa total nilai investasinya pada akhir tahun ke-5?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Investasi awal = Rp20.000.000 (tahun 0)<br>
+                    - Investasi tambahan = Rp10.000.000 (tahun 3)<br>
+                    - Bunga (r) = 10% per tahun = 0,10<br>
+                    - Total waktu = 5 tahun
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Multi-period investment dengan timing berbeda - harus dipecah menjadi dua komponen</strong>
+                </div>
+                <div class="solution-step">
+                    <strong>Komponen 1:</strong> Investasi awal tumbuh selama 5 tahun penuh<br>
+                    \(A_1 = 20.000.000 \times (1.10)^5 = 20.000.000 \times 1.61 = 32.200.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Komponen 2:</strong> Dana tambahan hanya diinvestasikan 2 tahun (dari tahun ke-3 ke tahun ke-5)<br>
+                    \(A_2 = 10.000.000 \times (1.10)^2 = 10.000.000 \times 1.21 = 12.100.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Total:</strong> \(32.200.000 + 12.100.000 = 44.300.000\)
+                </div>
+                <div class="answer">Jawaban: Total investasinya adalah Rp44.300.000</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Sebuah perusahaan ingin membeli mesin seharga Rp200.000.000. Mereka punya dua opsi:<br>
+                <strong>Opsi A:</strong> Bayar tunai dengan diskon 8%<br>
+                <strong>Opsi B:</strong> Cicil selama 2 tahun dengan cicilan Rp10.000.000 per bulan<br>
+                Jika opportunity cost perusahaan adalah 12% per tahun (1% per bulan), opsi manakah yang lebih murah?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Harga mesin = Rp200.000.000<br>
+                    - Opsi A: Tunai dengan diskon 8%<br>
+                    - Opsi B: Cicilan Rp10.000.000/bulan selama 24 bulan<br>
+                    - Opportunity cost = 12% per tahun = 1% per bulan
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Capital budgeting decision - bandingkan semua biaya dalam nilai sekarang</strong>
+                </div>
+                <div class="solution-step">
+                    <strong>Biaya Opsi A (Tunai):</strong><br>
+                    \(Biaya_A = 200.000.000 \times (1 - 0.08) = 200.000.000 \times 0.92 = 184.000.000\)
+                </div>
+                <div class="solution-step">
+                    <strong>Biaya Opsi B (Cicilan):</strong> Hitung PV dari semua cicilan
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        PV_B &= 10.000.000 \times \frac{1 - (1.01)^{-24}}{0.01} \\
+                             &= 10.000.000 \times \frac{1 - 0.788}{0.01} \\
+                             &= 10.000.000 \times 21.2 \\
+                             &= 212.000.000
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Pilih Opsi A karena Rp184.000.000 < Rp212.000.000. Bayar tunai lebih murah!</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Andi menempatkan dana pada deposito dengan bunga 7% per tahun. Jika bunga deposito dikenai pajak 20%, berapa persentase bunga bersih yang Andi terima setiap tahun?
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    - Bunga kotor = 7% per tahun<br>
+                    - Pajak = 20% dari bunga kotor
+                </div>
+                <div class="solution-step">
+                    <strong>Trik: Pajak deposito dipotong dari bunga kotor, sehingga bunga bersih lebih kecil</strong>
+                </div>
+                <div class="formula">
+                    \[
+                    \begin{aligned}
+                        I_{\text{kotor}} &= 7\% \times P = 0{,}07P \\
+                        Pajak &= 20\% \times I_{\text{kotor}} = 0{,}20 \times 0{,}07P = 0{,}014P \\
+                        I_{\text{bersih}} &= I_{\text{kotor}} - Pajak = 0{,}07P - 0{,}014P = 0{,}056P
+                    \end{aligned}
+                    \]
+                </div>
+                <div class="answer">Jawaban: Bunga bersih yang diterima Andi adalah 5,6% per tahun</div>
+            </div>
+        </div>
+        
     </div>
-
-</div>
-
-<script>
-    function toggleAnswer(id) {
-        var answer = document.getElementById(id);
-        if (answer.style.display === "none" || answer.style.display === "") {
-            answer.style.display = "block";
-        } else {
-            answer.style.display = "none";
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
         }
-    }
-</script>
-
-<script src="dark-mode-toggler.js" defer></script>
+    </script>
+    <script src="../dark-mode-toggler.js" defer></script>
 </body>
-</html> 
+</html>
