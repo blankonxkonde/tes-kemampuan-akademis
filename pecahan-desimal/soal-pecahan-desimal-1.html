@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operasi Hitung Campuran (Pecahan & Desimal) - Soal & Kunci Jawaban</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .meta {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: 1.6em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+
+        .section-desc {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+        }
+        
+        .question-text {
+            margin-bottom: 12px;
+            font-size: 1.02em;
+            line-height: 1.8;
+        }
+
+        .options {
+            margin-bottom: 12px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.02em;
+            margin-bottom: 8px;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.02em;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kumpulan Soal Operasi Hitung Campuran</h1>
+        <div class="meta">
+            <div><strong>Topik:</strong> Operasi Campuran (Kabataku), Pecahan, Desimal, Persen, Pangkat</div>
+            <div><strong>Total Soal:</strong> 20 &nbsp;|&nbsp; <strong>Tingkat Kesulitan:</strong> Menengah - Mengecoh</div>
+        </div>
+
+        <div class="note">
+            Halaman ini berisi soal pilihan ganda beserta <strong>kunci jawaban</strong> yang dapat ditampilkan/sembunyikan.
+            Gunakan untuk latihan cepat. Untuk pembahasan langkah demi langkah, bisa dibuat halaman terpisah.
+        </div>
+
+        <h2>Bagian 1: Soal dengan Jebakan Urutan & Konversi (5 Soal)</h2>
+        <p class="section-desc">Fokus pada urutan operasi (tambah, kurang, kali, bagi, pangkat) dan konversi pecahan–desimal–persen.</p>
+
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                \(0,6 + \frac{1}{2} \div \frac{2}{3} - 0,25 \times 4 = \dots\)
+            </div>
+            <div class="options">
+                A. 0,25<br>
+                B. 0,35<br>
+                C. 1,15<br>
+                D. 1,65<br>
+                E. -0,65
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (0,35)</div>
+            </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                \((1,5 - \frac{3}{4})^2 + 20\% \times \frac{5}{2} = \dots\)
+            </div>
+            <div class="options">
+                A. 1,0625<br>
+                B. 1,25<br>
+                C. 1,85<br>
+                D. 2,25<br>
+                E. 0,95
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">A (1,0625)</div>
+            </div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                \(2 \frac{1}{2} - 0,5 \times 4 + \frac{3}{4} \div (-12,5\%) = \dots\)
+            </div>
+            <div class="options">
+                A. -5,5<br>
+                B. -4,5<br>
+                C. 6,5<br>
+                D. 2,5<br>
+                E. -3,5
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">A (-5,5)</div>
+            </div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                \(\frac{3}{5} \times 0,5 + 0,4 \div \frac{1}{5} - 10^2 \times 1\% = \dots\)
+            </div>
+            <div class="options">
+                A. 1,3<br>
+                B. 2,3<br>
+                C. -0,7<br>
+                D. 3,0<br>
+                E. 1,7
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">A (1,3)</div>
+            </div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                \(1,2 : \frac{4}{5} \times (1 - \frac{1}{3})^2 + \frac{5}{6} = \dots\)
+            </div>
+            <div class="options">
+                A. 1,0<br>
+                B. 1,25<br>
+                C. 1,5<br>
+                D. 1,75<br>
+                E. 2,0
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">C (1,5)</div>
+            </div>
+        </div>
+
+        <h2>Bagian 2: Soal Hasil Desimal Tidak Bulat (5 Soal)</h2>
+        <p class="section-desc">Hasil perhitungan berupa desimal dengan banyak angka di belakang koma.</p>
+
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                \(1,6 + 0,9 \div \frac{3}{5} \times 0,3 = \dots\)
+            </div>
+            <div class="options">
+                A. 2,05<br>
+                B. 2,20<br>
+                C. 0,45<br>
+                D. 2,85<br>
+                E. 1,95
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">A (2,05)</div>
+            </div>
+        </div>
+
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                \((1,4 - \frac{4}{5})^2 + 2 \frac{1}{4} \times 0,2 = \dots\)
+            </div>
+            <div class="options">
+                A. 0,71<br>
+                B. 0,81<br>
+                C. 1,05<br>
+                D. 4,05<br>
+                E. 0,96
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (0,81)</div>
+            </div>
+        </div>
+
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                \(\frac{9}{4} - 1,5 \times 2 \div 0,5 + (-0,25) = \dots\)
+            </div>
+            <div class="options">
+                A. 0,50<br>
+                B. -4,25<br>
+                C. -4,00<br>
+                D. -3,75<br>
+                E. 1,25
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">C (-4,00)</div>
+            </div>
+        </div>
+
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                \(15\% \times 6 + \frac{7}{8} - 2^3 \times 0,1 = \dots\)
+            </div>
+            <div class="options">
+                A. 1,225<br>
+                B. 0,975<br>
+                C. 0,175<br>
+                D. 1,775<br>
+                E. 0,875
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (0,975)</div>
+            </div>
+        </div>
+
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                \(0,45 + \frac{2}{5} \div (-4) \times 12 = \dots\)
+            </div>
+            <div class="options">
+                A. 1,65<br>
+                B. -1,65<br>
+                C. -0,75<br>
+                D. 0,33<br>
+                E. -0,15
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">C (-0,75)</div>
+            </div>
+        </div>
+
+        <h2>Bagian 3: Latihan Intensif Desimal (10 Soal)</h2>
+        <p class="section-desc">Latihan campuran dengan fokus kuat pada operasi desimal.</p>
+
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                \(0,75 + 1,2 \div \frac{2}{5} \times 0,1 = \dots\)
+            </div>
+            <div class="options">
+                A. 0,45<br>
+                B. 1,05<br>
+                C. 0,78<br>
+                D. 1,35<br>
+                E. 0,95
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (1,05)</div>
+            </div>
+        </div>
+
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                \((2,5 - \frac{3}{4})^2 - 0,5 = \dots\)
+            </div>
+            <div class="options">
+                A. 2,5625<br>
+                B. 3,00<br>
+                C. 2,50<br>
+                D. 3,5625<br>
+                E. 2,0625
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">A (2,5625)</div>
+            </div>
+        </div>
+
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                \(\frac{1}{8} + 50\% \times (1,6 - 0,4) = \dots\)
+            </div>
+            <div class="options">
+                A. 0,475<br>
+                B. 0,725<br>
+                C. 0,625<br>
+                D. 1,125<br>
+                E. 0,225
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (0,725)</div>
+            </div>
+        </div>
+
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                \(3,6 \div (-0,9) + \frac{2}{5} \times 2,5 = \dots\)
+            </div>
+            <div class="options">
+                A. -5,0<br>
+                B. -3,0<br>
+                C. 3,0<br>
+                D. -2,0<br>
+                E. -1,5
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (-3,0)</div>
+            </div>
+        </div>
+
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                \(10^2 \times 0,035 - \frac{3}{2} = \dots\)
+            </div>
+            <div class="options">
+                A. 1,0<br>
+                B. 2,5<br>
+                C. 1,5<br>
+                D. 2,0<br>
+                E. 1,85
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">D (2,0)</div>
+            </div>
+        </div>
+
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                \(0,6 + \frac{9}{10} \div 0,3 - 1,25 = \dots\)
+            </div>
+            <div class="options">
+                A. 3,75<br>
+                B. 2,35<br>
+                C. 1,35<br>
+                D. 0,85<br>
+                E. 2,15
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (2,35)</div>
+            </div>
+        </div>
+
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                \(\frac{7}{8} - 2 \times 0,6 + (-0,125) = \dots\)
+            </div>
+            <div class="options">
+                A. -0,255<br>
+                B. -0,45<br>
+                C. -0,65<br>
+                D. -0,35<br>
+                E. -0,55
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (-0,45)</div>
+            </div>
+        </div>
+
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                \(4,5 + 15\% \div \frac{3}{10} = \dots\)
+            </div>
+            <div class="options">
+                A. 4,55<br>
+                B. 5,0<br>
+                C. 5,5<br>
+                D. 4,95<br>
+                E. 9,5
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">B (5,0)</div>
+            </div>
+        </div>
+
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                \((0,2 + \frac{1}{4}) \times (-2) + 1,8 = \dots\)
+            </div>
+            <div class="options">
+                A. 0,9<br>
+                B. 0,8<br>
+                C. 1,1<br>
+                D. -0,9<br>
+                E. 2,7
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">A (0,9)</div>
+            </div>
+        </div>
+
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                \(2,2 - 1,1 \div 1,1 \times 0,5 = \dots\)
+            </div>
+            <div class="options">
+                A. 0,5<br>
+                B. 1,1<br>
+                C. 1,7<br>
+                D. 2,15<br>
+                E. 1,65
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Kunci Jawaban</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Kunci Jawaban:</div>
+                <div class="answer">C (1,7)</div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Kunci Jawaban';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Kunci Jawaban';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+    <script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
+
