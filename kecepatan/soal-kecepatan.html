@@ -387,6 +387,8 @@
             <div class="answer">
                 <p><strong>Logika:</strong> Ini adalah soal aljabar. Kita perlu membuat dua persamaan berdasarkan dua skenario, kemudian mengeliminasi variabel waktu tepat untuk mendapatkan jarak.</p>
                 <p><strong>Jawaban:</strong></p>
+                
+                <p style="margin-top: 15px;"><strong>Cara 1: Eliminasi variabel waktu</strong></p>
                 <p>Misalkan:</p>
                 <p>
                     \[
@@ -430,6 +432,38 @@
                     \end{aligned}
                     \]
                 </p>
+                
+                <p style="margin-top: 15px;"><strong>Cara 2: Langsung menyamakan jarak (lebih cepat)</strong></p>
+                <p>Karena jarak sama pada kedua skenario, kita bisa langsung menyamakan jarak berdasarkan kecepatan dan waktu perjalanan. Jika waktu tepat tiba adalah \(t\), maka:</p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    \text{Jarak skenario 1} &= \text{Jarak skenario 2}\\
+                    4\left(t + \frac{10}{60}\right) &= 5\left(t - \frac{5}{60}\right)
+                    \end{aligned}
+                    \]
+                </p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    4t + \frac{40}{60} &= 5t - \frac{25}{60},\\
+                    \frac{40}{60} + \frac{25}{60} &= 5t - 4t,\\
+                    \frac{65}{60} &= t,\\
+                    t &= \frac{65}{60} \text{ jam}.
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Selanjutnya, hitung jarak menggunakan salah satu skenario:</p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    s &= 4\left(t + \frac{10}{60}\right) = 4\left(\frac{65}{60} + \frac{10}{60}\right) = 4 \times \frac{75}{60} = 4 \times 1.25 = 5 \text{ km},\\
+                    \text{atau}\\
+                    s &= 5\left(t - \frac{5}{60}\right) = 5\left(\frac{65}{60} - \frac{5}{60}\right) = 5 \times \frac{60}{60} = 5 \times 1 = 5 \text{ km}.
+                    \end{aligned}
+                    \]
+                </p>
+                
                 <p>Jadi jarak dari rumah ke kantor adalah 5 km.</p>
             </div>
         </div>
@@ -444,6 +478,8 @@
             <div class="answer">
                 <p><strong>Logika:</strong> Gunakan dua skenario awal untuk membentuk sistem persamaan dan memperoleh jarak serta jam keberangkatan aktual. Setelah itu, gunakan syarat baru (tiba 09:30 dengan satu kecepatan konstan) untuk menentukan nilai kecepatannya.</p>
                 <p><strong>Jawaban:</strong></p>
+                
+                <p style="margin-top: 15px;"><strong>Cara 1: Menentukan jarak terlebih dahulu</strong></p>
                 <p>
                     \[
                     \begin{aligned}
@@ -473,6 +509,41 @@
                     \end{aligned}
                     \]
                 </p>
+                
+                <p style="margin-top: 15px;"><strong>Cara 2: Langsung mencari waktu berangkat (lebih cepat)</strong></p>
+                <p>Karena jarak sama pada kedua skenario, kita bisa langsung menyamakan:</p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    \text{Jarak skenario 1} &= \text{Jarak skenario 2}\\
+                    4(10 - x) &= 6(9 - x)
+                    \end{aligned}
+                    \]
+                </p>
+                <p>dengan \(x\) = waktu berangkat.</p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    4(10 - x) &= 6(9 - x)\\
+                    40 - 4x &= 54 - 6x\\
+                    40 - 54 &= -6x + 4x\\
+                    -14 &= -2x\\
+                    x &= 7
+                    \end{aligned}
+                    \]
+                </p>
+                <p>Jadi waktu berangkat adalah pukul 07:00.</p>
+                <p>Selanjutnya, hitung jarak dan kecepatan target:</p>
+                <p>
+                    \[
+                    \begin{aligned}
+                    s &= 4(10 - 7) = 4 \times 3 = 12 \text{ km},\\
+                    t_{\text{target}} &= 09{:}30 - 07{:}00 = 2.5 \text{ jam},\\
+                    v_{\text{target}} &= \frac{12}{2.5} = 4.8 \text{ km/jam}.
+                    \end{aligned}
+                    \]
+                </p>
+                
                 <p>Kesimpulannya, petani perlu berangkat pukul 07:00 dan menjaga kecepatan konstan sekitar 4,8 km/jam agar sampai tepat pukul 09:30.</p>
             </div>
         </div>
