@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 18 Tryout Challenge 2024 - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+            margin-left: auto;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+        }
+        
+        .option {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #ffffff;
+            border-left: 3px solid #dee2e6;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            background: #f8f9fa;
+            border-left-color: #667eea;
+        }
+        
+        .option.correct {
+            background: #d4edda;
+            border-left-color: #28a745;
+            font-weight: 500;
+        }
+        
+        .option.correct::after {
+            content: " ✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .option-key {
+            font-weight: bold;
+            color: #667eea;
+            margin-right: 8px;
+        }
+        
+        .option.correct .option-key {
+            color: #28a745;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 10px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            white-space: pre-line;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+        }
+        
+        .question-images, .solution-images {
+            margin: 15px 0;
+        }
+        
+        .question-images img, .solution-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Day 18 Tryout Challenge 2024 - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Informasi Tryout</strong>
+            <p>Day 18 Tryout Challenge 2024 berisi kumpulan soal yang mencakup berbagai kategori tes kemampuan dasar. Setiap soal dilengkapi dengan pembahasan lengkap untuk membantu pemahaman.</p>
+        </div>
+        
+        <div id="content">
+            <div class="loading">Memuat data...</div>
+        </div>
+    </div>
+    
+    <script>
+        // Load JSON data
+        async function loadData() {
+            try {
+                const response = await fetch('ayocpns-export-2026-01-11T17-03-01-285Z.json');
+                if (!response.ok) {
+                    throw new Error('Gagal memuat data JSON');
+                }
+                const data = await response.json();
+                renderContent(data);
+            } catch (error) {
+                document.getElementById('content').innerHTML = 
+                    '<div class="error">Error: ' + error.message + '<br>Pastikan file JSON berada di folder yang sama dengan file HTML ini.</div>';
+                console.error('Error loading data:', error);
+            }
+        }
+        
+        // Render content
+        function renderContent(data) {
+            const content = document.getElementById('content');
+            const items = data.items || [];
+            
+            if (items.length === 0) {
+                content.innerHTML = '<div class="error">Tidak ada data soal ditemukan.</div>';
+                return;
+            }
+            
+            // Sort all items by nomor (ascending)
+            const sortedItems = [...items].sort((a, b) => a.nomor - b.nomor);
+            
+            let html = '';
+            
+            // Render all questions in order
+            sortedItems.forEach((item) => {
+                const questionId = `question-${item.nomor}`;
+                const solutionId = `solution${item.nomor}`;
+                const category = item.jenis || 'Lainnya';
+                
+                html += `<div class="question" id="${questionId}">`;
+                html += `<div class="question-number">`;
+                html += `<span>Soal ${item.nomor}</span>`;
+                html += `<span class="category-badge">${escapeHtml(category)}</span>`;
+                html += `</div>`;
+                html += `<div class="question-text">${escapeHtml(item.pertanyaan)}</div>`;
+                
+                // Render images if any
+                if (item.pertanyaanImages && item.pertanyaanImages.length > 0) {
+                    html += '<div class="question-images">';
+                    item.pertanyaanImages.forEach(img => {
+                        // Handle both string URLs and image objects
+                        let imgSrc = '';
+                        let fallbackUrl = '';
+                        let imgAlt = `Gambar soal ${item.nomor}`;
+                        
+                        if (typeof img === 'string') {
+                            imgSrc = img;
+                            fallbackUrl = img;
+                        } else if (img && typeof img === 'object') {
+                            // Try local file first, then fallback to URL
+                            if (img.filename) {
+                                imgSrc = img.filename;
+                            }
+                            if (img.url) {
+                                fallbackUrl = img.url;
+                                // If no local file, use URL as primary
+                                if (!imgSrc) {
+                                    imgSrc = img.url;
+                                }
+                            }
+                            if (img.alt) {
+                                imgAlt = img.alt;
+                            }
+                        }
+                        
+                        if (imgSrc) {
+                            if (fallbackUrl && fallbackUrl !== imgSrc) {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" onerror="this.onerror=null; this.src='${escapeHtml(fallbackUrl)}';" style="max-width: 100%; height: auto;">`;
+                            } else {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" style="max-width: 100%; height: auto;">`;
+                            }
+                        }
+                    });
+                    html += '</div>';
+                }
+                
+                // Render options (tanpa indikator jawaban benar untuk mode belajar)
+                html += '<div class="options">';
+                item.opsi.forEach(option => {
+                    html += `<div class="option">`;
+                    html += `<span class="option-key">${option.key}.</span>`;
+                    html += `<span>${escapeHtml(option.text)}</span>`;
+                    html += '</div>';
+                });
+                html += '</div>';
+                
+                // Toggle button
+                html += `<button class="toggle-btn" onclick="toggleSolution(${item.nomor})">Tampilkan Pembahasan</button>`;
+                
+                // Solution
+                html += `<div class="solution" id="${solutionId}">`;
+                html += '<div class="solution-title">Pembahasan:</div>';
+                
+                // Parse pembahasan (split by newline and format)
+                const pembahasan = item.pembahasan || 'Pembahasan tidak tersedia.';
+                const pembahasanLines = pembahasan.split('\n').filter(line => line.trim());
+                
+                pembahasanLines.forEach(line => {
+                    if (line.trim()) {
+                        html += `<div class="solution-step">${escapeHtml(line)}</div>`;
+                    }
+                });
+                
+                // Find correct answer
+                const correctOption = item.opsi.find(opt => opt.isCorrect);
+                if (correctOption) {
+                    html += `<div class="answer">Jawaban: ${correctOption.key}. ${escapeHtml(correctOption.text)}</div>`;
+                }
+                
+                // Render solution images if any
+                if (item.pembahasanImages && item.pembahasanImages.length > 0) {
+                    html += '<div class="solution-images">';
+                    item.pembahasanImages.forEach(img => {
+                        // Handle both string URLs and image objects
+                        let imgSrc = '';
+                        let fallbackUrl = '';
+                        let imgAlt = `Gambar pembahasan ${item.nomor}`;
+                        
+                        if (typeof img === 'string') {
+                            imgSrc = img;
+                            fallbackUrl = img;
+                        } else if (img && typeof img === 'object') {
+                            // Try local file first, then fallback to URL
+                            if (img.filename) {
+                                imgSrc = img.filename;
+                            }
+                            if (img.url) {
+                                fallbackUrl = img.url;
+                                // If no local file, use URL as primary
+                                if (!imgSrc) {
+                                    imgSrc = img.url;
+                                }
+                            }
+                            if (img.alt) {
+                                imgAlt = img.alt;
+                            }
+                        }
+                        
+                        if (imgSrc) {
+                            if (fallbackUrl && fallbackUrl !== imgSrc) {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" onerror="this.onerror=null; this.src='${escapeHtml(fallbackUrl)}';" style="max-width: 100%; height: auto;">`;
+                            } else {
+                                html += `<img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(imgAlt)}" style="max-width: 100%; height: auto;">`;
+                            }
+                        }
+                    });
+                    html += '</div>';
+                }
+                
+                html += '</div>'; // solution
+                html += '</div>'; // question
+            });
+            
+            content.innerHTML = html;
+            
+            // Re-render MathJax if available
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([content]).catch(function (err) {
+                    console.log('MathJax error:', err);
+                });
+            }
+        }
+        
+        // Toggle solution visibility
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+        
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Load data when page loads
+        window.addEventListener('DOMContentLoaded', loadData);
+    </script>
+    <script src="../../dark-mode-toggler.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Pilar NKRI - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Pilar NKRI - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Pilar NKRI</strong>
+            <p>Pilar NKRI (Negara Kesatuan Republik Indonesia) mencakup nilai-nilai dasar yang menjadi fondasi negara Indonesia, termasuk Pancasila, UUD 1945, Bhinneka Tunggal Ika, dan NKRI. Soal-soal pilar NKRI menguji pemahaman tentang sejarah perjuangan bangsa, tokoh-tokoh nasional, organisasi pergerakan, serta nilai-nilai kebangsaan yang memperkuat persatuan dan kesatuan bangsa.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Partai Nasional Indonesia (PNI) yang didirikan oleh Soekarno pada tahun 1927 berperan penting dalam perjuangan kemerdekaan Indonesia. PNI mengedepankan semangat nasionalisme dan persatuan bangsa dalam melawan penjajahan Belanda. Dalam strategi perjuangannya, langkah paling efektif yang diambil PNI adalah ... (SKD TWK 2024)
+            </div>
+            <ul class="options">
+                <li>A. Bekerja sama dengan partai politik lain untuk memperkuat posisi dalam negosiasi dengan pemerintah kolonial.</li>
+                <li>B. Menggalang dukungan internasional untuk mendapatkan simpati dunia terhadap perjuangan kemerdekaan Indonesia.</li>
+                <li>C. Meningkatkan pendidikan politik kepada masyarakat guna memperkuat dukungan rakyat terhadap perjuangan kemerdekaan.</li>
+                <li>D. Melakukan infiltrasi ke dalam struktur pemerintahan kolonial untuk melemahkan kekuatan Belanda dari dalam.</li>
+                <li>E. Meluncurkan gerakan perlawanan bersenjata untuk mempercepat proses kemerdekaan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Teuku Umar adalah seorang pahlawan nasional yang terkenal dalam perjuangan kemerdekaan Indonesia, terutama di wilayah Aceh. Ia dikenal karena strategi gerilyanya yang cerdas dan kemampuannya dalam mengorganisasi pasukan. Teuku Umar juga mengedepankan semangat juang yang tinggi dan keberanian dalam menghadapi penjajah. Di era saat ini, semangat perjuangan dan kepemimpinan Teuku Umar dapat menjadi inspirasi untuk menghadapi tantangan nasional, seperti ketahanan pangan dan pertahanan negara. Bagaimana nilai-nilai perjuangan Teuku Umar dapat diterapkan dalam menghadapi tantangan nasional di Indonesia saat ini? (TWK CPNS 2024)
+            </div>
+            <ul class="options">
+                <li>A. Meningkatkan keterlibatan masyarakat dalam program-program pertahanan dan keamanan.</li>
+                <li>B. Mengembangkan program pertanian berkelanjutan untuk ketahanan pangan nasional.</li>
+                <li>C. Mendorong semangat kewirausahaan di kalangan pemuda untuk meningkatkan perekonomian.</li>
+                <li>D. Membentuk komunitas relawan yang siap membantu dalam penanggulangan bencana.</li>
+                <li>E. Meningkatkan kerjasama antar daerah untuk memperkuat keamanan wilayah.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Ki Hajar Dewantara, sebagai tokoh pendidikan nasional menunjukkan sikap tegas ketika menolak tawaran beasiswa pendidikan dari pemerintah kolonial Belanda karena syarat yang mengharuskan kepatuhan pada aturan kolonial yang bertentangan dengan cita-cita kemerdekaan bangsa Indonesia. Tindakan ini mencerminkan sikap yang paling sesuai dengan nilai kebangsaan dan semangat perjuangan, yaitu... (TWK CPNS 2024)
+            </div>
+            <ul class="options">
+                <li>A. Keberanian untuk mengutamakan cita-cita kebangsaan di atas keuntungan pribadi.</li>
+                <li>B. Ketegasan untuk menolak tawaran yang bertentangan dengan prinsip perjuangan kebangsaan.</li>
+                <li>C. Kesadaran untuk menjaga integritas moral tanpa tergoda oleh keuntungan pribadi.</li>
+                <li>D. Komitmen untuk mempertahankan visi pendidikan yang berlandaskan kebangsaan.</li>
+                <li>E. Kecermatan dalam mempertimbangkan dampak jangka panjang atas setiap keputusan yang diambil.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Cut Nyak Dien dikenal sebagai pahlawan nasional yang menunjukkan semangat juang yang tinggi dalam melawan penjajahan Belanda di Aceh, bahkan dalam kondisi yang sulit sekalipun. Nilai utama yang dapat diteladani dari perjuangannya dan relevan untuk diterapkan dalam pekerjaan di lingkungan pemerintahan adalah...
+            </div>
+            <ul class="options">
+                <li>A. Keteguhan untuk tetap menjalankan tugas meski menghadapi tantangan berat dalam pelaksanaan tugas pemerintahan.</li>
+                <li>B. Kecermatan dalam merancang kebijakan yang strategis untuk keberhasilan institusi pemerintahan.</li>
+                <li>C. Integritas yang kuat dalam mempertahankan prinsip dan nilai moral dalam menjalankan tugas negara.</li>
+                <li>D. Kemampuan menjaga kerja sama dan komunikasi yang baik untuk mencapai hasil yang optimal dalam tim.</li>
+                <li>E. Keberanian dalam mengambil keputusan tegas meskipun berada dalam tekanan dan situasi sulit.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Panitia Sembilan adalah kelompok yang dibentuk untuk merumuskan dasar negara Indonesia pada masa awal kemerdekaan. Mengapa Ir. Soekarno ditunjuk sebagai ketua Panitia Sembilan? (TWK CPNS 2024)
+            </div>
+            <ul class="options">
+                <li>A. Karena Ir. Soekarno memiliki kemampuan memimpin yang dapat menjembatani kepentingan kaum agama dan kaum nasionalis.</li>
+                <li>B. Karena Ir. Soekarno memiliki wawasan yang luas tentang dasar-dasar kenegaraan.</li>
+                <li>C. Karena Ir. Soekarno dikenal sebagai pemimpin yang mampu menginspirasi dan memperjuangkan cita-cita bangsa.</li>
+                <li>D. Karena Ir. Soekarno memiliki pengalaman panjang dalam pergerakan nasional.</li>
+                <li>E. Karena Ir. Soekarno memiliki kemampuan menyusun strategi politik yang tepat untuk merumuskan dasar negara.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Bung Tomo dengan orasinya berhasil membangkitkan semangat juang arek-arek Suroboyo untuk melawan Sekutu melalui ikatan emosional yang kuat terhadap nilai perjuangan bangsa. Namun, di era sekarang membangun semangat nasionalisme di kalangan generasi muda menjadi tantangan utama karena...
+            </div>
+            <ul class="options">
+                <li>A. Lebih sering terlibat dalam diskusi di dunia maya tanpa aksi nyata yang mendukung kepentingan bangsa.</li>
+                <li>B. Memiliki kecenderungan untuk mengejar ambisi pribadi dibandingkan kepentingan kolektif bangsa.</li>
+                <li>C. Kurangnya pemahaman tentang nilai-nilai sejarah perjuangan bangsa.</li>
+                <li>D. Adanya kecenderungan gaya hidup individualistik yang melemahkan rasa kebersamaan.</li>
+                <li>E. Kehidupan yang damai membuat generasi muda kurang memahami nilai pengorbanan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Dr. Wahidin Sudirohusodo dikenal sebagai tokoh yang memiliki kepedulian tinggi terhadap pendidikan generasi muda pribumi. Ia memperjuangkan pemberian beasiswa kepada pelajar STOVIA yang kurang mampu sebagai bagian dari upaya mencerdaskan bangsa. Dalam konteks ini, nilai integritas yang paling relevan dan dapat diteladani dari tindakan Dr. Wahidin adalah...
+            </div>
+            <ul class="options">
+                <li>A. Peduli terhadap kondisi sekitar dengan memberikan perhatian kepada pelajar yang membutuhkan bantuan pendidikan.</li>
+                <li>B. Adil dalam memberikan kesempatan kepada pelajar pribumi tanpa memandang latar belakang mereka.</li>
+                <li>C. Jujur dalam mengelola dan mendistribusikan bantuan pendidikan agar tepat sasaran.</li>
+                <li>D. Berani memperjuangkan pendidikan generasi muda meski menghadapi berbagai keterbatasan.</li>
+                <li>E. Tanggung jawab dalam memastikan bantuan pendidikan digunakan sesuai dengan tujuan yang diharapkan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Jepang membuat perjanjian dengan Indonesia untuk memberikan kemerdekaan. Namun, ketika Jepang terdesak oleh tentara Sekutu, mereka mengingkari janjinya. Dalam situasi ini, Indonesia segera menyusun strategi untuk meraih kemerdekaan. Integritas yang terdapat dalam cerita tersebut adalah... (SKD TWK 2024)
+            </div>
+            <ul class="options">
+                <li>A. Keberanian para pemimpin Indonesia untuk mengambil keputusan yang berisiko demi kemerdekaan.</li>
+                <li>B. Keteguhan para pemimpin Indonesia dalam memegang prinsip kejujuran meskipun menghadapi tantangan besar.</li>
+                <li>C. Tanggung jawab para pemimpin Indonesia dalam merencanakan strategi kemerdekaan tanpa bergantung pada pihak luar.</li>
+                <li>D. Kesungguhan para pemimpin Indonesia dalam memperjuangkan hak-hak rakyat secara adil.</li>
+                <li>E. Keadilan para pemimpin Indonesia dalam memperjuangkan kemerdekaan untuk seluruh rakyat tanpa diskriminasi.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Bung Karno menyatakan bahwa nasionalisme adalah itikad dan kesadaran rakyat bahwa mereka adalah satu golongan, satu bangsa, yang menimbulkan rasa percaya diri dan ketetapan hati dalam perjuangan. Dari pemahaman tersebut, perilaku yang paling mencerminkan jiwa nasionalisme di kalangan generasi muda adalah...
+            </div>
+            <ul class="options">
+                <li>A. Mengadakan dan mempromosikan acara budaya lokal melalui media sosial untuk memperkenalkan kekayaan budaya kepada dunia.</li>
+                <li>B. Berpartisipasi dalam kegiatan adat di daerah masing-masing sebagai bentuk penghormatan terhadap tradisi.</li>
+                <li>C. Politik dengan mempromosikan partisipasi aktif masyarakat dalam proses pemerintahan.</li>
+                <li>D. Kebudayaan dengan meningkatkan kesadaran nasional melalui pelestarian budaya lokal.</li>
+                <li>E. Keagamaan dengan memperkuat nilai-nilai spiritual dan moral di masyarakat.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Kegagalan Indische Partij, partai politik yang didirikan oleh E.F.E. Douwes Dekker, Tjipto Mangoenkoesoemo, dan Suwardi Suryaningrat pada tahun 1912, disebabkan oleh penolakan pemerintah kolonial terhadap gerakan yang mereka lakukan. Hikmah dari kegagalan ini yang bisa kita implementasikan dalam konteks kehidupan berbangsa dan bernegara di era sekarang adalah... (SKD TWK 2024)
+            </div>
+            <ul class="options">
+                <li>A. Pentingnya memperjuangkan hak kebebasan berpendapat dan berkumpul dalam kerangka hukum yang berlaku.</li>
+                <li>B. Memperkuat kerjasama antar partai politik untuk mencapai tujuan bersama tanpa konflik internal.</li>
+                <li>C. Mengutamakan pendidikan politik bagi masyarakat agar lebih memahami sistem pemerintahan.</li>
+                <li>D. Mendorong pemerintah untuk memberikan ruang lebih luas bagi partai politik dalam menyuarakan aspirasi rakyat.</li>
+                <li>E. Memastikan bahwa gerakan-gerakan sosial dan politik dilakukan tanpa melanggar aturan yang berlaku.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Keragaman budaya merupakan kekayaan yang dimiliki oleh suatu bangsa, setiap daerah di Indonesia memiliki budaya yang berbeda-beda. Hal ini termasuk adat istiadat, tata cara, makanan, pakaian, bahasa dan sebagainya. Namun bagaimana keragaman budaya dapat mempengaruhi nasionalisme di Indonesia...
+            </div>
+            <ul class="options">
+                <li>A. Keberagaman budaya dapat memperkaya kebudayaan nasional tetapi tidak berpengaruh pada nasionalisme</li>
+                <li>B. Keberagaman budaya dapat mempengaruhi nasionalisme hanya jika diatur oleh pemerintah</li>
+                <li>C. Keberagaman budaya dapat membantu masyarakat untuk membangun rasa toleransi terhadap perbedaan dan memperkuat persatuan nasional</li>
+                <li>D. Keberagaman budaya dapat menimbulkan perpecahan dan mengurangi rasa nasionalisme</li>
+                <li>E. Keberagaman budaya tidak memiliki pengaruh pada nasionalisme</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Sarekat Dagang Islam (SDI) didirikan oleh Haji Samanhudi di Solo pada tahun 1911 yang merupakan salah satu pergerakan yang penting dalam sejarah perjuangan kemerdekaan Indonesia. Gerakan ini berusaha membangun kekuatan dan persatuan bangsa melalui penguatan dalam bidang... (TWK CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. Pendidikan dengan menyediakan akses pendidikan yang merata bagi seluruh rakyat Indonesia.</li>
+                <li>B. Ekonomi dengan melindungi pengusaha lokal agar mampu bersaing dengan pengusaha nonlokal.</li>
+                <li>C. Politik dengan mempromosikan partisipasi aktif masyarakat dalam proses pemerintahan.</li>
+                <li>D. Kebudayaan dengan meningkatkan kesadaran nasional melalui pelestarian budaya lokal.</li>
+                <li>E. Keagamaan dengan memperkuat nilai-nilai spiritual dan moral di masyarakat.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Di masyarakat yang multikultur seperti Indonesia, keberadaan golongan atau kelompok dengan latar belakang kepentingan yang berbeda-beda merupakan hal yang biasa terjadi. Keberagaman kepentingan tersebut dapat menjadi salah satu faktor yang dapat memperkokoh persatuan NKRI karena... (TWK CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. Persatuan dan kesatuan harus tetap diutamakan meskipun kepentingannya berbeda-beda</li>
+                <li>B. Kepentingan yang beragam dapat dengan mudah memunculkan konflik horizontal</li>
+                <li>C. Persatuan dan kesatuan bangsa merupakan hal mustahil yang akan terjadi di negara yang multikultur</li>
+                <li>D. Keberagaman kepentingan dan tujuan akan makin menguatkan prinsip-prinsip demokrasi</li>
+                <li>E. Perbedaan kepentingan dan golongan menjadi penyebab utama sulitnya pencapaian persatuan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Organisasi Budi Utomo didirikan pada tanggal 20 Mei 1908 oleh para pemuda pelajar sekolah dokter Jawa atau STOVIA yang diketuai oleh Soetomo. Perjuangan pergerakan Budi Utomo dimaksudkan dalam rangka mewujudkan.... (TWK CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. Cita-cita kebangsaan yang kuat untuk mewujudkan negara yang besar</li>
+                <li>B. Cita-cita kaum intelektual yang kuat untuk mewujudkan negara yang besar</li>
+                <li>C. Penghapusan kebodohan yang ada sehingga mampu memajukan negara</li>
+                <li>D. Penghapusan feodalisme yang ada sehingga mampu memajukan negara</li>
+                <li>E. Penghapusan kemiskinan yang ada sehingga mampu memajukan negara</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Perbedaan pandangan antar golongan agama (Islam) dan nasionalis dalam perumusan pancasila sebagai dasar Negara di Sidang BPUPKI menunjukkan bahwa perbedaan pandangan merupakan hal biasa dan wajar terjadi dalam memutuskan sesuatu. Proses yang terjadi pada masa perumusan dan penetapan UUD 1945 di sidang BPUPKI menunjukkan bahwa...
+            </div>
+            <ul class="options">
+                <li>A. Golongan Islam adalah golongan mayoritas yang pendapatnya harus diakomodasi</li>
+                <li>B. Merumuskan dasar Negara bukan hal mudah dalam mendirikan sebuah Negara berdaulat</li>
+                <li>C. Sidang BPUPKI mengakomodasi perbedaan kepentingan dan pandangan anggota sidang</li>
+                <li>D. Pancasila merupakan hasil kesepakatan bersama antara dua golongan yang berbeda pandangan</li>
+                <li>E. Perbedaan pandangan seringkali memunculkan pertentangan dan rentan konflik horizontal</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Pada masa orde baru pancasila digunakan sebagai alat kekuasaan, hal ini sangat bertentangan dengan kebebasan warga negara dalam menjalani kehidupannya, namun ini bisa diatasi apabila masyarakat memahami pancasila sebagai ...
+            </div>
+            <ul class="options">
+                <li>A. Sebuah landasan yang dapat mengatasi permasalahan di masyarakat</li>
+                <li>B. Etika masyarakat dalam menentukan hasil dalam musyawarah</li>
+                <li>C. Upaya dalam mendirikan kepribadian bangsa yang kuat</li>
+                <li>D. Landasan pemikiran dan pedoman yang sesuai dengan kehidupan bangsa</li>
+                <li>E. Norma yang berlaku sebagai bentuk ketetapan dari pemerintah</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Bangsa Indonesia menyepakati akan berdirinya negara yang memiliki latar belakang majemuk, oleh karena itu hal ini tidak dapat terpisah dari ciri khas kebudayaannya yang dapat dilihat dari ...
+            </div>
+            <ul class="options">
+                <li>A. Pengadilan yang dilakukan oleh masyarakat terhadap negara</li>
+                <li>B. Kehidupan masyarakat patuh akan hukum yang berlaku</li>
+                <li>C. Kehidupan masyarakat secara natural yang dapat dilihat dari kehidupan bergotong-royong</li>
+                <li>D. Kehidupan masyarakat yang menekankan pada toleransi yang kuat</li>
+                <li>E. Menciptakan kehidupan yang damai dan aman</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Mengenalkan budaya Indonesia terhadap anak sangatlah penting dilakukan sejak dini. Hal ini diperlukan agar anak dimasa depan tidak kehilangan identitas dan jati diri ke indonesiaannya akibat pengaruh globalisasi. Sikap tersebut termasuk ke dalam ...
+            </div>
+            <ul class="options">
+                <li>A. Upaya memperkenalkan budaya di mata dunia</li>
+                <li>B. Mempersiapkan kebudayaan yang tidak akan dilupakan</li>
+                <li>C. Melestarikan budaya yang dimiliki pada generasi penerus</li>
+                <li>D. Mengajarkan pada anak akan pentingnya hidup berbudaya</li>
+                <li>E. Merekatkan anak-anak dengan budaya ibunya</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Masuknya budaya asing dapat berdampak negatif apabila ditelan mentah-mentah oleh masyarakat Indonesia tanpa dipilah dan disaring terlebih dahulu. Hal ini dapat menyebabkan perubahan-perubahan kebudayaan dalam masyarakat yang secara perlahan dapat mengakibatkan lunturnya jatin diri bangsa Indonesia dan dapat mengikis keragaman budaya masyarakat indonesia. Untuk menghindari pengaruh tersebut langkah yang perlu dilakukan adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Memantapkan budaya nasional untuk mengganti dengan budaya daerah</li>
+                <li>B. Menghindari masuknya pengaruh budaya dari negara lain</li>
+                <li>C. Mengaktualisasi budaya daerah dalam berbagai kesempatan</li>
+                <li>D. Menyesuaikan budaya daerah dengan budaya yang datang dari luar</li>
+                <li>E. Membangun sanggar-sanggar budaya diberbagai tempat</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Raden Mas Suwardi Suryaningrat atau dikenal dengan nama Ki Hajar Dewantara. Ki Hajar Dewantara adalah seorang tokoh pelopor Pendidikan bagi Kaum Pribumi Indonesia dari zaman Penjajahan Belanda. Meski demikian ia dikenal hingga saat ini karena jasanya mendirikan Taman Siswa sebagai cikal bakal Pendidikan di Indonesia. Nilai integritas Ki Hajar Dewantara dalam upaya pendirian Taman Siswa adalah...
+            </div>
+            <ul class="options">
+                <li>A. Berani mengambil keputusan membangun Pendidikan bagi pribumi meski dibawah tekanan pemerintah Belanda</li>
+                <li>B. Memiliki rasa tanggung jawab terhadap Pendidikan di tanah air bagi masyarakat pribumi</li>
+                <li>C. Memiliki rasa kepedulian terhadap Pendidikan bagi masyarakat pribumi</li>
+                <li>D. Menunjukkan kerja keras dalam upaya membangun Pendidikan bagi masyarakat pribumi</li>
+                <li>E. Memiliki jiwa kemandirian dalam membangun Pendidikan bagi masyarakat pribumi</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Budi Utomo didirikan oleh Dr. Soetomo pada tanggal 20 Mei 1908. Pendirian Budi Utomo tidak terlepas dari penggangas atau pendorong lahirnya Budi Utomo yaitu Wahidin Soedirohusodo. Budi Utomo merupakan organisasi pertama di Indonesia yang bersifat nasionalisme berbentuk modern, yaitu organisasi dengan pengurus tetap, memiliki anggota, tujuan dan program kerja. Tujuan didirikannya organisasi Budi utomo adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Menyadarkan kedudukan masyarakat Jawa, Sunda, Madura, dan penduduk Hindia seluruhnya tanpa melihat keturunan, kelamin, dan agama</li>
+                <li>B. Menyadarkan Belanda untuk membalas budi kebaikan masyarakat Jawa, Sunda, Madura, dan Penduduk Hindia seluruhnya tanpa melihat keturunan, kelamin dan agama</li>
+                <li>C. Memajukan Pendidikan masyarakat Jawa, Sunda, Madura, dan Penduduk Hindia seluruhnya tanpa melihat keturunan, kelamin dan agama</li>
+                <li>D. Meningkatkan keharmonisan Belanda dan Indonesia khususnya dalam bidang pengajaran, pertanian, peternakan, dagang, teknik, industri dan kebudayaan</li>
+                <li>E. Mengajak masyarakat Jawa, Sunda, Madura dan Penduduk Hindia seluruhnya untuk melawan penjajah Belanda dengan strategi perang Gerilya</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Indische Partij adalah partai politik pertama di Hindia Belanda yang memiliki peran penting dalam perjuangan kemerdekaan Indonesia, terutama dalam membangkitkan semangat nasionalisme dan kesadaran politik di kalangan rakyat. Dalam konteks era modern, semangat dan prinsip-prinsip perjuangan Indische Partij dapat diimplementasikan untuk memperkuat persatuan dan kesatuan bangsa Indonesia dengan cara ... (TWK SKD 2024)
+            </div>
+            <ul class="options">
+                <li>A. Menggalakkan pendidikan politik yang inklusif dan merata di seluruh lapisan masyarakat.</li>
+                <li>B. Memperkuat kerjasama antar komunitas untuk membangun jaringan sosial yang kuat.</li>
+                <li>C. Meningkatkan integritas dalam semua sektor pemerintahan dan masyarakat.</li>
+                <li>D. Mendorong partisipasi aktif masyarakat dalam proses demokrasi melalui pemilihan umum yang adil dan transparan.</li>
+                <li>E. Mengadakan kegiatan kebudayaan yang menggabungkan berbagai tradisi lokal untuk memperkuat identitas nasional.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Kewaspadaan nasional membutuhkan kerja sama dan sinergi antar lembaga pemerintah, masyarakat, dan sektor swasta untuk mencapai tujuannya. Hal ini sesuai tujuan daripada kewaspadaan nasional untuk memastikan keamanan dan keselamatan masyarakat dan negara. Di bawah ini yang tidak termasuk kedalam aspek kewaspadaan nasional yang tepat adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Memastikan bahwa negara siap dan mampu menangani dan memulihkan dari bencana</li>
+                <li>B. Melindungi informasi dan sistem informasi penting dari ancaman cyber dan kemanan informasi</li>
+                <li>C. Memastikan ketersediaan pangan dan perlindungan terhadap ancaman kesehatan pangan</li>
+                <li>D. Memastikan keamanan dan keselamatan transportasi dan pencegahan terhadap ancaman terhadap transportasi</li>
+                <li>E. Memastikan ketersediaan dan keamanan sumber daya energi yang dimanfaatkan untuk kelompok tertentu tidak diganggu</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Perjuangan bangsa Indonesia melawan penjajah awalnya bersifat kedaerahan tanpa koordinasi yang baik. Perlawanan itu ternyata mudah dipatahkan oleh penjajah. Pada 1908 masa kebangkitan nasional dimulai. Sejak 1908 perjuangan dilakukan secara terkoordinasi. Kondisi ini menjadi strategi baru bangsa Indonesia melawan penjajah. Fakta sejarah tersebut memberikan pelajaran bahwa....
+            </div>
+            <ul class="options">
+                <li>A. Strategi mengalahkan penjajah harus dilakukan secara sabar</li>
+                <li>B. Perjuangan harus dilandasi semangat persatuan dan kesatuan</li>
+                <li>C. Bangsa Indonesia merupakan bangsa yang cerdik dalam melawan penjajah</li>
+                <li>D. Penjajah takut pada pergerakan kebangkitan nasional bangsa, Indonesia</li>
+                <li>E. Mewujudkan cita-cita dan tujuan nasional Indonesia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                <strong>Perhatikan salah satu bunyi Sumpah Pemuda berikut!</strong><br>
+                "Kami putra dan putri Indonesia, menjunjung bahasa persatuan, bahasa Indonesia."<br><br>
+                Kalimat tersebut mengandung pengertian bahwa....
+            </div>
+            <ul class="options">
+                <li>A. Bahasa Indonesia dijadikan sebagai alat komunikasi efektif antarsuku</li>
+                <li>B. Para pemuda berupaya menjadikan bahasa Indonesia sebagai bahasa internasional</li>
+                <li>C. Putra-putri Indonesia harus menggunakan bahasa Indonesia dalam kehidupan sehari-hari</li>
+                <li>D. Indonesia hanya memiliki bahasa Indonesia yang dapat digunakan sebagai alat komunikasi</li>
+                <li>E. Alat komunikasi bangsa Indonesia adalah Bahasa Indonesia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <!-- Pembahasan akan ditambahkan kemudian -->
+                </div>
+                <div class="answer">Jawaban: </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Implementasi Pancasila - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Implementasi Pancasila - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Implementasi Pancasila</strong>
+            <p>Pancasila sebagai dasar negara dan ideologi bangsa Indonesia memiliki peran penting dalam kehidupan berbangsa dan bernegara. Implementasi Pancasila mencakup penerapan nilai-nilai luhur dari kelima sila dalam berbagai aspek kehidupan, mulai dari kehidupan pribadi, bermasyarakat, hingga bernegara. Soal-soal ini menguji pemahaman tentang bagaimana nilai-nilai Pancasila diterapkan dalam konteks nyata.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Pancasila berfungsi sebagai dasar negara dan landasan dalam penyelenggaraan kehidupan berbangsa. Salah satu peran utamanya adalah memperkuat persatuan bangsa yang multikultural. Dalam konteks ini, bagaimana Pancasila sebagai dasar negara mewujudkan persatuan dalam keberagaman?
+            </div>
+            <ul class="options">
+                <li>A. Membangun kesadaran tentang pentingnya toleransi melalui nilai-nilai luhur kebangsaan.</li>
+                <li>B. Memberikan pedoman bagi perilaku masyarakat untuk menghormati perbedaan.</li>
+                <li>C. Menjadi acuan dalam pembentukan kebijakan yang mengatur kehidupan bernegara berdasarkan nilai keadilan dan persatuan.</li>
+                <li>D. Menanamkan nilai moral dalam perilaku warga negara untuk menciptakan harmoni sosial.</li>
+                <li>E. Mengarahkan pembangunan nasional agar menjunjung tinggi prinsip keadilan sosial.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan bagaimana Pancasila sebagai dasar negara mewujudkan persatuan dalam keberagaman.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Jawaban yang tepat adalah menjadi acuan dalam pembentukan kebijakan yang mengatur kehidupan bernegara berdasarkan nilai keadilan dan persatuan. Sebagai dasar negara, Pancasila berfungsi memastikan bahwa setiap kebijakan dan peraturan yang dibuat mencerminkan nilai-nilai persatuan dan keadilan. Hal ini penting untuk menjaga keharmonisan dalam masyarakat yang multikultural. Dengan landasan ini, pemerintah dapat menyusun kebijakan yang menghormati keberagaman sekaligus memperkuat persatuan bangsa.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A, membangun kesadaran tentang pentingnya toleransi, lebih relevan dengan penerapan nilai-nilai moral dalam masyarakat. Opsi B, memberikan pedoman bagi perilaku masyarakat, mencerminkan fungsi Pancasila sebagai pandangan hidup, bukan dasar negara. Opsi D, menanamkan nilai moral, terkait dengan pendidikan karakter, sedangkan opsi E, mengarahkan pembangunan nasional, lebih berfokus pada fungsi Pancasila sebagai pedoman pembangunan, bukan sebagai dasar negara.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Banyak korban musibah longsor yang terjadi di Indonesia mendorong kita untuk bersatu dan saling menolong. Apa dampak sosial utama jika kita tidak membantu korban bencana tersebut? (TWK SKD 2024)
+            </div>
+            <ul class="options">
+                <li>A. Menurunnya semangat gotong-royong dalam masyarakat.</li>
+                <li>B. Korban longsor akan kesulitan mendapatkan bantuan yang mereka butuhkan.</li>
+                <li>C. Menurunnya rasa kemanusiaan dalam masyarakat.</li>
+                <li>D. Meningkatkan ketegangan sosial di masyarakat.</li>
+                <li>E. Menurunnya rasa kepedulian terhadap sesama.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan dampak sosial utama jika tidak membantu korban bencana longsor.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Menolong korban bencana adalah tindakan yang sangat penting karena mencerminkan nilai-nilai kemanusiaan, solidaritas, dan kepedulian dalam masyarakat. Jika kita tidak menolong korban bencana tersebut, dampak sosial utama yang paling signifikan adalah menurunnya rasa kemanusiaan dalam masyarakat. Menurunnya rasa kemanusiaan berarti masyarakat akan menjadi kurang empati dan peduli terhadap penderitaan orang lain. Hal ini dapat mengurangi solidaritas dan gotong-royong, yang merupakan nilai-nilai fundamental dalam budaya Indonesia.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Tanpa rasa kemanusiaan yang kuat, masyarakat bisa menjadi lebih individualis dan kurang tanggap terhadap kebutuhan sesama, terutama dalam situasi darurat seperti bencana. Ini adalah dampak yang lebih luas dan fundamental dibandingkan dengan dampak langsung lainnya seperti kesulitan mendapatkan bantuan atau peningkatan ketegangan sosial. Menurunnya rasa kepedulian terhadap sesama ini sangat mirip dengan opsi C, namun rasa kemanusiaan mencakup kepedulian serta aspek lain seperti empati dan solidaritas. Jadi, menurunnya rasa kemanusiaan lebih luas cakupannya dan lebih tepat menggambarkan dampak sosial utama.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Pancasila sila kelima mengamanatkan sebuah perwujudan Keadilan Sosial dalam kehidupan berbangsa dan bernegara. Salah satu implementasi bela negara demi perwujudan sila Pancasila tersebut adalah ... (TWK CPNS 2024)
+            </div>
+            <ul class="options">
+                <li>A. Perusahaan mengelola limbahnya agar tidak mencemari lingkungan</li>
+                <li>B. Ikut berdonasi untuk warga Palestina</li>
+                <li>C. Para buruh melalui Serikat Buruh meminta kenaikan upah</li>
+                <li>D. Mendukung atlet nasional yang sedang bermain di laga internasional</li>
+                <li>E. Menjenguk tetangga yang sedang sakit dan menawarkan pertolongan semampunya</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan implementasi bela negara untuk perwujudan sila kelima Pancasila (Keadilan Sosial).
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Jawaban yang tepat adalah perusahaan mengelola limbahnya agar tidak mencemari lingkungan. Sila kelima Pancasila, Keadilan Sosial bagi Seluruh Rakyat Indonesia, menekankan pentingnya keadilan dalam aspek sosial, ekonomi, dan lingkungan. Pengelolaan limbah oleh perusahaan agar tidak mencemari lingkungan merupakan wujud tanggung jawab sosial perusahaan untuk menjaga keseimbangan lingkungan dan keadilan bagi masyarakat sekitar. Dengan langkah ini, perusahaan turut berperan dalam menciptakan lingkungan yang sehat, yang merupakan hak setiap warga negara, sesuai dengan prinsip keadilan sosial.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi B, berdonasi untuk warga Palestina, adalah tindakan mulia, tetapi tidak terkait langsung dengan perwujudan keadilan sosial dalam konteks bangsa Indonesia. Opsi C, buruh meminta kenaikan upah, adalah contoh memperjuangkan hak-hak buruh, tetapi tidak selalu mewakili implementasi bela negara yang diamanatkan sila kelima. Opsi D, mendukung atlet nasional, lebih berkaitan dengan rasa nasionalisme dan kebanggaan negara, namun tidak berkaitan langsung dengan keadilan sosial. Opsi E, menjenguk tetangga yang sakit, merupakan tindakan solidaritas dan gotong royong, tetapi lebih sesuai dengan sila kedua tentang kemanusiaan yang adil dan beradab.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Keyakinan terhadap nilai-nilai Pancasila tidak hanya diucapkan, tetapi harus tercermin dalam perilaku nyata yang sesuai dengan peran sebagai warga negara. Dalam konteks sikap yang mencerminkan nilai-nilai Pancasila secara menyeluruh, mana yang paling relevan sebagai contoh nyata dari pengamalan Pancasila?
+            </div>
+            <ul class="options">
+                <li>A. Melakukan perpanjangan SIM C sesuai jadwal untuk memenuhi kewajiban sebagai warga negara yang taat hukum.</li>
+                <li>B. Menunjukkan kebanggaan sebagai warga negara Indonesia meskipun ada tantangan besar seperti kasus korupsi.</li>
+                <li>C. Membiasakan gaya hidup sehat, seperti berenang secara rutin, untuk menjaga kesehatan pribadi.</li>
+                <li>D. Menggunakan produk lokal meskipun harus membayar lebih mahal sebagai bentuk dukungan terhadap perekonomian nasional.</li>
+                <li>E. Menjalankan kewajiban agama secara konsisten dalam kondisi apa pun untuk memperkuat hubungan spiritual dengan Tuhan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan contoh nyata dari pengamalan Pancasila secara menyeluruh.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Jawaban yang tepat adalah mengutamakan produk lokal meskipun harus membayar lebih mahal sebagai bentuk dukungan terhadap perekonomian nasional. Tindakan ini mencerminkan pengamalan sila ketiga, Persatuan Indonesia, melalui dukungan terhadap perekonomian dalam negeri, yang memperkuat kemandirian bangsa. Selain itu, hal ini juga selaras dengan sila kelima, Keadilan Sosial bagi Seluruh Rakyat Indonesia, karena mendukung usaha lokal berarti turut berkontribusi terhadap kesejahteraan masyarakat.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dibandingkan opsi lain, tindakan ini menunjukkan pengamalan Pancasila yang tidak hanya bersifat pribadi, tetapi juga berdampak luas pada kehidupan berbangsa.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Korupsi oleh pejabat publik merupakan pelanggaran terhadap sila kelima Pancasila, Keadilan Sosial bagi Seluruh Rakyat Indonesia, dan memiliki dampak luas terhadap masyarakat. Dalam konteks nasionalisme dan persatuan bangsa, bagaimana tindakan tersebut memengaruhi hubungan antara pemerintah dan rakyat? (TWK CPNS 2024)
+            </div>
+            <ul class="options">
+                <li>A. Membuka peluang bagi masyarakat untuk berperan aktif dalam memperbaiki sistem pengawasan pemerintahan.</li>
+                <li>B. Meningkatkan ketidakpercayaan masyarakat terhadap pemerintah sehingga memengaruhi stabilitas negara.</li>
+                <li>C. Mengurangi kesenjangan sosial karena fokus masyarakat beralih pada pengawasan.</li>
+                <li>D. Membuat masyarakat lebih kritis dalam memilih pemimpin melalui proses demokrasi yang bersih.</li>
+                <li>E. Memicu konflik internal di dalam institusi pemerintahan yang dapat menurunkan efektivitas kerja pemerintah.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan bagaimana korupsi oleh pejabat publik memengaruhi hubungan antara pemerintah dan rakyat dalam konteks nasionalisme dan persatuan bangsa.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Jawaban yang tepat adalah Meningkatkan ketidakpercayaan masyarakat terhadap pemerintah sehingga memengaruhi stabilitas negara. Korupsi oleh pejabat publik mencederai nilai sila kelima yaitu Keadilan Sosial bagi Seluruh Rakyat Indonesia karena merugikan masyarakat dan memperbesar ketimpangan sosial. Hal ini menyebabkan masyarakat kehilangan kepercayaan terhadap pemerintah yang merupakan elemen penting dalam menjaga stabilitas nasional.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dibandingkan opsi lain, dampak ini paling langsung memengaruhi hubungan antara rakyat dan pemerintah serta memengaruhi rasa nasionalisme dan persatuan bangsa.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Selama pandemi meskipun tidak ada pengawasan tetapi si X tetap mematuhi protokol kesehatan seperti memakai masker, menjaga jarak, dan menghindari kerumunan. Tindakan ini mencerminkan penerapan nilai-nilai Pancasila yang paling sesuai. Berdasarkan tindakan tersebut, sila apa yang dominan dan mengapa?
+            </div>
+            <ul class="options">
+                <li>A. Sila kedua, karena tindakan tersebut menunjukkan penghormatan terhadap martabat manusia dengan melindungi kesehatan pribadi dan orang lain.</li>
+                <li>B. Sila keempat, karena si X menghormati keputusan kolektif pemerintah yang ditetapkan demi kepentingan bersama.</li>
+                <li>C. Sila ketiga, karena tindakan tersebut membantu menjaga solidaritas dan kebersamaan dalam menghadapi pandemi.</li>
+                <li>D. Sila pertama, karena mematuhi protokol kesehatan adalah bentuk pengamalan ajaran agama untuk bertanggung jawab kepada Tuhan.</li>
+                <li>E. Sila kelima, karena si X berusaha menciptakan keseimbangan sosial dengan menjaga hak masyarakat untuk hidup sehat.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Si X mematuhi protokol kesehatan meskipun tidak ada pengawasan. Soal menanyakan sila apa yang dominan dan mengapa.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Jawaban yang paling tepat adalah Sila kedua karena tindakan tersebut menunjukkan penghormatan terhadap martabat manusia dengan melindungi kesehatan pribadi dan orang lain. Tindakan si X mematuhi protokol kesehatan mencerminkan nilai kemanusiaan yang adil dan beradab karena menjaga kesehatan pribadi sekaligus melindungi orang lain dari risiko penyebaran penyakit.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Dibandingkan opsi lain, alasan ini paling relevan karena tindakan tersebut lebih dominan menunjukkan penghormatan terhadap hak asasi manusia dalam konteks kesehatan.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Sila ketiga Pancasila berbunyi "Persatuan Indonesia". Prinsip ini menekankan pentingnya persatuan dan kesatuan bangsa. Pernyataan berikut ini yang paling mencerminkan penerapan sila tersebut adalah... (TWK SKD 2024)
+            </div>
+            <ul class="options">
+                <li>A. Mengutamakan kepentingan bersama di atas kepentingan pribadi demi kesejahteraan nasional.</li>
+                <li>B. Membangun kerjasama antar daerah untuk meningkatkan kesejahteraan bersama.</li>
+                <li>C. Menghormati perbedaan budaya dan adat istiadat yang ada di setiap daerah.</li>
+                <li>D. Memainkan gotong royong dalam setiap kegiatan masyarakat.</li>
+                <li>E. Mengadakan kegiatan nasional yang melibatkan semua suku dan golongan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan pernyataan yang paling mencerminkan penerapan sila ketiga Pancasila "Persatuan Indonesia".
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Sila ketiga Pancasila, "Persatuan Indonesia", menekankan pentingnya menjaga persatuan dan kesatuan di tengah keberagaman yang ada di Indonesia. Dalam konteks ini, penerapan sila ketiga dapat dilihat melalui berbagai tindakan yang memperkuat rasa kebersamaan dan solidaritas antarwarga negara. Mengutamakan kepentingan bersama di atas kepentingan pribadi demi kesejahteraan nasional adalah pernyataan yang paling mencerminkan penerapan sila ketiga Pancasila.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Mengutamakan kepentingan bersama berarti bahwa setiap individu dan kelompok dalam masyarakat bersedia mengorbankan kepentingan pribadi demi kebaikan bersama dan kesejahteraan seluruh bangsa. Tindakan ini secara langsung mencerminkan semangat persatuan dan kesatuan yang menjadi inti dari sila ketiga.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Pancasila sebagai dasar negara Indonesia memiliki nilai-nilai yang harus diterapkan dalam kehidupan berbangsa dan bernegara. Salah satu nilai yang penting adalah persatuan. Dalam situasi saat terjadi konflik antar kelompok masyarakat, tindakan apa yang paling tepat dilakukan untuk menjaga persatuan?
+            </div>
+            <ul class="options">
+                <li>A. Mengadakan pertemuan bersama untuk membahas dan menyelesaikan perbedaan.</li>
+                <li>B. Menghindari kelompok yang berkonflik untuk menjaga ketenangan.</li>
+                <li>C. Menyampaikan aspirasi melalui media sosial dengan harapan didengar oleh pihak terkait.</li>
+                <li>D. Mengajak tokoh masyarakat untuk menjadi penengah dari permasalahan.</li>
+                <li>E. Menjalankan aktivitas sehari-hari tanpa terlibat dalam konflik.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan tindakan yang paling tepat untuk menjaga persatuan saat terjadi konflik antar kelompok masyarakat.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Dalam situasi konflik antar kelompok masyarakat, menjaga persatuan adalah prioritas utama. Tindakan yang paling tepat untuk menjaga persatuan sesuai dengan nilai-nilai Pancasila adalah mengadakan pertemuan bersama untuk membahas dan menyelesaikan perbedaan (Pilihan A). Pertemuan bersama memungkinkan semua pihak yang terlibat dalam konflik untuk berpartisipasi langsung dalam dialog terbuka dan transparan. Ini mencerminkan prinsip musyawarah untuk mufakat, di mana setiap individu memiliki kesempatan untuk menyampaikan pandangan dan mendiskusikan solusi yang dapat diterima bersama.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Pilihan B, menghindari kelompok yang berkonflik untuk menjaga ketenangan, mungkin bisa menjaga ketenangan sementara, tetapi tidak menyelesaikan masalah inti dari konflik dan tidak mendukung persatuan jangka panjang. Pilihan C, menyampaikan aspirasi melalui media sosial, dapat membantu menyebarkan informasi, tetapi kurang efektif dalam menyelesaikan konflik karena bisa memicu kesalahpahaman. Pilihan D, mengajak tokoh masyarakat untuk menjadi penengah, merupakan langkah yang baik karena tokoh masyarakat sering dihormati dan memiliki pengaruh, namun ini lebih sebagai tindakan pendukung daripada solusi utama. Pilihan E, menjalankan aktivitas sehari-hari tanpa terlibat dalam konflik, adalah sikap pasif yang tidak membantu menyelesaikan masalah dan tidak mendukung persatuan.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Di bawah ini terdapat beberapa pernyataan mengenai implementasi Pancasila dalam kehidupan sehari-hari. Pilihlah tiga pernyataan yang paling tepat yang mencerminkan penerapan nilai-nilai Pancasila.
+            </div>
+            <ul class="options">
+                <li>1) Menghormati perbedaan pendapat dalam diskusi kelompok kerja.</li>
+                <li>2) Menyediakan waktu untuk pengembangan diri melalui pelatihan dan pendidikan.</li>
+                <li>3) Mengutamakan kepentingan kelompok sendiri dalam setiap pengambilan keputusan.</li>
+                <li>4) Berpartisipasi aktif dalam kegiatan sosial untuk membantu masyarakat yang kurang mampu.</li>
+                <li>5) Menjaga kerahasiaan informasi perusahaan demi keamanan dan kestabilan operasional.</li>
+                <li>6) Mengutamakan musyawarah untuk mencapai mufakat dalam pengambilan keputusan keluarga.</li>
+            </ul>
+            <ul class="options">
+                <li>A. 1, 4, dan 6</li>
+                <li>B. 2, 3, dan 5</li>
+                <li>C. 1, 4, dan 5</li>
+                <li>D. 4, 5, dan 6</li>
+                <li>E. 2, 4, dan 6</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan tiga pernyataan yang paling tepat mencerminkan penerapan nilai-nilai Pancasila.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis pernyataan yang benar:</strong><br>
+                    • Pernyataan 1: Menghormati perbedaan pendapat dalam diskusi kelompok kerja mencerminkan nilai Pancasila sila ke-4: Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan.<br>
+                    • Pernyataan 4: Berpartisipasi aktif dalam kegiatan sosial untuk membantu masyarakat yang kurang mampu mencerminkan nilai Pancasila sila ke-5: Keadilan sosial bagi seluruh rakyat Indonesia.<br>
+                    • Pernyataan 6: Mengutamakan musyawarah untuk mencapai mufakat dalam pengambilan keputusan keluarga mencerminkan nilai Pancasila sila ke-4: Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan.
+                </div>
+                <div class="solution-step">
+                    <strong>Pernyataan yang tidak sesuai:</strong><br>
+                    • Pernyataan 2: Menyediakan waktu untuk pengembangan diri melalui pelatihan dan pendidikan lebih relevan dengan pengembangan pribadi dan profesional daripada implementasi Pancasila secara langsung.<br>
+                    • Pernyataan 3: Mengutamakan kepentingan kelompok sendiri dalam setiap pengambilan keputusan bertentangan dengan sila ke-3: Persatuan Indonesia.<br>
+                    • Pernyataan 5: Menjaga kerahasiaan informasi perusahaan demi keamanan dan kestabilan operasional lebih relevan dengan etika profesional.
+                </div>
+                <div class="answer">Jawaban: A (1, 4, dan 6)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Selama pandemi COVID-19, warga negara saling membantu dan mendukung pemerintah untuk mencegah penyebaran virus. Bagaimana tindakan ini berhubungan dengan konsep bela negara? (TWK SKD 2024)
+            </div>
+            <ul class="options">
+                <li>A. Mencerminkan rasa tanggung jawab warga negara terhadap keselamatan bersama.</li>
+                <li>B. Menunjukkan kepatuhan terhadap peraturan dan kebijakan pemerintah.</li>
+                <li>C. Menguatkan solidaritas dan persatuan di antara warga negara.</li>
+                <li>D. Meningkatkan kesadaran akan pentingnya kesehatan dan kebersihan.</li>
+                <li>E. Menunjukkan dukungan terhadap upaya pemerintah dalam menjaga stabilitas nasional.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan bagaimana tindakan warga negara saling membantu dan mendukung pemerintah selama pandemi COVID-19 berhubungan dengan konsep bela negara.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Selama pandemi COVID-19, ketika warga negara saling membantu dan mendukung pemerintah, mereka menunjukkan rasa tanggung jawab untuk menjaga keselamatan bersama. Ini merupakan inti dari konsep bela negara, yaitu partisipasi aktif warga dalam menjaga keamanan dan kesejahteraan negara. Tindakan ini bukan hanya sekedar mengikuti aturan, tetapi juga berkontribusi langsung dalam usaha melawan pandemi.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi B, menunjukkan kepatuhan terhadap peraturan dan kebijakan pemerintah, memang penting dan merupakan bagian dari bela negara. Namun, dalam konteks ini, yang lebih ditekankan adalah tindakan aktif dan inisiatif warga dalam bergotong royong, bukan hanya kepatuhan pasif. Opsi C, menguatkan solidaritas dan persatuan di antara warga negara, adalah efek positif dari gotong royong, tetapi tidak secara langsung mencerminkan tindakan bela negara yang menekankan pada partisipasi aktif untuk menjaga keselamatan bersama. Opsi D, meningkatkan kesadaran akan pentingnya kesehatan dan kebersihan, adalah hasil baik dari tindakan warga, tetapi tidak mencerminkan langsung konsep bela negara. Opsi E, menunjukkan dukungan terhadap upaya pemerintah dalam menjaga stabilitas nasional, juga merupakan bagian dari bela negara, tetapi lebih umum dan tidak menekankan pada partisipasi aktif individu dalam menjaga keselamatan bersama.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Pancasila memiliki peran penting dalam membangun identitas nasional Indonesia. Bagaimana Pancasila membantu membentuk dan memperkuat identitas nasional bangsa Indonesia?
+            </div>
+            <ul class="options">
+                <li>A. Menjadi dasar bagi penyusunan kebijakan luar negeri.</li>
+                <li>B. Menjadi pedoman untuk memperkuat keberagaman budaya Indonesia.</li>
+                <li>C. Menjadi alat untuk menghapus perbedaan etnis dan agama.</li>
+                <li>D. Menjadi dasar untuk membangun ekonomi nasional yang kuat.</li>
+                <li>E. Menjadi landasan untuk mempersatukan seluruh warga negara Indonesia.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan bagaimana Pancasila membantu membentuk dan memperkuat identitas nasional bangsa Indonesia.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pancasila sebagai dasar negara Indonesia memainkan peran yang sangat penting dalam membangun identitas nasional Indonesia. Sebagai landasan moral dan etika, Pancasila mempersatukan seluruh warga negara Indonesia dengan nilai-nilai yang mencerminkan prinsip-prinsip dasar kehidupan berbangsa (opsi E). Pancasila mengandung lima sila yang menjadi pedoman hidup bagi seluruh rakyat Indonesia, yang berfungsi untuk menciptakan harmoni dan persatuan di tengah keberagaman etnis, agama, dan budaya.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A, kurang tepat karena Pancasila lebih berperan dalam aspek internal negara. Opsi B, C, dan D juga kurang tepat karena tidak secara langsung menggambarkan fungsi utama Pancasila sebagai landasan untuk mempersatukan seluruh warga negara Indonesia.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Untuk menjaga keutuhan bangsa, meningkatkan kesadaran masyarakat terhadap bahaya radikalisme, intoleransi, dan ekstremisme perlu dilakukan. Salah satu bentuk tindakan yang tepat adalah dengan melakukan aksi nyata dalam aspek sosial. Bentuk aksi yang tepat dalam lingkup sosial adalah...
+            </div>
+            <ul class="options">
+                <li>A. Menyelenggarakan program pelatihan kewaspadaan dan keamanan bagi masyarakat di daerah-daerah rawan konflik atau terorisme</li>
+                <li>B. Pengembangan program ekonomi kerakyatan untuk memberdayakan masyarakat secara ekonomi da mengurangi ketimpangan sosial</li>
+                <li>C. Membuka ruang diskusi dan dialog antar umat beragama untuk membahas isu-isu sosial yang sensitif dan memperkuat toleransi antar umat beragama</li>
+                <li>D. Membuat poster atau spanduk dengan pesan-pesan mengenai pentingnya menjaga kerukunan dan kesatuan bangsa</li>
+                <li>E. Membuat program kemitraan antara masyarakat dan kepolisian atau TNI dalam hal pemantauan dan pelaporan aktivitas yang mencurigakan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan bentuk aksi yang tepat dalam lingkup sosial untuk meningkatkan kesadaran masyarakat terhadap bahaya radikalisme, intoleransi, dan ekstremisme.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Untuk menjaga keutuhan bangsa, meningkatkan kesadaran masyarakat terhadap bahaya radikalisme, intoleransi, dan ekstremisme perlu dilakukan melalui aksi nyata dalam aspek sosial. Bentuk aksi yang tepat dalam lingkup sosial adalah membuka ruang diskusi dan dialog antar umat beragama untuk membahas isu-isu sosial yang sensitif dan memperkuat toleransi antar umat beragama (opsi C).
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Dialog dan diskusi antar umat beragama merupakan langkah konkret dalam membangun pemahaman bersama, mengurangi prasangka, dan memperkuat toleransi. Ini lebih efektif dibandingkan opsi lain seperti pelatihan kewaspadaan (A), program ekonomi (B), poster/spanduk (D), atau program kemitraan dengan kepolisian/TNI (E), karena fokus pada aspek sosial yaitu membangun hubungan dan pemahaman antar kelompok masyarakat.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Bangsa Indonesia menyatakan kepercayaannya dan ketaqwaannya terhadap Tuhan Yang Maha Esa. Hal ini memiliki arti...
+            </div>
+            <ul class="options">
+                <li>A. Melibatkan aspek keagamaan dalam setiap keputusan negara tanpa terkecuali.</li>
+                <li>B. Mewajibkan seluruh warga negara untuk memeluk agama tertentu.</li>
+                <li>C. Mengakui keberadaan Tuhan serta menjalankan ajaran agama dengan penuh kepatuhan.</li>
+                <li>D. Mengutamakan kegiatan keagamaan dalam kehidupan berbangsa dan bernegara.</li>
+                <li>E. Menyusun undang-undang yang sepenuhnya berdasarkan ajaran agama tertentu.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan arti dari pernyataan bangsa Indonesia tentang kepercayaan dan ketaqwaan terhadap Tuhan Yang Maha Esa.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Bangsa Indonesia menyatakan kepercayaannya dan ketaqwaannya terhadap Tuhan Yang Maha Esa. Hal ini memiliki arti mengakui keberadaan Tuhan serta menjalankan ajaran agama dengan penuh kepatuhan (opsi C). Pernyataan ini mencerminkan sila pertama Pancasila yang mengakui keberadaan Tuhan dan memberikan kebebasan bagi setiap warga negara untuk menjalankan ajaran agamanya masing-masing.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A tidak tepat karena tidak semua keputusan negara harus melibatkan aspek keagamaan. Opsi B salah karena Indonesia tidak mewajibkan warga negara memeluk agama tertentu. Opsi D tidak tepat karena kegiatan keagamaan tidak harus diutamakan dalam semua aspek kehidupan berbangsa dan bernegara. Opsi E salah karena undang-undang tidak sepenuhnya berdasarkan ajaran agama tertentu, melainkan berdasarkan Pancasila yang mengakui keberagaman agama.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Berikut ini merupakan salah satu contoh norma yang berlaku pada masyarakat di Indonesia, yang bertujuan untuk mewujudkan keadilan dalam masyarakat adalah ... (TWK CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. Perintah memakai helm saat mengendarai motor</li>
+                <li>B. Larangan membuang sampah ke sungai</li>
+                <li>C. Perintah membayar berbagai macam pajak</li>
+                <li>D. Larangan menerima uang saat pilkada</li>
+                <li>E. Perintah untuk memiliki kartu tanda penduduk</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan contoh norma yang bertujuan untuk mewujudkan keadilan dalam masyarakat.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Norma yang bertujuan untuk mewujudkan keadilan dalam masyarakat adalah larangan menerima uang saat pilkada (opsi D). Norma ini bertujuan untuk menjaga keadilan dalam proses demokrasi dengan mencegah praktik politik uang yang dapat merusak proses pemilihan yang adil dan demokratis. Dengan melarang penerimaan uang saat pilkada, diharapkan setiap kandidat memiliki kesempatan yang sama dan pemilih dapat memilih berdasarkan pertimbangan yang objektif, bukan karena imbalan materi.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A (memakai helm) dan B (larangan membuang sampah) lebih terkait dengan keselamatan dan lingkungan. Opsi C (membayar pajak) terkait dengan kewajiban warga negara. Opsi E (memiliki KTP) terkait dengan identitas kewarganegaraan. Keempat opsi ini tidak secara langsung bertujuan untuk mewujudkan keadilan dalam konteks yang sama dengan opsi D.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Gotong royong merupakan nilai budaya Indonesia yang mengajarkan pentingnya saling membantu dan bekerja sama dalam kehidupan sehari-hari. Mengapa penting bagi masyarakat Indonesia untuk memahami makna dari nilai gotong royong dan menerapkannya dalam kehidupan sehari-hari? (TWK CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. Agar dapat menjaga keutuhan wilayah Indonesia</li>
+                <li>B. Agar dapat mencapai kesejahteraan ekonomi yang lebih baik</li>
+                <li>C. Agar dapat mempertahankan kedaulatan negara Indonesia</li>
+                <li>D. Agar dapat memperkuat hubungan antar suku dan agama</li>
+                <li>E. Agar dapat mencapai keadilan sosial yang lebih baik</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan mengapa penting bagi masyarakat Indonesia untuk memahami makna nilai gotong royong dan menerapkannya dalam kehidupan sehari-hari.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Gotong royong merupakan nilai budaya Indonesia yang mengajarkan pentingnya saling membantu dan bekerja sama. Nilai ini penting untuk memperkuat hubungan antar suku dan agama (opsi D), yang merupakan salah satu tantangan utama dalam masyarakat multikultural Indonesia. Dengan gotong royong, berbagai kelompok masyarakat dapat bekerja sama, saling memahami, dan membangun hubungan yang harmonis.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A (keutuhan wilayah) dan C (kedaulatan negara) lebih terkait dengan aspek pertahanan dan keamanan negara. Opsi B (kesejahteraan ekonomi) dan E (keadilan sosial) adalah dampak positif dari gotong royong, tetapi bukan alasan utama mengapa penting memahami makna gotong royong dalam konteks masyarakat multikultural Indonesia. Opsi D paling tepat karena langsung menjawab tantangan utama Indonesia sebagai negara multikultural.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Sebagai negara dengan karakteristik multikultural, Indonesia rentan terhadap masalah eksklusivisme, intoleransi agama, dan diskriminasi ras/etnis. Perbedaan yang ada dapat semakin tajam dan berpotensi menimbulkan permusuhan dalam masyarakat. Apa peran nasionalisme yang paling tepat untuk mengatasi hal ini? (TWK CPNS 2023)
+            </div>
+            <ul class="options">
+                <li>A. Menghadiri berbagai forum lintas agama dan etnis dalam Masyarakat</li>
+                <li>B. Mengenal berbagai ragam budaya dalam Masyarakat</li>
+                <li>C. Menerapkan nilai-nilai Pancasila dalam sikap hidup sehari-hari</li>
+                <li>D. Aktif melakukan kegiatan sosial agar memiliki jiwa sosial</li>
+                <li>E. Bersikap objektif dan tidak terlibat dalam masalah politik</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan peran nasionalisme yang paling tepat untuk mengatasi masalah eksklusivisme, intoleransi agama, dan diskriminasi ras/etnis di Indonesia.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Sebagai negara dengan karakteristik multikultural, Indonesia rentan terhadap masalah eksklusivisme, intoleransi agama, dan diskriminasi ras/etnis. Peran nasionalisme yang paling tepat untuk mengatasi hal ini adalah menerapkan nilai-nilai Pancasila dalam sikap hidup sehari-hari (opsi C). Pancasila sebagai dasar negara mengandung nilai-nilai yang mengakui keberagaman dan mengajarkan toleransi, sehingga penerapannya dalam kehidupan sehari-hari dapat mengatasi masalah eksklusivisme dan intoleransi.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A (menghadiri forum lintas agama) dan B (mengenal ragam budaya) adalah langkah yang baik tetapi lebih bersifat pasif. Opsi D (kegiatan sosial) dan E (bersikap objektif) tidak secara langsung mengatasi masalah eksklusivisme dan intoleransi. Opsi C paling tepat karena menerapkan nilai-nilai Pancasila secara aktif dalam kehidupan sehari-hari merupakan cara paling efektif untuk mengatasi masalah tersebut.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Fenomena flexing atau pamer kekayaan di media sosial belakangan ini marak terjadi, termasuk oleh beberapa pejabat pemerintah dan keluarganya. Misalnya, Bupati Bombana Burhanuddin dan istrinya menjadi sorotan publik karena kegemarannya memamerkan gaya hidup mewah di media sosial. Apa sikap yang sesuai dengan pengamalan sila ke-5 Pancasila dalam menghadapi fenomena ini?
+            </div>
+            <ul class="options">
+                <li>A. Mengembangkan sikap transparansi dalam melaporkan kekayaan pejabat.</li>
+                <li>B. Menghargai kerja keras dan kesuksesan orang lain tanpa iri hati.</li>
+                <li>C. Menggunakan kekayaan untuk hal-hal yang bermanfaat bagi masyarakat luas.</li>
+                <li>D. Menampilkan gaya hidup sederhana meskipun memiliki kekayaan berlimpah.</li>
+                <li>E. Meningkatkan keterampilan pribadi untuk mencapai kesuksesan yang lebih besar.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan sikap yang sesuai dengan pengamalan sila ke-5 Pancasila dalam menghadapi fenomena flexing atau pamer kekayaan di media sosial oleh pejabat pemerintah.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Fenomena flexing atau pamer kekayaan di media sosial oleh pejabat pemerintah bertentangan dengan nilai sila kelima Pancasila, Keadilan Sosial bagi Seluruh Rakyat Indonesia. Sikap yang sesuai dengan pengamalan sila ke-5 adalah menampilkan gaya hidup sederhana meskipun memiliki kekayaan berlimpah (opsi D). Gaya hidup sederhana mencerminkan kesadaran akan keadilan sosial dan tidak menonjolkan kesenjangan sosial di tengah masyarakat.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A (transparansi kekayaan) lebih terkait dengan akuntabilitas, bukan gaya hidup. Opsi B (menghargai kesuksesan) dan E (meningkatkan keterampilan) tidak secara langsung mengatasi masalah pamer kekayaan. Opsi C (menggunakan kekayaan untuk masyarakat) adalah tindakan baik tetapi tidak mengatasi masalah pamer kekayaan. Opsi D paling tepat karena langsung menanggapi masalah dengan menampilkan gaya hidup sederhana.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Peran sila pertama Pancasila dalam menjaga kerukunan di lingkungan kerja yang memiliki latar belakang agama berbeda adalah?
+            </div>
+            <ul class="options">
+                <li>A. Mengadakan kegiatan sosial bersama seluruh karyawan.</li>
+                <li>B. Membuat forum diskusi tentang pemahaman agama di tempat kerja.</li>
+                <li>C. Memberikan kebebasan beribadah sesuai dengan keyakinan masing-masing.</li>
+                <li>D. Mengadakan pelatihan tentang kerukunan beragama bagi rekan kerja.</li>
+                <li>E. Mengadakan agenda keagamaan secara bergantian setiap hari.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan peran sila pertama Pancasila dalam menjaga kerukunan di lingkungan kerja yang memiliki latar belakang agama berbeda.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Sila pertama Pancasila, Ketuhanan Yang Maha Esa, menekankan pentingnya menghormati dan memberikan kebebasan bagi setiap orang untuk menjalankan ibadah sesuai keyakinannya. Dalam konteks lingkungan kerja yang memiliki latar belakang agama yang berbeda-beda, peran sila ini dapat diwujudkan dengan memberikan kebebasan beribadah sesuai keyakinan masing-masing (opsi C). Hal ini merupakan wujud nyata toleransi dan penghormatan terhadap perbedaan agama.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi lain seperti mengadakan kegiatan sosial (A), membuat forum diskusi agama (B), atau pelatihan (D) memang positif, tetapi tidak langsung mencerminkan inti dari kebebasan beribadah yang menjadi pokok dalam sila pertama. Opsi E (agenda keagamaan bergantian) tidak tepat karena tidak semua karyawan perlu beribadah setiap hari. Oleh karena itu, jawaban yang paling tepat adalah C.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Sebagai negara besar dengan berbagai macam perbedaan di dalam masyarakat, seperti suku, ras serta sosial dan budaya, bangsa Indonesia tetap harus menjaga persatuan dan kesatuan nasional. Pancasila adalah ideologi dan salah satu sarana pemersatu bangsa dan negara dengan alasan ....
+            </div>
+            <ul class="options">
+                <li>A. Mampu menyesuaikan diri dengan masa kemerdekaan dan era pembangunan</li>
+                <li>B. Digali oleh Bung Karno dari sejarah perkembangan kehidupan masyarakat</li>
+                <li>C. Disepakati setelah terjadi perdebatan dalam sidang PPKI tahun 1945</li>
+                <li>D. Sebagai kesepakatan atau perjanjian luhur bangsa yang menaungi kebhinekaan</li>
+                <li>E. Ditetapkan oleh para pendiri bangsa yang merupakan representasi rakyat Indonesia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan alasan mengapa Pancasila adalah ideologi dan salah satu sarana pemersatu bangsa dan negara.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Sebagai negara besar dengan berbagai macam perbedaan di dalam masyarakat, seperti suku, ras serta sosial dan budaya, bangsa Indonesia tetap harus menjaga persatuan dan kesatuan nasional. Pancasila adalah ideologi dan salah satu sarana pemersatu bangsa dan negara dengan alasan sebagai kesepakatan atau perjanjian luhur bangsa yang menaungi kebhinekaan (opsi D).
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Makna Pancasila sebagai ideologi negara adalah nilai-nilai yang terkandung dalam Pancasila menjadi cita-cita normatif penyelenggaraan negara. Nilai-nilai yang telah disepakati bersama itu juga menjadi sarana menyatukan masyarakat dan dapat digunakan sebagai prosedur penyelesaian konflik. Pancasila sebagai kesepakatan luhur bangsa mampu menaungi dan mempersatukan berbagai perbedaan yang ada di Indonesia.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Beberapa ahli berpendapat bahwa identitas nasional yang terlalu kuat dapat menimbulkan sentimen nasionalisme yang berlebihan dan berpotensi memicu diskriminasi terhadap kelompok minoritas. Bagaimana pemerintah dapat memastikan pembentukan identitas nasional yang kuat dilakukan dengan berimbang dan inklusif melalui saluran pendidikan?
+            </div>
+            <ul class="options">
+                <li>A. Mendorong pengakuan dan penghargaan terhadap identitas lokal atau regional.</li>
+                <li>B. Memfasilitasi pembangunan budaya lokal dan mendorong pengenalan terhadap warisan budaya lokal di seluruh wilayah negara.</li>
+                <li>C. Mengajarkan sejarah nasional secara objektif dan inklusif.</li>
+                <li>D. Membangun lingkungan yang inklusif dan menggalakkan dialog antar kelompok.</li>
+                <li>E. Mendorong partisipasi masyarakat dalam pembangunan nasional.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan bagaimana pemerintah dapat memastikan pembentukan identitas nasional yang kuat dilakukan dengan berimbang dan inklusif melalui saluran pendidikan.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Beberapa ahli berpendapat bahwa identitas nasional yang terlalu kuat dapat menimbulkan sentimen nasionalisme yang berlebihan dan berpotensi memicu diskriminasi terhadap kelompok minoritas. Identitas nasional adalah identitas atau rasa memiliki seseorang terhadap suatu negara atau suatu bangsa. Ini adalah pengertian "suatu bangsa sebagai satu kesatuan yang utuh, yang diwakili oleh tradisi, budaya, dan bahasa yang khas.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Maka jawaban yang tepat dalam identitas negara di bidang pendidikan adalah mengajarkan sejarah nasional secara objektif dan inklusif (opsi C). Dengan mengajarkan sejarah secara objektif dan inklusif, identitas nasional dapat dibentuk dengan menghargai semua kelompok dan tidak memicu diskriminasi.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Pancasila sila ke-2 yang berbunyi "Kemanusiaan yang Adil dan Beradab" yang mempunyai inti yaitu bangsa Indonesia memperlakukan manusia sesuai harkat martabat dan tidak membeda bedakan suku, agama, rasa, keturunan. Implementasi yang sesuai pada isi butir pancasila ke-2 adalah...
+            </div>
+            <ul class="options">
+                <li>A. Ketua OSIS di sekolah suka membully adik kelas saat jam istirahat berlangsung</li>
+                <li>B. Pak RT memperlakukan warga yang kaya sangat baik dan menghormati, sedangkan warga yang kurang mampu tidak sama sekali diperhatikan</li>
+                <li>C. Joni tidak memilih dalam berteman serta memperlakukan semua temannya dengan sama sesuai dengan harkat martabat sebagai makhluk hidup Tuhan yang Maha Esa</li>
+                <li>D. Jono memilih dalam berteman serta tidak memperlakukan temannya dengan baik apalagi yang berbeda umurnya dengannya</li>
+                <li>E. Kara suka membantu temannya dan suka bergaul dengan orang lain, tetapi dengan orang yang banyak uang saja</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan implementasi yang sesuai dengan isi butir Pancasila sila ke-2 "Kemanusiaan yang Adil dan Beradab".
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pancasila sila ke-2 yang berbunyi "Kemanusiaan yang Adil dan Beradab" mempunyai inti yaitu bangsa Indonesia memperlakukan manusia sesuai harkat martabat dan tidak membeda-bedakan suku, agama, rasa, keturunan.
+                </div>
+                <div class="solution-step">
+                    <strong>Implementasi yang sesuai:</strong><br>
+                    Joni tidak memilih dalam berteman serta memperlakukan semua temannya dengan sama sesuai dengan harkat martabat sebagai makhluk hidup Tuhan yang Maha Esa (opsi C). Ini mencerminkan nilai sila kedua karena memperlakukan semua orang dengan sama tanpa membeda-bedakan.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan opsi lain:</strong><br>
+                    Opsi A (membully), B (membedakan perlakuan berdasarkan kekayaan), D (memilih teman dan tidak memperlakukan dengan baik), dan E (hanya bergaul dengan yang banyak uang) semuanya bertentangan dengan nilai sila kedua karena membeda-bedakan perlakuan terhadap orang lain.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Pak Dani bekerja sebagai aparatur sipil negara (ASN) di Kementerian Pemuda dan Olahraga. Beliau ingin berperilaku yang sesuai dengan nilai-nilai sila kelima Pancasila. Untuk mewujudkannya, ketika menjalankan tugasnya ia sebaiknya ...
+            </div>
+            <ul class="options">
+                <li>A. Mengembangkan sikap saling tenggang rasa dan tepa selira dengan rekannya</li>
+                <li>B. Membina kerukunan hidup dengan teman-temannya meskipun berbeda agama</li>
+                <li>C. Tidak menggunakan mobil dinas untuk mengantar anak-anaknya pergi les bimbel</li>
+                <li>D. Sanggup dan rela berkorban untuk kepentingan bangsa dan negara apabila diperlukan</li>
+                <li>E. Dengan itikad baik dan rasa tanggung jawab menerima dan melaksanakan hasil keputusan rapat dengan adil</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan perilaku yang sesuai dengan nilai-nilai sila kelima Pancasila untuk seorang ASN di Kementerian Pemuda dan Olahraga.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pak Dani sebagai ASN ingin berperilaku yang sesuai dengan nilai-nilai sila kelima Pancasila, Keadilan Sosial bagi Seluruh Rakyat Indonesia. Untuk mewujudkannya, ketika menjalankan tugasnya ia sebaiknya tidak menggunakan mobil dinas untuk mengantar anak-anaknya pergi les bimbel (opsi C).
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Opsi C sesuai dengan nilai dalam sila kelima, yaitu tidak merugikan kepentingan umum. Menggunakan mobil dinas untuk kepentingan pribadi merupakan penyalahgunaan fasilitas negara yang merugikan kepentingan umum. Opsi A sesuai dengan sila kedua, opsi B sesuai dengan sila pertama, opsi D sesuai dengan sila ketiga, sedangkan opsi E sesuai sila keempat.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Pancasila sebagai falsafah negara memiliki fleksibilitas ideologi yang tinggi karena mencakup nilai-nilai universal yang bersifat abadi dan tidak terbatas pada waktu dan tempat tertentu. Manfaat dasar negara Pancasila juga dapat memberikan pedoman dalam membuat suatu kebijakan dan hukum. Selain itu, manfaat dasar negara Pancasila juga dapat menciptakan persatuan dan kesatuan diantara semua rakyat Indonesia, yang dikenal sangat beragam. Oleh sebab itu Pancasila ...
+            </div>
+            <ul class="options">
+                <li>A. Pancasila mampu beradaptasi dengan perubahan dan perkembangan zaman tanpa mengubah esensinya sebagai falsafah negara</li>
+                <li>B. Fleksibilitas ideologi mengubah esensi dan tujuan dari ideologi</li>
+                <li>C. Fleksibilitas ideologi bukanlah sinonim dengan keleleluasaan atau kompromi terhadap nilai-nilai dasar ideologi</li>
+                <li>D. Fleksibilitas ideologi memaksa masyarakat untuk bisa menyesuaikan dengan zaman agar tidak terpinggirkan</li>
+                <li>E. Ideologi pancasila inferior dibanding ideologi lain di dunia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan kesimpulan tentang Pancasila berdasarkan penjelasan tentang fleksibilitas ideologi dan manfaat dasar negara Pancasila.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Fleksibilitas ideologi adalah kemampuan suatu ideologi untuk beradaptasi dengan perubahan dan perkembangan zaman tanpa mengubah esensi dan tujuannya. Dalam hal ini, Pancasila sebagai falsafah negara memiliki fleksibilitas ideologi yang tinggi karena mencakup nilai-nilai universal dan dasar yang bersifat abadi dan tidak terbatas pada waktu dan tempat tertentu.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Nilai-nilai dasar Pancasila seperti kemanusiaan yang adil dan beradab, persatuan Indonesia, kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan, keadilan sosial bagi seluruh rakyat Indonesia, dan keadilan yang berdasar atas Ketuhanan yang Maha Esa merupakan nilai-nilai yang tidak terbatas oleh waktu dan tempat. Oleh karena itu, Pancasila mampu beradaptasi dengan perubahan dan perkembangan zaman tanpa mengubah esensinya sebagai falsafah negara (opsi A).
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Pancasila sebagai satu-satunya asas adalah sebagai konsekuensi ditetapkannya Pancasila oleh bangsa Indonesia sebagai dasar negara dan juga merupakan perwujudan melaksanakan Pancasila secara murni dan konsekuen. Pancasila dijadikan kerangka, acuan, tolok ukur, parameter, arah, dan tujuan dari pembangunan. Ditetapkannya Pancasila sebagai satu-satunya sebagai asas dalam hidup bermasyarakat, berbangsa, dan bernegara, bertujuan untuk ...
+            </div>
+            <ul class="options">
+                <li>A. Menghindari terjadinya perpecahan antar sesama warga negara</li>
+                <li>B. Menyatukan tekad dan semangat untuk meraih cita-cita dan tujuan bersama</li>
+                <li>C. Mewujudkan rasa syukur segenap rakyat Indonesia terhadap Tuhan Yang Maha Esa</li>
+                <li>D. Menyatukan suku-suku di Indonesia yang berbeda-beda adat kebiasaan dan bahasanya</li>
+                <li>E. Memberikan kesadaran dan pemahaman kepada segenap rakyat Indonesia akan keluhuran dan kebesaran leluhur bangsa Indonesia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan tujuan ditetapkannya Pancasila sebagai satu-satunya asas dalam hidup bermasyarakat, berbangsa, dan bernegara.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pancasila sebagai satu-satunya asas adalah sebagai konsekuensi ditetapkannya Pancasila oleh bangsa Indonesia sebagai dasar negara dan juga merupakan perwujudan melaksanakan Pancasila secara murni dan konsekuen. Pancasila dijadikan kerangka, acuan, tolok ukur, parameter, arah, dan tujuan dari pembangunan.
+                </div>
+                <div class="solution-step">
+                    <strong>Kesimpulan:</strong><br>
+                    Tujuan utama ditetapkannya Pancasila sebagai satu-satunya asas dalam hidup bermasyarakat, berbangsa, dan bernegara adalah untuk menyatukan tekad dan semangat seluruh warga negara Indonesia untuk bekerja sama dan bekerja keras untuk meraih cita-cita dan tujuan bersama (opsi B). Pancasila bertujuan untuk memberikan landasan yang kokoh bagi setiap warga negara Indonesia untuk bekerja sama dan bekerja keras demi kebaikan dan kemajuan bersama.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Pancasila dikenal sebagai ideologi terbuka yang mampu menyesuaikan diri dengan perkembangan zaman. Pancasila tetap relevan dalam menghadapi berbagai tantangan dan perubahan global karena ...
+            </div>
+            <ul class="options">
+                <li>A. Pancasila menerima pengaruh budaya asing yang sesuai dengan nilai-nilai nasional.</li>
+                <li>B. Pancasila memungkinkan penyesuaian nilai-nilai sesuai perkembangan zaman.</li>
+                <li>C. Pancasila dapat diubah sesuai keinginan pemerintah yang berkuasa.</li>
+                <li>D. Pancasila mendorong partisipasi aktif warga negara dalam pemerintahan.</li>
+                <li>E. Pancasila menekankan persatuan dan kesatuan bangsa di atas segala perbedaan.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>Diketahui:</strong><br>
+                    Soal menanyakan alasan mengapa Pancasila tetap relevan dalam menghadapi berbagai tantangan dan perubahan global sebagai ideologi terbuka.
+                </div>
+                <div class="solution-step">
+                    <strong>Analisis:</strong><br>
+                    Pancasila dikenal sebagai ideologi terbuka yang mampu menyesuaikan diri dengan perkembangan zaman. Pancasila tetap relevan dalam menghadapi berbagai tantangan dan perubahan global karena Pancasila memungkinkan penyesuaian nilai-nilai sesuai perkembangan zaman (opsi B). Sebagai ideologi yang dinamis dan fleksibel, Pancasila dapat beradaptasi dengan berbagai perubahan sosial, politik, dan ekonomi yang terjadi baik di tingkat nasional maupun internasional.
+                </div>
+                <div class="solution-step">
+                    <strong>Penjelasan:</strong><br>
+                    Hal ini memastikan bahwa Pancasila tetap relevan dan berfungsi sebagai pedoman dalam kehidupan berbangsa dan bernegara. Nilai-nilai yang terkandung dalam Pancasila dapat disesuaikan dengan konteks dan kebutuhan zaman, sehingga tetap menjadi landasan yang kuat bagi bangsa Indonesia. Opsi A menunjukkan bahwa Pancasila menerima pengaruh budaya asing yang sesuai dengan nilai-nilai nasional, namun ini lebih menekankan pada sifat inklusif daripada fleksibilitas sebagai ideologi terbuka. Opsi C tidak tepat karena Pancasila sebagai dasar negara tidak dapat diubah sesuai keinginan pemerintah yang berkuasa. Opsi D benar bahwa Pancasila mendorong partisipasi aktif warga negara, tetapi ini lebih menjelaskan nilai-nilai yang terkandung dalam Pancasila daripada alasan mengapa ia disebut sebagai ideologi terbuka. Opsi E menekankan persatuan dan kesatuan bangsa di atas segala perbedaan, namun tidak secara langsung menjelaskan fleksibilitas Pancasila sebagai ideologi.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>

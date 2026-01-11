@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Integritas - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .options div {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #ffffff;
+            border-radius: 5px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Integritas - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Integritas</strong>
+            <p>Integritas adalah kualitas kepribadian yang ditandai dengan kejujuran, konsistensi antara nilai-nilai moral yang dianut dengan perilaku yang ditampilkan, serta komitmen untuk bertindak sesuai dengan prinsip-prinsip etika dan kebenaran. Soal-soal integritas menguji pemahaman tentang nilai-nilai kejujuran, tanggung jawab, keadilan, kesederhanaan, dan kepedulian dalam berbagai konteks kehidupan, baik sebagai individu, anggota masyarakat, maupun sebagai pemimpin atau pejabat publik.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Ketika menjabat sebagai Presiden, Soekarno dikenal karena menolak berbagai bentuk korupsi dan kolusi, meskipun dihadapkan pada banyak godaan. Bagaimana tindakan Soekarno ini mencerminkan integritasnya sebagai seorang pemimpin?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Dengan menghindari konflik kepentingan dan memastikan keputusan dibuat berdasarkan keadilan dan kesetaraan.</div>
+                <div><strong>B.</strong> Dengan menjaga transparansi dalam setiap keputusan, menunjukkan keadilan dan komitmen.</div>
+                <div><strong>C.</strong> Dengan menolak segala bentuk korupsi dan kolusi, menunjukkan kejujuran dan tanggung jawab.</div>
+                <div><strong>D.</strong> Dengan menolak menggunakan jabatannya untuk keuntungan pribadi, menunjukkan kesederhanaan dan integritas pribadi.</div>
+                <div><strong>E.</strong> Dengan memprioritaskan kepentingan bangsa di atas kepentingan pribadi dan golongan, menunjukkan rasa tanggung jawab dan kepedulian terhadap kesejahteraan rakyat.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Soekarno, sebagai Presiden pertama Indonesia, dikenal karena komitmennya terhadap integritas dan menolak berbagai bentuk korupsi dan kolusi meskipun dihadapkan pada banyak godaan. Tindakan Soekarno ini mencerminkan berbagai aspek integritas sebagai seorang pemimpin. Dengan menolak segala bentuk korupsi dan kolusi, Soekarno menunjukkan kejujuran dan tanggung jawab (opsi C). Integritas ini memastikan bahwa pemimpin bertindak dengan kejujuran dan keadilan, serta menjaga kepercayaan publik. Opsi A, yang menyatakan menghindari konflik kepentingan dan memastikan keputusan dibuat berdasarkan keadilan dan kesetaraan, menunjukkan aspek penting dari integritas tetapi kurang spesifik dalam konteks ini. Opsi B, yang menyatakan menjaga transparansi dalam setiap keputusan, menunjukkan keadilan dan komitmen, penting tetapi lebih umum daripada penolakan langsung terhadap korupsi. Opsi D, yang menyatakan menolak menggunakan jabatannya untuk keuntungan pribadi, menunjukkan kesederhanaan dan integritas pribadi, juga penting tetapi tidak sejelas penolakan terhadap korupsi dan kolusi. Opsi E, memprioritaskan kepentingan bangsa di atas kepentingan pribadi dan golongan, menunjukkan rasa tanggung jawab dan kepedulian terhadap kesejahteraan rakyat, merupakan aspek penting tetapi dalam konteks ini, penolakan spesifik terhadap korupsi dan kolusi lebih mencerminkan integritas yang ditunjukkan oleh Soekarno.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Sebuah perusahaan asing berminat untuk berinvestasi di sebuah desa dan menawarkan sejumlah uang kepada kepala desa sebagai bentuk kompensasi untuk mempercepat proses perizinan. Namun, masyarakat desa tidak setuju dengan rencana investasi tersebut karena khawatir akan dampaknya terhadap lingkungan dan budaya lokal. Apa yang sebaiknya dilakukan oleh kepala desa dalam situasi ini? (TWK CPNS 2024)
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Menyampaikan aspirasi masyarakat kepada perusahaan secara transparansi</div>
+                <div><strong>B.</strong> Menolak uang kompensasi dan menyampaikan aspirasi masyarakat desa kepada perusahaan</div>
+                <div><strong>C.</strong> Mencari jalan tengah dengan menawarkan sebagian keuntungan kepada masyarakat agar mau menerima investasi</div>
+                <div><strong>D.</strong> Mengadakan musyawarah desa untuk memberikan pemahaman kepada masyarakat tentang manfaat investasi tersebut</div>
+                <div><strong>E.</strong> Meminta perusahaan untuk melakukan survei lingkungan terlebih dahulu sebelum mengajukan izin investasi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah opsi B, Menolak uang kompensasi dan menyampaikan aspirasi masyarakat desa kepada perusahaan. Dalam situasi ini, kepala desa harus memprioritaskan kepentingan masyarakat yang telah menyatakan ketidaksetujuan terhadap rencana investasi. Dengan menolak kompensasi dan menyampaikan aspirasi warga, kepala desa menunjukkan integritas dan keberpihakan pada kepentingan masyarakatnya. Langkah ini juga memperlihatkan sikap transparan dan bertanggung jawab dalam mengelola potensi investasi yang tidak disetujui warga. Opsi A, menyampaikan aspirasi masyarakat secara transparan, adalah langkah positif tetapi tidak cukup tegas karena tidak secara jelas menunjukkan penolakan terhadap kompensasi yang ditawarkan. Opsi C, mencari jalan tengah dengan menawarkan keuntungan kepada masyarakat, berpotensi mengabaikan kekhawatiran warga yang sudah menolak investasi. Opsi D, mengadakan musyawarah untuk memberikan pemahaman tentang manfaat investasi, cenderung memaksakan penerimaan investasi tanpa mengutamakan aspirasi warga. Opsi E, meminta survei lingkungan, adalah langkah baik, tetapi tetap tidak memperlihatkan keberpihakan yang jelas pada ketidaksetujuan warga.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                B.J. Habibie dikenal sebagai sosok yang cerdas, berdedikasi tinggi, dan berjiwa inovatif. Semasa hidupnya, beliau tidak hanya berperan besar dalam pengembangan teknologi di Indonesia, tetapi juga menunjukkan kepemimpinan yang bijaksana dan integritas yang kuat. Sifat yang dapat diteladani dari B.J. Habibie untuk diterapkan dalam pekerjaan di lingkungan pemerintahan adalah... (TWK CPNS 2024)
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Kedisiplinan dalam menyelesaikan setiap tugas tepat waktu dan sesuai aturan</div>
+                <div><strong>B.</strong> Semangat inovasi dan berpikir kreatif untuk mencari solusi terbaik</div>
+                <div><strong>C.</strong> Kecermatan dalam mengikuti semua prosedur agar tidak membuat kesalahan</div>
+                <div><strong>D.</strong> Kemampuan menjaga hubungan baik dengan semua rekan kerja demi keharmonisan tim</div>
+                <div><strong>E.</strong> Kecepatan dalam mengambil keputusan tanpa pertimbangan yang berlarut-larut</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah opsi B, Semangat inovasi dan berpikir kreatif untuk mencari solusi terbaik. B.J. Habibie dikenal sebagai sosok yang selalu mengedepankan inovasi dan berpikir maju. Sikap ini sangat relevan dalam pekerjaan pemerintahan, terutama dalam mencari solusi untuk permasalahan kompleks dan meningkatkan efisiensi pelayanan publik. Opsi A, kedisiplinan dalam menyelesaikan tugas, dan opsi C, kecermatan dalam mengikuti prosedur, adalah sifat baik namun kurang menonjolkan semangat inovasi yang khas dari B.J. Habibie. Opsi D, menjaga hubungan baik, penting dalam kerja tim namun tidak terkait langsung dengan ciri utama Habibie. Opsi E, kecepatan dalam mengambil keputusan, kurang mencerminkan pertimbangan mendalam yang biasanya dilakukan B.J. Habibie.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Seorang hakim tertangkap tangan menerima suap. Komisi Yudisial (KY) kemudian mengambil tindakan tegas dengan memberhentikan hakim tersebut. Tindakan KY ini memicu perdebatan di masyarakat. Sebagian berpendapat bahwa tindakan KY terlalu keras, sementara sebagian lagi menilai tindakan tersebut sudah tepat. Manakah pernyataan berikut yang paling tepat terkait tindakan KY tersebut? (TWK CPNS 2024)
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> KY terlalu terburu-buru dalam mengambil keputusan tanpa memberikan kesempatan hakim tersebut untuk membela diri</div>
+                <div><strong>B.</strong> KY tidak memiliki wewenang untuk memberhentikan seorang hakim, hanya Mahkamah Agung yang berwenang</div>
+                <div><strong>C.</strong> Tindakan KY sudah sesuai dengan tugas dan fungsinya dalam menjaga integritas dan perilaku hakim</div>
+                <div><strong>D.</strong> Tindakan KY bisa merusak citra peradilan jika tidak disertai bukti yang cukup</div>
+                <div><strong>E.</strong> KY seharusnya memberikan peringatan terlebih dahulu sebelum mengambil tindakan pemberhentian</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Komisi Yudisial (KY) adalah lembaga negara yang memiliki tugas utama menjaga dan menegakkan kehormatan, keluhuran martabat, serta perilaku hakim sebagaimana diatur dalam Pasal 24B UUD 1945. Salah satu kewenangan KY adalah memberikan rekomendasi sanksi kepada hakim yang melanggar kode etik atau perilaku, termasuk dalam kasus dugaan suap. Dalam konteks soal ini, tindakan KY memberhentikan hakim yang tertangkap tangan menerima suap adalah langkah yang sesuai dengan tugasnya menjaga integritas dan perilaku hakim. Penegakan disiplin dan pemberian sanksi terhadap hakim yang melanggar kode etik adalah bagian dari fungsi KY untuk menjaga kepercayaan publik terhadap peradilan.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Komisi Yudisial (KY) memiliki tanggung jawab dalam menjaga profesionalisme dan kode etik hakim di Indonesia. Jika KY tidak mematuhi undang-undang yang mengatur profesionalisme hakim dan kode etiknya, maka KY tidak akan mampu... (TWK CPNS 2024)
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Menjaga integritas dan kepercayaan publik terhadap lembaga peradilan</div>
+                <div><strong>B.</strong> Melaksanakan tugasnya dalam memberikan sanksi pidana kepada hakim yang melanggar aturan</div>
+                <div><strong>C.</strong> Mengawasi proses peradilan secara keseluruhan di berbagai tingkatan</div>
+                <div><strong>D.</strong> Menjalankan fungsi legislasi dalam pembentukan aturan etika hakim</div>
+                <div><strong>E.</strong> Menjaga keharmonisan antara lembaga peradilan dan lembaga eksekutif</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah opsi A, Menjaga integritas dan kepercayaan publik terhadap lembaga peradilan. Komisi Yudisial berperan dalam menegakkan integritas dan etika profesi hakim, sehingga jika KY tidak mematuhi undang-undang terkait profesionalisme hakim, hal ini akan melemahkan kepercayaan publik terhadap lembaga peradilan. Opsi B salah karena KY tidak memiliki wewenang untuk memberikan sanksi pidana; tugasnya hanya dalam ranah kode etik. Opsi C tidak tepat karena KY tidak mengawasi proses peradilan secara keseluruhan, melainkan fokus pada etika dan perilaku hakim. Opsi D keliru karena KY bukan lembaga legislatif dan tidak membuat undang-undang. Opsi E tidak berkaitan langsung dengan peran KY dalam pengawasan kode etik hakim.
+                </div>
+                <div class="answer">Jawaban: <strong>A</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Mohammad Hatta, sebagai mantan Wakil Presiden Indonesia, dikenal karena prinsip hidupnya yang sederhana dan tidak mengambil dana pensiun meskipun berhak. Sikap ini menunjukkan integritas dan keteladanan dalam kehidupan pribadi dan publik. Dalam kehidupan sehari-hari, sikap apa yang dapat kita teladani dari Mohammad Hatta? (TWK CPNS 2024)
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Mengelola keuangan pribadi dengan bijak dan tidak bergantung pada fasilitas yang diberikan</div>
+                <div><strong>B.</strong> Mengutamakan kepentingan bersama di atas kepentingan pribadi dalam setiap tindakan</div>
+                <div><strong>C.</strong> Menjalani hidup dengan kesederhanaan meskipun memiliki hak atas fasilitas tertentu</div>
+                <div><strong>D.</strong> Memberikan contoh kepada generasi muda tentang pentingnya tanggung jawab moral</div>
+                <div><strong>E.</strong> Meningkatkan efisiensi penggunaan sumber daya yang dimiliki untuk keberlanjutan hidup</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah opsi C, Menjalani hidup dengan kesederhanaan meskipun memiliki hak atas fasilitas tertentu. Sikap Mohammad Hatta mencerminkan kesederhanaan dan pengabdian tanpa mengejar keuntungan pribadi, meskipun memiliki hak atas dana pensiun. Opsi A benar tetapi lebih berfokus pada pengelolaan keuangan pribadi. Opsi B dan D relevan, tetapi tidak menyoroti kesederhanaan sebagai inti keteladanan Hatta. Opsi E menekankan efisiensi, tetapi kurang mencerminkan nilai hidup sederhana yang menjadi esensi dari sikap Hatta.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Mohammad Hatta dikenal karena menolak fasilitas mewah yang ditawarkan kepadanya saat menjabat sebagai Wakil Presiden, dan memilih untuk hidup sederhana. Apa yang dapat kita pelajari dari sikap Moh. Hatta ini dalam konteks integritas kepemimpinan?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Menunjukkan bahwa menolak fasilitas mewah mencerminkan sikap jujur dan tidak menyalahgunakan wewenang.</div>
+                <div><strong>B.</strong> Menunjukkan bahwa hidup sederhana dan tidak memanfaatkan fasilitas mewah mencerminkan sikap adil dan tanggung jawab.</div>
+                <div><strong>C.</strong> Menunjukkan bahwa kesederhanaan dan kejujuran adalah bagian penting dari integritas seorang pemimpin.</div>
+                <div><strong>D.</strong> Menunjukkan bahwa kesederhanaan dalam menjalani kehidupan sebagai pejabat mencerminkan rasa empati dan keadilan sosial.</div>
+                <div><strong>E.</strong> Menunjukkan bahwa kesederhanaan dalam memimpin mencerminkan disiplin dalam menjalankan tugas.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Mohammad Hatta, sebagai Wakil Presiden pertama Indonesia, dikenal karena menolak fasilitas mewah yang ditawarkan kepadanya dan memilih untuk hidup sederhana. Sikap ini mengajarkan kita bahwa kesederhanaan dan kejujuran adalah bagian penting dari integritas seorang pemimpin (opsi C). Dengan menolak fasilitas mewah, Hatta menunjukkan bahwa pemimpin harus tetap sederhana dan jujur, tidak tergoda oleh kemewahan yang bisa merusak tanggung jawab mereka. Opsi A benar karena menekankan pada kejujuran dan penghindaran penyalahgunaan wewenang, tetapi tidak sejelas opsi C dalam menekankan pentingnya kesederhanaan dalam konteks ini. Opsi B berbicara tentang sikap adil dan tanggung jawab, namun tidak sepenuhnya menggambarkan kesederhanaan pribadi Hatta. Opsi D mencerminkan rasa empati dan keadilan sosial, namun lebih berfokus pada empati daripada integritas pribadi Hatta. Opsi E, yang menyatakan bahwa kesederhanaan mencerminkan disiplin, juga benar tetapi tidak sejelas penekanan pada kesederhanaan dan kejujuran yang ditunjukkan oleh Hatta.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Dalam situasi darurat di mana keputusan cepat harus diambil, bagaimana integritas seorang pemimpin berperan dalam menjaga kepercayaan publik dan stabilitas pemerintahan?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Dengan menunjukkan keberanian dalam mengambil risiko demi kepentingan pribadi.</div>
+                <div><strong>B.</strong> Dengan memastikan transparansi dalam setiap keputusan yang diambil meskipun menghadapi tekanan.</div>
+                <div><strong>C.</strong> Dengan bekerja sama secara eksklusif dengan pihak luar negeri tanpa mempertimbangkan masukan dari rakyat.</div>
+                <div><strong>D.</strong> Dengan memprioritaskan kepentingan kelompok tertentu untuk mendapatkan dukungan lebih kuat.</div>
+                <div><strong>E.</strong> Dengan menjaga hubungan baik dengan semua pihak demi keuntungan pribadi.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas seorang pemimpin adalah kunci dalam menjaga kepercayaan publik dan stabilitas pemerintahan, terutama dalam situasi darurat di mana keputusan cepat harus diambil. Integritas memastikan bahwa pemimpin bertindak dengan transparansi dalam setiap keputusan yang diambil meskipun menghadapi tekanan (opsi B). Ketika seorang pemimpin memiliki integritas, mereka cenderung membuat keputusan yang terbuka dan jelas, yang membantu mempertahankan kepercayaan publik dan stabilitas pemerintahan. Opsi A, yang menyatakan bahwa keberanian dalam mengambil risiko demi kepentingan pribadi, bertentangan dengan esensi integritas yang mengutamakan kepentingan umum di atas kepentingan pribadi. Opsi C, yang menyatakan bekerja sama secara eksklusif dengan pihak luar negeri tanpa mempertimbangkan masukan dari rakyat, menunjukkan kurangnya pertimbangan terhadap kepentingan nasional dan publik. Opsi D, yang menyatakan memprioritaskan kepentingan kelompok tertentu, menunjukkan bias dan tidak mencerminkan keadilan yang diperlukan dalam pengambilan keputusan. Opsi E, yang menyatakan menjaga hubungan baik dengan semua pihak demi keuntungan pribadi, bertentangan dengan nilai-nilai integritas yang harus mengutamakan kepentingan publik.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Sultan Hamengkubuwono pernah tertilang karena melanggar peraturan lalu lintas, namun ia tetap membayar denda dan meminta maaf secara terbuka. Bagaimana tindakan Sultan Hamengkubuwono ini mencerminkan integritasnya sebagai seorang pemimpin?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Dengan membayar denda dan meminta maaf, menunjukkan sikap bertanggung jawab dan jujur.</div>
+                <div><strong>B.</strong> Dengan membayar denda dan meminta maaf, menunjukkan sikap adil terhadap hukum tanpa memanfaatkan kekuasaan.</div>
+                <div><strong>C.</strong> Dengan membayar denda dan meminta maaf, menunjukkan kemandirian dalam menghadapi konsekuensi tindakannya.</div>
+                <div><strong>D.</strong> Dengan membayar denda dan meminta maaf, menunjukkan disiplin dalam mematuhi aturan meskipun sebagai pemimpin.</div>
+                <div><strong>E.</strong> Dengan membayar denda dan meminta maaf, menunjukkan kerja keras untuk mempertahankan kepercayaan publik.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tindakan Sultan Hamengkubuwono yang membayar denda dan meminta maaf secara terbuka setelah tertilang mencerminkan berbagai aspek integritas sebagai seorang pemimpin. Integritas adalah tentang bertindak dengan jujur, transparan, dan bertanggung jawab, bahkan ketika menghadapi konsekuensi yang tidak menyenangkan. Dengan membayar denda dan meminta maaf, Sultan Hamengkubuwono menunjukkan sikap bertanggung jawab dan jujur (opsi A). Tindakan ini menunjukkan bahwa ia tidak menghindar dari tanggung jawab atas tindakannya dan tidak menggunakan posisinya untuk mendapatkan perlakuan istimewa. Selain itu, tindakannya juga mencerminkan sikap adil terhadap hukum tanpa memanfaatkan kekuasaan (opsi B), yang menunjukkan bahwa hukum berlaku untuk semua orang tanpa pandang bulu. Sikap kemandirian dalam menghadapi konsekuensi tindakannya (opsi C) juga terlihat jelas, di mana Sultan memilih untuk bertanggung jawab atas tindakannya sendiri tanpa bergantung pada orang lain. Disiplin dalam mematuhi aturan meskipun sebagai pemimpin (opsi D) juga tercermin dalam tindakannya, menunjukkan bahwa ia menegakkan aturan dan nilai-nilai yang ia anut. Akhirnya, tindakan Sultan juga menunjukkan kerja keras untuk mempertahankan kepercayaan publik (opsi E), dengan memastikan bahwa ia tetap berintegritas dan dapat dipercaya oleh masyarakat.
+                </div>
+                <div class="answer">Jawaban: <strong>A</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Sofyan merupakan pemilik warung sate yang sering memutar musik dari musisi terkenal untuk memeriahkan suasana warung. Hal tersebut ia lakukan karena ingin memberikan suasana yang nyaman bagi para pelanggan karena diputarkan musik yang membuat mereka senang. Hal tersebut memberikan keuntungan bagi Sofyan dengan terus bertambahnya pengunjung warungnya. Sebagai seorang yang menghargai karya musisi, Sofyan selalu mengirimkan logsheet musik yang selalu ia putar untuk dikirim ke Lembaga Manajemen Kolektif Nasional (LMKN). Tindakan yang dilakukan oleh Sofyan merupakan bentuk...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Sikap bijaksana dalam menghargai kreatifitas dan karya orang lain</div>
+                <div><strong>B.</strong> Sikap saling membantu orang lain dalam menghargai kreatifitas dan karyanya</div>
+                <div><strong>C.</strong> Sikap bertanggung jawab dan berkeadilan dalam menghargai kreatifitas dan karya orang lain</div>
+                <div><strong>D.</strong> Sikap memanusiakan orang lain dengan baik dalam menghargai kreatifitas dan karyanya</div>
+                <div><strong>E.</strong> Sikap patuh terhadap aturan yang ada sehingga dapat menghargai suatu karya orang lain</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Salah satu butir dalam sila kelima adalah suka menghargai hasil karya orang lain yang bermanfaat bagi kemajuan dan kesejahteraan Bersama. Sofyan telah menerapkan Pancasila butir ke-5 dan sikap bertanggung jawab serta berkeadilan.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Seorang polisi menilang sebuah Mobil yang berkendara tidak memakai sabuk pengaman. Ternyata yang mengendarai mobil itu adalah salah satu keluarga polisi tersebut. Tindakan seorang polisi yang tak pandang bulu dalam menindak pelanggaran lalu lintas telah sesuai dengan nilai integritas... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Jujur dalam berbuat</div>
+                <div><strong>B.</strong> Berani dalam mengambil keputusan</div>
+                <div><strong>C.</strong> Adil dalam bertindak</div>
+                <div><strong>D.</strong> Profesional dalam bekerja</div>
+                <div><strong>E.</strong> Peduli terhadap berbagai pelanggaran lalu lintas</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Adil yaitu tindakan yang memperlakuan yang sama atau tidak membedakan antara yang satu dengan yang lain; menyangkut persamaan hak perlindungan dan hak dasar seseorang serta tidak tebang pilih dan tidak pandang bulu sehingga jawaban yang sesuai dengan opsi diatas adalah Adil dalam bertindak.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Seorang siswa bernama Siti selalu membuang sampah pada tempatnya dan sering mengajak teman-temannya untuk menjaga kebersihan lingkungan sekolah. Ia juga selalu mematuhi aturan-aturan yang berlaku di sekolah dan aktif dalam kegiatan kebersihan yang diadakan oleh sekolah. Berdasarkan narasi tersebut, upaya yang dilakukan Siti untuk mengembangkan rasa tanggung jawabnya adalah ...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Membiasakan diri untuk mematuhi aturan-aturan sekolah</div>
+                <div><strong>B.</strong> Melakukan hal-hal yang memerlukan tanggung jawab secara terus-menerus</div>
+                <div><strong>C.</strong> Menanamkan nilai-nilai kebersihan dalam diri</div>
+                <div><strong>D.</strong> Mengajak teman-temannya untuk bertanggung jawab</div>
+                <div><strong>E.</strong> Melakukan evaluasi diri secara berkala</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah A, yaitu membiasakan diri untuk mematuhi aturan-aturan sekolah. Hal ini karena Siti selalu membuang sampah pada tempatnya dan sering mengajak teman-temannya untuk menjaga kebersihan lingkungan sekolah. Ia juga selalu mematuhi aturan-aturan yang berlaku di sekolah dan aktif dalam kegiatan kebersihan yang diadakan oleh sekolah. Kebiasaan-kebiasaan tersebut menunjukkan bahwa Siti telah terbiasa untuk mematuhi aturan-aturan yang memerlukan tanggung jawab.
+                </div>
+                <div class="answer">Jawaban: <strong>A</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Seorang karyawan bernama Budi memiliki etos kerja yang tinggi. Ia selalu bekerja dengan giat dan tekun, bahkan di luar jam kerja. Budi juga selalu berusaha untuk meningkatkan keterampilan dan kemampuannya. Berdasarkan narasi tersebut, sikap Budi menunjukkan bahwa Budi memiliki sikap ...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Disiplin dalam bekerja di tempat kerja</div>
+                <div><strong>B.</strong> Keuletan dalam menjalankan profesi pekerjaan</div>
+                <div><strong>C.</strong> Ketangguhan dalam melaksanakan tanggung jawab pekerjaan</div>
+                <div><strong>D.</strong> Kerja keras dalam menjalankan pekerjaan</div>
+                <div><strong>E.</strong> Etos kerja dalam melaksanakan profesi yang telah diambil</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah D, yaitu kerja keras. Hal ini karena Budi selalu bekerja dengan giat dan tekun, bahkan di luar jam kerja. Budi juga selalu berusaha untuk meningkatkan keterampilan dan kemampuannya.
+                </div>
+                <div class="answer">Jawaban: <strong>D</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Dua calon Kepala Desa Tempuran, Kecamatan Trimurjo, Kabupaten Lampung Tengah, duduk berdampingan saat hari pencoblosan Pemilihan Kepala Desa. Calon nomor urut 1 Febri duduk di sebelah kanan panggung. Sementara Janggar duduk di sebelah kiri panggung. Tak ada raut ketegangan di antara mereka berdua. Walaupun, dua pria yang sedang bersaing menjadi kepala desa itu masih satu keluarga. Sikap yang ditunjukan oleh kedua pasangan bakal calon kepala desa tersebut adalah bentuk sikap...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Sikap tanggung jawab sebagai bakal calon masyarakat desa yang mewakili rakyatnya</div>
+                <div><strong>B.</strong> Sikap profesionalisme sebagai bakal calon kepala desa tanpa melihat latar belakang hubungan kekeluargaan</div>
+                <div><strong>C.</strong> Sikap konsiten yang ditunjukan kedua bakal calon kepala desa kepada masyrakat yang akan memilih</div>
+                <div><strong>D.</strong> Sikap komitmen sebagai calon kepala desa yang memperhatikan hak pemilih untuk menegakan demokrasi</div>
+                <div><strong>E.</strong> Sikap solidaritas dan keterbukaan diantara kedua calon bakal kepala desa untuk mengajak masyarakat berpartsisipasi dalam pemilihan kepala desa</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Walaupun, dua pria yang sedang bersaing menjadi kepala desa itu masih satu keluarga tetapi mereka tetap menunjukan sikap profesionalisme.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Muhammad Habiburokhim atau biasa di panggil bapak Habib adalah pengusaha Percetakan terkenal di kotanya. Seiring dengan ramainya program berbagi yang biasa dikenal dengan Jumat Berkah, Bapak habib tak ingin melewatkan kesempatan berharga untuk terus berbagi kasih dan rezeki. Mengingat besarnya kepercayaan yang selama ini masyarakat berikan kepada Bapak Habib, maka kontribusi yang seluas-luasnya pula akan tulus diberi oleh perusahaannya untuk masyarakat sekitar. Tindakan yang di lakukan oleh Bapak Habib merupakan...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Rasa empati kepada masyarakat sekitar sehingga mampu meringankan beban penderitaan masyarakat</div>
+                <div><strong>B.</strong> Bentuk jiwa simpati untuk memberikan segala kebutuhan yang di butuhkan oleh warga sekiat perusahaan</div>
+                <div><strong>C.</strong> Bentuk kepedulian dan rasa tanggung jawab kepada masyarakat sekitar sebagai ungkapan rasa terima kasih dengan ketulusan</div>
+                <div><strong>D.</strong> Sebagai jiwa tanggung jawab kepada warga sekitar perusahaan untuk bisa merasakan kebahagian bersama</div>
+                <div><strong>E.</strong> Rasa patriotisme yang tulus kepada masyarakat sekitar meskipun dilakukan dengan se adanya dan semaunya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kata kunci disoal "Mengingat besarnya kepercayaan yang selama ini masyarakat berikan kepada Bapak Habib, maka kontribusi yang seluas-luasnya pula akan tulus diberi oleh perusahaannya untuk masyarakat sekitar." tindakan yang dilakukan Pak Habib adalah Bentuk kepedulian dan rasa tanggung jawab kepada masyarakat sekitar sebagai ungkapan rasa terima kasih dengan ketulusan.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Raden Mas Suwardi Suryaningrat atau sering dikenal dengan nama Ki Hajar Dewantara adalah seorang tokoh pelopor pendidikan bagi kamu pribumi Indonesia dari zaman penjajahan Belanda. Meski demikian ia dikenal hingga saat ini karena jasanya mendirikan Taman Siswa sebagai cikal bakal pendidikan di Indonesia. Nilai integritas Ki Hajar Dewantara dalam upaya pendirian Taman Siswa adalah....
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Berani mengambil keputusan membangun Pendidikan bagi pribumi meski dibawah tekanan pemerintah Belanda</div>
+                <div><strong>B.</strong> Memiliki rasa tanggung jawab terhadap Pendidikan di tanah air bagi masyarakat pribumi</div>
+                <div><strong>C.</strong> Memiliki rasa kepedulian terhadap Pendidikan bagi masyarakat pribumi</div>
+                <div><strong>D.</strong> Menunjukkan kerja keras dalam upaya membangun Pendidikan bagi masyarakat pribumi</div>
+                <div><strong>E.</strong> Memiliki jiwa kemandirian dalam membangun Pendidikan bagi masyarakat pribumi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ki Hajar Dewantara adalah seorang tokoh pelopor pendidikan bagi kamu pribumi Indonesia dari zaman penjajahan Belanda karena ia memiliki rasa kepedulian terhadap pendidikan bagi masyarakat pribumi.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                17 Agustus 1945 menjadi hari bersejarah bagi bangsa Indonesia. Bangsa Indonesia menyatakan kemerdekaan sehingga lepas dari belenggu penjajahan bangsa asing. Ir. Soekarno membacakan proklamasi kemerdekaan Indonesia meski di lokasi banyak tentara Jepang yang bersenjata lengkap. Sikap integritas yang ditunjukkan Soekarno adalah ...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Menunjukkan kerja keras dan kedisiplinan dalam mencapai tujuan nasional.</div>
+                <div><strong>B.</strong> Menunjukkan keberanian luar biasa dalam menjalankan amanat rakyat.</div>
+                <div><strong>C.</strong> Mengutamakan kepentingan bangsa di atas kepentingan pribadi.</div>
+                <div><strong>D.</strong> Menegakkan prinsip keadilan dan empati dalam menghadapi situasi sulit.</div>
+                <div><strong>E.</strong> Menunjukkan tanggung jawab dan komitmen tinggi terhadap kemerdekaan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pada tanggal 17 Agustus 1945, Soekarno menunjukkan integritas luar biasa dengan membacakan proklamasi kemerdekaan Indonesia di tengah ancaman tentara Jepang yang bersenjata lengkap. Sikap ini menggambarkan keberanian besar Soekarno sebagai seorang pemimpin yang berani mengambil risiko demi menjalankan amanat rakyat untuk meraih kemerdekaan (opsi B). Keberanian ini merupakan wujud integritas karena Soekarno tetap teguh pada prinsip dan tanggung jawabnya sebagai pemimpin meskipun dalam situasi berbahaya. Opsi A, yang menunjukkan kerja keras dan kedisiplinan, adalah penting namun tidak mencerminkan keberanian spesifik Soekarno dalam situasi ini. Opsi C mengutamakan kepentingan bangsa di atas kepentingan pribadi, yang benar tetapi lebih umum dan tidak sejelas keberanian menghadapi ancaman langsung. Opsi D, menegakkan prinsip keadilan dan empati, adalah aspek penting dari integritas tetapi kurang spesifik dalam konteks proklamasi. Opsi E menunjukkan tanggung jawab dan komitmen tinggi terhadap kemerdekaan, yang juga benar namun lebih umum dibandingkan dengan tindakan berisiko tinggi yang diambil Soekarno.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Sesaat setelah anda selesai melakukan dinas luar untuk bertemu salah satu pejabat, anda mendapati jarum penunjuk bahan bakar mobil dinas yang sedang anda gunakan berada diatas. Padahal anda tahu bahwa bensin mobil dinas tersebut tinggal sedikit. Ternyata pejabat yang baru saja anda datangilah yang memberi bensin, sehingga anda memutuskan untuk Kembali putar arah dan menemui lagi pejabat tersebut untuk menyedot Kembali bensin yang di masukkannya. Persis sejumlah yang dia masukkan. Bagi anda, uang jalan yang didapatkannya harus di pergunakan sesuai kebutuhan, sesuai peruntukannya. Pada kasus ini, nilai integritas yang dimiliki yaitu...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Jujur dalam menjalankan dan menjunjung tinggi integritas dalam diri</div>
+                <div><strong>B.</strong> Disiplin dengan apa yang sudah di lakukan dengan berbagai resikonya</div>
+                <div><strong>C.</strong> Tanggung jawab atas apa yang telah di perbuat dan melaksanakan dengan sebaik-baiknya</div>
+                <div><strong>D.</strong> Sederhana dalam melkaukan segala hal supaya tidak berlebihan dalam berkehidupan</div>
+                <div><strong>E.</strong> Berani atas segala hal yang telah di lakukan jika hal tersebut salah dan tidak sebagaimana mestinya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Inti dari soalnya diatas adalah "Ternyata pejabat yang baru saja anda datangilah yang memberi bensin, sehingga anda memutuskan untuk Kembali putar arah dan menemui lagi pejabat tersebut untuk menyedot Kembali bensin yang di masukkannya. Persis sejumlah yang dia masukkan. Bagi anda, uang jalan yang didapatkannya harus di pergunakan sesuai kebutuhan, sesuai peruntukannya."<br>
+                    Maka nilai integritas dari kejadian diatas adalah kejujuran.
+                </div>
+                <div class="answer">Jawaban: <strong>A</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Samsul adalah seorang kepala perusahaan di cabang kota Bogor. Beliau mengadakan pertemuan membahas tentang kerugian perusahaan akibat banjir dan strategi mutasi untuk meningkatkan kinerja perusahaan. Namun di dalam pertemuan tersebut terjadi perdebatan antara kepala pusat dengan Samsul karena Samsul tidak mau di mutasikan ke kota lain tanpa alasan yang pasti, Samsul bahkan sampai mengancam untuk membocorkan data perusahaan. Tindakan yang di tunjukan Samsul merupakan...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Bentuk pelanggaran terhadap harkat dan martabat orang lain tanpa memperdulikan hak orang lain dalam berpendapat</div>
+                <div><strong>B.</strong> Sikap individu yang tidak pantas di contoh dalam berdemokrasi di tempat kerja</div>
+                <div><strong>C.</strong> Sikap yang lebih mementingkan diri sendiri untuk sebuah penilaian kebenaran tanpa memperdulikan perasaan orang lain</div>
+                <div><strong>D.</strong> Kurangnya integritas dalam diri seseorang sehingga tidak memiliki rasa tanggung jawab dan profesionalisme yang seutuhnya</div>
+                <div><strong>E.</strong> Tindakan semena-mena terhadap orang lain tanpa mau mendengarkan segala pendapat dari orang sekitarnya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Sebagai seorang kepala perusahaan seharusnya Samsul memiliki integritas yang baik, yaitu salah satunya profesionalisme. Karena sedang ada permasalahan pada perusahaanya dan mengharuskan ia untuk dimutasi, seharusnya dia bersikap profesional dengan keputusan yang diberikan.
+                </div>
+                <div class="answer">Jawaban: <strong>D</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Sebuah negara sedang mengalami kegagalan dalam sistem pemerintahan yang disebabkan oleh korupsi, nepotisme, dan penyalahgunaan kekuasaan yang meluas. Masyarakat merasa kecewa dan kehilangan kepercayaan terhadap pemerintahannya. Setelah adanya pergantian kepemimpinan, pemerintah yang baru berkomitmen untuk memperbaiki situasi dan memulihkan kepercayaan masyarakat. Dalam konteks ini, bagaimana integritas dapat membantu memperbaiki kepercayaan masyarakat terhadap pemerintah?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Integritas dapat membantu pemerintah menciptakan berbagai program sosial dan ekonomi yang bertujuan meningkatkan kesejahteraan masyarakat.</div>
+                <div><strong>B.</strong> Integritas dapat membantu pemerintah mengamankan dana negara dan memastikan penggunaannya yang tepat, menghilangkan praktik korupsi.</div>
+                <div><strong>C.</strong> Integritas dapat membantu pemerintah mendirikan lembaga anti-korupsi yang independen untuk menegakkan hukum dan memberantas praktik korupsi di negara tersebut.</div>
+                <div><strong>D.</strong> Integritas dapat membantu pemerintah membangun transparansi dan akuntabilitas dalam pengambilan keputusan serta pelaksanaan kebijakan publik.</div>
+                <div><strong>E.</strong> Integritas dapat membantu pemerintah mengubah citra negara secara internasional melalui diplomasi yang jujur dan menjalin hubungan kerjasama yang bermanfaat bagi masyarakat.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas dapat membantu pemerintah membangun transparansi dan akuntabilitas dalam pengambilan keputusan serta pelaksanaan kebijakan publik, adalah pilihan yang paling tepat. Dalam konteks kegagalan sistem pemerintahan yang disebabkan oleh korupsi dan penyalahgunaan kekuasaan, membangun transparansi dan akuntabilitas adalah langkah penting untuk memulihkan kepercayaan masyarakat. Dengan adanya integritas dalam pengambilan keputusan dan pelaksanaan kebijakan publik, pemerintah dapat membuktikan bahwa mereka bertindak dengan jujur, adil, dan bertanggung jawab kepada masyarakat.
+                </div>
+                <div class="answer">Jawaban: <strong>D</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Seorang mahasiswa yang memiliki nilai yang kurang memuaskan dalam ujian akhir semester memutuskan untuk mengambil tindakan ekstrem. Dia membuat salinan palsu dari jawaban ujian seorang teman yang mendapat nilai tinggi dan menggantinya dengan jawabannya sendiri dalam ujian ulang yang akan datang. Mahasiswa ini yakin bahwa ini adalah satu-satunya cara untuk meningkatkan nilai akhirnya. Bagaimana Anda menilai tindakan mahasiswa ini dari sudut pandang integritas?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Tindakan mahasiswa tersebut mencerminkan integritas karena dia mencoba untuk memperbaiki kesalahannya.</div>
+                <div><strong>B.</strong> Tindakan mahasiswa tersebut tidak mencerminkan integritas karena dia melakukan penipuan.</div>
+                <div><strong>C.</strong> Tindakan mahasiswa tersebut bisa dianggap bermasalah, tetapi tergantung pada tujuannya.</div>
+                <div><strong>D.</strong> Tindakan mahasiswa tersebut adalah langkah yang bijaksana dalam mencapai tujuannya.</div>
+                <div><strong>E.</strong> Tindakan mahasiswa tersebut tidak perlu dinilai dari sudut pandang integritas.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tindakan mahasiswa yang membuat salinan palsu dari jawaban ujian temannya dan menggantinya dengan jawabannya sendiri merupakan tindakan penipuan. Tindakan ini melanggar prinsip integritas karena melibatkan ketidakjujuran, kecurangan, dan pelanggaran kode etik akademik. Integritas akademik mengharuskan mahasiswa untuk melakukan pekerjaan mereka sendiri dan tidak mencoba menipu atau merugikan teman-teman mereka.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Seorang pejabat tinggi pemerintahan yang memiliki akses ke dana besar untuk program kesejahteraan rakyat ditemukan telah menggunakan sebagian dari dana tersebut untuk kepentingan pribadinya sendiri. Pejabat ini telah lama dihormati dan dianggap sebagai teladan integritas dalam pemerintahan. Bagaimana masyarakat seharusnya merespons tindakan pejabat ini untuk menjaga integritas dan keberadaban bangsanya?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Masyarakat seharusnya mengabaikan tindakan tersebut karena pejabat ini telah berkontribusi besar pada pembangunan negara.</div>
+                <div><strong>B.</strong> Masyarakat seharusnya memberikan kebijakan amnesti kepada pejabat tersebut untuk menghindari skandal.</div>
+                <div><strong>C.</strong> Masyarakat seharusnya menyuarakan ketidakpuasan mereka dan menuntut penegakan hukum yang adil.</div>
+                <div><strong>D.</strong> Masyarakat seharusnya mencari tahu apakah pejabat lain juga melakukan hal serupa sebelum mengambil tindakan.</div>
+                <div><strong>E.</strong> Masyarakat seharusnya memberikan penghargaan kepada pejabat tersebut karena berhasil mengalihkan dana untuk kepentingan pribadi dengan cerdik.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tindakan pejabat tinggi pemerintahan yang menggunakan dana program kesejahteraan rakyat untuk kepentingan pribadinya adalah tindakan yang melanggar hukum dan etika. Dalam konteks integritas dan keberadaban bangsa, penting bagi masyarakat untuk merespons tindakan ini dengan menyuarakan ketidakpuasan mereka. Menuntut penegakan hukum yang adil adalah langkah yang tepat untuk memastikan bahwa pelanggaran tersebut ditindaklanjuti secara hukum dan pejabat tersebut bertanggung jawab atas tindakannya.
+                </div>
+                <div class="answer">Jawaban: <strong>C</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Seorang pegawai negeri yang baru saja ditempatkan di departemen pengawasan keuangan negara menemukan bukti bahwa beberapa pejabat tinggi dalam departemen tersebut terlibat dalam praktik korupsi yang merugikan negara. Dia merasa terbebani oleh temuan ini karena dia baru di departemen tersebut dan khawatir akan dampaknya pada karier dan keselamatannya. Bagaimana seharusnya pegawai negeri ini bertindak sesuai dengan prinsip berintegritas dan kejujuran?
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Pegawai negeri tersebut seharusnya segera melaporkan praktik korupsi tersebut kepada atasan dan pihak berwenang tanpa memikirkan risikonya</div>
+                <div><strong>B.</strong> Pegawai negeri tersebut seharusnya mencoba mencari bukti yang lebih kuat sebelum melaporkan praktik korupsi tersebut.</div>
+                <div><strong>C.</strong> Pegawai negeri tersebut seharusnya berbicara dengan rekan kerjanya terlebih dahulu untuk mendapatkan saran.</div>
+                <div><strong>D.</strong> Pegawai negeri tersebut seharusnya menghindari melaporkan praktik korupsi tersebut dan mencari pekerjaan baru.</div>
+                <div><strong>E.</strong> Pegawai negeri tersebut seharusnya mengabaikan praktik korupsi tersebut karena tidak ingin mencampuri urusan atasannya.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam situasi ini, pegawai negeri telah menemukan bukti praktik korupsi yang merugikan negara oleh beberapa pejabat tinggi di departemennya. Tindakan yang sesuai dengan prinsip berintegritas dan kejujuran adalah segera melaporkan praktik korupsi tersebut kepada atasan dan pihak berwenang yang berwenang menangani kasus ini.
+                </div>
+                <div class="answer">Jawaban: <strong>A</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Tindakan korupsi merupakan tindakan yang sangat merugikan negara. Korupsi mengakibatkan melambatnya pertumbuhan ekonomi negara, menurunnya investasi, meningkatnya kemiskinan serta meningkatnya ketimpangan pendapatan. Korupsi juga dapat menurunkan tingkat kebahagiaan masyarakat di suatu negara, kasus korupsi masih marak terjadi. Upaya paling tepat yang dapat dilakukan sebagai masyarakat yang berintegritas untuk menghentikan kejahatan luar biasa tersebut adalah ...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Menjatuhkan sanksi yang berat bagi terdakwa kasus korupsi agar menjadi pelajaran bagi pejabat lainnya</div>
+                <div><strong>B.</strong> Menegakkan hukum setegak-tegaknya tanpa pandang bulu sehingga semua orang memiliki kedudukan yang sama di mata hukum</div>
+                <div><strong>C.</strong> Melakukan sosialisasi terkait tindak pidana korupsi dan dampaknya sehingga masyarakat menjadi paham</div>
+                <div><strong>D.</strong> Mengembangkan sikap sadar hukum dalam kehidupan dengan menerapkan prinsip dasar kejujuran</div>
+                <div><strong>E.</strong> Membuat peraturan perundang-undangan tanpa memberi celah untuk berkembangnya praktik korupsi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Mengembangkan sikap sadar hukum dalam kehidupan dengan menerapkan prinsip dasar kejujuran merupakan sikap yang bisa dilakukan oleh warga negara. Sedangkan opsi lain merupakan tugas pemerintah lewat lembaga penegak hukumnya.
+                </div>
+                <div class="answer">Jawaban: <strong>D</strong></div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Integritas sangat erat kaitannya dengan kejujuran karena jujur adalah kesamaan antara pikiran, hati, ucapan dan perbuatan, begitu juga dengan pengertian integritas. Karena kesamaan definisi tersebut, orang yang jujur bisa juga kita sebut sebagai orang yang berintegritas. Contoh tindakan yang mencerminkan perilaku integritas adalah ...
+            </div>
+            <div class="options">
+                <div><strong>A.</strong> Membuang sampah pada tempatnya walaupun hanya sampah kecil seperti permen</div>
+                <div><strong>B.</strong> Menepati janji dengan segala apa yang pernah diucapkan</div>
+                <div><strong>C.</strong> Mengerjakan ulangan sendiri sesulit apapun soalnya dan meskipun harus remedial</div>
+                <div><strong>D.</strong> Menyapu halaman ketika pagi hari untuk membantu meringankan pekerjaan rumah ibu</div>
+                <div><strong>E.</strong> Menaati jadwal piket dan mengambil tugas masing-masing ketika melakukannya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas merupakan sikap di mana sikap tersebut mencerminkan hal-hal yang positif seperti halnya kejujuran, kedisiplinan, mandiri, tanggung jawab, sederhana, bekerja keras, empati, simpati dan kepedulian. Maka contoh perilaku yang mencerminkan sikap integritas adalah menepati janji dengan segala apa yang pernah diucapkan, karena integritas sangat erat kaitannya dengan kejujuran karena jujur adalah kesamaan antara pikiran, hari, ucapan, dan perbuatan.
+                </div>
+                <div class="answer">Jawaban: <strong>B</strong></div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../../../dark-mode-toggler.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Gagasan Utama - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Gagasan Utama - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Gagasan Utama</strong>
+            <p>Gagasan utama adalah ide pokok atau topik utama yang dibahas dalam sebuah paragraf atau teks. Gagasan utama dapat ditemukan di awal paragraf (deduktif), di akhir paragraf (induktif), atau di tengah paragraf (campuran/ineratif). Kemampuan mengidentifikasi gagasan utama penting untuk memahami isi teks secara keseluruhan.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                <strong>Pelestarian hewan bekantan di hutan di Kalimantan semakin terancam. Alasannya adalah sekarang ada penambang ilegal. Mereka mencari emas. Ada ratusan penambang ilegal.</strong><br><br>
+                Gagasan utama dari bacaan di atas adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Penambangan ilegal di hutan di Kalimantan.</li>
+                <li>B. Penyebab penambangan ilegal di hutan di Kalimantan.</li>
+                <li>C. Ancaman terhadap hewan bekantan di Kalimantan.</li>
+                <li>D. Cegah penambangan ilegal di hutan di Kalimantan.</li>
+                <li>E. Banyaknya penambang ilegal.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan utama adalah sebuah topik atau pembahasan yang nantinya akan dibahas di dalam sebuah paragraf. Gagasan utama bersifat yang paling umum dibandingkan dengan kalimat-kalimat yang lain. Pada teks tersebut gagasan utama berada di bagian awal paragraf (deduktif) yaitu ancaman terhadap hewan bekantan di Kalimantan.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Ancaman terhadap hewan bekantan di Kalimantan.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                <strong>Bahan bakar minyak memiliki berbagai kegunaan. Sepeda motor menggunakan bahan bakar pertalite. Kendaraan bermesin diesel menggunakan bahan bakar solar. Pesawat terbang menggunakan avtur sebagai bahan bakar. Ibu rumah tangga menggunakan minyak tanah sebagai bahan bakar kompor minyak.</strong><br><br>
+                Ide pokok paragraf tersebut adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Kegunaan bahan bakar minyak</li>
+                <li>B. Berbagai jenis kendaraan</li>
+                <li>C. Bahan bakar rumah tangga</li>
+                <li>D. Manfaat pertalite dan minyak tanah</li>
+                <li>E. Ibu menggunakan minyak tanah</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ide pokok atau gagasan utama pada paragraf di atas dapat ditemukan pada awal kalimat (deduktif). Dikarenakan kalimat-kalimat setelahnya berupa penjelasan dari kalimat utama yang ada di awal paragraf.
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. Kegunaan bahan bakar minyak</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                <strong>Menjaga kebersihan di lingkungan Privat Al-Faiz tidak hanya dilakukan oleh petugas kebersihan saja. Menjaga kebersihan juga harus dilakukan para siswa. Para pengajar juga bertanggung jawab untuk menjaga kebersihan lingkungan Al-Faiz. Seluruh karyawan tanpa terkecuali harus sigap menjaga kebersihan lingkungan. Semua warga yang ada di Privat Al-Faiz wajib menjaga kebersihan lingkungan agar belajar semakin nyaman.</strong><br><br>
+                Gagasan utama pada paragraph diatas adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Menjaga kebersihan Privat Al-Faiz adalah tugas petugas kebersihan.</li>
+                <li>B. Menjaga kebersihan Privat Al-Faiz bukan hanya tugas petugas kebersihan saja.</li>
+                <li>C. Siswa Al-Faiz perlu menjaga kebersihan lingkungan.</li>
+                <li>D. Tanggung jawab kebersihan adalah tugas para pengajar di Privat Al-Faiz.</li>
+                <li>E. Menjaga kebersihan lingkungan Privat Al-Faiz adalah tugas semua.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam paragraf tersebut gagasan utama berada di akhir paragraf (induktif). Pada kalimat-kalimat awal merupakan penjelasan dari kalimat yang ada di akhir paragraf. Sehingga gagasan utama pada paragraf di atas adalah menjaga kebersihan lingkungan Privat Al-Faiz adalah tugas semua.
+                </div>
+                <div class="answer">KUNCI JAWABAN: E. Menjaga kebersihan lingkungan Privat Al-Faiz adalah tugas semua.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                <strong>(1) Kebanyakan manusia lebih kuat lapar daripada haus. (2) Manusia masih dapat bertahan hidup meski kehilangan separuh atau semua persediaan hidrat arang dan lemak. (3) Akan tetapi, jika ia kekurangan air 10% saja, tubuhnya akan terancam bahaya. (4) Jika kekurangan itu sampai 25%, ia berhadapan dengan maut. (5) Sehingga rasa haus lebih berbahaya dibandingkan dengan rasa lapar.</strong><br><br>
+                Kalimat utama paragraf tersebut ada pada kalimat ....
+            </div>
+            <ul class="options">
+                <li>A. 1</li>
+                <li>B. 2 dan 3</li>
+                <li>C. 3</li>
+                <li>D. 4</li>
+                <li>E. 1 dan 5</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat utama adalah kalimat yang berisi penggalan intisari dari paragraf yang memuat keseluruhan isi. Pada paragraf tersebut kalimat utama dapat ditemukan pada awal dan akhir paragraf (Variatif) dikarenakan pada awal dan akhir paragraf menyatakan hal yang sama. Jadi kalimat utama pada paragraf tersebut berada di dua tempat.
+                </div>
+                <div class="answer">KUNCI JAWABAN: E. 1 dan 5</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                <strong>Dari uji praklinik maupun klinik dapat disimpulkan bahwa pare sangat berpeluang dijadikan sumber fitofarmaka antidiabetes. Penelitian pare sebagai antidiabetes diawali dengan pembuktian secara alamiah mengenai kemampuannya menurunkan kadar glukosa darah pada hewan uji dalam kondisi normal maupun diabetes. Dilaporkan, ekstrak air buah pare menunjukkan efek hipoglikemik (menurunkan kadar glukosa darah) pada orang normal maupun diabetes yang diinduksi streptozotosin.</strong><br><br>
+                Gagasan yang terkandung dalam penggalan wacana tersebut ialah ...
+            </div>
+            <ul class="options">
+                <li>A. Pare sangat berpeluang dijadikan sumber fitofarmaka anti diabetes.</li>
+                <li>B. Penelitian pare sebagai antidiabetes diawali dengan pembuktian.</li>
+                <li>C. Hasil uji praklinik dan klinik tentang pare.</li>
+                <li>D. Pare menurunkan kadar glukosa darah pada hewan uji.</li>
+                <li>E. Ekstrak air buah pare menurunkan kadar glukosa/darah pada orang normal.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan yang terkandung dalam wacana pada paragraf tersebut berada di awal paragraf (Deduktif). Pada awal paragraf menyatakan tentang hasil uji praklinik dan klinik dari pare dan pada kalimat selanjutnya menjelaskan tentang hasil uji tersebut.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Hasil uji praklinik dan klinik tentang pare.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                <strong>Musim penghujan menyebabkan banyak tempat yang tergenang, satwa-satwa yang tinggal di tanah mencari tempat lain yang lebih aman. Salah satu satwa yang berbahaya ditemukan di pemukiman warga adalah ular piton. Warga masyarakat berusaha mengevakuasi dua ekor ular piton yang masuk ke pemukiman warga. Tidak hanya di rumah-rumah penduduk, warga juga menemukan beberapa ular piton yang berada di atas pohon. Ditemukan dua ekor satwa berbahaya ini sangat meresahkan warga.</strong><br><br>
+                Kalimat utama teks tersebut adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Ditemukan dua ekor satwa berbahaya ini sangat meresahkan warga.</li>
+                <li>B. Warga masyarakat berusaha mengevakuasi dua ekor ular piton yang masuk ke pemukiman warga.</li>
+                <li>C. Musim penghujan menyebabkan banyak tempat yang tergenang, satwa-satwa yang tinggal di dalam tanah mencari tempat lain yang lebih aman.</li>
+                <li>D. Tidak hanya di rumah-rumah penduduk, warga juga menemukan beberapa ular piton yang berada di atas pohon.</li>
+                <li>E. Dua ekor piton masuk ke pemukiman warga.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat utama pada paragraf tersebut yaitu terdapat pada awal kalimat (Deduktif). Dikarenakan kalimat selanjutnya merupakan penjelasan dari kalimat utama yang ada di awal paragraf.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Musim penghujan menyebabkan banyak tempat yang tergenang, satwa-satwa yang tinggal di dalam tanah mencari tempat lain yang lebih aman.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                <strong>Bencana banjir lumpur akibat jebolnya tanggul Huruhara di desa Sukasaya telah menimbulkan berbagai macam penyakit. Beberapa penyakit yang akan timbul sesudah bencana adalah diare, tifus, leptospirosis dan demam berdarah. Masalah kesehatan pada korban dan masyarakat di sekitar lokasi bencana harus segera diantisipasi. Beberapa penyakit itu muncul karena lingkungan kotor dan sumber air bersih yang tercemar lumpur.</strong><br><br>
+                Gagasan utama paragraf tersebut adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Masalah kesehatan pada korban harus diperhatikan</li>
+                <li>B. Bencana banjir lumpur akibat jebolnya tanggul</li>
+                <li>C. Bencana banjir lumpur menimbulkan berbagai penyakit</li>
+                <li>D. Beberapa penyakit muncul karena lingkungan kotor</li>
+                <li>E. Semua salah</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan utama pada paragraf tersebut berada di akhir paragraf (Induktif). Dinyatakan bahwa berbagai penyakit muncul akibat banjir lumpur. Kemudian pada kalimat-kalimat selanjutnya menjelaskan berbagai jenis penyakit.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Bencana banjir lumpur menimbulkan berbagai penyakit.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                <strong>Pupuk organik adalah pupuk yang berasal dari sisa-sisa makhluk hidup. Pupuk tersebut dapat berasal dari kotoran hewan. Selain itu, kotoran manusia dapat dibuat untuk pupuk jenis ini. Ada pula pupuk organik yang berasal dari sisa tumbuhan misalnya tanaman orok-orok.</strong><br><br>
+                Ide pokok bacaan di atas adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Pupuk dari kotoran hewan</li>
+                <li>B. Sisa-sisa makhluk hidup</li>
+                <li>C. Pengertian pupuk organik</li>
+                <li>D. Kotoran manusia dapat dijadikan pupuk</li>
+                <li>E. Pupuk organik yang berasal dari sisa tumbuhan misalnya tanaman orok-orok</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Paragraf tersebut membahas tentang apa itu pupuk organik sehingga bisa dikatakan bahwa ide pokok paragraf tersebut tentang pengertian pupuk organik.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Pengertian pupuk organik.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                <strong>Orang tua kita pun juga kerap menegur kalau tahu kita makan sambil berdiri. Ternyata selain dianggap kurang sopan, makan sambil berdiri juga memiliki dampak negatif bagi kesehatan loh. Beberapa orang percaya bahwa makan sambil berdiri dapat membantu mengurangi berat badan daripada makan sambil duduk. Dilansir dari Healthline, meskipun berdiri dapat membakar sekitar 50 kalori lebih banyak per jam daripada duduk, ini tidak cukup membuktikan teori tersebut.</strong><br><br>
+                Ide pokok pada paragraf di atas adalah ....
+            </div>
+            <ul class="options">
+                <li>A. Kebiasaan makan sambil berdiri adalah kebiasaan yang lumrah</li>
+                <li>B. Makan sambil duduk cenderung mengurangkan kecepatan makanmu</li>
+                <li>C. Sejak kecil, harus dibiasakan untuk tidak makan sambil berdiri</li>
+                <li>D. Tidak ada hasil penelitian yang menunjukkan bahwa makan sambil berdiri adalah cara efektif untuk mengurangi kalori tubuh</li>
+                <li>E. Makan sambil berdiri atau sambil duduk tidak ada perbandingan yang sangat signifikan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ide pokok yang terdapat pada paragraf tersebut berada di dalam paragraf (Ineratif). Pada paragraf tersebut dijelaskan mengenai kebiasaan makan berdiri yang tidak baik dan belum adanya penelitian bahwa makan sambil berdiri dapat mengurangi kalori dalam tubuh manusia.
+                </div>
+                <div class="answer">KUNCI JAWABAN: D. Tidak ada hasil penelitian yang menunjukkan bahwa makan sambil berdiri adalah cara efektif untuk mengurangi kalori tubuh.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                <strong>Sekumpulan hiu jenis blacktip (carcharhinus limbatus) terlihat menepi ke bibir pantai Pulau Peninsula kawasan Nusa Dua, Badung, Bali dalam beberapa hari terakhir. Beberapa akun di dunia maya pun mengunggah video tersebut, salah satunya akun instagram @denpasar viral. Fenomena ini adalah peristiwa alamiah dan tak perlu dikhawatirkan. Suko menuturkan, hiu-hiu itu menepi karena mengikuti mangsanya, meliputi ikan pelagis, tongkol, kembung, dan lemuru. "Itu ceritanya dari pengalaman masyarakat nelayan memang sedang musim ikan yang dijadikan makanan hiu. Jadi hiu mendatanginya," kata Suko, saat dihubungi Kompas.com Kamis (22/8/2019).</strong><br><br>
+                Gagasan utama teks di atas adalah ....
+            </div>
+            <ul class="options">
+                <li>A. Fenomena hiu blacktip yang menepi ke pantai Nusa Dua</li>
+                <li>B. Viral hiu blacktip</li>
+                <li>C. Pulau Peninsula jadi viral</li>
+                <li>D. Peristiwa alamiah di kawasan Nusa Dua</li>
+                <li>E. Hiu blacktip menepi karena mengikuti mangsanya</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Paragraf di atas memiliki gagasan utama yang berada di awal paragraf (Deduktif). Di awal dinyatakan bahwa terdapat sekumpulan hiu blacktip menepi ke bibir Pantai Nusa Dua. Kemudian setelahnya menjelaskan fenomena tersebut.
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. Fenomena hiu blacktip yang menepi ke pantai Nusa Dua</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                <strong>Simbiosis merupakan hubungan antara dua makhluk hidup yang berbeda. Simbiosis komensalisme terjadi jika satu makhluk hidup diuntungkan, yang lain tidak diuntungrugikan. Simbiosis parasitisme merupakan hubungan makhluk hidup yang satu untung dan yang lain rugi. Simbiosis mutualisme adalah hubungan dua makhluk hidup yang saling menguntungkan.</strong><br><br>
+                Kalimat utama paragraf tersebut adalah ....
+            </div>
+            <ul class="options">
+                <li>A. Ada berbagai macam simbiosis yang diketahui oleh manusia</li>
+                <li>B. Simbiosis komensalisme terjadi jika satu makhluk hidup diuntungkan, yang lain tidak diuntungrugikan</li>
+                <li>C. Simbiosis merupakan hubungan antara dua makhluk hidup yang berbeda</li>
+                <li>D. Simbiosis parasitisme merupakan hubungan makhluk hidup yang satu untuk dan yang lain rugi</li>
+                <li>E. Simbiosis mutualisme adalah hubungan dua makhluk hidup yang saling menguntungkan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat utama pada paragraf tersebut berada di awal (Deduktif). Di awal paragraf dinyatakan bahwa simbiosis merupakan hubungan antara dua makhluk hidup yang berbeda dan setelahnya baru berupa kalimat-kalimat penjelas.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Simbiosis merupakan hubungan antara dua makhluk hidup yang berbeda</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                <strong>Sebanyak ratusan ruko di kawasan pabrik dan pergudangan Jalan Raya Terong, Kabupaten Sukasaya pada selasa siang mendadak roboh. Namun, sama sekali tidak ada korban jiwa maupun korban luka dalam peristiwa tersebut. Dugaan sementara, ratusan ruko itu ambruk akibat kontsruksi bangunan yang sudah tidak kuat. Salah satu saksi mata kejadian saat dihubungi BeritaKota via telepon menuturkan bahwa ruko tersebut ambruk begitu saja.</strong><br><br>
+                Ide pokok paragraf tersebut adalah....
+            </div>
+            <ul class="options">
+                <li>A. Ratusan ruko ambruk karena konstruksi kurang kuat.</li>
+                <li>B. Sukasaya adalah kawasan pabrik dan pergudangan</li>
+                <li>C. Tidak ada korban jiwa maupun luka dalam peristiwa tersebut.</li>
+                <li>D. Ratusan ruko mendadak roboh.</li>
+                <li>E. Seorang saksi mata menuturkan ratusan ruko ambruk begitu saja.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ide Pokok yang terdapat di paragraf tersebut berada di dalam paragraf (Ineratif). Dinyatakan bahwa "Dugaan sementara, ratusan ruko itu ambruk akibat kontruksi bangunan yang sudah tidak kuat".
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. Ratusan ruko ambruk karena kontruksi kurang kuat.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                <strong>Perang gerilya ternyata memberikan dampak bagi kehidupan masyarakat. Berdasarkan penjelasan di Jurnal Penelitian Ilmu Sejarah, Sosial, dan Budaya, dampak positif perang gerilya yaitu meningkatkan kepercayaan rakyat terhadap pemerintah dan tentara. Dari segi sosial, dampak perang gerilya membuat masyarakat semakin meningkatkan kerukunan dan semangat gotong royong. Perang ini memberikan pemahaman kepada masyarakat tentang pentingnya mempertahankan kemerdekaan. Adanya perang ini juga membuat masyarakat meningkatkan kewaspadaan terhadap kemungkinan kedatangan tentara Belanda.</strong><br>
+                (Sumber: Perang Gerilya, Strategi Perlawanan Indonesia Terhadap Belanda – Nasional Katadata.co.id)<br><br>
+                Gagasan utama pada teks di atas adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Dampak negatif perang gerilya</li>
+                <li>B. Dampak perang gerilya bagi kehidupan masyarakat</li>
+                <li>C. Kedudukan bangsa Indonesia yang semakin kuat</li>
+                <li>D. Dampak sosial dari perang gerilya</li>
+                <li>E. Efek buruk terjadinya perang</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan utama yang terdapat pada teks tersebut adalah tentang dampak yang diakibatkan oleh perang gerilya yang dirasakan oleh masyarakat.
+                </div>
+                <div class="answer">KUNCI JAWABAN: B. Dampak perang gerilya bagi kehidupan masyarakat.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                <strong>Hasil review dan meta-analisis yang dilakukan secara sistematik oleh Hill dkk. (2016) menunjukkan bahwa prevalensi global penyakit ginjal kronis sebesar 13.4%.</strong> <em>Menurut data WHO, penyakit ginjal kronis telah menyebabkan 850.000 orang meninggal dunia setiap tahun.</em> <strong>Kematian tersebut menunjukknn bahwa penyakit ginjal kronis menduduki peringkat ke 12 tertinggi penyebab kematian dunia. Menurut End Stage Renal Disease Patients pada tahun 2011, prevalensi CKD dunia sebanyak 2.786.000 orang, sedangkan tahun 2012 sebanyak 3.018.000 orang dan tahun 2013 sebanyak 3.200.000 orang.</strong><br><br>
+                Gagasan pada kalimat yang bercetak miring dapat diungkapkan melalui kalimat ...
+            </div>
+            <ul class="options">
+                <li>A. Penyakit ginjal telah menyebabkan kematian 850.000 orang setiap tahunnya.</li>
+                <li>B. Sebanyak 850.000 orang meninggal setiap tahun akibat penyakit kronis berdasarkan data WHO.</li>
+                <li>C. Setiap tahun data WHO sudah melaporkan 850.000 orang meninggal dunia.</li>
+                <li>D. Kematian akibat penyakit ginjal kronis yang dilaporkan oleh WHO terjadi pada 850.000 orang setiap tahunnya.</li>
+                <li>E. Data dari WHO menunjukkan bahwa 850,000 orang meninggal dunia setiap tahun akibat penyakit ginjal kronis.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan pada kalimat yang bercetak tebal dapat dinyatakan ulang tanpa mengubah maknanya yaitu dengan kalimat "kematian akibat penyakit ginjal kronis yang dilaporkan oleh WHO terjadi pada 850.000 orang setiap tahunnya". Sehingga jawaban yang paling tepat adalah opsi D.
+                </div>
+                <div class="answer">KUNCI JAWABAN: D. Kematian akibat penyakit ginjal kronis yang dilaporkan oleh WHO terjadi pada 850.000 orang setiap tahunnya.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                <strong>(1) Orang yang suka merokok sangat berpotensi terkena penyakit jantung dan paru-paru. (2) Dampak lain yang berhubungan dengan keturunan yakni berakibat pada kemandulan. (3) Bagi seorang ibu hamil, jika dia seorang perokok, maka ia akan mengalami gangguan ada janinnya. (4) Demikianlah bahaya dari merokok.</strong><br><br>
+                Kalimat utama paragraf di atas terletak pada kalimat ke ....
+            </div>
+            <ul class="options">
+                <li>A. (4)</li>
+                <li>B. (2)</li>
+                <li>C. (1)</li>
+                <li>D. (5)</li>
+                <li>E. (3)</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat utama terletak pada kalimat terakhir (4). Pada kalimat terakhir dinyatakan "demikianlah bahaya dari merokok" dan kalimat-kalimat sebelumnya menjelaskan bahaya-bahaya yang berasal dari merokok.
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. (4)</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                <strong>Gedung-gedung kesehatan pada tingkat kecamatan dan kelurahan di wilayah Sukasaya berada dalam kondisi yang tidak baik. Banyak di antara gedung-gedung tersebut bangunannya hampir roboh. Sejumlah 30 gedung kesehatan dari 90 bangunan terhitung rusak. Banyak bangunan kesehatan yang pada bagian kusen dan temboknya mulai retak.</strong><br><br>
+                Gagasan utama pada paragraf di atas adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Kerusakan gedung-gedung kesehatan</li>
+                <li>B. Kerusakan bangunan kesehatan yang disebabkan oleh rayap</li>
+                <li>C. Jumlah bangunan yang rusak sangat banyak</li>
+                <li>D. Banyak bangunan kesehatan rusak di wilayah Sukasaya</li>
+                <li>E. Kusen dan tembok yang mulai rusak</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan utama yang terdapat dalam paragraf tersebut berada pada awal paragraf (deduktif). Pada awal paragraf dinyatakan bahwa gedung-gedung kesehatan di wilayah Sukasaya berada dalam kondisi yang tidak baik. Sehingga bisa dinyatakan bahwa kondisi gedung kesehatan di wilayah Sukasaya mengalami kerusakan. Maka jawaban yang tepat adalah opsi D.
+                </div>
+                <div class="answer">KUNCI JAWABAN: D. Banyak bangunan kesehatan rusak di wilayah Sukasaya</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                <strong>Seseorang akan diuji dengan apa yang dia miliki. Ketika memiliki ilmu, dia akan diuji dengan seberapa jauh kemampuannya memanfaatkan ilmu. Ketika mempunyai harta, dia akan diuji dengan keikhlasannya, mendistribusikan hartanya untuk orang lain. Di saat menduduki suatu jabatan, ia akan diuji dengan seberapa jauh kemampuannya mempertanggungjawabkan berwenang yang diembannya.</strong><br><br>
+                Ide pokok paragraf tersebut adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Ujian hidup seseorang</li>
+                <li>B. Kebahagiaan keluarga</li>
+                <li>C. Seseorang yang memiliki harta</li>
+                <li>D. Tanggung jawab yang berwenang</li>
+                <li>E. Ujian dalam memanfaatkan Ilmu</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ide pokok pada paragraf tersebut berada di awal paragraf (deduktif). Di awal paragraph dinyatakan bahwa seseorang akan diuji dengan apa yang dia miliki. Kemudian kalimat-kalimat selanjutnya berisi penjelasan setiap orang akan diuji denga napa yang dimilikinya. Sehingga jawaban yang paling tepat adalah A.
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. Ujian hidup seseorang</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                <strong>Sampah plastik hingga kini masih menjadi masalah serius bagi Indonesia dan juga negara lain di dunia. Di Nusantara, sampah plastik tak hanya dijumpai di wilayah darat, tetapi juga sudah menyebar luas ke wilayah laut yang luasnya mencapai dua petiga dari total luas Indonesia. Semua pihak diimbau untuk terus terlibat dalam penanganan sampah plastik yang ada di lautan. Semakin banyak sampah di laut maka semakin besar ancaman bagi kelestarian ekosistem di laut.</strong> (Sumber: www.detik.com)<br><br>
+                Ide pokok paragraph tersebut adalah...
+            </div>
+            <ul class="options">
+                <li>A. Sampah plastik menjadi persoalan serius.</li>
+                <li>B. Sampah menjadi ancaman kelestarian laut.</li>
+                <li>C. Sampah plastik tidak hanya ada di darat, tetapi juga di laut.</li>
+                <li>D. Himbauan untuk terlibat dalam penanganan sampah plastik di lautan.</li>
+                <li>E. Keterlibatann semua pihak dalam penanganan sampah plastik.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ide pokok pada paragraf tersebut berada di awal paragraf (deduktif) yang menyatakan bahwa sampah plastik menjadi masalah serius tidak hanya di Indonesia tetapi juga di negara lain. Sementara kalimat-kalimat selanjutnya berisi tambahan informasi pada kalimat pertama.
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. Sampah plastik menjadi persoalan serius.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                <strong>Dampak merebaknya penyebaran pandemic COVID-19 dari negeri Cina mulai mengancam berbagai bidang bisnis termasuk perhotelan. Jumlah tamu, baik dari luar negeri maupun dalam negeri merosot hingga tingkat hunian hotel di berbagai daerah berkurang hingga sepuluh persen bahkan lebih.</strong><br><br>
+                Ide pokok paragraf tersebut adalah ....
+            </div>
+            <ul class="options">
+                <li>A. Dampak penyebaran COVID-19 terhadap bisnis perhotelan.</li>
+                <li>B. Penyebaran COVID-19 dari negeri Cina.</li>
+                <li>C. COVID-19 mengancam bisnis perhotelan di Cina.</li>
+                <li>D. Dampak COVID-19 terhadap penghuni hotel di berbagai daerah.</li>
+                <li>E. Dampak penyebaran COVID-19 dirasakan oleh para pengusaha.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ide pokok pada teks tersebut berada di awal (deduktif) yang menyatakan bahwa terdapat dampak penyebaran COVID-19 yang mengancam bisnis termasuk perhotelan. Sementara kalimat-kalimat selanjutnya merupakan tambahan informasi untuk kalimat pertama.
+                </div>
+                <div class="answer">KUNCI JAWABAN: A. Dampak penyebaran COVID-19 terhadap bisnis perhotelan.</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                <strong>Bertanya membuat membuat seseorang memiliki kepekaan terhadap peristiwa-peristiwa yang terjadi di sekitar kita. Dari kegiatan tersebut, kita akan memperoleh informasi tentang berbagai hal yang sebelumnyaa tidak diketahui. Dalam segala aspek kehidupan kita pasti melakukan kegiatan bertanya. Siswa di sekolah akan bertanya kepada guru tentang materi pelajaran tidak difahaminya. Siswa melakukan kegiatan bertanya sebagai proses memahami materi secara utuh. Jadi berbagai manfaat bisa kita peroleh dengan bertanya.</strong><br><br>
+                Gagasan utama paragraf tersebut adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Bertanya membuat seseorang lebih peka terhadap peristiwa sekitar</li>
+                <li>B. Kita bisa mengetahui segela hal yang tidak diketahui</li>
+                <li>C. Berbagai manfaat bisa kita peroleh dengan bertanya</li>
+                <li>D. Bertanya digunakan dalam setiap aspek kehidupan</li>
+                <li>E. Bertanya menandakan siswa dapat menyerap materi pelajaran</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Gagasan utama pada wacana tersebut adalah "berbagai manfaat bisa diperoleh dengan bertanya". Sementara kalimat-kalimat sebelumnya berisi penjelasan tentang manfaat dari bertanya.
+                </div>
+                <div class="answer">KUNCI JAWABAN: C. Berbagai manfaat bisa kita peroleh dengan bertanya.</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>

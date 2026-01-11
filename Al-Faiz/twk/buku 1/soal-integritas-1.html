@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Integritas - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .option {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Integritas - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Integritas</strong>
+            <p>Integritas adalah sikap konsisten dalam menjalankan nilai-nilai moral, etika, dan profesionalisme. Integritas mencerminkan keselarasan antara pikiran, ucapan, dan perbuatan. Soal-soal integritas menguji pemahaman tentang nilai-nilai kejujuran, tanggung jawab, keadilan, dan etika dalam berbagai konteks kehidupan.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Sofyan merupakan pemilik warung sate yang sering memutar musik dari musisi terkenal untuk memeriahkan suasana warung. Hal tersebut ia lakukan karena ingin memberikan suasana yang nyaman bagi para pelanggan karena diputarkan musik yang membuat mereka senang. Hal tersebut memberikan keuntungan bagi Sofyan dengan terus bertambahnya pengunjung warungnya. Sebagai seorang yang menghargai karya musisi, Sofyan selalu mengirimkan logsheet musik yang selalu ia putar untuk dikirim ke Lembaga Manajemen Kolektif Nasional (LMKN). Tindakan yang dilakukan oleh Sofyan merupakan bentuk...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Sikap bijaksana dalam menghargai kreatifitas dan karya orang lain</div>
+                <div class="option"><strong>B.</strong> Sikap saling membantu orang lain dalam menghargai kreatifitas dan karyanya</div>
+                <div class="option"><strong>C.</strong> Sikap bertanggung jawab dan berkeadilan dalam menghargai kreatifitas dan karya orang lain</div>
+                <div class="option"><strong>D.</strong> Sikap memanusiakan orang lain dengan baik dalam menghargai kreatifitas dan karyanya</div>
+                <div class="option"><strong>E.</strong> Sikap patuh terhadap aturan yang ada sehingga dapat menghargai suatu karya orang lain</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Salah satu butir dalam sila kelima adalah suka menghargai hasil karya orang lain yang bermanfaat bagi kemajuan dan kesejahteraan Bersama. Sofyan telah menerapkan Pancasila butir ke-5 dan sikap bertanggung jawab serta berkeadilan.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Seorang polisi menilang sebuah Mobil yang berkendara tidak memakai sabuk pengaman. Ternyata yang mengendarai mobil itu adalah salah satu keluarga polisi tersebut. Tindakan seorang polisi yang tak pandang bulu dalam menindak pelanggaran lalu lintas telah sesuai dengan nilai integritas... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Jujur dalam berbuat</div>
+                <div class="option"><strong>B.</strong> Berani dalam mengambil keputusan</div>
+                <div class="option"><strong>C.</strong> Adil dalam bertindak</div>
+                <div class="option"><strong>D.</strong> Profesional dalam bekerja</div>
+                <div class="option"><strong>E.</strong> Peduli terhadap berbagai pelanggaran lalu lintas</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Adil yaitu tindakan yang memperlakuan yang sama atau tidak membedakan antara yang satu dengan yang lain; menyangkut persamaan hak perlindungan dan hak dasar seseorang serta tidak tebang pilih dan tidak pandang bulu sehinggga jawaban yang sesuai dengan opsi diatas adalah Adil dalam bertindak
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Seorang siswa bernama Siti selalu membuang sampah pada tempatnya dan sering mengajak teman-temannya untuk menjaga kebersihan lingkungan sekolah. Ia juga selalu mematuhi aturan-aturan yang berlaku di sekolah dan aktif dalam kegiatan kebersihan yang diadakan oleh sekolah. Berdasarkan narasi tersebut, upaya yang dilakukan Siti untuk mengembangkan rasa tanggung jawabnya adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Membiasakan diri untuk mematuhi aturan-aturan sekolah</div>
+                <div class="option"><strong>B.</strong> Melakukan hal-hal yang memerlukan tanggung jawab secara terus-menerus</div>
+                <div class="option"><strong>C.</strong> Menanamkan nilai-nilai kebersihan dalam diri</div>
+                <div class="option"><strong>D.</strong> Mengajak teman-temannya untuk bertanggung jawab</div>
+                <div class="option"><strong>E.</strong> Melakukan evaluasi diri secara berkala</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah A, yaitu membiasakan diri untuk mematuhi aturan-aturan sekolah. Hal ini karena Siti selalu membuang sampah pada tempatnya dan sering mengajak teman-temannya untuk menjaga kebersihan lingkungan sekolah. Ia juga selalu mematuhi aturan-aturan yang berlaku di sekolah dan aktif dalam kegiatan kebersihan yang diadakan oleh sekolah. Kebiasaan-kebiasaan tersebut menunjukkan bahwa Siti telah terbiasa untuk mematuhi aturan-aturan yang memerlukan tanggung jawab.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Seorang karyawan bernama Budi memiliki etos kerja yang tinggi. Ia selalu bekerja dengan giat dan tekun, bahkan di luar jam kerja. Budi juga selalu berusaha untuk meningkatkan keterampilan dan kemampuannya. Berdasarkan narasi tersebut, sikap Budi menunjukkan bahwa Budi memiliki sikap ... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Disiplin dalam bekerja di tempat kerja</div>
+                <div class="option"><strong>B.</strong> Keuletan dalam menjalankan profesi pekerjaan</div>
+                <div class="option"><strong>C.</strong> Ketangguhan dalam melaksanakan tanggung jawab pekerjaan</div>
+                <div class="option"><strong>D.</strong> Kerja keras dalam menjalankan pekerjaan</div>
+                <div class="option"><strong>E.</strong> Etos kerja dalam melaksanakan profesi yang telah di ambil</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tepat adalah D, yaitu kerja keras. Hal ini karena Budi selalu bekerja dengan giat dan tekun, bahkan di luar jam kerja. Budi juga selalu berusaha untuk meningkatkan keterampilan dan kemampuannya.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Rina akan cuti pada akhir bulan, saat banyak proyek yang harus diselesaikan. Sebelum cuti, Rina memutuskan untuk menyerahkan pekerjaannya kepada rekan kerjanya. Rina memastikan bahwa setiap proses diajarkan dengan baik agar rekan kerjanya dapat menyelesaikan proyek-proyek tersebut dengan mudah. Tindakan Rina mencerminkan integritas...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Disiplin terhadap pekerjaan dan profesi yang dijalani</div>
+                <div class="option"><strong>B.</strong> Kerja keras dalam aspek pekerjaan sehingga ternilai dengan baik</div>
+                <div class="option"><strong>C.</strong> Tanggung jawab terhadap pekerjaan dan profesi yang diemban</div>
+                <div class="option"><strong>D.</strong> Mandiri dalam pekerjaan yang dilakukan secara bersama-sama</div>
+                <div class="option"><strong>E.</strong> Adil dalam setiap kegiatan pelaksanaan pekerjaan dengan SOP</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Serah terima pekerjaan (handover) adalah proses transfer informasi dari satu orang ke orang lain. Tanggung jawab profesional mencakup kewajiban moral dan hukum yang harus dipatuhi oleh seorang profesional. Ini termasuk kepatuhan terhadap aturan dan regulasi yang mengatur praktik profesional, serta tanggung jawab terhadap rekan kerja, perusahaan, dan tugas pekerjaan secara umum.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Dua calon Kepala Desa Tempuran, Kecamatan Trimurjo, Kabupaten Lampung Tengah, duduk berdampingan saat hari pencoblolan Pemilihan Kepala Desa. Calon nomor urut 1 Febri duduk di sebelah kanan panggung. Sementara Janggar duduk di sebelah kiri panggung. Tak ada raut ketegangan di antara mereka berdua. Walaupun, dua pria yang sedang bersaing menjadi kepala desa itu masih satu keluarga. Sikap yang ditunjukan oleh kedua pasangan bakal calon kepala desa tersebut adalah bentuk sikap...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Sikap tanggung jawab sebagai bakal calon masyarakat desa yang memwakili rakyatnya</div>
+                <div class="option"><strong>B.</strong> Sikap profesionalisme sebagai bakal calon kepala desa tanpa melihat latar belakang hubungan kekeluargaan</div>
+                <div class="option"><strong>C.</strong> Sikap konsiten yang ditunjukan kedua bakal calon kepala desa kepad masyrakat yang akan memilih</div>
+                <div class="option"><strong>D.</strong> Sikap komitmen sebagai calon kepala desa yang memperhatikan hak pemilih untuk menegakan demokrasi</div>
+                <div class="option"><strong>E.</strong> Sikap solidaritas dan keterbukaan diantara kedua calon bakal kepala desa untuk mengajak masyarakat berpartsisipasi dalam pemilihan kepala desa</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Walaupun, dua pria yang sedang bersaing menjadi kepala desa itu masih satu keluarga tetapi mereka tetap menunjukan sikap profesionalisme.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Muhammad Habiburokhim atau biasa di panggil bapak Habib adalah pengusaha Percetakan terkenal di kotanya. Seiring dengan ramainya program berbagi yang biasa dikenal dengan Jumat Berkah, Bapak habib tak ingin melewatkan kesempatan berharga untuk terus berbagi kasih dan rezeki. Mengingat besarnya kepercayaan yang selama ini masyarakat berikan kepada Bapak Habib, maka kontribusi yang seluas-luasnya pula akan tulus diberi oleh perusahaannya untuk masyarakat sekitar. Tindakan yang di lakukan oleh Bapak Habib merupakan...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Rasa empati kepada masyarakat sekitar sehingga mampu meringankan beban penderitaan masyarakat</div>
+                <div class="option"><strong>B.</strong> Bentuk jiwa simpati untuk memberikan segala kebutuhan yang di butuhkan oleh warga sekiat perusahaan</div>
+                <div class="option"><strong>C.</strong> Bentuk kepedulian dan rasa tanggung jawab kepada masyarakat sekitar sebagai ungkapan rasa terima kasih dengan ketulusan</div>
+                <div class="option"><strong>D.</strong> Sebagai jiwa tanggung jawab kepada warga sekitar perusahaan untuk bisa merasakan kebahagian bersama</div>
+                <div class="option"><strong>E.</strong> Rasa patriotisme yang tulus kepada masyarakat sekitar meskipun dilakukan dengan se adanya dan semaunya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kata kunci disoal "Mengingat besarnya kepercayaan yang selama ini masyarakat berikan kepada Bapak Habib, maka kontribusi yang seluas-luasnya pula akan tulus diberi oleh perusahaannya untuk masyarakat sekitar." tindakan yang dilakukan Pak Habib adalah Bentuk kepedulian dan rasa tanggung jawab kepada masyarakat sekitar sebagai ungkapan rasa terima kasih dengan ketulusan.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Raden Mas Suwardi Suryaningrat atau sering dikenal dengan nama Ki Hajar Dewantara adalah seorang tokoh pelopor pendidikan bagi kamu pribumi Indonesia dari zaman penjajahan Belanda. Meski demikian ia dikenal hingga saat ini karena jasanya mendirikan Taman Siswa sebagai cikal bakal pendidikan di Indonesia. Nilai integritas Ki Hajar Dewantara dalam upaya pendirian Taman Siswa adalah...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Berani mengambil keputusan membangun Pendidikan bagi pribumi meski dibawah tekanan pemerintah Belanda</div>
+                <div class="option"><strong>B.</strong> Memiliki rasa tanggung jawab terhadap Pendidikan di tanah air bagi masyarakat pribumi</div>
+                <div class="option"><strong>C.</strong> Memiliki rasa kepedulian terhadap Pendidikan bagi masyarakat pribumi</div>
+                <div class="option"><strong>D.</strong> Menunjukkan kerja keras dalam upaya membangun Pendidikan bagi masyarakat pribumi</div>
+                <div class="option"><strong>E.</strong> Memiliki jiwa kemandirian dalam membangun Pendidikan bagi masyarakat pribumi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Ki Hajar Dewantara adalah seorang tokoh pelopor pendidikan bagi kamu pribumi Indonesia dari zaman penjajahan Belanda karena ia memiliki rasa kepedulian terhadap pendidikan bagi masyarakat pribumi.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Pak Anies adalah salah satu petugas pembuatan E-KTP di Disdukcapil. Suatu hari ada anak walikota yang datang meminta untuk didahulukan dan menyerobot antrian, padahal saat itu antrian sedang ramai bahkan beberapa warga ada yang sudah mengantri sejak beberapa jam yang lalu. Sikap Pak Anies sebagai seseorang yang memiliki integritas adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Menolaknya dengan tegas walaupun diberi sejumlah uang</div>
+                <div class="option"><strong>B.</strong> Disiplin terhadap peraturan dan kebijakan yang berlaku</div>
+                <div class="option"><strong>C.</strong> Jujur dalam bertindak dan transparan sehingga selalu terbuka</div>
+                <div class="option"><strong>D.</strong> Berbuat adil dan tetap menjalankan tugas seperti biasanya tanpa membedakan</div>
+                <div class="option"><strong>E.</strong> Berani menghadapi resiko dipecat atasan pada saat itu tanpa terkecuali</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pengertian adil menuurt kampus KBBI adalah sama berat, tidak berat sebelah; tidak memihak 2. sepatunya; tidak sewenang-wenang 3. Berpihak kepada yang benar; berpegang teguh pada kebenaran. Demikian pengertian adil secara Bahasa menurut asal katanya dari Bahasa arab dan pengertiannya menurut Bahasa Indonesia. Jadi jawaban yang tepat sesuai pertanyaan diatas adalah D. berbuat adil dan tetap menjalankan tugas seperti biasanya tanpa membedakan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                17 agustus 1945 Menjadi hari bersejarah bagi bangsa indonesia. Bangsa Indonesia menyatakan kemerdekaan sehingga lepas dari belenggu penjajahan bangsa asing. Ir Soekarno membacakan proklamasi kemerdekaan Indonesia meski di lokasi banyak tantara Jepang yang bersenjata lengkap. Sikap integritas yang ditunjukkan soekarno adalah ... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Kerja Keras untuk mewujudkan kemerdekaan bagi bangsa Indonesia</div>
+                <div class="option"><strong>B.</strong> Kedisiplinan yang membuahkan hasil yaitu tercapainya Indonesia merdeka</div>
+                <div class="option"><strong>C.</strong> Tanggung jawab sebagai tokoh pergerakan yang mewujudkan kemerdekaan Indonesia</div>
+                <div class="option"><strong>D.</strong> Keberanian sebagai seorang pemimpin yang menjalankan amanat rakyat yang besar</div>
+                <div class="option"><strong>E.</strong> Kepedulian untuk memerdekan Indonesia walau di tengah tekanan penguasa Jepang</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pemimpin dengan jiwa berani adalah pemimpin yang mampu meminta umpan balik atau feedback terhadap lawan bicaranya. Selain itu, mereka akan membiarkan publik mengetahui bahwa gaya bicara mereka meningkat dibanding sebelumnya. Oleh karena itu, jawaban yang tepat berdasarkan pertanyaan diatas adalah D.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Sesaat setelah anda selesai melakukan dinas luar untuk bertemu salah satu pejabat, anda mendapati jarum penunjuk bahan bakar mobil dinas yang sedang anda gunakan berada diatas. Padahal anda tahu bahwa bensin mobil dinas tersebut tinggal sedikit. Ternyata pejabat yang baru saja anda datangilah yang memberi bensin, sehingga anda memutuskan untuk Kembali putar arah dan menemui lagi pejabat tersebut untuk menyedot Kembali bensin yang di masukkannya. Persis sejumlah yang dia masukkan. Bagi anda, uang jalan yang didapatkannya harus di pergunakan sesuai kebutuhan, sesuai peruntukannya. Pada kasus ini, nilai integritas yang dimiliki yaitu...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Jujur dalam menjalankan dan menjunjung tinggi integritas dalam diri</div>
+                <div class="option"><strong>B.</strong> Disiplin dengan apa yang sudah di lakukan dengan berbagai resikonya</div>
+                <div class="option"><strong>C.</strong> Tanggung jawab atas apa yang telah di perbuat dan melaksanakan dengan sebaik-baiknya</div>
+                <div class="option"><strong>D.</strong> Sederhana dalam melkaukan segala hal supaya tidak berlebihan dalam berkehidupan</div>
+                <div class="option"><strong>E.</strong> Berani atas segala hal yang telah di lakukan jika hal tersebut salah dan tidak sebagaimana mestinya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Inti dari soalnya diatas adalah "Ternyata pejabat yang baru saja anda datangilah yang memberi bensin, sehingga anda memutuskan untuk Kembali putar arah dan menemui lagi pejabat tersebut untuk menyedot Kembali bensin yang di masukkannya. Persis sejumlah yang dia masukkan. Bagi anda, uang jalan yang didapatkannya harus di pergunakan sesuai kebutuhan, sesuai peruntukannya." Maka nilai integritas dari kejadian diatas adalah kejujuran.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Samsul adalah seorang kepala perusahaan di cabang kota Bogor. Beliau mengadakan pertemuan membahas tentang kerugian perusahaan akibat banjir dan strategi mutasi untuk meningkatkan kinerja perusahaan. Namun di dalam pertemuan tersebut terjadi perdebatan antara kepala pusat dengan Samsul karena Samsul tidak mau di mutasikan ke kota lain tanpa alasan yang pasti, Samsul bahkan sampai mengancam untuk membocorkan data perusahaan. Tindakan yang di tunjukan Samsul merupakan...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Bentuk pelanggaran terhadap harkat dan martabat orang lain tanpa memperdulikan hak orang lain dalam berpendapat</div>
+                <div class="option"><strong>B.</strong> Sikap individu yang tidak pantas di contoh dalam berdemokrasi di tempat kerja</div>
+                <div class="option"><strong>C.</strong> Sikap yang lebih mementingkan diri sendiri untuk sebuah penilaian kebenaran tanpa memperdulikan perasaan orang lain</div>
+                <div class="option"><strong>D.</strong> Kurangnya integritas dalam diri seseorang sehingga tidak memiliki rasa tanggung jawab dan profesionalisme yang seutuhnya</div>
+                <div class="option"><strong>E.</strong> Tindakan semena-mena terhadap orang lain tanpa mau mendengarkan segala pendapat dari orang sekitarnya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Sebagai seorang kepala perusahaan seharusnya Samsul memiliki integritas yang baik, yaitu salah satunya profesionalisme. Karena sedang ada permasalahan pada perusahaanya dan mengharuskan ia untuk dimutasi, seharusnya dia bersikap profesional dengan keputusan yang diberikan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Seorang pegawai negeri yang bertugas di bagian pengadaan barang dan jasa mendapat tawaran suap dari seorang kontraktor untuk memenangkan tender proyek. Kontraktor tersebut menjanjikan komisi yang sangat besar apabila pegawai negeri tersebut memberikan keuntungan dalam proses pengadaan. Meskipun dia menyadari bahwa menerima suap melanggar prinsip integritas dan bertentangan dengan etika pelayanan publik, dia juga menghadapi tekanan dari berbagai pihak yang mengharapkannya untuk menerima tawaran tersebut. Dalam situasi ini, bagaimana seorang pelayan publik seharusnya bertindak?
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Pelayan publik tersebut seharusnya menerima tawaran suap dan memenangkan tender proyek untuk menguntungkan dirinya sendiri, mengingat tekanan dari berbagai pihak yang sangat sulit dihindari.</div>
+                <div class="option"><strong>B.</strong> Pelayan publik tersebut seharusnya menolak tawaran suap dan melaporkan kontraktor tersebut kepada atasan atau lembaga yang berwenang untuk tindakan lebih lanjut.</div>
+                <div class="option"><strong>C.</strong> Pelayan publik tersebut seharusnya menerima tawaran suap, namun menggunakannya untuk kepentingan umum, seperti membangun fasilitas publik yang lebih baik.</div>
+                <div class="option"><strong>D.</strong> Pelayan publik tersebut seharusnya mencari jalan tengah dengan menerima tawaran suap, namun tetap menjalankan proses pengadaan dengan adil dan transparan, tanpa memberikan keuntungan khusus kepada kontraktor yang memberi suap</div>
+                <div class="option"><strong>E.</strong> Pelayan publik tersebut seharusnya mempertimbangkan tawaran suap tersebut dan memutuskan tindakan yang dianggap paling menguntungkan secara pribadi, tanpa harus memperhatikan prinsip integritas atau etika pelayanan publik.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam situasi ini, seorang pegawai negeri yang bertugas di bagian pengadaan barang dan jasa dihadapkan pada tawaran suap dari seorang kontraktor untuk memenangkan tender proyek. Pelayan publik tersebut menyadari bahwa menerima suap melanggar prinsip integritas dan bertentangan dengan etika pelayanan publik. Meskipun menghadapi tekanan dari berbagai pihak, pilihan terbaik adalah menolak tawaran suap dan melaporkan kontraktor tersebut kepada atasan atau lembaga yang berwenang.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Sebuah negara sedang mengalami kegagalan dalam sistem pemerintahan yang disebabkan oleh korupsi, nepotisme, dan penyalahgunaan kekuasaan yang meluas. Masyarakat merasa kecewa dan kehilangan kepercayaan terhadap pemerintahannya. Setelah adanya pergantian kepemimpinan, pemerintah yang baru berkomitmen untuk memperbaiki situasi dan memulihkan kepercayaan masyarakat. Dalam konteks ini, bagaimana integritas dapat membantu memperbaiki kepercayaan masyarakat terhadap pemerintah?
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Integritas dapat membantu pemerintah menciptakan berbagai program sosial dan ekonomi yang bertujuan meningkatkan kesejahteraan masyarakat.</div>
+                <div class="option"><strong>B.</strong> Integritas dapat membantu pemerintah mengamankan dana negara dan memastikan penggunaannya yang tepat, menghilangkan praktik korupsi.</div>
+                <div class="option"><strong>C.</strong> Integritas dapat membantu pemerintah mendirikan lembaga anti-korupsi yang independen untuk menegakkan hukum dan memberantas praktik korupsi di negara tersebut.</div>
+                <div class="option"><strong>D.</strong> Integritas dapat membantu pemerintah membangun transparansi dan akuntabilitas dalam pengambilan keputusan serta pelaksanaan kebijakan publik.</div>
+                <div class="option"><strong>E.</strong> Integritas dapat membantu pemerintah mengubah citra negara secara internasional melalui diplomasi yang jujur dan menjalin hubungan kerjasama yang bermanfaat bagi masyarakat.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas dapat membantu pemerintah membangun transparansi dan akuntabilitas dalam pengambilan keputusan serta pelaksanaan kebijakan publik, adalah pilihan yang paling tepat. Dalam konteks kegagalan sistem pemerintahan yang disebabkan oleh korupsi dan penyalahgunaan kekuasaan, membangun transparansi dan akuntabilitas adalah langkah penting untuk memulihkan kepercayaan masyarakat. Dengan adanya integritas dalam pengambilan keputusan dan pelaksanaan kebijakan publik, pemerintah dapat membuktikan bahwa mereka bertindak dengan jujur, adil, dan bertanggung jawab kepada masyarakat.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Seorang mahasiswa yang memiliki nilai yang kurang memuaskan dalam ujian akhir semester memutuskan untuk mengambil tindakan ekstrem. Dia membuat salinan palsu dari jawaban ujian seorang teman yang mendapat nilai tinggi dan menggantinya dengan jawabannya sendiri dalam ujian ulang yang akan datang. Mahasiswa ini yakin bahwa ini adalah satu-satunya cara untuk meningkatkan nilai akhirnya. Bagaimana Anda menilai tindakan mahasiswa ini dari sudut pandang integritas?
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Tindakan mahasiswa tersebut mencerminkan integritas karena dia mencoba untuk memperbaiki kesalahannya.</div>
+                <div class="option"><strong>B.</strong> Tindakan mahasiswa tersebut tidak mencerminkan integritas karena dia melakukan penipuan.</div>
+                <div class="option"><strong>C.</strong> Tindakan mahasiswa tersebut bisa dianggap bermasalah, tetapi tergantung pada tujuannya.</div>
+                <div class="option"><strong>D.</strong> Tindakan mahasiswa tersebut adalah langkah yang bijaksana dalam mencapai tujuannya.</div>
+                <div class="option"><strong>E.</strong> Tindakan mahasiswa tersebut tidak perlu dinilai dari sudut pandang integritas.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tindakan mahasiswa yang membuat salinan palsu dari jawaban ujian temannya dan menggantinya dengan jawabannya sendiri merupakan tindakan penipuan. Tindakan ini melanggar prinsip integritas karena melibatkan ketidakjujuran, kecurangan, dan pelanggaran kode etik akademik. Integritas akademik mengharuskan mahasiswa untuk melakukan pekerjaan mereka sendiri dan tidak mencoba menipu atau merugikan teman-teman mereka.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Seorang pejabat tinggi pemerintahan yang memiliki akses ke dana besar untuk program kesejahteraan rakyat ditemukan telah menggunakan sebagian dari dana tersebut untuk kepentingan pribadinya sendiri. Pejabat ini telah lama dihormati dan dianggap sebagai teladan integritas dalam pemerintahan. Bagaimana masyarakat seharusnya merespons tindakan pejabat ini untuk menjaga integritas dan keberadaban bangsanya?
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Masyarakat seharusnya mengabaikan tindakan tersebut karena pejabat ini telah berkontribusi besar pada pembangunan negara.</div>
+                <div class="option"><strong>B.</strong> Masyarakat seharusnya memberikan kebijakan amnesti kepada pejabat tersebut untuk menghindari skandal.</div>
+                <div class="option"><strong>C.</strong> Masyarakat seharusnya menyuarakan ketidakpuasan mereka dan menuntut penegakan hukum yang adil.</div>
+                <div class="option"><strong>D.</strong> Masyarakat seharusnya mencari tahu apakah pejabat lain juga melakukan hal serupa sebelum mengambil tindakan.</div>
+                <div class="option"><strong>E.</strong> Masyarakat seharusnya memberikan penghargaan kepada pejabat tersebut karena berhasil mengalihkan dana untuk kepentingan pribadi dengan cerdik.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tindakan pejabat tinggi pemerintahan yang menggunakan dana program kesejahteraan rakyat untuk kepentingan pribadinya adalah tindakan yang melanggar hukum dan etika. Dalam konteks integritas dan keberadaban bangsa, penting bagi masyarakat untuk merespons tindakan ini dengan menyuarakan ketidakpuasan mereka. Menuntut penegakan hukum yang adil adalah langkah yang tepat untuk memastikan bahwa pelanggaran tersebut ditindaklanjuti secara hukum dan pejabat tersebut bertanggung jawab atas tindakannya.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Seorang pegawai negeri yang baru saja ditempatkan di departemen pengawasan keuangan negara menemukan bukti bahwa beberapa pejabat tinggi dalam departemen tersebut terlibat dalam praktik korupsi yang merugikan negara. Dia merasa terbebani oleh temuan ini karena dia baru di departemen tersebut dan khawatir akan dampaknya pada karier dan keselamatannya. Bagaimana seharusnya pegawai negeri ini bertindak sesuai dengan prinsip berintegritas dan kejujuran?
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Pegawai negeri tersebut seharusnya segera melaporkan praktik korupsi tersebut kepada atasan dan pihak berwenang tanpa memikirkan risikonya</div>
+                <div class="option"><strong>B.</strong> Pegawai negeri tersebut seharusnya mencoba mencari bukti yang lebih kuat sebelum melaporkan praktik korupsi tersebut.</div>
+                <div class="option"><strong>C.</strong> Pegawai negeri tersebut seharusnya berbicara dengan rekan kerjanya terlebih dahulu untuk mendapatkan saran.</div>
+                <div class="option"><strong>D.</strong> Pegawai negeri tersebut seharusnya menghindari melaporkan praktik korupsi tersebut dan mencari pekerjaan baru.</div>
+                <div class="option"><strong>E.</strong> Pegawai negeri tersebut seharusnya mengabaikan praktik korupsi tersebut karena tidak ingin mencampuri urusan atasannya.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam situasi ini, pegawai negeri telah menemukan bukti praktik korupsi yang merugikan negara oleh beberapa pejabat tinggi di departemennya. Tindakan yang sesuai dengan prinsip berintegritas dan kejujuran adalah segera melaporkan praktik korupsi tersebut kepada atasan dan pihak berwenang yang berwenang menangani kasus ini.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Sederhana bukan berarti hidup miskin atau kikir, namun hidup sederhana adalah hidup yang disesuaikan dengan kebutuhan dan tidak berlebihan dalam menggunakan harta yang ada. Hidup Sederhana itu tidak menjadikan keinginan menjadi kebutuhan. Setiap orang pasti tidak akan pernah lepas dari keinginan-keinginan, dalam hidup sederhana seseorang mampu mengelola keinginan secara baik, jangan sampai setiap keinginan dijadikan kebutuhan yang harus dipenuhi. Manfaat yang bisa kita peroleh dengan hidup sederhana di lingkungan masyarakat adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Memiliki dana untuk berlibur bersama keluarga</div>
+                <div class="option"><strong>B.</strong> Jaminan dana pendidikan untuk anak bisa tercapai</div>
+                <div class="option"><strong>C.</strong> Menjauhkan diri dari tindakan kejahatan pencurian</div>
+                <div class="option"><strong>D.</strong> Menjadi teladan yang baik untuk keluarga</div>
+                <div class="option"><strong>E.</strong> Memiliki dana cadangan untuk membangun masa depan karir anda</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Banyak orang setuju bahwa hidup sederhana itu baik untuk dilakukan. Pola hidup sederhana akan menjadikan anda pribadi yang matang dalam berpikir dan lebih berhati-hati dalam bertindak atau mengambil keputusan. Pola hidup sederhana juga akan mengajarkan anda untuk lebih bijak dalam mengatur serta mengelola keuangan anda. Termasuk anda terjauh dari rencana kejahatan pencurian yang bisa terjadi pada diri anda dan keluarga karena anda terlihat tidak memiliki harta kekayaan yang mewah dan berharga dimata pelaku kejahatan
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Permasalahan konflik sosial semakin banyak terjadi di Indonesia. Telah membawa keprihatinan berkepanjangan karena semakin lama situasinya semakin parah bahkan sulit menemukan akar permasalahan agar dapat dicari solusi yang tepat untuk menanganinya. Beberapa pengkajian secara intesfi melalui beberapa pendakatan dalam ilmu sosial menemukan bahwa konflik sosial berasal dari implikasi ketidakharmonisan dinamika psikologis yang berakar dari kondisi sosial-emosional individu di dalamnya. Salah satu penyebab kondisi ketidakharmonisan sosial-emosional individu dalam fenomena sosial yang dapat ditemukan adalah penyakit batin yaitu iri hati. Tindakan yang tepat untuk mencegah munculnya perasaan iri hati yang menjadi salah satu penyebab konflik sosial ditinjau dari aspek IPTEK ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Jauhi semua hal yang bisa memicu pikiran negatif</div>
+                <div class="option"><strong>B.</strong> Fokus pada bakat dan kelebihan diri sendiri</div>
+                <div class="option"><strong>C.</strong> Tidak membanding-bandingkan diri sendiri dengan orang lain</div>
+                <div class="option"><strong>D.</strong> Membatasi penggunaan media sosial agar tidak berlebihan</div>
+                <div class="option"><strong>E.</strong> Mencari penyebab munculnya rasa iri</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam konteks kekininan. Di zaman sekarang iri hati banyak terjadi karena penggunaan media sosial tidak siap menyaring setiap informasi yang didapatkan di media sosial. Walaupun dengan adanya media sosial mempermudah manusia untuk berinteraksi dan mengetahui kabar satu sama lain, ternyata juga memiliki pengaruh negatif. Oleh karena itu, membatasi diri dari penggunaan media sosial sangat diperlukan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Disiplin kerja di kantor bukan hanya masalah dominasi peraturan dan hukuman yang diterapkan oleh perusahaan. Terkadang perusahaan memberlakukan beberapa aksi pendisiplinan agar karyawan dapat terbiasa menjaga kedisiplinan. Padahal perilaku disiplin kerja akan terbentuk sendiri ketika karyawan dan manajemen perusahaan memiliki rasa percaya satu sama lain. Hal ini juga mendudukung tujuan dari kerja disiplin yang bermaksud untuk membuat lingkungan kerja yang nyaman dan tetap berada di garis yang sama demi mencapai tujuan perusahaan. Di bawah ini yang bukan alasan mengapa disiplin kerja harus dijaga ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Mengurangi masalah akibat perilaku tidak disiplin</div>
+                <div class="option"><strong>B.</strong> Menjaga standar perusahaan</div>
+                <div class="option"><strong>C.</strong> Menjaga konsistensi kerja</div>
+                <div class="option"><strong>D.</strong> Membantu menghindari masalah hukum dikemudian hari</div>
+                <div class="option"><strong>E.</strong> Menghilangkan perilaku perfeksionis</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Menghilangkan perilaku perfeksionis bukan menjadi alasan yang membuat disiplin kerja harus dijaga dengan baik. Perfeksionis itu bagus. Namun menjadi terlalu perfeksionis dapat menyulitkan untuk menjaga kedisplinan. Jika bersikeras untuk menyempurnakan satu pekerjaan 100% dan harus terjebak dengan hal tersebut. Perfeksionis bisa mengarahkan ke dalam ketidakberhasilan mengerjakan pekerjaan lain tepat waktu. Sebaiknya, meski ingin hasil terbaik, tetaplah bekerja berdasarkan jadwal kerja yang telah dibuat.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Hidup adalah sebuah perjuangan. Tanpa adanya usaha untuk berjuang maka manusia tidak akan bisa bertahan untuk hidup. Untuk itu manusia haruslah berjuang sekuat tenaga untuk memenuhi segala kebutuhannya sendiri. Dengan bekerja keras dan tekun akan muncul sikap optimis dalam diri seseorang untuk menggapai cita-citanya. Dengan adanya sifat kerja keras, manusia tidak akan mudah goyah dan putus asa dalam mengerjakan apa yang ia lakukan. Tidak mudah putus semangat apabila dalam melakukan pekerjaannya mengalami hambatan atau bahkan kegagalan. Tindakan di bawah ini yang tidak termasuk ke dalam upaya untuk membiasakan perilaku dalam kerja keras yaitu ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Bergaul dengan orang-orang yang mempunyai perilaku kerja keras</div>
+                <div class="option"><strong>B.</strong> Menghindari bergaul dengan mereka yang memiliki perilaku pemalas dan penghayal berat</div>
+                <div class="option"><strong>C.</strong> Bersikap terbuka akan masukan, kritik, teguran atau nasihat dari pihak manapun yang tujuannya baik</div>
+                <div class="option"><strong>D.</strong> Menjaga diri dari sikap perilaku tercela, baik ketika bekerja maupun di luar waktu bekerja</div>
+                <div class="option"><strong>E.</strong> Tidak bersedia mengingatkan orang lain yang sedang lupa atau salah melanggar aturan bekerja karena membuang waktu</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tidak mengingatkan orang lain yang sedang lupa atau salah karena melanggar aturan bekerja bukan termasuk ke dalam tindakan positif dan melanggar nilai-nilai kerja keras. Dalam bekerja keras apabila saat bekerja sendiri atau dengan orang lain apabila terjadi kesalahan atau kekurangan harus bisa segera di carikan solusinya. Sehingga ada terjadi perubahan dan tujuan dari suatu pekerjaan dapat terlaksana dengan baik.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Tindakan korupsi merupakan tindakan yang sangat merugikan negara. Korupsi mengakibatkan melambatnya pertumbuhan ekonomi negara, menurunnya investasi, meningkatnya kemiskinan serta meningkatnya ketimpangan pendapatan. Korupsi juga dapat menurunkan tingkat kebahagiaan masyarakat di suatu negara, kasus korupsi masih marak terjadi. Upaya paling tepat yang dapat dilakukan sebagai masyarakat yang berintegritas untuk menghentikan kejahatan luar biasa tersebut adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Menjatuhkan sanksi yang berat bagi terdakwa kasus korupsi agar menjadi pelajaran bagi pejabat lainnya</div>
+                <div class="option"><strong>B.</strong> Menegakkan hukum setegak-tegaknya tanpa pandang bulu sehingga semua orang memiliki kedudukan yang sama di mata hukum</div>
+                <div class="option"><strong>C.</strong> Melakukan sosialisasi terkait tindak pidana korupsi dan dampaknya sehingga masyarakat menjadi paham</div>
+                <div class="option"><strong>D.</strong> Mengembangkan sikap sadar hukum dalam kehidupan dengan menerapkan prinsip dasar kejujuran</div>
+                <div class="option"><strong>E.</strong> Membuat peraturan perundang-undangan tanpa memberi celah untuk berkembangnya praktik korupsi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Mengembangkan sikap sadar hukum dalam kehidupan dengan menerapkan prinsip dasar kejujuran merupakan sikap yang bisa dilakukan oleh warga negara. Sedangkan opsi lain merupakan tugas pemerintah lewat lembaga penegak hukumnya.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Integritas sangat erat kaitannya dengan kejujuran karena jujur adalah kesamaan antara pikiran, hati, ucapan dan perbuatan, begitu juga dengan pengertian integritas. Karena kesamaan definisi tersebut, orang yang jujur bisa juga kita sebut sebagai orang yang berintegritas. Contoh tindakan yang mencerminkan perilaku integritas adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Membuang sampah pada tempatnya walaupun hanya sampah kecil seperti permen</div>
+                <div class="option"><strong>B.</strong> Menepati janji dengan segala apa yang pernah diucapkan</div>
+                <div class="option"><strong>C.</strong> Mengerjakan ulangan sendiri sesulit apapun soalnya dan meskipun harus remedial</div>
+                <div class="option"><strong>D.</strong> Menyapu halaman ketika pagi hari untuk membantu meringankan pekerjaan rumah ibu</div>
+                <div class="option"><strong>E.</strong> Menaati jadwal piket dan mengambil tugas masing-masing ketika melakukannya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas merupakan sikap di mana sikap tersebut mencerminkan hal-hal yang positif seperti halnya kejujuran, kedisiplinan, mandiri, tanggung jawab, sederhana, bekerja keras, empati, simpati dan kepedulian. Maka contoh perilaku yang mencerminkan sikap integritas adalah menepati janji dengan segala apa yang pernah diucapkan, karena integritas sangat erat kaitannya dengan kejujuran karena jujur adalah kesamaan antara pikiran, hari, ucapan, dan perbuatan.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Integritas merupakan salah satu sikap yang sangat penting karena integritas merupakan salah satu pengamalan dari paham nasionalisme dan sikap yang sangat terpuji. Dengan integritas, tentunya lingkungan yang kita tempati akan terasa lebih nyaman, aman, dan tentram karena dengan integritas tidak akan ada kebohongan. Sikap yang tidak sesuai dengan perilaku integritas di lingkungan sekolah adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Bolos ketika mendapat jadwal siskamling atau tidur saat siskamling</div>
+                <div class="option"><strong>B.</strong> Mencuri uang dari orang tua untuk dijadikan uang jajan sekolah</div>
+                <div class="option"><strong>C.</strong> Melakukan korupsi baik itu uangnya banyak ataupun sedikit</div>
+                <div class="option"><strong>D.</strong> Hanya menyontek ketika ulangan saat berlangsung saja</div>
+                <div class="option"><strong>E.</strong> Berbohong kepada orang tua tentang ranking di sekolah</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas merupakan sikap di mana sikap tersebut mencerminkan hal-hal yang positif seperti halnya kejujuran, kedisiplinan, mandiri, tanggung jawab, sederhana, bekerja keras, empati, simpati dan kepedulian. Maka sikap yang tidak sesuai dengan perilaku integritas adalah menyontek ketika ulangan, karena dengan kita menyontek berarti kita sudah tidak jujur dalam mengerjakan ujian yang diberikan, maka dari itu perilaku tidak jujur termasuk perilaku yang tidak mencerminkan sikap integritas.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Pak Nadi adalah RT di suatu perumahan. Ia selalu menyuruh warganya untuk membuang sampah pada tempatnya. Namun, pada suatu hari Heri melihat Pak Nadi membuang sampah ke sungai lalu Heri pun menegurnya. Perbuatan Pak Nadi tidak berintegritas...
+            </div>
+            <div class="options">
+                <div class="option"><strong>A.</strong> Karena Pak Nadi tidak menyesuaikan antara perkataan dan perbuatan</div>
+                <div class="option"><strong>B.</strong> Karena Pak Nadi melakukan suatu perbuatan yang tidak terhormat</div>
+                <div class="option"><strong>C.</strong> Karena Pak Nadi membuang sampah sembarangan dan itu melanggar aturan</div>
+                <div class="option"><strong>D.</strong> Karena hal yang Pak Nadi lakukan dapat berdampak banjir</div>
+                <div class="option"><strong>E.</strong> Karena Pak Nadi adalah RT di tempat itu, jadi dia harus bisa menjadi contoh bagi warganya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Integritas merupakan sikap di mana sikap tersebut mencerminkan hal-hal yang positif seperti halnya kejujuran, kedisiplinan, mandiri, tanggung jawab, sederhana, bekerja keras, empati, simpati dan kepedulian. Integritas juga sangat erat kaitannya dengan kejujuran karena jujur adalah kesamaan antara pikiran, hati, ucapan, dan perbuatan, begitu juga dengan pengertian integritas. Karena kesamaan definisi tersebut, orang yang jujur bisa juga kita sebut sebagai orang yang berintegritas. Maka jawaban yang paling tepat adalah karena Pak Nadi tidak menyesuaikan antara perkataan dan perbuatan. Dengan begitu perilaku Pak Nadi sudah mencerminkan perilaku yang tidak berintegritas karena tidak sesuai dengan perkataan dan perbuatan atau berbohong.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>

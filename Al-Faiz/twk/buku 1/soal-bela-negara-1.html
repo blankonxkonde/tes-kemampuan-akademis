@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Bela Negara - Pembahasan</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                packages: {'[+]': ['cancel']}
+            },
+            loader: {
+                load: ['[tex]/cancel']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .options li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .solution-step {
+            overflow-x: auto;
+        }
+        
+        .solution-step .MathJax {
+            font-size: 1.05em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Bela Negara - Pembahasan</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Bela Negara</strong>
+            <p>Bela negara adalah sikap dan perilaku warga negara yang dijiwai oleh kecintaannya kepada Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan Undang-Undang Dasar 1945 dalam menjalin kelangsungan hidup bangsa dan negara yang seutuhnya. Bela negara merupakan hak dan kewajiban setiap warga negara yang dapat diwujudkan sesuai dengan kemampuan dan profesi masing-masing.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Berdasarkan Pasal 30 ayat (1) Undang-Undang No. 3 Tahun 2002 tentang Pertahanan Negara, "Setiap warga negara berhak dan wajib ikut serta dalam upaya bela negara yang diwujudkan dalam penyelenggaraan pertahanan negara". Makna kata kewajiban dalam ketentuan tersebut adalah...
+            </div>
+            <ul class="options">
+                <li>A. Bila diwajibkan setiap warga negara ikut dalam pembelaan negara</li>
+                <li>B. Setiap warga negara harus mengikuti wajib militer</li>
+                <li>C. Negara dapat memaksa setiap warga negara untuk ikut serta dalam pembelaan negara dalam keadaan tertentu</li>
+                <li>D. Setiap warga negara memiliki kesempatan menentukan untuk ikut atau tidak dalam upaya pembelaan negara</li>
+                <li>E. Hanya warga negara yang dipersyaratkan wajib ikut dalam pembelaan negara</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pasal 30 ayat (1) dinyatakan bahwa "Setiap warga negara berhak dan wajib ikut serta dalam usaha pertahanan dan keamanan negara." Makna yang terkandung didalamnya adalah bahwa setiap warga negara mempunyai hak untuk mendapatkan keamanan dari negara dan mempunyai kewajiban untuk melakukan pembelaan negara dalam kedaan tertentu.
+                </div>
+                <div class="answer">JAWABAN: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Salah satu tantangan terhadap keutuhan NKRI adalah munculnya gerakan-gerakan yang ingin menggantikan ideologi Pancasila. Berikut ini adalah bentuk perwujudan kekuatan bangsa di bidang ideologi...
+            </div>
+            <ul class="options">
+                <li>A. Mengamalkan nilai-nilai Pancasila secara nyata</li>
+                <li>B. Mengikuti seminar tentang ideologi di dunia</li>
+                <li>C. Mendalami kajian dan teori terkait upaya deradikalisasi</li>
+                <li>D. Membuat gerakan tandingan untuk melawan gerakan radikal</li>
+                <li>E. Mempersenjatai diri untuk bertempur melawan organisasi radikal</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam menghadapi tantangan terhadap ideologi negara, sangat penting bagi bangsa Indonesia untuk memperkuat komitmen terhadap Pancasila. Perwujudan nyata dari kekuatan ideologi bangsa terletak pada penerapan nilai-nilai Pancasila dalam kehidupan sehari-hari. Tindakan ini menunjukkan bahwa masyarakat tidak hanya memahami, tetapi juga menjalankan prinsip-prinsip Pancasila dalam berbagai aspek kehidupan.
+                </div>
+                <div class="answer">JAWABAN: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Di bawah ini yang termasuk ke dalam bentuk membina persatuan dan kesatuan Indonesia adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Menjalin persahabatan antar suku bangsa</li>
+                <li>B. Menjaga kelestarian lingkungan</li>
+                <li>C. Mencegah terjadinya pencemaran lingkungan</li>
+                <li>D. Mengolah kekayaan alam dengan menjaga ekosistem</li>
+                <li>E. Rajin belajar guna menguasai ilmu pengetahuan dari berbagai disiplin untuk diabdikan kepada negara</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Semboyan Bhineka tunggal ika mencerminkan persatuan dan kesatuan bangsa negara Indonesia. Meskipun di tengah kemajemukan bangsa Indonesia, tetapi mampu membangun kesatuan bangsa yang kokoh. Maka membina persatuan dan kesatuan dimanapun kita berada baik di lingkungan keluarga, sekolah, masyarakat, maupun bangsa dan negara sangat penting.<br><br>
+                    Adapun beberapa tindakan yang menunjukkan usaha membina persatuan dan kesatuan diantaranya:
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Menjalin Kerjasama antar daerah</li>
+                        <li>Menjalin persahabatan antarsuku bangsa, misalnya dengan memberi bantuan tanpa membedakan suku bangsa atau asal daerah</li>
+                        <li>Mempelajari berbagai kesenian dari daerah lain</li>
+                        <li>Memperluas pergaulan demi persatuan dan kesatuan bangsa</li>
+                        <li>Mengerti dan merasaka kesedihan dan penderitaan orang lain serta tidak mudah marah atau menyimpan dendam</li>
+                        <li>Menerima teman tanpa mempertimbangakan perbedaan suku, agama, ras, maupun golongan</li>
+                    </ul>
+                </div>
+                <div class="answer">JAWABAN: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Dalam sebuah negara terdapat berbagai aspek kehidupan baik itu ekonomi, sosial, politik, hukum budaya dan lain-lain. Di dalam setiap aspek tersebut, setiap warga negara berhak dan wajib melakukan Tindakan bela negara. Salah satu bentuk Tindakan bela negara dalam aspek politik adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Melakukan latihan dasar kemiliteran untuk mendukung kegiatan politiknya</li>
+                <li>B. Tidak menyebar hoax yang dapat memicu pecah belah</li>
+                <li>C. Melakukan kampanye politik terhadap masyarakat untuk mendukung kegiatan politiknya</li>
+                <li>D. Mengajak masyarakat untuk memilih partai politik yang berasal dari segala bentuk KKN</li>
+                <li>E. Menyebarkan propaganda terhadap isu yang bertentangan dengan organisasi politiknya</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam konteks bela negara, terutama pada aspek politik, tindakan yang mendukung kestabilan, keadilan, dan integritas sistem politik adalah bentuk nyata dari bela negara. Mengajak masyarakat untuk memilih partai politik yang bebas dari segala bentuk korupsi, kolusi, dan nepotisme (KKN) adalah tindakan yang memperkuat integritas politik dan mendukung demokrasi yang sehat. Ini sejalan dengan prinsip bela negara karena bertujuan untuk menjaga dan memperbaiki sistem politik negara agar tetap bersih dan adil.<br><br>
+                    Sedangkan tidak menyebar hoax yang dapat memicu pecah belah (jawaban B) lebih relevan pada aspek sosial dan hukum, karena bertujuan untuk menjaga kedamaian dan ketertiban di masyarakat, bukan secara khusus dalam ranah politik.
+                </div>
+                <div class="answer">JAWABAN: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Pemerintah Indonesia telah menetapkan pemindahan Ibu Kota Negara (IKN) dari Jakarta ke Kalimantan Timur dengan tujuan untuk mengurangi beban Jakarta dan mendorong pemerataan pembangunan. Berikut ini adalah salah satu alasan utama pemindahan IKN yang tepat adalah...
+            </div>
+            <ul class="options">
+                <li>A. Untuk meningkatkan populasi di Kalimantan Timur.</li>
+                <li>B. Untuk mengurangi kemacetan lalu lintas di Jakarta.</li>
+                <li>C. Untuk memindahkan pusat pemerintahan yang lebih dekat dengan negara tetangga.</li>
+                <li>D. Untuk mendorong pembangunan yang lebih merata di seluruh Indonesia.</li>
+                <li>E. Untuk menjadikan Kalimantan Timur sebagai pusat ekonomi baru.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pemindahan Ibu Kota Negara (IKN) dari Jakarta ke Kalimantan Timur merupakan salah satu langkah strategis yang diambil oleh pemerintah Indonesia. Langkah ini didasari oleh berbagai alasan yang bertujuan untuk memberikan dampak positif bagi negara. Pemindahan IKN bertujuan untuk mendorong pembangunan yang lebih merata di seluruh Indonesia. Dengan langkah ini, diharapkan dapat mengurangi beban Jakarta dan Jawa serta meningkatkan pertumbuhan dan pembangunan di daerah lain, khususnya di luar Jawa. Ini sejalan dengan visi pemerataan pembangunan yang diusung oleh pemerintah.
+                </div>
+                <div class="answer">JAWABAN: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Kasus tambang timah 271 T mencuat ke publik karena dugaan adanya pelanggaran dalam proses penambangan dan distribusi timah. Pemerintah memiliki kewenangan untuk menangani kasus ini melalui berbagai mekanisme hukum dan administratif. Salah satu langkah yang dapat dilakukan pemerintah untuk menangani kasus ini adalah...
+            </div>
+            <ul class="options">
+                <li>A. Menghentikan seluruh operasi tambang timah di Indonesia.</li>
+                <li>B. Membentuk tim investigasi khusus untuk menyelidiki dugaan pelanggaran.</li>
+                <li>C. Menyerahkan kasus ini sepenuhnya kepada lembaga internasional.</li>
+                <li>D. Memberikan seluruh kewenangan penanganan kasus kepada perusahaan tambang.</li>
+                <li>E. Menunda penyelidikan sampai kondisi ekonomi membaik.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pembentukan tim investigasi khusus merupakan langkah yang sesuai dan efektif untuk menangani kasus tambang timah 271 T. Dengan melakukan investigasi mendalam, pemerintah dapat memastikan bahwa pelanggaran yang terjadi diidentifikasi dan ditangani dengan baik, serta menjaga integritas dan kepatuhan terhadap peraturan yang berlaku dalam industri tambang.
+                </div>
+                <div class="answer">JAWABAN: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Di bawah ini contoh perilaku yang tidak mencerminkan nilai bela negara adalah...
+            </div>
+            <ul class="options">
+                <li>A. Aktif mengikuti organisasi di lingkungan masyarakat</li>
+                <li>B. Membayar pajak melebihi batas waktu</li>
+                <li>C. Rutin mengikuti kajian atau kegiatan agama</li>
+                <li>D. Bersikap selektif terhadap kebudayaan asing</li>
+                <li>E. Sungguh-sungguh mengikuti program pelatihan untuk menunjang pekerjaan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela Negara adalah sikap dan perilaku warga negara yang dijiwai oleh kecintaannya kepada Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan Undang-Undang Dasar 1945 dalam menjalin kelangsungan hidup bangsa dan negara yang seutuhnya.<br><br>
+                    Ada lima nilai dasar bela negara yang harus diimplementasikan dalam setiap kesempatan antara lain, cinta tanah air, sadar berbangsa dan bernegara, setia pada Pancasila sebagai ideologi negara, rela berkorban untuk bangsa dan negara, serta kemampuan awal bela negara.<br><br>
+                    Beberapa implementasi bela negara dalam kehidupan masyarakat:
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Bangga sebagai orang Indonesia.</li>
+                        <li>Memakai produk dalam negeri.</li>
+                        <li>Mentaati semua peraturan-perundangan.</li>
+                        <li>Taat membayar pajak.</li>
+                        <li>Dengan ikhlas mengikuti upacara bendera.</li>
+                        <li>Menjaga kelestarian lingkungan.</li>
+                        <li>Saling hormat-menghormati sesama warga negara.</li>
+                    </ul>
+                </div>
+                <div class="answer">JAWABAN: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Dalam upaya menjaga persatuan dan kesatuan bangsa, setiap warga negara berhak dan wajib berpartisipasi dalam kegiatan bela negara. Salah satu bentuk tindakan bela negara dalam aspek sosial budaya adalah...
+            </div>
+            <ul class="options">
+                <li>A. Mengikuti pelatihan militer untuk memperkuat pertahanan negara</li>
+                <li>B. Menggunakan media sosial untuk menyuarakan aspirasi pribadi</li>
+                <li>C. Melakukan kampanye politik untuk memenangkan partai tertentu</li>
+                <li>D. Melestarikan budaya lokal melalui kegiatan seni dan budaya</li>
+                <li>E. Mengkritik kebijakan pemerintah secara terbuka di media sosial</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang paling tepat sebagai bentuk tindakan bela negara dalam aspek sosial budaya adalah melestarikan budaya lokal melalui kegiatan seni dan budaya. Tindakan ini mencerminkan upaya untuk menjaga identitas budaya, memperkuat persatuan, dan membangun kebersamaan di masyarakat, yang semuanya merupakan bagian dari bela negara dalam aspek sosial budaya.
+                </div>
+                <div class="answer">JAWABAN: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Dalam rangka memperkuat rasa cinta tanah air dan bela negara, berbagai kegiatan dapat dilakukan oleh masyarakat. Salah satu bentuk tindakan bela negara dalam aspek pendidikan adalah...
+            </div>
+            <ul class="options">
+                <li>A. Meningkatkan anggaran pertahanan untuk memperkuat militer</li>
+                <li>B. Mengajarkan sejarah dan budaya lokal kepada generasi muda</li>
+                <li>C. Menggalang dana untuk kampanye politik yang mendukung pemerintah</li>
+                <li>D. Mengikuti kegiatan sosial di lingkungan sekitar</li>
+                <li>E. Menggunakan media sosial untuk menyuarakan aspirasi pribadi</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela negara dalam aspek pendidikan mencakup kegiatan yang memperkuat rasa cinta tanah air dan kesadaran akan pentingnya peran individu dalam mempertahankan negara. Jawaban yang paling tepat sebagai bentuk tindakan bela negara dalam aspek pendidikan adalah mengajarkan sejarah dan budaya lokal kepada generasi muda. Tindakan ini mencerminkan upaya untuk memperkuat rasa cinta tanah air dan kesadaran serta budaya, yang merupakan elemen penting dalam pendidikan bela negara.
+                </div>
+                <div class="answer">JAWABAN: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Dalam rangka menjaga persatuan dan kesatuan bangsa menjelang pemilihan presiden 2024, tindakan bela negara dapat dilakukan oleh setiap warga negara. Salah satu bentuk tindakan bela negara dalam aspek politik adalah...
+            </div>
+            <ul class="options">
+                <li>A. Mengikuti pelatihan militer untuk mendukung pertahanan negara</li>
+                <li>B. Tidak menyebarkan berita palsu dan provokatif tentang calon presiden</li>
+                <li>C. Mengajak masyarakat untuk memilih calon presiden yang didukung oleh partai tertentu</li>
+                <li>D. Menggunakan media sosial untuk menyuarakan aspirasi pribadi tanpa batasan</li>
+                <li>E. Mengkritik kebijakan pemerintah secara terbuka di media sosial</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela negara dalam konteks pemilihan presiden mencakup tindakan yang mendukung proses demokrasi yang sehat dan menjaga stabilitas politik serta persatuan bangsa. Jawaban yang paling tepat sebagai bentuk tindakan bela negara dalam aspek politik adalah tidak menyebarkan berita palsu dan provokatif tentang calon presiden. Alasan karena Tindakan ini mendukung proses demokrasi yang sehat dan menjaga stabilitas politik serta persatuan bangsa. Dengan tidak menyebarkan berita palsu dan provokatif, warga negara berkontribusi pada suasana pemilihan yang damai dan tertib.
+                </div>
+                <div class="answer">JAWABAN: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Sejak wabah Covid-19 masuk ke Indonesia, tenaga medis bertungkus lumus menghadapi serangan virus yang tak kasat mata tersebut. Bahkan sudah banyak para tenaga medis yang gugur dan masyarakat yang menjadi korban keganasan Covid-19. Tenaga medis yang tetap melaksanakan tugas walaupun harus mengorbankan nyawa termasuk dalam cerminan perilaku...
+            </div>
+            <ul class="options">
+                <li>A. Kewajiban pekerjaan sebagai tenaga medis dalam masa pandemi</li>
+                <li>B. Bukan hal yang harus dibesar-besarkan kepada semua orang</li>
+                <li>C. Melaksanakan bela negara sesuai dengan profesi dan kemampuan masing-masing</li>
+                <li>D. Pahlawan kesiangan yang bekerja saat pandemi Covid-19</li>
+                <li>E. Mau tak mau melaksanakan bela negara karena paksaan yang bersifat wajib</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pengabdian sesuai profesi adalah salah satu wujud upaya bela negara. Bela negara sebagai salah satu wujud kecintaan terhadap bangsa dan negara Indonesia dapat diwujudkan oleh rakyat dengan mengabdi sesuai profesinya masing-masing dalam kehidupan bermasyarakat.<br><br>
+                    Pasal 27 Ayat 3 berbunyi, "Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara.". Makna yang terkandung dalam pasal ini adalah: bela negara merupakan hak dan kewajiban setiap warga negara dan dilakukan sesuai dengan kemampuan dan profesi masing-masing.
+                </div>
+                <div class="answer">JAWABAN: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Bapak Prabowo juga yakin bahwa kita bisa melaksanakan bela negara dan dapat melalui pandemi Covid-19 ini. Selain itu, berharap kegiatan ini dapat menjadi momentum yang baik untuk meningkatkan semangat kita membela negara dan membangun bangsa. Bapak Prabowo juga menekankan bahwa bela negara merupakan kewajiban seluruh warga negara Indonesia, bukan hanya TNI Polri saja. Bela negara tidak harus dengan memegang senjata tetapi dengan menggunakan talenta yang dimiliki masing-masing orang. Berikut upaya sebagai wujud bela negara terhadap negara dalam situasi pandemi Covid-19 adalah...
+            </div>
+            <ul class="options">
+                <li>A. Mayjen TNI, Dadang Hendrayuda, mengajak generasi muda untuk ikut berjuang mengisi kemerdekaan di masa pandemi Covid-19</li>
+                <li>B. Sebagai seorang camat ikut mengumpulkan warga untuk menerima bansos sebagai dampak pandemi Covid-19 di kantor kepala desa</li>
+                <li>C. Bupati mengajak semua generasi muda untuk ikut melaksanakan pembagian sembako dari rumah ke rumah dengan mengabaikan protokol kesehatan</li>
+                <li>D. Sebagai seorang warga negara yang baik selalu mematuhi protokol kesehatan untuk mengantisipasi ketika ada razia dari kepolisian</li>
+                <li>E. Ikut membuat banner untuk tinggal di rumah dan memasang di protol jalan raya dengan mengesampingkan ketertiban umum</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela negara adalah kesadaran dan tindakan warga negara yang diterapkan karena cinta mereka terhadap Negara Kesatuan Republik Indonesia yang berdasar pada Pancasila dan Undang-Undang Dasar 1945 untuk memastikan kelangsungan hidup bangsa dan negara.<br><br>
+                    Untuk meningkatkan kesadaran bela negara dapat dilakukan dengan mencintai tanah air, meningkatkan persatuan dan kesatuan dan dimulai dari hal-hal kecil yang sederhana. Saling memotivasi diri sendiri untuk menjaga ketertiban dan keamanan lingkungan sebagai salah satu upaya bela negara secara non-fisik.<br><br>
+                    Dalam situasi pandemi Covid-19, tindakan bela negara dapat di lakukan dengan hal-hal positif yang bermanfaat untuk diri sendiri dan orang lain
+                </div>
+                <div class="answer">JAWABAN: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Bela negara tidak hanya dilakukan dengan mengangkat senjata tapi juga bisa dilakukan dengan hal lainnya. Upaya negara dalam melindungi warga negara dengan cara pencegahan peredaran makanan kadaluarsa merupakan tugas dan tanggung jawab negara dalam hal...
+            </div>
+            <ul class="options">
+                <li>A. Mensejahterakan seluruh rakyat Indonesia</li>
+                <li>B. Memenuhi kebutuhan hidup sehari-hari</li>
+                <li>C. Menjaga agar bahan pokok tetap stabil</li>
+                <li>D. Membela dan melindungi warga negara</li>
+                <li>E. Menjamin ketersediaan kebutuhan pangan</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Hal utama yang dilakukan pemerintah dalam upaya pembelaan negara adalah menjaga keamanan dan menjamin stabilitas negara dari seluruh kemungkinan serangan dari luar, serta melindungi supaya tak terjadi pemberontakan dan memelihara kedisiplinan serta menghindari terbentuknya perseteruan diantara warga masyarakat. Oleh karena itu, upaya pemerintah yang bisa dilakukan untuk melindungi rakyat bukan hanya dengan keamanan saja tetapi juga dengan membela dan melindungi warga negara secara baik.
+                </div>
+                <div class="answer">JAWABAN: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Proses perjuangan kemerdekaan sampai pada titik yang membahagiakan untuk mendirikan negara yang berdaulat, merdeka, dan harus dipertahankan memiliki arti bahwa...
+            </div>
+            <ul class="options">
+                <li>A. Bela negara merupakan amanat para pendiri negara</li>
+                <li>B. Bela negara adalah cara mencapai tujuan</li>
+                <li>C. Bela negara merupakan esensi yang hidup dalam nadir warga negara</li>
+                <li>D. Bela negara dapat mempersatukan keberagaman</li>
+                <li>E. Bela negara dapat merenggut kemerdekaan secara mutlak</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bangsa Indonesia secara harfiah merdeka dan memproklamasikan din pada tanggal 17 Agustus 1945 dan bertekad bulat untuk menegakkan, mempertahankan, dan memperjuangan kedaulatan negara memiliki arti bahwa usaha pembelaan negara merupakan amanat dari para pendiri negara sebagai pahlawan dalam memperjuangkan kemerdekaan dan harus dusi dengan upaya pembelaan terhadap kemerdekaan demi menjaga kedaulatan.
+                </div>
+                <div class="answer">JAWABAN: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Dalam aktualisasinya, bela negara harus disesuaikan dengan kondisi kekinian yang dihadapi oleh masyarakat secara umum. Konsep bela negara saat ini memiliki makna yang lebih luas, baik dalam konteks ekonomi, sosial, maupun kultural. Salah satu contoh wujud bela negara dalam konteks ekonomi adalah...
+            </div>
+            <ul class="options">
+                <li>A. Membeli kualitas terbaik produk luar negeri</li>
+                <li>B. Menambah defisit perdagangan</li>
+                <li>C. Peningkatan importasi barang luar</li>
+                <li>D. Pengurangan kekuatan struktur industri</li>
+                <li>E. Menggunakan produk dalam negeri.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela negara dalam konteks ekonomi adalah membangun komitmen masyarakat Indonesia dengan cara mencintai, membeli, dan menggunakan produk dalam negeri. Pengoptimalan program Peningkatan Penggunaan Produk Dalam Negeri (P3DN) karena dengan langkah strategis ini dinilai berdampak terhadap penurunan importasi, penguatan struktur industri, mengurangi defisit perdagangan, dan mendorong roda ekonomi masyarakat.
+                </div>
+                <div class="answer">JAWABAN: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Dewasa ini berita hoaks marak beredar di dunia maya. Rendahnya budaya membaca masyarakat Indonesia menjadi salah satu faktor mudahnya berita hoaks berkembang. Melalui Kementerian Pertahanan (Kemhan) pemerintah berupaya untuk mengejar target mencetak 100 juta kader bela negara. Dirjen Strategi Pertahanan Kemenhan, Mayjen TNI Hartind Asrin mengatakan, target mencetak 100 juta kader bela negara tersebut dilakukan untuk menangkal ancaman terhadap negara salah satunya melalui penyebaran paham radikal dan berita bohong (hoaks) melalui internet. Pemerintah harus sesegera mungkin hal tersebut. Salah satunya dengan langkah bela negara non fisik seperti ...
+            </div>
+            <ul class="options">
+                <li>A. Mewajibkan para generasi muda mengikuti pendidikan militer</li>
+                <li>B. Meningkatkan kembali kesadaran berbangsa dan bernegara</li>
+                <li>C. Mengajak masyarakat berlatih bela diri</li>
+                <li>D. Mengajarkan generasi muda untuk berani berdemonstrasi</li>
+                <li>E. Membekali aparat negara dengan senjata terbaru</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela Negara adalah sikap dan perilaku warga negara yang dijiwai oleh kecintaannya kepada Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan Undang-Undang Dasar 1945 dalam menjalin kelangsungan hidup bangsa dan negara yang seutuhnya. Dalam pelaksanaannya Bela negara secara non-fisik dapat dilakukan dengan berbagai bentuk, misalnya dengan cara meningkatkan kesadaran berbangsa dan bernegara. Dengan menghargai perbedaan pendapat dan tidak memaksakan kehendak, menanamkan kecintaan terhadap tanah Air melalui pengabdian yang tulus kepada masyarakat.
+                </div>
+                <div class="answer">JAWABAN: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Reni telah berhasil maju selangkah demi mencapai cita-citanya. Ia berhasil memperoleh bantuan beasiswa LPDP di Australia untuk melanjutkan studi Magisternya. Wujud bela negara yang dapat dilakukan oleh Reni selama menempuh studi di Australia adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Mencari kerja parttime untuk menambah uang saku</li>
+                <li>B. Memberikan sponsor kepada mahasiswa disana</li>
+                <li>C. Memperkenalkan kebudayaan Indonesia dan mengembangkan ilmu pengetahuan</li>
+                <li>D. Aktif memamerkan aktivitas sehari-harinya melalui media sosial</li>
+                <li>E. Mengesampingkan studi dan berfokus memncari pekerjaan dengan gaji tinggi</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela Negara adalah sikap dan perilaku warga negara yang dijiwai oleh kecintaannya kepada Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan Undang-Undang Dasar 1945 dalam menjalin kelangsungan hidup bangsa dan negara yang seutuhnya. Bela Negara adalah tekad, sikap dan perilaku warga negara yang dijiwai oleh kecintaannya kepada Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan UUD 1945 dalam menjamin kelangsungan hidup bangsa dan negara.<br><br>
+                    Wujud dari usaha Bela Negara adalah kesiapan dan kerelaan setiap warga negara untuk berkorban demi mempertahankan kemerdekaan dan kedaulatan negara, Kesatuan dan persatuan bangsa, Keutuhan wilayah dan yuridiksi nasional dan Nilai-nilai Pancasila dan UUD 1945. Upaya Bela Negara selain sebagai kewajiban dasar manusia, juga merupakan kehormatan bagi setiap warga negara yang dilaksanakan dengan penuh kesadaran, tanggung jawab, dan rela berkorban dalam pengabdian.<br><br>
+                    Oleh karena itu sebagai seorang pelajar yang mendapat program LPDP upaya yang bisa di lakukan adalah memperkenalkan kebudayaan Indonesia dan mengembangkan ilmu pengetahuan.
+                </div>
+                <div class="answer">JAWABAN: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Malaysia pernah melakukan klaim bahwa Kebudayaan Wayang Kulit dan Batik merupakan budaya asli dari negaranya. Namun klaim Malaysia terbantahkan dengan pengakuan UNESCO bahwa Wayang Kulit dan Batik merupakan warisan budaya asli Indonesia. Sebagai bentuk bela negara akan budaya Indonesia, sikap yang kita ambil adalah...
+            </div>
+            <ul class="options">
+                <li>A. Melestarikan budaya warisan Indonesia yang beraneka ragam</li>
+                <li>B. Menerima klaim Malaysia karena ingin menjaga kerukunan dan kedamaian antarnegara</li>
+                <li>C. Mulai mencintai budaya Indonesia dengan memberikan apresiasi dan menikmatipertunjukkan atau produk kebudayaan Indonesia</li>
+                <li>D. Melakukan asimilasi budaya Indonesia dengan budaya lain sehingga menghasilkan budaya baru yang akan lebih dikenal</li>
+                <li>E. Melakukan protes terhadap klaim Malaysia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bela negara adalah rasa mencintai negara yang dilakukan dengan upaya bela negara yang berasal dari kita untuk kemajuan negara serta ikut berpartisipasi guna memajukan negara.<br><br>
+                    Di era yang modern ini, perang tidak dilakukan dengan bertatap muka secara langsung, tetapi dilakukan dengan kebudayaan. Kebudayaan asing yang masuk ke Indonesia dapat mpengaruh para pemuda Indonesia. Dengan masuknya budaya asing tersebut, rasa cinta pada tanah air mulai pudar, terutama di bidang kebudayaan tradisional yang tidak diminati lagi oleh remaja sekarang. Bahkan banyak anak-anak yang tidak hafal lagu-lagu nasional dan kurangnya pengetahuan mengenai kebudayaan tradisional Indonesia. Jika hal ini terjadi terus menerus, maka kebudayaan yang ada di Indonesia akan hilang. Oleh karena itu kita harus melestarikan budaya Indonesia yang beraneka ragam.
+                </div>
+                <div class="answer">JAWABAN: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Bela negara merupakan kewajiban setiap warga negara Indonesia. Namun, bela negara tidaklah sesuatu yang "taken for granted", melainkan diperlukan upaya penyadaran dan terencana dalam menanamkan nilai-nilai bela negara. Berikut ini adalah beberapa upaya yang dapat dilakukan untuk menanamkan nilai-nilai bela negara adalah ...
+            </div>
+            <ul class="options">
+                <li>A. Pendidikan bela negara di sekolah dan perguruan tinggi.</li>
+                <li>B. Penyelenggaraan latihan dasar kemiliteran.</li>
+                <li>C. Penyelenggaraan kegiatan ekstrakurikuler yang bersifat bela negara.</li>
+                <li>D. Penyebaran informasi dan sosialisasi tentang bela negara.</li>
+                <li>E. Pembentukan karakter dan kepribadian yang berjiwa bela negara.</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang paling tepat adalah (E), yaitu pembentukan karakter dan kepribadian yang berjiwa bela negara. Hal ini dikarenakan nilai-nilai bela negara harus terinternalisasi dalam diri setiap warga negara, sehingga menjadi bagian dari kepribadiannya. Pembentukan karakter dan kepribadian yang berjiwa bela negara dapat dilakukan melalui berbagai cara, seperti pendidikan, pelatihan, dan kegiatan ekstrakurikuler. Jawaban (A), (B), (C), dan (D) adalah upaya yang penting untuk dilakukan, tetapi tidak cukup untuk menanamkan nilai-nilai bela negara. Pendidikan bela negara di sekolah dan perguruan tinggi, penyelenggaraan latihan dasar kemiliteran, penyelenggaraan kegiatan ekstrakurikuler yang bersifat bela negara, dan penyebaran informasi dan sosialisasi tentang bela negara, hanyalah sarana untuk menanamkan nilai-nilai bela negara.
+                </div>
+                <div class="answer">JAWABAN: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Motivasi untuk membela negara dapat muncul, karena para warga negara merasa terhormat jika mereka mengorbankan waktu, tenaga dan pikirannya bagi kepentingan umum bangsa dan negara. Bagi para warga negara, pengorbanan demi pengabdian kepada bangsa dan negara merupakan suatu kehormatan dan kepercayaan. Manakah pernyataan yang paling tepat mengenai makna dan implikasi dari bela negara?
+            </div>
+            <ul class="options">
+                <li>A. Bela negara adalah sikap dan perilaku warga negara yang didasari oleh kesadaran, kemauan, dan kemampuan untuk turut serta dalam usaha pertahanan dan keamanan negara sesuai dengan ketentuan peraturan perundang-undangan.</li>
+                <li>B. Bela negara adalah kewajiban dan hak asasi warga negara yang dilaksanakan secara sukarela, sadar, dan bertanggung jawab untuk mempertahankan kedaulatan dan keutuhan negara berdasarkan nilai-nilai Pancasila dan UUD 1945.</li>
+                <li>C. Bela negara adalah kehendak dan tekad warga negara yang diwujudkan dalam tindakan nyata untuk mengorbankan segala sesuatu yang dimilikinya demi kepentingan bangsa dan negara sesuai dengan cita-cita proklamasi kemerdekaan.</li>
+                <li>D. Bela negara adalah semangat dan jiwa warga negara yang tercermin dalam sikap dan perilaku untuk menghormati, menjaga, dan memelihara keutuhan wilayah, kedaulatan, dan martabat bangsa dan negara sesuai dengan norma-norma hukum dan etika.</li>
+                <li>E. Bela negara adalah pengabdian dan pengorbanan warga negara yang dilandasi oleh rasa cinta, hormat, dan loyalitas terhadap bangsa dan negara dalam rangka menegakkan kebenaran, keadilan, dan kesejahteraan bagi seluruh rakyat Indonesia</li>
+            </ul>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pernyataan yang paling tepat mengenai makna dan implikasi dari bela negara adalah bela negara merupakan sikap dan perilaku warga negara yang didasari oleh kesadaran, kemauan, dan kemampuan untuk turut serta dalam usaha pertahanan dan keamanan negara sesuai dengan ketentuan peraturan perundang-undangan.
+                </div>
+                <div class="answer">JAWABAN: A</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+                // Re-render MathJax setelah solusi ditampilkan
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([solution]).catch(function (err) {
+                        console.log('MathJax error:', err);
+                    });
+                }
+            }
+        }
+    </script>
+<script src="../dark-mode-toggler.js" defer></script>
+</body>
+</html>
