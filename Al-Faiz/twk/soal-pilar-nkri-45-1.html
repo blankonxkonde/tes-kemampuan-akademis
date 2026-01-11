@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Pilar NKRI - Tema 4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .option {
+            margin-bottom: 10px;
+            padding: 8px;
+            padding-left: 15px;
+            border-left: 3px solid #ddd;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            border-left-color: #667eea;
+        }
+        
+        .option-label {
+            font-weight: bold;
+            color: #764ba2;
+            margin-right: 10px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 15px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Pilar NKRI - Tema 4</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Pilar NKRI</strong>
+            <p>Pilar NKRI mencakup pemahaman tentang nilai-nilai kebangsaan, sejarah perjuangan kemerdekaan, organisasi pergerakan nasional, dan nilai-nilai yang terkandung dalam Pancasila, UUD 1945, dan Sumpah Pemuda sebagai landasan kehidupan berbangsa dan bernegara.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Keragaman budaya merupakan kekayaan yang dimiliki oleh suatu bangsa, setiap daerah di Indonesia memiliki budaya yang berbeda-beda. Hal ini termasuk adat istiadat, tata cara, makanan, pakaian, bahasa dan sebagainya. Namun bagaimana keragaman budaya dapat mempengaruhi nasionalisme di Indonesia...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Keberagaman budaya dapat memperkaya kebudayaan nasional tetapi tidak berpengaruh pada nasionalisme</div>
+                <div class="option"><span class="option-label">B.</span> Keberagaman budaya dapat mempengaruhi nasionalisme hanya jika diatur oleh pemerintah</div>
+                <div class="option"><span class="option-label">C.</span> Keberagaman budaya dapat membantu masyarakat untuk membangun rasa toleransi terhadap perbedaan dan memperkuat persatuan nasional</div>
+                <div class="option"><span class="option-label">D.</span> Keberagaman budaya dapat menimbulkan perpecahan dan mengurangi rasa nasionalisme</div>
+                <div class="option"><span class="option-label">E.</span> Keberagaman budaya tidak memiliki pengaruh pada nasionalisme</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Budaya mengajarkan nilai-nilai luhur yang memiliki keunikan dan kegunaannya masing-masing. Hal ini yang meningkatkan rasa bangga bangsa Indonesia yang kemudian menumbuhkan rasa cinta tanah air dan tentunya menyadarkan masyarakat untuk membangun rasa toleransi terhadap perbedaan dan memperkuat persatuan nasional.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Salah satu pergerakan untuk mencapai kemerdekaan diwarnai oleh lahirnya Sarekat Dagang Islam yang didirikan oleh Haji Samanhudi di Solo pada 1911. Gerakan ini berusaha membangun kekuatan serta persatuan bangsa melalui penguatan dalam bidang ... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Ekonomi melalui pelindungan pengusaha lokal agar mampu bersaing dengan pengusaha nonlokal</div>
+                <div class="option"><span class="option-label">B.</span> Kebudayaan melalui pengembangan kesenian-kesenian daerah agar mampu mengharumkan nama baik Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Pendidikan melalui pengajaran serta menjadi pemantik persatuan dan kesatuan bangsa Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Keagamaan yang memobilisasi gerakan rakyat dengan dasar keyakinan pada nilai-nilai Ketuhanan</div>
+                <div class="option"><span class="option-label">E.</span> Politik melalui pengembangan kebijakan-kebijakan yang berpihak pada masyarakat lokal dibanding masyarakat nonlokal</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Sarekat Dagang Islam fokus pada penguatan ekonomi melalui perlindungan terhadap pedagang-pedagang pribumi. Tujuannya adalah untuk mengatasi persaingan yang tidak seimbang dengan pedagang-pedagang nonlokal, terutama pedagang Tionghoa. Dengan menggalang kekuatan ekonomi, SDI berharap dapat meningkatkan kesejahteraan pedagang lokal dan pada akhirnya memperkuat posisi mereka dalam menghadapi kolonialisme dan berbagai tantangan ekonomi lainnya.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Di masyarakat yang multikultur seperti Indonesia, keberadaan golongan atau kelompok dengan latar belakang kepentingan yang berbeda-beda merupakan hal yang biasa terjadi. Keberagaman kepentingan tersebut dapat menjadi salah satu faktor yang dapat memperkokoh persatuan NKRI karena... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Persatuan dan kesatuan harus tetap diutamakan meskipun kepentingannya berbeda-beda</div>
+                <div class="option"><span class="option-label">B.</span> Kepentingan yang beragam dapat dengan mudah memunculkan konflik horizontal</div>
+                <div class="option"><span class="option-label">C.</span> Persatuan dan kesatuan bangsa merupakan hal mustahil yang akan terjadi di negara yang multikultur</div>
+                <div class="option"><span class="option-label">D.</span> Keberagaman kepentingan dan tujuan akan makin menguatkan prinsip-prinsip demokrasi</div>
+                <div class="option"><span class="option-label">E.</span> Perbedaan kepentingan dan golongan menjadi penyebab utama sulitnya pencapaian persatuan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Keberagaman kepentingan dan tujuan dalam masyarakat multikultur dapat memperkuat prinsip-prinsip demokrasi. Dalam demokrasi, berbagai kepentingan diakomodasi melalui dialog, diskusi, dan kompromi. Proses ini memerlukan penghargaan terhadap perbedaan dan kesediaan untuk bekerja sama demi kepentingan bersama. Dengan demikian, keberagaman tersebut dapat memperkokoh persatuan dan kesatuan NKRI karena semua golongan merasa didengar dan dihargai, yang pada akhirnya memperkuat kohesi sosial.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Organisasi Budi Utomo didirikan pada tanggal 20 Mei 1908 oleh para pemuda pelajar sekolah dokter Jawa atau STOVIA yang diketuai oleh Soetomo. Perjuangan pergerakan Budi Utomo dimaksudkan dalam rangka mewujudkan.... (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Cita-cita kebangsaan yang kuat untuk mewujudkan negara yang besar</div>
+                <div class="option"><span class="option-label">B.</span> Cita-cita kaum intelektual yang kuat untuk mewujudkan negara yang besar</div>
+                <div class="option"><span class="option-label">C.</span> Penghapusan kebodohan yang ada sehingga mampu memajukan negara</div>
+                <div class="option"><span class="option-label">D.</span> Penghapusan feodalisme yang ada sehingga mampu memajukan negara</div>
+                <div class="option"><span class="option-label">E.</span> Penghapusan kemiskinan yang ada sehingga mampu memajukan negara</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Budi Utomo merupakan organisasi pertama yang menumbuhkan semangat kebangsaan dan kesadaran nasional di kalangan masyarakat Indonesia. Mereka berfokus pada pendidikan dan kebudayaan untuk memajukan bangsa dan mempersiapkan masyarakat menuju kemerdekaan. Tujuan ini sejalan dengan cita-cita kebangsaan yang kuat untuk mewujudkan negara yang besar.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Ki Hadjar Dewantara sebagai seorang pejabat negara sekaligus bangsawan diriwayatkan tidak pernah sungkan membeli perabotan bekas dari teman atau pelelangan. Mengapa perilaku tersebut mencerminkan integritas terhadap bangsa Indonesia? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Kebermanfaatan dari perabotan lebih penting daripada kemewahan</div>
+                <div class="option"><span class="option-label">B.</span> Kesederhanaan seseorang yang memiliki akses kemapanan, tetapi tidak dilakukan</div>
+                <div class="option"><span class="option-label">C.</span> Menjadi contoh nyata pelaksanaan prinsip ekonomi dalam bidang rumah tangga</div>
+                <div class="option"><span class="option-label">D.</span> Teladan bagi para kaum bangsawan untuk menanggalkan identitasnya</div>
+                <div class="option"><span class="option-label">E.</span> Bangsa Indonesia memiliki pemimpin yang berpandangan ekologis</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Perilaku Ki Hadjar Dewantara mencerminkan integritas terhadap bangsa Indonesia karena meskipun ia memiliki akses ke kemapanan dan kemewahan sebagai seorang pejabat dan bangsawan, ia memilih untuk hidup sederhana. Sikap ini menunjukkan bahwa ia mengutamakan nilai-nilai kesederhanaan dan kebermanfaatan, serta memberikan teladan yang baik bagi masyarakat Indonesia tentang pentingnya hidup dengan integritas dan menjauhi pemborosan.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Perbedaan pandangan antar golongan agama (Islam) dan nasionalis dalam perumusan pancasila sebagai dasar Negara di Sidang BPUPKI menunjukkan bahwa perbedaan pandangan merupakan hal biasa dan wajar terjadi dalam memutuskan sesuatu. Proses yang terjadi pada masa perumusan dan penetapan UUD 1945 di sidang BPUPKI menunjukkan bahwa...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Golongan Islam adalah golongan mayoritas yang pendapatnya harus diakomodasi</div>
+                <div class="option"><span class="option-label">B.</span> Merumuskan dasar Negara bukan hal mudah dalam mendirikan sebuah Negara berdaulat</div>
+                <div class="option"><span class="option-label">C.</span> Sidang BPUPKI mengakomodasi perbedaan kepentingan dan pandangan anggota sidang</div>
+                <div class="option"><span class="option-label">D.</span> Pancasila merupakan hasil kesepakatan bersama antara dua golongan yang berbeda pandangan</div>
+                <div class="option"><span class="option-label">E.</span> Perbedaan pandangan seringkali memunculkan pertentangan dan rentan konflik horizontal</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Perubahan Piagam Jakarta menjadi UUD 1945 melibatkan pembentukan panitia kecil untuk merumuskan konstitusi negara. Perbedaan pendapat muncul terkait dasar negara, dengan penghapusan beberapa kalimat pada sila pertama Piagam Jakarta untuk merumuskan dan mengesahkan dasar negara Indonesia yang tercantum dalam Undang-Undang Dasar 1945 sebagai konstitusi negara. Dapat dikatakan bahwa Pancasila merupakan hasil kesepakatan bersama antara dua golongan yang berbeda pandangan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Perjuangan mempertahankan kemerdekaan Indonesia memiliki dampak yang sangat besar terhadap pembangunan nasional. Setelah berhasil meraih kemerdekaannya, Indonesia menghadapi banyak tantangan dalam membangun negara dan meningkatkan kesejahteraan rakatnya. Namun perjuangan untuk mempertahankan kemerdekaan memberikan dorongan besar bagi pembangunan nasional di Indonesia. Dampak dari perjuangan mempertahankan kemerdekaan Indonesia terhadap pembangunan nasional adalah...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menyebabkan penurunan kualitas sumber daya manusia dan pendidikan di Indonesia</div>
+                <div class="option"><span class="option-label">B.</span> Menyebabkan terjadinya kerusuhan dan konflik sosial di Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Meningkatkan kemiskinan dan ketidakadilan sosial di Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Meningkatkan pembangunan infrastruktur dan ekonomi di Indonesia</div>
+                <div class="option"><span class="option-label">E.</span> Meningkatkan kerjasama dan hubungan internasional Indonesia dengan negara lain</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Masa mempertahankan kemerdekaan merupakan masa yang sangat berat bagi Indonesia, namun berhasil mempertahankan kemerdekaannya dengan perjuangan rakyat dan kekuatan militer. Jawaban yang paling tepat dalam dampak dari mempertahankan kemerdekaan dibidang pembangunan sosial adalah meningkatkan pembangunan infrastruktur dan ekonomi.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Ketika Indonesia memproklamasikan kemerdekaannya pada tahun 1945, banyak pihak meragukan kemampuan bangsa Indonesia untuk mempertahankan kemerdekaan tersebut. Namun, faktanya Indonesia berhasil mempertahankan kemerdekaannya dari berbagai tantangan dan ancaman yang datang dari dalam dan luar negeri. Apa yang menjadi faktor kunci dalam mempertahankan kemerdekaan Indonesia...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Adanya dukungan internasional dari negara-negara barat</div>
+                <div class="option"><span class="option-label">B.</span> Hebatnya kemampuan di bidang ekonomi yang sangat kuat</div>
+                <div class="option"><span class="option-label">C.</span> Kuatnya rasa kesatuan dan persatuan bangsa Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Kemampuan diplomasi dan negosiasi yang baik</div>
+                <div class="option"><span class="option-label">E.</span> Kekuatan militer dan persenjataan yang memadai</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dengan kita mempertahankan kemerdekaan yang artinya kita turut mewujudkan cita-cita, visi dan tujuan bangsa yang dulu telah diperjuangkan oleh para pahlawan. Tujuan kita sekarang adalah menjaga martabat bangsa dimata dunia dan tentunya memiliki rasa yang kuat untuk menjaga kesatuan dan persatuan bangsa Indonesia.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Perhatikan pernyataan K.R.T. Radjiman Wediodiningrat berikut! "Jadi, saya ulangi lagi, Undang-Undang Dasar ini kita terima dengan sebulatbulatnya. Bagaimanakah Tuan-tuan? Untuk penyelesaiannya saya minta dengan hormat yang setuju yang menerima, berdiri." Pernyataan tersebut menunjukkan K.R.T. Radjiman Wediodiningrat memiliki sikap...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Demokratis</div>
+                <div class="option"><span class="option-label">B.</span> Patriotik</div>
+                <div class="option"><span class="option-label">C.</span> Religius</div>
+                <div class="option"><span class="option-label">D.</span> Nasionalis</div>
+                <div class="option"><span class="option-label">E.</span> Kharismatik</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kata kunci pada soal ini adalah "Bagaimanakah Tuan-tuan? Untuk penyelesaiannya saya minta dengan hormat yang setuju yang menerima, berdiri." Maka hal ini menunjukan sikap demokratis.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Pada masa orde baru pancasila digunakan sebagai alat kekuasaan, hal ini sangat bertentangan dengan kebebasan warga negara dalam menjalani kehidupannya, namun ini bisa diatasi apabila masyarakat memahami pancasila sebagai ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Sebuah landasan yang dapat mengatasi permasalahan di masyarakat</div>
+                <div class="option"><span class="option-label">B.</span> Etika masyarakat dalam menentukan hasil dalam musyawarah</div>
+                <div class="option"><span class="option-label">C.</span> Upaya dalam mendirikan kepribadian bangsa yang kuat</div>
+                <div class="option"><span class="option-label">D.</span> Landasan pemikiran dan pedoman yang sesuai dengan kehidupan bangsa</div>
+                <div class="option"><span class="option-label">E.</span> Norma yang berlaku sebagai bentuk ketetapan dari pemerintah</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pada masa Orde Baru, Pancasila digunakan sebagai alat kekuasaan dan tidak sebagai landasan pemikiran dan pedoman hidup bagi masyarakat. Hal ini membatasi kebebasan warga negara dalam menjalani kehidupannya dan tidak sejalan dengan konsep demokrasi. Untuk mengatasi masalah ini, penting bagi masyarakat untuk memahami Pancasila sebagai landasan pemikiran dan pedoman yang sesuai dengan kehidupan bangsa, bukan sebagai alat kekuasaan yang membatasi kebebasan warga negara. Jika masyarakat memahami Pancasila sebagai landasan pemikiran dan pedoman hidup yang sesuai dengan kehidupan bangsa, Pancasila akan berfungsi sebagai dasar dalam membangun kepribadian bangsa yang kuat dan membantu mengatasi permasalahan di masyarakat melalui musyawarah dan konsensus.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Bangsa Indonesia menyepakati akan berdirinya negara yang memiliki latar belakang majemuk, oleh karena itu hal ini tidak dapat terpisah dari ciri khas kebudayaannya yang dapat dilihat dari ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Pengadilan yang dilakukan oleh masyarakat terhadap negara</div>
+                <div class="option"><span class="option-label">B.</span> Kehidupan masyarakat patuh akan hukum yang berlaku</div>
+                <div class="option"><span class="option-label">C.</span> Kehidupan masyarakat secara natural yang dapat dilihat dari kehidupan bergotong-royong</div>
+                <div class="option"><span class="option-label">D.</span> Kehidupan masyarakat yang menekankan pada toleransi yang kuat</div>
+                <div class="option"><span class="option-label">E.</span> Menciptakan kehidupan yang damai dan aman</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kehidupan masyarakat yang menekankan pada toleransi yang kuat. Dalam kebudayaan Indonesia, toleransi merupakan hal yang sangat penting dan diterapkan dalam kehidupan masyarakat. Dengan adanya toleransi, maka akan tercipta suasana yang damai dan harmoni antar masyarakat yang berbeda latar belakang dan budaya. Oleh karena itu, toleransi menjadi ciri khas kebudayaan Indonesia yang perlu diterapkan dalam kehidupan bersama.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Mengenalkan budaya Indonesia terhadap anak sangatlah penting dilakukan sejak dini. Hal ini diperlukan agar anak dimasa depan tidak kehilangan identitas dan jati diri ke indonesiaannya akibat pengaruh globalisasi. Sikap tersebut termasuk ke dalam ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Upaya memperkenalkan budaya di mata dunia</div>
+                <div class="option"><span class="option-label">B.</span> Mempersiapkan kebudayaan yang tidak akan dilupakan</div>
+                <div class="option"><span class="option-label">C.</span> Melestarikan budaya yang dimiliki pada generasi penerus</div>
+                <div class="option"><span class="option-label">D.</span> Mengajarkan pada anak akan pentingnya hidup berbudaya</div>
+                <div class="option"><span class="option-label">E.</span> Merekatkan anak-anak dengan budaya ibunya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Melestarikan budaya adalah proses untuk menjaga dan mempertahankan budaya yang dimiliki oleh suatu masyarakat agar tidak hilang dan tetap eksis pada generasi berikutnya. Ini sangat penting karena budaya merupakan bagian integral dari identitas suatu masyarakat dan memainkan peran penting dalam membentuk jati diri dan memperkuat rasa kebersamaan. Oleh karena itu, melestarikan budaya yang dimiliki pada generasi penerus sangat penting untuk memastikan bahwa budaya tersebut tetap diteruskan dan diakui oleh generasi berikutnya.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Kerusuhan atau gangguan keamanan adalah suatu kondisi tidak aman yang diakibatkan oleh gangguan keamanan, huru hara, ataupun konflik sosial antarkelompok yang ditandai oleh benturan fisik dan berlangsung pada waktu tertentu serta mengganggu stabilitas nasional dan mengancam lunturnya rasa persatuan dan kesatuan negara. Maka dari itu kedaulatan dan kestabilan negara harus tetap dijaga, terutama dari berbagai gangguan yang ingin mengganggu kewibawaan negara. Bangsa Indonesia harus mewaspadai segala bentuk ancaman baik dari dalam amupun dari luar. Berikut yang termasuk contoh ancaman dari dalam negeri adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Adanya invansi dari negara tetangga</div>
+                <div class="option"><span class="option-label">B.</span> Menjamurnya produk impor di Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Semakin banyak bermunculan kelompok-kelompok kapitalisme</div>
+                <div class="option"><span class="option-label">D.</span> Munculnya kelompok-kelompok berpaham separatisme</div>
+                <div class="option"><span class="option-label">E.</span> Feminisme dan liberalisme menjadi satu acuan dalam membuat kebijakan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kelompok separatisme adalah kelompok yang memiliki pandangan bahwa suatu wilayah atau daerah harus memisahkan diri dari negara atau pemerintahan yang saat ini menguasainya dan membentuk pemerintahan atau negara baru yang merdeka. Kelompok ini sering menuntut pemisahan wilayah melalui cara yang bersifat radikal atau konfrontatif. Kelompok separatisme dapat muncul karena berbagai alasan, seperti perbedaan etnis, agama, bahasa, dan kebudayaan. Kelompok ini dapat menimbulkan ancaman bagi kedaulatan dan kestabilan negara, karena dapat mengarah pada perpecahan dan konflik dalam masyarakat. Oleh karena itu, pemerintah harus berhati-hati dan memperlakukan isu ini dengan bijak dan solusi yang tepat.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Masuknya budaya asing dapat berdampak negatif apabila ditelan mentah-mentah oleh masyarakat Indonesia tanpa dipilah dan disaring terlebih dahulu. Hal ini dapat menyebabkan perubahan-perubahan kebudayaan dalam masyarakat yang secara perlahan dapat mengakibatkan lunturnya jatin diri bangsa Indonesia dan dapat mengikis keragaman budaya masyarakat Indonesia. Untuk menghindari pengaruh tersebut langkah yang perlu dilakukan adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memantapkan budaya nasional untuk mengganti dengan budaya daerah</div>
+                <div class="option"><span class="option-label">B.</span> Menghindari masuknya pengaruh budaya dari negara lain</div>
+                <div class="option"><span class="option-label">C.</span> Mengaktualisasi budaya daerah dalam berbagai kesempatan</div>
+                <div class="option"><span class="option-label">D.</span> Menyesuaikan budaya daerah dengan budaya yang datang dari luar</div>
+                <div class="option"><span class="option-label">E.</span> Membangun sanggar-sanggar budaya diberbagai tempat</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Upaya untuk menghindari pengaruh asing yang dapat mengikis keragaman budaya masyarakat Indonesia adalah memantapkan budaya nasional dan mengaktualisasi budaya daerah dalam berbagai kesempatan. Ini membantu untuk memperkuat identitas budaya dan mempertahankan kekayaan budaya setempat.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Raden Mas Suwardi Suryaningrat atau dikenal dengan nama Ki Hajar Dewantara. Ki Hajar Dewantara adalah seorang tokoh pelopor Pendidikan bagi Kaum Pribumi Indonesia dari zaman Penjajahan Belanda. Meski demikian ia dikenal hingga saat ini karena jasanya mendirikan Taman Siswa sebagai cikal bakal Pendidikan di Indonesia. Nilai integritas Ki Hajar Dewantara dalam upaya pendirian Taman Siswa adalah...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Berani mengambil keputusan membangun Pendidikan bagi pribumi meski dibawah tekanan pemerintah Belanda</div>
+                <div class="option"><span class="option-label">B.</span> Memiliki rasa tanggung jawab terhadap Pendidikan di tanah air bagi masyarakat pribumi</div>
+                <div class="option"><span class="option-label">C.</span> Memiliki rasa kepedulian terhadap Pendidikan bagi masyarakat pribumi</div>
+                <div class="option"><span class="option-label">D.</span> Menunjukkan kerja keras dalam upaya membangun Pendidikan bagi masyarakat pribumi</div>
+                <div class="option"><span class="option-label">E.</span> Memiliki jiwa kemandirian dalam membangun Pendidikan bagi masyarakat pribumi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nilai Integritas yang ditunjukkan oleh Ki Hajar Dewantara adalah memiliki rasa Kepeduliaan terhadap Pendidikan bagi masyarakat pribumi. Kepedulian sendiri termasuk dalam aspek SIKAP INTEGRITAS (ABEPE) yang terdiri dari Adil, Berani, dan Peduli.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Budi Utomo didirikan oleh Dr. Soetomo pada tanggal 20 Mei 1908. Pendirian Budi Utomo tidak terlepas dari penggangas atau pendorong lahirnya Budi Utomo yaitu Wahidin Soedirohusodo. Budi Utomo merupakan organisasi pertama di Indonesia yang bersifat nasionalisme berbentuk modern, yaitu organisasi dengan pengurus tetap, memiliki anggota, tujuan dan program kerja. Tujuan didirikannya organisasi Budi utomo adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menyadarkan kedudukan masyarakat Jawa, Sunda, Madura, dan penduduk Hindia seluruhnya tanpa melihat keturunan, kelamin, dan agama</div>
+                <div class="option"><span class="option-label">B.</span> Menyadarkan Belanda untuk membalas budi kebaikan masyarakat Jawa, Sunda, Madura, dan Penduduk Hindia seluruhnya tanpa melihat keturunan, kelamin dan agama</div>
+                <div class="option"><span class="option-label">C.</span> Memajukan Pendidikan masyarakat Jawa, Sunda, Madura, dan Penduduk Hindia seluruhnya tanpa melihat keturunan, kelamin dan agama</div>
+                <div class="option"><span class="option-label">D.</span> Meningkatkan keharmonisan Belanda dan Indonesia khususnya dalam bidang pengajaran, pertanian, peternakan, dagang, teknik, industri dan kebudayaan</div>
+                <div class="option"><span class="option-label">E.</span> Mengajak masyarakat Jawa, Sunda, Madura dan Penduduk Hindia seluruhnya untuk melawan penjajah Belanda dengan strategi perang Gerilya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Adapun tujuan dari Budi Utomo ialah Kemajuan Jawa dan Madura. Beberapa usaha yang ditempuh untuk mewujudkan tujuan tersebut adalah: Memajukan pengajaran sesuai dengan apa yang dicita-citakan Wahidin Soedirohusodo. Ini merupakan usaha pertama untuk mencapai kemajuan bangsa. Memajukan pertanian, peternakan, perdagangan.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Serikat Dagang Islam merupakan organisasi ekonomi yang berdasarkan pada agama Islam dan perekonomian rakyat sebagai dasar penggeraknya. Di bawah pimpinan H. Samanhudi, perkumpulan ini berkembang pesat hingga menjadi perkumpulan yang berpengaruh. R.M. Tirtoadisuryo pada tahun 1909 mendirikan Sarekat Dagang Islamiah di Batavia. Di bawah ini yang menjadi tujuan berdirinya Sarekat Dagang Islam adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memerdekakan Indonesia dari segala bentuk penjajahan</div>
+                <div class="option"><span class="option-label">B.</span> Memajukan pendidikan</div>
+                <div class="option"><span class="option-label">C.</span> Memajukan pertanian, peternakan, dan perdagangan</div>
+                <div class="option"><span class="option-label">D.</span> Memajukan pendidikan dan usaha yang dapat menaikkan derajat rakyat</div>
+                <div class="option"><span class="option-label">E.</span> Memajukan teknik dan industri</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dilansir dari Jurnal Sarekat Dagang Islam dalam Pergerakan Nasional Indonesia (1912-1927) (2009) Karya Yasmis, Sarekat dagang Islam yang kemudian berkembang menjadi Sarikat islam memiliki beberapa tujuan. Antara lain:
+                </div>
+                <div class="solution-step">
+                    • Mengembangkan jiwa dagang dan kesejahteraan masyarakat pribumi<br>
+                    • Mengembangkan Pendidikan dan pengajaran bagi masyarakat pribumi<br>
+                    • Memperbaiki citra islam di kalangan masyarakat luas<br>
+                    • Membantu kesulitan yang dialami anggota dalam sector ekonomi<br>
+                    • Mengembangkan eksistensi agama islam di Indonesia
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Sejarawan Robert Conquest menjabarkan negara totaliter sebagai suatu negara yang mengakui kekuasaan yang tidak terbatas dalam setiap lingkup publik maupun pribadi dan memperlebar kuasa tersebut selebar mungkin selama dapat dilakukan. Negara totaliter juga negara di mana pemerintah memiliki kekuasaan mutlak dan tidak terbatas, dan hak-hak individu sangat terbatas. Di bawah ini manakah pengaruh negara totaliter dalam aspek politik ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Pemerintah memiliki kekuasaan mutlak dan tidak terbatas, sehingga banyak hal yang ditentukan oleh pemerintah tanpa adanya pemungutan suara atau kontrol yang efektif</div>
+                <div class="option"><span class="option-label">B.</span> Pemerintah dalam negara totaliter memiliki kontrol yang sangat kuat atas perekonomian negara, dan seringkali membatasi aktivitas bisnis dan investasi untuk memenuhi kepentingan politik mereka</div>
+                <div class="option"><span class="option-label">C.</span> Negara totaliter sering membatasi aktivitas sosial warga negara dan melarang organisasi masyarakat sipil</div>
+                <div class="option"><span class="option-label">D.</span> Negara totaliter sering memiliki aparat keamanan yang sangat kuat dan memiliki kekuasaan untuk melakukan tindakan yang drastis untuk mempertahankan keamanan dan stabilitas negara</div>
+                <div class="option"><span class="option-label">E.</span> Negara totaliter sering mempromosikan budaya dan nilai-nilai tertentu dan melarang budaya dan tradisi lain yang dianggap tidak sesuai denga padangan pemerintah</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Negara totaliter memiliki pengaruh yang sangat besar pada kehidupan warga negaranya dari berbagai aspek. Berikut adalah beberapa di antaranya:
+                </div>
+                <div class="solution-step">
+                    • <strong>Politik:</strong> Dalam negara totaliter, pemerintah memiliki kekuasaan mutlak dan tidak terbatas, sehingga banyak hal yang ditentukan oleh pemerintah tanpa adanya pemungutan suara atau kontrol yang efektif.<br>
+                    • <strong>Ekonomi:</strong> Pemerintah dalam negara totaliter memiliki kontrol yang sangat kuat atas perekonomian negara, dan seringkali membatasi aktivitas bisnis dan investasi untuk memenuhi kepentingan politik mereka.<br>
+                    • <strong>Sosial:</strong> Negara totaliter sering membatasi aktivitas sosial warga negaranya dan melarang organisasi masyarakat sipil. Mereka juga sering membatasi akses warga negaranya terhadap informasi dan media, sehingga membatasi pemahaman mereka tentang dunia di sekitar mereka.<br>
+                    • <strong>Keamanan:</strong> Negara totaliter sering memiliki aparat keamanan yang sangat kuat dan memiliki kekuasaan untuk melakukan tindakan yang drastis untuk mempertahankan keamanan dan stabilitas negara.<br>
+                    • <strong>Budaya:</strong> Negara totaliter sering mempromosikan budaya dan nilai-nilai tertentu dan melarang budaya dan tradisi lain yang dianggap tidak sesuai dengan pandangan pemerintah.
+                </div>
+                <div class="solution-step">
+                    Pengaruh negara totaliter pada berbagai aspek kehidupan sangat besar dan sering membatasi kebebasan dan hak-hak individu. Ini membuat hidup dalam negara totaliter seringkali tidak memberikan peluang yang adil bagi warga negaranya untuk mencapai potensi mereka dan hidup dengan kebebasan dan kebahagiaan yang layak.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Sumpah Pemuda merupakan bentuk kesepakatan masyarakat Indonesia untuk mengikat diri dalam satu ikatan kebangsaan. Generasi muda mempunyai kewajiban moral untuk menjaga konsensus tersebut. Apabila generasi muda berkomitmen menjaga kesepakatan akan memberikan dampak positif bagi keberlangsungan bangsa dan negara. Dampak positif yang akan ditimbulkan yaitu semakin kuatnya ikatan nasionalisme bangsa Indonesia. Akan tetapi apbila bangsa Indonesia tidak peduli lagi terhadap hasil konsensus tersebut akan berakibat buruk bagi kehidupan bangsa dan negara. Berdasarkan informasi tersebut, dampak negatif yang bisa timbul apabila kita tidak mengimplementasikan nilai-nilai Sumpah Pemuda yaitu...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Hilangnya kewajiban moral generasi penerus</div>
+                <div class="option"><span class="option-label">B.</span> Melemahnya rasa persatuan dan kesatuan bangsa</div>
+                <div class="option"><span class="option-label">C.</span> Melemahnya ikatan nasionalisme antarwarga masyarakat</div>
+                <div class="option"><span class="option-label">D.</span> Melemahnya rasa hormat pada orang yang lebih tua</div>
+                <div class="option"><span class="option-label">E.</span> Lunturnya ikatan persaudaraan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Sumpah Pemuda memberikan pedoman bagi pemuda Indonesia untuk mencintai Indonesia dari tiga aspek utama, yaitu mencintai Tanah Air Indonesia, Bangsa Indonesia dan Bahasa Indonesia. Sumpah Pemuda adalah sebuah bentuk dari tonggak utama yang dimana ada di dalam sejarah pergerakan daripada kemerdekaan yang ada di Indonesia. Kemudian dari ikrar tersebut akan memiliki sebuah anggapan sebagai sebuah bentuk kristalisasi terhadap semangat untuk dapat menegaskan terbentuknya sebuah cita-cita dari berdirinya Negara Kesatuan Republik Indonesia.
+                </div>
+                <div class="solution-step">
+                    Dampak negatif apabila nilai sumpah pemuda tidak diimplementasikan adalah:
+                </div>
+                <div class="solution-step">
+                    • Negara akan menjadi terpecah belah dikarenakan para pemuda tidak bersatu dalam sebuah bangsa Indonesia.<br>
+                    • Negara akan menjadi terpecah belah dikarenakan para pemuda memiliki tanah airnya sendiri dan bukan tanah air Indonesia<br>
+                    • Bahasa Indonesia tidak akan digunakan dikarenakan Bahasa Indonesia adalah sebuah bangsa yang diakui di dalam sumpah pemuda.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Sumpah Pemuda memang menjadi tonggak sejarah kemerdekaan Indonesia dan juga merupakan salah satu titik awal dari perjuangan bangsa Indonesia dalam mencapai kemerdekaan. Menjadi suatu titik awal pastinya Sumpah Pemuda mengandung nilai-nilai yang tidak tergantikan didalamnya, salah satunya adalah perasaan menghargai dan mencintai bangsa Indonesia. Makna dan nilai-nilai dari sumpah pemuda dapat diterapkan dalam kehidupan sehari-hari baik dalam lingkungan keluarga, lingkungan sekolah maupun pada lingkungan masyarakat. Berikut merupakan penerapan nilai Sumpah Pemuda yang dilaksanakan dalam kehidupan bermasyarakat antara lain...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menerapkan sikap saling tolong-menolong sesama anggota keluarga, artinya jika terdapat salah satu anggota yang membutuhkan bantuan keluarga sebagai lingkungan terdekat harusnya bisa menolong satu sama lain.</div>
+                <div class="option"><span class="option-label">B.</span> Menjalin kerjasama sesama warga untuk mencapai suatu tujuan yang sama, seperti melakukan pembangunan desa, meningkatkan fasilitas desa, dan lain sebagainya.</div>
+                <div class="option"><span class="option-label">C.</span> Tidak hanya tolong menolong saat ada masalah saja, tetapi bergotong royong atau tolong menolong dalam hal lain seperti menjaga kebersihan lingkungan keluarga, mengerjakan pekerjaan rumah juga perlu dilakukan secara bersama-sama.</div>
+                <div class="option"><span class="option-label">D.</span> Mengikuti upacara bendera yang diadakan secara rutin dengan tertib untuk menghormati bangsa Indonesia serta sejarah perjuang didalamnya.</div>
+                <div class="option"><span class="option-label">E.</span> Mematuhi peraturan sekolah untuk mencegah terjadinya pelanggaran-pelanggaran yang dapat mengarah pada suatu konflik atau masalah berdasarkan pada satu nilai persatuan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nilai luhur yang terkandung dalam Sumpah Pemuda adalah cinta tanah air, artinya kita bangga dan setia terhadap bangsa dan negara Indonesia. Rasa cinta tanah air juga dapat menumbuhkan rasa nasionalisme. Contohnya, menggunakan bahasa Indonesia dalam kehidupan sehari-hari dan bangga menggunakan produk buatan Indonesia. Dengan demikian, peranan sumpah pemuda dalam mempersatukan bangsa Indonesia adalah dengan memberikan identitas Indonesia bagi perjuangan kemerdekaan Indonesia.
+                </div>
+                <div class="solution-step">
+                    Sebagai salah satu contohnya adalah menjalin kerjasama sesama warga untuk mencapai suatu tujuan yang sama, seperti melakukan pembangunan desa, meningkatkan fasilitas desa, dan lain sebagainya.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Bangsa Indonesia sudah memahami betapa pentingnya rasa nasionalisme bahkan sebelum merdeka. Rasa nasionalisme ini telah tertuang dalam peristiwa sumpah pemuda pada tanggal 28 oktober 1928. Sumpah pemuda mengandung makna dan nilai-nilai yang sangat mendalam bagi bangsa Indonesia. Salah satu nilai yang terkandung dalam sumpah pemuda adalah nilai semangat persaudaraan yang dapat dilihat dari sikap ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Saling menyayangi dan bertanggung jawab satu sama lain</div>
+                <div class="option"><span class="option-label">B.</span> Menerima dan menghargai siapa saja untuk bisa beraktivitas dalam lingkungan tanpamembedakan status seseorang</div>
+                <div class="option"><span class="option-label">C.</span> Setia serta bangga terhadap bangsa dan negara indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Bekerja sama demi mencapai satu tujuan yang sama merupakan suatu kebudayaan yangkuat dalam bangsa Indonesia</div>
+                <div class="option"><span class="option-label">E.</span> Mengutamakan kepentingan bangsa di atas kepentingan lainnya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Sumpah Pemuda adalah satu bentuk komitmen putra-putri bangsa untuk memperjuangkan tanah air dan bersatu demi tanah air. Dalam Sumpah Pemuda, kebanggaan akan tanah air sendiri terlihat jelas dari para pemuda. Melalui Sumpah Pemuda, para pemuda telah berkomitmen untuk mengutamakan kepentingan bangsa, yakni bangsa Indonesia. Sumpah Pemuda menegaskan bahwa bahasa persatuan adalah Bahasa Indonesia. Dalam masa kemerdekaan bahasa Indonesia berfungsi sebagai alat komunikasi antarsuku. Fungsi Bahasa Indonesia sebagai bahasa persatuan adalah mempersatukan bangsa yang terdiri dari beragam suku, ras, dan golongan. Menjunjung tinggi bahasa persatuan, yakni Bahasa Indonesia, juga menandakan bahwa kepentingan nasional lebih diutamakan dibanding kepentingan golongan atau kelompok tertentu.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Kewaspadaan nasional membutuhkan kerja sama dan sinergi antar lembaga pemerintah, masyarakat, dan sektor swasta untuk mencapai tujuannya. Hal ini sesuai tujuan daripada kewaspadaan nasional untuk memastikan keamanan dan keselamatan masyarakat dan negara. Di bawah ini yang tidak termasuk kedalam aspek kewaspadaan nasional yang tepat adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memastikan bahwa negara siap dan mampu menangani dan memulihkan dari bencana</div>
+                <div class="option"><span class="option-label">B.</span> Melindungi informasi dan sistem informasi penting dari ancaman cyber dan kemanan informasi</div>
+                <div class="option"><span class="option-label">C.</span> Memastikan ketersediaan pangan dan perlindungan terhadap ancaman kesehata pangan</div>
+                <div class="option"><span class="option-label">D.</span> Memastikan keamanan dan keselamatan transportasi dan pencegahan terhadap ancaman terhadap transportasi</div>
+                <div class="option"><span class="option-label">E.</span> Memastikan ketersediaan dan keamanan sumber daya energi yang dimanfaatkan untuk kelompok tertentu tidak diganggu</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam hal ini, lebih baik menggunakan istilah "memastikan ketersediaan dan keamanan sumber daya energi yang digunakan oleh masyarakat secara adil dan merata". Dengan demikian, tujuan Kewaspadaan Nasional adalah untuk memastikan bahwa sumber daya energi yang dibutuhkan oleh masyarakat tersedia dan terjaga secara aman, sehingga dapat digunakan dengan adil dan merata oleh seluruh masyarakat.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Perjuangan bangsa Indonesia melawan penjajah awalnya bersifat kedaerahan tanpa koordinasi yang baik. Perlawanan itu ternyata mudah dipatahkan oleh penjajah. Pada 1908 masa kebangkitan nasional dimulai. Sejak 1908 perjuangan dilakukan secara terkoordinasi. Kondisi ini menjadi strategi baru bangsa Indonesia melawan penjajah. Fakta sejarah tersebut memberikan pelajaran bahwa....
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Strategi mengalahkan penjajah harus dilakukan secara sabar</div>
+                <div class="option"><span class="option-label">B.</span> Perjuangan harus dilandasi semangat persatuan dan kesatuan</div>
+                <div class="option"><span class="option-label">C.</span> Bangsa Indonesia merupakan bangsa yang cerdik dalam melawan penjajah</div>
+                <div class="option"><span class="option-label">D.</span> Penjajah takut pada pergerakan kebangkitan nasional bangsa, Indonesia</div>
+                <div class="option"><span class="option-label">E.</span> Mewujudkan cita-cita dan tujuan nasional Indonesia</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Fakta yang paling tepat sesuai dengan soal ini adalah perjuangan harus dilandasi semangat persatuan dan kesatuan.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Tekad para pemuda dalam mempersatukan pemuda se-Nusantara merupakan salah satu langkah perjuangan dalam meraih kemerdekaan. Perjuangan melawan penjajah yang awalnya dilakukan sendiri-sendiri oleh para pemuda kini dapat dipersatukan melalui Sumpah Pemuda. Semangat juang tersebut perlu dicontoh oleh generasi muda bangsa Indonesia. Nilai positif Sumpah Pemuda yang dapat dijadikan contoh oleh generasi saat ini ialah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Semangat untuk mempersatukan tanah air Indonesia</div>
+                <div class="option"><span class="option-label">B.</span> Semangat untuk membangun daerah kelahiran</div>
+                <div class="option"><span class="option-label">C.</span> Semangat untuk memperkuat etnosentrisme</div>
+                <div class="option"><span class="option-label">D.</span> Semangat untuk lepas dari kolonialisme</div>
+                <div class="option"><span class="option-label">E.</span> Semangat untuk mensejahterakan bangsa</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nilai positif Sumpah Pemuda yang dapat dijadikan contoh oleh generasi saat ini ialah Semangat untuk mempersatukan tanah air Indonesia.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Perhatikan salah satu bunyi Sumpah Pemuda berikut! "Kami putra dan putri Indonesia, menjunjung bahasa persatuan, bahasa Indonesia." Kalimat tersebut mengandung pengertian bahwa....
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Bahasa Indonesia dijadikan sebagai alat komunikasi efektif antarsuku</div>
+                <div class="option"><span class="option-label">B.</span> Para pemuda berupaya menjadikan bahasa Indonesia sebagai bahasa internasional</div>
+                <div class="option"><span class="option-label">C.</span> Putra-putri Indonesia harus menggunakan bahasa Indonesia dalam kehidupan sehari-hari</div>
+                <div class="option"><span class="option-label">D.</span> Indonesia hanya memiliki bahasa Indonesia yang dapat digunakan sebagai alat komunikasi</div>
+                <div class="option"><span class="option-label">E.</span> Alat komunikasi bangsa Indonesia adalah Bahasa Indonesia</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    "Kami putra dan putri Indonesia, menjunjung bahasa persatuan, bahasa Indonesia." Kalimat tersebut mengandung pengertian bahwa Bahasa Indonesia dijadikan sebagai alat komunikasi efektif antarsuku.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+            }
+        }
+    </script>
+    <script src="../../dark-mode-toggler.js" defer></script>
+</body>
+</html>

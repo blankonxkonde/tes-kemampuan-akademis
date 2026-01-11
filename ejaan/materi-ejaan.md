@@ -1,4 +1,8 @@
-https://ejaan.kemendikdasmen.go.id/ atau https://mkwk.unindra.ac.id/materi/media/p4.pdf
+EYD V dapat diakses di https://ejaan.kemendikdasmen.go.id/ atau file drive di bawah
+--mulai iframe link pdf drive ini--
+https://drive.google.com/file/d/1NeK6p1_3NcAs-CEu-hOJVRgBLmUAhbs2/view?usp=drive_link
+--mulai iframe link pdf drive ini--
+
 
 # EYD Edisi V: Pemakaian Huruf, Pemakaian Tanda Baca, dan Penulisan Kata
 

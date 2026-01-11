@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Nasionalisme - Tema 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .option {
+            margin-bottom: 10px;
+            padding: 8px;
+            padding-left: 15px;
+            border-left: 3px solid #ddd;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            border-left-color: #667eea;
+        }
+        
+        .option-label {
+            font-weight: bold;
+            color: #764ba2;
+            margin-right: 10px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 15px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Nasionalisme - Tema 3</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Nasionalisme</strong>
+            <p>Nasionalisme adalah semangat atau sikap yang harus dimiliki oleh setiap warga negara Indonesia dalam mencintai tanah airnya. Nasionalisme mengandung arti kesetiaan dan kebanggaan terhadap negara dan bangsa Indonesia serta kepedulian terhadap nasib dan masa depannya. Soal-soal ini menguji pemahaman tentang nilai-nilai nasionalisme, peran nasionalisme dalam pembangunan bangsa, dan implementasinya dalam kehidupan sehari-hari.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                Sebagai negara yang memiliki karakteristik keragaman budaya atau multikultural, Indonesia sangat rentan terhadap ancaman di bidang sosial budaya. Perbedaan juga bisa menjadi pisau bermata dua yang bisa menjadi kelebihan sekaligus kekurangan bagi Negara Indonesia. Apa peran nasionalisme yang tepat untuk menghadapi hal tersebut? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Bersikap objektif dan tidak terlibat dalam masalah politik negara</div>
+                <div class="option"><span class="option-label">B.</span> Aktif mengikuti kegiatan nasional agar memiliki jiwa nasionalisme</div>
+                <div class="option"><span class="option-label">C.</span> Mengenal berbagai budaya yang ada di masyarakat Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Menghadiri forum seperti perkumpulan lintas agama yang beredar</div>
+                <div class="option"><span class="option-label">E.</span> Menerapkan nilai sila kedua dalam kehidupan sehari-hari</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nasionalisme adalah jiwa rasa mencintai suatu negara yang dilakukan secara spontan dan berasal dari hati sanubari. Dengan adanya multikultural negara Indonesia yang terdiri dari banyak suku bahasa dan adat istiadat maka sangat perlu adanya jiwa nasionalisme pada diri kita. Oleh karena itu dalam kehidupan bersosial budaya harusnya kita mengenal budaya yang ada di masyarakat supaya kita bisa menghargai perbedaan yang ada di masyarakat.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                Menanamkan nilai-nilai nasionalisme dalam kurikulum pendidikan menjadi salah satu langkah penting untuk membangun semangat kebangsaan yang kuat di kalangan generasi muda. Dalam konteks ini, bagaimana seharusnya kurikulum pendidikan dirancang agar efektif dalam menanamkan nilai-nilai nasionalisme? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memperkenalkan sejarah nasional yang holistik, mencakup berbagai aspek kehidupan masyarakat dan kebudayaan di Indonesia.</div>
+                <div class="option"><span class="option-label">B.</span> Mengesampingkan budaya lokal dan hanya memfokuskan pada narasi nasional dalam pengajaran sejarah.</div>
+                <div class="option"><span class="option-label">C.</span> Meminimalisir pembelajaran tentang nilai-nilai nasionalisme dan lebih menekankan pada pembentukan keterampilan teknis.</div>
+                <div class="option"><span class="option-label">D.</span> Mengabaikan keragaman budaya di Indonesia dan menekankan satu pandangan nasional yang homogen.</div>
+                <div class="option"><span class="option-label">E.</span> Menghilangkan pembelajaran tentang sejarah nasional dan beralih ke kurikulum yang lebih global.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kurikulum pendidikan yang efektif dalam menanamkan nilai-nilai nasionalisme harus mencakup pemahaman yang holistik tentang sejarah nasional, meliputi berbagai aspek kehidupan masyarakat dan kebudayaan di Indonesia. Dengan memperkenalkan sejarah nasional yang komprehensif, siswa dapat mengembangkan rasa kebanggaan dan pemahaman yang lebih dalam terhadap nilai-nilai, perjuangan, dan prestasi bangsa. Pilihan jawaban B, C, D, dan E tidak sejalan dengan prinsip membangun nilai-nilai nasionalisme yang inklusif dan mendalam. Mengesampingkan budaya lokal, meminimalisir pembelajaran tentang nilai-nilai nasionalisme, mengabaikan keragaman budaya, atau menghilangkan pembelajaran tentang sejarah nasional adalah pendekatan yang tidak memadai dalam membangun semangat kebangsaan.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                Kontribusi nasionalisme dalam pembangunan bangsa tidak hanya terbatas pada aspek politik dan ekonomi, tetapi juga dalam bidang ideologi. Ideologi nasional yang kuat memiliki peran penting dalam membentuk identitas dan kebersamaan dalam masyarakat. Bagaimana nasionalisme dapat memberikan kontribusi yang signifikan dalam pembangunan bangsa di bidang ideologi? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memperkuat kesadaran akan ideologi nasional melalui pendidikan dan sosialisasi yang terencana.</div>
+                <div class="option"><span class="option-label">B.</span> Mengabaikan ideologi nasional dan mengadopsi ideologi luar sebagai cara untuk mencapai modernitas.</div>
+                <div class="option"><span class="option-label">C.</span> Mempromosikan pluralisme ideologi yang mengakomodasi berbagai pandangan masyarakat.</div>
+                <div class="option"><span class="option-label">D.</span> Memperkuat hegemoni ideologi nasional dengan menekan perbedaan pandangan dan kritik konstruktif.</div>
+                <div class="option"><span class="option-label">E.</span> Mengurangi peran masyarakat dalam pembentukan dan pengembangan ideologi nasional.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nasionalisme memiliki peran penting dalam pembangunan bangsa di bidang ideologi. Salah satu kontribusi yang signifikan adalah melalui memperkuat kesadaran akan ideologi nasional melalui pendidikan dan sosialisasi yang terencana. Pendekatan ini penting karena melibatkan proses pembelajaran dan pemahaman yang mendalam terkait nilai-nilai, prinsip, dan tujuan yang diusung oleh ideologi nasional. Melalui pendidikan yang terencana, masyarakat dapat memperoleh pengetahuan dan pemahaman yang lebih baik tentang ideologi nasional, termasuk nilai-nilai yang dianut dan visi pembangunan bangsa. Hal ini membantu menciptakan kesadaran kolektif akan pentingnya memperkuat identitas nasional dan membangun kebersamaan dalam masyarakat. Sosialisasi juga menjadi aspek penting dalam memperkuat kesadaran ideologi nasional. Melalui berbagai kegiatan sosial, seperti upacara nasional, peringatan hari-hari bersejarah, dan kegiatan komunitas yang mendukung nilai-nilai nasionalisme, masyarakat dapat semakin terhubung dengan ideologi nasional dan merasa terlibat dalam membangun bangsa.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                Pemerintah sering kali mengambil kebijakan yang bertujuan untuk memperkuat nasionalisme dan membangun rasa kebangsaan yang kuat di kalangan masyarakat. Bagaimana seharusnya kita mendukung kebijakan-kebijakan tersebut agar nasionalisme dapat tumbuh dan berkembang? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Meningkatkan partisipasi dalam kegiatan sosial dan budaya yang memperkuat identitas nasional.</div>
+                <div class="option"><span class="option-label">B.</span> Menghindari interaksi dengan budaya asing dan memprioritaskan produk-produk dalam negeri.</div>
+                <div class="option"><span class="option-label">C.</span> Memproteksi pasar dalam negeri dengan menerapkan kebijakan proteksionis terhadap produk luar.</div>
+                <div class="option"><span class="option-label">D.</span> Menolak adanya pengaruh budaya dan gagasan baru yang dapat merusak nilai-nilai nasional.</div>
+                <div class="option"><span class="option-label">E.</span> Menjauhi teknologi dan inovasi dari luar negeri untuk menjaga kedaulatan teknologi nasional.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Untuk mendukung kebijakan-kebijakan pemerintah yang bertujuan memperkuat nasionalisme, penting bagi masyarakat untuk terlibat aktif dalam kegiatan sosial dan budaya yang memperkuat identitas nasional. Dengan meningkatkan partisipasi dalam kegiatan semacam ini, nasionalisme dapat tumbuh dan berkembang secara signifikan. Melalui partisipasi dalam kegiatan sosial dan budaya yang memperkuat identitas nasional, masyarakat dapat lebih memahami dan menghargai warisan budaya, tradisi, bahasa, dan nilai-nilai yang dijunjung tinggi dalam masyarakat. Hal ini akan memperkuat rasa kebangsaan dan ikatan antaranggota masyarakat dalam merawat dan memajukan kebudayaan nasional.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                Ekosistem lingkungan hidup merupakan aset berharga yang harus dilestarikan demi kelangsungan kehidupan dan kesejahteraan manusia. Pemerintah dan masyarakat memiliki peran penting dalam menjaga dan mempertahankan ekosistem lingkungan hidup agar tetap lestari. Bagaimana seharusnya pemerintah dan masyarakat berperan dalam menjaga keberlanjutan ekosistem lingkungan hidup? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Pemerintah harus memberlakukan kebijakan yang ketat terkait pengelolaan sumber daya alam dan pelestarian lingkungan.</div>
+                <div class="option"><span class="option-label">B.</span> Masyarakat harus lebih sadar dan aktif dalam menjaga kebersihan lingkungan, seperti mengurangi penggunaan plastik sekali pakai.</div>
+                <div class="option"><span class="option-label">C.</span> Pemerintah dan masyarakat harus bekerja sama dalam mendukung program penanaman pohon dan konservasi habitat alami.</div>
+                <div class="option"><span class="option-label">D.</span> Pemerintah perlu mengalokasikan dana yang besar untuk melakukan penelitian dan inovasi dalam bidang keberlanjutan lingkungan.</div>
+                <div class="option"><span class="option-label">E.</span> Masyarakat perlu mengubah gaya hidup konsumtif menjadi lebih ramah lingkungan, misalnya dengan mengurangi konsumsi energi dan air.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pada soal ini, menjaga keberlanjutan ekosistem lingkungan hidup membutuhkan peran aktif baik dari pemerintah maupun masyarakat. Pilihan jawaban C menjadi pilihan terbaik karena menggarisbawahi pentingnya kerja sama antara pemerintah dan masyarakat dalam mendukung program penanaman pohon dan konservasi habitat alami. Pemerintah memiliki peran penting dalam memberlakukan kebijakan yang ketat terkait pengelolaan sumber daya alam dan pelestarian lingkungan (pilihan jawaban A). Namun, pilihan jawaban C menjadi pilihan terbaik karena mencakup kerja sama yang diperlukan antara pemerintah dan masyarakat dalam menjaga keberlanjutan ekosistem lingkungan hidup. Melalui program penanaman pohon dan konservasi habitat alami, baik pemerintah maupun masyarakat dapat berperan aktif dalam menjaga dan mempertahankan ekosistem lingkungan hidup.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                Pada tingkat politis, nasionalisme mengandung arti yang mendalam dalam membentuk identitas suatu bangsa dan mendorong perjuangan kolektif. Bagaimana konsep nasionalisme politis ini tercermin dalam upaya merebut kemerdekaan, mengakhiri penjajahan, dan juga sebagai pendorong untuk memajukan masyarakat, bangsa, dan negara? (TWK CPNS 2023)
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Nasionalisme politis berperan sebagai alat untuk memaksakan kehendak pada negara lain dan menegakkan dominasi tanpa perdamaian.</div>
+                <div class="option"><span class="option-label">B.</span> Manifestasi nasionalisme yang kuat mengakibatkan permusuhan antarbangsa dan ketegangan yang berkepanjangan.</div>
+                <div class="option"><span class="option-label">C.</span> Makna nasionalisme politis tercermin dalam penolakan terhadap keberagaman budaya dan identitas etnis, mengakibatkan ketidakharmonisan dalam masyarakat.</div>
+                <div class="option"><span class="option-label">D.</span> Kesadaran nasional yang kuat mendorong suatu bangsa untuk terbuka terhadap ide-ide dan pengaruh baru yang membawa kemajuan bagi seluruh bangsa.</div>
+                <div class="option"><span class="option-label">E.</span> Nasionalisme politis bertujuan untuk menciptakan supremasi rasial di dalam wilayah negara, mengabaikan persamaan hak semua warga negara.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nasionalisme politis mencakup kesadaran kolektif dari anggota suatu bangsa terhadap identitas dan kepentingan bersama. Dalam konteks merebut kemerdekaan dan mengakhiri penjajahan, nasionalisme politis berperan sebagai kekuatan pendorong yang kuat. Bangsa yang ingin merdeka akan menggalang semangat nasionalisme untuk bersatu dan berjuang bersama demi kemerdekaan dari penjajahan atau kekuasaan asing. Selain itu, nasionalisme politis juga dapat menjadi pendorong bagi kemajuan masyarakat, bangsa, dan negara. Ketika kesadaran nasional bangkit, rakyat bangsa tersebut biasanya memiliki semangat untuk memajukan diri dan negaranya. Mereka akan terbuka terhadap ide-ide baru, inovasi, dan pengaruh luar yang dapat membawa kemajuan bagi seluruh bangsa, baik dalam bidang politik, ekonomi, maupun sosial.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                Memberikan sosialisasi kepada pelajar yang berisi pancasila dan pendidikan pancasila di lingkungan sekolah biasa disebut dengan memasyarakatkan pancasila di lingkungan sekolah. Memasyarakatkan pancasila di lingkungan sekolah memiliki tujuan yaitu untuk...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Membangun sikap semangat kompetitif bagi kaum pelajar dan mahasiswa</div>
+                <div class="option"><span class="option-label">B.</span> Mewujudkan masyarakat khususnya pelajar dan mahasiswa agar mereka sadar hukum</div>
+                <div class="option"><span class="option-label">C.</span> Agar pelajar dan mahasiswa memiliki sikap demokrasi yang tertib dan beradab</div>
+                <div class="option"><span class="option-label">D.</span> Menjadikan warga negara yang berkarakter dalam menjunjung nilai kemanusiaan</div>
+                <div class="option"><span class="option-label">E.</span> Menumbuhkan jiwa dan semangat nasionalisme dan rasa cinta tanah air</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jiwa Pancasila sangat perlu ditumbuhkan sedari dini baik dalam lingkungan keluarga, lingkungan bermasyarakat serta dalam lingkungan sekolah. Upaya memasyarakatkan Pancasila salah satunya bertujuan untuk menumbuhkan jiwa dan semangat nasionalisme serta rasa cinta tanah air siswa kepada negara.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                Peristiwa Sumpah Pemuda pada tanggal 28 Oktober 1928 telah memberikan semangat kepada para pemuda Indonesia untuk bersatu. Dengan dilaksanakannya Sumpah Pemuda, rasa nasionalisme para pemuda saat itu mulai muncul secara nyata. Bentuk nyata rasa nasionalisme tersebut terimplementasi pada isi Sumpah Pemuda. Bentuk nyata implementasi rasa nasionalisme yang dimaksud adalah
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Meyakini kemerdekaan merupakan hak segala bangsa</div>
+                <div class="option"><span class="option-label">B.</span> Memilih Ir. Soekarno menjadi Presiden Republik Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Membantu persekutuan para pemuda di daerah-daerah</div>
+                <div class="option"><span class="option-label">D.</span> Mengakui bahasa Indonesia sebagai bahasa pemersatu</div>
+                <div class="option"><span class="option-label">E.</span> Mengakui NKRI sebagai negara kepulauan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Bentuk nyata implementasi rasa nasionalisme yang dimaksud adalah Mengakui bahasa Indonesia sebagai bahasa pemersatu.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                Nasionalisme dalam beberapa kasus dapat menjadi alat untuk mempersatukan orang-orang dari berbagai latar belakang budaya, agama, dan etnis dalam suatu negara. Hal ini terjadi ketika seseorang merasa bangga dengan negaranya, mereka cenderung berusaha untuk mempertahankan integritas dan keamanan negara tersebut. Namun, nasionalisme juga dapat memperburuk konflik dan perbedaan diantara orang-orang. Di bawah ini yang tidak termasuk bentuk yang memperburuk nasionalisme adalah...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Ketakutan atau kebencian terhadap orang asing atau orang yang berbeda latar belakang budaya dan etnisnya</div>
+                <div class="option"><span class="option-label">B.</span> Nasionalisme yang berlebihan dapat digunakan sebagai alat untuk membenarkan diskriminasi terhadap kelompok minoritas</div>
+                <div class="option"><span class="option-label">C.</span> Nasionalisme yang berlebihan dapat mendorong pemikiran bahwa negara atau kelompok tertentu lebih superior dibanding kelompok lainnya</div>
+                <div class="option"><span class="option-label">D.</span> Nasionalisme yang bersifat inklusif cenderung memperkuat persatuan dan kesatuan</div>
+                <div class="option"><span class="option-label">E.</span> Nasionalisme yang tidak inklusif menghambat pengakuan hak asasi manusia semua warga negara terutama hak-hak minoritas</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nasionalisme yang bersifat inklusif cenderung memperkuat persatuan dan kesatuan, sehingga tidak termasuk bentuk yang memperburuk nasionalisme. Nasionalisme yang inklusif dapat menghargai keragaman budaya dan etnis serta menghormati hak asasi manusia semua warga negara, sehingga dapat memperkuat persatuan di antara orang-orang dari berbagai latar belakang budaya, agama, dan etnis dalam suatu negara.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Semangat nasionalisme dan patriotisme adalah suatu sikap politik atau pemahaman dari individu, kelompok dan masyarakat sebagai suatu bangsa yang memiliki keselarasan kebudayaan dan wilayah. Semangat Nasionalisme sejatinya tertuang dalam ideologi Pancasila yang terkandung dalam sila ke...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Ketuhanan Yang Maha Esa</div>
+                <div class="option"><span class="option-label">B.</span> Kemanusiaan yang adil dan beradab Persatuan Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Persatuan Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan perwakilan</div>
+                <div class="option"><span class="option-label">E.</span> Keadilan sosial bagi seluruh rakyat Indonesia</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Semangat nasionalisme merupakan cerminan dari sila ke-3 yang terdapat pada butir ke-3 dan 4. Butir ke-3 yakni mengembangkan rasa cinta kepada tanah air dan bangsa dan butir ke-4 mengembangkan rasa kebanggaan berkebangsaan dan bertanah air Indonesia.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Keberagaman menjadi pisau bermata dua bagi Indonesia. Jika masyarakat menganggap hal itu positif, maka keberagaman akan mengakibatkan bersatunya seluruh komponen masyarakat Indonesia. Jika masyarakat menganggap hal itu negatif maka akan berakibat pada perpecahan karena perbedaan budaya antara satu wilayah dengan wilayah lainnya. Peran nasionalisme yang diwujudkan melalui hal ini contohnya ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Teman-teman Nia yang tertawa ketika Nia menari tarian daerahnya</div>
+                <div class="option"><span class="option-label">B.</span> Mika tidak memilih-milih dalam berteman meskipun berbeda suku</div>
+                <div class="option"><span class="option-label">C.</span> Fardi tidak keberatan untuk berkumpul bersama temannya yang berbeda agama</div>
+                <div class="option"><span class="option-label">D.</span> Tidak sedikit yang membicarakan Mikey karena warna kulitnya yang gelap</div>
+                <div class="option"><span class="option-label">E.</span> Draken selalu memberikan yang terbaik walaupun atasannya berbeda kepercayaan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Keberagamaan menjadi hal yang mutlak bagi negara Indonesia oleh karena itu kita harus mempunyai jiwa nasionalisme yang kuat dan tertanam pada diri kita masing-masing dalam kehidupan berbangsa dan bernegara supaya tidak terjadi perpecahan dan konflik dalam masyarakat, sehingga sebagai masyarakat kita harus mampu menempatkan dan membaur dimanapun kita berada dengan masyarakat dan lingkungan sekitar.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Rasa cinta terhadap negara dapat mendorong partisipasi aktif dalam pembangunan, baik itu di bidang ekonomi, politik, sosial, dan budaya. Sehingga hal ini dapat membantu mempercepat pembangunan nasional. Di bawah ini yang termasuk ke dalam tindakan yang mendorong pembangunan nasional dalam aspek ekonomi ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Mendorong partisipasi aktif dalam kegiatan sosial seperti kerja bakti, donasi, dan relawan untuk membantu masyarakat yang membutuhkan</div>
+                <div class="option"><span class="option-label">B.</span> Mendorong kewirausahaan dan inovasi teknologi di bidang industri, pertanian, dan jasa yang dapat meningkatkan daya saing ekonomi negara</div>
+                <div class="option"><span class="option-label">C.</span> Memberikan fasilitas dan dukungan bagi pelaku usaha kecil dan menengah dengan bunga yang besar</div>
+                <div class="option"><span class="option-label">D.</span> Membatasi investasi asing dan lebih fokus pada investasi dalam negeri</div>
+                <div class="option"><span class="option-label">E.</span> Menjalin kerja sama antar lembaga negara dan masyarakat dalam upaya meningkatkan kualitas pelayanan publik</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam aspek ekonomi, pembangunan nasional dapat ditingkatkan dengan mendorong kewirausahaan dan inovasi teknologi di berbagai sektor, seperti industri, pertanian, dan jasa. Hal ini dapat meningkatkan daya saing ekonomi negara, menciptakan lapangan kerja baru, meningkatkan kualitas produk dan jasa, dan meningkatkan pertumbuhan ekonomi secara keseluruhan. Dengan memberikan dukungan kepada pelaku usaha kecil dan menengah untuk berkembang, serta memfasilitasi investasi yang berkelanjutan, negara dapat meningkatkan kemampuan ekonomi dalam jangka panjang.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Nasionalisme adalah semangat atau sikap yang harus dimiliki oleh setiap warga negara Indonesia dalam mencintai tanah airnya. Arti dari nasionalisme adalah kesetiaan dan kebanggaan terhadap negara dan bangsa Indonesia serta kepedulian terhadap nasib dan masa depannya. Nasionalisme dan kepentingan nasional adalah dua konsep yang erat kaitannya dan saling mempengaruhi. Pernyataan di bawah ini yang tidak sesuai adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Nasionalisme sebagai kesadaran akan identitas nasional, nilai-nilai, dan kebudayaan suatu bangsa akan mempengaruhi kepentingan nasional dalam hal pengambilan keputusan dan tindakan yang diambil oleh suatu negara dalam memperjuangkan kepentingannya</div>
+                <div class="option"><span class="option-label">B.</span> Kepentingan nasional adalah tujuan dan kepentingan yang ingin dicapai oleh suatu negara untuk memperjuangkan kepentingan rakyatnya, dan nasionalisme dapat menjadi salah satu faktor yang mempengaruhi bagaimana negara tersebut memandang dan mengartikan kepentingannya</div>
+                <div class="option"><span class="option-label">C.</span> Nasionalisme hanya sebatas kesadaran akan identitas nasional, nilai-nilai dan kebudayaan suatu bangsa dan kepentingan nasional sendiri hanya merupakan tujuan dan kepentingan negara dalam memperjuangkan kepentingan rakyatnya</div>
+                <div class="option"><span class="option-label">D.</span> Nasionalisme dan kepentingan nasional juga saling berkaitan dalam hal menjaga kedaulatan negara dan memperkuat posisi negara di tingkat internasional. Nasionalisme dapat memacu kebanggaan terhadap negara sehingga mendorong rakyatnya untuk memperjuangkan kepentingan nasional</div>
+                <div class="option"><span class="option-label">E.</span> Nasionalisme dapat mempengaruhi kebijakan luar negeri suatu negara dalam memperjuangkan kepentingannya di tingkat internasional. Negara yang memiliki rasa nasionalisme yang tinggi cenderung lebih berani dalam mengambil tindakan untuk memperjuangkan kepentingannya di tingkat internasional</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pernyataan ini tidak benar karena kepentingan nasional tidak hanya terkait dengan memperjuangkan kepentingan rakyatnya saja, tetapi juga termasuk dalam hal menjaga kedaulatan negara, memperkuat posisi negara di tingkat internasional, dan mencapai tujuan-tujuan strategis lainnya yang berhubungan dengan kepentingan nasional. Nasionalisme sebagai kesadaran akan identitas nasional, nilai-nilai, dan kebudayaan suatu bangsa dapat mempengaruhi pandangan dan tindakan negara dalam memperjuangkan kepentingannya, termasuk dalam hal mencapai tujuan-tujuan strategis tersebut.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Generasi muda dapat membangun kebersamaan dan solidaritas dengan sesama anak bangsa, tanpa memandang suku, agama dan ras. Hal ini dapat membantu memperkuat persatuan dan kesatuan bangsa dalam memperjuangkan kepentingan nasional. Di bawah ini bentuk tindakan nyata generasi muda dalam membangun kebersamaan dan solidaritas dalam aspek kebudayaan adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Membangun dialog dan diskusi terbuka dengan orang-orang dari berbagai latar belakang untuk memahami pandangan, perspektif, dan pengalaman hidup yang berbeda-beda</div>
+                <div class="option"><span class="option-label">B.</span> Membangun kesadaran akan pentingnya persatuan dan kesatuan bangsa melalui kampanye sosial dan pendidikan publik tentang nilai-nilai kebangsaan dan pentingnya merawat persatuan dan kesatuan bangsa</div>
+                <div class="option"><span class="option-label">C.</span> Mendukung dan terlibat dalam kegiatan kebudayaan dan seni yang mewakili budaya dan keanekaragaman indonesia, seperti pementasan tari tradisional atau konser musik</div>
+                <div class="option"><span class="option-label">D.</span> Terlibat dalam kegiatan lingkungan untuk membantu masyarakat dalam memperbaiki lingkungan hidup, baik di perkotaan maupun pedesaan, sehingga dapat mempererat hubungan sosial</div>
+                <div class="option"><span class="option-label">E.</span> Berpartisipasi dalam kegiatan sosial dan keagamaan bersama dengan orang-orang dari berbagai latar belakang untuk membangun toleransi dan saling menghargai perbedaan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Tindakan nyata generasi muda dalam membangun kebersamaan dan solidaritas dalam aspek kebudayaan adalah dengan mendukung dan terlibat dalam kegiatan kebudayaan dan seni yang mewakili budaya dan keanekaragaman Indonesia, seperti pementasan tari tradisional atau konser musik. Melalui kegiatan ini, generasi muda dapat mempererat hubungan sosial dengan orang-orang dari berbagai latar belakang, dan membangun rasa saling menghargai dan toleransi terhadap perbedaan budaya yang ada di Indonesia. Dengan memperkuat kebersamaan dan solidaritas dalam aspek kebudayaan ini, generasi muda dapat memperkuat persatuan dan kesatuan bangsa dalam memperjuangkan kepentingan nasional.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Kasus intoleransi terhadap kelompok minoritas semakin meningkat di era digital. Beberapa waktu yang lalu, seorang pengguna media sosial dengan akun anonim menyebar berita bohong yang menghasut dan merendahkan kelompok minoritas di Indonesia. Tindakan semacam ini dapat memicu konflik antar kelompok dan merusak persatuan dan kesatuan bangsa. Oleh karena itu, penting bagi kita untuk dapat memilah informasi yang benar dan meningkatkan kesadaran nasionalisme di era digital. Di bawah ini contoh tindakan memilah informasi yang benar dan meningkatkan kesadaran nasionalisme di era digital kecuali....
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Cek sumber informasi sebelum membagikan di media sosial</div>
+                <div class="option"><span class="option-label">B.</span> Menyebarkan berita bohong atau hoaks yang mengandung unsur SARA</div>
+                <div class="option"><span class="option-label">C.</span> Periksa kebenaran informasi sebelum membagikan ke media sosial</div>
+                <div class="option"><span class="option-label">D.</span> Berpikir kritis dan mencari referensi lain untuk memastikan kebenaran informasi</div>
+                <div class="option"><span class="option-label">E.</span> Meningkatkan kesadaran nasionalisme dengan mempromosikan nilai-nilai kebangsaan dan menghargai keanekaragaman yang ada di Indonesia</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawaban yang tidak sesuai dengan tindakan memilah informasi yang benar dan meningkatkan kesadaran nasionalisme di era digital adalah opsi B, yaitu Menyebar berita bohong atau hoaks yang mengandung unsur SARA. Tindakan tersebut justru akan merugikan dan membahayakan kelompok minoritas serta merusak persatuan dan kesatuan bangsa. Oleh karena itu, sangat penting untuk memastikan kebenaran informasi sebelum membagikannya di media sosial dan meningkatkan kesadaran nasionalisme dengan mempromosikan nilai-nilai kebangsaan serta menghargai keanekaragaman yang ada di Indonesia.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Pendidikan mengenai nasionalisme menjadi salah satu tugas utama sekolah dalam membangun karakter bangsa yang kuat. Namun, pendidikan nasionalisme seringkali hanya terfokus pada sejarah Indonesia dan kebanggaan terhadap budaya Indonesia, tanpa memperhatikan keterkaitannya dengan tantangan global yang dihadapi oleh Indonesia saat ini. Bagaimana cara meningkatkan pendidikan nasionalisme yang lebih holistik dan relevan dengan kebutuhan zaman...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memberikan bimbingan karir kepada siswa untuk mengenal berbagai peluang karir di dunia internasional</div>
+                <div class="option"><span class="option-label">B.</span> Mengajarkan siswa tentang pentingnya pengembangan teknologi dan inovasi untuk memajukan Indonesia di dunia internasional</div>
+                <div class="option"><span class="option-label">C.</span> Menjalin kemitraan dengan lembaga pendidikan di negara lain untuk meningkatkan kualitas pendidikan di Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Meningkatkan keterlibatan siswa dalam kegiatan sosial dan lingkungan untuk mengembangkan kesadaran akan tanggung jawab sosial dan lingkungan</div>
+                <div class="option"><span class="option-label">E.</span> Meningkatkan pemahaman siswa tentang peran Indonesia dalam konteks regional dan global melalui program pertukaran siswa ke luar negeri.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Karena dengan terlibat dalam kegiatan sosial dan lingkungan, siswa dapat memahami nilai-nilai sosial dan lingkungan yang merupakan bagian penting dari konsep nasionalisme yang holistik. Hal ini akan membantu mereka membangun kesadaran akan tanggung jawab sosial dan lingkungan, yang merupakan bagian dari membangun karakter bangsa yang kuat. Selain itu, keterlibatan dalam kegiatan sosial dan lingkungan juga dapat membantu siswa mengembangkan kemampuan interpersonal dan kepemimpinan yang berguna dalam memajukan Indonesia di masa depan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Nasionalisme yang sehat dan positif dapat menjadi kekuatan penggerak dalam membangun kebangsaan dan kesatuan bangsa Indonesia. Namun, nasionalisme yang terlalu ekstrem dan fanatik dapat menimbulkan konflik dan ketidakadilan terhadap kelompok minoritas di Indonesia. Di bawah ini yang tidak termasuk upaya menjaga keseimbangan antara nasionalisme yang kuat dan inklusif dengan menghargai keberagaman di Indonesia adalah...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Meningkatkan pemahaman tentang sejarah dan budaya Indonesia sebagai sumber kebanggaan dan inspirasi dalam membangun nasionalisme yang kuat</div>
+                <div class="option"><span class="option-label">B.</span> Memperkuat pengawasan terhadap gerakan-gerakan ekstrem dan intoleran yang dapat mengancam persatuan dan kesatuan bangsa</div>
+                <div class="option"><span class="option-label">C.</span> Memberikan perlindungan dan keadilan bagi kelompok minoritas agar merasa dihargai dan diperlakukan sama seperti kelompok mayoritas</div>
+                <div class="option"><span class="option-label">D.</span> Mendorong kerja sama dan dialog antar kelompok masyarakat untuk membangun kebersamaan dan persatuan di tengah perbedaan</div>
+                <div class="option"><span class="option-label">E.</span> Membatasi kebebasan berekspresi yang dapat merugikan kelompok minoritas untuk menjaga stabilitas dan harmoni di dalam masyarakat</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kebutuhan untuk menjaga stabilitas dan harmoni di dalam masyarakat penting, namun membatasi kebebasan berekspresi dapat menimbulkan masalah hak asasi manusia dan tidak mencerminkan nasionalisme yang inklusif. Sebaliknya, pilihan A, B, C, dan D merupakan upaya yang tepat dalam menjaga keseimbangan antara nasionalisme yang kuat dan inklusif dengan menghargai keberagaman di Indonesia.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Seiring dengan kemajuan teknologi dan globalisasi, nasionalisme menjadi semakin kompleks dan multidimensional. Nasionalisme tidak hanya berkaitan dengan kebanggaan terhadap bangsa dan negara, tetapi juga melibatkan faktor-faktor ekonomi, sosial, dan budaya yang lebih luas. Bagaimana cara mengembangkan nasionalisme yang holistik dan adaptif dengan tantangan zaman...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menggalang kerja sama antara pemerintah, masyarakat, dan dunia usaha dalam memperkuat ekonomi Indonesia</div>
+                <div class="option"><span class="option-label">B.</span> Meningkatkan keterlibatan masyarakat dalam program-program sosial dan lingkungan untuk membangun kepedulian terhadap kesejahteraan bersama</div>
+                <div class="option"><span class="option-label">C.</span> Menjalin hubungan diplomasi yang baik dengan negara-negara lain untuk memperkuat posisi Indonesia di dunia internasional</div>
+                <div class="option"><span class="option-label">D.</span> Mempromosikan keragaman budaya Indonesia dan memanfaatkannya sebagai daya tarik pariwisata untuk meningkatkan perekonomian Indonesia</div>
+                <div class="option"><span class="option-label">E.</span> Meningkatkan pemahaman tentang hak asasi manusia dan keadilan sosial sebagai nilai fundamental dalam membangun nasionalisme yang inklusif dan berkeadilan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Semua pilihan yang ada dapat menjadi cara untuk mengembangkan nasionalisme yang holistik dan adaptif dengan tantangan zaman. Namun, pilihan E terutama penting untuk memastikan bahwa nasionalisme yang dikembangkan tetap inklusif dan berkeadilan. Hal ini penting karena nasionalisme yang hanya didasarkan pada faktor-faktor ekonomi, sosial, dan budaya yang lebih luas saja tanpa memperhatikan hak asasi manusia dan keadilan sosial dapat menimbulkan ketidakadilan terhadap kelompok minoritas di dalam masyarakat. Oleh karena itu, pilihan E dapat membantu memastikan bahwa nasionalisme yang dikembangkan tetap inklusif dan berkeadilan.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                Pada awal abad ke-20, terjadi perdebatan sengit di kalangan intelektual dan tokoh nasionalisme Indonesia mengenai identitas nasional bangsa Indonesia. Paham-paham yang berkembang pada masa itu antara lain Islamisme, Marxisme, dan Nasionalisme. Perdebatan ini memunculkan isu-isu sensitif, seperti peran agama dalam kehidupan sosial-politik dan hubungan Indonesia dengan bangsa lain. Dalam konteks ini, manakah pernyataan yang paling tepat menggambarkan upaya membangun identitas nasional yang inklusif di Indonesia...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menyandarkan identitas nasional pada nilai-nilai agama yang khas bagi masyarakat Indonesia</div>
+                <div class="option"><span class="option-label">B.</span> Mengadopsi ideologi sosialisme sebagai dasar pembangunan nasional dan sosial di Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Menerapkan politik isolasionis yang menolak pengaruh budaya dan ideologi asing</div>
+                <div class="option"><span class="option-label">D.</span> Mengakomodasi nilai-nilai kemanusiaan dan universal dalam pembentukan identitas nasional Indonesia</div>
+                <div class="option"><span class="option-label">E.</span> Menekankan eksklusivitas identitas nasional Indonesia yang hanya berdasarkan pada sejarah dan budaya yang khas</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Mengakomodasi nilai-nilai kemanusiaan dan universal dalam pembentukan identitas nasional Indonesia. Dalam konteks perdebatan identitas nasional pada awal abad ke-20 di Indonesia, mengadopsi nilai-nilai kemanusiaan dan universal dalam pembentukan identitas nasional merupakan upaya yang inklusif dan mengakomodasi berbagai pandangan dan latar belakang masyarakat Indonesia. Nilai-nilai kemanusiaan dan universal seperti persamaan hak, demokrasi, dan toleransi dapat diakui oleh berbagai agama dan kepercayaan serta latar belakang sosial-politik yang berbeda, sehingga dapat memperkuat dan mempersatukan masyarakat Indonesia secara keseluruhan.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Kebudayaan Indonesia yang kaya dan beragam menjadi bagian penting dalam membentuk identitas nasional Indonesia. Salah satu upaya yang dilakukan untuk memperkuat identitas nasional Indonesia adalah dengan melindungi kebudayaan Indonesia. Contohnya adalah dengan menetapkan beberapa warisan budaya Indonesia sebagai warisan budaya dunia oleh UNESCO. di bawah ini yang paling tepat menggambarkan peran warisan budaya Indonesia dalam membangun identitas nasional Indonesia...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Warisan budaya Indonesia hanya berfungsi sebagai hiburan semata dan tidak berpengaruh dalam membangun identitas nasional Indonesia</div>
+                <div class="option"><span class="option-label">B.</span> Warisan budaya Indonesia memiliki peran penting dalam memperkuat persatuan dan semangat kebangsaan masyarakat Indonesia</div>
+                <div class="option"><span class="option-label">C.</span> Warisan budaya Indonesia hanya berfungsi sebagai simbol tanpa memiliki peran nyata dalam membangun identitas nasional Indonesia</div>
+                <div class="option"><span class="option-label">D.</span> Warisan budaya Indonesia hanya relevan pada masa lampau dan tidak lagi relevan dalam membangun identitas nasional Indonesia saat ini</div>
+                <div class="option"><span class="option-label">E.</span> Warisan budaya Indonesia hanya merupakan bagian dari tradisi budaya Indonesia dan tidak memiliki peran dalam membangun identitas nasional Indonesia.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Warisan budaya Indonesia memiliki peran penting dalam memperkuat persatuan dan semangat kebangsaan masyarakat Indonesia. Kebudayaan Indonesia yang kaya dan beragam merupakan salah satu unsur yang membentuk identitas nasional Indonesia. Warisan budaya Indonesia seperti tarian, musik, kerajinan, dan arsitektur telah menjadi simbol keberagaman Indonesia dan memperkuat semangat kebangsaan masyarakat Indonesia. Menetapkan beberapa warisan budaya Indonesia sebagai warisan budaya dunia oleh UNESCO juga merupakan upaya untuk melindungi kebudayaan Indonesia dan memperkuat identitas nasional Indonesia.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 21 -->
+        <div class="question">
+            <div class="question-number">Soal 21</div>
+            <div class="question-text">
+                Kolonialisme yang dilakukan Belanda menimbulkan berbagai reaksi dari masyarakat pribumi. Sehingga munculnya berbagai pemberontakan dari berbagai daerah. Seperti perang Cirebon (1802-1806), perang Jawa (1825-1830), perang Paderi (1821-1838), perang Banjarmasin (1825-1862). Sikap yang dapat kita teladani dari mereka adalah?
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Patriotisme</div>
+                <div class="option"><span class="option-label">B.</span> Nasionalisme</div>
+                <div class="option"><span class="option-label">C.</span> Bela Negara</div>
+                <div class="option"><span class="option-label">D.</span> Chauvanisme</div>
+                <div class="option"><span class="option-label">E.</span> Radikalisme</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(21)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution21">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Jawabanya adalah patriotisme bukan bela negara, karena bela negara terjadi ditahun 1948. Ada sejarah di balik penetapan 19 Desember sebagai Hari Bela Negara. Mengutip laman resmi Kementerian Pertahanan, 19 Desember dipilih sebagai Hari Bela Negara karena mengambil momentum peristiwa Agresi Militer Belanda II pada 1948.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 22 -->
+        <div class="question">
+            <div class="question-number">Soal 22</div>
+            <div class="question-text">
+                Bhinneka Tunggal Ika yang memiliki arti berbeda-beda tetapi tetap satu jua. Memiliki makna bahwa Indonesia merupakan sebuah negara kepulauan yang kaya akan keanekaragamannya. Baik dari segi Suku, Agama, Ras, serta Antar Golongan. Contoh penerapan bhineka tunggal ika pada kehidupan sehari-hari adalah...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memaksa orang lain untuk mengikuti ajaran agamanya</div>
+                <div class="option"><span class="option-label">B.</span> Menghargai dan menghormati setiap perbedaan pendapat yang ada.</div>
+                <div class="option"><span class="option-label">C.</span> Berteman hanya dengan sesama suku</div>
+                <div class="option"><span class="option-label">D.</span> Menerima hak secara berlebihan</div>
+                <div class="option"><span class="option-label">E.</span> Membentuk organisasi paguyuban bagi para pendatang di daerah rantau.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(22)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution22">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Menghargai dan menghormati setiap perbedaan pendapat yang ada merupakan penerapan bhinneka tunggal ika pada kehidupan sehari-hari.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 23 -->
+        <div class="question">
+            <div class="question-number">Soal 23</div>
+            <div class="question-text">
+                Separatisme adalah upaya suatu daerah atau golongan yang ingin memisahkan diri dari bangsa Indonesia. Tindakan yang sepatutnya kita lakukan ketika mendengar atau melihat kelompok yang ingin melepaskan diri dari bangsa Indonesia atau yang biasa disebut dengan separatisme adalah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menjauhinya karena takut masuk ke dalam anggota kelompok tersebut</div>
+                <div class="option"><span class="option-label">B.</span> Membiarkannya karena saya tidak akan masuk ke kelompok tersebut</div>
+                <div class="option"><span class="option-label">C.</span> Segera melaporkan ke pihak yang berwajib untuk ditindaklanjuti</div>
+                <div class="option"><span class="option-label">D.</span> Bersikap tidak peduli terhadap kegiatan-kegiatan kelompok tersebut</div>
+                <div class="option"><span class="option-label">E.</span> Memata-matainya dengan cara masuk ke kelompok tersebut</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(23)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution23">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Separatisme adalah kelompok etnis atau kelompok identitas lain yang berupaya memisahkan diri dari suatu negara atau pemerintahan yang sah. Tujuan dari gerakan ini adalah untuk membentuk negara dan pemerintahan sendiri. Dari sudut pandang pemerintah, separatisme merupakan gerakan perlawanan dan pemberontakan yang harus segera ditumpas dan dihilangkan.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 24 -->
+        <div class="question">
+            <div class="question-number">Soal 24</div>
+            <div class="question-text">
+                Nasionalisme tidak bisa kita artikan hanya sebatas rasa cinta kepada bangsa dan negara, tapi nasionalisme adalah kesadaran individu masyarakat suatu bangsa akan tanggung jawabnya dalam kemakmuran dan pertahanan yang dilandasi rasa cinta kepada tanah airnya. Senada dengan perkataan Bung Karno, bahwa nasionalisme ialah suatu itikad, keinsyafan rakyat, bahwa rakyat adalah satu golongan, satu bangsa. Rasa nasionalistis itu menimbulkan rasa percaya kepada diri sendiri. Rasa percaya akan diri sendiri inilah yang menimbulkan ketetapan hati dalam perjuangan menuju Indonesia merdeka. Artinya, nasionalisme itu dimulai dari adanya kesadaran, dari kesadaran itu tumbuhlah yang namanya cinta. Kesadaran akan tanggung jawab sebagai bagian dari masyarakat diiringi cinta yang tumbuh kepada bangsa inilah yang membawa masyarakat kepada perjuangan yang tidak setengah-setengah. Perilaku yang dapat dilakukan para generasi muda yang memupuk jiwa nasionalisme yaitu...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Aktif dalam mempromosikan budaya daerah masing-masing</div>
+                <div class="option"><span class="option-label">B.</span> Ikut serta dalam upacara adat kedaerahan</div>
+                <div class="option"><span class="option-label">C.</span> Menggunakan sosmed untuk hal-hal viral di tempat tinggal sekitarnya</div>
+                <div class="option"><span class="option-label">D.</span> Aktif dalam mempromosikan kebudayaan Indonesia di sosial media</div>
+                <div class="option"><span class="option-label">E.</span> Mengikuti upacara bendera sebagai kewajiban agar tidak dihukum</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(24)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution24">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Nasionalisme adalah paham kebangsaan yang tumbuh karena adanya persamaan nasib dan sejarah serta kepentingan untuk hidup bersama sebagai suatu bangsa yang merdeka, bersatu, berdaulat, demokratis dan maju dalam satu kesatuan bangsa dan negara serta cita-cita bersama guna mencapai, memelihara dan mengabdi identitas, persatuan, kemakmuran dan kekuatan atau kekuasaan negara bangsa yang bersangkutan.
+                </div>
+                <div class="solution-step">
+                    Sosmed adalah cara paling mudah untuk berkomunikasi dengan orang lain, tidak hanya lewat tulisan, tapi juga bisa dengan foto maupun video. Upload konten seru tentang Indonesia yang membuat kita sebagai generasi muda mengeksplor lagi kekayaan budaya, tempat bersejarah, dan hal unik lainnya. Ini bisa menginspirasi anak muda lainnya untuk cinta negeri sendiri, juga membantu Indonesia lebih dikenal oleh teman-teman kita dari negara lain.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 25 -->
+        <div class="question">
+            <div class="question-number">Soal 25</div>
+            <div class="question-text">
+                Setiap bangsa harus memiliki kedaulatan dalam upaya mempertahankan eksistensi dimata dunia. Dalam mencapai hal tersebut, tidak hanya pihak pemerintah yang harus berusaha tetapi juga harus ada keterlibatan aktif dari setiap warga negara sebagai bagian penting dari sebuah negara. Oleh karena itu, perlu adanya pembinaan dan pemahaman sikap-sikap yang menunjukan jiwa nasionalisme. Nasionalisme dimaksud untuk menumbuhkan nilai-nilai ke Indonesiaan yang berangkat dari identitas bangsa dan negara dalam upaya mencapai tujuan nasional. Pemahaman tentang sikap-sikap nasionalisme harus bersifat holistik atau menyeluruh bagi seluruh warga negara Indonesia. Sehingga dalam penerapanya, diharapkan dapat memperkuat dan mempertahankan kedaulatan bangsa dan negara. Dibawah ini tindakan yang menunjukan jiwa-jiwa nasionalisme warga negara adalah...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Membeli kue-kue tradisional di pasar untuk memperkuat ekonomi masyarakat bawah agar kesejahteraan ekonomi tumbuh secara merata bagi setiap lapisan masyarakat</div>
+                <div class="option"><span class="option-label">B.</span> Menggunakan sepatu produk dalam negeri di acara-acara resmi kenegaraan baik nasional maupun internasional</div>
+                <div class="option"><span class="option-label">C.</span> Menjunjung tinggi dan mendorong penggunaan Bahasa Indonesia di seluruh wilayah NKRI dari kota hingga ke pelosok-pelosok daerah.</div>
+                <div class="option"><span class="option-label">D.</span> Mendirikan sekolah alam bagi masyarakat pedalaman dalam upaya mendorong pemerataan pendidikan di seluruh wilayah Indonesia agar tumbuh menjadi warga yang cerdas.</div>
+                <div class="option"><span class="option-label">E.</span> Dokter yang terjun kelapangan memberikan vaksinasi gratis bagi warga negara Indonesia di wilayah 3T</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(25)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution25">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    <strong>(TIPS PEMAHAMAN)</strong><br>
+                    Nasionalisme rasa mencintai dari perasaan yang dilakukan dengan spontan. Nasionalisme adalah suatu sikap politik dari masyarakat suatu bangsa yang mempunyai kesamaan kebudayaan, dan wilayah serta kesamaan cita-cita dan tujuan, dengan demikian masyarakat suatu bangsa tersebut merasakan adanya kesetiaan yang mendalam terhadap bangsa itu sendiri.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+            }
+        }
+    </script>
+    <script src="../../dark-mode-toggler.js" defer></script>
+</body>
+</html>

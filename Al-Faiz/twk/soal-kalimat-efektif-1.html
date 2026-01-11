@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal Kalimat Efektif - Tema 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-left: 5px solid #764ba2;
+            padding-left: 15px;
+        }
+        
+        .question {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .question-text em {
+            font-style: italic;
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .options {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .option {
+            margin-bottom: 10px;
+            padding: 8px;
+            padding-left: 15px;
+            border-left: 3px solid #ddd;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            border-left-color: #667eea;
+        }
+        
+        .option-label {
+            font-weight: bold;
+            color: #764ba2;
+            margin-right: 10px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-top: 15px;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .solution-title {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 2px solid #28a745;
+            overflow-x: auto;
+        }
+        
+        .answer {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #155724;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .explanation-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .explanation-box p {
+            color: #856404;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soal Kalimat Efektif - Tema 8</h1>
+        
+        <div class="explanation-box">
+            <strong>Konsep Kalimat Efektif</strong>
+            <p>Kalimat efektif adalah kalimat yang dapat menyampaikan informasi secara jelas, tepat, dan mudah dipahami. Kalimat efektif harus memenuhi syarat kesepadanan, kesejajaran, kehematan, kelogisan, dan kecermatan. Soal-soal ini menguji kemampuan mengidentifikasi dan memperbaiki kalimat yang tidak efektif.</p>
+        </div>
+        
+        <!-- Soal 1 -->
+        <div class="question">
+            <div class="question-number">Soal 1</div>
+            <div class="question-text">
+                "Di samping rumput, dapat juga memberikan leguminosa, baik secara sengaja ditanam maupun legum yang tercampur pada rumput alam."<br>
+                Kalimat di atas akan menjadi kalimat efektif jika ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Dihapus frasa <em>di samping rumput</em>.</div>
+                <div class="option"><span class="option-label">B.</span> Menggantikan kata <em>maupun</em> menjadi <em>ataupun</em>.</div>
+                <div class="option"><span class="option-label">C.</span> Menambahkan subjek setelah kata <em>di samping rumput</em>.</div>
+                <div class="option"><span class="option-label">D.</span> Menghilangkan kata <em>baik</em>.</div>
+                <div class="option"><span class="option-label">E.</span> Sudah tepat semua.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(1)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution1">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Menambahkan subjek setelah "di samping rumput" menjadikan kalimat lebih jelas dan lengkap. Hal ini membantu pembaca memahami siapa yang melakukan tindakan memberikan leguminosa, sehingga meningkatkan efektivitas kalimat.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 2 -->
+        <div class="question">
+            <div class="question-number">Soal 2</div>
+            <div class="question-text">
+                "Hemoglobin yang berfungsi membawa oksigen ke seluruh tubuh."<br>
+                Kalimat di atas dapat menjadi kalimat efektif jika ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Dihilangkan kata <em>hemoglobin</em>.</div>
+                <div class="option"><span class="option-label">B.</span> Dihilangkan kata <em>yang</em>.</div>
+                <div class="option"><span class="option-label">C.</span> Dihilangkan kata <em>berfungsi</em>.</div>
+                <div class="option"><span class="option-label">D.</span> Dihilangkan kata <em>membawa</em>.</div>
+                <div class="option"><span class="option-label">E.</span> Semua dihilangkan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(2)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution2">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Menghilangkan kata yang pada kalimat dapat menjadikan kalimat tersebut lebih jelas dan efektif dikarenakan predikat pada kalimat menjadi ada.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 3 -->
+        <div class="question">
+            <div class="question-number">Soal 3</div>
+            <div class="question-text">
+                "Mbak Ani sedang memasak opor ayam di dapur sebab kedua anaknya sedang tidur di kamarnya."<br>
+                Kalimat tersebut dapat menjadi kalimat efektif yaitu ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Tidak ada yang perlu diperbaiki.</div>
+                <div class="option"><span class="option-label">B.</span> Menghilangkan kata <em>sebab</em>.</div>
+                <div class="option"><span class="option-label">C.</span> Menghilangkan kata <em>sedang</em>.</div>
+                <div class="option"><span class="option-label">D.</span> Mengganti kata <em>sebab</em> dengan <em>karena</em>.</div>
+                <div class="option"><span class="option-label">E.</span> Menambahkan kata <em>agar</em> sebelum <em>sebab</em>.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(3)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution3">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Mengganti "sebab" dengan "karena". Kalimat tersebut menjadi lebih efektif dengan menggunakan "karena" untuk menunjukkan hubungan sebab-akibat yang lebih jelas dan alami dalam percakapan sehari-hari.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 4 -->
+        <div class="question">
+            <div class="question-number">Soal 4</div>
+            <div class="question-text">
+                (1) Tahun ini, Susi mulai memasuki perkuliahan semester awal. (2) Susi diterima di salah satu perguruan tinggi negeri yang ada di Lampung. (3) Lampung merupakan salah satu penghasil kopi terbesar di Indonesia. (4) Susi mengambil jurusan Pendidikan Bahasa Inggris. (5) Dia masuk ke perguruan tinggi itu melalui jalur SNBP.<br>
+                Kalimat yang tidak koheren ditunjukkan dengan nomor ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> 1</div>
+                <div class="option"><span class="option-label">B.</span> 2</div>
+                <div class="option"><span class="option-label">C.</span> 3</div>
+                <div class="option"><span class="option-label">D.</span> 4</div>
+                <div class="option"><span class="option-label">E.</span> 5</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(4)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution4">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat nomor 3 ("Lampung merupakan salah satu penghasil kopi terbesar di Indonesia.") tidak terkait langsung dengan Susi atau proses perkuliahannya. Informasi ini tidak menambah pemahaman tentang cerita utama yang berfokus pada Susi dan aktivitas kuliahnya. Oleh karena itu, kalimat ini dianggap tidak koheren dalam konteks paragraf tersebut.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 5 -->
+        <div class="question">
+            <div class="question-number">Soal 5</div>
+            <div class="question-text">
+                "Untuk menghindari penyebaran COVID-19, petugas kesehatan melakukan penyuntikan vaksin dan menyemprotkan disinfektan terhadap kendaraan, fasilitas, dan tempat umum."<br>
+                Kalimat diatas menjadi efektif sehingga memenuhi syarat kesejajaran jika menjadi ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Untuk menghindari penyebaran COVID-19, petugas kesehatan melakukan suntik vaksin dan menyemprotkan disinfektan terhadap kendaraan, fasilitas, dan tempat umum.</div>
+                <div class="option"><span class="option-label">B.</span> Untuk menghindari penyebaran COVID-19, petugas kesehatan melakukan penyuntikan vaksin dan penyemprotan disinfektan terhadap kendaraan, fasilitas, dan tempat umum.</div>
+                <div class="option"><span class="option-label">C.</span> Untuk menghindari penyebaran COVID-19, petugas kesehatan suntik vaksin dan semprot disinfektan terhadap kendaraan, fasilitas, dan tempat umum.</div>
+                <div class="option"><span class="option-label">D.</span> Petugas kesehatan melakukan penyuntikan vaksin dan menyemprotkan disinfektan terhadap kendaraan, fasilitas, dan tempat umum untuk menghindari penyebaran COVID-19.</div>
+                <div class="option"><span class="option-label">E.</span> Penyuntikan vaksin dan menyemprotkan disinfektan terhadap kendaraan, fasilitas, dan tempat umum untuk menghindari penyebaran COVID-19.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(5)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution5">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Pada opsi B menggunakan bentuk kata benda berimbuhan yang konsisten dan paralel, yaitu "penyuntikan" dan "penyemprotan". Ini membuat kalimat menjadi lebih efektif dan jelas, sesuai dengan prinsip kesejajaran.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 6 -->
+        <div class="question">
+            <div class="question-number">Soal 6</div>
+            <div class="question-text">
+                "Banyak anak-anak sedang mengantri makanan di ruang makan pagi ini."<br>
+                Kalimat diatas tidak efektif dan bisa menjadi efektif dengan cara ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Menghilangkan kata <em>yang</em>.</div>
+                <div class="option"><span class="option-label">B.</span> Menghilangkan kata <em>banyak</em>.</div>
+                <div class="option"><span class="option-label">C.</span> Menambah kata <em>saat</em> sebelum kata <em>di</em>.</div>
+                <div class="option"><span class="option-label">D.</span> Menghilangkan kata <em>makanan</em>.</div>
+                <div class="option"><span class="option-label">E.</span> Mengganti kata <em>sedang</em> dengan <em>tengah</em>.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(6)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution6">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat "Anak-anak sedang mengantri makanan di ruang makan pagi ini." menjadi lebih efektif dan jelas tanpa kata "banyak," karena "anak-anak" sudah menunjukkan pluralitas. Menghilangkan redundansi membuat kalimat lebih singkat dan langsung pada intinya, sesuai dengan prinsip kalimat efektif.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 7 -->
+        <div class="question">
+            <div class="question-number">Soal 7</div>
+            <div class="question-text">
+                "Pembuangan tempat sampah di pinggir kota dilakukan untuk menjaga kebersihan lingkungan."<br>
+                Kalimat di atas menjadi logis apabila kalimat tersebut menjadi ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Penyediaan tempat sampah di pinggir kota dilakukan untuk menjaga kebersihan lingkungan.</div>
+                <div class="option"><span class="option-label">B.</span> Pembuangan sampah di pinggir kota dilakukan untuk menjaga kebersihan lingkungan.</div>
+                <div class="option"><span class="option-label">C.</span> Pembuangan tempat sampah dilakukan untuk menjaga kebersihan lingkungan.</div>
+                <div class="option"><span class="option-label">D.</span> Untuk menjaga kebersihan lingkungan, pembuangan sampah di pinggir kota dilakukan.</div>
+                <div class="option"><span class="option-label">E.</span> Untuk menjaga kebersihan lingkungan, pembuangan sampah dilakukan.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(7)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution7">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Opsi A adalah yang paling logis karena menyediakan tempat sampah di pinggir kota adalah tindakan konkret yang mendukung kebersihan lingkungan. Ini memberi sarana bagi masyarakat untuk membuang sampah mereka dengan benar, yang secara langsung berkontribusi pada kebersihan. Ini membuat kalimat tersebut masuk akal dan efektif.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 8 -->
+        <div class="question">
+            <div class="question-number">Soal 8</div>
+            <div class="question-text">
+                "Sebuah jurnal kesehatan mengatakan bahwa kandungan purin pada kangkung cukup rendah." Kalimat di atas tidak logis dikarenakan kata ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Sebuah jurnal kesehatan</div>
+                <div class="option"><span class="option-label">B.</span> Kandungan</div>
+                <div class="option"><span class="option-label">C.</span> Mengatakan</div>
+                <div class="option"><span class="option-label">D.</span> Cukup rendah</div>
+                <div class="option"><span class="option-label">E.</span> Purin</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(8)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution8">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Dalam konteks sebuah jurnal kesehatan, lebih tepat menggunakan kata kerja yang mengindikasikan informasi yang tertulis, seperti "menyebutkan" atau "menyatakan." Benda mati seperti jurnal tidak bisa "mengatakan" sesuatu, karena "mengatakan" mengimplikasikan tindakan berbicara yang dilakukan oleh makhluk hidup.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 9 -->
+        <div class="question">
+            <div class="question-number">Soal 9</div>
+            <div class="question-text">
+                "Mahasiswa FKIP di UNS membeli 4 gorengan di daerah gerbang belakang."<br>
+                Kalimat diatas menjadi efektif apabila ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Mengganti <em>mahasiswa</em> menjadi <em>siswa</em>.</div>
+                <div class="option"><span class="option-label">B.</span> Mengganti <em>4</em> menjadi <em>empat</em>.</div>
+                <div class="option"><span class="option-label">C.</span> Menghilangkan kata <em>membeli</em>.</div>
+                <div class="option"><span class="option-label">D.</span> Menghilangkan kata <em>gorengan</em>.</div>
+                <div class="option"><span class="option-label">E.</span> Sudah tepat semuanya.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(9)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution9">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Mengganti "4" menjadi "empat" adalah perubahan yang tepat karena itu adalah penulisan yang lebih formal dan sesuai dengan kaidah ejaan yang benar. Perubahan ini tidak hanya membuat kalimat lebih efektif tetapi juga membuatnya lebih formal dan standar secara bahasa.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 10 -->
+        <div class="question">
+            <div class="question-number">Soal 10</div>
+            <div class="question-text">
+                Bulatnya tekad Anastasya dalam menjuangkan nasib anak-anaknya akhirnya membuahkan hasil yang Bahagia bagi dirinya.<br>
+                Kesalahan penggunaan kata dalam kalimat di atas ialah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Sedikit, seharusnya sesedikit mungkin</div>
+                <div class="option"><span class="option-label">B.</span> Bulatnya, seharusnya sebulatnya</div>
+                <div class="option"><span class="option-label">C.</span> Akhirnya, seharusnya akhiri</div>
+                <div class="option"><span class="option-label">D.</span> Membuahkan, seharusnya membuahi</div>
+                <div class="option"><span class="option-label">E.</span> Menjuangkan, seharusnya memperjuangkan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(10)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution10">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Menggunakan kata "memperjuangkan" akan membuat kalimat lebih tepat secara gramatikal dan baku secara bahasa.
+                </div>
+                <div class="answer">Jawaban: E</div>
+            </div>
+        </div>
+        
+        <!-- Soal 11 -->
+        <div class="question">
+            <div class="question-number">Soal 11</div>
+            <div class="question-text">
+                Perhatikan kalimat-kalimat di bawah ini:<br>
+                (1) Pemberian penghargaan dapat menstimulasi semangat berkarya pemuda.<br>
+                (2) Kurangnya apresiasi dapat mengakibatkan malasnya pemuda dalam berkarya.<br>
+                (3) Aris menabung dengan tujuan ingin membeli mobil baru.<br>
+                (4) Bu Ina menyeduhkan teh hangat yang sangat manis sekali ke dalam cangkir kami.<br>
+                Kalimat tidak efektif ditunjukkan pada kalimat nomor ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> (1)</div>
+                <div class="option"><span class="option-label">B.</span> (2)</div>
+                <div class="option"><span class="option-label">C.</span> (3)</div>
+                <div class="option"><span class="option-label">D.</span> (4)</div>
+                <div class="option"><span class="option-label">E.</span> Semua kalimat</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(11)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution11">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat tersebut memiliki banyak pengulangan kata yang tidak perlu seperti kata sangat dengan sekali.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 12 -->
+        <div class="question">
+            <div class="question-number">Soal 12</div>
+            <div class="question-text">
+                Setelah sekian lama akhirnya Anton mampu <em>mempikat</em> hati wanita idamannya dan minggu depan dia akan mempersunting wanita cantik itu.<br>
+                Pada kata bergaris miring di atas seharusnya ialah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Memikat</div>
+                <div class="option"><span class="option-label">B.</span> Meperikat</div>
+                <div class="option"><span class="option-label">C.</span> Mengikat</div>
+                <div class="option"><span class="option-label">D.</span> Pikat</div>
+                <div class="option"><span class="option-label">E.</span> Mempikat</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(12)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution12">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kata yang dituliskan miring adalah "mempikat." Ini adalah bentuk yang tidak benar. Bentuk yang benar adalah "memikat" karena kata dasar "pikat" mendapat awalan "me-" bukan "mem-".
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 13 -->
+        <div class="question">
+            <div class="question-number">Soal 13</div>
+            <div class="question-text">
+                Obat mujarab ini memiliki berbagai khasiat seperti melancarkan peredaran darah, ... nafsu makan, dan meningkatkan stamina pria.<br>
+                Kata berimbuhan yang tepat untuk mengisi kekosongan pada kalimat di atas ialah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Ditambah</div>
+                <div class="option"><span class="option-label">B.</span> Menambahi</div>
+                <div class="option"><span class="option-label">C.</span> Menambah</div>
+                <div class="option"><span class="option-label">D.</span> Ditambahkan</div>
+                <div class="option"><span class="option-label">E.</span> Ditambahi</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(13)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution13">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kata "menambah" adalah bentuk yang tepat untuk mengisi kekosongan dalam kalimat tersebut karena kata ini adalah bentuk kerja yang tepat dengan imbuhan "men-" untuk menyatakan tindakan menambahkan sesuatu. Kata ini juga paralel dengan "melancarkan" dan "meningkatkan" dalam struktur kalimat tersebut.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+        <!-- Soal 14 -->
+        <div class="question">
+            <div class="question-number">Soal 14</div>
+            <div class="question-text">
+                Segala sesuatu yang dilakukan dengan sangat profesional sekali akan membuahkan hasil yang begitu maksimal dan sangat bermanfaat bagi seluruh banyak manusia di sekitarnya.<br>
+                Pada kalimat di atas perlu menghilangkan beberapa kata sehingga menjadi kalimat yang efektif. Beberapa kata yang perlu dihilangkan pada kalimat tersebut ialah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Sekali, seluruh</div>
+                <div class="option"><span class="option-label">B.</span> Maksimal, bermanfaat</div>
+                <div class="option"><span class="option-label">C.</span> Banyak, manusia,</div>
+                <div class="option"><span class="option-label">D.</span> Pekerjaan, dilakukan</div>
+                <div class="option"><span class="option-label">E.</span> Bermanfaat, disekitarnya</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(14)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution14">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Menghilangkan kata "sekali" dan "seluruh" akan membuat kalimat menjadi lebih ringkas dan langsung pada intinya tanpa mengorbankan makna atau kejelasan. Kata "sekali" redundan dengan "sangat", dan kata "seluruh" redundan dengan "banyak" di dalam konteks kalimat tersebut. Ini akan meningkatkan efektivitas kalimat.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 15 -->
+        <div class="question">
+            <div class="question-number">Soal 15</div>
+            <div class="question-text">
+                Menyikat wc tak hanya di lakukan ketika sudah kotor, tetapi juga dilakukan pada saat setelah mandi baik pagi maupun dimalam hari.<br>
+                Pada kalimat tersebut terdapat beberapa hal yang tidak tepat, ketidaktepatan tersebut berupa ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Penulisan menyikat seharusnya mensikat</div>
+                <div class="option"><span class="option-label">B.</span> Penulisan awalan di pada "di lakukan" seharusnya digabung dan "dimalam" semestinya dipisah</div>
+                <div class="option"><span class="option-label">C.</span> Dimalam hari seharusnya diganti dengan disiang hari</div>
+                <div class="option"><span class="option-label">D.</span> Sebelum memulai tidur seharusnya diganti dengan sebelum bekerja</div>
+                <div class="option"><span class="option-label">E.</span> Di lakukan seharusnya diganti dengan di kerjakan</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(15)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution15">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kesalahan yang benar-benar ditemukan adalah pemisahan kata "di lakukan" seharusnya "dilakukan", kemudian kata "dimalam" menjadi dua kata terpisah seharusnya menjadi "di malam." Kata "di" sebagai awalan yang diikuti kata kerja pasif ditulis serangkai, sedangkan "di" sebagai kata depan ditulis terpisah.
+                </div>
+                <div class="answer">Jawaban: B</div>
+            </div>
+        </div>
+        
+        <!-- Soal 16 -->
+        <div class="question">
+            <div class="question-number">Soal 16</div>
+            <div class="question-text">
+                Terima kasih banyak telah rela memberikan pertolongan yang luar biasa. Saya sangat merasa tertolong!<br>
+                Kesalahan penggunaan tanda baca pada kalimat di atas ialah ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Pada awala kalimat dan akhir kalimat seharusnya diberi tanda petik (")</div>
+                <div class="option"><span class="option-label">B.</span> Di akhir kalimat seharusnya diberi tanda tanya (?)</div>
+                <div class="option"><span class="option-label">C.</span> Setelah kata "Terima kasih" seharusnya diberi tanda koma (,)</div>
+                <div class="option"><span class="option-label">D.</span> Setelah kata "tertolong" seharusnya diberi tanda titik (.) buka tanda seru (!)</div>
+                <div class="option"><span class="option-label">E.</span> Seharusnya tidak diberi tanda baca</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(16)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution16">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat tersebut seharusnya diakhiri dengan tanda titik bukan dengan tanda seru. Tanda seru (!) digunakan untuk kalimat yang menyatakan seruan atau perintah dengan emosi yang kuat. Kalimat "Saya sangat merasa tertolong!" adalah kalimat pernyataan yang menyatakan rasa terima kasih, sehingga lebih tepat diakhiri dengan tanda titik.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 17 -->
+        <div class="question">
+            <div class="question-number">Soal 17</div>
+            <div class="question-text">
+                Manakah kalimat dibawah ini yang tidak efektif, kecuali ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Baik mahasiswa baru atau mahasiswa lama dikenakan peraturan yang sama.</div>
+                <div class="option"><span class="option-label">B.</span> Jakarta adalah merupakan salah satu kota tersibuk di Indonesia.</div>
+                <div class="option"><span class="option-label">C.</span> Demi untuk kehidupan keluarganya, Bu Susi rela bekerja tanpa henti.</div>
+                <div class="option"><span class="option-label">D.</span> Saran yang dikemukakannya akan kami pertimbangkan.</div>
+                <div class="option"><span class="option-label">E.</span> Ada banyak macam-macam makanan-makanan yang dijual di restoran itu.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(17)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution17">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat ini efektif dalam menyatakan bahwa saran akan dipertimbangkan. Kalimat ini tidak memiliki redundansi, menggunakan kata yang tepat, dan strukturnya jelas serta mudah dipahami.
+                </div>
+                <div class="answer">Jawaban: D</div>
+            </div>
+        </div>
+        
+        <!-- Soal 18 -->
+        <div class="question">
+            <div class="question-number">Soal 18</div>
+            <div class="question-text">
+                Manakah dibawah ini yang termasuk kalimat efektif ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Setelah bekerja seharian, Putri beristirahat.</div>
+                <div class="option"><span class="option-label">B.</span> Baik Budi atau Susan diberikan hukuman selama tiga tahun penjara.</div>
+                <div class="option"><span class="option-label">C.</span> Minggu kemarin banyak para pegawai yang melakukan demonstrasi.</div>
+                <div class="option"><span class="option-label">D.</span> Taufik merupakan salah satu atlit berprestasi.</div>
+                <div class="option"><span class="option-label">E.</span> Walau masih pagi, tapi Pak Joko sudah beraktivitas.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(18)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution18">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat ini efektif dalam menyampaikan urutan peristiwa yang jelas. Kalimat ini memiliki subjek dan predikat yang jelas, tidak memiliki redundansi, dan strukturnya mudah dipahami.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 19 -->
+        <div class="question">
+            <div class="question-number">Soal 19</div>
+            <div class="question-text">
+                <em>Peristiwa ini menunjukkan ketidakcermatan, ketergesa-gesaan, dan tidak hati-hati dalam penyusunan RUU.</em><br>
+                Kalimat di atas menjadi lebih efektif apabila ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Peristiwa ini menunjukkan ketidakcermatan, ketergesa-gesaan, dan ketidakhati-hatian dalam penyusunan RUU.</div>
+                <div class="option"><span class="option-label">B.</span> Peristiwa ini menunjukkan ketidakcermatan, tergesa-gesaan, dan tidak hati-hati dalam penyusunan RUU.</div>
+                <div class="option"><span class="option-label">C.</span> Peristiwa ini menunjukkan tidakcermat, ketergesa-gesaan, dan tidakhati-hati dalam penyusunan RUU.</div>
+                <div class="option"><span class="option-label">D.</span> Menunjukkan ketidakcermatan, ketergesa-gesaan, dan ketidakhati-hatian dalam penyusunan RUU</div>
+                <div class="option"><span class="option-label">E.</span> Semua benar.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(19)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution19">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kata "tidak hati-hati" seharusnya diubah menjadi "ketidakhati-hatian" agar paralel dengan imbuhan dari kata sebelumnya (ketidakcermatan, ketergesa-gesaan). Ini memenuhi prinsip kesejajaran dalam kalimat efektif di mana unsur-unsur yang setara harus memiliki bentuk yang paralel.
+                </div>
+                <div class="answer">Jawaban: A</div>
+            </div>
+        </div>
+        
+        <!-- Soal 20 -->
+        <div class="question">
+            <div class="question-number">Soal 20</div>
+            <div class="question-text">
+                Manakah di bawah ini yang merupakan kalimat tidak mubazir ...
+            </div>
+            <div class="options">
+                <div class="option"><span class="option-label">A.</span> Semua siswa-siswi Privat Al Faiz cantik-cantik dan ganteng-ganteng.</div>
+                <div class="option"><span class="option-label">B.</span> Banyak anak-anak kecil yang berenang di Bengawan Solo.</div>
+                <div class="option"><span class="option-label">C.</span> Utami tidak makan sambal karena punya penyakit lambung.</div>
+                <div class="option"><span class="option-label">D.</span> Annisa suka memakai jilbab warna merah muda.</div>
+                <div class="option"><span class="option-label">E.</span> Retnowati tidak suka buah durian.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleSolution(20)">Tampilkan Pembahasan</button>
+            <div class="solution" id="solution20">
+                <div class="solution-title">Pembahasan:</div>
+                <div class="solution-step">
+                    Kalimat ini tidak mubazir. Ini menjelaskan alasan mengapa Utami tidak makan sambal. Kalimat ini tidak memiliki redundansi atau pengulangan kata yang tidak perlu. Setiap kata memiliki fungsi dan makna yang jelas dalam kalimat tersebut.
+                </div>
+                <div class="answer">Jawaban: C</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleSolution(num) {
+            const solution = document.getElementById('solution' + num);
+            const button = event.target;
+            
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Tampilkan Pembahasan';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Sembunyikan Pembahasan';
+            }
+        }
+    </script>
+    <script src="../../dark-mode-toggler.js" defer></script>
+</body>
+</html>
