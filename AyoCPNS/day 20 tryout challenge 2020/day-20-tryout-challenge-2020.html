@@ -282,6 +282,43 @@
             margin: 10px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        
+        .gemini-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .gemini-title {
+            font-weight: bold;
+            color: #1976d2;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .gemini-title::before {
+            content: "🤖";
+            font-size: 1.2em;
+        }
+        
+        .gemini-content {
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+        
+        .gemini-content p {
+            margin-bottom: 12px;
+        }
+        
+        .gemini-content strong {
+            color: #1565c0;
+        }
     </style>
 </head>
 <body>
@@ -453,6 +490,14 @@
                             }
                         }
                     });
+                    html += '</div>';
+                }
+                
+                // Render Gemini section if available
+                if (item.gemini) {
+                    html += '<div class="gemini-section">';
+                    html += '<div class="gemini-title">Gemini</div>';
+                    html += `<div class="gemini-content">${escapeHtml(item.gemini)}</div>`;
                     html += '</div>';
                 }
                 
