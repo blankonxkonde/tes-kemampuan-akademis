@@ -1114,7 +1114,8 @@
     let ignoreMutationsUntil = 0;
     let activeHighlightQuery = '';
 
-    function highlightQueryInDocument(query) {
+    function highlightQueryInDocument(query, options = {}) {
+        const shouldScrollToFirstMatch = options.shouldScrollToFirstMatch !== false;
         const trimmed = query.trim();
         clearSearchHighlights();
         if (!trimmed) return;
@@ -1166,7 +1167,9 @@
 
         const firstHighlight = document.querySelector('mark.global-search-highlight');
         if (firstHighlight) {
-            firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (shouldScrollToFirstMatch) {
+                firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         ignoreMutationsUntil = Date.now() + 500;
@@ -1189,11 +1192,11 @@
         highlightQueryInDocument(query);
 
         if (!highlightObserver) {
-            highlightObserver = new MutationObserver(() => {
+            highlightObserver = new MutationObserver((mutationList) => {
                 if (Date.now() < ignoreMutationsUntil) return;
                 if (!activeHighlightQuery) return;
                 clearTimeout(highlightTimeoutId);
-                highlightTimeoutId = setTimeout(() => highlightQueryInDocument(activeHighlightQuery), 250);
+                highlightTimeoutId = setTimeout(() => highlightQueryInDocument(activeHighlightQuery, { shouldScrollToFirstMatch: false }), 250);
             });
             highlightObserver.observe(document.body, { childList: true, subtree: true });
         }
